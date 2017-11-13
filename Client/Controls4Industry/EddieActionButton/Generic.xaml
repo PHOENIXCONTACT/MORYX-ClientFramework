@@ -1,0 +1,70 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:c4I="clr-namespace:C4I">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Themes/Generic/Common.xaml" />
+        <ResourceDictionary Source="../Base/EddieButtonBase/Generic.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <ControlTemplate x:Key="EddieButtonControlTemplate" TargetType="c4I:EddieActionButton">
+        <Grid>
+            <Border x:Name="ButtonBorder" Background="{TemplateBinding Background}"
+                    Style="{StaticResource EddieButtonBorderBaseStyle}" />
+
+            <Border x:Name="PART_Content">
+                <Path x:Name="PART_ButtonIconPath" Style="{StaticResource EddieButtonPathStyle}"
+                      Data="{TemplateBinding IconPath}" Fill="White" Width="20" Height="20" />
+            </Border>
+            
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="EddieStyle" Value="Green">
+                <Setter Property="Background" Value="{StaticResource GreenBackgroundBrush}" />
+                <Setter TargetName="PART_ButtonIconPath" Property="Fill" Value="White" />
+            </Trigger>
+            <Trigger Property="EddieStyle" Value="Gray">
+                <Setter Property="Background" Value="{StaticResource GrayBackgroundBrush}" />
+                <Setter TargetName="PART_ButtonIconPath" Property="Fill" Value="Black" />
+            </Trigger>
+
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsPressed" Value="True" />
+                    <Condition Property="EddieStyle" Value="Green" />
+                </MultiTrigger.Conditions>
+                <MultiTrigger.Setters>
+                    <Setter TargetName="ButtonBorder" Property="Background" 
+                            Value="{StaticResource GreenButtonPressedBrush}" />
+                </MultiTrigger.Setters>
+            </MultiTrigger>
+
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsPressed" Value="True" />
+                    <Condition Property="EddieStyle" Value="Gray" />
+                </MultiTrigger.Conditions>
+                <MultiTrigger.Setters>
+                    <Setter TargetName="ButtonBorder" Property="Background" 
+                            Value="{StaticResource GrayButtonPressedBrush}" />
+                </MultiTrigger.Setters>
+            </MultiTrigger>
+
+            <Trigger Property="IconPath" Value="{x:Null}">
+                <Setter TargetName="PART_ButtonIconPath" Property="Visibility" Value="Collapsed" />
+            </Trigger>
+            
+            <Trigger Property="IsEnabled" Value="false">
+                <Setter TargetName="PART_Content" Property="Opacity"
+                        Value="{StaticResource DisabledContentOpacity}" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style TargetType="c4I:EddieActionButton" BasedOn="{StaticResource EddieButtonBaseStyle}">
+        <Setter Property="Template" Value="{StaticResource EddieButtonControlTemplate}" />
+        <Setter Property="Height" Value="30" />
+        <Setter Property="Width" Value="30" />
+    </Style>
+
+</ResourceDictionary>

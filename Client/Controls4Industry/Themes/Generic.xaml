@@ -1,0 +1,45 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:c4I="clr-namespace:C4I">
+
+    <ResourceDictionary.MergedDictionaries>
+        <!--<core:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="Icons/OkIcon/Generic.xaml" />-->
+
+        <!-- Eddie Specific Styles -->
+        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieButton/Generic.xaml" />
+        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieActionButton/Generic.xaml" />
+        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieBusyIndicator/Generic.xaml" />
+        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieComboBox/Generic.xaml" />
+        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieModuleButton/Generic.xaml" />
+        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieTextBox/Generic.xaml" />
+        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieHistoryButtonBar/Generic.xaml" />
+        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieNotificationBar/Generic.xaml" />
+        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieNavigationBar/Generic.xaml" />
+        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieSelectableLabel/Generic.xaml" />
+        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieProgressBar/Generic.xaml" />
+        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="MultiProgressBar/Generic.xaml" />
+        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="LabeledControlHost/Generic.xaml" />
+        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieTreeView/Generic.xaml"/>
+        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieSlider/Generic.xaml"/>
+        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieRangeSlider/Generic.xaml"/>
+        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieListBox/Generic.xaml" />
+        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieListView/Generic.xaml"/>
+
+        <!-- Windows Control Styles -->
+        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="CheckBox/Generic.xaml" />
+        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="RadioButton/Generic.xaml" />
+        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="ScollViewer/Generic.xaml" />
+        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="ScrollBar/Generic.xaml" />
+        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="TabControl/Generic.xaml" />
+        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="GroupBox/Generic.xaml" />
+        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="PasswordBox/Generic.xaml" />
+
+        <!-- Templates -->
+        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="ViewTemplates/DialogPanel/Generic.xaml"/>
+
+        <!-- ToDo: This must be the last Entry in list, otherwise the Eddie.Textformat Trigger do not work. Fix it! -->
+        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="TextBlock/Generic.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary> 

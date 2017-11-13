@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="Marvin.ClientFramework.Tests.DialogManager.DialogManagerWorkspaceView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:dialogManager="clr-namespace:Marvin.ClientFramework.Tests.DialogManager"
+             mc:Ignorable="d" 
+             d:DesignHeight="379" d:DesignWidth="515" d:DataContext="{d:DesignInstance dialogManager:DialogManagerWorkspaceViewModel}">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.IsSharedSizeScope="True">
+            <LabeledControlHost LabelA="Operating System:">
+                <TextBlock Text="{Binding SystemRunningAs}"/>
+            </LabeledControlHost>
+            <LabeledControlHost LabelA="Process:">
+                <TextBlock Text="{Binding ProcessRunningAs}"/>
+            </LabeledControlHost>
+            <EddieButton x:Name="ShowSmallDialog">Dialog</EddieButton>
+            <EddieButton x:Name="ShowSmallDialogWithCallback">Dialog with Callback</EddieButton>
+            <EddieButton x:Name="ShowMessageBox">MessageBox</EddieButton>
+            <EddieButton x:Name="ShowMessageBoxWithCallback">MessageBox with Callback</EddieButton>
+        </StackPanel>
+    </Grid>
+</UserControl>

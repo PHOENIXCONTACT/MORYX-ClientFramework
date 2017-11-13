@@ -1,0 +1,170 @@
+﻿<UserControl x:Class="Marvin.Controls.ConfigEditor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:c4I="clr-namespace:C4I;assembly=Controls4Industry"
+             xmlns:converter="clr-namespace:Marvin.Controls.Converter"
+             xmlns:controls="clr-namespace:Marvin.Controls"
+             mc:Ignorable="d" x:Name="UserControl" d:DesignHeight="300" d:DesignWidth="810">
+    <UserControl.Resources>
+        <c4I:BooleanToVisibilityConverter x:Key="ReBooleanToVisibilityConverter" TriggerValue="False" />
+        <StringToBooleanConverter x:Key="StringToBooleanConverter" />
+        <converter:EntryTypeToDelButtonVisibilityConverter x:Key="DelButtonVisibilityConverter" />
+        <converter:SubEntriesToVisibilityConverter x:Key="SubEntriesToVisibilityConverter" />
+        <converter:EntryValueToButtonText x:Key="ButtonTextConverter" />
+        <converter:EntryValueToVisibilityConverter x:Key="ValueToVisibilityConverter" />
+
+        <converter:ValueTypeTemplateSelector x:Key="ValueTypeTemplateSelector">
+            <converter:ValueTypeTemplateSelector.CollectionTemplate>
+                <DataTemplate DataType="controls:EntryViewModel">
+                    <StackPanel Orientation="Horizontal" Height="35">
+
+                        <TextBlock Text="{Binding Value}"
+                                   FontWeight="Bold" VerticalAlignment="Center"
+                                   Visibility="{Binding SubEntries, Converter={StaticResource ReBooleanToVisibilityConverter}}" />
+
+                        <EddieButton Width="120" Content="Open" EddieStyle="Green" Icon="Open"
+                                     VerticalAlignment="Center" Click="DelveIntoSubEntry"
+                                     Visibility="{Binding Converter={StaticResource SubEntriesToVisibilityConverter}}" />
+
+                        <EddieButton Width="120" Content="Remove" EddieStyle="Green" Margin="10,0,0,0" Icon="Delete"
+                                     Visibility="{Binding CurrentEntry, ElementName=UserControl, Converter={StaticResource DelButtonVisibilityConverter}, FallbackValue=Collapsed}"
+                                     IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
+                                     Click="RemoveCollectionEntry"  />
+                    </StackPanel>
+                </DataTemplate>
+            </converter:ValueTypeTemplateSelector.CollectionTemplate>
+
+            <converter:ValueTypeTemplateSelector.StringTemplate>
+                <DataTemplate DataType="controls:EntryViewModel">
+
+                    <EddieTextBox Width="200" HorizontalAlignment="Left"
+                                  Text="{Binding Value, Mode=TwoWay}" Watermark="{Binding DefaultValue}"
+                                  IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
+                                  IsReadOnly="{Binding IsReadOnly}"
+                                  Visibility="{Binding SubEntries, Converter={StaticResource ReBooleanToVisibilityConverter}}" />
+
+                </DataTemplate>
+            </converter:ValueTypeTemplateSelector.StringTemplate>
+
+            <converter:ValueTypeTemplateSelector.BoolTemplate>
+                <DataTemplate DataType="controls:EntryViewModel">
+
+                    <CheckBox HorizontalAlignment="Left"
+                              IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
+                              IsChecked="{Binding Value, Mode=TwoWay, Converter={StaticResource StringToBooleanConverter}}" />
+
+                </DataTemplate>
+            </converter:ValueTypeTemplateSelector.BoolTemplate>
+
+            <converter:ValueTypeTemplateSelector.DropDownTemplate>
+                <DataTemplate DataType="controls:EntryViewModel">
+                    <StackPanel Orientation="Horizontal">
+
+                        <EddieComboBox ItemsSource="{Binding PossibleValues}" Width="300"
+                                       IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
+                                       IsReadOnly="{Binding IsReadOnly}"
+                                       SelectedItem="{Binding Value, Mode=TwoWay}" />
+
+                    </StackPanel>
+                </DataTemplate>
+            </converter:ValueTypeTemplateSelector.DropDownTemplate>
+
+            <converter:ValueTypeTemplateSelector.ClassTemplate>
+                <DataTemplate DataType="controls:EntryViewModel">
+                    <StackPanel Orientation="Horizontal">
+                        <EddieButton Width="120" EddieStyle="Green" HorizontalAlignment="Left" Icon="Open"
+                                 Content="Open" Click="DelveIntoSubEntry" />
+
+                        <EddieButton Width="120" Content="Remove" EddieStyle="Green" Margin="10,0,0,0" Icon="Delete"
+                                     Visibility="{Binding CurrentEntry, ElementName=UserControl, Converter={StaticResource DelButtonVisibilityConverter}, FallbackValue=Collapsed}"
+                                     IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
+                                     Click="RemoveCollectionEntry"  />
+                    </StackPanel>
+                </DataTemplate>
+            </converter:ValueTypeTemplateSelector.ClassTemplate>
+        </converter:ValueTypeTemplateSelector>
+
+
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <DockPanel LastChildFill="True" Visibility="{Binding BreadcrumbVisibility, ElementName=UserControl}">
+            <StackPanel Orientation="Horizontal">
+                <c4I:EddieActionButton Click="Back" Icon="ArrowLeft" Margin="0,0,5,0"
+                                       IsEnabled="{Binding CanBack, ElementName=UserControl}">
+                    Back
+                </c4I:EddieActionButton>
+                <c4I:EddieActionButton Click="Forward" Icon="ArrowRight" Margin="0,0,5,0"
+                                       IsEnabled="{Binding CanForward, ElementName=UserControl}">
+                    Forward
+                </c4I:EddieActionButton>
+            </StackPanel>
+
+            <ListBox ItemsSource="{Binding Path, ElementName=UserControl}"
+                     SelectedItem="{Binding CurrentEntry, ElementName=UserControl}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate DataType="controls:EntryViewModel">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Key}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ListBox>
+        </DockPanel>
+
+        <Border BorderBrush="LightGray" BorderThickness="1,1,1,1" Grid.Row="1" Margin="0,10,0,0">
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                <ItemsControl ItemsSource="{Binding CurrentEntry.SubEntries, ElementName=UserControl}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate DataType="controls:EntryViewModel">
+                            <Border BorderThickness="0,0,0,1" BorderBrush="DarkGray">
+                                <Grid Margin="5">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <StackPanel Margin="0,0,25,0">
+                                        <TextBlock Text="{Binding Key}" />
+                                        <TextBlock Text="{Binding Description}" TextWrapping="Wrap"
+                                                   Foreground="DarkGray" />
+                                    </StackPanel>
+
+                                    <ContentPresenter Grid.Column="1"
+                                                      ContentTemplateSelector="{StaticResource ValueTypeTemplateSelector}" />
+
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </Border>
+
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal"
+                    Visibility="{Binding CurrentEntry, ElementName=UserControl, Converter={StaticResource ValueToVisibilityConverter}}">
+            
+            <EddieComboBox ItemsSource="{Binding CurrentEntry.PossibleValues, ElementName=UserControl}"
+                           SelectedItem="{Binding DesiredType, ElementName=UserControl, Mode=TwoWay}"
+                           IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
+                           MinWidth="200" />
+
+            <EddieButton Margin="5" Icon="Plus" Content="{Binding CurrentEntry, ElementName=UserControl, Converter={StaticResource ButtonTextConverter}}"
+                         IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
+                         Click="ItemRequested" />
+        </StackPanel>
+
+    </Grid>
+</UserControl>

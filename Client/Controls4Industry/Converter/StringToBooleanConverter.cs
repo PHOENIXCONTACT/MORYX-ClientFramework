@@ -1,0 +1,19 @@
+﻿using System;
+using System.Globalization;
+using System.Windows.Data;
+
+namespace C4I
+{
+    public class StringToBooleanConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return this.AsBool(value);
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return this.AsBool(value) ? "True" : "False";
+        }
+    }
+}

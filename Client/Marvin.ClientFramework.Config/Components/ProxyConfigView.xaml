@@ -1,0 +1,67 @@
+﻿<UserControl x:Class="Marvin.ClientFramework.Config.ProxyConfigView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:config="clr-namespace:Marvin.ClientFramework.Config"
+             mc:Ignorable="d" d:DataContext="{d:DesignInstance config:ProxyConfigViewModel}"
+             d:DesignHeight="307" d:DesignWidth="631">
+    
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../LocalStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    
+    <Grid Background="White">
+        <StackPanel>
+            <TextBlock Style="{StaticResource TitleText}">
+                Proxy Configuration
+            </TextBlock>
+            
+            <StackPanel Orientation="Horizontal">
+                <LabeledControlHost LabelA="Enabled:">
+                    <CheckBox IsChecked="{Binding Config.EnableProxy, Mode=TwoWay}"/>
+                </LabeledControlHost>
+                
+                <TextBlock Style="{StaticResource DescriptionStyle}">
+                    (Enables the proxy for this client)
+                </TextBlock>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <LabeledControlHost LabelA="Use Default:">
+                    <CheckBox x:Name="DefaultCheckBox" Unchecked="DefaultCheckBox_OnChecked" 
+                              Checked="DefaultCheckBox_OnChecked" IsChecked="{Binding Config.UseDefaultWebProxy, Mode=TwoWay}" />
+                </LabeledControlHost>
+
+                <TextBlock Style="{StaticResource DescriptionStyle}">
+                    (Selects the global configured proxy settings)
+                </TextBlock>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" x:Name="Adress">
+                <LabeledControlHost LabelA="Address:">
+                    <EddieTextBox Text="{Binding Config.Address, Mode=TwoWay}"/>
+                </LabeledControlHost>
+                
+                <TextBlock Style="{StaticResource DescriptionStyle}">
+                    (Address to the proxy server)
+                </TextBlock>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal" x:Name="Port">
+                <LabeledControlHost LabelA="Port:">
+                    <EddieTextBox Text="{Binding Config.Port, Mode=TwoWay}"/>
+                </LabeledControlHost>
+                
+                <TextBlock Style="{StaticResource DescriptionStyle}">
+                    (Port of the proxy server)
+                </TextBlock>
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+</UserControl>

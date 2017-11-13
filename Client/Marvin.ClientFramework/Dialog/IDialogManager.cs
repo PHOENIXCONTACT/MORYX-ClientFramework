@@ -1,0 +1,58 @@
+﻿using System;
+using Caliburn.Micro;
+
+namespace Marvin.ClientFramework.Dialog 
+{
+    /// <summary>
+    /// Interface for a dialog providing component
+    /// Conductor to display <see cref="IScreen"/> in an overlay.
+    /// The manager also allows to display message boxes
+    /// </summary>
+    public interface IDialogManager
+    {
+        /// <summary>
+        /// Will show a dialog of the type <see cref="IScreen"/>
+        /// </summary>
+        void ShowDialog<T>(T dialogViewModel) where T : IScreen;
+
+        /// <summary>
+        /// Will show a dialog of the type <see cref="IScreen"/>
+        /// It will provide a callback if the dialog was closed
+        /// </summary>
+        void ShowDialog<T>(T dialogViewModel, Action<T> callback) where T : IScreen;
+
+        /// <summary>
+        /// Shows a messagebox with multiple options
+        /// </summary>
+        /// <param name="message">The message string</param>
+        /// <param name="title">The title of the opened box</param>
+        /// <param name="options">The options for the opened box.</param>
+        /// <param name="image">The visible image of the box</param>
+        /// <param name="callback">The callback if the messagebox returns</param>
+        void ShowMessageBox(string message, string title, MessageBoxOptions options, MessageBoxImage image, Action<IMessageBox> callback);
+
+        /// <summary>
+        /// Shows a messagebox with multiple options
+        /// </summary>
+        /// <param name="message">The message string</param>
+        /// <param name="title">The title of the opened box</param>
+        /// <param name="options">The options for the opened box.</param>
+        /// <param name="image">The visible image of the box</param>
+        void ShowMessageBox(string message, string title, MessageBoxOptions options, MessageBoxImage image);
+
+        /// <summary>
+        /// Shows a messagebox with multiple options
+        /// </summary>
+        /// <param name="message">The message string</param>
+        /// <param name="title">The title of the opened box</param>
+        /// <param name="callback">The callback if the messagebox returns</param>
+        void ShowMessageBox(string message, string title, Action<IMessageBox> callback);
+
+        /// <summary>
+        /// Shows a messagebox with multiple options
+        /// </summary>
+        /// <param name="message">The message string</param>
+        /// <param name="title">The title of the opened box</param>
+        void ShowMessageBox(string message, string title);
+    }
+}

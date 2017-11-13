@@ -1,0 +1,81 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:c4I="clr-namespace:C4I">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Themes/Generic/Common.xaml" />
+        <ResourceDictionary Source="../Base/EddieButtonBase/Generic.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <c4I:IntToBooleanConverter x:Key="IntToBooleanConverter" />
+    
+    <Style TargetType="Path" x:Key="EddieModuleButtonIconStyle" BasedOn="{StaticResource ButtonIconStyle}">
+        <Setter Property="Height" Value="40" />
+        <Setter Property="Width" Value="40" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Stretch" Value="Uniform" />
+    </Style>
+
+    <Style TargetType="Label" x:Key="EddieModuleButtonBadgeStyle" BasedOn="{StaticResource BadgeLabel}">
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="Margin" Value="5,-22,-25,2" />
+        <Setter Property="ClipToBounds" Value="False" />
+    </Style>
+
+    <Style x:Key="EddieModuleButtonTextStyle" TargetType="TextBlock" BasedOn="{StaticResource TextBlockStyleBase}">
+        <Setter Property="Foreground" Value="{StaticResource GrayButtonForegroundColorBrush}" />
+        <Setter Property="TextAlignment" Value="Center" />
+        <Setter Property="Margin" Value="0,5,0,0" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+    </Style>
+
+    <Style x:Key="ModuleButtonButtonStyle" TargetType="c4I:EddieButton">
+        <Setter Property="Height" Value="66" />
+        <Setter Property="Width" Value="66" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Margin" Value="0,0,0,0" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+    </Style>
+
+    <Style TargetType="c4I:EddieModuleButton">
+        <Setter Property="Width" Value="100" />
+        <Setter Property="Height" Value="90" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="c4I:EddieModuleButton">
+                    <DockPanel x:Name="LayoutRoot">
+                        <c4I:EddieButton x:Name="PART_MainButton" DockPanel.Dock="Top"
+                                         Style="{StaticResource ModuleButtonButtonStyle}"
+                                         AutomationProperties.AutomationId="{TemplateBinding AutomationProperties.AutomationId}">
+                            <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                <Path x:Name="PART_Path" Data="{TemplateBinding IconGeometry}"
+                                      Style="{StaticResource EddieModuleButtonIconStyle}">
+                                </Path>
+
+                                <Label Grid.Column="0" Grid.Row="0" Style="{StaticResource EddieModuleButtonBadgeStyle}"
+                                       Content="{TemplateBinding Notifications}"
+                                       Visibility="{TemplateBinding Notifications, Converter={StaticResource IntToBooleanConverter}}" />
+                            </Grid>
+                        </c4I:EddieButton>
+
+                        <TextBlock DockPanel.Dock="Top" Style="{StaticResource EddieModuleButtonTextStyle}"
+                                   Text="{TemplateBinding Text}" />
+
+                    </DockPanel>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="EddieStyle" Value="Green">
+                            <Setter TargetName="PART_MainButton" Property="EddieStyle" Value="Green" />
+                        </Trigger>
+                        <Trigger Property="EddieStyle" Value="Gray">
+                            <Setter TargetName="PART_Path" Property="Fill" Value="Black" />
+                            <Setter TargetName="PART_MainButton" Property="EddieStyle" Value="Gray" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
