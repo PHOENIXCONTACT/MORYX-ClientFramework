@@ -135,8 +135,12 @@ namespace Controls4Industry.TestProject
 
         private void SpeedTestButtonClick(object sender, RoutedEventArgs e)
         {
+            SpeedTestButton.Icon = CommonShapeType.Refresh;
+
             var speedTest = new SpeedTestWindow();
             speedTest.ShowDialog();
+
+            SpeedTestButton.Icon = CommonShapeType.Unset;
         }
 
         public TestComboBoxEntry SelectedComboBoxEntry { get; set; }

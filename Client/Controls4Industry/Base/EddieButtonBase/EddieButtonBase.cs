@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
@@ -29,7 +30,14 @@ namespace C4I
         /// DependencyProperty Icon type of <see cref="CommonShapeType"/> which sets the icon on the button
         /// </summary>
         public static readonly DependencyProperty IconProperty = DependencyProperty.Register(
-            "Icon", typeof(CommonShapeType), typeof(EddieButtonBase), new PropertyMetadata(CommonShapeType.Unset));
+            "Icon", typeof(CommonShapeType), typeof(EddieButtonBase), new PropertyMetadata(CommonShapeType.Unset, IconChanged));
+
+        private static void IconChanged(DependencyObject d, DependencyPropertyChangedEventArgs args)
+        {
+            var control = d as EddieButtonBase;
+            // ReSharper disable once PossibleNullReferenceException
+            control.IconPath = ShapeFactory.GetShapeGeometry(control.Icon);
+        }
 
         /// <summary>
         /// Icon type of <see cref="CommonShapeType"/> which sets the icon on the button
@@ -53,17 +61,6 @@ namespace C4I
         {
             get { return (Geometry)GetValue(IconPathProperty); }
             set { SetValue(IconPathProperty, value); }
-        }
-
-        ///
-        public override void OnApplyTemplate()
-        {
-            base.OnApplyTemplate();
-
-            if (IconPath == null)
-            {
-                IconPath = ShapeFactory.GetShapeGeometry(Icon);
-            }
         }
     }
 }

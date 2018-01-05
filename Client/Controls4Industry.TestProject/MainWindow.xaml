@@ -49,7 +49,7 @@
                             </StackPanel.Resources>
 
                             <LabeledControlHost LabelA="Normal">
-                                <EddieButton Content="Speed Test" Click="SpeedTestButtonClick" />
+                                <EddieButton x:Name="SpeedTestButton" Content="Speed Test" Click="SpeedTestButtonClick" />
                             </LabeledControlHost>
 
                             <LabeledControlHost LabelA="Icon">
