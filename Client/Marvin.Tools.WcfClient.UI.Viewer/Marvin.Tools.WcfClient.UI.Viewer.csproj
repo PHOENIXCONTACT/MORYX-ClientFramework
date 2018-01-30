@@ -85,11 +85,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Marvin, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Marvin.3.0.0-alpha345\lib\net461\Marvin.dll</HintPath>
+      <HintPath>..\..\packages\Marvin.3.0.0-alpha553\lib\net461\Marvin.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Marvin.Tools.Wcf, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Marvin.Tools.Wcf.3.0.0-alpha345\lib\net461\Marvin.Tools.Wcf.dll</HintPath>
+      <HintPath>..\..\packages\Marvin.Tools.Wcf.3.0.0-alpha553\lib\net461\Marvin.Tools.Wcf.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">

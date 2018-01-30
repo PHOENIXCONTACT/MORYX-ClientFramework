@@ -14,7 +14,6 @@
         <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieModuleButton/Generic.xaml" />
         <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieTextBox/Generic.xaml" />
         <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieHistoryButtonBar/Generic.xaml" />
-        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieNotificationBar/Generic.xaml" />
         <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieNavigationBar/Generic.xaml" />
         <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieSelectableLabel/Generic.xaml" />
         <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieProgressBar/Generic.xaml" />
