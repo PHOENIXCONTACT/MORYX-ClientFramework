@@ -1,8 +1,12 @@
-Caliiburn Conventions {#client-caliburnConventions}
-========
+---
+uid: CaliburnConventions
+---
+# Caliburn Conventions
 
-# Naming Conventions
+## Naming Conventions
+
 Guidelines for usage of Caliburn.Micro
+
 - Usage of caliburn micro base classes - wherever possible
 - Do not use button name as event. Use the following notation to see the real event which will be wired by caliburn:
 
@@ -21,8 +25,9 @@ Guidelines for usage of Caliburn.Micro
   - If required castle may be extended to find a custom view for a view model
 - Use the default caliburn naming conventions (TestView and TestViewModel)
 
-# IntelliSense
-For intellisense add the following code to your Window/UserControl
+## IntelliSense
+
+For IntelliSense add the following code to your Window/UserControl. Note that it also can be helpful for the XAML preview in the Visual Studio.
 
 ````xml
 <UserControl x:Class="..."

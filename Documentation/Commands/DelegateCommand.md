@@ -1,2 +1,0 @@
-DelegateCommand {#client-delegateCommand}
-========

@@ -1,13 +1,17 @@
-Tipps and Tricks {#client-tippsTicks}
-========
+---
+uid: TippsAndTricks
+---
+# Tipps and Tricks
 
-# Using own executable
+## Using own executable
+
 In some cases it can be required that you want to have your own executable.
+
 * Own icon
 * Other start lifecycle
 * ...
 
-Just create a new WPF application and delete everything from it. 
+Just create a new WPF application and delete everything from it.
 Create a Program.cs and add a normal main method.
 Reference this Application with the framework HeartOfLead.exe.
 Attribute this Main() with the *STAThreadAttribute* and create the ClientKernal:

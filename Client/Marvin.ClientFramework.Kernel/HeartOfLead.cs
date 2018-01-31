@@ -18,6 +18,10 @@ using MessageBoxImage = System.Windows.MessageBoxImage;
 
 namespace Marvin.ClientFramework.Kernel
 {
+    /// <summary>
+    /// Main class to create ClientFramwork UI's
+    /// </summary>
+    /// <typeparam name="TCommandLineArguments"></typeparam>
     public class HeartOfLead<TCommandLineArguments> : ILoggingHost where TCommandLineArguments : CommandLineArgumentOptionsBase
     {
         #region Fields
@@ -38,13 +42,19 @@ namespace Marvin.ClientFramework.Kernel
         #region Main and ctor
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="HeartOfLead"/> class.
+        /// Initializes a new instance of the <see cref="HeartOfLead{TCommandLineArguments}"/> class.
         /// </summary>
+        /// <param name="args"></param>
         public HeartOfLead(string[] args)
         {
             Initialize(args);
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HeartOfLead{TCommandLineArguments}"/> class.
+        /// </summary>
+        /// <param name="loggingHostName"></param>
+        /// <param name="args"></param>
         public HeartOfLead(string loggingHostName, string[] args)
         {
             _loggingHostName = loggingHostName;
@@ -313,8 +323,14 @@ namespace Marvin.ClientFramework.Kernel
 
         IModuleLogger ILoggingHost.Logger { get; set; }
 
+        /// <summary>
+        /// Returns the current <see cref="AppConfig"/>
+        /// </summary>
         protected AppConfig AppConfig { get; private set; }
 
+        /// <summary>
+        /// Returns the current <see cref="CommandLineArgumentOptionsBase"/>
+        /// </summary>
         protected TCommandLineArguments CommandLineOptions { get; private set; }
     }
 }
