@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Linq;
+using System.Windows;
 using Caliburn.Micro;
 using Marvin.ClientFramework.Shell;
 using Marvin.Container;
@@ -55,13 +56,33 @@ namespace Marvin.ClientFramework.Kernel
         /// </summary>
         public void InitializeShell()
         {
-            var configuration = _container.Resolve<ModulesConfiguration>();
+            IScreen shellToShow;
 
-            _moduleShell = _container.Resolve<IModuleShell>(configuration.Shell.ShellName);
-            _moduleShell.Initialize();
-            _moduleShell.Activate();
+            var moduleManager = _container.Resolve<IModuleManager>();
+            if (moduleManager.EnabledModules.Any())
+            {
+                var configuration = _container.Resolve<ModulesConfiguration>();
 
-            View.SetModel(Current.MainWindow, _moduleShell);
+                _moduleShell = _container.Resolve<IModuleShell>(configuration.Shell.ShellName);
+
+                if (_moduleShell != null)
+                {
+                    shellToShow = _moduleShell;
+                    _moduleShell.Initialize();
+                }
+                else
+                {
+                    shellToShow = new MessageScreenViewModel("No shell to show was found.");
+                }
+            }
+            else
+            {
+                shellToShow = new MessageScreenViewModel("No module to load was found.");
+            }
+
+            shellToShow.Activate();
+
+            View.SetModel(Current.MainWindow, shellToShow);
         }
 
         /// <summary>

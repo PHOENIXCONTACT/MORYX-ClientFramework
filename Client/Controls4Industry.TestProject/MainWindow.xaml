@@ -118,15 +118,15 @@
                                 </Style>
                             </StackPanel.Resources>
 
-                            <LabeledControlHost LabelA="Header" LabelB="Content" SharedSizeGroupName="" SharedSizeGroupLabel="Shared">
+                            <LabeledControlHost LabelA="Header" LabelB="Content" SharedSizeGroupName="Shared">
                                 <EddieButton Content="A Button" />
                             </LabeledControlHost>
 
-                            <LabeledControlHost LabelA="Long Header" LabelB="Content" SharedSizeGroupName="" SharedSizeGroupLabel="Shared">
+                            <LabeledControlHost LabelA="Long Header" LabelB="Content" SharedSizeGroupName="Shared">
                                 <EddieButton Content="A Button" />
                             </LabeledControlHost>
 
-                            <LabeledControlHost LabelA="Very Very Long Header" LabelB="This is not shared" SharedSizeGroupName="" SharedSizeGroupLabel="Shared">
+                            <LabeledControlHost LabelA="Very Very Long Header" LabelB="This is not shared" SharedSizeGroupName="Shared">
                                 <EddieButton Content="A Button" />
                             </LabeledControlHost>
 
@@ -134,7 +134,7 @@
                                 <EddieButton Content="A Button" />
                             </LabeledControlHost>
 
-                            <LabeledControlHost LabelA="Another Header" LabelB="Content" SharedSizeGroupName="" SharedSizeGroupLabel="Shared">
+                            <LabeledControlHost LabelA="Another Header" LabelB="Content" SharedSizeGroupName="Shared">
                                 <EddieButton Content="A Button" />
                             </LabeledControlHost>
 

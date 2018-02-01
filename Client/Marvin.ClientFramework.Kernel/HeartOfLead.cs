@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading;
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Threading;
 using Caliburn.Micro;
 using CommandLine;
@@ -14,17 +15,40 @@ using Marvin.Container;
 using Marvin.Logging;
 using Marvin.Threading;
 using Marvin.Tools;
-using MessageBoxImage = System.Windows.MessageBoxImage;
 
 namespace Marvin.ClientFramework.Kernel
 {
     /// <summary>
     /// Main class to create ClientFramwork UI's
     /// </summary>
-    /// <typeparam name="TCommandLineArguments"></typeparam>
-    public class HeartOfLead<TCommandLineArguments> : ILoggingHost where TCommandLineArguments : CommandLineArgumentOptionsBase
+    public class HeartOfLead : HeartOfLead<DefaultCommandLineArguments>
+    {
+        /// <inheritdoc />
+        public HeartOfLead(string[] args) : base(args)
+        {
+        }
+    }
+
+    /// <summary>
+    /// Main class to create ClientFramwork UI's
+    /// </summary>
+    public class HeartOfLead<TCommandLineArguments> : ILoggingHost 
+        where TCommandLineArguments : DefaultCommandLineArguments
     {
         #region Fields
+
+        string ILoggingHost.Name => "ClientKernel";
+        IModuleLogger ILoggingHost.Logger { get; set; }
+
+        /// <summary>
+        /// Returns the current <see cref="AppConfig"/>
+        /// </summary>
+        protected AppConfig AppConfig { get; private set; }
+
+        /// <summary>
+        /// Returns the current <see cref="DefaultCommandLineArguments"/>
+        /// </summary>
+        protected TCommandLineArguments CommandLineOptions { get; private set; }
 
         private GlobalContainer _container;
         private IKernelConfigManager _configManager;
@@ -33,7 +57,6 @@ namespace Marvin.ClientFramework.Kernel
         private IRunModeController _runModeController;
         private ILoaderHandler _loaderHandler;
         private IModuleManager _moduleManager;
-        private readonly string _loggingHostName = "ClientFramework";
 
         private string[] _args;
 
@@ -50,18 +73,6 @@ namespace Marvin.ClientFramework.Kernel
             Initialize(args);
         }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="HeartOfLead{TCommandLineArguments}"/> class.
-        /// </summary>
-        /// <param name="loggingHostName"></param>
-        /// <param name="args"></param>
-        public HeartOfLead(string loggingHostName, string[] args)
-        {
-            _loggingHostName = loggingHostName;
-
-            Initialize(args);
-        }
-
         private void Initialize(string[] args)
         {
             _args = args;
@@ -69,6 +80,7 @@ namespace Marvin.ClientFramework.Kernel
             // This is necessary to enable assembly lookup from AppDomain
             AppDomain.CurrentDomain.AssemblyResolve += ResolveAssembly;
 
+            // Load additional assemblies
             LoadAssembliesFromFramework();
         }
 
@@ -99,8 +111,6 @@ namespace Marvin.ClientFramework.Kernel
 
             // Limit instances
             LimitInstances();
-
-            OnApplicationConfigured();
 
             // Manages the loader
             ConfigureLoaderHandler();
@@ -186,11 +196,8 @@ namespace Marvin.ClientFramework.Kernel
         {
             _application.DisposeShell();
 
-            if (_moduleManager != null)
-                _moduleManager.Dispose();
-
-            if (_appDataConfigManager != null)
-                _appDataConfigManager.SaveAll();
+            _moduleManager?.Dispose();
+            _appDataConfigManager?.SaveAll();
         }
 
         /// <summary>
@@ -268,6 +275,9 @@ namespace Marvin.ClientFramework.Kernel
             //load global app config
             AppConfig = _configManager.GetConfiguration<AppConfig>();
 
+            if (CommandLineOptions.StartConfigurator || AppConfig.OpenConfigWithControl && (Keyboard.Modifiers & ModifierKeys.Control) > 0)
+                AppConfig.RunMode = KernelConstants.CONFIG_RUNMODE;
+
             _appDataConfigManager = new AppDataConfigManager();
             _appDataConfigManager.Initialize(AppConfig.Application);
             _container.SetInstance(_appDataConfigManager);
@@ -310,26 +320,5 @@ namespace Marvin.ClientFramework.Kernel
             // ReSharper disable once AssignNullToNotNullAttribute
             Directory.SetCurrentDirectory(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
         }
-
-        /// <summary>
-        /// Is called when the application has finished all configuration and initializations things but before the window is shown
-        /// </summary>
-        protected virtual void OnApplicationConfigured()
-        {
-        }
-
-        string ILoggingHost.Name => _loggingHostName;
-
-        IModuleLogger ILoggingHost.Logger { get; set; }
-
-        /// <summary>
-        /// Returns the current <see cref="AppConfig"/>
-        /// </summary>
-        protected AppConfig AppConfig { get; private set; }
-
-        /// <summary>
-        /// Returns the current <see cref="CommandLineArgumentOptionsBase"/>
-        /// </summary>
-        protected TCommandLineArguments CommandLineOptions { get; private set; }
     }
 }

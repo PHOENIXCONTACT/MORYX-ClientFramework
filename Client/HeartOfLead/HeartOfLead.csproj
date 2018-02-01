@@ -7,7 +7,7 @@
     <ProjectGuid>{3684930F-421E-4B27-AD5D-C136863C1C46}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Marvin.ClientFramework.HeartOfLead</RootNamespace>
+    <RootNamespace>Marvin.ClientFramework.Start</RootNamespace>
     <AssemblyName>HeartOfLead</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -53,7 +53,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Marvin.ClientFramework.HeartOfLead.Program</StartupObject>
+    <StartupObject>Marvin.ClientFramework.Start.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>favicon.ico</ApplicationIcon>
@@ -169,7 +169,6 @@
     <Compile Include="..\..\GlobalAssemblyInfo.cs">
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="HeartOfLeadArgumentOptions.cs" />
     <Compile Include="Program.cs" />
   </ItemGroup>
   <ItemGroup>

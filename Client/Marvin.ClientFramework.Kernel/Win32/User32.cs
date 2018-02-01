@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace Marvin.ClientFramework
+namespace Marvin.ClientFramework.Kernel
 {
     /// <summary>
     /// DllImports for User32.dll

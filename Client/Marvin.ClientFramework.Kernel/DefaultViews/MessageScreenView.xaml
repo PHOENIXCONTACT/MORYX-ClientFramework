@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="Marvin.ClientFramework.Kernel.MessageScreenView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:kernel="clr-namespace:Marvin.ClientFramework.Kernel"
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance kernel:MessageScreenViewModel}">
+    <UserControl.Resources>
+        <DesignTimeResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Controls4Industry;component/Themes/Generic/Brushes.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </DesignTimeResourceDictionary>
+    </UserControl.Resources>
+    <Grid Background="{StaticResource WindowBackgroundGradientBrush}">
+        <Path x:Name="PxLogo" Margin="10,10,0,0"
+              Data="{CommonShape ShapeType=PxCLogo}"
+              Height="30" Width="117" Fill="Black"
+              Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left" />
+
+        <TextBlock Margin="10,10,0,10" Eddie.TextFormat="Bold"
+                   Text="{Binding Message}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+    </Grid>
+</UserControl>
