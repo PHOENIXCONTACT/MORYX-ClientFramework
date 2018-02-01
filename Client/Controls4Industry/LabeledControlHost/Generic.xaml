@@ -7,7 +7,9 @@
     </ResourceDictionary.MergedDictionaries>
     
     <ControlTemplate x:Key="LabeledControlHostTemplate" TargetType="c4I:LabeledControlHost">
-        <Grid Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+        <Grid Background="{TemplateBinding Background}" SnapsToDevicePixels="True" 
+              HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+              VerticalAlignment="{TemplateBinding VerticalAlignment}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition MinWidth="{TemplateBinding LabelWidth}" Width="Auto" SharedSizeGroup="{TemplateBinding SharedSizeGroupLabel}"/>
                 <ColumnDefinition Width="*" SharedSizeGroup="{TemplateBinding SharedSizeGroupContent}"/>

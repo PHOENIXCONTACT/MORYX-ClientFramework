@@ -1,10 +1,18 @@
-﻿using System.Windows;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Remoting.Channels;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace C4I
 {
+    [TemplatePart(Name = "LabelHost", Type = typeof(Panel))]
     public class LabeledControlHost : ContentControl
     {
+        private Panel _labelHost;
+
         public static readonly DependencyProperty LabelAProperty = DependencyProperty.Register(
             "LabelA", typeof (string), typeof (LabeledControlHost), new PropertyMetadata(default(string)));
 
@@ -14,11 +22,13 @@ namespace C4I
         public static readonly DependencyProperty LabelWidthProperty = DependencyProperty.Register(
             "LabelWidth", typeof(double), typeof(LabeledControlHost), new PropertyMetadata(default(double)));
 
-        public static readonly DependencyProperty SharedSizeGroupLabelProperty = DependencyProperty.Register(
-            "SharedSizeGroupLabel", typeof (string), typeof (LabeledControlHost), new PropertyMetadata("labelGroup"));
+        public static readonly DependencyProperty SharedSizeGroupNameProperty = DependencyProperty.Register(
+            "SharedSizeGroupName", typeof(string), typeof(LabeledControlHost), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.AffectsMeasure, OnSharedSizeGroupName));
 
-        public static readonly DependencyProperty SharedSizeGroupContentProperty = DependencyProperty.Register(
-            "SharedSizeGroupContent", typeof(string), typeof(LabeledControlHost), new PropertyMetadata("contentGroup"));
+        private static void OnSharedSizeGroupName(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs dependencyPropertyChangedEventArgs)
+        {
+            (dependencyObject as LabeledControlHost)?.CalculateSharedLabelWidth();
+        }
 
         static LabeledControlHost()
         {
@@ -44,16 +54,48 @@ namespace C4I
             set { SetValue(LabelBProperty, value); }
         }
 
-        public string SharedSizeGroupLabel
+        public string SharedSizeGroupName
         {
-            get { return (string) GetValue(SharedSizeGroupLabelProperty); }
-            set { SetValue(SharedSizeGroupLabelProperty, value); }
+            get { return (string)GetValue(SharedSizeGroupNameProperty); }
+            set { SetValue(SharedSizeGroupNameProperty, value); }
         }
 
-        public string SharedSizeGroupContent
+        public override void OnApplyTemplate()
         {
-            get { return (string)GetValue(SharedSizeGroupContentProperty); }
-            set { SetValue(SharedSizeGroupContentProperty, value); }
+            base.OnApplyTemplate();
+
+            _labelHost = Template.FindName("LabelHost", this) as Panel;
+            if(_labelHost == null)
+            {
+                throw new InvalidOperationException("LabelHost not found in template");
+            }
+
+            _labelHost.SizeChanged += OnLabelHostSizeChanged;
+        }
+
+        private void OnLabelHostSizeChanged(object sender, SizeChangedEventArgs sizeChangedEventArgs)
+        {
+            CalculateSharedLabelWidth();
+        }
+
+        private void CalculateSharedLabelWidth()
+        {
+            var parentPanel = Parent as Panel;
+
+            if (_labelHost == null || parentPanel == null || string.IsNullOrWhiteSpace(SharedSizeGroupName))
+                return;
+
+            var labeledControlHosts = parentPanel.Children.OfType<LabeledControlHost>().Where(l => l.SharedSizeGroupName == SharedSizeGroupName).ToList();
+
+            if (labeledControlHosts.Count > 1)
+            {
+                var maxWidth = labeledControlHosts.Max(l => l._labelHost.RenderSize.Width + l._labelHost.Margin.Left + l._labelHost.Margin.Right);
+
+                foreach (var labeledControlHost in labeledControlHosts)
+                {
+                    labeledControlHost.LabelWidth = maxWidth;
+                }
+            }
         }
     }
 }
