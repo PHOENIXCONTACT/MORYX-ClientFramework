@@ -115,6 +115,21 @@
                     </Grid>
                 </StackPanel>
             </TabItem>
+            <TabItem Header="ComboBox">
+                <StackPanel HorizontalAlignment="Center" Margin="0,10,0,0">
+                    <EddieComboBox SelectedIndex="0" Width="200">
+                        <EddieComboBox.ItemsSource>
+                            <x:Array Type="sys:String" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                                <sys:String>Entry 1</sys:String>
+                                <sys:String>Entry 2</sys:String>
+                                <sys:String>Entry 3</sys:String>
+                                <sys:String>Entry 4</sys:String>
+                                <sys:String>Entry 5</sys:String>
+                            </x:Array>
+                        </EddieComboBox.ItemsSource>
+                    </EddieComboBox>
+                </StackPanel>
+            </TabItem>
             <TabItem Header="Progress">
                 <StackPanel>
                     <LabeledControlHost LabelA="Normal" LabelB="EddieProgressBar">

@@ -44,7 +44,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ComboBoxItem">
-                    <DockPanel x:Name="Content" LastChildFill="True">
+                    <DockPanel x:Name="Content" LastChildFill="True" Background="Transparent">
 
                         <Path x:Name="CheckMark" Width="12" Height="11" Margin="5,0,5,0"
                               Style="{StaticResource EddieComboBoxCheckMark}" Visibility="Hidden" />
