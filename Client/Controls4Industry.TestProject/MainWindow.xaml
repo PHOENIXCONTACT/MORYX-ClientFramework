@@ -599,7 +599,7 @@
             </TabItem>
 
             <TabItem Header="Entry Editor">
-                <controls:ConfigEditor Margin="20"  RootEntry="{Binding EntryViewModels, ElementName=Window}" IsEditMode="True" />
+                <controls:EntryEditor Margin="20"  RootEntry="{Binding EntryViewModels, ElementName=Window}" IsEditMode="True" />
             </TabItem>
         </EddieNavigationBar>
     </Grid>

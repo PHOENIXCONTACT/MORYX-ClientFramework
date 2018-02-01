@@ -57,15 +57,15 @@
     <Compile Include="..\..\GlobalAssemblyInfo.cs">
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="ConfigEditor\ConfigEditor.xaml.cs">
-      <DependentUpon>ConfigEditor.xaml</DependentUpon>
+    <Compile Include="EntryEditor\EntryEditor.xaml.cs">
+      <DependentUpon>EntryEditor.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ConfigEditor\Converter\EntryTypeToDelButtonVisibilityConverter.cs" />
-    <Compile Include="ConfigEditor\Converter\EntryValueToButtonText.cs" />
-    <Compile Include="ConfigEditor\Converter\EntryValueToVisibilityConverter.cs" />
-    <Compile Include="ConfigEditor\Converter\SubEntriesToVisibilityConverter.cs" />
-    <Compile Include="ConfigEditor\Converter\ValueTypeTemplateSelector.cs" />
-    <Compile Include="ConfigEditor\EntryViewModel.cs" />
+    <Compile Include="EntryEditor\Converter\EntryTypeToDelButtonVisibilityConverter.cs" />
+    <Compile Include="EntryEditor\Converter\EntryValueToButtonText.cs" />
+    <Compile Include="EntryEditor\Converter\EntryValueToVisibilityConverter.cs" />
+    <Compile Include="EntryEditor\Converter\SubEntriesToVisibilityConverter.cs" />
+    <Compile Include="EntryEditor\Converter\ValueTypeTemplateSelector.cs" />
+    <Compile Include="EntryEditor\EntryViewModel.cs" />
     <Compile Include="InfoBox\InfoBox.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -73,7 +73,7 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="ConfigEditor\ConfigEditor.xaml">
+    <Page Include="EntryEditor\EntryEditor.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
