@@ -282,11 +282,10 @@ namespace Marvin.ClientFramework.Kernel
                 return;
 
             var instances = Process.GetProcessesByName(Path.GetFileNameWithoutExtension(Assembly.GetEntryAssembly().Location));
-            if (instances.Length < 1)
+            if (instances.Length <= 1) // Usually the instance count should be at least 1 but if the application is started in the debugger the instance count is zero.
                 return;
 
-            MessageBox.Show("Application is already started. Please close all windows before starting a new instance",
-                "Already started", MessageBoxButton.OK, MessageBoxImage.Error);
+            User32.BringToFront(instances.OrderBy(p => p.StartTime).First().MainWindowHandle);
 
             Environment.Exit(1);
         }
