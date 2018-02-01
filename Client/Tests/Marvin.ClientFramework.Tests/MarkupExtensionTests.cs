@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows;
+using Marvin.ClientFramework.Tests.Mocks;
 using Marvin.ClientFramework.UI;
 using Marvin.Users;
+using Moq;
 using NUnit.Framework;
 
-namespace Marvin.ClientFramework.Base.Tests
+namespace Marvin.ClientFramework.Tests
 {
     [TestFixture]
     public class MarkupExtensionTests
@@ -76,8 +78,9 @@ namespace Marvin.ClientFramework.Base.Tests
             var ext = (OperationAccessExtensionBase) Activator.CreateInstance(extension);
             
             ext.Operation = operation;
-            
-            var result = (T) ext.ProvideValue(new ServiceProviderMock());
+
+            var serviceProviderMock = new Mock<IServiceProvider>();
+            var result = (T)ext.ProvideValue(serviceProviderMock.Object);
 
             return result;
         }

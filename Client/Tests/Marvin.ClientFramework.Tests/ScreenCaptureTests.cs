@@ -5,7 +5,7 @@ using System.IO;
 using Marvin.ClientFramework.UI;
 using NUnit.Framework;
 
-namespace Marvin.ClientFramework.Base.Tests
+namespace Marvin.ClientFramework.Tests
 {
     [TestFixture]
     public class ScreenCaptureTests

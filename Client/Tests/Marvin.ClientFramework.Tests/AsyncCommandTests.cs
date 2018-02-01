@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Marvin.ClientFramework.Commands;
 using NUnit.Framework;
 
-namespace Marvin.ClientFramework.Base.Tests
+namespace Marvin.ClientFramework.Tests
 {
     [TestFixture]
     public class AsyncCommandTests

@@ -83,7 +83,7 @@ namespace Marvin.ClientFramework.Kernel
                     AssembliesDownloaded(this, new ReadOnlyCollection<Assembly>(_internalLoadedAssemblies));
             }
 
-            foreach (var assemblyLoader in _assemblyLoaders)
+            foreach (var assemblyLoader in _assemblyLoaders.ToList())
             {
                 assemblyLoader.DownloadFile();
             }
