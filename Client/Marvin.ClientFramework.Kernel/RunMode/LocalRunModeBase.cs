@@ -39,6 +39,8 @@ namespace Marvin.ClientFramework.Kernel
         ///
         public override void Initialize()
         {
+            base.Initialize();
+
             LoadUserInfos();
 
             // Load modules
@@ -47,7 +49,7 @@ namespace Marvin.ClientFramework.Kernel
 
             // Get types
             var moduleTypes = GlobalContainer.GetRegisteredImplementations(typeof(IClientModule));
-            var shellTypes = GlobalContainer.GetRegisteredImplementations(typeof(IModuleShell));
+            var shellTypes = GlobalContainer.GetRegisteredImplementations(typeof(IModuleShell)).ToArray();
 
             // Get assemblies
             Assemblies.AddRange(moduleTypes.Union(shellTypes).Distinct().Select(t => t.Assembly).Distinct().ToList());

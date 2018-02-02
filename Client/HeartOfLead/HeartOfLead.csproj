@@ -140,12 +140,12 @@
       <HintPath>..\..\packages\CommandLineParser.2.1.1-beta\lib\net45\CommandLine.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Marvin, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Marvin.3.0.0-alpha553\lib\net461\Marvin.dll</HintPath>
+    <Reference Include="Marvin, Version=3.0.0.437, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Marvin.3.0.0-dev000437\lib\net461\Marvin.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Marvin.Container, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Marvin.Container.3.0.0-alpha553\lib\net461\Marvin.Container.dll</HintPath>
+    <Reference Include="Marvin.Container, Version=3.0.0.437, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Marvin.Container.3.0.0-dev000437\lib\net461\Marvin.Container.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -182,14 +182,26 @@
       <Project>{8713d17c-63c8-4cef-9ff9-376c921ef92b}</Project>
       <Name>Controls4Industry</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Marvin.ClientFramework.Config.UserManagement\Marvin.ClientFramework.Config.UserManagement.csproj">
+      <Project>{44eca7d2-4f73-4465-93f0-c47ef06d3c18}</Project>
+      <Name>Marvin.ClientFramework.Config.UserManagement</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Marvin.ClientFramework.Config\Marvin.ClientFramework.Config.csproj">
       <Project>{62e0152c-b585-4cce-9e93-d8c780c35a02}</Project>
       <Name>Marvin.ClientFramework.Config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Marvin.ClientFramework.DefaultShell\Marvin.ClientFramework.UI.DefaultShell.csproj">
+      <Project>{8eeb4d5d-bf47-4bbd-9f88-aa277e0e1fc4}</Project>
+      <Name>Marvin.ClientFramework.UI.DefaultShell</Name>
     </ProjectReference>
     <ProjectReference Include="..\Marvin.ClientFramework.Kernel\Marvin.ClientFramework.Kernel.csproj">
       <Project>{9a690b37-ab29-4c5d-b185-3dd20dd8fb18}</Project>
       <Name>Marvin.ClientFramework.Kernel</Name>
       <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Marvin.ClientFramework.UserMgnt\Marvin.ClientFramework.UserManagement.csproj">
+      <Project>{f2a5992c-102c-4f7d-b642-531c169ab513}</Project>
+      <Name>Marvin.ClientFramework.UserManagement</Name>
     </ProjectReference>
     <ProjectReference Include="..\Marvin.ClientFramework\Marvin.ClientFramework.csproj">
       <Project>{7b47f295-1567-4473-b4b5-44ddf88dfa2e}</Project>

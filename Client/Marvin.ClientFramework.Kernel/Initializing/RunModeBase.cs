@@ -36,7 +36,11 @@ namespace Marvin.ClientFramework.Kernel
         #endregion
 
         ///
-        public abstract void Initialize();
+        public virtual void Initialize()
+        {
+            // Register FallbackShell
+            GlobalContainer.SetInstance(new FallbackShellViewModel() as IModuleShell, FallbackShellViewModel.ShellName);
+        }
 
         ///
         public abstract void LoadModulesConfiguration();
@@ -61,8 +65,14 @@ namespace Marvin.ClientFramework.Kernel
                     shellType.GetCustomAttribute<ModuleShellAttribute>().Name.Equals(modulesConfig.Shell.ShellName));
             }
 
-            if (selectedShell == null) 
+            if (selectedShell == null)
+            {
+                var fallbackShell = (FallbackShellViewModel)GlobalContainer.Resolve<IModuleShell>(FallbackShellViewModel.ShellName);
+                fallbackShell.ConfiguredShell = modulesConfig.Shell.ShellName;
+
+                modulesConfig.Shell.ShellName = fallbackShell.ConfiguredShell;
                 return;
+            }
 
             var shellAttr = selectedShell.GetCustomAttribute<ModuleShellAttribute>();
             var libraryName = selectedShell.Assembly.ManifestModule.ScopeName;

@@ -1,11 +1,11 @@
 ﻿namespace Marvin.ClientFramework.Kernel
 {
     /// <summary>
-    /// Interaction logic for MessageScreenView.xaml
+    /// Interaction logic for DummyShellView.xaml
     /// </summary>
-    public partial class MessageScreenView
+    public partial class FallbackShellView
     {
-        public MessageScreenView()
+        public FallbackShellView()
         {
             InitializeComponent();
         }

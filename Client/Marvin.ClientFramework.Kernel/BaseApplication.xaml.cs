@@ -56,33 +56,13 @@ namespace Marvin.ClientFramework.Kernel
         /// </summary>
         public void InitializeShell()
         {
-            IScreen shellToShow;
+            var configuration = _container.Resolve<ModulesConfiguration>();
 
-            var moduleManager = _container.Resolve<IModuleManager>();
-            if (moduleManager.EnabledModules.Any())
-            {
-                var configuration = _container.Resolve<ModulesConfiguration>();
+            _moduleShell = _container.Resolve<IModuleShell>(configuration.Shell.ShellName);
+            _moduleShell.Initialize();
+            _moduleShell.Activate();
 
-                _moduleShell = _container.Resolve<IModuleShell>(configuration.Shell.ShellName);
-
-                if (_moduleShell != null)
-                {
-                    shellToShow = _moduleShell;
-                    _moduleShell.Initialize();
-                }
-                else
-                {
-                    shellToShow = new MessageScreenViewModel("No shell to show was found.");
-                }
-            }
-            else
-            {
-                shellToShow = new MessageScreenViewModel("No module to load was found.");
-            }
-
-            shellToShow.Activate();
-
-            View.SetModel(Current.MainWindow, shellToShow);
+            View.SetModel(Current.MainWindow, _moduleShell);
         }
 
         /// <summary>
