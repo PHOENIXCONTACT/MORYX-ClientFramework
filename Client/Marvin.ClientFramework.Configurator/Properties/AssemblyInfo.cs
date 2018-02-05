@@ -4,8 +4,8 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Marvin.ClientFramework.Config")]
-[assembly: AssemblyDescription("Marvin.ClientFramework.Config")]
+[assembly: AssemblyTitle("Marvin.ClientFramework.Configurator")]
+[assembly: AssemblyDescription("Configurator for the ClientFramework")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
