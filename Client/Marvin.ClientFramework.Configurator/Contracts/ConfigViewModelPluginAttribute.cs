@@ -1,7 +1,7 @@
 ﻿using System;
 using Marvin.Container;
 
-namespace Marvin.ClientFramework.Config
+namespace Marvin.ClientFramework.Configurator
 {
     /// <summary>
     /// Base attribute for configuration view model registrations

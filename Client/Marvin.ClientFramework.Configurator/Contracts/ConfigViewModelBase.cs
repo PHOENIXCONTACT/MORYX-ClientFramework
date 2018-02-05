@@ -1,7 +1,7 @@
 ﻿using Caliburn.Micro;
 using Marvin.Configuration;
 
-namespace Marvin.ClientFramework.Config
+namespace Marvin.ClientFramework.Configurator
 {
     /// <summary>
     /// Interface for the configured hosted configuration views

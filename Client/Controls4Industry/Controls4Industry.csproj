@@ -244,6 +244,7 @@
     <Resource Include="Images\window2.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Controls4Industry.nuspec" />
     <None Include="Documentation.md">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

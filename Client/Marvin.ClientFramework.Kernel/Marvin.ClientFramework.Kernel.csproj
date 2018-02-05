@@ -181,6 +181,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Marvin.ClientFramework.Kernel.nuspec" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>

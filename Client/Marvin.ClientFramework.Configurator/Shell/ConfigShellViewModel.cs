@@ -4,7 +4,7 @@ using Marvin.ClientFramework.Shell;
 using Marvin.Logging;
 using Marvin.Threading;
 
-namespace Marvin.ClientFramework.Config
+namespace Marvin.ClientFramework.Configurator
 {
     /// <summary>
     /// Spezialized shell for the configurator

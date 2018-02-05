@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Windows.Controls;
 using System.Windows.Input;
 
-namespace Marvin.ClientFramework.Config
+namespace Marvin.ClientFramework.Configurator
 {
     /// <summary>
     /// Interaction logic for AppConfigView.xaml

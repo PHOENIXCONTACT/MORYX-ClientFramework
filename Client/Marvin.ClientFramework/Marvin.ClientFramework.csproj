@@ -159,6 +159,7 @@
     <Compile Include="WpfPlatform.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Marvin.ClientFramework.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

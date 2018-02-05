@@ -87,6 +87,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Marvin.Controls.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

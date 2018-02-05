@@ -1,6 +1,6 @@
 ﻿using Caliburn.Micro;
 
-namespace Marvin.ClientFramework.Config
+namespace Marvin.ClientFramework.Configurator
 {
     /// <summary>
     /// Conductor interface for configuration conductors

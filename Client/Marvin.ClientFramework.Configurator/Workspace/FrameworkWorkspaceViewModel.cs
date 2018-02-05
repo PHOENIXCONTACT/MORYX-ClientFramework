@@ -1,10 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Caliburn.Micro;
-using Marvin.ClientFramework.Dialog;
+﻿using Caliburn.Micro;
 using Marvin.Container;
 
-namespace Marvin.ClientFramework.Config
+namespace Marvin.ClientFramework.Configurator
 {
     /// <summary>
     /// Main workspace for this module. The view model will host an conductor 

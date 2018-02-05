@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace Marvin.ClientFramework.Config
+namespace Marvin.ClientFramework.Configurator
 {
     /// <summary>
     /// Interaction logic for DefaultShellView.xaml

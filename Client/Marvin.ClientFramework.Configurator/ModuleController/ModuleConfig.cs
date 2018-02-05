@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace Marvin.ClientFramework.Config
+namespace Marvin.ClientFramework.Configurator
 {
     /// <summary>
     /// Config of this module

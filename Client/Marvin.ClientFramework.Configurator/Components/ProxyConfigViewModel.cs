@@ -1,4 +1,4 @@
-﻿namespace Marvin.ClientFramework.Config
+﻿namespace Marvin.ClientFramework.Configurator
 {
     [ConfigViewModelPlugin]
     internal class ProxyConfigViewModel : ConfigViewModelBase<ProxyConfig>

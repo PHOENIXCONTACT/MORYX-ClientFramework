@@ -4,7 +4,7 @@ using Caliburn.Micro;
 using Marvin.ClientFramework.Dialog;
 using Marvin.Container;
 
-namespace Marvin.ClientFramework.Config
+namespace Marvin.ClientFramework.Configurator
 {
     /// <summary>
     /// Conductor for all <see cref="IConfigViewModel"/>

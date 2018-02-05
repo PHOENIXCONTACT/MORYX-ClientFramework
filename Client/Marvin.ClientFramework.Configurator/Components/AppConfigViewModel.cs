@@ -6,7 +6,7 @@ using Marvin.ClientFramework.Kernel;
 using Marvin.Configuration;
 using Marvin.Container;
 
-namespace Marvin.ClientFramework.Config
+namespace Marvin.ClientFramework.Configurator
 {
     [ConfigViewModelPlugin]
     internal class AppConfigViewModel : ConfigViewModelBase<AppConfig>

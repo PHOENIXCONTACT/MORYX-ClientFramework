@@ -4,7 +4,7 @@ using System.Windows.Media;
 using Marvin.ClientFramework.Kernel;
 using Marvin.ClientFramework.Localization;
 
-namespace Marvin.ClientFramework.Config
+namespace Marvin.ClientFramework.Configurator
 {
     /// <summary>
     /// Module controller for the framework configuration. 
