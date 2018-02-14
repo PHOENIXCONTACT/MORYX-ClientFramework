@@ -1,10 +1,14 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using C4I;
 
 namespace Controls4Industry.TestProject
 {
     public class MainWindowViewModel : PropertyChangedBase
     {
+        public ICollection<string> ShapeTypes { get; }
+
         private ObservableCollection<TestListViewEntry> _listViewItemsList = new ObservableCollection<TestListViewEntry>();
 
         public ObservableCollection<TestListViewEntry> ListViewItemsList
@@ -25,6 +29,7 @@ namespace Controls4Industry.TestProject
                     "Team" + i));
             }
 
+            ShapeTypes = new List<string>(Enum.GetNames(typeof(CommonShapeType)));
         }
     }
 }

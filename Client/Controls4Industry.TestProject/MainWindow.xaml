@@ -599,7 +599,24 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Icons">
-                <testProject:IconOverview></testProject:IconOverview>
+                <ScrollViewer>
+                    <ItemsControl ItemsSource="{Binding ShapeTypes}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <DockPanel Margin="10">
+                                    <Border DockPanel.Dock="Bottom" BorderBrush="DarkGray" BorderThickness="1"></Border>
+                                    <TextBlock DockPanel.Dock="Left" VerticalAlignment="Center" Text="{Binding .}"></TextBlock>
+                                    <Path DockPanel.Dock="Left" HorizontalAlignment="Center" Eddie.Icon="{Binding .}" Width="50" Height="50" Fill="Black" Margin="10"/>
+                                </DockPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </ScrollViewer>
             </TabItem>
 
             <TabItem Header="Slider">

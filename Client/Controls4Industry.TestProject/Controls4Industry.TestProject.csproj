@@ -61,14 +61,6 @@
     <Compile Include="SpeedTestWindow.xaml.cs">
       <DependentUpon>SpeedTestWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IconOverview.xaml.cs" />
-    <Page Include="IconOverview.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>IconOverview.tt</DependentUpon>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -104,10 +96,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="IconOverview.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>IconOverview.xaml</LastGenOutput>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

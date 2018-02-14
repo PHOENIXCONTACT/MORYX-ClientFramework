@@ -104,6 +104,10 @@ _ReSharper*/
 # but keep track of directories ending in .cache
 !*.[Cc]ache/
 
+# NCrunch
+*.ncrunchproject
+*.ncrunchsolution
+
 # Others
 ClientBin/
 ~$*
