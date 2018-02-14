@@ -27,13 +27,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Controls", "Controls", "{BC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controls4Industry", "Client\Controls4Industry\Controls4Industry.csproj", "{8713D17C-63C8-4CEF-9FF9-376C921EF92B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controls4Industry.TestProject", "Client\Controls4Industry.TestProject\Controls4Industry.TestProject.csproj", "{4AE8D624-0B23-4BD3-8527-B8E80FE638AC}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marvin.Controls", "Client\Marvin.Controls\Marvin.Controls.csproj", "{002992E7-F035-4714-9E0E-46DE3F6F4D1A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marvin.ClientFramework.AssemblyProvider", "Client\Marvin.ClientFramework.AssemblyProvider\Marvin.ClientFramework.AssemblyProvider.csproj", "{601EA517-0337-430B-840C-424B84F8F922}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marvin.ClientFramework.Configurator", "Client\Marvin.ClientFramework.Configurator\Marvin.ClientFramework.Configurator.csproj", "{62E0152C-B585-4CCE-9E93-D8C780C35A02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marvin.Controls.Demo", "Client\Marvin.Controls.Demo\Marvin.Controls.Demo.csproj", "{4AE8D624-0B23-4BD3-8527-B8E80FE638AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,14 +99,6 @@ Global
 		{8713D17C-63C8-4CEF-9FF9-376C921EF92B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8713D17C-63C8-4CEF-9FF9-376C921EF92B}.Release|x86.ActiveCfg = Release|Any CPU
 		{8713D17C-63C8-4CEF-9FF9-376C921EF92B}.Release|x86.Build.0 = Release|Any CPU
-		{4AE8D624-0B23-4BD3-8527-B8E80FE638AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4AE8D624-0B23-4BD3-8527-B8E80FE638AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4AE8D624-0B23-4BD3-8527-B8E80FE638AC}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{4AE8D624-0B23-4BD3-8527-B8E80FE638AC}.Debug|x86.Build.0 = Debug|Any CPU
-		{4AE8D624-0B23-4BD3-8527-B8E80FE638AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4AE8D624-0B23-4BD3-8527-B8E80FE638AC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4AE8D624-0B23-4BD3-8527-B8E80FE638AC}.Release|x86.ActiveCfg = Release|Any CPU
-		{4AE8D624-0B23-4BD3-8527-B8E80FE638AC}.Release|x86.Build.0 = Release|Any CPU
 		{002992E7-F035-4714-9E0E-46DE3F6F4D1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{002992E7-F035-4714-9E0E-46DE3F6F4D1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{002992E7-F035-4714-9E0E-46DE3F6F4D1A}.Debug|x86.ActiveCfg = Debug|Any CPU
@@ -129,6 +121,14 @@ Global
 		{62E0152C-B585-4CCE-9E93-D8C780C35A02}.Release|Any CPU.Build.0 = Release|Any CPU
 		{62E0152C-B585-4CCE-9E93-D8C780C35A02}.Release|x86.ActiveCfg = Release|Any CPU
 		{62E0152C-B585-4CCE-9E93-D8C780C35A02}.Release|x86.Build.0 = Release|Any CPU
+		{4AE8D624-0B23-4BD3-8527-B8E80FE638AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AE8D624-0B23-4BD3-8527-B8E80FE638AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AE8D624-0B23-4BD3-8527-B8E80FE638AC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4AE8D624-0B23-4BD3-8527-B8E80FE638AC}.Debug|x86.Build.0 = Debug|Any CPU
+		{4AE8D624-0B23-4BD3-8527-B8E80FE638AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AE8D624-0B23-4BD3-8527-B8E80FE638AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AE8D624-0B23-4BD3-8527-B8E80FE638AC}.Release|x86.ActiveCfg = Release|Any CPU
+		{4AE8D624-0B23-4BD3-8527-B8E80FE638AC}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -140,10 +140,10 @@ Global
 		{84114E5F-980F-4CE4-9C8E-A6D82B582B8C} = {1B55A562-90EC-4D17-AEE1-8A4E00CECD03}
 		{3F18714F-4C51-4735-8082-D35D9F614CE1} = {1B55A562-90EC-4D17-AEE1-8A4E00CECD03}
 		{8713D17C-63C8-4CEF-9FF9-376C921EF92B} = {BC565F5A-559D-4E51-843A-6BF827029378}
-		{4AE8D624-0B23-4BD3-8527-B8E80FE638AC} = {BC565F5A-559D-4E51-843A-6BF827029378}
 		{002992E7-F035-4714-9E0E-46DE3F6F4D1A} = {BC565F5A-559D-4E51-843A-6BF827029378}
 		{601EA517-0337-430B-840C-424B84F8F922} = {CE7D9EFF-CA66-40D4-867F-448F7CFB844C}
 		{62E0152C-B585-4CCE-9E93-D8C780C35A02} = {CE7D9EFF-CA66-40D4-867F-448F7CFB844C}
+		{4AE8D624-0B23-4BD3-8527-B8E80FE638AC} = {BC565F5A-559D-4E51-843A-6BF827029378}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {87A2BF4A-903B-44C7-911B-314A3261966F}

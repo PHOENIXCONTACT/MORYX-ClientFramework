@@ -2,13 +2,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:testProject="clr-namespace:Controls4Industry.TestProject"
         xmlns:controls="clr-namespace:Marvin.Controls;assembly=Marvin.Controls"
-        mc:Ignorable="d" x:Class="Controls4Industry.TestProject.MainWindow"
+        xmlns:demo="clr-namespace:Marvin.Controls.Demo"
+        mc:Ignorable="d" x:Class="Marvin.Controls.Demo.MainWindow"
         Name="Window"
         Title="Controls4Industry Overview" d:DesignWidth="1292" d:DesignHeight="1388"
         Background="{StaticResource WindowBackgroundGradientBrush}"
-        d:DataContext="{d:DesignInstance Type=testProject:MainWindowViewModel, IsDesignTimeCreatable=True}">
+        d:DataContext="{d:DesignInstance Type=demo:MainWindowViewModel, IsDesignTimeCreatable=True}">
     <Grid>
         <Border BorderThickness="1" Margin="15" BorderBrush="LightGray">
             <Border.Effect>

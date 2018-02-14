@@ -9,11 +9,11 @@ using System.Windows;
 // associated with an assembly.
 using System.Windows.Markup;
 
-[assembly: AssemblyTitle("Controls4Industry.TestProject")]
+[assembly: AssemblyTitle("Marvin.Controls.Demo")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("PHOENIX CONTACT GmbH & Co. KG")]
-[assembly: AssemblyProduct("Controls4Industry.TestProject")]
+[assembly: AssemblyProduct("Marvin.Controls.Demo")]
 [assembly: AssemblyCopyright("Copyright © PHOENIX CONTACT GmbH & Co. KG 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

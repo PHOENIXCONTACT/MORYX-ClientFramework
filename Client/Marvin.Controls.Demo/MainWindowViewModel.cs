@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using C4I;
 
-namespace Controls4Industry.TestProject
+namespace Marvin.Controls.Demo
 {
     public class MainWindowViewModel : PropertyChangedBase
     {

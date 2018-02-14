@@ -7,8 +7,8 @@
     <ProjectGuid>{4AE8D624-0B23-4BD3-8527-B8E80FE638AC}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Controls4Industry.TestProject</RootNamespace>
-    <AssemblyName>Controls4Industry.TestProject</AssemblyName>
+    <RootNamespace>Marvin.Controls.Demo</RootNamespace>
+    <AssemblyName>Marvin.Controls.Demo</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -37,10 +37,6 @@
   <ItemGroup>
     <Reference Include="Marvin, Version=3.0.0.437, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Marvin.3.0.0-dev000437\lib\net461\Marvin.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
