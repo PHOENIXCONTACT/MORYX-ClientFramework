@@ -23,6 +23,11 @@ namespace Marvin.ClientFramework.Configurator
         public IEnumerable<IRunMode> RunModes { get; set; }
 
         /// <summary>
+        /// Gets or sets the presets.
+        /// </summary>
+        public IEnumerable<IViewLocatorConfiguratorPreset> Presets { get; set; }
+
+        /// <summary>
         /// Gets or sets the core configuration manager.
         /// </summary>
         public IKernelConfigManager KernelConfigManager { get; set; }
@@ -53,6 +58,9 @@ namespace Marvin.ClientFramework.Configurator
 
             foreach (var runMode in RunModes.ToList())
                 Container.SetInstance(runMode);
+
+            foreach (var preset in Presets.ToList())
+                Container.SetInstance(preset);
         }
 
         /// <summary>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using Marvin.ClientFramework.Kernel;
 using Marvin.Configuration;
@@ -18,6 +19,8 @@ namespace Marvin.ClientFramework.Configurator
         public IAppDataConfigManager AppDataConfigManager { get; set; }
 
         public IUserInfoProvider UserInfoProvider { get; set; }
+
+        public IEnumerable<IViewLocatorConfiguratorPreset> Presets { get; set; }
 
         #endregion
 
@@ -70,6 +73,11 @@ namespace Marvin.ClientFramework.Configurator
                 }
                 return runModes;
             }
+        }
+
+        public IEnumerable AvailableViewPresets
+        {
+            get { return Presets.Select(p => p.Name).ToArray(); }
         }
 
         private string _selectedRunMode;

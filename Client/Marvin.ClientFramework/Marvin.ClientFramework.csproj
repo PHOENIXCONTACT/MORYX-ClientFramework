@@ -82,6 +82,7 @@
     <Compile Include="Dialog\DialogScreen.cs" />
     <Compile Include="Dialog\IDialogScreen.cs" />
     <Compile Include="Errors\LocalModuleErrorReporting.cs" />
+    <Compile Include="Extensions\VisualTreeExtension.cs" />
     <Compile Include="Module\ClientModuleBase.cs" />
     <Compile Include="Module\ClientModuleConfigBase.cs" />
     <Compile Include="Module\ClientNotificationCollection.cs" />

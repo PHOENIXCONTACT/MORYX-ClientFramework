@@ -14,12 +14,12 @@ namespace Marvin.ClientFramework.Kernel
     public class CaliburnBootstrapper : BootstrapperBase
     {
         private readonly IEnumerable<Assembly> _assemblies;
-        private readonly CastleContainer _container;
+        private readonly IContainer _container;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CaliburnBootstrapper"/> class.
         /// </summary>
-        public CaliburnBootstrapper(IEnumerable<Assembly> assemblies, CastleContainer container)
+        public CaliburnBootstrapper(IEnumerable<Assembly> assemblies, IContainer container)
         {
             _container = container;
             _assemblies = assemblies.Union(GetLocalAssemblies()).Distinct().ToArray();

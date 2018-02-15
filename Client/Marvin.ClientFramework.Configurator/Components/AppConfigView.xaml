@@ -37,7 +37,18 @@
                 </LabeledControlHost>
 
                 <TextBlock Style="{StaticResource DescriptionStyle}">
-                    (Setted name in UserManagement for this application)
+                    (Name in UserManagement for this application)
+                </TextBlock>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <LabeledControlHost LabelA="View type:">
+                    <EddieComboBox ItemsSource="{Binding AvailableViewPresets}"
+                                   SelectedItem="{Binding Config.ViewPreset, Mode=TwoWay}"/>
+                </LabeledControlHost>
+
+                <TextBlock Style="{StaticResource DescriptionStyle}">
+                    (View type for this application)
                 </TextBlock>
             </StackPanel>
 

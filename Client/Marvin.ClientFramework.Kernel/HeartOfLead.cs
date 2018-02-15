@@ -15,6 +15,7 @@ using Marvin.Container;
 using Marvin.Logging;
 using Marvin.Threading;
 using Marvin.Tools;
+using MessageBoxImage = System.Windows.MessageBoxImage;
 
 namespace Marvin.ClientFramework.Kernel
 {
@@ -114,6 +115,9 @@ namespace Marvin.ClientFramework.Kernel
 
             // Manages the loader
             ConfigureLoaderHandler();
+
+            // Configure view locator
+            ConfigureViewLocator();
 
             // Start the base application here - thread will hold up to that the application will closed
             StartApplication();
@@ -298,6 +302,24 @@ namespace Marvin.ClientFramework.Kernel
             User32.BringToFront(instances.OrderBy(p => p.StartTime).First().MainWindowHandle);
 
             Environment.Exit(1);
+        }
+
+        private void ConfigureViewLocator()
+        {
+            try
+            {
+                if (AppConfig.RunMode == KernelConstants.CONFIG_RUNMODE)
+                    return;
+
+                var viewLocatorConfigurator = _container.Resolve<IViewLocatorConfigurator>();
+                viewLocatorConfigurator.ActivateSet(AppConfig.ViewPreset);
+            }
+            catch (NotSupportedException)
+            {
+                MessageBox.Show($"Cannot find any view locator preset with name '{AppConfig.ViewPreset}'. " +
+                                "Please change view preset in configurator.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                Environment.Exit(1);
+            }
         }
 
         /// <summary>

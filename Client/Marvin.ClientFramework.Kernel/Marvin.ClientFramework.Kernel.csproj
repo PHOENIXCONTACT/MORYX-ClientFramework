@@ -151,6 +151,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="UserInfo\UserInfoProvider.cs" />
+    <Compile Include="ViewLocatorConfig\IViewLocatorConfigurator.cs" />
+    <Compile Include="ViewLocatorConfig\Presets\DefaultPreset.cs" />
+    <Compile Include="ViewLocatorConfig\IViewLocatorConfiguratorPreset.cs" />
+    <Compile Include="ViewLocatorConfig\Presets\TouchPreset.cs" />
+    <Compile Include="ViewLocatorConfig\Presets\WideScreenPreset.cs" />
+    <Compile Include="ViewLocatorConfig\ViewLocatorConfigurator.cs" />
     <Compile Include="Win32\Kernel32.cs" />
     <Compile Include="Win32\User32.cs" />
   </ItemGroup>

@@ -80,7 +80,7 @@ namespace Marvin.ClientFramework.Kernel
             assemblyList.Add(typeof(DialogConductorView).Assembly);
 
             //initialize the container
-            _caliburnBootstrapper = new CaliburnBootstrapper(assemblyList, (GlobalContainer)Container);
+            _caliburnBootstrapper = new CaliburnBootstrapper(assemblyList, Container);
             _caliburnBootstrapper.Initialize();
 
             //create module configuration

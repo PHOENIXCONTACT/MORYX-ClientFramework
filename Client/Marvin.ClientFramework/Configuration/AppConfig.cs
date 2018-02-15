@@ -23,6 +23,7 @@ namespace Marvin.ClientFramework
 
             Name = "Give me a name";
             Application = "HeartOfLead_" + result;
+            ViewPreset = "Default";
 
             OpenConfigWithControl = true;
         }
@@ -56,6 +57,12 @@ namespace Marvin.ClientFramework
         /// </summary>
         [DataMember]
         public bool LimitInstances { get; set; }
+
+        /// <summary>
+        /// Selected view type
+        /// </summary>
+        [DataMember]
+        public string ViewPreset { get; set; }
 
         /// <summary>
         /// Gets the window title.
