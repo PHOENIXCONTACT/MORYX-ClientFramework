@@ -7,3 +7,5 @@
       href: Commands/toc.yml
     - name: Modal Dialogs
       href: ModalDialogs.md
+    - name: ViewLocation Configurator
+      href: ModalDialogs.md
