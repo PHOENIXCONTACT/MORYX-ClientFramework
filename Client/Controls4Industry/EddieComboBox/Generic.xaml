@@ -12,13 +12,15 @@
             <Path HorizontalAlignment="Right" Margin="0,0,15,0"
                   Data="{c4I:CommonShape ShapeType=Lock}"
                   VerticalAlignment="Center" x:Name="lock"
-                  Fill="{StaticResource LightGreenColorBrush}" />
+                  Width="14" Height="14"
+                  Stretch="Uniform"
+                  Fill="{StaticResource DarkGreenColorBrush}" />
 
             <Path HorizontalAlignment="Right" Margin="0,0,15,0"
                   VerticalAlignment="Center"
                   x:Name="arrow_down4"
                   Data="F1M0.812,0.956C0.812,0.956 6.438,7.144 6.438,7.144 6.438,7.144 12.062,0.956 12.062,0.956 12.062,0.956 0.812,0.956 0.812,0.956z"
-                  Fill="{StaticResource LightGreenColorBrush}" />
+                  Fill="{StaticResource DarkGreenColorBrush}" />
         </Grid>
         <ControlTemplate.Triggers>
             <Trigger Property="IsEnabled" Value="True">
