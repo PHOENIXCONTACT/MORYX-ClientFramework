@@ -669,6 +669,39 @@
                 </StackPanel>
             </TabItem>
 
+            <TabItem Header="NavigationBar">
+                <EddieNavigationBar Margin="10" IsLocked="{Binding IsNavigationBarLocked}">
+                    <TabItem Header="Entry 1">
+                        <CheckBox Content="Lock NavigationBar" 
+                                  Margin="10,10,0,0"
+                                  VerticalAlignment="Top"
+                                  HorizontalAlignment="Left"
+                                  IsChecked="{Binding IsNavigationBarLocked, Mode=TwoWay}" />
+                    </TabItem>
+                    <TabItem Header="Entry 2">
+                        <CheckBox Content="Lock NavigationBar" 
+                                  Margin="10,10,0,0"
+                                  VerticalAlignment="Top"
+                                  HorizontalAlignment="Left"
+                                  IsChecked="{Binding IsNavigationBarLocked, Mode=TwoWay}" />                        
+                    </TabItem>
+                    <TabItem Header="Entry 3">
+                        <CheckBox Content="Lock NavigationBar" 
+                                  Margin="10,10,0,0"
+                                  VerticalAlignment="Top"
+                                  HorizontalAlignment="Left"
+                                  IsChecked="{Binding IsNavigationBarLocked, Mode=TwoWay}" />
+                    </TabItem>
+                    <TabItem Header="Entry 4">
+                        <CheckBox Content="Lock NavigationBar" 
+                                  Margin="10,10,0,0"
+                                  VerticalAlignment="Top"
+                                  HorizontalAlignment="Left"
+                                  IsChecked="{Binding IsNavigationBarLocked, Mode=TwoWay}" />
+                    </TabItem>
+                </EddieNavigationBar>
+            </TabItem>
+
             <TabItem Header="Entry Editor">
                 <controls:EntryEditor Margin="20"  RootEntry="{Binding EntryViewModels, ElementName=Window}" IsEditMode="True" />
             </TabItem>

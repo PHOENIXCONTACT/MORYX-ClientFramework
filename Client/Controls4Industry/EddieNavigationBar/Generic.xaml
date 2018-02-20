@@ -52,6 +52,9 @@
                             <Setter TargetName="BackgroundBorder" Property="Visibility" Value="Visible" />
                             <Setter TargetName="BackgroundBorder" Property="Opacity" Value="0.1" />
                         </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.5" />
+                        </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>

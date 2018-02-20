@@ -10,6 +10,7 @@ namespace Marvin.Controls.Demo
         public ICollection<string> ShapeTypes { get; }
 
         private ObservableCollection<TestListViewEntry> _listViewItemsList = new ObservableCollection<TestListViewEntry>();
+        private bool _isNavigationBarLocked;
 
         public ObservableCollection<TestListViewEntry> ListViewItemsList
         {
@@ -30,6 +31,19 @@ namespace Marvin.Controls.Demo
             }
 
             ShapeTypes = new List<string>(Enum.GetNames(typeof(CommonShapeType)));
+        }
+
+        public bool IsNavigationBarLocked
+        {
+            get { return _isNavigationBarLocked; }
+            set
+            {
+                if (_isNavigationBarLocked != value)
+                {
+                    _isNavigationBarLocked = value;
+                    OnPropertyChanged();
+                }
+            }
         }
     }
 }
