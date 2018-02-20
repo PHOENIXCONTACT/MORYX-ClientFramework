@@ -19,8 +19,11 @@ namespace C4I
         public static readonly DependencyProperty LabelBProperty = DependencyProperty.Register(
             "LabelB", typeof (string), typeof (LabeledControlHost), new PropertyMetadata(default(string)));
 
-        public static readonly DependencyProperty LabelWidthProperty = DependencyProperty.Register(
-            "LabelWidth", typeof(double), typeof(LabeledControlHost), new PropertyMetadata(default(double)));
+        public static readonly DependencyProperty LabelMinWidthProperty = DependencyProperty.Register(
+            "LabelMinWidth", typeof(double), typeof(LabeledControlHost), new PropertyMetadata(default(double)));
+
+        public static readonly DependencyProperty LabelMaxWidthProperty = DependencyProperty.Register(
+            "LabelMaxWidth", typeof(double), typeof(LabeledControlHost), new PropertyMetadata(double.PositiveInfinity));
 
         public static readonly DependencyProperty SharedSizeGroupNameProperty = DependencyProperty.Register(
             "SharedSizeGroupName", typeof(string), typeof(LabeledControlHost), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.AffectsMeasure, OnSharedSizeGroupName));
@@ -36,10 +39,16 @@ namespace C4I
                 new FrameworkPropertyMetadata(typeof (LabeledControlHost)));
         }
 
-        public double LabelWidth
+        public double LabelMinWidth
         {
-            get { return (double)GetValue(LabelWidthProperty); }
-            set { SetValue(LabelWidthProperty, value); }
+            get { return (double)GetValue(LabelMinWidthProperty); }
+            set { SetValue(LabelMinWidthProperty, value); }
+        }
+
+        public double LabelMaxWidth
+        {
+            get { return (double)GetValue(LabelMaxWidthProperty); }
+            set { SetValue(LabelMaxWidthProperty, value); }
         }
 
         public string LabelA
@@ -93,7 +102,7 @@ namespace C4I
 
                 foreach (var labeledControlHost in labeledControlHosts)
                 {
-                    labeledControlHost.LabelWidth = maxWidth;
+                    labeledControlHost.LabelMinWidth = maxWidth;
                 }
             }
         }

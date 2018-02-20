@@ -11,16 +11,20 @@
               HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
               VerticalAlignment="{TemplateBinding VerticalAlignment}">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition MinWidth="{TemplateBinding LabelWidth}" Width="Auto" />
+                <ColumnDefinition MinWidth="{TemplateBinding LabelMinWidth}" Width="Auto" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
             <StackPanel x:Name="LabelHost" Margin="0,0,5,0">
-                <TextBlock x:Name="TextBlockB" Text="{TemplateBinding LabelB}" 
-                           FontSize="{StaticResource StandardFontSizeS3}"/>
+                <TextBlock x:Name="TextBlockB" Text="{TemplateBinding LabelB}"
+                           MaxWidth="{TemplateBinding LabelMaxWidth}" 
+                           FontSize="{StaticResource StandardFontSizeS3}"
+                           TextTrimming="CharacterEllipsis" />
 
                 <TextBlock x:Name="TextBlockA" Text="{TemplateBinding LabelA}" 
-                           FontSize="{StaticResource StandardFontSizeS2}"/>
+                           MaxWidth="{TemplateBinding LabelMaxWidth}" 
+                           FontSize="{StaticResource StandardFontSizeS2}"
+                           TextTrimming="CharacterEllipsis" />
             </StackPanel>
 
             <ContentPresenter x:Name="ContentPresenter" Grid.Column="1"

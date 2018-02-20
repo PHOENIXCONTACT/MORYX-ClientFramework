@@ -29,7 +29,7 @@ namespace Marvin.Controls.Demo
                 {
                     LabelA = "Hello Speed",
                     LabelB = "Label B",
-                    LabelWidth = 120.0,
+                    LabelMinWidth = 120.0,
                     Content = new EddieButton()
                     {
                         Content = "Testbutton"

@@ -37,7 +37,7 @@
             <Border.Resources>
 
                 <Style TargetType="LabeledControlHost">
-                    <Setter Property="LabelWidth" Value="100" />
+                    <Setter Property="LabelMinWidth" Value="100" />
                     <Setter Property="Margin" Value="0,0,0,5" />
                 </Style>
                 <Style TargetType="EddieTextBox">

@@ -38,7 +38,7 @@
                                     <Setter Property="HorizontalContentAlignment" Value="Left" />
                                     <Setter Property="LabelB" Value="EddieButton" />
                                     <Setter Property="Margin" Value="0,10,0,0" />
-                                    <Setter Property="LabelWidth" Value="110" />
+                                    <Setter Property="LabelMinWidth" Value="110" />
                                     <Setter Property="Width" Value="700" />
                                     <Setter Property="Eddie.TextFormat" Value="Bold" />
                                 </Style>
@@ -118,24 +118,28 @@
                                 </Style>
                             </StackPanel.Resources>
 
-                            <LabeledControlHost LabelA="Header" LabelB="Content" SharedSizeGroupName="Shared">
+                            <LabeledControlHost LabelA="Header" LabelB="Shared" SharedSizeGroupName="Shared">
                                 <EddieButton Content="A Button" />
                             </LabeledControlHost>
 
-                            <LabeledControlHost LabelA="Long Header" LabelB="Content" SharedSizeGroupName="Shared">
+                            <LabeledControlHost LabelA="Long Header" LabelB="Shared" SharedSizeGroupName="Shared">
                                 <EddieButton Content="A Button" />
                             </LabeledControlHost>
 
-                            <LabeledControlHost LabelA="Very Very Long Header" LabelB="This is not shared" SharedSizeGroupName="Shared">
+                            <LabeledControlHost LabelA="Very Very Long Header" LabelB="Shared" SharedSizeGroupName="Shared">
                                 <EddieButton Content="A Button" />
                             </LabeledControlHost>
 
-                            <LabeledControlHost LabelA="Very Very Very Long Header" LabelB="Content">
+                            <LabeledControlHost LabelA="Very Very Very Long Header" LabelB="Not shared">
                                 <EddieButton Content="A Button" />
                             </LabeledControlHost>
 
-                            <LabeledControlHost LabelA="Another Header" LabelB="Content" SharedSizeGroupName="Shared">
+                            <LabeledControlHost LabelA="Another Header" LabelB="Shared" SharedSizeGroupName="Shared">
                                 <EddieButton Content="A Button" />
+                            </LabeledControlHost>
+
+                            <LabeledControlHost Margin="0,20,0,0" LabelMaxWidth="{Binding Text, ElementName=LabeledContentHostMaxWidth}" LabelA="Another Very Very Very Long Header" LabelB="Shared">
+                                <EddieTextBox x:Name="LabeledContentHostMaxWidth" Text="100" Width="100" />
                             </LabeledControlHost>
 
                         </StackPanel>
