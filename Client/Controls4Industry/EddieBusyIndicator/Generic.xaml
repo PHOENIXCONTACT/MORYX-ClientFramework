@@ -10,8 +10,8 @@
     <Style TargetType="c4I:EddieBusyIndicator">
         <Setter Property="IsTabStop" Value="False" />
         <Setter Property="Focusable" Value="False" />
-        <Setter Property="Height" Value="100" />
-        <Setter Property="Width" Value="100" />
+        <Setter Property="IndicatorHeight" Value="100" />
+        <Setter Property="IndicatorWidth" Value="100" />
         <Setter Property="Background" Value="Black" />
         <Setter Property="HorizontalAlignment" Value="Center" />
         <Setter Property="VerticalAlignment" Value="Center" />
@@ -21,50 +21,69 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type c4I:EddieBusyIndicator}">
-
-                    <Viewbox RenderTransformOrigin="0.5,0.5" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
-                        <Viewbox.RenderTransform>
-                            <TransformGroup>
-                                <RotateTransform x:Name="SpinnerRotate" Angle="0" />
-                            </TransformGroup>
-                        </Viewbox.RenderTransform>
+                    <Grid>
+                        <ContentPresenter x:Name="Content"
+                                          Content="{TemplateBinding Content}"
+                                          ContentTemplate="{TemplateBinding ContentTemplate}"
+                                          ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center" />
                         
-                        <Canvas RenderTransformOrigin="0.5,0.5" Width="120" Height="120"
+                        <Viewbox x:Name="Indicator" 
+                                 RenderTransformOrigin="0.5,0.5" 
+                                 Height="{TemplateBinding IndicatorHeight}" 
+                                 Width="{TemplateBinding IndicatorWidth}"
+                                 Visibility="Collapsed">
+                            <Viewbox.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform x:Name="SpinnerRotate" Angle="0" />
+                                </TransformGroup>
+                            </Viewbox.RenderTransform>
+                        
+                            <Canvas RenderTransformOrigin="0.5,0.5" Width="120" Height="120"
                                     HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <Canvas.Resources>
-                                <Style TargetType="Ellipse">
-                                    <Setter Property="Width" Value="21.835" />
-                                    <Setter Property="Height" Value="21.862" />
-                                    <Setter Property="Stretch" Value="Fill" />
-                                    <Setter Property="Fill" Value="{StaticResource PhoenixContactGreenBrush}" />
-                                </Style>
-                            </Canvas.Resources>
+                                <Canvas.Resources>
+                                    <Style TargetType="Ellipse">
+                                        <Setter Property="Width" Value="21.835" />
+                                        <Setter Property="Height" Value="21.862" />
+                                        <Setter Property="Stretch" Value="Fill" />
+                                        <Setter Property="Fill" Value="{StaticResource PhoenixContactGreenBrush}" />
+                                    </Style>
+                                </Canvas.Resources>
 
-                            <Ellipse Canvas.Left="47.2783" Canvas.Top="0.5" Opacity="1.0" />
-                            <Ellipse Canvas.Left="20.1696" Canvas.Top="9.76358" Opacity="0.9" />
-                            <Ellipse Canvas.Left="2.86816" Canvas.Top="29.9581" Opacity="0.8" />
-                            <Ellipse Canvas.Left="5.03758e-006" Canvas.Top="57.9341" Opacity="0.7" />
-                            <Ellipse Canvas.Left="12.1203" Canvas.Top="83.3163" Opacity="0.6" />
-                            <Ellipse Canvas.Left="36.5459" Canvas.Top="98.138" Opacity="0.5" />
-                            <Ellipse Canvas.Left="64.6723" Canvas.Top="96.8411" Opacity="0.4" />
-                            <Ellipse Canvas.Left="87.6176" Canvas.Top="81.2783" Opacity="0.3" />
-                            <Ellipse Canvas.Left="98.165" Canvas.Top="54.414" Opacity="0.2" />
-                            <Ellipse Canvas.Left="92.9838" Canvas.Top="26.9938" Opacity="0.1" />
-                        </Canvas>
+                                <Ellipse Canvas.Left="47.2783" Canvas.Top="0.5" Opacity="1.0" />
+                                <Ellipse Canvas.Left="20.1696" Canvas.Top="9.76358" Opacity="0.9" />
+                                <Ellipse Canvas.Left="2.86816" Canvas.Top="29.9581" Opacity="0.8" />
+                                <Ellipse Canvas.Left="5.03758e-006" Canvas.Top="57.9341" Opacity="0.7" />
+                                <Ellipse Canvas.Left="12.1203" Canvas.Top="83.3163" Opacity="0.6" />
+                                <Ellipse Canvas.Left="36.5459" Canvas.Top="98.138" Opacity="0.5" />
+                                <Ellipse Canvas.Left="64.6723" Canvas.Top="96.8411" Opacity="0.4" />
+                                <Ellipse Canvas.Left="87.6176" Canvas.Top="81.2783" Opacity="0.3" />
+                                <Ellipse Canvas.Left="98.165" Canvas.Top="54.414" Opacity="0.2" />
+                                <Ellipse Canvas.Left="92.9838" Canvas.Top="26.9938" Opacity="0.1" />
+                            </Canvas>
 
-                        <Viewbox.Triggers>
-                            <EventTrigger RoutedEvent="Control.Loaded">
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation Storyboard.TargetName="SpinnerRotate"
-                                                 Storyboard.TargetProperty="(RotateTransform.Angle)"
-                                                             From="0" To="360" Duration="0:0:02"
-                                                             RepeatBehavior="Forever" />
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger>
-                        </Viewbox.Triggers>
-                    </Viewbox>
+                            <Viewbox.Triggers>
+                                <EventTrigger RoutedEvent="Control.Loaded">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="SpinnerRotate"
+                                                     Storyboard.TargetProperty="(RotateTransform.Angle)"
+                                                                 From="0" To="360" Duration="0:0:02"
+                                                                 RepeatBehavior="Forever" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </Viewbox.Triggers>
+                        </Viewbox>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsIndicatorEnabled" Value="True">
+                            <Setter TargetName="Content" Property="IsEnabled" Value="False" />
+                            <Setter TargetName="Content" Property="Opacity" Value="0.8" />
+                            <Setter TargetName="Indicator" Property="Visibility" Value="Visible" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

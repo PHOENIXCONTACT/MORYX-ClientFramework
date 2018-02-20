@@ -251,14 +251,34 @@
                     </LabeledControlHost>
 
                     <LabeledControlHost LabelA="Normal" LabelB="EddieBusyIndicator">
-                        <EddieBusyIndicator Margin="0,15,0,15" />
+                        <EddieBusyIndicator Margin="0,15,0,15" IsIndicatorEnabled="True" />
                     </LabeledControlHost>
 
                     <LabeledControlHost LabelA="Normal" LabelB="Small EddieBusyIndicator">
-                        <EddieBusyIndicator Margin="0,15,0,15"  Width="50" Height="50"/>
+                        <EddieBusyIndicator Margin="0,15,0,15" IsIndicatorEnabled="True" IndicatorWidth="50" IndicatorHeight="50"/>
                     </LabeledControlHost>
                     <LabeledControlHost LabelA="Normal" LabelB="Smaller EddieBusyIndicator">
-                        <EddieBusyIndicator Margin="0,15,0,15"  Width="20" Height="20"/>
+                        <EddieBusyIndicator Margin="0,15,0,15" IsIndicatorEnabled="True" IndicatorWidth="20" IndicatorHeight="20"/>
+                    </LabeledControlHost>
+
+                    <LabeledControlHost LabelA="Normal" LabelB="EddieBusyIndicator with text">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <EddieBusyIndicator Grid.Row="0" Margin="0,15,0,15" IndicatorWidth="20" IndicatorHeight="20" IsIndicatorEnabled="{Binding IsChecked, ElementName=IndicatorCheckBox}">
+                                <EddieButton Content="Hello" />
+                            </EddieBusyIndicator>
+
+                            <CheckBox x:Name="IndicatorCheckBox" 
+                                      Grid.Row="1" 
+                                      Margin="0,10,0,0"
+                                      HorizontalAlignment="Center"
+                                      Content="Enable indicator" 
+                                      IsChecked="True" />
+                        </Grid>
                     </LabeledControlHost>
                 </StackPanel>
             </TabItem>
