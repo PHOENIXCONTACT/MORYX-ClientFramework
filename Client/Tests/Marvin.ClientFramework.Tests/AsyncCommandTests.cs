@@ -9,12 +9,12 @@ namespace Marvin.ClientFramework.Tests
     [TestFixture]
     public class AsyncCommandTests
     {
-        private async Task SuccessFunc(object parameters)
+        private static async Task SuccessFunc(object parameters)
         {
             await Task.Run(() => Thread.Sleep(2));
         }
 
-        private async Task LongSuccessFunc(object parameters)
+        private static async Task LongSuccessFunc(object parameters)
         {
             await Task.Run(() => Thread.Sleep(200));
         }
@@ -28,7 +28,7 @@ namespace Marvin.ClientFramework.Tests
         }
 
         [Test]
-        public void InstanciationTest()
+        public void InstantiationTest()
         {
             var command = new AsyncCommand(SuccessFunc);
 
@@ -37,17 +37,6 @@ namespace Marvin.ClientFramework.Tests
 
             //Execution context should be null
             Assert.IsNull(command.Execution);
-
-            var task = command.ExecuteAsync(null);
-            var execution = command.Execution;
-
-            //Check other execution parameters
-            Assert.IsFalse(execution.IsCanceled);
-            Assert.IsFalse(execution.IsCompleted);
-            Assert.IsFalse(execution.IsFaulted);
-            Assert.IsFalse(execution.IsSuccessfullyCompleted);
-            Assert.IsTrue(execution.IsNotCompleted);
-            Assert.AreEqual(TaskStatus.WaitingForActivation, execution.Status);
         }
 
         [Test]
@@ -61,7 +50,7 @@ namespace Marvin.ClientFramework.Tests
         }
 
         [Test]
-        public async Task FaultedTastTest()
+        public async Task FaultedTaskTest()
         {
             var command = new AsyncCommand(ExeptionFunc);
 
