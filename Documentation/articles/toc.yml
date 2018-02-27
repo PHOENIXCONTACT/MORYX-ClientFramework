@@ -13,8 +13,14 @@
 - name: UI
   href: UI/toc.yml
 
+- name: UI
+  href: UI/toc.yml
+
+- name: AppDataConfigManager
+  href: ConfigManagers/AppDataConfigManager.md
+
 - name: Configurations
-  href: Configurations.md
+  href: ConfigManagers/Configurations.md
 
 - name: Facades
   href: Facades.md

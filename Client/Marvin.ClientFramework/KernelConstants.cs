@@ -26,12 +26,17 @@ namespace Marvin.ClientFramework
         public const string CONFIG_RUNMODE = "Config_RunMode";
 
         /// <summary>
+        /// Name of the manufacturer company
+        /// </summary>
+        public const string COMPANY_NAME = "Phoenix Contact";
+
+        /// <summary>
         /// The folder to the specialiced application data 
         /// </summary>
         public static string AppData_Dir(string appName)
         {
             var appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            return Path.Combine(appData, "Phoenix Contact", appName);
+            return Path.Combine(appData, COMPANY_NAME, appName);
         }
     }
 }

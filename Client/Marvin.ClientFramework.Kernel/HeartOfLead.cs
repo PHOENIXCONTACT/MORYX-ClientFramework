@@ -282,7 +282,11 @@ namespace Marvin.ClientFramework.Kernel
             if (CommandLineOptions.StartConfigurator || AppConfig.OpenConfigWithControl && (Keyboard.Modifiers & ModifierKeys.Control) > 0)
                 AppConfig.RunMode = KernelConstants.CONFIG_RUNMODE;
 
-            _appDataConfigManager = new AppDataConfigManager();
+            _appDataConfigManager = new AppDataConfigManager
+            {
+                AppDataConfigDefaultsDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, CommandLineOptions.ConfigFolder, AppDataConfigManager.AppDataDefaultsDirectoryName)
+            };
+
             _appDataConfigManager.Initialize(AppConfig.Application);
             _container.SetInstance(_appDataConfigManager);
         }
