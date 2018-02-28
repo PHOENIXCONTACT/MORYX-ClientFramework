@@ -102,6 +102,7 @@
     <Compile Include="DefaultCommandLineArguments.cs" />
     <Compile Include="Container\LocalContainerFactory.cs" />
     <Compile Include="HeartOfLead.cs" />
+    <Compile Include="Extensions\HeartOfLeadExtensions.cs" />
     <Compile Include="Initializing\AssemblyConfig.cs" />
     <Compile Include="Initializing\AssemblyConfiguration.cs" />
     <Compile Include="Loader\ILoaderView.cs" />

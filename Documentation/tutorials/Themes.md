@@ -3,7 +3,7 @@ uid: Themes
 ---
 # Themes
 
-The ClientFramework has its own theme defined that is automatically used when your UI is starting. Sometimes it is neccessary to override a style of a standard Eddie control or the complete style set.
+The ClientFramework's [DefaultShell](xref:DefaultShell) has its own theme defined that is automatically used when your UI is starting. Sometimes it is neccessary to override a style of a standard Eddie control or the complete style set.
 The ClientFramework does not follow own rules how styles are overridden the WPF way is used. See how you can override those styles in your ClientFramework application.
 
 ## File organization of styles
@@ -29,14 +29,14 @@ namespace TestClient
         public static void Main(string[] args)
         {
             var hol = new HeartOfLead(args);
-            hol.OverrideDefaultStyle(new Uri("pack://application:,,,/MyApplication;component/Theme/Generic.xaml", UriKind.RelativeOrAbsolute));
+            hol.AddStyleExtension(new Uri("pack://application:,,,/MyApplication;component/Theme/Generic.xaml", UriKind.RelativeOrAbsolute));
             hol.Start();
         }
     }
 }
 ````
 
-As you can see a call to [OverrideDefaultStyle]((xref:Marvin.ClientFramework.Kernel.HeartOfLead.OverrideDefaultStyle)) is added which marks the commited `Uri` as override style.
+As you can see a call to `AddStyleExtension` is added which marks the commited `Uri` as override style.
 
 ## How to override styles workspace wide
 
@@ -50,8 +50,7 @@ There might are requirements that styling of a single module should be different
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TestLibrary.Workspace"
              xmlns:cal="http://www.caliburnproject.org"
-             mc:Ignorable="d"
-             d:DesignHeight="300" d:DesignWidth="300">
+             mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
