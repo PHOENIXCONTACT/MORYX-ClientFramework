@@ -61,6 +61,8 @@ namespace Marvin.ClientFramework.Kernel
 
         private string[] _args;
 
+        private Uri _overrideStyleUri;
+
         #endregion
 
         #region Main and ctor
@@ -124,6 +126,15 @@ namespace Marvin.ClientFramework.Kernel
         }
 
         /// <summary>
+        /// Allows to overrides the default style completly or partly
+        /// </summary>
+        /// <param name="uri">Uri to style resource file</param>
+        public void OverrideDefaultStyle(Uri uri)
+        {
+            _overrideStyleUri = uri;
+        }
+
+        /// <summary>
         /// Parses the arguments.
         /// </summary>
         private void ParseCommandLineArguments()
@@ -178,6 +189,14 @@ namespace Marvin.ClientFramework.Kernel
             _application.InitializeComponent();
             _application.Startup += OnApplicationStartUp;
             _application.Exit += OnApplicationExit;
+
+            if (_overrideStyleUri != null)
+            {
+                Application.Current.Resources.MergedDictionaries.Add(new ResourceDictionary
+                {
+                    Source = _overrideStyleUri
+                });
+            }
 
             _application.Run();
         }
