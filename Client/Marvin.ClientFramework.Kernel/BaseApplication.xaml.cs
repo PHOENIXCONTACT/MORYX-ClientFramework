@@ -11,7 +11,7 @@ namespace Marvin.ClientFramework.Kernel
     /// </summary>
     public partial class BaseApplication
     {
-        private readonly IContainer _container;
+        private IContainer _container;
         private IModuleShell _moduleShell;
         
         /// <summary>
@@ -19,8 +19,9 @@ namespace Marvin.ClientFramework.Kernel
         /// </summary>
         public BaseApplication(IContainer container)
         {
-            _container = container;
             Startup += OnApplicationStartup;
+
+            _container = container;
         }
 
         /// <summary>

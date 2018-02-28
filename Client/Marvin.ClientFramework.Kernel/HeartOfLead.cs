@@ -36,7 +36,7 @@ namespace Marvin.ClientFramework.Kernel
     public class HeartOfLead<TCommandLineArguments> : ILoggingHost 
         where TCommandLineArguments : DefaultCommandLineArguments
     {
-        #region Fields
+        #region Fields and Properties
 
         string ILoggingHost.Name => "ClientKernel";
         IModuleLogger ILoggingHost.Logger { get; set; }
@@ -51,6 +51,11 @@ namespace Marvin.ClientFramework.Kernel
         /// </summary>
         protected TCommandLineArguments CommandLineOptions { get; private set; }
 
+        /// <summary>
+        /// Flag if the HeartOfLead is initialized
+        /// </summary>
+        public bool IsInitialied { get; private set; }
+
         private GlobalContainer _container;
         private IKernelConfigManager _configManager;
         private IAppDataConfigManager _appDataConfigManager;
@@ -59,7 +64,7 @@ namespace Marvin.ClientFramework.Kernel
         private ILoaderHandler _loaderHandler;
         private IModuleManager _moduleManager;
 
-        private string[] _args;
+        private readonly string[] _args;
 
         #endregion
 
@@ -70,11 +75,6 @@ namespace Marvin.ClientFramework.Kernel
         /// </summary>
         /// <param name="args"></param>
         public HeartOfLead(string[] args)
-        {
-            Initialize(args);
-        }
-
-        private void Initialize(string[] args)
         {
             _args = args;
 
@@ -88,10 +88,14 @@ namespace Marvin.ClientFramework.Kernel
         #endregion
 
         /// <summary>
-        /// Starts this instance.
+        /// Initializes HeartOfLead instance
         /// </summary>
-        public void Start()
+        public void Initialize()
         {
+            // Check Initialization
+            if (IsInitialied)
+                throw new InvalidOperationException("HeartOfLead is already initialized!");
+
             // Attach this Application to the console.
             Kernel32.AttachConsole(-1);
 
@@ -118,6 +122,21 @@ namespace Marvin.ClientFramework.Kernel
 
             // Configure view locator
             ConfigureViewLocator();
+
+            // Initialize application
+            InitializeApplication();
+
+            // Lock initialization
+            IsInitialied = true;
+        }
+
+        /// <summary>
+        /// Starts this instance.
+        /// </summary>
+        public void Start()
+        {
+            if (!IsInitialied)
+                throw new InvalidOperationException("HeartOfLead is not initialized!");
 
             // Start the base application here - thread will hold up to that the application will closed
             StartApplication();
@@ -170,15 +189,21 @@ namespace Marvin.ClientFramework.Kernel
         }
 
         /// <summary>
-        /// Starts the application.
+        /// Initializes the BaseApplication
         /// </summary>
-        private void StartApplication()
+        private void InitializeApplication()
         {
             _application = new BaseApplication(_container);
             _application.InitializeComponent();
             _application.Startup += OnApplicationStartUp;
             _application.Exit += OnApplicationExit;
+        }
 
+        /// <summary>
+        /// Starts the application.
+        /// </summary>
+        private void StartApplication()
+        {
             _application.Run();
         }
 

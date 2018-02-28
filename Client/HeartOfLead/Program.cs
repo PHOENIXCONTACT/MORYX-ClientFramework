@@ -16,6 +16,13 @@ namespace Marvin.ClientFramework.Start
         public static void Main(string[] args)
         {
             var hol = new HeartOfLead(args);
+            hol.Initialize();
+
+            // Add style extension
+            hol.OverrideDefaultStyle(new Uri("pack://application:,,,/HeartOfLead;component/CustomTheme.xaml",
+                UriKind.RelativeOrAbsolute));
+
+            // Start Application
             hol.Start();
         }
     }
