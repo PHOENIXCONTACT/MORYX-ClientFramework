@@ -6,9 +6,6 @@
     /// </summary>
     public interface IAppDataConfigManager : IKernelConfigManager
     {
-        /// <summary>
-        /// Initializes the specified core configuration manager.
-        /// </summary>
-        void Initialize(string application);
+
     }
 }

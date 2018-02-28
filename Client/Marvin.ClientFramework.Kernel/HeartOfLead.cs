@@ -272,22 +272,18 @@ namespace Marvin.ClientFramework.Kernel
             if (!Directory.Exists(CommandLineOptions.ConfigFolder))
                 Directory.CreateDirectory(CommandLineOptions.ConfigFolder);
 
-            //configure config manager
+            // Configure config manager
             _configManager = new KernelConfigManager { ConfigDirectory = CommandLineOptions.ConfigFolder };
             _container.SetInstance(_configManager);
 
-            //load global app config
+            // Load global app config
             AppConfig = _configManager.GetConfiguration<AppConfig>();
 
             if (CommandLineOptions.StartConfigurator || AppConfig.OpenConfigWithControl && (Keyboard.Modifiers & ModifierKeys.Control) > 0)
                 AppConfig.RunMode = KernelConstants.CONFIG_RUNMODE;
 
-            _appDataConfigManager = new AppDataConfigManager
-            {
-                AppDataConfigDefaultsDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, CommandLineOptions.ConfigFolder, AppDataConfigManager.AppDataDefaultsDirectoryName)
-            };
-
-            _appDataConfigManager.Initialize(AppConfig.Application);
+            // Configure AppDataConfigManager with the application config directory
+            _appDataConfigManager = new AppDataConfigManager(AppConfig.Application, CommandLineOptions.ConfigFolder);
             _container.SetInstance(_appDataConfigManager);
         }
 
