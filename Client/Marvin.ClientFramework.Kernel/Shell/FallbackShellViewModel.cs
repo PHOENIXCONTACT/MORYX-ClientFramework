@@ -9,6 +9,8 @@ namespace Marvin.ClientFramework.Kernel
     {
         public const string ShellName = "FallbackShell";
 
+        public string RunMode { get; set; }
+
         public string ConfiguredShell { get; set; }
 
         public void Initialize()

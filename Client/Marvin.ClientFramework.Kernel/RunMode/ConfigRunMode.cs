@@ -11,7 +11,10 @@ namespace Marvin.ClientFramework.Kernel
     [KernelComponent(typeof(IRunMode), Name = KernelConstants.CONFIG_RUNMODE)]
     public class ConfigRunMode : LocalRunModeBase
     {
-        ///
+        /// <inheritdoc />
+        protected override string Name => KernelConstants.CONFIG_RUNMODE;
+
+        /// <inheritdoc />
         protected override Predicate<Type> TypeLoadFilter
         {
             get
@@ -24,7 +27,7 @@ namespace Marvin.ClientFramework.Kernel
             }
         }
 
-        ///
+        /// <inheritdoc />
         public override void LoadModulesConfiguration()
         {
             var modulesConfig = new ModulesConfiguration();

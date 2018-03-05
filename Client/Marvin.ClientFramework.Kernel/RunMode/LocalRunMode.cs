@@ -13,13 +13,16 @@ namespace Marvin.ClientFramework.Kernel
     {
         internal const string ComponentName = "Local_RunMode";
 
-        ///
+        /// <inheritdoc />
+        protected override string Name => ComponentName;
+
+        /// <inheritdoc />
         protected override Predicate<Type> TypeLoadFilter
         {
             get { return type => type.GetCustomAttribute<ComponentForRunModeAttribute>() == null; }
         }
 
-        /// 
+        /// <inheritdoc /> 
         public override void LoadModulesConfiguration()
         {
             var modulesConfig = ConfigManager.GetConfiguration<ModulesConfiguration>();

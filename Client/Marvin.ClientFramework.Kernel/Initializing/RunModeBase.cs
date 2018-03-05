@@ -35,6 +35,15 @@ namespace Marvin.ClientFramework.Kernel
 
         #endregion
 
+        #region Properties
+
+        /// <summary>
+        /// Name of the RunMode
+        /// </summary>
+        protected abstract string Name { get; }
+
+        #endregion
+
         ///
         public virtual void Initialize()
         {
@@ -68,9 +77,10 @@ namespace Marvin.ClientFramework.Kernel
             if (selectedShell == null)
             {
                 var fallbackShell = (FallbackShellViewModel)GlobalContainer.Resolve<IModuleShell>(FallbackShellViewModel.ShellName);
+                fallbackShell.RunMode = Name;
                 fallbackShell.ConfiguredShell = modulesConfig.Shell.ShellName;
 
-                modulesConfig.Shell.ShellName = fallbackShell.ConfiguredShell;
+                modulesConfig.Shell.ShellName = FallbackShellViewModel.ShellName;
                 return;
             }
 
