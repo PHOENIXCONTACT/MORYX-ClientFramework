@@ -1,2 +1,6 @@
 - name: Overview
   href: index.md
+- name: Getting Started
+  href: GettingStarted.md
+- name: Themes
+  href: Themes.md

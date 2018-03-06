@@ -1,6 +1,7 @@
-# AppData ConfigManager
-
-Loading custom user specific configurations
+---
+uid: AppDataConfigManager
+---
+# AppDataConfigManager & loading custom user specific configurations
 
 The ClientFramework supports user specific configurations which are stored in `%APPDATA%\Phoenix Contact\__AppName__` folder. The [AppDataConfigManager](xref:Marvin.ClientFramework.Kernel) is responsible to take care about loading and saving of this configurations. Note that you don't need to do any initialization steps because this is done automatically.
 
@@ -24,7 +25,7 @@ public class ZombieConfig : ConfigBase
 }
 ````
 
-Now can access the instance of your configuration in the `AppDataConfigManager`.
+Now you can access the instance of your configuration through the `AppDataConfigManager`.
 
 ````cs
 [ClientModule("Wcf Viewer")]
