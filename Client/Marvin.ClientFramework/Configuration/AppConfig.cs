@@ -63,10 +63,5 @@ namespace Marvin.ClientFramework
         /// </summary>
         [DataMember]
         public string ViewPreset { get; set; }
-
-        /// <summary>
-        /// Gets the window title.
-        /// </summary>
-        public string WindowTitle => $"{Name} - Corporate Technology & Value Chain";
     }
 }

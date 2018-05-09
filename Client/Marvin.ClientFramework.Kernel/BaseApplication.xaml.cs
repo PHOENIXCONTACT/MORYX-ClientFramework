@@ -41,7 +41,7 @@ namespace Marvin.ClientFramework.Kernel
             //initialize base root visual
             var defaultRootVisual = new RootVisual(windowConfig)
             {
-                Title = appConfig.WindowTitle, 
+                Title = appConfig.Name, 
                 Content = loaderHandler.View
             };
 

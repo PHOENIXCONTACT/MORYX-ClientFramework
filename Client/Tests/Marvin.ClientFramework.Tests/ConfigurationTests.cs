@@ -18,7 +18,6 @@ namespace Marvin.ClientFramework.Tests
             var appConfig = new AppConfig();
 
             Assert.NotNull(appConfig.Name);
-            Assert.NotNull(appConfig.WindowTitle);
             Assert.NotNull(appConfig.Application);
             Assert.IsTrue(appConfig.OpenConfigWithControl, "Default parameter is not true");
         }
