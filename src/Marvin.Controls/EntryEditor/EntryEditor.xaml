@@ -7,6 +7,7 @@
              xmlns:converter="clr-namespace:Marvin.Controls.Converter"
              xmlns:controls="clr-namespace:Marvin.Controls"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:properties="clr-namespace:Marvin.Controls.Properties"
              mc:Ignorable="d" x:Name="UserControl" d:DesignHeight="300" d:DesignWidth="810">
     <UserControl.Resources>
         <c4I:BooleanToVisibilityConverter x:Key="ReBooleanToVisibilityConverter" TriggerValue="False" />
@@ -27,11 +28,11 @@
                                    FontWeight="Bold" VerticalAlignment="Center"
                                    Visibility="{Binding SubEntries, Converter={StaticResource ReBooleanToVisibilityConverter}}" />
 
-                        <EddieButton Width="120" Content="Open" EddieStyle="Green" Icon="Open"
+                        <EddieButton Width="120" Content="{Localize Open, LocalizationSource={x:Static properties:Localizations.ResourceManager}}" EddieStyle="Green" Icon="Open"
                                      VerticalAlignment="Center" Click="DelveIntoSubEntry"
                                      Visibility="{Binding Converter={StaticResource SubEntriesToVisibilityConverter}}" />
 
-                        <EddieButton Width="120" Content="Remove" EddieStyle="Green" Margin="10,0,0,0" Icon="Delete"
+                        <EddieButton Width="120" Content="{Localize Remove, LocalizationSource={x:Static properties:Localizations.ResourceManager}}" EddieStyle="Green" Margin="10,0,0,0" Icon="Delete"
                                      Visibility="{Binding CurrentEntry, ElementName=UserControl, Converter={StaticResource DelButtonVisibilityConverter}, FallbackValue=Collapsed}"
                                      IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
                                      Click="RemoveCollectionEntry"  />
@@ -70,7 +71,7 @@
                                       IsReadOnly="{Binding IsReadOnly}"
                                       Visibility="Collapsed" />
 
-                        <CheckBox x:Name="ShowPassword" Margin="5,0,0,0" Content="Show" IsChecked="False" />
+                        <CheckBox x:Name="ShowPassword" Margin="5,0,0,0" Content="{Localize Show, LocalizationSource={x:Static properties:Localizations.ResourceManager}}" IsChecked="False" />
                     </StackPanel>
 
                     <DataTemplate.Triggers>
@@ -115,7 +116,7 @@
                                       IsReadOnly="{Binding IsReadOnly}"
                                       Visibility="{Binding SubEntries, Converter={StaticResource ReBooleanToVisibilityConverter}}" />
                         <EddieButton Margin="5,0,0,0" EddieStyle="Green" HorizontalAlignment="Left" Icon="Open"
-                                     Content="Select file" Click="SelectFile" />
+                                     Content="{Localize SelectFile, LocalizationSource={x:Static properties:Localizations.ResourceManager}}" Click="SelectFile" />
                     </StackPanel>
                 </DataTemplate>
             </converter:ValueTypeTemplateSelector.FilePickerTemplate>
@@ -130,7 +131,7 @@
                                       IsReadOnly="{Binding IsReadOnly}"
                                       Visibility="{Binding SubEntries, Converter={StaticResource ReBooleanToVisibilityConverter}}" />
                         <EddieButton Margin="5,0,0,0" EddieStyle="Green" HorizontalAlignment="Left" Icon="Open"
-                                     Content="Select directory" Click="SelectDirectory" />
+                                     Content="{Localize SelectDirectory, LocalizationSource={x:Static properties:Localizations.ResourceManager}}" Click="SelectDirectory" />
                     </StackPanel>
                 </DataTemplate>
             </converter:ValueTypeTemplateSelector.DirectoryPickerTemplate>
@@ -139,12 +140,12 @@
                 <DataTemplate DataType="controls:EntryViewModel">
                     <StackPanel Orientation="Horizontal">
                         <EddieButton Width="120" EddieStyle="Green" HorizontalAlignment="Left" Icon="Open"
-                                 Content="Open" Click="DelveIntoSubEntry" />
+                                 Content="{Localize Open, LocalizationSource={x:Static properties:Localizations.ResourceManager}}" Click="DelveIntoSubEntry" />
 
-                        <EddieButton Width="120" Content="Remove" EddieStyle="Green" Margin="10,0,0,0" Icon="Delete"
+                        <EddieButton Width="120" Content="{Localize Remove, LocalizationSource={x:Static properties:Localizations.ResourceManager}}" EddieStyle="Green" Margin="10,0,0,0" Icon="Delete"
                                      Visibility="{Binding CurrentEntry, ElementName=UserControl, Converter={StaticResource DelButtonVisibilityConverter}, FallbackValue=Collapsed}"
                                      IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
-                                     Click="RemoveCollectionEntry"  />
+                                     Click="RemoveCollectionEntry" />
                     </StackPanel>
                 </DataTemplate>
             </converter:ValueTypeTemplateSelector.ClassTemplate>
@@ -155,10 +156,10 @@
                         <TextBlock Width="200"
                                    Text="{Binding Value, Converter={StaticResource Base64StringLengthToByteLength}, FallbackValue=Unknown}"
                                    VerticalAlignment="Center" />
-                        <EddieButton Width="120" Content="Select" EddieStyle="Green" Margin="5,0,0,0" Icon="Open"
+                        <EddieButton Width="120" Content="{Localize Select, LocalizationSource={x:Static properties:Localizations.ResourceManager}}" EddieStyle="Green" Margin="5,0,0,0" Icon="Open"
                                      IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
                                      Click="SelectStreamContent" />
-                        <EddieButton Width="120" Content="Save" EddieStyle="Green" Margin="5,0,0,0" Icon="Save"
+                        <EddieButton Width="120" Content="{Localize Save, LocalizationSource={x:Static properties:Localizations.ResourceManager}}" EddieStyle="Green" Margin="5,0,0,0" Icon="Save"
                                      IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
                                      Click="SaveStreamContent" />
                     </StackPanel>
@@ -205,12 +206,12 @@
         <DockPanel LastChildFill="True" Visibility="{Binding BreadcrumbVisibility, ElementName=UserControl}">
             <StackPanel Orientation="Horizontal">
                 <c4I:EddieActionButton Click="Back" Icon="ArrowLeft" Margin="0,0,5,0"
-                                       IsEnabled="{Binding CanBackward, ElementName=UserControl}">
-                    Back
+                                       IsEnabled="{Binding CanBackward, ElementName=UserControl}"
+                                       Content="{Localize Back, LocalizationSource={x:Static properties:Localizations.ResourceManager}}">
                 </c4I:EddieActionButton>
                 <c4I:EddieActionButton Click="Forward" Icon="ArrowRight" Margin="0,0,5,0"
-                                       IsEnabled="{Binding CanForward, ElementName=UserControl}">
-                    Forward
+                                       IsEnabled="{Binding CanForward, ElementName=UserControl}"
+                                       Content="{Localize Forward, LocalizationSource={x:Static properties:Localizations.ResourceManager}}">
                 </c4I:EddieActionButton>
             </StackPanel>
 

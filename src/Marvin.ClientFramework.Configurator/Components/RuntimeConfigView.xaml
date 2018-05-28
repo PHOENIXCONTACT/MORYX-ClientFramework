@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:config="clr-namespace:Marvin.ClientFramework.Configurator"
+             xmlns:properties="clr-namespace:Marvin.ClientFramework.Configurator.Properties"
              mc:Ignorable="d" d:DataContext="{d:DesignInstance config:RuntimeConfigViewModel}"
              d:DesignHeight="307" d:DesignWidth="631">
     <UserControl.Resources>
@@ -16,38 +17,33 @@
     
     <Grid Background="White">
         <StackPanel>
-            <TextBlock Style="{StaticResource TitleText}">
-                Runtime Configuration
-            </TextBlock>
+            <TextBlock Style="{StaticResource TitleText}" Text="{x:Static properties:strings.RuntimeConfig_Runtime_Title}" />
 
             <StackPanel Orientation="Horizontal">
-                <LabeledControlHost LabelA="Hostname:">
+                <LabeledControlHost LabelA="{x:Static properties:strings.RuntimeConfig_Hostname_Label}">
                     <EddieTextBox Text="{Binding Config.Host, Mode=TwoWay}"/>
                 </LabeledControlHost>
 
-                <TextBlock Style="{StaticResource DescriptionStyle}">
-                    (Where do we can find the runtime (e.g. "localhost")? )
-                </TextBlock>
+                <TextBlock Style="{StaticResource DescriptionStyle}" 
+                           Text="{x:Static properties:strings.RuntimeConfig_Hostname_Description}" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal">
-                <LabeledControlHost LabelA="Port:">
+                <LabeledControlHost LabelA="{x:Static properties:strings.ProxyConfig_Port_Label}">
                     <EddieTextBox Text="{Binding Config.Port, Mode=TwoWay}"/>
                 </LabeledControlHost>
 
-                <TextBlock Style="{StaticResource DescriptionStyle}">
-                    (On which port? )
-                </TextBlock>
+                <TextBlock Style="{StaticResource DescriptionStyle}" 
+                           Text="{x:Static properties:strings.ProxyConfig_Port_Description}" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal">
-                <LabeledControlHost LabelA="Client Id:">
+                <LabeledControlHost LabelA="{x:Static properties:strings.RuntimeConfig_ClientId_Label}">
                     <EddieTextBox Text="{Binding Config.ClientId, Mode=TwoWay}"/>
                 </LabeledControlHost>
 
-                <TextBlock Style="{StaticResource DescriptionStyle}">
-                    (Unique id to register at the server wcf services)
-                </TextBlock>
+                <TextBlock Style="{StaticResource DescriptionStyle}"
+                           Text="{x:Static properties:strings.RuntimeConfig_ClientId_Description}" />
             </StackPanel>
         </StackPanel>
     </Grid>

@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Markup;
 using System.Windows.Threading;
 using Caliburn.Micro;
 using CommandLine;
-using Marvin.ClientFramework.Dialog;
-using Marvin.ClientFramework.UI;
 using Marvin.Container;
 using Marvin.Logging;
 using Marvin.Threading;
@@ -92,6 +92,18 @@ namespace Marvin.ClientFramework.Kernel
         /// </summary>
         public void Initialize()
         {
+            var culture = new CultureInfo("de-DE");
+            CultureInfo.DefaultThreadCurrentCulture = culture;
+            CultureInfo.DefaultThreadCurrentUICulture = culture;
+
+            Thread.CurrentThread.CurrentCulture = culture;
+            Thread.CurrentThread.CurrentUICulture = culture;
+
+            // Ensure the current culture passed into bindings is the OS culture.
+            // By default, WPF uses en-US as the culture, regardless of the system settings.
+            FrameworkElement.LanguageProperty.OverrideMetadata(typeof(FrameworkElement),
+                new FrameworkPropertyMetadata(XmlLanguage.GetLanguage(culture.IetfLanguageTag)));
+            
             // Check Initialization
             if (IsInitialied)
                 throw new InvalidOperationException("HeartOfLead is already initialized!");

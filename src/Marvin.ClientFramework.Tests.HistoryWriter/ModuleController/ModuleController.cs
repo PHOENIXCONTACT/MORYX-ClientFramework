@@ -14,7 +14,7 @@ namespace Marvin.ClientFramework.Tests.HistoryWriter
 
         protected override void OnInitialize()
         {
-            Config.DisplayName = "History";
+            //Config.DisplayName = "History";
         }
 
         protected override void OnActivate()

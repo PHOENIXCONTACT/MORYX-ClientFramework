@@ -6,6 +6,7 @@
              xmlns:cal="http://www.caliburnproject.org"
              xmlns:config="clr-namespace:Marvin.ClientFramework.Configurator"
              xmlns:ui="clr-namespace:Marvin.ClientFramework.UI;assembly=Marvin.ClientFramework"
+             xmlns:properties="clr-namespace:Marvin.ClientFramework.Configurator.Properties"
              mc:Ignorable="d" d:DesignHeight="659.9" d:DesignWidth="1280" d:DataContext="{d:DesignInstance config:ConfigShellViewModel }">
 
     <UserControl.Resources>
@@ -40,7 +41,7 @@
 
                 <StackPanel Grid.Column="0" Orientation="Horizontal">
                     <Path Data="{CommonShape ShapeType=PxCLogo}" Fill="Black" VerticalAlignment="Center" />
-                    <TextBlock Margin="10,0,0,0" VerticalAlignment="Center" FontSize="18" FontWeight="Bold">Client Configurator</TextBlock>
+                    <TextBlock Margin="10,0,0,0" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Text="{x:Static properties:strings.Shell_Title}" /> 
                 </StackPanel>
 
                 <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0">

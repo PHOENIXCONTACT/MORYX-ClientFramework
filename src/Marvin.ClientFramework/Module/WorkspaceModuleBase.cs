@@ -1,7 +1,10 @@
-﻿using System.Windows.Media;
+﻿using System.Reflection;
+using System.Windows.Media;
 using Caliburn.Micro;
 using Marvin.ClientFramework.Dialog;
 using Marvin.ClientFramework.History;
+using Marvin.ClientFramework.Properties;
+using Marvin.Tools;
 
 namespace Marvin.ClientFramework
 {
@@ -31,10 +34,10 @@ namespace Marvin.ClientFramework
 
         #endregion
 
-        /// <inheritdoc />
-        public abstract Geometry Icon { get; }
+        public string DisplayName { get; protected set; }
 
-        /// <inheritdoc />
+        public virtual Geometry Icon => Geometry.Empty;
+
         public virtual bool HasButton => true;
 
         /// <summary>
@@ -52,6 +55,8 @@ namespace Marvin.ClientFramework
         {
             Container.SetInstance(WindowManager).SetInstance(DialogManager)
                 .SetInstance<IHistoryWriter>(new HistoryWriter(this, History));
+
+            DisplayName = GetType().GetDisplayName() ?? ModuleName;
         }
 
         /// <inheritdoc />

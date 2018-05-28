@@ -62,7 +62,10 @@ namespace Marvin.ClientFramework
 
         #region Fields 
 
-        private readonly string _moduleName;
+        /// <summary>
+        /// Get the name of this module
+        /// </summary>
+        protected string ModuleName { get; }
         private readonly ClientNotificationCollection _notifications = new ClientNotificationCollection();
 
         #endregion
@@ -79,9 +82,9 @@ namespace Marvin.ClientFramework
         /// </summary>
         public INotificationCollection Notifications => _notifications;
 
-        string IModule.Name => _moduleName;
+        string IModule.Name => ModuleName;
 
-        string ILoggingHost.Name => _moduleName;
+        string ILoggingHost.Name => ModuleName;
 
         #endregion
 
@@ -91,7 +94,7 @@ namespace Marvin.ClientFramework
         protected ClientModuleBase()
         {
             var attr = GetType().GetCustomAttribute<RegistrationAttribute>();
-            _moduleName = attr == null ? "" : attr.Name;
+            ModuleName = attr == null ? "" : attr.Name;
         }
 
         /// <summary>
@@ -115,7 +118,7 @@ namespace Marvin.ClientFramework
             Container = ContainerFactory.Create(new Dictionary<Type, string>(), GetType().Assembly)
                 .Register<IParallelOperations, ParallelOperations>();
 
-            Config = ConfigProvider.GetModuleConfiguration<TConf>(_moduleName);
+            Config = ConfigProvider.GetModuleConfiguration<TConf>(ModuleName);
 
             //add several components to internal container
             Container.SetInstance(ConfigProvider)
@@ -126,7 +129,7 @@ namespace Marvin.ClientFramework
             AdditionalInitialize();
 
             LoggerManagement.ActivateLogging(this);
-            Logger.Log(LogLevel.Info, "{0} is initializing...", _moduleName);
+            Logger.Log(LogLevel.Info, "{0} is initializing...", ModuleName);
             Container.SetInstance(Logger);
 
             OnInitialize();
@@ -146,7 +149,7 @@ namespace Marvin.ClientFramework
         /// </summary>
         public void Activate()
         {
-            Logger.Log(LogLevel.Info, "{0} is activating...", _moduleName);
+            Logger.Log(LogLevel.Info, "{0} is activating...", ModuleName);
 
             try
             {
@@ -154,7 +157,7 @@ namespace Marvin.ClientFramework
             }
             catch (Exception ex)
             {
-                Logger.LogException(LogLevel.Error, ex, "Error while activating module {0}!", _moduleName);
+                Logger.LogException(LogLevel.Error, ex, "Error while activating module {0}!", ModuleName);
             }
 
             IsActive = true;
@@ -174,7 +177,7 @@ namespace Marvin.ClientFramework
         /// <param name="close"></param>
         public void Deactivate(bool close)
         {
-            Logger.Log(LogLevel.Info, "{0} is deactivating...", _moduleName);
+            Logger.Log(LogLevel.Info, "{0} is deactivating...", ModuleName);
             RaiseAttemptingDeactivation(new DeactivationEventArgs());
 
             try
@@ -184,7 +187,7 @@ namespace Marvin.ClientFramework
             }
             catch (Exception ex)
             {
-                Logger.LogException(LogLevel.Error, ex, "Error while deactivating module {0}!", _moduleName);
+                Logger.LogException(LogLevel.Error, ex, "Error while deactivating module {0}!", ModuleName);
             }
 
             IsActive = false;
@@ -230,7 +233,7 @@ namespace Marvin.ClientFramework
         /// </returns>
         public override string ToString()
         {
-            return $"{_moduleName}";
+            return $"{ModuleName}";
         }
 
     }

@@ -71,7 +71,6 @@ namespace Marvin.ClientFramework.Tests
         {
             var modConf = new ModulConfig
             {
-                DisplayName = "DisplayName",
                 Accesses = new Dictionary<string, OperationAccess>
                 {
                     {"Test", OperationAccess.LimitedRead}
@@ -82,8 +81,7 @@ namespace Marvin.ClientFramework.Tests
 
             var clientModuleConfig = new ClientModuleConfigMock();
             modConf.CopyTo(clientModuleConfig);
-
-            Assert.AreEqual(modConf.DisplayName, clientModuleConfig.DisplayName);
+            
             Assert.AreEqual(modConf.Accesses, clientModuleConfig.OperationAccesses);
             Assert.AreEqual(modConf.Accesses.Count, clientModuleConfig.OperationAccesses.Count);
 

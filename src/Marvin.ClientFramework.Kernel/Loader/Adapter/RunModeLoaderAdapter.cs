@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
+using Marvin.ClientFramework.Kernel.Properties;
 using Marvin.Container;
 
 namespace Marvin.ClientFramework.Kernel
@@ -34,7 +35,7 @@ namespace Marvin.ClientFramework.Kernel
         private void OnAssemblyConfigurationLoaded(object sender, AssemblyConfiguration e)
         {
             RaiseAddToMax(e.Assemblies.Count);
-            RaiseChangeMessage($"Assembly configuration loaded ({e.Assemblies.Count}) ...");
+            RaiseChangeMessage(string.Format(strings.Loader_AssemblyConfigurationLoaded, e.Assemblies.Count));
         }
 
         /// <summary>
@@ -66,7 +67,7 @@ namespace Marvin.ClientFramework.Kernel
         /// </summary>
         private void OnAssemblyLoaded(object sender, AssemblyConfig e)
         {
-            RaiseChangeValueWithMessage($"{e.Assembly} was loaded ...");
+            RaiseChangeValueWithMessage(string.Format(strings.Loader_AssemblyLoaded, e.Assembly));
         }
     }
 }

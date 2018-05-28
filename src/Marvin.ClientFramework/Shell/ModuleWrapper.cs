@@ -25,12 +25,8 @@ namespace Marvin.ClientFramework.Shell
         /// <summary>
         /// Display name of the wrapped module
         /// </summary>
-        public override string DisplayName => Module.Config.DisplayName;
+        public override string DisplayName => Module.DisplayName;
 
-        /// <summary>
-        /// Defines AutomationId for module button
-        /// </summary>
-        public string AutomationId => $"AID_{Module.Config.DisplayName.Replace(" ", "_")}_ModuleButton";
 
         /// <summary>
         /// Icon of the wrapped module

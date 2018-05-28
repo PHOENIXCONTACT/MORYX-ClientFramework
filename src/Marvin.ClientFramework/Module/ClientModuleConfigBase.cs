@@ -11,12 +11,6 @@ namespace Marvin.ClientFramework
     {
         /// <inheritdoc />
         /// <summary>
-        /// Display name of this module
-        /// </summary>
-        public string DisplayName { get; set; }
-
-        /// <inheritdoc />
-        /// <summary>
         /// Indicates whether the client module is enabled
         /// </summary>
         public bool IsEnabled { get; set; }

@@ -128,6 +128,11 @@
     <Compile Include="Loader\LoaderAdapterBase.cs" />
     <Compile Include="Loader\Adapter\ModuleManagerLoaderAdapter.cs" />
     <Compile Include="Loader\Adapter\RunModeLoaderAdapter.cs" />
+    <Compile Include="Properties\strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>strings.resx</DependentUpon>
+    </Compile>
     <Compile Include="RunMode\RunModeController.cs" />
     <Compile Include="RunMode\ConfigRunMode.cs">
       <SubType>Code</SubType>
@@ -194,6 +199,15 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\strings.de.resx" />
+    <EmbeddedResource Include="Properties\strings.pl.resx" />
+    <EmbeddedResource Include="Properties\strings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>strings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

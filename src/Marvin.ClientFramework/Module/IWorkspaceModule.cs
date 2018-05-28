@@ -8,6 +8,11 @@ namespace Marvin.ClientFramework
     public interface IWorkspaceModule : IClientModule
     {
         /// <summary>
+        /// Current display name of this module
+        /// </summary>
+        string DisplayName { get; }
+
+        /// <summary>
         /// Icon for the module
         /// </summary>
         Geometry Icon { get; }

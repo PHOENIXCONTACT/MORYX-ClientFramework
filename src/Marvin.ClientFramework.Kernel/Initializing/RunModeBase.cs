@@ -114,7 +114,6 @@ namespace Marvin.ClientFramework.Kernel
                 configuredModule = new ModulConfig
                 {
                     ModuleName = att.Name,
-                    DisplayName = att.Name,
                     LibraryName = libraryName,
                     SortIndex = 9999,
                     IsEnabled = true,

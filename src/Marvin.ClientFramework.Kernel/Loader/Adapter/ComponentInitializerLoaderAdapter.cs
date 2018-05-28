@@ -1,4 +1,5 @@
-﻿using Marvin.Container;
+﻿using Marvin.ClientFramework.Kernel.Properties;
+using Marvin.Container;
 using Marvin.Modules;
 
 namespace Marvin.ClientFramework.Kernel
@@ -29,13 +30,15 @@ namespace Marvin.ClientFramework.Kernel
 
         private void OnInitializingComponent(object sender, IInitializable initializable)
         {
-            RaiseChangeValueWithMessage($"Initializing {initializable.GetType().Name} ...");
+            
+            RaiseChangeValueWithMessage(string.Format(strings.Loader_InitializingComponent, initializable.GetType().Name));
         }
 
-        private void OnStarting(object sender, int i)
+        private void OnStarting(object sender, int numberOfComponents)
         {
-            RaiseChangeMessage($"Component initializer found {i} types. Starting to initialize.");
-            RaiseAddToMax(i);
+            
+            RaiseChangeMessage(string.Format(strings.Loader_ComponentInitializingStarting, numberOfComponents));
+            RaiseAddToMax(numberOfComponents);
         }
     }
 }

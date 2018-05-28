@@ -1,16 +1,12 @@
-﻿namespace Marvin.ClientFramework.Configurator
+﻿using Marvin.ClientFramework.Configurator.Properties;
+
+namespace Marvin.ClientFramework.Configurator
 {
     [ConfigViewModelPlugin]
     internal class RuntimeConfigViewModel : ConfigViewModelBase<RuntimeConfig>
     {
-        public override string DisplayName
-        {
-            get { return "Runtime Config"; }
-        }
+        public override string DisplayName => strings.RuntimeConfig_ShortTitle;
 
-        public override string ImageSource
-        {
-            get { return "/Controls4Industry;component/Images/stairs.png"; }
-        }
+        public override string ImageSource => "/Controls4Industry;component/Images/stairs.png";
     }
 }

@@ -1,4 +1,5 @@
-﻿using Marvin.Container;
+﻿using Marvin.ClientFramework.Kernel.Properties;
+using Marvin.Container;
 
 namespace Marvin.ClientFramework.Kernel
 {
@@ -31,12 +32,12 @@ namespace Marvin.ClientFramework.Kernel
 
         private void OnStartInitializeModule(object sender, IClientModule clientModule)
         {
-            RaiseChangeMessage($"Initializing {clientModule.Name}");
+            RaiseChangeMessage(string.Format(strings.Loader_InitializingModule, clientModule.Name));
         }
 
         private void OnInitializingModuleDone(object sender, IClientModule clientModule)
         {
-            RaiseChangeValueWithMessage($"Initializing {clientModule.Name} done ...");
+            RaiseChangeValueWithMessage(string.Format(strings.Loader_InitializingModuleDone, clientModule.Name));
         }
     }
 }

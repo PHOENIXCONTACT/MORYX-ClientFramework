@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Media;
 using Marvin.ClientFramework.Kernel;
 using Marvin.ClientFramework.Localization;
 
@@ -13,9 +12,6 @@ namespace Marvin.ClientFramework.Configurator
     [ClientModule("Configurator"), ComponentForRunMode(KernelConstants.CONFIG_RUNMODE)]
     public class ModuleController : WorkspaceModuleBase<ModuleConfig>
     {
-        /// <inheritdoc />
-        public override Geometry Icon => Geometry.Empty;
-
         #region Dependency Injection
 
         /// <summary>
@@ -52,7 +48,6 @@ namespace Marvin.ClientFramework.Configurator
         {
             Container.LoadComponents<IConfigViewModel>();
 
-            Config.DisplayName = "Main";
             Container.SetInstance(KernelConfigManager)
                 .SetInstance(AppDataConfigManager)
                 .SetInstance(LocalizationProvider);

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Marvin.ClientFramework.Configurator.Properties;
 using Marvin.ClientFramework.Kernel;
 using Marvin.Configuration;
 using Marvin.Container;
@@ -26,15 +27,9 @@ namespace Marvin.ClientFramework.Configurator
 
         #region Fields and Properties
 
-        public override string DisplayName
-        {
-            get { return "Application"; }
-        }
+        public override string DisplayName => strings.AppConfig_ShortTitle;
 
-        public override string ImageSource
-        {
-            get { return "/Controls4Industry;component/Images/wrench.png"; }
-        }
+        public override string ImageSource => "/Controls4Industry;component/Images/wrench.png";
 
         #endregion
 
@@ -53,10 +48,7 @@ namespace Marvin.ClientFramework.Configurator
             NotifyOfPropertyChange(() => SystemProperties);
         }
 
-        public IEnumerable ConfigStateValues
-        {
-            get { return Enum.GetValues(typeof (ConfigState)); } 
-        }
+        public IEnumerable ConfigStateValues => Enum.GetValues(typeof (ConfigState));
 
         public IEnumerable PossibleRunModes
         {

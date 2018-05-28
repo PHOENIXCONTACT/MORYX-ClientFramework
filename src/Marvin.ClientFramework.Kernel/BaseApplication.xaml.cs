@@ -1,4 +1,7 @@
-﻿using System.Windows;
+﻿using System.Globalization;
+using System.Linq;
+using System.Windows;
+using System.Windows.Markup;
 using Caliburn.Micro;
 using Marvin.ClientFramework.Shell;
 using Marvin.Container;
@@ -10,7 +13,7 @@ namespace Marvin.ClientFramework.Kernel
     /// </summary>
     public partial class BaseApplication
     {
-        private IContainer _container;
+        private readonly IContainer _container;
         private IModuleShell _moduleShell;
         
         /// <summary>

@@ -5,19 +5,20 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:cal="http://www.caliburnproject.org"
              xmlns:workspace="clr-namespace:Marvin.Tools.WcfClient.UI.Viewer"
+             xmlns:properties="clr-namespace:Marvin.Tools.WcfClient.UI.Viewer.Properties"
              mc:Ignorable="d" 
              d:DesignHeight="379" d:DesignWidth="515"
              d:DataContext="{d:DesignInstance Type=workspace:WcfClientViewerWorkspaceViewModel, IsDesignTimeCreatable=True}"
              cal:Bind.AtDesignTime="True">   
     
     <DockPanel Margin="5,5,5,5">
-        <TextBlock DockPanel.Dock="Top" Eddie.TextFormat="Header2">WCF Clients</TextBlock>
+        <TextBlock DockPanel.Dock="Top" Eddie.TextFormat="Header2" Text="{x:Static properties:strings.Title}" />
 
         <EddieListView DockPanel.Dock="Top" ItemsSource="{Binding Clients}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Service" DisplayMemberBinding="{Binding Service}" />
-                    <GridViewColumn GridViewSort.PropertyName="State" Header="State">
+                    <GridViewColumn Header="{x:Static properties:strings.List_Service}" DisplayMemberBinding="{Binding Service}" />
+                    <GridViewColumn GridViewSort.PropertyName="State" Header="{x:Static properties:strings.List_State}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate DataType="workspace:WcfClientInfoViewModel">
                                 <Border Background="{Binding StateBrush}">
@@ -26,12 +27,12 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="Uri" DisplayMemberBinding="{Binding Uri}" />
-                    <GridViewColumn Header="ServerVersion" DisplayMemberBinding="{Binding ServerVersion}" />
-                    <GridViewColumn Header="ClientVersion" DisplayMemberBinding="{Binding ClientVersion}" />
-                    <GridViewColumn Header="MinServerVersion" DisplayMemberBinding="{Binding MinServerVersion}" />
-                    <GridViewColumn Header="MinClientVersion" DisplayMemberBinding="{Binding MinClientVersion}" />
-                    <GridViewColumn Header="Tries" DisplayMemberBinding="{Binding Tries}" />
+                    <GridViewColumn Header="{x:Static properties:strings.List_Uri}" DisplayMemberBinding="{Binding Uri}" />
+                    <GridViewColumn Header="{x:Static properties:strings.List_ServerVersion}" DisplayMemberBinding="{Binding ServerVersion}" />
+                    <GridViewColumn Header="{x:Static properties:strings.List_ClientVersion}" DisplayMemberBinding="{Binding ClientVersion}" />
+                    <GridViewColumn Header="{x:Static properties:strings.List_MinServerVersion}" DisplayMemberBinding="{Binding MinServerVersion}" />
+                    <GridViewColumn Header="{x:Static properties:strings.List_MinClientVersion}" DisplayMemberBinding="{Binding MinClientVersion}" />
+                    <GridViewColumn Header="{x:Static properties:strings.List_Tries}" DisplayMemberBinding="{Binding Tries}" />
                 </GridView>
             </ListView.View>
         </EddieListView>

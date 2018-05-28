@@ -10,11 +10,6 @@ namespace Marvin.ClientFramework
     public interface IClientModuleConfig : IConfig
     {
         /// <summary>
-        /// User targeted name of the module. Will be displayed below the button and in the top bar
-        /// </summary>
-        string DisplayName { get; set; }
-
-        /// <summary>
         /// Flag if the module is currently enabled or shall be hidden
         /// </summary>
         bool IsEnabled { get; set; }

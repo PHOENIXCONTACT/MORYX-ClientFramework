@@ -14,7 +14,7 @@ namespace Marvin.ClientFramework.Tests.DialogManager
 
         protected override void OnInitialize()
         {
-            Config.DisplayName = "DialogManager";
+            //Config.DisplayName = "DialogManager";
 
         }
 

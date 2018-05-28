@@ -31,7 +31,7 @@ namespace Marvin.ClientFramework.Tests.NotifyAndEditor
 
         protected override void OnInitialize()
         {
-            Config.DisplayName = "Module Notify";
+            //Config.DisplayName = "Module Notify";
         }
 
         protected override void OnActivate()

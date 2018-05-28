@@ -18,9 +18,7 @@ namespace Marvin.ClientFramework
         public static void SetAccesses(Dictionary<string, OperationAccess> accesses)
         {
             if (_acesses != null)
-            {
                 throw new ArgumentException("Accesses are allready set!", nameof(accesses));
-            }
 
             _acesses = accesses;
         }

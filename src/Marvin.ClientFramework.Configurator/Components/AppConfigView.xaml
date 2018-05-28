@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:config="clr-namespace:Marvin.ClientFramework.Configurator"
+             xmlns:properties="clr-namespace:Marvin.ClientFramework.Configurator.Properties"
              mc:Ignorable="d" d:DataContext="{d:DesignInstance config:AppConfigViewModel}"
              d:DesignHeight="410" d:DesignWidth="839">
     
@@ -17,100 +18,89 @@
     
     <Grid Background="White">
         <StackPanel>
-            <TextBlock Style="{StaticResource TitleText}">
-                Application Configuration
-            </TextBlock>
+            <TextBlock Style="{StaticResource TitleText}" 
+                       Text="{x:Static properties:strings.AppConfig_App_Title}" />
 
             <StackPanel Orientation="Horizontal">
-                <LabeledControlHost LabelA="Name:">
+                <LabeledControlHost LabelA="{x:Static properties:strings.AppConfig_Name_Label}">
                     <EddieTextBox Text="{Binding Config.Name, Mode=TwoWay}"/>
                 </LabeledControlHost>
 
-                <TextBlock Style="{StaticResource DescriptionStyle}">
-                    (Personal name of this application, e.g. ControlSystem)
-                </TextBlock>
+                <TextBlock Style="{StaticResource DescriptionStyle}" 
+                           Text="{x:Static properties:strings.AppConfig_Name_Description}" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal">
-                <LabeledControlHost LabelA="Application:">
+                <LabeledControlHost LabelA="{x:Static properties:strings.AppConfig_Application_Label}">
                     <EddieTextBox Text="{Binding Config.Application, Mode=TwoWay}"/>
                 </LabeledControlHost>
 
-                <TextBlock Style="{StaticResource DescriptionStyle}">
-                    (Name in UserManagement for this application)
-                </TextBlock>
+                <TextBlock Style="{StaticResource DescriptionStyle}" 
+                           Text="{x:Static properties:strings.AppConfig_Application_Description}" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal">
-                <LabeledControlHost LabelA="View type:">
+                <LabeledControlHost LabelA="{x:Static properties:strings.AppConfig_ViewType_Label}">
                     <EddieComboBox ItemsSource="{Binding AvailableViewPresets}"
                                    SelectedItem="{Binding Config.ViewPreset, Mode=TwoWay}"/>
                 </LabeledControlHost>
 
-                <TextBlock Style="{StaticResource DescriptionStyle}">
-                    (View type for this application)
-                </TextBlock>
+                <TextBlock Style="{StaticResource DescriptionStyle}" 
+                           Text="{x:Static properties:strings.AppConfig_ViewType_Description}" />
             </StackPanel>
 
-            <TextBlock Style="{StaticResource TitleText}">
-                Startup
-            </TextBlock>
+            <TextBlock Style="{StaticResource TitleText}" 
+                       Text="{x:Static properties:strings.AppConfig_Startup_Title}" />
             
             <StackPanel Orientation="Horizontal">
-                <LabeledControlHost LabelA="Mode:">
+                <LabeledControlHost LabelA="{x:Static properties:strings.AppConfig_RunMode_Label}">
                     <EddieComboBox ItemsSource="{Binding PossibleRunModes}" 
                                        SelectedItem="{Binding SelectedRunMode, Mode=TwoWay}" />
                 </LabeledControlHost>
 
-                <TextBlock Style="{StaticResource DescriptionStyle}">
-                    (Selects the mode how the frame should be loaded)
-                </TextBlock>
+                <TextBlock Style="{StaticResource DescriptionStyle}" 
+                           Text="{x:Static properties:strings.AppConfig_RunMode_Description}" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal">
-                <LabeledControlHost LabelA="Config CTRL:">
+                <LabeledControlHost LabelA="{x:Static properties:strings.AppConfig_Ctrl_Label}">
                     <CheckBox IsChecked="{Binding Config.OpenConfigWithControl, Mode=TwoWay}" />
                 </LabeledControlHost>
 
-                <TextBlock Style="{StaticResource DescriptionStyle}">
-                    (Will enable that the configurator opens if you press CTRL at startup)
-                </TextBlock>
+                <TextBlock Style="{StaticResource DescriptionStyle}" 
+                           Text="{x:Static properties:strings.AppConfig_Ctrl_Description}" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal">
-                <LabeledControlHost LabelA="Limit Instances:">
+                <LabeledControlHost LabelA="{x:Static properties:strings.AppConfig_LimitInstances_Label}">
                     <CheckBox IsChecked="{Binding Config.LimitInstances, Mode=TwoWay}" />
                 </LabeledControlHost>
 
-                <TextBlock Style="{StaticResource DescriptionStyle}">
-                    (If enabled, instances of this application will be limited to one)
-                </TextBlock>
+                <TextBlock Style="{StaticResource DescriptionStyle}" 
+                           Text="{x:Static properties:strings.AppConfig_LimitInstances_Description}" />
             </StackPanel>
 
-            <TextBlock Style="{StaticResource TitleText}">
-                System Info
-            </TextBlock>
+            <TextBlock Style="{StaticResource TitleText}" 
+                       Text="{x:Static properties:strings.AppConfig_System_Title}" />
 
-            <LabeledControlHost LabelA="UserName:">
+            <LabeledControlHost LabelA="{x:Static properties:strings.AppConfig_UserName_Label}">
                 <TextBlock Text="{Binding SystemProperties.UserName, FallbackValue='-'}" />
             </LabeledControlHost>
 
-            <LabeledControlHost LabelA="Fullname:">
+            <LabeledControlHost LabelA="{x:Static properties:strings.AppConfig_Fullname_Label}">
                 <TextBlock Text="{Binding SystemProperties.Fullname, FallbackValue='-'}" />
             </LabeledControlHost>
 
-            <LabeledControlHost LabelA="Config Folder:">
+            <LabeledControlHost LabelA="{x:Static properties:strings.AppConfig_ConfigFolder_Label}">
                 <TextBlock Text="{Binding SystemProperties.ConfigPath, FallbackValue='-'}" MouseDown="OpenPath" />
             </LabeledControlHost>
 
-            <LabeledControlHost LabelA="AppData:">
+            <LabeledControlHost LabelA="{x:Static properties:strings.AppConfig_AppData_Label}">
                 <TextBlock Text="{Binding SystemProperties.AppDataPath, FallbackValue='-'}" MouseDown="OpenPath" />
             </LabeledControlHost>
 
-            <TextBlock Style="{StaticResource DescriptionStyle}" Margin="5,20,00,0">
-                    If you have selected an RunMode you can open the configurator again<LineBreak />
-                    with the command line argument "--configurator" or press CTRL at startup.
-            </TextBlock>
+            <TextBlock Style="{StaticResource DescriptionStyle}" Margin="5,20,00,0" 
+                       Text="{x:Static properties:strings.AppConfig_RunMode_Hint}" />
             
         </StackPanel> 
     </Grid>

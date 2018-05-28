@@ -41,7 +41,7 @@ namespace Marvin.ClientFramework.Tests
 
         private static FileInfo CaptureToFile(Action<string> captureMethod)
         {
-            var file = Path.Combine(Environment.CurrentDirectory, "Image.jpg");
+            var file = Path.Combine(TestContext.CurrentContext.TestDirectory, "Image.jpg");
             
             Assert.DoesNotThrow(() => captureMethod(file));
 

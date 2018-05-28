@@ -91,12 +91,6 @@ namespace Marvin.ClientFramework
         public bool IsEnabled { get; set; }
 
         /// <summary>
-        /// Gets or sets the display name.
-        /// </summary>
-        [DataMember]
-        public string DisplayName { get; set; }
-
-        /// <summary>
         /// Index on which position the module will be displayed
         /// </summary>
         [DataMember]
@@ -119,7 +113,6 @@ namespace Marvin.ClientFramework
         /// </summary>
         public void CopyTo(IClientModuleConfig moduleConfig)
         {
-            moduleConfig.DisplayName = DisplayName;
             moduleConfig.OperationAccesses = Accesses;
             moduleConfig.SortIndex = SortIndex;
             moduleConfig.IsEnabled = IsEnabled;

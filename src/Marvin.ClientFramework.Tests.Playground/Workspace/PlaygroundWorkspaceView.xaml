@@ -5,11 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:playground="clr-namespace:Marvin.ClientFramework.Tests.Playground"
              xmlns:controls="clr-namespace:Marvin.Controls;assembly=Marvin.Controls"
+             xmlns:properties="clr-namespace:Marvin.ClientFramework.Tests.Playground.Properties"
              mc:Ignorable="d" d:DesignHeight="379" d:DesignWidth="515" 
              d:DataContext="{d:DesignInstance playground:PlaygroundWorkspaceViewModel}">
     
     <StackPanel>
-        <controls:InfoBox x:Name="InfoBox" Text="HelloWorld" BaseBrush="Black" Height="100" Width="300" />
+        <controls:InfoBox x:Name="InfoBox" Text="{x:Static properties:strings.HelloWorld}" BaseBrush="Black" Height="100" Width="300" />
         <UniformGrid Rows="2" Margin="30" HorizontalAlignment="Center" VerticalAlignment="Center">
             <UniformGrid.Resources>
                 <Style TargetType="EddieButton">

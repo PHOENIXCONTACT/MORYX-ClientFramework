@@ -1,10 +1,14 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows;
 using Caliburn.Micro;
 using Marvin.ClientFramework.Commands;
 using Marvin.ClientFramework.Dialog;
 using Marvin.Container;
+using MessageBoxImage = Marvin.ClientFramework.Dialog.MessageBoxImage;
+using MessageBoxOptions = Marvin.ClientFramework.Dialog.MessageBoxOptions;
 
 namespace Marvin.ClientFramework.Configurator
 {
@@ -30,7 +34,7 @@ namespace Marvin.ClientFramework.Configurator
 
         #region Fields and Properties
 
-        public AsyncCommand SaveCurrentCmd { get; private set; }
+        public AsyncCommand SaveAndRestartCmd { get; private set; }
 
         public AsyncCommand SaveAllCmd { get; private set; }
 
@@ -43,7 +47,7 @@ namespace Marvin.ClientFramework.Configurator
         {
             base.OnInitialize();
 
-            SaveCurrentCmd = new AsyncCommand(SaveCurrent);
+            SaveAndRestartCmd = new AsyncCommand(SaveAndRestart);
             SaveAllCmd = new AsyncCommand(SaveAll);
 
             Items.Clear();
@@ -59,12 +63,12 @@ namespace Marvin.ClientFramework.Configurator
         /// <summary>
         /// Button interaction to save the current active configuration
         /// </summary>
-        public async Task SaveCurrent(object parameters)
+        public async Task SaveAndRestart(object parameters)
         {
-            ActiveItem?.SaveConfig();
+            await SaveAll(parameters);
 
-            await DialogManager.ShowMessageBoxAsync("The configuration has been saved successfully!", "Configuration saved",
-                MessageBoxOptions.Ok, MessageBoxImage.Ok).ConfigureAwait(false);
+            Process.Start(Application.ResourceAssembly.Location);
+            Application.Current.Shutdown();
         }
 
         /// <summary>

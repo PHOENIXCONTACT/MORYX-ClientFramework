@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Globalization;
 using System.Windows;
-using System.Windows.Input;
+using System.Windows.Markup;
 using C4I;
 
 namespace Marvin.Controls.Demo
@@ -13,6 +14,7 @@ namespace Marvin.Controls.Demo
 
         private ObservableCollection<TestListViewEntry> _listViewItemsList = new ObservableCollection<TestListViewEntry>();
         private bool _isNavigationBarLocked;
+        private string _selectedCulture = "en";
 
         public ObservableCollection<TestListViewEntry> ListViewItemsList
         {
@@ -50,6 +52,25 @@ namespace Marvin.Controls.Demo
             }
         }
 
-        public ICommand TestCommand { get; set; }
+        public string[] AvailableCultures => new[]
+        {
+            CultureInfo.GetCultureInfo("en").Name, CultureInfo.GetCultureInfo("de").Name,
+            CultureInfo.GetCultureInfo("pl").Name
+        };
+
+        public string SelectedCulture
+        {
+            get { return _selectedCulture; }
+            set
+            {
+                if (_selectedCulture != value)
+                {
+                    _selectedCulture = value;
+                    OnPropertyChanged();
+
+                    CultureInfoHandler.Instance.ChangeCulture(CultureInfo.GetCultureInfo(_selectedCulture));
+                }
+            }
+        }
     }
 }

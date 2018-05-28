@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:c4I="clr-namespace:C4I;assembly=Controls4Industry"
+             xmlns:properties="clr-namespace:Marvin.ClientFramework.Kernel.Properties"
              mc:Ignorable="d" 
              HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
              x:Name="UserControl" d:DesignWidth="805" d:DesignHeight="388">
@@ -50,6 +51,7 @@
 
         </Grid>
 
+        <TextBlock Grid.Row="1" FontSize="10" HorizontalAlignment="Center" Margin="0,0,0,5" Text="{x:Static properties:strings.Loader_Credits}" />
 
         <TextBlock Grid.Row="1" FontSize="10" HorizontalAlignment="Center" Margin="0,0,0,5">
             Application is based on the MARVIN Platform! - Corporate Technology &amp; Value Chain

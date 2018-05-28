@@ -1,16 +1,12 @@
-﻿namespace Marvin.ClientFramework.Configurator
+﻿using Marvin.ClientFramework.Configurator.Properties;
+
+namespace Marvin.ClientFramework.Configurator
 {
     [ConfigViewModelPlugin]
     internal class ProxyConfigViewModel : ConfigViewModelBase<ProxyConfig>
     {
-        public override string DisplayName
-        {
-            get { return "Proxy"; }
-        }
+        public override string DisplayName => strings.ProxyConfig_ShortTitle;
 
-        public override string ImageSource
-        {
-            get { return "/Controls4Industry;component/Images/gear.png"; }
-        }
+        public override string ImageSource => "/Controls4Industry;component/Images/gear.png";
     }
 }
