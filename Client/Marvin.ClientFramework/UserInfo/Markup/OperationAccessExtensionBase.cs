@@ -1,7 +1,7 @@
 ﻿using System.Windows.Markup;
 using Marvin.Users;
 
-namespace Marvin.ClientFramework.UI
+namespace Marvin.ClientFramework
 {
     /// <summary>
     /// Base class for MarkupExtensions which check the access

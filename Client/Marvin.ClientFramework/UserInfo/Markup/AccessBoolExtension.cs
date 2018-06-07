@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Marvin.ClientFramework.UI
+namespace Marvin.ClientFramework
 {
     public class AccessBoolExtension : OperationAccessExtensionBase
     {

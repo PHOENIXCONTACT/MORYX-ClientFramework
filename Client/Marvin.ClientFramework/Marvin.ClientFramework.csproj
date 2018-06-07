@@ -86,7 +86,7 @@
     <Compile Include="Module\ClientModuleBase.cs" />
     <Compile Include="Module\ClientModuleConfigBase.cs" />
     <Compile Include="Module\ClientNotificationCollection.cs" />
-    <Compile Include="Module\HistoryWriter.cs" />
+    <Compile Include="History\HistoryWriter.cs" />
     <Compile Include="Module\IClientModule.cs" />
     <Compile Include="Module\IClientModuleConfig.cs" />
     <Compile Include="Module\IConfigClientModule.cs" />
@@ -114,17 +114,17 @@
     <Compile Include="Tasks\TaskNotifier.cs" />
     <Compile Include="UI\ApplicationCloseCheck.cs" />
     <Compile Include="UI\ContentHost.cs" />
-    <Compile Include="UI\Dialog\DialogConductorView.xaml.cs">
+    <Compile Include="Dialog\DialogConductorView.xaml.cs">
       <DependentUpon>DialogConductorView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\Dialog\DialogConductorViewModel.cs" />
-    <Compile Include="UI\Dialog\MessageBoxViewModel.cs" />
-    <Compile Include="UI\ErrorReport\ScreenCapture.cs" />
-    <Compile Include="UI\Markup\AccessBoolExtension.cs" />
-    <Compile Include="UI\Markup\AccessGridLenghtExtension.cs" />
-    <Compile Include="UI\Markup\AccessVisibilityExtension.cs" />
-    <Compile Include="UI\Markup\AccessVisibilitySwapExtension.cs" />
-    <Compile Include="UI\Markup\OperationAccessExtensionBase.cs" />
+    <Compile Include="Dialog\DialogConductorViewModel.cs" />
+    <Compile Include="Dialog\MessageBoxViewModel.cs" />
+    <Compile Include="Errors\ScreenCapture.cs" />
+    <Compile Include="UserInfo\Markup\AccessBoolExtension.cs" />
+    <Compile Include="UserInfo\Markup\AccessGridLenghtExtension.cs" />
+    <Compile Include="UserInfo\Markup\AccessVisibilityExtension.cs" />
+    <Compile Include="UserInfo\Markup\AccessVisibilitySwapExtension.cs" />
+    <Compile Include="UserInfo\Markup\OperationAccessExtensionBase.cs" />
     <Compile Include="UserInfo\ApplicationAccesses.cs" />
     <Compile Include="Configuration\AppConfig.cs" />
     <Compile Include="Attributes\ClientModuleAttribute.cs" />
@@ -163,11 +163,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="UI\Dialog\DialogConductorView.xaml">
+    <Page Include="Dialog\DialogConductorView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="UI\Dialog\MessageBoxView.xaml">
+    <Page Include="Dialog\MessageBoxView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

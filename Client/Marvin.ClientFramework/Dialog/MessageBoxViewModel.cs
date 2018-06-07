@@ -1,16 +1,11 @@
 ﻿using System.Windows;
 using Caliburn.Micro;
-using Marvin.ClientFramework.Dialog;
-using Marvin.Container;
-using MessageBoxImage = Marvin.ClientFramework.Dialog.MessageBoxImage;
-using MessageBoxOptions = Marvin.ClientFramework.Dialog.MessageBoxOptions;
 
-namespace Marvin.ClientFramework.UI 
+namespace Marvin.ClientFramework.Dialog 
 {
     /// <summary>
     /// Base ViewModel for MessageBoxes
     /// </summary>
-    [GlobalComponent(LifeCycle.Transient, typeof(IMessageBox))]
     public class MessageBoxViewModel : Screen, IMessageBox
     {
         MessageBoxOptions _selection;

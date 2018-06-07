@@ -1,11 +1,11 @@
-﻿<UserControl x:Class="Marvin.ClientFramework.UI.MessageBoxView"
+﻿<UserControl x:Class="Marvin.ClientFramework.Dialog.MessageBoxView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:c4I="clr-namespace:C4I;assembly=Controls4Industry"
-             xmlns:ui="clr-namespace:Marvin.ClientFramework.UI"
-             d:DataContext="{d:DesignInstance ui:MessageBoxViewModel }"
+             xmlns:dialog="clr-namespace:Marvin.ClientFramework.Dialog"
+             d:DataContext="{d:DesignInstance dialog:MessageBoxViewModel }"
              mc:Ignorable="d" d:DesignHeight="215" d:DesignWidth="526">
 
     <UserControl.Resources>

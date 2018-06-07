@@ -1,11 +1,12 @@
-﻿<UserControl x:Class="Marvin.ClientFramework.UI.DialogConductorView"
+﻿<UserControl x:Class="Marvin.ClientFramework.Dialog.DialogConductorView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:ui="clr-namespace:Marvin.ClientFramework.UI"
              xmlns:c4I="clr-namespace:C4I;assembly=Controls4Industry"
-             mc:Ignorable="d" d:DataContext="{d:DesignInstance ui:DialogConductorViewModel }"
+             xmlns:dialog="clr-namespace:Marvin.ClientFramework.Dialog"
+             mc:Ignorable="d" d:DataContext="{d:DesignInstance dialog:DialogConductorViewModel }"
              d:DesignHeight="291" d:DesignWidth="744">
     <UserControl.Resources>
         <ResourceDictionary>

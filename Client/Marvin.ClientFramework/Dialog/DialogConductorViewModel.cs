@@ -4,13 +4,10 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using Caliburn.Micro;
-using Marvin.ClientFramework.Dialog;
 using Marvin.Container;
 using Action = System.Action;
-using MessageBoxImage = Marvin.ClientFramework.Dialog.MessageBoxImage;
-using MessageBoxOptions = Marvin.ClientFramework.Dialog.MessageBoxOptions;
 
-namespace Marvin.ClientFramework.UI
+namespace Marvin.ClientFramework.Dialog
 {
     /// <summary>
     /// Dialog conductor to display <see cref="IScreen"/> in an overlay.

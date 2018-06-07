@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows;
 
-namespace Marvin.ClientFramework.UI
+namespace Marvin.ClientFramework
 {
     public class AccessVisibilitySwapExtension : OperationAccessExtensionBase
     {

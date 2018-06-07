@@ -1,8 +1,7 @@
-﻿using System.Windows;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 using System.Windows.Input;
 
-namespace Marvin.ClientFramework.UI
+namespace Marvin.ClientFramework.Dialog
 {
     /// <summary>
     /// Interaction logic for DialogConductorView.xaml

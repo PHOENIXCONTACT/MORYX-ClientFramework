@@ -4,9 +4,10 @@ using System.Linq;
 using System.Reflection;
 using System.Windows;
 using Caliburn.Micro;
-using Marvin.ClientFramework.UI;
+using Marvin.ClientFramework.Dialog;
 using Marvin.Container;
 using Marvin.Tools;
+using MessageBoxImage = System.Windows.MessageBoxImage;
 
 namespace Marvin.ClientFramework.Kernel
 {

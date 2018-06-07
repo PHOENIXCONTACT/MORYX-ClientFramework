@@ -1,6 +1,4 @@
-﻿using Marvin.ClientFramework.History;
-
-namespace Marvin.ClientFramework
+﻿namespace Marvin.ClientFramework.History
 {
     internal class HistoryWriter : IHistoryWriter
     {

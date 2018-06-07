@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 
-namespace Marvin.ClientFramework.UI
+namespace Marvin.ClientFramework
 {
     /// <summary>
     /// Provides functions to capture the entire screen, 
