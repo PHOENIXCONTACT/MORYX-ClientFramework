@@ -136,7 +136,6 @@
     <Compile Include="Configuration\WindowConfig.cs" />
     <Compile Include="Dialog\IDialogManager.cs" />
     <Compile Include="Dialog\IMessageBox.cs" />
-    <Compile Include="Dialog\IMessageBoxFactory.cs" />
     <Compile Include="Dialog\MessageBoxImage.cs" />
     <Compile Include="Dialog\MessageBoxOptions.cs" />
     <Compile Include="KernelConstants.cs" />

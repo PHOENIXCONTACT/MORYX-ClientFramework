@@ -282,10 +282,6 @@ namespace Marvin.ClientFramework.Kernel
             container.ExecuteInstaller(new AutoInstaller(GetType().Assembly));
             container.LoadComponents<object>(type => type.GetCustomAttribute(typeof(KernelComponentAttribute)) != null);
 
-            //TODO: find better way to register factory and global components
-            container.Register<IMessageBox, MessageBoxViewModel>("MessageBoxViewModel", LifeCycle.Transient);
-            container.Register<IMessageBoxFactory>();
-
             _container = container;
         }
 

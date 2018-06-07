@@ -16,7 +16,7 @@ namespace Marvin.ClientFramework.UI
         MessageBoxOptions _selection;
         private MessageBoxImage _image = MessageBoxImage.None;
 
-        ///
+        /// <inheritdoc />
         public void Initialize(string displayName, string message, MessageBoxOptions options, MessageBoxImage image)
         {
             DisplayName = displayName;
@@ -25,65 +25,65 @@ namespace Marvin.ClientFramework.UI
             Image = image;
         }
 
-        ///
+        /// <inheritdoc />
         public MessageBoxOptions Result => _selection;
 
-        ///
+        /// <inheritdoc />
         public bool OkVisible => IsVisible(MessageBoxOptions.Ok);
 
-        ///
+        /// <inheritdoc />
         public bool CancelVisible => IsVisible(MessageBoxOptions.Cancel);
 
-        ///
+        /// <inheritdoc />
         public bool YesVisible => IsVisible(MessageBoxOptions.Yes);
 
-        ///
+        /// <inheritdoc />
         public bool NoVisible => IsVisible(MessageBoxOptions.No);
 
-        ///
+        /// <inheritdoc />
         public void Ok()
         {
             Select(MessageBoxOptions.Ok);
         }
 
-        ///
+        /// <inheritdoc />
         public void Cancel()
         {
             Select(MessageBoxOptions.Cancel);
         }
 
-        ///
+        /// <inheritdoc />
         public void Yes() 
         {
             Select(MessageBoxOptions.Yes);
         }
 
-        ///
+        /// <inheritdoc />
         public void No() 
         {
             Select(MessageBoxOptions.No);
         }
 
-        ///
+        /// <inheritdoc />
         private bool IsVisible(MessageBoxOptions option) 
         {
             return (Options & option) == option;
         }
 
-        ///
+        /// <inheritdoc />
         private void Select(MessageBoxOptions option)
         {
             _selection = option;
             TryClose();
         }
 
-        ///
+        /// <inheritdoc />
         public string Message { get; private set; }
 
-        ///
+        /// <inheritdoc />
         public MessageBoxOptions Options { get; private set; }
 
-        ///
+        /// <inheritdoc />
         public MessageBoxImage Image
         {
             get { return _image; }

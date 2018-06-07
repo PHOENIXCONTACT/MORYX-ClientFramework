@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Caliburn.Micro;
 
 namespace Marvin.ClientFramework.Dialog 
@@ -16,10 +17,26 @@ namespace Marvin.ClientFramework.Dialog
         void ShowDialog<T>(T dialogViewModel) where T : IScreen;
 
         /// <summary>
+        /// Will show a dialog of the type <see cref="IScreen"/>.
+        /// This is an async implementation and returns if the dialog was closed
+        /// </summary>
+        Task ShowDialogAsync<T>(T dialogViewModel) where T : IScreen;
+
+        /// <summary>
         /// Will show a dialog of the type <see cref="IScreen"/>
         /// It will provide a callback if the dialog was closed
         /// </summary>
         void ShowDialog<T>(T dialogViewModel, Action<T> callback) where T : IScreen;
+
+        /// <summary>
+        /// Shows a messagebox with multiple options
+        /// This is an async implementation and returns if the dialog was closed
+        /// </summary>
+        /// <param name="message">The message string</param>
+        /// <param name="title">The title of the opened box</param>
+        /// <param name="options">The options for the opened box.</param>
+        /// <param name="image">The visible image of the box</param>
+        Task<MessageBoxOptions> ShowMessageBoxAsync(string message, string title, MessageBoxOptions options, MessageBoxImage image);
 
         /// <summary>
         /// Shows a messagebox with multiple options
@@ -39,6 +56,14 @@ namespace Marvin.ClientFramework.Dialog
         /// <param name="options">The options for the opened box.</param>
         /// <param name="image">The visible image of the box</param>
         void ShowMessageBox(string message, string title, MessageBoxOptions options, MessageBoxImage image);
+
+        /// <summary>
+        /// Shows a messagebox with multiple options
+        /// This is an async implementation and returns if the dialog was closed
+        /// </summary>
+        /// <param name="message">The message string</param>
+        /// <param name="title">The title of the opened box</param>
+        Task ShowMessageBoxAsync(string message, string title);
 
         /// <summary>
         /// Shows a messagebox with multiple options

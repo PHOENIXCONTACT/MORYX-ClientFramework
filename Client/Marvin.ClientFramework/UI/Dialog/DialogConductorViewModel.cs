@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using Caliburn.Micro;
 using Marvin.ClientFramework.Dialog;
 using Marvin.Container;
+using Action = System.Action;
 using MessageBoxImage = Marvin.ClientFramework.Dialog.MessageBoxImage;
 using MessageBoxOptions = Marvin.ClientFramework.Dialog.MessageBoxOptions;
 
@@ -17,47 +19,74 @@ namespace Marvin.ClientFramework.UI
     [KernelComponent(typeof(IDialogManager))]
     public class DialogConductorViewModel : PropertyChangedBase, IDialogManager, IConductor
     {
-        /// 
+        /// <summary>
+        /// Currently active dialog
+        /// </summary>
         public IScreen ActiveItem { get; private set; }
-
-        ///
-        public IMessageBoxFactory MessageBoxFactory { get; set; }
-
-        /// 
+        
+        /// <inheritdoc />
         public void ShowDialog<T>(T dialogModel) where T : IScreen
         {
             ShowDialog(dialogModel, null);
         }
 
-        /// 
+        /// <inheritdoc />
         public void ShowDialog<T>(T dialogViewModel, Action<T> callback) where T : IScreen
         {
             if (callback != null)
-                AttachCallback(dialogViewModel, callback);
+                AttachCallback(dialogViewModel, () => callback(dialogViewModel));
 
             AttachFocusContext(dialogViewModel);
             ActivateItem(dialogViewModel);
         }
 
-        /// 
+        /// <inheritdoc />
+        public Task ShowDialogAsync<T>(T dialogViewModel) where T : IScreen
+        {
+            return ShowDialogAsync<bool, T>(dialogViewModel, tcs => tcs.SetResult(true));
+        }
+
+        /// <inheritdoc />
         public void ShowMessageBox(string message, string title, MessageBoxOptions options, MessageBoxImage image, Action<IMessageBox> callback)
         {
-            var messageBox = MessageBoxFactory.Create();
+            var messageBox = new MessageBoxViewModel();
             messageBox.Initialize(title, message, options, image);
-
             ShowDialog(messageBox, callback);
+        }
+
+        /// <inheritdoc />
+        public Task<MessageBoxOptions> ShowMessageBoxAsync(string message, string title, MessageBoxOptions options, MessageBoxImage image)
+        {
+            var messageBox = new MessageBoxViewModel();
+            messageBox.Initialize(title, message, options, image);
+            return ShowDialogAsync<MessageBoxOptions, MessageBoxViewModel>(messageBox, tcs => tcs.SetResult(messageBox.Result));
+        }
+
+        /// <summary>
+        /// Shows an async dialog with a typed result
+        /// </summary>
+        private Task<TResult> ShowDialogAsync<TResult, TDialog>(TDialog dialogViewModel, Action<TaskCompletionSource<TResult>> callback)
+            where TDialog : IScreen
+        {
+            var tcs = new TaskCompletionSource<TResult>();
+            AttachCallback(dialogViewModel, () => callback(tcs));
+
+            AttachFocusContext(dialogViewModel);
+            ActivateItem(dialogViewModel);
+
+            return tcs.Task;
         }
 
         /// <summary>
         /// Attaches the dialog callback to the deactivated event of the given sceen
         /// </summary>
-        private static void AttachCallback<T>(T dialogViewModel, Action<T> callback) where T : IScreen
+        private static void AttachCallback<T>(T dialogViewModel, Action callback) where T : IScreen
         {
             EventHandler<DeactivationEventArgs> callbackHandler = null;
             callbackHandler = delegate
             {
                 dialogViewModel.Deactivated -= callbackHandler;
-                callback(dialogViewModel);
+                callback();
             };
             dialogViewModel.Deactivated += callbackHandler;
         }
@@ -93,21 +122,9 @@ namespace Marvin.ClientFramework.UI
             viewAware.ViewAttached += callbackHandler;
         }
 
-        /// 
-        public IEnumerable GetConductedItems()
-        {
-            return ActiveItem != null ? new[] {ActiveItem} : new object[0];
-        }
-
-        /// 
+        /// <inheritdoc />
         public void ActivateItem(object item) 
         {
-            var current = ActiveItem as IMessageBox;
-            if (current != null)
-            {
-                MessageBoxFactory.Destroy(current);
-            }
-
             ActiveItem = item as IScreen;
 
             // ReSharper disable once SuspiciousTypeConversion.Global
@@ -126,7 +143,7 @@ namespace Marvin.ClientFramework.UI
             });
         }
 
-        /// 
+        /// <inheritdoc />
         public void CloseItem(object item)
         {
             var guard = item as IGuardClose;
@@ -142,7 +159,7 @@ namespace Marvin.ClientFramework.UI
                 CloseActiveItemCore();
         }
 
-        /// 
+        /// <inheritdoc />
         public void CloseActiveItemCore() 
         {
             var oldItem = ActiveItem;
@@ -152,16 +169,16 @@ namespace Marvin.ClientFramework.UI
             oldItem?.Deactivate(true);
         }
 
-        /// 
+        /// <inheritdoc />
         public event EventHandler<ActivationProcessedEventArgs> ActivationProcessed = delegate { };
 
-        /// 
+        /// <inheritdoc />
         public IEnumerable GetChildren()
         {
             return null;
         }
 
-        /// 
+        /// <inheritdoc />
         public void DeactivateItem(object item, bool close)
         {
             CloseItem(item);
@@ -169,19 +186,25 @@ namespace Marvin.ClientFramework.UI
 
         #region Overloads
 
-        /// 
+        /// <inheritdoc />
         public void ShowMessageBox(string message, string title, MessageBoxOptions options, MessageBoxImage image)
         {
             ShowMessageBox(message, title, options, image, null);
         }
 
-        /// 
+        /// <inheritdoc />
         public void ShowMessageBox(string message, string title, Action<IMessageBox> callback)
         {
             ShowMessageBox(message, title, MessageBoxOptions.Ok, MessageBoxImage.None, callback);
         }
 
-        /// 
+        /// <inheritdoc />
+        public Task ShowMessageBoxAsync(string message, string title)
+        {
+            return ShowMessageBoxAsync(message, title, MessageBoxOptions.Ok, MessageBoxImage.None);
+        }
+
+        /// <inheritdoc />
         public void ShowMessageBox(string message, string title)
         {
             ShowMessageBox(message, title, MessageBoxOptions.Ok, MessageBoxImage.None, null);

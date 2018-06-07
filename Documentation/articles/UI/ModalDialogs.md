@@ -9,13 +9,16 @@ The DialogManager manages multiple modal dialogs for the default shell. You can 
 public interface IDialogManager
 {
     void ShowDialog(IScreen dialogViewModel);
+    Task ShowDialogAsync<T>(T dialogViewModel);
     void ShowDialog(IScreen dialogViewModel, Action<IScreen> callback);
 
-    void ShowMessageBox(string message, string title, MessageBoxOptions options, MessageBoxImage image, Action<IMessageBox> callback);
     void ShowMessageBox(string message, string title, MessageBoxOptions options, MessageBoxImage image);
+    Task<MessageBoxOptions> ShowMessageBoxAsync(string message, string title, MessageBoxOptions options, MessageBoxImage image);
+    void ShowMessageBox(string message, string title, MessageBoxOptions options, MessageBoxImage image, Action<IMessageBox> callback);
 
-    void ShowMessageBox(string message, string title, Action<IMessageBox> callback);
+    Task ShowMessageBoxAsync(string message, string title);
     void ShowMessageBox(string message, string title);
+    void ShowMessageBox(string message, string title, Action<IMessageBox> callback);
 }
 ````
 

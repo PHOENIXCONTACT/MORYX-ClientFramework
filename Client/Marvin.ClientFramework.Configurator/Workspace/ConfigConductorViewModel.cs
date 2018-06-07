@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Caliburn.Micro;
+using Marvin.ClientFramework.Commands;
 using Marvin.ClientFramework.Dialog;
 using Marvin.Container;
 
@@ -26,12 +28,23 @@ namespace Marvin.ClientFramework.Configurator
 
         #endregion
 
+        #region Fields and Properties
+
+        public AsyncCommand SaveCurrentCmd { get; private set; }
+
+        public AsyncCommand SaveAllCmd { get; private set; }
+
+        #endregion
+
         /// <summary>
         /// Called when initializing.
         /// </summary>
         protected override void OnInitialize()
         {
             base.OnInitialize();
+
+            SaveCurrentCmd = new AsyncCommand(SaveCurrent);
+            SaveAllCmd = new AsyncCommand(SaveAll);
 
             Items.Clear();
 
@@ -46,29 +59,24 @@ namespace Marvin.ClientFramework.Configurator
         /// <summary>
         /// Button interaction to save the current active configuration
         /// </summary>
-        public void SaveCurrent()
+        public async Task SaveCurrent(object parameters)
         {
-            if (ActiveItem != null)
-            {
-                ActiveItem.SaveConfig();
-            }
+            ActiveItem?.SaveConfig();
 
-            DialogManager.ShowMessageBox("The configuration has been saved successfully!", "Configuration saved",
-                MessageBoxOptions.Ok, MessageBoxImage.Ok);
+            await DialogManager.ShowMessageBoxAsync("The configuration has been saved successfully!", "Configuration saved",
+                MessageBoxOptions.Ok, MessageBoxImage.Ok).ConfigureAwait(false);
         }
 
         /// <summary>
         /// Button interaction to save all configurations
         /// </summary>
-        public void SaveAll()
+        public async Task SaveAll(object parameters)
         {
             foreach (var configViewModel in ConfigScreens)
-            {
                 configViewModel.SaveConfig();
-            }
 
-            DialogManager.ShowMessageBox("All configurations are successfully saved!", "All configs saved!",
-                MessageBoxOptions.Ok, MessageBoxImage.Ok);
+            await DialogManager.ShowMessageBoxAsync("All configurations are successfully saved!", "All configs saved!",
+                MessageBoxOptions.Ok, MessageBoxImage.Ok).ConfigureAwait(false);
         }
     }
 }

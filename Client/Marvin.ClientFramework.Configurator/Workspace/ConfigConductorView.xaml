@@ -52,8 +52,8 @@
         </Border>
 
         <StackPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" Margin="5,5,5,5" Orientation="Horizontal">
-            <EddieButton x:Name="SaveCurrent" Icon="CheckMark" Content="Save current" />
-            <EddieButton x:Name="SaveAll" Icon="CheckMark" Content="Save all" Margin="10,0,0,0"/>
+            <EddieButton Command="{Binding SaveCurrentCmd}" Icon="CheckMark" Content="Save current" />
+            <EddieButton Command="{Binding SaveAllCmd}" Icon="CheckMark" Content="Save all" Margin="10,0,0,0"/>
         </StackPanel>
     </Grid>
 </UserControl>
