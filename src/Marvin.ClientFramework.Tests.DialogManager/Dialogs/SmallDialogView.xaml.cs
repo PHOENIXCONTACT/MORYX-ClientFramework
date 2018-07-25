@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace Marvin.ClientFramework.Tests.DialogManager.Dialogs
+namespace Marvin.ClientFramework.Tests.DialogManager
 {
     /// <summary>
     /// Interaction logic for SmallDialogView.xaml

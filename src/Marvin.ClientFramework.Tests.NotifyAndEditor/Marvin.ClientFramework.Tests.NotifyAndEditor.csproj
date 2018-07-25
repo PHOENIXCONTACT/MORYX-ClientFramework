@@ -53,17 +53,13 @@
       <HintPath>..\..\packages\Common.Logging.Core.3.4.1\lib\net40\Common.Logging.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Marvin, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Marvin.3.0.0-alpha326\lib\net461\Marvin.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Marvin.PlatformTools, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Marvin.PlatformTools.3.0.0-alpha326\lib\net461\Marvin.PlatformTools.dll</HintPath>
+    <Reference Include="Marvin, Version=3.0.0.1535, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Marvin.3.0.0-dev001535\lib\net461\Marvin.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="PresentationCore" />
@@ -83,7 +79,6 @@
     </Compile>
     <Compile Include="ModuleController\ModuleConfig.cs" />
     <Compile Include="ModuleController\ModuleController.cs" />
-    <Compile Include="ModuleController\ModuleIcon.cs" />
     <Compile Include="Workspace\NotifyAndEditorWorkspaceViewModel.cs" />
     <Compile Include="Workspace\NotifyAndEditorWorkspaceView.xaml.cs">
       <DependentUpon>NotifyAndEditorWorkspaceView.xaml</DependentUpon>
@@ -100,11 +95,6 @@
     <ProjectReference Include="..\Controls4Industry\Controls4Industry.csproj">
       <Project>{8713d17c-63c8-4cef-9ff9-376c921ef92b}</Project>
       <Name>Controls4Industry</Name>
-      <Private>True</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\Marvin.ClientFramework.Base\Marvin.ClientFramework.Base.csproj">
-      <Project>{2d25d379-50fb-4743-8189-dad17c50e247}</Project>
-      <Name>Marvin.ClientFramework.Base</Name>
       <Private>True</Private>
     </ProjectReference>
     <ProjectReference Include="..\Marvin.ClientFramework\Marvin.ClientFramework.csproj">

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Windows;
-using Marvin.ClientFramework.Base;
 using Marvin.ClientFramework.Dialog;
-using Marvin.ClientFramework.Tests.DialogManager.Dialogs;
 using Marvin.Container;
 using MessageBoxImage = Marvin.ClientFramework.Dialog.MessageBoxImage;
 using MessageBoxOptions = Marvin.ClientFramework.Dialog.MessageBoxOptions;
@@ -21,6 +19,7 @@ namespace Marvin.ClientFramework.Tests.DialogManager
         #endregion
 
         private readonly SmallDialogViewModel _dialogViewModel = new SmallDialogViewModel();
+        private readonly OversizedContentDialogViewModel _oversizeDialogViewModel = new OversizedContentDialogViewModel();
 
         public string SystemRunningAs
         {
@@ -71,6 +70,11 @@ namespace Marvin.ClientFramework.Tests.DialogManager
                 {
                     MessageBox.Show("Callback has been rised! Result: " + box.Result, "Callback!");
                 });
+        }
+
+        public void ShowOversizedContentDialog()
+        {
+            DialogManager.ShowDialog(_oversizeDialogViewModel);
         }
     }
 }

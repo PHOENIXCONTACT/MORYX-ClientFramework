@@ -1,10 +1,13 @@
-﻿using Marvin.ClientFramework.Base;
+﻿using System.Windows.Media;
+using C4I;
 
 namespace Marvin.ClientFramework.Tests.Playground
 {
     [ClientModule("Playground")]
     public class ModuleController : WorkspaceModuleBase<ModuleConfig>
     {
+        public override Geometry Icon => ShapeFactory.GetShapeGeometry(CommonShapeType.Cloud);
+
         protected override void OnInitialize()
         {
             Config.DisplayName = "Playground";
@@ -12,12 +15,10 @@ namespace Marvin.ClientFramework.Tests.Playground
 
         protected override void OnActivate()
         {
-
         }
 
         protected override void OnDeactivate(bool close)
         {
-
         }
 
         protected override IModuleWorkspace OnCreateWorkspace()
@@ -27,7 +28,6 @@ namespace Marvin.ClientFramework.Tests.Playground
 
         protected override void OnDestroyWorkspace(IModuleWorkspace workspace)
         {
-
         }
     }
 }

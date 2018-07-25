@@ -1,6 +1,5 @@
-﻿using System.ComponentModel;
-using System.Windows;
-using Marvin.ClientFramework.Base;
+﻿using System.Windows;
+using Marvin.ClientFramework.History;
 using Marvin.Container;
 
 namespace Marvin.ClientFramework.Tests.HistoryWriter

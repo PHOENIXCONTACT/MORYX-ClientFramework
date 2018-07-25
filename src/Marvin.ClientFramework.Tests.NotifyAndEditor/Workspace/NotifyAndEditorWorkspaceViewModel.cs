@@ -1,5 +1,4 @@
 ﻿using System;
-using Marvin.ClientFramework.Base;
 using Marvin.Container;
 
 namespace Marvin.ClientFramework.Tests.NotifyAndEditor

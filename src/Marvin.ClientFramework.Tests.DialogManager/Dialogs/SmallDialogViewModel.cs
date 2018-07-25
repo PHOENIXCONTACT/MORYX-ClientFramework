@@ -1,6 +1,6 @@
 ﻿using Caliburn.Micro;
 
-namespace Marvin.ClientFramework.Tests.DialogManager.Dialogs
+namespace Marvin.ClientFramework.Tests.DialogManager
 {
     public class SmallDialogViewModel : Screen
     {

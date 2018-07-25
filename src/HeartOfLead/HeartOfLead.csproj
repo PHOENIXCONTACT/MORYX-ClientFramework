@@ -116,36 +116,20 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Caliburn.Micro, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Caliburn.Micro.Core.3.2.0\lib\net45\Caliburn.Micro.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Caliburn.Micro.Platform, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Caliburn.Micro.3.2.0\lib\net45\Caliburn.Micro.Platform.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Caliburn.Micro.Platform.Core, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Caliburn.Micro.3.2.0\lib\net45\Caliburn.Micro.Platform.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Castle.Core.4.2.1\lib\net45\Castle.Core.dll</HintPath>
+      <HintPath>..\..\packages\Castle.Core.4.3.1\lib\net45\Castle.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Castle.Windsor, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Castle.Windsor.4.1.0\lib\net45\Castle.Windsor.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CommandLine, Version=2.2.1.0, Culture=neutral, PublicKeyToken=de6f01bd326f8c32, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\CommandLineParser.2.2.1\lib\net45\CommandLine.dll</HintPath>
+    <Reference Include="Marvin, Version=3.0.0.1535, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Marvin.3.0.0-dev001535\lib\net461\Marvin.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Marvin, Version=3.0.0.1375, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Marvin.3.0.0-dev001375\lib\net461\Marvin.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Marvin.Container, Version=3.0.0.1375, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Marvin.Container.3.0.0-dev001375\lib\net461\Marvin.Container.dll</HintPath>
+    <Reference Include="Marvin.Container, Version=3.0.0.1535, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Marvin.Container.3.0.0-dev001535\lib\net461\Marvin.Container.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -154,10 +138,6 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Caliburn.Micro.3.2.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
@@ -190,6 +170,26 @@
       <Project>{9a690b37-ab29-4c5d-b185-3dd20dd8fb18}</Project>
       <Name>Marvin.ClientFramework.Kernel</Name>
       <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Marvin.ClientFramework.Tests.AboutBoxCustomization\Marvin.ClientFramework.Tests.AboutBoxCustomization.csproj">
+      <Project>{bb6991f1-87e2-4ca1-9a68-0abbd3b1f1ec}</Project>
+      <Name>Marvin.ClientFramework.Tests.AboutBoxCustomization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Marvin.ClientFramework.Tests.DialogManager\Marvin.ClientFramework.Tests.DialogManager.csproj">
+      <Project>{f03df750-aff5-4cf2-8c8e-745535b95533}</Project>
+      <Name>Marvin.ClientFramework.Tests.DialogManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Marvin.ClientFramework.Tests.HistoryWriter\Marvin.ClientFramework.Tests.HistoryWriter.csproj">
+      <Project>{732d0545-3fc9-4686-8960-d189a4b32204}</Project>
+      <Name>Marvin.ClientFramework.Tests.HistoryWriter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Marvin.ClientFramework.Tests.NotifyAndEditor\Marvin.ClientFramework.Tests.NotifyAndEditor.csproj">
+      <Project>{154e0ad7-f409-4919-8fc0-420f625af93a}</Project>
+      <Name>Marvin.ClientFramework.Tests.NotifyAndEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Marvin.ClientFramework.Tests.Playground\Marvin.ClientFramework.Tests.Playground.csproj">
+      <Project>{83a2b8ab-6af1-4666-bbfd-b2fd085c0df2}</Project>
+      <Name>Marvin.ClientFramework.Tests.Playground</Name>
     </ProjectReference>
     <ProjectReference Include="..\Marvin.ClientFramework.UserMgnt\Marvin.ClientFramework.UserManagement.csproj">
       <Project>{f2a5992c-102c-4f7d-b642-531c169ab513}</Project>

@@ -14,14 +14,9 @@
             <ContentPresenter Grid.Row="0" Margin="0,0,0,5" 
                               x:Name="PART_Header"
                               Content="{TemplateBinding Header}" />
-
-            <ScrollViewer Grid.Row="1" 
-                          HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}"
-                          VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}">
-                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+            <ContentPresenter Grid.Row="1" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
                                   VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                   Content="{TemplateBinding Content}"  />
-            </ScrollViewer>
 
             <StackPanel Grid.Row="2">
                 <Border BorderThickness="0,1,0,0" BorderBrush="DarkGray" Margin="0,10,0,0" />
@@ -54,8 +49,8 @@
     </ControlTemplate>
     
     <Style TargetType="c4I:DialogPanel">
-        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
-        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled"/>
         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
         <Setter Property="VerticalContentAlignment" Value="Stretch"/>
         <Setter Property="Template" Value="{StaticResource DialogPanelStyle}" />

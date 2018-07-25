@@ -1,14 +1,9 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Input;
-using C4I;
-using Marvin.ClientFramework.Base;
+using Marvin.ClientFramework.Commands;
 using Marvin.ClientFramework.Dialog;
 using Marvin.Container;
-using MessageBoxImage = Marvin.ClientFramework.Dialog.MessageBoxImage;
-using MessageBoxOptions = Marvin.ClientFramework.Dialog.MessageBoxOptions;
 
 namespace Marvin.ClientFramework.Tests.Playground
 {

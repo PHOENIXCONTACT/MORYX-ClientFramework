@@ -18,6 +18,7 @@
             <EddieButton x:Name="ShowSmallDialogWithCallback">Dialog with Callback</EddieButton>
             <EddieButton x:Name="ShowMessageBox">MessageBox</EddieButton>
             <EddieButton x:Name="ShowMessageBoxWithCallback">MessageBox with Callback</EddieButton>
+            <EddieButton x:Name="ShowOversizedContentDialog">Oversized content</EddieButton>
         </StackPanel>
     </Grid>
 </UserControl>
