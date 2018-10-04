@@ -14,13 +14,20 @@ namespace Marvin.Controls.Converter
             if (entry == null)
                 return Visibility.Hidden;
 
-            if (entry.ValueType == EntryValueType.Collection)
-                return Visibility.Visible;
+            var isEntrySettable = entry.ValueType == EntryValueType.Collection ||
+                                  entry.ValueType == EntryValueType.Class &&
+                                  entry.PossibleValues != null &&
+                                  entry.PossibleValues.Count > 1;
 
-            if (entry.ValueType == EntryValueType.Class && entry.PossibleValues != null)
-                return Visibility.Visible;
+            if (isEntrySettable)
+            {
+                if (entry.Parent != null)
+                {
+                    isEntrySettable = entry.Parent.ValueType != EntryValueType.Collection;
+                }
+            }
 
-            return Visibility.Hidden;
+            return isEntrySettable ? Visibility.Visible : Visibility.Hidden;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

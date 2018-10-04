@@ -14,11 +14,15 @@ namespace Marvin.Controls
     {
         public Entry Entry { get; }
 
+        public EntryViewModel Parent { get; set; }
+
         public EntryViewModel(IList<Entry> entries)
         {
             Key = "Root";
             ValueType = EntryValueType.Class;
             SubEntries = new ObservableWrapperCollection(entries);
+
+            UpdateParent();
         }
 
         public EntryViewModel(Entry entry)
@@ -27,6 +31,21 @@ namespace Marvin.Controls
             Key = Entry.Key.Name;
             ValueType = Entry.Value.Type;
             SubEntries = new ObservableWrapperCollection(entry.SubEntries);
+
+            UpdateParent();
+        }
+
+        private void UpdateParent(EntryViewModel entry)
+        {
+            entry.Parent = this;
+        }
+
+        private void UpdateParent()
+        {
+            foreach (var entryViewModel in SubEntries)
+            {
+                UpdateParent(entryViewModel);
+            }
         }
 
         ///
@@ -65,6 +84,8 @@ namespace Marvin.Controls
             var prototype = Entry.GetPrototype(prototypeName).Instantiate();
             var prototypeVm = new EntryViewModel(prototype);
             SubEntries.Add(prototypeVm);
+
+            UpdateParent(prototypeVm);
         }
 
         /// <summary>
@@ -79,6 +100,8 @@ namespace Marvin.Controls
             Entry.SubEntries = prototype.SubEntries;
             // Update our observable collection
             SubEntries = new ObservableWrapperCollection(Entry.SubEntries);
+
+            UpdateParent();
         }
 
         ///
