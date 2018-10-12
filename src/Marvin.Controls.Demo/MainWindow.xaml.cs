@@ -97,8 +97,8 @@ namespace Marvin.Controls.Demo
                 }
             };
 
-            var entries = EntryConvert.EncodeObject(entryModel).ToList();
-            EntryViewModels = new EntryViewModel(entries);
+            var entry = EntryConvert.EncodeObject(entryModel);
+            EntryViewModels = new EntryViewModel(entry);
 
             OnPropertyChanged(nameof(EntryViewModels));
         }
