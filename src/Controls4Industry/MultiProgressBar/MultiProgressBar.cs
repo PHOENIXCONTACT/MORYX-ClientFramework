@@ -190,11 +190,11 @@ namespace C4I
                     {
                         if (widthSum + partWidth <= actOrig) // Check if there is enough space for the next progressItem
                         {
-                            stepItem.Width = partWidth;
+                            stepItem.Width = Math.Max(0, partWidth);
                         }
                         else // Use the remaining space of the bar if the width of this item is too much
                         {
-                            stepItem.Width = actOrig - widthSum;
+                            stepItem.Width = Math.Max(0, actOrig - widthSum);
                         }
                         widthSum += stepItem.Width;
                     }
@@ -310,7 +310,7 @@ namespace C4I
                 {
                     var borderWidth = BorderThickness.Left + BorderThickness.Right;
                     double percent = IsIndeterminate || Max <= min ? 1.0 : (_value - min) / (Max - min);
-                    _indicator.Width = percent * ActualWidth - borderWidth;
+                    _indicator.Width = Math.Max(0, percent * ActualWidth - borderWidth);
                 }
                 else
                 {
