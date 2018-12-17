@@ -51,6 +51,7 @@
     <Compile Include="AdornedControl\FrameworkElementAdorner.cs" />
     <Compile Include="Behaviour\TreeViewSelectedItemBehaviour.cs" />
     <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="Converter\EqualityConverter.cs" />
     <Compile Include="Core\DesignTimeResourceDictionary.cs" />
     <Compile Include="Core\EddieTextFormat.cs" />
     <Compile Include="EddieActionButton\EddieActionButton.cs" />
