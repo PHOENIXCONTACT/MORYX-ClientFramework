@@ -9,6 +9,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using C4I;
+using Marvin.Configuration;
 using Marvin.Serialization;
 
 namespace Marvin.Controls.Demo
@@ -94,7 +95,9 @@ namespace Marvin.Controls.Demo
                 SubClass = new EntrySubClass
                 {
                     AByte = 0xE2
-                }
+                },
+                File = "",
+                Password = "secret"
             };
 
             var entry = EntryConvert.EncodeObject(entryModel);
@@ -115,6 +118,15 @@ namespace Marvin.Controls.Demo
             public List<EntrySubClass> ListSubClass { get; set; }
 
             public byte[] ArrayOfByte { get; set; }
+
+            [FileSystemPath(FileSystemPathType.File)]
+            public string File { get; set; }
+
+            [FileSystemPath(FileSystemPathType.Directory)]
+            public string Directory { get; set; }
+
+            [Password]
+            public string Password { get; set; }
         }
 
         private class EntrySubClass

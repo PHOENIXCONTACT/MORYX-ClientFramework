@@ -30,6 +30,7 @@ namespace Marvin.Controls
             Entry = entry;
             Key = Entry.Key.Name;
             ValueType = Entry.Value.Type;
+            UnitType = Entry.Value.UnitType;
             SubEntries = new ObservableWrapperCollection(entry.SubEntries);
 
             UpdateParent();
@@ -64,6 +65,9 @@ namespace Marvin.Controls
 
         ///
         public EntryValueType ValueType { get; }
+
+        ///
+        public EntryUnitType UnitType { get; }
 
         ///
         public string DefaultValue => Entry.Value.Default;

@@ -12,9 +12,15 @@ namespace Marvin.Controls.Converter
 
         public DataTemplate StringTemplate { get; set; }
 
+        public DataTemplate PasswordTemplate { get; set; }
+
         public DataTemplate ClassTemplate { get; set; }
 
         public DataTemplate CollectionTemplate { get; set; }
+
+        public DataTemplate FilePickerTemplate { get; set; }
+
+        public DataTemplate DirectoryPickerTemplate { get; set; }
 
         public override DataTemplate SelectTemplate(object item, DependencyObject container)
         {
@@ -37,6 +43,23 @@ namespace Marvin.Controls.Converter
                     break;
                 case EntryValueType.Collection:
                     dataTemplate = CollectionTemplate;
+                    break;
+                case EntryValueType.String:
+                    switch (configEntryModel.UnitType)
+                    {
+                        case EntryUnitType.Password:
+                            dataTemplate = PasswordTemplate;
+                            break;
+                        case EntryUnitType.File:
+                            dataTemplate = FilePickerTemplate;
+                            break;
+                        case EntryUnitType.Directory:
+                            dataTemplate = DirectoryPickerTemplate;
+                            break;
+                        default:
+                            dataTemplate = configEntryModel.PossibleValues == null ? StringTemplate : DropDownTemplate;
+                            break;
+                    }
                     break;
                 default:
                     dataTemplate = configEntryModel.PossibleValues == null ? StringTemplate : DropDownTemplate;

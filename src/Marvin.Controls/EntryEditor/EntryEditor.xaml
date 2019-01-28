@@ -6,6 +6,7 @@
              xmlns:c4I="clr-namespace:C4I;assembly=Controls4Industry"
              xmlns:converter="clr-namespace:Marvin.Controls.Converter"
              xmlns:controls="clr-namespace:Marvin.Controls"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              mc:Ignorable="d" x:Name="UserControl" d:DesignHeight="300" d:DesignWidth="810">
     <UserControl.Resources>
         <c4I:BooleanToVisibilityConverter x:Key="ReBooleanToVisibilityConverter" TriggerValue="False" />
@@ -48,6 +49,37 @@
                 </DataTemplate>
             </converter:ValueTypeTemplateSelector.StringTemplate>
 
+            <converter:ValueTypeTemplateSelector.PasswordTemplate>
+                <DataTemplate DataType="controls:EntryViewModel">
+                    
+                    <StackPanel Orientation="Horizontal"
+                                Visibility="{Binding SubEntries, Converter={StaticResource ReBooleanToVisibilityConverter}}">
+
+                        <PasswordBox x:Name="HiddenPassword" Width="200" HorizontalAlignment="Left"
+                                     IsEnabled="{Binding IsEditMode, ElementName=UserControl}">
+                            <i:Interaction.Behaviors>
+                                <PasswordBoxBehaviour Password="{Binding Value, Mode=TwoWay}" />
+                            </i:Interaction.Behaviors>
+                        </PasswordBox>
+
+                        <EddieTextBox x:Name="VisiblePassword" Width="200" HorizontalAlignment="Left"
+                                      Text="{Binding Value, Mode=TwoWay}" Watermark="{Binding DefaultValue}"
+                                      IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
+                                      IsReadOnly="{Binding IsReadOnly}"
+                                      Visibility="Collapsed" />
+
+                        <CheckBox x:Name="ShowPassword" Margin="5,0,0,0" Content="Show password" IsChecked="False" />
+                    </StackPanel>
+                    
+                    <DataTemplate.Triggers>
+                        <Trigger SourceName="ShowPassword" Property="IsChecked" Value="True">
+                            <Setter TargetName="HiddenPassword" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="VisiblePassword" Property="Visibility" Value="Visible" />
+                        </Trigger>
+                    </DataTemplate.Triggers>
+                </DataTemplate>
+            </converter:ValueTypeTemplateSelector.PasswordTemplate>
+
             <converter:ValueTypeTemplateSelector.BoolTemplate>
                 <DataTemplate DataType="controls:EntryViewModel">
 
@@ -70,6 +102,36 @@
                     </StackPanel>
                 </DataTemplate>
             </converter:ValueTypeTemplateSelector.DropDownTemplate>
+
+            <converter:ValueTypeTemplateSelector.FilePickerTemplate>
+                <DataTemplate DataType="controls:EntryViewModel">
+                    <StackPanel Orientation="Horizontal">
+                        <EddieTextBox Width="200" HorizontalAlignment="Left"
+                                      Text="{Binding Value, Mode=TwoWay}" Watermark="{Binding DefaultValue}"
+                                      ToolTip="{Binding Value}"
+                                      IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
+                                      IsReadOnly="{Binding IsReadOnly}"
+                                      Visibility="{Binding SubEntries, Converter={StaticResource ReBooleanToVisibilityConverter}}" />
+                        <EddieButton Margin="5,0,0,0" EddieStyle="Green" HorizontalAlignment="Left" Icon="Open"
+                                     Content="Select file" Click="SelectFile" />
+                    </StackPanel>
+                </DataTemplate>
+            </converter:ValueTypeTemplateSelector.FilePickerTemplate>
+
+            <converter:ValueTypeTemplateSelector.DirectoryPickerTemplate>
+                <DataTemplate DataType="controls:EntryViewModel">
+                    <StackPanel Orientation="Horizontal">
+                        <EddieTextBox Width="200" HorizontalAlignment="Left"
+                                      Text="{Binding Value, Mode=TwoWay}" Watermark="{Binding DefaultValue}"
+                                      ToolTip="{Binding Value}"
+                                      IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
+                                      IsReadOnly="{Binding IsReadOnly}"
+                                      Visibility="{Binding SubEntries, Converter={StaticResource ReBooleanToVisibilityConverter}}" />
+                        <EddieButton Margin="5,0,0,0" EddieStyle="Green" HorizontalAlignment="Left" Icon="Open"
+                                     Content="Select directory" Click="SelectDirectory" />
+                    </StackPanel>
+                </DataTemplate>
+            </converter:ValueTypeTemplateSelector.DirectoryPickerTemplate>
 
             <converter:ValueTypeTemplateSelector.ClassTemplate>
                 <DataTemplate DataType="controls:EntryViewModel">

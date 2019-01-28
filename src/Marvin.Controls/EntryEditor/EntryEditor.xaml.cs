@@ -1,8 +1,9 @@
 ﻿using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
-using System.Windows.Controls;
+using System.Windows.Forms;
 using Marvin.Serialization;
+using Button = System.Windows.Controls.Button;
 
 namespace Marvin.Controls
 {
@@ -211,6 +212,27 @@ namespace Marvin.Controls
                 Path.RemoveAt(index + 1);
             Path.Add(entry);
             CurrentEntry = entry;
+        }
+
+        private void SelectFile(object sender, RoutedEventArgs e)
+        {
+            var dlg = new Microsoft.Win32.OpenFileDialog {Filter = "All Files (*.*)|*.*"};
+
+            if (dlg.ShowDialog() == true)
+            {
+                var targetEntry = GetEntry(sender);
+                targetEntry.Value = dlg.FileName;
+            }
+        }
+
+        private void SelectDirectory(object sender, RoutedEventArgs e)
+        {
+            var dialog = new FolderBrowserDialog();
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                var targetEntry = GetEntry(sender);
+                targetEntry.Value = dialog.SelectedPath;
+            }
         }
 
         private void RemoveCollectionEntry(object sender, RoutedEventArgs e)
