@@ -65,6 +65,7 @@ namespace C4I
             CommonGeometries.Add(CommonShapeType.Document, "");
             CommonGeometries.Add(CommonShapeType.SignedDocument, "");
             CommonGeometries.Add(CommonShapeType.Pause, "");
+            CommonGeometries.Add(CommonShapeType.Eye, "");
         }
 
         public static Geometry GetShapeGeometry(CommonShapeType shapeType)

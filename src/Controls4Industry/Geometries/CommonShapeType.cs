@@ -57,5 +57,6 @@ namespace C4I
         Document,
         SignedDocument,
         Pause,
+        Eye,
     }
 }

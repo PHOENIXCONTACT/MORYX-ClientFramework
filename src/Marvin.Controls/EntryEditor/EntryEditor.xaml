@@ -68,7 +68,7 @@
                                       IsReadOnly="{Binding IsReadOnly}"
                                       Visibility="Collapsed" />
 
-                        <CheckBox x:Name="ShowPassword" Margin="5,0,0,0" Content="Show password" IsChecked="False" />
+                        <CheckBox x:Name="ShowPassword" Margin="5,0,0,0" Content="Show" IsChecked="False" />
                     </StackPanel>
                     
                     <DataTemplate.Triggers>
