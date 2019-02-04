@@ -58,7 +58,7 @@
                         <PasswordBox x:Name="HiddenPassword" Width="200" HorizontalAlignment="Left"
                                      IsEnabled="{Binding IsEditMode, ElementName=UserControl}">
                             <i:Interaction.Behaviors>
-                                <PasswordBoxBehaviour Password="{Binding Value, Mode=TwoWay}" />
+                                <controls:PasswordBoxBehaviour Password="{Binding Value, Mode=TwoWay}" />
                             </i:Interaction.Behaviors>
                         </PasswordBox>
 

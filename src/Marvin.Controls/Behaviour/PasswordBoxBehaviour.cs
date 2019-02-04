@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Interactivity;
 
-namespace C4I
+namespace Marvin.Controls
 {
     /// <summary>
     /// Makes <see cref="PasswordBox.Password"/> bindable
@@ -12,7 +12,7 @@ namespace C4I
         /// <summary>
         /// Dependency property for the <see cref="PasswordBox.Password"/>
         /// </summary>
-        public static readonly DependencyProperty PasswordProperty = DependencyProperty.Register("Password", typeof(string), typeof(PasswordBoxBehaviour),
+        public static readonly DependencyProperty PasswordProperty = DependencyProperty.Register(nameof(Password), typeof(string), typeof(PasswordBoxBehaviour),
                     new FrameworkPropertyMetadata(null, OnPasswordChangedCallback));
 
         /// <summary>
@@ -49,13 +49,13 @@ namespace C4I
         private static void OnPasswordChangedCallback(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var behaviour = (PasswordBoxBehaviour) d;
-            if (behaviour.AssociatedObject != null)
-            {
-                if (behaviour.AssociatedObject.Password != behaviour.Password)
-                {
-                    behaviour.AssociatedObject.Password = behaviour.Password;
-                }
-            }
+            if (behaviour.AssociatedObject == null)
+                return;
+
+            if (behaviour.AssociatedObject.Password == behaviour.Password)
+                return;
+
+            behaviour.AssociatedObject.Password = behaviour.Password;
         }
     }
 }
