@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading;
@@ -127,6 +128,8 @@ namespace Marvin.Controls.Demo
 
             [Password]
             public string Password { get; set; }
+
+            public MemoryStream Stream { get; set; }
         }
 
         private class EntrySubClass

@@ -1,5 +1,9 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
+using System.Text;
 using System.Windows;
 using System.Windows.Forms;
 using Marvin.Serialization;
@@ -232,6 +236,30 @@ namespace Marvin.Controls
             {
                 var targetEntry = GetEntry(sender);
                 targetEntry.Value = dialog.SelectedPath;
+            }
+        }
+
+        private void SelectStreamContent(object sender, RoutedEventArgs e)
+        {
+            var dlg = new Microsoft.Win32.OpenFileDialog { Filter = "All Files (*.*)|*.*" };
+
+            if (dlg.ShowDialog() == true)
+            {
+                var targetEntry = GetEntry(sender);
+                targetEntry.Value = Convert.ToBase64String(File.ReadAllBytes(dlg.FileName));
+            }
+        }
+
+        private void SaveStreamContent(object sender, RoutedEventArgs e)
+        {
+            var dlg = new Microsoft.Win32.SaveFileDialog { Filter = "All Files (*.*)|*.*" };
+
+            if (dlg.ShowDialog() == true)
+            {
+                var targetEntry = GetEntry(sender);
+                var base64String = targetEntry.Value ?? "";
+
+                File.WriteAllBytes(dlg.FileName, Convert.FromBase64String(base64String));
             }
         }
 

@@ -35,8 +35,8 @@
     <DocumentationFile>bin\Release\Marvin.Controls.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Marvin, Version=3.0.0.2972, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Marvin.3.0.0-dev002972\lib\net461\Marvin.dll</HintPath>
+    <Reference Include="Marvin, Version=3.0.0.3068, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Marvin.3.0.0-dev003068\lib\net461\Marvin.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -60,6 +60,7 @@
       <Link>Properties\GlobalAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="Behaviour\PasswordBoxBehaviour.cs" />
+    <Compile Include="EntryEditor\Converter\Base64StringLengthToByteLength.cs" />
     <Compile Include="EntryEditor\EntryEditor.xaml.cs">
       <DependentUpon>EntryEditor.xaml</DependentUpon>
     </Compile>

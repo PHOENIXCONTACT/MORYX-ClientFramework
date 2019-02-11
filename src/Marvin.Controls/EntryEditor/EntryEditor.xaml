@@ -15,6 +15,7 @@
         <converter:SubEntriesToVisibilityConverter x:Key="SubEntriesToVisibilityConverter" />
         <converter:EntryValueToButtonText x:Key="ButtonTextConverter" />
         <converter:EntryValueToVisibilityConverter x:Key="ValueToVisibilityConverter" />
+        <converter:Base64StringLengthToByteLength x:Key="Base64StringLengthToByteLength" />
 
         <converter:ValueTypeTemplateSelector x:Key="ValueTypeTemplateSelector">
             <converter:ValueTypeTemplateSelector.CollectionTemplate>
@@ -146,8 +147,24 @@
                     </StackPanel>
                 </DataTemplate>
             </converter:ValueTypeTemplateSelector.ClassTemplate>
-        </converter:ValueTypeTemplateSelector>
+            
+            <converter:ValueTypeTemplateSelector.StreamTemplate>
+                <DataTemplate DataType="controls:EntryViewModel">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="200" 
+                                   Text="{Binding Value, Converter={StaticResource Base64StringLengthToByteLength}, FallbackValue=Unknown}"
+                                   VerticalAlignment="Center" />
+                        <EddieButton Width="120" Content="Select" EddieStyle="Green" Margin="5,0,0,0" Icon="Open"
+                                     IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
+                                     Click="SelectStreamContent" />
+                        <EddieButton Width="120" Content="Save" EddieStyle="Green" Margin="5,0,0,0" Icon="Save"
+                                     IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
+                                     Click="SaveStreamContent" />
+                    </StackPanel>
+                </DataTemplate>
+            </converter:ValueTypeTemplateSelector.StreamTemplate>
 
+        </converter:ValueTypeTemplateSelector>
 
     </UserControl.Resources>
     <Grid>
