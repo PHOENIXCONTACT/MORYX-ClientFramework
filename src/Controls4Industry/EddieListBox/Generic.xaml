@@ -57,6 +57,7 @@
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
         <Setter Property="ScrollViewer.PanningMode" Value="Both" />
+        <Setter Property="ScrollViewer.CanContentScroll" Value="True"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="c4I:EddieListBox">
@@ -66,6 +67,7 @@
                         <ScrollViewer x:Name="ScrollViewer" Padding="{TemplateBinding Padding}" 
                                       HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}"
                                       VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}"
+                                      CanContentScroll="{TemplateBinding ScrollViewer.CanContentScroll}"
                                       Background="{TemplateBinding Background}" BorderBrush="Transparent" 
                                       BorderThickness="0">
                             <ItemsPresenter />
