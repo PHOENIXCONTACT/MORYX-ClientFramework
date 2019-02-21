@@ -24,6 +24,8 @@ namespace Marvin.Controls.Converter
 
         public DataTemplate StreamTemplate { get; set; }
 
+        public DataTemplate ExceptionTemplate { get; set; }
+
         public override DataTemplate SelectTemplate(object item, DependencyObject container)
         {
             var dataTemplate = StringTemplate;
@@ -65,6 +67,9 @@ namespace Marvin.Controls.Converter
                     break;
                 case EntryValueType.Stream:
                     dataTemplate = StreamTemplate;
+                    break;
+                case EntryValueType.Exception:
+                    dataTemplate = ExceptionTemplate;
                     break;
                 default:
                     dataTemplate = configEntryModel.PossibleValues == null ? StringTemplate : DropDownTemplate;

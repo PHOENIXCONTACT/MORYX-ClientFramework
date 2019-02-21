@@ -57,6 +57,12 @@ namespace Marvin.Controls.Demo
     {
         public MainWindow()
         {
+            ShowExceptionCmd = new RelayCommand(parameters =>
+            {
+                var entry = (Entry) parameters;
+                MessageBox.Show(entry.Value.Current, "Exception");
+            });
+
             InitializeComponent();
 
             ListViewEntries = new ObservableCollection<TestListViewEntry>();
@@ -107,6 +113,8 @@ namespace Marvin.Controls.Demo
             OnPropertyChanged(nameof(EntryViewModels));
         }
 
+        public RelayCommand ShowExceptionCmd { get; set; }
+
         public EntryViewModel EntryViewModels { get; set; }
 
         private class EntryClass
@@ -130,6 +138,11 @@ namespace Marvin.Controls.Demo
             public string Password { get; set; }
 
             public MemoryStream Stream { get; set; }
+
+            public string ExceptionEntry
+            {
+                get { throw new InvalidOperationException("This is ver long Exception text to test if the exception editor is readable. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim."); }
+            }
         }
 
         private class EntrySubClass

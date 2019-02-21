@@ -16,6 +16,7 @@
         <converter:EntryValueToButtonText x:Key="ButtonTextConverter" />
         <converter:EntryValueToVisibilityConverter x:Key="ValueToVisibilityConverter" />
         <converter:Base64StringLengthToByteLength x:Key="Base64StringLengthToByteLength" />
+        <converter:TextToDelimiteredTextConverter x:Key="DelimiteredTextConverter" />
 
         <converter:ValueTypeTemplateSelector x:Key="ValueTypeTemplateSelector">
             <converter:ValueTypeTemplateSelector.CollectionTemplate>
@@ -163,7 +164,24 @@
                     </StackPanel>
                 </DataTemplate>
             </converter:ValueTypeTemplateSelector.StreamTemplate>
-
+            
+            <converter:ValueTypeTemplateSelector.ExceptionTemplate>
+                <DataTemplate DataType="controls:EntryViewModel">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="300"
+                                   FontStyle="Italic"
+                                   VerticalAlignment="Center"
+                                   TextTrimming="CharacterEllipsis"
+                                   TextWrapping="WrapWithOverflow"
+                                   Text="{Binding Value, Converter={StaticResource DelimiteredTextConverter}, ConverterParameter='.'}">
+                        </TextBlock>
+                        <EddieButton Margin="5,0,0,0" EddieStyle="Green" HorizontalAlignment="Left" Icon="Open"
+                                     Content="View details" 
+                                     IsEnabled="{Binding ViewExceptionDetailsCommandEnabled, ElementName=UserControl}"
+                                     Click="OnShowExceptionDetailsClick" />
+                    </StackPanel>
+                </DataTemplate>
+            </converter:ValueTypeTemplateSelector.ExceptionTemplate>
         </converter:ValueTypeTemplateSelector>
 
     </UserControl.Resources>

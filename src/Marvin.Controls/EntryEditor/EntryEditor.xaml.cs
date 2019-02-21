@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Forms;
+using System.Windows.Input;
 using Marvin.Serialization;
 using Button = System.Windows.Controls.Button;
 
@@ -120,6 +121,45 @@ namespace Marvin.Controls
         {
             get { return (EntryViewModel)GetValue(CurrentEntryProperty); }
             set { SetValue(CurrentEntryProperty, value); }
+        }
+
+        /// <summary>
+        /// ViewExceptionDetailsCommand property
+        /// </summary>
+        public static readonly DependencyProperty ShowExceptionCommandProperty = DependencyProperty.Register(
+            "ShowExceptionCommand", typeof(ICommand), typeof(EntryEditor), new PropertyMetadata(null, ViewExceptionDetailsCommandChangedCallback));
+
+        private static void ViewExceptionDetailsCommandChangedCallback(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var entryEditor = d as EntryEditor;
+            entryEditor.ViewExceptionDetailsCommandEnabled = entryEditor.ShowExceptionCommand != null;
+        }
+
+        /// <summary>
+        /// Command that is called when user cllicks on details button on an exception entry
+        /// </summary>
+        public ICommand ShowExceptionCommand
+        {
+            get { return (ICommand)GetValue(ShowExceptionCommandProperty); }
+            set { SetValue(ShowExceptionCommandProperty, value); }
+        }
+
+        private static readonly DependencyPropertyKey ViewExceptionDetailsCommandEnabledPropertyKey
+            = DependencyProperty.RegisterReadOnly("ViewExceptionDetailsCommandEnabled", typeof(bool), typeof(EntryEditor),
+                                                  new FrameworkPropertyMetadata(default(bool), FrameworkPropertyMetadataOptions.None));
+
+        /// <summary>
+        /// ViewExceptionDetailsCommandEnabledProperty
+        /// </summary>
+        public static readonly DependencyProperty ViewExceptionDetailsCommandEnabledProperty = ViewExceptionDetailsCommandEnabledPropertyKey.DependencyProperty;
+
+        /// <summary>
+        /// Indicates whether a <see cref="ShowExceptionCommand" /> was set
+        /// </summary>
+        public bool ViewExceptionDetailsCommandEnabled
+        {
+            get { return (bool)GetValue(ViewExceptionDetailsCommandEnabledProperty); }
+            protected set { SetValue(ViewExceptionDetailsCommandEnabledPropertyKey, value); }
         }
 
         /// <summary>
@@ -297,6 +337,12 @@ namespace Marvin.Controls
             // Find sending entry
             var button = (Button)eventSender;
             return (EntryViewModel)button.DataContext;
+        }
+
+        private void OnShowExceptionDetailsClick(object sender, RoutedEventArgs e)
+        {
+            var originalSender = e.OriginalSource as FrameworkElement;
+            ShowExceptionCommand?.Execute(((EntryViewModel)originalSender.DataContext).Entry);
         }
     }
 }

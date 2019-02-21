@@ -727,7 +727,8 @@
             </TabItem>
 
             <TabItem Header="Entry Editor">
-                <controls:EntryEditor Margin="20"  RootEntry="{Binding EntryViewModels, ElementName=Window}" IsEditMode="True" />
+                <controls:EntryEditor Margin="20"  RootEntry="{Binding EntryViewModels, ElementName=Window}" 
+                                      ShowExceptionCommand="{Binding ShowExceptionCmd, ElementName=Window}" IsEditMode="True" />
             </TabItem>
         </EddieNavigationBar>
     </Grid>
