@@ -59,8 +59,8 @@ namespace Marvin.Controls.Demo
         {
             ShowExceptionCmd = new RelayCommand(parameters =>
             {
-                var entry = (Entry) parameters;
-                MessageBox.Show(entry.Value.Current, "Exception");
+                var entry = (EntryViewModel) parameters;
+                MessageBox.Show(entry.Value, "Exception");
             });
 
             InitializeComponent();

@@ -173,12 +173,22 @@
                                    VerticalAlignment="Center"
                                    TextTrimming="CharacterEllipsis"
                                    TextWrapping="WrapWithOverflow"
-                                   Text="{Binding Value, Converter={StaticResource DelimiteredTextConverter}, ConverterParameter='.'}">
+                                   Text="{Binding Value, Converter={StaticResource DelimiteredTextConverter}}">
                         </TextBlock>
                         <EddieButton Margin="5,0,0,0" EddieStyle="Green" HorizontalAlignment="Left" Icon="Open"
                                      Content="View details" 
-                                     IsEnabled="{Binding ViewExceptionDetailsCommandEnabled, ElementName=UserControl}"
-                                     Click="OnShowExceptionDetailsClick" />
+                                     Command="{Binding ShowExceptionCommand, ElementName=UserControl}"
+                                     CommandParameter="{Binding}">
+                            <EddieButton.Style>
+                                <Style TargetType="EddieButton">
+                                    <Style.Triggers>
+                                        <Trigger Property="Command" Value="{x:Null}">
+                                            <Setter Property="IsEnabled" Value="False" />
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </EddieButton.Style>
+                        </EddieButton>
                     </StackPanel>
                 </DataTemplate>
             </converter:ValueTypeTemplateSelector.ExceptionTemplate>
