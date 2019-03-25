@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace C4I
 {
@@ -20,6 +21,19 @@ namespace C4I
         /// </summary>
         public static readonly DependencyProperty AllowClearButtonProperty = DependencyProperty.Register(
             "AllowClearButton", typeof (bool), typeof (EddieComboBox), new PropertyMetadata(false));
+
+        /// <summary>
+        /// DependencyProperty LockIcon type of <see cref="CommonShapeType"/> which sets the lock icon on the box
+        /// </summary>
+        public static readonly DependencyProperty LockIconProperty = DependencyProperty.Register(
+            "LockIcon", typeof(CommonShapeType), typeof(EddieComboBox), new PropertyMetadata(CommonShapeType.Lock, LockIconChanged));
+
+        /// <summary>
+        /// DependencyProperty alternative to the property <see cref="LockIcon"/> which uses a geometry to draw the path on the box
+        /// </summary>
+        public static readonly DependencyProperty LockIconPathProperty = DependencyProperty.Register(
+            "LockIconPath", typeof(Geometry), typeof(EddieComboBox), new PropertyMetadata(default(Geometry), LockIconPathChanged));
+
 
         /// <summary>
         /// Initializes the <see cref="EddieComboBox"/> class.
@@ -56,6 +70,34 @@ namespace C4I
             set { SetValue(AllowClearButtonProperty, value); }
         }
 
+        private static void LockIconChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs dependencyPropertyChangedEventArgs)
+        {
+            SetLockPath(dependencyObject as EddieComboBox);
+        }
+
+        /// <summary>
+        /// LockIcon type of <see cref="CommonShapeType"/> which sets the lock icon on the button
+        /// </summary>
+        public CommonShapeType LockIcon
+        {
+            get { return (CommonShapeType)GetValue(LockIconProperty); }
+            set { SetValue(LockIconProperty, value); }
+        }
+
+        private static void LockIconPathChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs e)
+        {
+            SetLockPath(dependencyObject as EddieComboBox);
+        }
+
+        /// <summary>
+        /// Alternative to the property <see cref="LockIcon"/> which uses a geometry to draw the path on the box
+        /// </summary>
+        public Geometry LockIconPath
+        {
+            get { return (Geometry)GetValue(LockIconPathProperty); }
+            set { SetValue(LockIconPathProperty, value); }
+        }
+
         private void ClearSelectedItem(object sender, RoutedEventArgs e)
         {
             SelectedItem = null;
@@ -77,7 +119,17 @@ namespace C4I
                 clearButton.Click += ClearSelectedItem;
             }
 
+            SetLockPath(this);
+
             base.OnApplyTemplate();
+        }
+
+        private static void SetLockPath(EddieComboBox box)
+        {
+            if (box.LockIconPath == null)
+            {
+                box.LockIconPath = ShapeFactory.GetShapeGeometry(box.LockIcon);
+            }
         }
     }
 }

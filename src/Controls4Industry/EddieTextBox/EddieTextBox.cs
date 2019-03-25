@@ -1,10 +1,12 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
 namespace C4I
 {
+    /// <summary>
+    /// EddieTextBox with watermark, icon and lock icon feature
+    /// </summary>
     public class EddieTextBox : TextBox
     {
         static EddieTextBox()
@@ -12,9 +14,15 @@ namespace C4I
             DefaultStyleKeyProperty.OverrideMetadata(typeof(EddieTextBox), new FrameworkPropertyMetadata(typeof(EddieTextBox)));
         }
 
+        /// <summary>
+        /// Watermark to be shown
+        /// </summary>
         public static readonly DependencyProperty WatermarkProperty = DependencyProperty.Register(
             "Watermark", typeof (string), typeof (EddieTextBox), new PropertyMetadata(default(string)));
 
+        /// <summary>
+        /// Sets or gets the watermark to be shown
+        /// </summary>
         public string Watermark
         {
             get { return (string) GetValue(WatermarkProperty); }
@@ -61,12 +69,53 @@ namespace C4I
             set { SetValue(IconPathProperty, value); }
         }
 
+        /// <summary>
+        /// DependencyProperty LockIcon type of <see cref="CommonShapeType"/> which sets the lock icon on the button
+        /// </summary>
+        public static readonly DependencyProperty LockIconProperty = DependencyProperty.Register(
+            "LockIcon", typeof(CommonShapeType), typeof(EddieTextBox), new PropertyMetadata(CommonShapeType.Lock, LockIconChanged));
+
+        private static void LockIconChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs dependencyPropertyChangedEventArgs)
+        {
+            SetLockPath(dependencyObject as EddieTextBox);
+        }
+
+        /// <summary>
+        /// LockIcon type of <see cref="CommonShapeType"/> which sets the lock icon on the button
+        /// </summary>
+        public CommonShapeType LockIcon
+        {
+            get { return (CommonShapeType)GetValue(LockIconProperty); }
+            set { SetValue(LockIconProperty, value); }
+        }
+
+        /// <summary>
+        /// DependencyProperty alternative to the property <see cref="LockIcon"/> which uses a geometry to draw the path on the box
+        /// </summary>
+        public static readonly DependencyProperty LockIconPathProperty = DependencyProperty.Register(
+            "LockIconPath", typeof(Geometry), typeof(EddieTextBox), new PropertyMetadata(default(Geometry), LockIconPathChanged));
+
+        private static void LockIconPathChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs e)
+        {
+            SetLockPath(dependencyObject as EddieTextBox);
+        }
+
+        /// <summary>
+        /// Alternative to the property <see cref="LockIcon"/> which uses a geometry to draw the path on the box
+        /// </summary>
+        public Geometry LockIconPath
+        {
+            get { return (Geometry)GetValue(LockIconPathProperty); }
+            set { SetValue(LockIconPathProperty, value); }
+        }
+
         ///
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
 
             SetDefaultPath(this);
+            SetLockPath(this);
         }
 
         private static void SetDefaultPath(EddieTextBox box)
@@ -75,9 +124,13 @@ namespace C4I
             {
                 box.IconPath = ShapeFactory.GetShapeGeometry(box.Icon);
             }
-            else
+        }
+
+        private static void SetLockPath(EddieTextBox box)
+        {
+            if (box.LockIconPath == null)
             {
-                box.IconPath = box.IconPath;
+                box.LockIconPath = ShapeFactory.GetShapeGeometry(box.LockIcon);
             }
         }
     }

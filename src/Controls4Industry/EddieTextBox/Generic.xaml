@@ -78,7 +78,7 @@
                       Margin="0,5,0,5"
                       Visibility="Hidden"
                       VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                      Data="{c4I:CommonShape ShapeType=Lock}"
+                      Data="{TemplateBinding LockIconPath}"
                       Fill="{StaticResource DarkGreenColorBrush}"
                       Stretch="Uniform" />
             </Grid>
