@@ -3,16 +3,21 @@ using Marvin.Modules;
 
 namespace Marvin.ClientFramework.Kernel
 {
+    /// <summary>
+    /// Component initializer loader adapter
+    /// </summary>
     [KernelComponent(typeof(ILoaderAdapter))]
     public class ComponentInitializerLoaderAdapter : LoaderAdapterBase, ILoaderAdapter
     {
         private IComponentInitializer _componentInitializer;
 
+        /// <inheritdoc />
         public bool CanAdapt(object component)
         {
             return component is IComponentInitializer;
         }
 
+        /// <inheritdoc />
         public void Adapt(object component)
         {
             _componentInitializer = (IComponentInitializer) component;

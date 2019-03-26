@@ -2,14 +2,19 @@
 
 namespace Marvin.ClientFramework.Kernel
 {
+    /// <summary>
+    /// Module manager loader adapter
+    /// </summary>
     [KernelComponent(typeof(ILoaderAdapter))]
     public class ModuleManagerLoaderAdapter : LoaderAdapterBase, ILoaderAdapter
     {
+        /// <inheritdoc />
         public bool CanAdapt(object component)
         {
             return component is IModuleManager;
         }
 
+        /// <inheritdoc />
         public void Adapt(object component)
         {
             var moduleManager = (IModuleManager) component;

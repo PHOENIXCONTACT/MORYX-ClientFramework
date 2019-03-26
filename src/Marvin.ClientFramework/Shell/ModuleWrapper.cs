@@ -3,8 +3,12 @@ using Caliburn.Micro;
 
 namespace Marvin.ClientFramework.Shell
 {
+    /// <summary>
+    /// Wraps <see cref="IWorkspaceModule"/> in a <see cref="Screen"/>
+    /// </summary>
     public class ModuleWrapper : Screen
     {
+        /// <inheritdoc />
         public ModuleWrapper(IWorkspaceModule module)
         {
             Module = module;
@@ -12,27 +16,31 @@ namespace Marvin.ClientFramework.Shell
 
         #region Binding props
 
-        public IWorkspaceModule Module { get; private set; }
+        /// <summary>
+        /// Wrapped <see cref="IWorkspaceModule"/>
+        /// </summary>
+        public IWorkspaceModule Module { get; }
 
-        public override string DisplayName
-        {
-            get { return Module.Config.DisplayName; }
-        }
+        /// <inheritdoc />
+        /// <summary>
+        /// Display name of the wrapped module
+        /// </summary>
+        public override string DisplayName => Module.Config.DisplayName;
 
         /// <summary>
         /// Defines AutomationId for module button
         /// </summary>
-        public string AutomationId
-        {
-            get { return string.Format("AID_{0}_ModuleButton", Module.Config.DisplayName.Replace(" ", "_")); }
-        }
+        public string AutomationId => $"AID_{Module.Config.DisplayName.Replace(" ", "_")}_ModuleButton";
 
-        public Geometry Icon
-        {
-            get { return (Geometry)Module.Icon; }
-        }
+        /// <summary>
+        /// Icon of the wrapped module
+        /// </summary>
+        public Geometry Icon => Module.Icon;
 
         private IModuleWorkspace _workspace;
+        /// <summary>
+        /// Gets or sets the <see cref="IModuleWorkspace"/>
+        /// </summary>
         public IModuleWorkspace CurrentWorkspace
         {
             get { return _workspace; }
@@ -47,6 +55,10 @@ namespace Marvin.ClientFramework.Shell
 
         #region Transitions
 
+        /// <summary>
+        /// Changes the workspace
+        /// </summary>
+        /// <param name="workspace"></param>
         public void ChangeWorkspace(IModuleWorkspace workspace)
         {
             var oldScreen = CurrentWorkspace;
@@ -57,6 +69,7 @@ namespace Marvin.ClientFramework.Shell
             ScreenExtensions.TryActivate(CurrentWorkspace);
         }
 
+        /// <inheritdoc />
         protected override void OnActivate()
         {
             Module.Activate();
@@ -64,6 +77,7 @@ namespace Marvin.ClientFramework.Shell
             base.OnActivate();
         }
 
+        /// <inheritdoc />
         protected override void OnDeactivate(bool close)
         {
             Module.Deactivate(close);
@@ -75,9 +89,10 @@ namespace Marvin.ClientFramework.Shell
 
         #endregion
 
+        /// <inheritdoc />
         public override string ToString()
         {
-            return string.Format("{0} - {1}", Module.Name, _workspace.GetType().Name);
+            return $"{Module.Name} - {_workspace.GetType().Name}";
         }
     }
 }

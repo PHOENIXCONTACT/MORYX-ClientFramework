@@ -6,8 +6,19 @@ using Marvin.Serialization;
 
 namespace Marvin.Controls.Converter
 {
+    /// <summary>
+    /// Converts to a <see cref="Visibility"/> depending on type and <see cref="EntryViewModel.PossibleValues"/> count
+    /// </summary>
     public class EntryValueToVisibilityConverter : IValueConverter
     {
+        /// <summary>
+        /// Conversion method
+        /// </summary>
+        /// <param name="value"><see cref="EntryViewModel"/></param>
+        /// <param name="targetType">Not used</param>
+        /// <param name="parameter">Not used</param>
+        /// <param name="culture">Not used</param>
+        /// <returns>Returns <see cref="Visibility.Visible"/> if value type is a class or a collection and at least one possible value is existant. Otherwise <see cref="Visibility.Hidden"/> is returned.</returns>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             var entry = value as EntryViewModel;
@@ -30,6 +41,16 @@ namespace Marvin.Controls.Converter
             return isEntrySettable ? Visibility.Visible : Visibility.Hidden;
         }
 
+        /// <inheritdoc />
+        /// <summary>
+        /// Not supported
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="targetType"></param>
+        /// <param name="parameter"></param>
+        /// <param name="culture"></param>
+        /// <returns></returns>
+        /// <exception cref="T:System.NotImplementedException"></exception>
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();

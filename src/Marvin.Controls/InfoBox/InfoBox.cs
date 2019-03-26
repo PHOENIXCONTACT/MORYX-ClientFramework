@@ -3,10 +3,12 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using C4I;
 using Color = System.Drawing.Color;
-using ColorExtensions = C4I.ColorExtensions;
 
 namespace Marvin.Controls
 {
+    /// <summary>
+    /// Info box control
+    /// </summary>
     public class InfoBox : Control
     {
         static InfoBox()
@@ -14,18 +16,30 @@ namespace Marvin.Controls
             DefaultStyleKeyProperty.OverrideMetadata(typeof(InfoBox), new FrameworkPropertyMetadata(typeof(InfoBox)));
         }
 
+        /// <summary>
+        /// Text of this info box
+        /// </summary>
         public static readonly DependencyProperty TextProperty = DependencyProperty.Register(
             "Text", typeof (string), typeof (InfoBox), new PropertyMetadata(default(string)));
 
+        /// <summary>
+        /// Gets or sets the text of this info box
+        /// </summary>
         public string Text
         {
             get { return (string) GetValue(TextProperty); }
             set { SetValue(TextProperty, value); }
         }
 
+        /// <summary>
+        /// Base brush
+        /// </summary>
         public static readonly DependencyProperty BaseBrushProperty = DependencyProperty.Register(
             "BaseBrush", typeof(SolidColorBrush), typeof(InfoBox), new PropertyMetadata(default(SolidColorBrush), BrushChanged));
 
+        /// <summary>
+        /// Gets or sets the base brush
+        /// </summary>
         public SolidColorBrush BaseBrush
         {
             get { return (SolidColorBrush) GetValue(BaseBrushProperty); }

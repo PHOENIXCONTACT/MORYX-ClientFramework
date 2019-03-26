@@ -313,6 +313,7 @@ namespace C4I
             _adornerLayer = null;
         }
 
+        /// <inheritdoc />
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();

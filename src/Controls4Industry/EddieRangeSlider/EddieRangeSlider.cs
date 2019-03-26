@@ -224,6 +224,7 @@ namespace C4I
 
         #endregion
 
+        /// <inheritdoc />
         public override void OnApplyTemplate()
         {
             base.OnApplyTemplate();
@@ -231,13 +232,13 @@ namespace C4I
             //Load lower slider from template
             _lowerSlider = GetTemplateChild(PartLowerSlider) as Slider;
             if (_lowerSlider == null)
-                throw new ArgumentException(string.Format("{0} slider was not found in template", PartLowerSlider));
+                throw new ArgumentException($"{PartLowerSlider} slider was not found in template");
             _lowerSlider.ValueChanged += OnLowerValueValueChanged;
 
             //Load upper slider from template
             _upperSlider = GetTemplateChild(PartUpperSlider) as Slider;
             if (_upperSlider == null)
-                throw new ArgumentException(string.Format("{0} slider was not found in template", PartUpperSlider));
+                throw new ArgumentException($"{PartUpperSlider} slider was not found in template");
             _upperSlider.ValueChanged += OnUpperValueValueChanged;
         }
 

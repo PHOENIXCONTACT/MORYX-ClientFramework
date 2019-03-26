@@ -13,15 +13,23 @@ namespace Marvin.ClientFramework.Configurator
     public class ConfigShellViewModel : ShellViewModelBase
     {
         private int _watchWorker;
+        /// <summary>
+        /// Injected <see cref="IModuleLogger"/>
+        /// </summary>
         public IModuleLogger Logger { get; set; }
 
+        /// <summary>
+        /// Injected <see cref="IParallelOperations"/>
+        /// </summary>
         public IParallelOperations ParallelOperations { get; set; }
 
+        /// <inheritdoc />
         protected override void OnInitialize()
         {
             SelectModule(Items.First());
         }
 
+        /// <inheritdoc />
         protected override void OnActivate()
         {
             base.OnActivate();
@@ -29,6 +37,7 @@ namespace Marvin.ClientFramework.Configurator
             _watchWorker = ParallelOperations.ScheduleExecution(Worker, 2000, 2000);
         }
 
+        /// <inheritdoc />
         protected override void OnDeactivate(bool close)
         {
             base.OnDeactivate(close);

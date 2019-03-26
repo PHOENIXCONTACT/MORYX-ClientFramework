@@ -112,7 +112,6 @@
     <Compile Include="Shell\ShellViewModelBase.cs" />
     <Compile Include="Tasks\TaskConstants.cs" />
     <Compile Include="Tasks\TaskNotifier.cs" />
-    <Compile Include="UI\ApplicationCloseCheck.cs" />
     <Compile Include="UI\ContentHost.cs" />
     <Compile Include="Dialog\DialogConductorView.xaml.cs">
       <DependentUpon>DialogConductorView.xaml</DependentUpon>

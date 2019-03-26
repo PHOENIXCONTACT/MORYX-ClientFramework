@@ -36,7 +36,7 @@
             </Border>
 
             <StackPanel DataContext="{Binding ElementName=UserControl}" Background="White">
-                <TextBlock Margin="10,10,0,10" c4I:Eddie.TextFormat="Header1" Text="{Binding AppnName}" />
+                <TextBlock Margin="10,10,0,10" c4I:Eddie.TextFormat="Header1" Text="{Binding AppName}" />
                 
                 <TextBlock Margin="10,10,0,10" c4I:Eddie.TextFormat="Bold"
                            Text="{Binding StatusMessage}" HorizontalAlignment="Left" />

@@ -8,7 +8,7 @@
         <ResourceDictionary Source="../Base/EddieButtonBase/Generic.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <c4I:IntToBooleanConverter x:Key="IntToBooleanConverter" />
+    <c4I:IntToVisibilityConverter x:Key="IntToBooleanConverter" />
     
     <Style TargetType="Path" x:Key="EddieModuleButtonIconStyle" BasedOn="{StaticResource ButtonIconStyle}">
         <Setter Property="Height" Value="40" />

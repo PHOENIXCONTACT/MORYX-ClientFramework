@@ -6,16 +6,21 @@ using Marvin.ClientFramework.Behavior;
 
 namespace Marvin.ClientFramework.Shell
 {
+    /// <inheritdoc />
+    /// <summary>
+    /// Closing strategy when application closes
+    /// </summary>
     public class ApplicationCloseStrategy : ICloseStrategy<IClientModule>
     {
-        IEnumerator<IClientModule> _enumerator;
-        bool _finalResult;
-        Action<bool, IEnumerable<IClientModule>> _callback;
+        private IEnumerator<IClientModule> _enumerator;
+        private bool _finalResult;
+        private Action<bool, IEnumerable<IClientModule>> _callback;
 
+        /// <inheritdoc />
         public void Execute(IEnumerable<IClientModule> toClose, Action<bool, IEnumerable<IClientModule>> callback)
         {
             _enumerator = toClose.GetEnumerator();
-            this._callback = callback;
+            _callback = callback;
             _finalResult = true;
 
             Evaluate(_finalResult);
@@ -30,6 +35,7 @@ namespace Marvin.ClientFramework.Shell
             else
             {
                 var current = _enumerator.Current;
+                // ReSharper disable once SuspiciousTypeConversion.Global
                 var conductor = current as IConductor;
                 if (conductor != null)
                 {

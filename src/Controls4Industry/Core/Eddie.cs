@@ -11,14 +11,27 @@ namespace C4I
     {
         #region TextFormat
 
+        /// <summary>
+        /// Attached property to set the text format
+        /// </summary>
         public static readonly DependencyProperty TextFormatProperty = DependencyProperty.RegisterAttached(
             "TextFormat", typeof(EddieTextFormat), typeof(Eddie), new PropertyMetadata(EddieTextFormat.Unset));
 
+        /// <summary>
+        /// Sets the text format attached property
+        /// </summary>
+        /// <param name="element"></param>
+        /// <param name="value"></param>
         public static void SetTextFormat(DependencyObject element, EddieTextFormat value)
         {
             element.SetValue(TextFormatProperty, value);
         }
 
+        /// <summary>
+        /// Gets the text format attached property
+        /// </summary>
+        /// <param name="element"></param>
+        /// <returns></returns>
         public static EddieTextFormat GetTextFormat(DependencyObject element)
         {
             return (EddieTextFormat)element.GetValue(TextFormatProperty);
@@ -28,14 +41,27 @@ namespace C4I
 
         #region Icon
 
+        /// <summary>
+        /// Attached property to set the icon
+        /// </summary>
         public static readonly DependencyProperty IconProperty = DependencyProperty.RegisterAttached(
            "Icon", typeof(CommonShapeType), typeof(Eddie), new PropertyMetadata(default(CommonShapeType), IconChanged));
 
+        /// <summary>
+        /// Sets the icon attached property
+        /// </summary>
+        /// <param name="element"></param>
+        /// <param name="value"></param>
         public static void SetIcon(DependencyObject element, CommonShapeType value)
         {
             element.SetValue(IconProperty, value);
         }
 
+        /// <summary>
+        /// Gets the icon attached property
+        /// </summary>
+        /// <param name="element"></param>
+        /// <returns></returns>
         public static CommonShapeType GetIcon(DependencyObject element)
         {
             return (CommonShapeType)element.GetValue(IconProperty);

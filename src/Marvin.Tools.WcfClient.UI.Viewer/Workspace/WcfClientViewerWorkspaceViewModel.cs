@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Linq;
 using Caliburn.Micro;
 using Marvin.ClientFramework;
@@ -9,7 +8,7 @@ using Marvin.Tools.Wcf;
 namespace Marvin.Tools.WcfClient.UI.Viewer
 {
     [Plugin(LifeCycle.Singleton, typeof(IModuleWorkspace), Name = ScreenName)]
-    public class WcfClientViewerWorkspaceViewModel : ModuleWorkspace
+    internal class WcfClientViewerWorkspaceViewModel : ModuleWorkspace
     {
         internal const string ScreenName = "WcfClientViewerScreen";
 

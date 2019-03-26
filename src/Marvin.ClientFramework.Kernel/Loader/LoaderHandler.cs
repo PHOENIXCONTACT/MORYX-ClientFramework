@@ -5,13 +5,28 @@ using Marvin.Container;
 
 namespace Marvin.ClientFramework.Kernel
 {
+    /// <summary>
+    /// Handles loading
+    /// </summary>
     [KernelComponent(typeof(ILoaderHandler))]
     public class LoaderHandler : ILoaderHandler
     {
+        /// <summary>
+        /// Retrieves the current <see cref="ILoaderView"/>
+        /// </summary>
         public ILoaderView View { get; private set; }
+
+        /// <summary>
+        /// The config manager
+        /// </summary>
         public IKernelConfigManager ConfigManager { get; set; }
+
+        /// <summary>
+        /// Retrieves all <see cref="ILoaderAdapter"/>
+        /// </summary>
         public IEnumerable<ILoaderAdapter> LoaderAdapter { get; set; }
 
+        /// <inheritdoc />
         public void Initialize()
         {
             var appConfig = ConfigManager.GetConfiguration<AppConfig>();
@@ -20,7 +35,7 @@ namespace Marvin.ClientFramework.Kernel
             {
                 Maximum = 0,
                 Value = 0,
-                AppnName = appConfig.Name
+                AppName = appConfig.Name
             };
 
             foreach (var adapter in LoaderAdapter)
@@ -32,6 +47,7 @@ namespace Marvin.ClientFramework.Kernel
             }
         }
 
+        /// <inheritdoc />
         public void CheckForAdapter(object sender, object instance)
         {
             var adapter = LoaderAdapter.FirstOrDefault(a => a.CanAdapt(instance));

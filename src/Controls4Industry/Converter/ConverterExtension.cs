@@ -3,8 +3,17 @@ using System.Windows.Data;
 
 namespace C4I
 {
+    /// <summary>
+    /// Helper extensions for <see cref="IValueConverter"/>
+    /// </summary>
     public static class ConverterExtension
     {
+        /// <summary>
+        /// Tries to convert the input value to a boolean typed value
+        /// </summary>
+        /// <param name="converter"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static bool AsBool(this IValueConverter converter, object value)
         {
             if (value is bool)

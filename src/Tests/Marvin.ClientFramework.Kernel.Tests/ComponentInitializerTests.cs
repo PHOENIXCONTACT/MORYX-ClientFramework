@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Threading;
 using Marvin.Modules;
 using NUnit.Framework;
 
@@ -9,7 +8,6 @@ namespace Marvin.ClientFramework.Kernel.Tests
     public class ComponentInitializerTests
     {
         private ComponentInitializer _initializer;
-        private ManualResetEvent _reset;
 
         [SetUp]
         public void SetUp()

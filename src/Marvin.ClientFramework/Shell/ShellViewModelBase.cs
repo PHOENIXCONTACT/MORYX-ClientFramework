@@ -15,22 +15,49 @@ namespace Marvin.ClientFramework.Shell
     {
         #region Dependency Injection
 
+        /// <summary>
+        /// Injected <see cref="IModuleManager"/>
+        /// </summary>
         public IModuleManager ModuleManager { get; set; }
         
+        /// <summary>
+        /// Injected <see cref="IHistory"/>
+        /// </summary>
         public IHistory History { get; set; }
         
+        /// <summary>
+        /// Injected <see cref="IDialogManager"/>
+        /// </summary>
         public IDialogManager DialogManager { get; set; }
         
+        /// <summary>
+        /// Injected <see cref="IWindowManager"/>
+        /// </summary>
         public IWindowManager WindowManager { get; set; }
         
+        /// <summary>
+        /// Injected <see cref="IConfigProvider"/>
+        /// </summary>
         public IConfigProvider ConfigProvider { get; set; }
         
+        /// <summary>
+        /// Injected <see cref="IKernelConfigManager"/>
+        /// </summary>
         public IKernelConfigManager KernelConfigManager { get; set; }
         
+        /// <summary>
+        /// Injected <see cref="IWcfClientFactory"/>
+        /// </summary>
         public IWcfClientFactory WcfClientFactory { get; set; }
         
+        /// <summary>
+        /// Injected <see cref="IAppDataConfigManager"/>
+        /// </summary>
         public IAppDataConfigManager AppDataConfigManager { get; set; }
 
+        /// <summary>
+        /// Injected <see cref="IModuleContainerFactory"/>
+        /// </summary>
         public IModuleContainerFactory ContainerFactory { get; set; }
 
         #endregion
@@ -106,6 +133,11 @@ namespace Marvin.ClientFramework.Shell
 
         #endregion
 
+        /// <summary>
+        /// Returns a region by name
+        /// </summary>
+        /// <param name="regionName"></param>
+        /// <returns></returns>
         protected Region FetchRegion(string regionName)
         {
             var region = RegionController.FetchRegion(regionName);

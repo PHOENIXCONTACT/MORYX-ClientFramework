@@ -19,14 +19,19 @@ namespace Marvin.ClientFramework.Kernel
         }
     }
 
+    /// <summary>
+    /// Logger management
+    /// </summary>
     [KernelComponent(typeof(ILoggerManagement))]
     public class ClientLoggerManagement : LoggerManagement
     {
+        /// <inheritdoc />
         protected override ILogTarget CreateLogTarget(string name)
         {
             return new DummyLogTarget();
         }
 
+        /// <inheritdoc />
         protected override ModuleLoggerConfig GetLoggerConfig(string name)
         {
             return new ModuleLoggerConfig
@@ -37,6 +42,7 @@ namespace Marvin.ClientFramework.Kernel
             };
         }
 
+        /// <inheritdoc />
         protected override void ForwardToListeners(ILogMessage logMessage)
         {
             Debug.WriteLine("Level: {0}, Name: {1}, Class: {2} -> {3}", logMessage.Level, logMessage.Logger.Name,

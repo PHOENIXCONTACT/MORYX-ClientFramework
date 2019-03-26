@@ -3,6 +3,9 @@ using Marvin.Modules;
 
 namespace Marvin.ClientFramework
 {
+    /// <summary>
+    /// PendingWorkspaceNotification
+    /// </summary>
     public class PendingWorkspaceNotification : IModuleNotification
     {
         /// <summary>
@@ -13,6 +16,7 @@ namespace Marvin.ClientFramework
             Timestamp = DateTime.Now;
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Confirm acknowledgement of this notification
         /// </summary>
@@ -24,24 +28,28 @@ namespace Marvin.ClientFramework
             return false;
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Type of this notification
         /// </summary>
         public NotificationType Type => NotificationType.Info;
 
+        /// <inheritdoc />
         /// <summary>
         /// Time stamp of occurence
         /// </summary>
         public DateTime Timestamp { get; }
 
+        /// <inheritdoc />
         /// <summary>
         /// Notification message
         /// </summary>
-        public string Message { get; private set; }
+        public string Message { get; protected set; }
 
+        /// <inheritdoc />
         /// <summary>
         /// Optional exception as cause of this message
         /// </summary>
-        public Exception Exception { get; private set; }
+        public Exception Exception { get; protected set; }
     }
 }

@@ -47,6 +47,7 @@ namespace C4I
 
         #region ICommand Members
 
+        /// <inheritdoc />
         [DebuggerStepThrough]
         public bool CanExecute(object parameter)
         {
@@ -60,6 +61,7 @@ namespace C4I
             remove { CommandManager.RequerySuggested -= value; }
         }
 
+        /// <inheritdoc />
         public void Execute(object parameter)
         {
             _execute(parameter);

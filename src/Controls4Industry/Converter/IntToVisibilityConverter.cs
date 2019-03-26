@@ -5,33 +5,29 @@ using System.Windows.Data;
 
 namespace C4I
 {
-    /// <inheritdoc />
     /// <summary>
-    /// Converts a double value to <see cref="T:System.Windows.GridLength" /> typed value
+    /// Converts an integer value to <see cref="Visibility"/> value
     /// </summary>
-    public class DoubleToRowDefinitionConverter : IValueConverter
+    public class IntToVisibilityConverter : IValueConverter
     {
         /// <inheritdoc />
         /// <summary>
-        /// Double to <see cref="T:System.Windows.GridLength" /> conversion
+        /// Performs conversion
         /// </summary>
-        /// <param name="value">Double</param>
+        /// <param name="value">Boolean value</param>
         /// <param name="targetType">Not used</param>
         /// <param name="parameter">Not used</param>
         /// <param name="culture">Not used</param>
-        /// <returns>Either a starred <see cref="T:System.Windows.GridLength" /> if the provided value is not a double. Or a pixel based <see cref="T:System.Windows.GridLength" />
-        /// where the pixel value is as same as the given double value.
-        /// </returns>
+        /// <returns>Returns collapsed if value is null or 0, otherwise visible</returns>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var gridLength = new GridLength(0.0, GridUnitType.Star);
+            if (value == null)
+                return Visibility.Collapsed;
 
-            if (value is double)
-            {
-                gridLength = new GridLength((double)value, GridUnitType.Pixel);
-            }
+            if (System.Convert.ToInt32(value) > 0)
+                return Visibility.Visible;
 
-            return gridLength;
+            return Visibility.Collapsed;
         }
 
         /// <inheritdoc />

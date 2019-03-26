@@ -7,6 +7,8 @@ namespace Marvin.ClientFramework.Dialog
     /// </summary>
     public class DialogScreen : Screen, IDialogScreen
     {
+        /// <inheritdoc />
+        // ReSharper disable once OptionalParameterHierarchyMismatch
         public override void TryClose(bool? dialogResult = null)
         {
             Result = dialogResult.HasValue && dialogResult.Value;
@@ -14,6 +16,7 @@ namespace Marvin.ClientFramework.Dialog
             base.TryClose(dialogResult);
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Returns the result of the TryClose
         /// </summary>

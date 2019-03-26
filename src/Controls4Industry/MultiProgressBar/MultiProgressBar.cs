@@ -29,8 +29,6 @@ namespace C4I
         private FrameworkElement _indicator;
         private FrameworkElement _glow;
 
-        private readonly CornerRadius _originalCornerRadius;
-
         #region Properties with DependencyProperties 
         /// <summary>
         /// Max-Value for the summed values of the segments

@@ -3,6 +3,9 @@ using System.Windows.Controls;
 
 namespace C4I
 {
+    /// <summary>
+    /// Custom busy indicator
+    /// </summary>
     public class EddieBusyIndicator : ContentControl
     {
         /// <summary>

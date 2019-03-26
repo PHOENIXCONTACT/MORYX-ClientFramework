@@ -12,10 +12,20 @@ namespace Marvin.Controls
     /// </summary>
     public class EntryViewModel : INotifyPropertyChanged
     {
+        /// <summary>
+        /// The entry of this view model
+        /// </summary>
         public Entry Entry { get; }
 
+        /// <summary>
+        /// Parent view model
+        /// </summary>
         public EntryViewModel Parent { get; set; }
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="entries"></param>
         public EntryViewModel(IList<Entry> entries)
         {
             Key = "Root";
@@ -25,6 +35,10 @@ namespace Marvin.Controls
             UpdateParent();
         }
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="entry"></param>
         public EntryViewModel(Entry entry)
         {
             Entry = entry;
@@ -131,6 +145,7 @@ namespace Marvin.Controls
             }
         }
 
+        /// <inheritdoc />
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void OnPropertyChanged([CallerMemberName] string propertyName = null)

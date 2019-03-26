@@ -3,6 +3,9 @@ using System.Windows.Media;
 
 namespace C4I
 {
+    /// <summary>
+    /// Factory that creates all <see cref="CommonShapeType"/> icons
+    /// </summary>
     public static class ShapeFactory
     {
         private static readonly Dictionary<CommonShapeType, string> CommonGeometries = new Dictionary<CommonShapeType, string>();
@@ -68,6 +71,11 @@ namespace C4I
             CommonGeometries.Add(CommonShapeType.Eye, "");
         }
 
+        /// <summary>
+        /// Creates the icon by given <see cref="CommonShapeType"/>
+        /// </summary>
+        /// <param name="shapeType"></param>
+        /// <returns></returns>
         public static Geometry GetShapeGeometry(CommonShapeType shapeType)
         {
             return !CommonGeometries.ContainsKey(shapeType) ? null : Geometry.Parse(CommonGeometries[shapeType]);

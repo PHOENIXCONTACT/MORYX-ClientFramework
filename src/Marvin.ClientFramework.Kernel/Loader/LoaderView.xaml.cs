@@ -1,11 +1,16 @@
 ﻿using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Media;
 
 namespace Marvin.ClientFramework.Kernel
 {
-    public partial class LoaderView : UserControl, ILoaderView
+    /// <summary>
+    /// Loader view
+    /// </summary>
+    public partial class LoaderView : ILoaderView
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LoaderView"/> class.
+        /// </summary>
         public LoaderView()
         {
             InitializeComponent();
@@ -13,48 +18,64 @@ namespace Marvin.ClientFramework.Kernel
             StatusMessage = "One moment please ...";
         }
 
+        /// <summary>
+        /// Maximum progress value
+        /// </summary>
         public static readonly DependencyProperty MaximumProperty = DependencyProperty.Register(
             "Maximum", typeof (int), typeof (LoaderView), new PropertyMetadata(default(int)));
 
+        /// <inheritdoc />
         public int Maximum
         {
             get { return (int) GetValue(MaximumProperty); }
             set { SetValue(MaximumProperty, value); }
         }
 
+        /// <summary>
+        /// Current progress value
+        /// </summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register(
             "Value", typeof (int), typeof (LoaderView), new PropertyMetadata(default(int)));
 
+        /// <inheritdoc />
         public int Value
         {
             get { return (int) GetValue(ValueProperty); }
             set { SetValue(ValueProperty, value); }
         }
         
-        public static readonly DependencyProperty StatusMessageProperty = DependencyProperty.Register("StatusMessage", typeof (string), typeof (LoaderView), new PropertyMetadata(default(string)));
+        /// <summary>
+        /// Status message
+        /// </summary>
+        public static readonly DependencyProperty StatusMessageProperty = DependencyProperty.Register(
+            "StatusMessage", typeof (string), typeof (LoaderView), new PropertyMetadata(default(string)));
+
+        /// <inheritdoc />
         public string StatusMessage
         {
             get { return (string) GetValue(StatusMessageProperty); }
             set { SetValue(StatusMessageProperty, value); }
         }
 
-        public static readonly DependencyProperty AppnNameProperty = DependencyProperty.Register(
-            "AppnName", typeof (string), typeof (LoaderView), new PropertyMetadata(default(string)));
+        /// <summary>
+        /// App name
+        /// </summary>
+        public static readonly DependencyProperty AppNameProperty = DependencyProperty.Register(
+            "AppName", typeof (string), typeof (LoaderView), new PropertyMetadata(default(string)));
 
-        public string AppnName
+        /// <inheritdoc />
+        public string AppName
         {
-            get { return (string) GetValue(AppnNameProperty); }
-            set { SetValue(AppnNameProperty, value); }
+            get { return (string) GetValue(AppNameProperty); }
+            set { SetValue(AppNameProperty, value); }
         }
 
+        /// <summary>
+        /// Gets called to indicate an error
+        /// </summary>
         public void IndicateError()
         {
             ProgressBar.Foreground = new SolidColorBrush(Colors.Red);
-        }
-
-        public void Connect(int connectionId, object target)
-        {
-            throw new System.NotImplementedException();
         }
     }
 }

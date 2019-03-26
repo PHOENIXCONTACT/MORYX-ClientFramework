@@ -4,9 +4,9 @@ using Marvin.Tools.Wcf;
 
 namespace Marvin.Tools.WcfClient.UI.Viewer
 {
-    public class WcfClientInfoViewModel : PropertyChangedBase
+    internal class WcfClientInfoViewModel : PropertyChangedBase
     {
-        private WcfClientInfo _source;
+        private readonly WcfClientInfo _source;
 
         public WcfClientInfoViewModel(WcfClientInfo source)
         {

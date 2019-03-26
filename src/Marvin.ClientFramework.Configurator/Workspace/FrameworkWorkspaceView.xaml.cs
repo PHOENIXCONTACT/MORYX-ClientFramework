@@ -1,11 +1,9 @@
-﻿using System.Windows.Controls;
-
-namespace Marvin.ClientFramework.Configurator
+﻿namespace Marvin.ClientFramework.Configurator
 {
     /// <summary>
     /// Interaction logic for FrameworkConfigWorkspaceView.xaml
     /// </summary>
-    public partial class FrameworkWorkspaceView : UserControl
+    public partial class FrameworkWorkspaceView
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="FrameworkWorkspaceView"/> class.

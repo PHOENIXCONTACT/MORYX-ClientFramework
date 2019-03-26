@@ -3,9 +3,14 @@ using Marvin.ClientFramework;
 
 namespace Marvin.Tools.WcfClient.UI.Viewer
 {
+    /// <inheritdoc />
+    /// <summary>
+    /// Module controller for wcf viewer
+    /// </summary>
     [ClientModule("Wcf Viewer")]
     public class ModuleController : WorkspaceModuleBase<ModuleConfig>
     {
+        /// <inheritdoc />
         public override Geometry Icon
         {
             get
@@ -19,30 +24,30 @@ namespace Marvin.Tools.WcfClient.UI.Viewer
             }
         }
 
+        /// <inheritdoc />
         protected override void OnInitialize()
         {
-
         }
 
+        /// <inheritdoc />
         protected override void OnActivate()
         {
-
         }
 
+        /// <inheritdoc />
         protected override void OnDeactivate(bool close)
         {
-
         }
 
-
+        /// <inheritdoc />
         protected override IModuleWorkspace OnCreateWorkspace()
         {
             return Container.Resolve<IModuleWorkspace>(WcfClientViewerWorkspaceViewModel.ScreenName);
         }
 
+        /// <inheritdoc />
         protected override void OnDestroyWorkspace(IModuleWorkspace workspace)
         {
-            
         }
     }
 }

@@ -220,6 +220,10 @@ namespace C4I
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ProgressItem), new FrameworkPropertyMetadata(typeof(ProgressItem)));
         }
 
+        /// <inheritdoc />
+        /// <summary>
+        /// Default constructor
+        /// </summary>
         public ProgressItem()
         {
             if (TextDescriptor != null)

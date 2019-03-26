@@ -6,13 +6,15 @@ using Marvin.Container;
 
 namespace Marvin.ClientFramework.Kernel
 {
+    /// <summary>
+    /// Module history manager
+    /// </summary>
     [KernelComponent(typeof(IHistory))]
     public class History : IHistory
     {
         private const int HistoryLength = 10;
 
         private readonly List<WorkspacePair> _history = new List<WorkspacePair>();
-        private int _currentIndex = 0;
 
         private readonly List<WorkspacePair> _pushedScreens = new List<WorkspacePair>();
 
@@ -73,11 +75,20 @@ namespace Marvin.ClientFramework.Kernel
             }
         }
 
+        /// <summary>
+        /// Current selected module
+        /// </summary>
         public WorkspacePair Current { get; private set; }
 
+        /// <summary>
+        /// Index of the current selected module
+        /// </summary>
+        public int CurrentIndex { get; private set; }
+
+        /// <inheritdoc />
         public bool MoveNext()
         {
-            var next = _currentIndex + 1;
+            var next = CurrentIndex + 1;
             if (next >= _history.Count)
                 return false;
 
@@ -85,9 +96,10 @@ namespace Marvin.ClientFramework.Kernel
             return true;
         }
 
+        /// <inheritdoc />
         public bool MovePrevious()
         {
-            var next = _currentIndex - 1;
+            var next = CurrentIndex - 1;
             if (next < 0)
                 return false;
 
@@ -95,6 +107,9 @@ namespace Marvin.ClientFramework.Kernel
             return true;
         }
 
+        /// <summary>
+        /// Is risen when current workspace changes
+        /// </summary>
         public event EventHandler<WorkspacePair> WorkspaceChanged;
 
         #endregion
@@ -103,9 +118,9 @@ namespace Marvin.ClientFramework.Kernel
         {
             // If the current page is somewhere in the middle of history we remove all old ones 
             // This creates browser like behaviour
-            while (_currentIndex < _history.Count - 1)
+            while (CurrentIndex < _history.Count - 1)
             {
-                _history.RemoveAt(_currentIndex + 1);
+                _history.RemoveAt(CurrentIndex + 1);
             }
             _history.Add(pair);
             Move(_history.Count - 1);
@@ -123,8 +138,8 @@ namespace Marvin.ClientFramework.Kernel
             if (nextIndex < 0)
                 nextIndex = 0;
 
-            _currentIndex = nextIndex;
-            Current = _history.ElementAt(_currentIndex);
+            CurrentIndex = nextIndex;
+            Current = _history.ElementAt(CurrentIndex);
             Current.Workspace.InteractionChanged += WorkspaceInteractionChanged;
 
             WorkspaceChanged?.Invoke(this, Current);

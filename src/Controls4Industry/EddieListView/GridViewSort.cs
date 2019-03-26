@@ -22,11 +22,21 @@ namespace C4I
         public static readonly DependencyProperty CommandProperty = DependencyProperty.RegisterAttached("Command",
             typeof (ICommand), typeof (GridViewSort), new UIPropertyMetadata(null, CommandPropertyChanged));
 
+        /// <summary>
+        /// Gets command
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public static ICommand GetCommand(DependencyObject obj)
         {
             return (ICommand)obj.GetValue(CommandProperty);
         }
 
+        /// <summary>
+        /// Sets command
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="value"></param>
         public static void SetCommand(DependencyObject obj, ICommand value)
         {
             obj.SetValue(CommandProperty, value);
@@ -54,11 +64,21 @@ namespace C4I
             }
         }
 
+        /// <summary>
+        /// Gets auto sort
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public static bool GetAutoSort(DependencyObject obj)
         {
             return (bool) obj.GetValue(AutoSortProperty);
         }
 
+        /// <summary>
+        /// Sets auto sort
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="value"></param>
         public static void SetAutoSort(DependencyObject obj, bool value)
         {
             obj.SetValue(AutoSortProperty, value);
@@ -128,11 +148,21 @@ namespace C4I
         public static readonly DependencyProperty PropertyNameProperty =
             DependencyProperty.RegisterAttached("PropertyName", typeof (string), typeof (GridViewSort), new UIPropertyMetadata(null));
 
+        /// <summary>
+        /// Gets property name
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public static string GetPropertyName(DependencyObject obj)
         {
             return (string)obj.GetValue(PropertyNameProperty);
         }
 
+        /// <summary>
+        /// Sets property name
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="value"></param>
         public static void SetPropertyName(DependencyObject obj, string value)
         {
             obj.SetValue(PropertyNameProperty, value);
@@ -145,11 +175,21 @@ namespace C4I
             DependencyProperty.RegisterAttached("ShowSortGlyph", typeof (bool), typeof (GridViewSort),
                 new UIPropertyMetadata(true));
 
+        /// <summary>
+        /// Gets show sort glyph
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public static bool GetShowSortGlyph(DependencyObject obj)
         {
             return (bool)obj.GetValue(ShowSortGlyphProperty);
         }
 
+        /// <summary>
+        /// Sets show sort glyph
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="value"></param>
         public static void SetShowSortGlyph(DependencyObject obj, bool value)
         {
             obj.SetValue(ShowSortGlyphProperty, value);
@@ -162,11 +202,21 @@ namespace C4I
             DependencyProperty.RegisterAttached("SortGlyphAscending", typeof (ImageSource), typeof (GridViewSort),
                 new UIPropertyMetadata(null));
 
+        /// <summary>
+        /// Gets sort glyph ascending
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public static ImageSource GetSortGlyphAscending(DependencyObject obj)
         {
             return (ImageSource)obj.GetValue(SortGlyphAscendingProperty);
         }
 
+        /// <summary>
+        /// Sets sort glyph ascending
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="value"></param>
         public static void SetSortGlyphAscending(DependencyObject obj, ImageSource value)
         {
             obj.SetValue(SortGlyphAscendingProperty, value);
@@ -179,11 +229,21 @@ namespace C4I
             DependencyProperty.RegisterAttached("SortGlyphDescending", typeof (ImageSource), typeof (GridViewSort),
                 new UIPropertyMetadata(null));
 
+        /// <summary>
+        /// Gets sort glyph descending
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public static ImageSource GetSortGlyphDescending(DependencyObject obj)
         {
             return (ImageSource)obj.GetValue(SortGlyphDescendingProperty);
         }
 
+        /// <summary>
+        /// Sets sort glyph descending
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="value"></param>
         public static void SetSortGlyphDescending(DependencyObject obj, ImageSource value)
         {
             obj.SetValue(SortGlyphDescendingProperty, value);
@@ -216,7 +276,7 @@ namespace C4I
         private static void ColumnHeader_Click(object sender, RoutedEventArgs e)
         {
             var headerClicked = e.OriginalSource as GridViewColumnHeader;
-            if (headerClicked == null || headerClicked.Column == null) 
+            if (headerClicked?.Column == null) 
                 return;
             
             var propertyName = GetPropertyName(headerClicked.Column);
@@ -245,10 +305,10 @@ namespace C4I
 
         #region Helper methods
 
-        public static T GetAncestor<T>(DependencyObject reference) where T : DependencyObject
+        private static T GetAncestor<T>(DependencyObject reference) where T : DependencyObject
         {
             var parent = VisualTreeHelper.GetParent(reference);
-            while (!(parent is T))
+            while (parent != null && !(parent is T))
             {
                 parent = VisualTreeHelper.GetParent(parent);
             }
@@ -256,7 +316,7 @@ namespace C4I
             return (T) parent;
         }
 
-        public static void ApplySort(ICollectionView view, string propertyName, ListView listView, GridViewColumnHeader sortedColumnHeader)
+        private static void ApplySort(ICollectionView view, string propertyName, ListView listView, GridViewColumnHeader sortedColumnHeader)
         {
             var direction = ListSortDirection.Ascending;
             if (view.SortDescriptions.Count > 0)

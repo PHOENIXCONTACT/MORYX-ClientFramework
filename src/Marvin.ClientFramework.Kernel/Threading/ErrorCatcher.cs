@@ -12,6 +12,9 @@ namespace Marvin.ClientFramework.Kernel
     [KernelComponent(typeof(IErrorCatcher))]
     public class ErrorCatcher : IErrorCatcher, ILoggingComponent
     {
+        /// <summary>
+        /// Injected <see cref="IModuleLogger"/>
+        /// </summary>
         public IModuleLogger Logger { get; set; }
 
         ///

@@ -53,7 +53,7 @@ namespace Marvin.Controls.Demo
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window, INotifyPropertyChanged
+    public partial class MainWindow : INotifyPropertyChanged
     {
         public MainWindow()
         {
@@ -298,8 +298,9 @@ namespace Marvin.Controls.Demo
                         {
                             _t.Join(new TimeSpan(0, 0, 0, 0, 100));
                         }
-                        catch (Exception exception)
+                        catch
                         {
+                            // ignored
                         }
                         finally
                         {

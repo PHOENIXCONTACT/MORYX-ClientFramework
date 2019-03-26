@@ -23,8 +23,8 @@ namespace C4I
         private readonly double _offsetY;
 
         // Position of the child (when not set to NaN).
-        private double _positionX = Double.NaN;
-        private double _positionY = Double.NaN;
+        private double _positionX = double.NaN;
+        private double _positionY = double.NaN;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="FrameworkElementAdorner"/> class.
@@ -83,6 +83,7 @@ namespace C4I
             set { _positionY = value; }
         }
 
+        /// <inheritdoc />
         protected override Size MeasureOverride(Size constraint)
         {
             _child.Measure(constraint);
@@ -231,15 +232,16 @@ namespace C4I
             return 0.0;
         }
 
+        /// <inheritdoc />
         protected override Size ArrangeOverride(Size finalSize)
         {
             var x = PositionX;
-            if (Double.IsNaN(x))
+            if (double.IsNaN(x))
             {
                 x = DetermineX();
             }
             var y = PositionY;
-            if (Double.IsNaN(y))
+            if (double.IsNaN(y))
             {
                 y = DetermineY();
             }
@@ -249,16 +251,16 @@ namespace C4I
             return finalSize;
         }
 
-        protected override Int32 VisualChildrenCount
-        {
-            get { return 1; }
-        }
+        /// <inheritdoc />
+        protected override int VisualChildrenCount => 1;
 
+        /// <inheritdoc />
         protected override Visual GetVisualChild(Int32 index)
         {
             return _child;
         }
 
+        /// <inheritdoc />
         protected override IEnumerator LogicalChildren
         {
             get
@@ -283,9 +285,6 @@ namespace C4I
         /// <summary>
         /// Override AdornedElement from base class for less type-checking.
         /// </summary>
-        public new FrameworkElement AdornedElement
-        {
-            get { return (FrameworkElement) base.AdornedElement; }
-        }
+        public new FrameworkElement AdornedElement => (FrameworkElement) base.AdornedElement;
     }
 }

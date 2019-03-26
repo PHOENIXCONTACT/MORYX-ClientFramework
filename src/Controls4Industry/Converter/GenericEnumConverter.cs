@@ -4,10 +4,17 @@ using System.Windows.Data;
 
 namespace C4I
 {
+    /// <summary>
+    /// Enum to Boolean or <see cref="Visibility"/> converter
+    /// </summary>
     public class GenericEnumConverter : IValueConverter
     {
+        /// <summary>
+        /// Indicates if the boolean value should be reversed
+        /// </summary>
         public bool Reverse { get; set; }
 
+        /// <inheritdoc />
         /// <summary>
         /// Converts an enum value to a boolean or a Visibility value. 
         /// </summary>
@@ -19,37 +26,37 @@ namespace C4I
         /// If the target type is boolean, true is returned if the parameter equals the value and false otherwise.
         /// If the target type is Visibility, Visible is returned if the parameter equals the value and Collapsed otherwise.
         /// </returns>
-        /// <exception cref="ArgumentNullException">Thrown if value is null.</exception>
-        /// <exception cref="ArgumentNullException">Thrown if parameter is null.</exception>
-        /// <exception cref="ArgumentException">Thrown if value is not an enum.</exception>
-        /// <exception cref="ArgumentException">Thrown if target type is not of type bool or visibility.</exception>
+        /// <exception cref="T:System.ArgumentNullException">Thrown if value is null.</exception>
+        /// <exception cref="T:System.ArgumentNullException">Thrown if parameter is null.</exception>
+        /// <exception cref="T:System.ArgumentException">Thrown if value is not an enum.</exception>
+        /// <exception cref="T:System.ArgumentException">Thrown if target type is not of type bool or visibility.</exception>
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             if (value == null)
             {
-                throw new ArgumentNullException("value");
+                throw new ArgumentNullException(nameof(value));
             }
 
             if (!(value is Enum))
             {
-                throw new ArgumentException("Value must be an enum", "value");
+                throw new ArgumentException("Value must be an enum", nameof(value));
             }
 
             if (parameter == null)
             {
-                throw new ArgumentNullException("parameter");
+                throw new ArgumentNullException(nameof(parameter));
             }
 
-            bool result = false;
+            var result = false;
 
             if (parameter is Enum)
             {
-                result = Enum.Equals(value, parameter);
+                result = Equals(value, parameter);
             }
 
             if (parameter is string)
             {
-                result = Enum.Equals(value, Enum.Parse(value.GetType(), parameter.ToString().Trim(), true));
+                result = Equals(value, Enum.Parse(value.GetType(), parameter.ToString().Trim(), true));
             }
 
             if (parameter.GetType() == Enum.GetUnderlyingType(value.GetType()))
@@ -67,23 +74,21 @@ namespace C4I
             {
                 return result;
             }
-            else if (targetType == typeof(Visibility))
+
+            if (targetType == typeof(Visibility))
             {
                 if (result)
                 {
                     return Visibility.Visible;
                 }
-                else
-                {
-                    return Visibility.Collapsed;
-                }
+
+                return Visibility.Collapsed;
             }
-            else
-            {
-                throw new ArgumentException("Expected target type bool or visibiltiy", "targetType");
-            }
+
+            throw new ArgumentException("Expected target type bool or visibiltiy", nameof(targetType));
         }
 
+        /// <inheritdoc />
         /// <summary>
         /// Converts a boolean or a Visibility value to an enum value. 
         /// </summary>
@@ -94,20 +99,20 @@ namespace C4I
         /// <returns>
         /// If value is false, or Collapsed, then DependencyProperty.UnsetValue is returned. Otherwise
         /// the enum value matching the parameter is returned.</returns>
-        /// <exception cref="ArgumentNullException">Thrown if value is null.</exception>
-        /// <exception cref="ArgumentNullException">Thrown if parameter is null.</exception>
-        /// <exception cref="ArgumentException">Thrown if value is not of type bool or visibility.</exception>
-        /// <exception cref="ArgumentException">Thrown if target type is not an enum.</exception>
+        /// <exception cref="T:System.ArgumentNullException">Thrown if value is null.</exception>
+        /// <exception cref="T:System.ArgumentNullException">Thrown if parameter is null.</exception>
+        /// <exception cref="T:System.ArgumentException">Thrown if value is not of type bool or visibility.</exception>
+        /// <exception cref="T:System.ArgumentException">Thrown if target type is not an enum.</exception>
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             if (value == null)
             {
-                throw new ArgumentNullException("value");
+                throw new ArgumentNullException(nameof(value));
             }
 
-            if ((value is bool) || (value is bool?))
+            if (value is bool)
             {
-                if ((bool?)value == false || (bool?)value == null)
+                if ((bool?)value == false)
                 {
                     return DependencyProperty.UnsetValue;
                 }
@@ -121,24 +126,25 @@ namespace C4I
             }
             else
             {
-                throw new ArgumentException("Value must be bool, bool? or Visibility", "value");
+                throw new ArgumentException("Value must be bool, bool? or Visibility", nameof(value));
             }
 
             if (!targetType.IsSubclassOf(typeof(Enum)))
             {
-                throw new ArgumentException("Epected target type Enum", "targetType");
+                throw new ArgumentException("Epected target type Enum", nameof(targetType));
             }
 
             if (parameter == null)
             {
-                throw new ArgumentNullException("parameter");
+                throw new ArgumentNullException(nameof(parameter));
             }
 
             if (parameter is Enum)
             {
                 return parameter;
             }
-            else if (parameter is string || parameter.GetType() == Enum.GetUnderlyingType(targetType))
+
+            if (parameter is string || parameter.GetType() == Enum.GetUnderlyingType(targetType))
             {
                 return Enum.Parse(targetType, parameter.ToString().Trim(), false);
             }

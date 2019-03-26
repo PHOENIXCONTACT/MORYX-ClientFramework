@@ -6,7 +6,7 @@ namespace Marvin.ClientFramework.Configurator
     /// <summary>
     /// Interaction logic for ProxyConfigView.xaml
     /// </summary>
-    public partial class ProxyConfigView : UserControl
+    public partial class ProxyConfigView
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ProxyConfigView"/> class.

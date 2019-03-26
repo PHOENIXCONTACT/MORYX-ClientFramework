@@ -9,7 +9,7 @@ namespace Marvin.Controls.Demo
     /// <summary>
     /// Interaction logic for SpeedTestWindow.xaml
     /// </summary>
-    public partial class SpeedTestWindow : Window
+    public partial class SpeedTestWindow
     {
         public SpeedTestWindow()
         {

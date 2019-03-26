@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -16,23 +13,22 @@ using System.Windows.Media;
 
 namespace C4I
 {
-
+    /// <inheritdoc />
+    /// <summary>
+    /// Specialized ListView
+    /// </summary>
     public class EddieListView : ListView
     {
-
         static EddieListView()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(EddieListView), new FrameworkPropertyMetadata(typeof(EddieListView)));
-
-
         }
 
+        /// <inheritdoc />
         public EddieListView()
         {
-
-            AddHandler(GridViewColumnHeader.ClickEvent, new RoutedEventHandler(GridViewColumnHeaderClickedHandler));
+            AddHandler(ButtonBase.ClickEvent, new RoutedEventHandler(GridViewColumnHeaderClickedHandler));
         }
-
 
         ///
         protected override bool IsItemItsOwnContainerOverride(object item)
@@ -53,31 +49,27 @@ namespace C4I
             base.OnManipulationBoundaryFeedback(e);
         }
 
-
         #region sorting
-        private CustomSorter _customSorter = new CustomSorter();
-        private ListSortDirection _sortDirection = ListSortDirection.Ascending;
+
+        private readonly CustomSorter _customSorter = new CustomSorter();
 
         private void GridViewColumnHeaderClickedHandler(object sender, RoutedEventArgs e)
         {
-            GridViewColumnHeader columnHeader = e.OriginalSource as GridViewColumnHeader;
+            var columnHeader = e.OriginalSource as GridViewColumnHeader;
             if (columnHeader == null)
                 return;
             Sort(columnHeader);
         }
 
-        private GridViewColumnHeader sortedColumnHeader;
         private void Sort(GridViewColumnHeader columnHeader)
         {
-            Binding binding = columnHeader.Column.DisplayMemberBinding as Binding;
+            var binding = columnHeader.Column.DisplayMemberBinding as Binding;
             if (binding != null && ItemsSource != null)
             {
-                ICollectionView dataView = CollectionViewSource.GetDefaultView(ItemsSource);
-                ListCollectionView view = dataView as ListCollectionView;
+                var dataView = CollectionViewSource.GetDefaultView(ItemsSource);
+                var view = (ListCollectionView)dataView;
                 _customSorter.SortPropertyName = binding.Path.Path;
                 view.CustomSort = _customSorter;
-
-
 
                 var direction = ListSortDirection.Ascending;
                 if (Items.SortDescriptions.Count > 0)
@@ -90,20 +82,13 @@ namespace C4I
                     Items.SortDescriptions.Clear();
 
                     RemoveSortGlyph(columnHeader);
-
                 }
-
 
                 Items.SortDescriptions.Add(new SortDescription(_customSorter.SortPropertyName, direction));
 
-
                 AddSortGlyph(columnHeader, direction, null);
-                sortedColumnHeader = columnHeader;
             }
-
-
         }
-
 
         private static void AddSortGlyph(GridViewColumnHeader columnHeader, ListSortDirection direction, ImageSource sortGlyph)
         {
@@ -124,12 +109,9 @@ namespace C4I
             }
         }
 
-
-
-
-        public class CustomSorter : IComparer
+        internal class CustomSorter : IComparer
         {
-            private Dictionary<string, ListSortDirection> _dictOfSortDirections =
+            private readonly Dictionary<string, ListSortDirection> _dictOfSortDirections =
                 new Dictionary<string, ListSortDirection>();
 
             private string _sortPropertyName;
@@ -145,14 +127,14 @@ namespace C4I
                     }
                     // Alternate sort directions inside the dictionary
                     _dictOfSortDirections[_sortPropertyName] =
-                        (_dictOfSortDirections[_sortPropertyName] == ListSortDirection.Ascending) ?
+                        _dictOfSortDirections[_sortPropertyName] == ListSortDirection.Ascending ?
                             ListSortDirection.Descending : ListSortDirection.Ascending;
                 }
             }
 
             public int Compare(object x, object y)
             {
-                PropertyInfo pi = x.GetType().GetProperty(_sortPropertyName);
+                var pi = x?.GetType().GetProperty(_sortPropertyName);
                 if (pi != null)
                 {
                     object value1 = pi.GetValue(x);
@@ -166,14 +148,13 @@ namespace C4I
 
                     if (dir == ListSortDirection.Ascending)
                         return ((IComparable)value1).CompareTo(value2);
-                    else
-                        return ((IComparable)value2).CompareTo(value1);
+                    
+                    return ((IComparable)value2).CompareTo(value1);
                 }
                 return 0;
             }
         }
+
         #endregion
-
-
     }
 }

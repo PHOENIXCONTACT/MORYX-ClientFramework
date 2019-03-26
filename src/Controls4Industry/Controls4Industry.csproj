@@ -65,7 +65,7 @@
     <Compile Include="Converter\FileSizeToTextConverter.cs" />
     <Compile Include="Converter\GenericEnumConverter.cs" />
     <Compile Include="Converter\InverseBooleanConverter.cs" />
-    <Compile Include="Converter\IntToBooleanConverter.cs" />
+    <Compile Include="Converter\IntToVisibilityConverter.cs" />
     <Compile Include="Converter\NullToCollapsedConverter.cs" />
     <Compile Include="Converter\StringToBooleanConverter.cs" />
     <Compile Include="Core\VersionResourceDictionary.cs" />

@@ -6,7 +6,6 @@ using Marvin.Container;
 using Marvin.Logging;
 using Marvin.Modules;
 using Marvin.Threading;
-using Marvin.Tools;
 using Marvin.Tools.Wcf;
 
 namespace Marvin.ClientFramework
@@ -21,6 +20,9 @@ namespace Marvin.ClientFramework
     {
         #region Dependency Injection
 
+        /// <summary>
+        /// Injected <see cref="IModuleContainerFactory"/>
+        /// </summary>
         public IModuleContainerFactory ContainerFactory { get; set; }
 
         /// <summary>
@@ -54,10 +56,7 @@ namespace Marvin.ClientFramework
         /// </summary>
         public TConf Config { get; set; }
 
-        IClientModuleConfig IClientModule.Config
-        {
-            get { return Config; }
-        }
+        IClientModuleConfig IClientModule.Config => Config;
 
         #endregion
 
@@ -75,6 +74,9 @@ namespace Marvin.ClientFramework
         /// </summary>
         protected IContainer Container { get; private set; }
 
+        /// <summary>
+        /// Notifications of this module
+        /// </summary>
         public INotificationCollection Notifications => _notifications;
 
         string IModule.Name => _moduleName;
@@ -107,6 +109,7 @@ namespace Marvin.ClientFramework
         /// </summary>
         protected abstract void OnDeactivate(bool close);
 
+        /// <inheritdoc />
         public virtual void Initialize()
         {
             Container = ContainerFactory.Create(new Dictionary<Type, string>(), GetType().Assembly)

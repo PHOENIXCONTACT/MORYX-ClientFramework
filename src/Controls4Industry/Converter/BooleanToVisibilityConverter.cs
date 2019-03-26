@@ -5,33 +5,32 @@ using System.Windows.Data;
 
 namespace C4I
 {
+    /// <inheritdoc />
     /// <summary>
     /// Converter class for converting boolean values into Visibility
     /// </summary>
     public class BooleanToVisibilityConverter : IValueConverter
     {
-        private bool _triggerValue = true;
-        private bool _isHidden = false;
-
         /// <summary>
         /// Trigger value. When set to true then boolean true value would be converted to Visible.
         /// When set to false then boolean true value would be converted to Collapsed/Hidden
         /// </summary>
-        public bool TriggerValue
-        {
-            get { return _triggerValue; }
-            set { _triggerValue = value; }
-        }
+        public bool TriggerValue { get; set; } = true;
 
         /// <summary>
         /// If set to true, then return would be Visibility.Hidden, when set to false then return value would be Visibility.Collapsed
         /// </summary>
-        public bool IsHidden
-        {
-            get { return _isHidden; }
-            set { _isHidden = value; }
-        }
+        public bool IsHidden { get; set; }
 
+        /// <inheritdoc />
+        /// <summary>
+        /// Converts boolean value <see cref="P:C4I.BooleanToVisibilityConverter.TriggerValue" /> and <see cref="P:C4I.BooleanToVisibilityConverter.IsHidden" />
+        /// </summary>
+        /// <param name="value">Boolean</param>
+        /// <param name="targetType">Not used</param>
+        /// <param name="parameter">Not used</param>
+        /// <param name="culture">Not used</param>
+        /// <returns></returns>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (!(value is bool))
@@ -52,6 +51,16 @@ namespace C4I
             return Visibility.Visible;
         }
 
+        /// <inheritdoc />
+        /// <summary>
+        /// Not supported
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="targetType"></param>
+        /// <param name="parameter"></param>
+        /// <param name="culture"></param>
+        /// <returns></returns>
+        /// <exception cref="T:System.NotImplementedException"></exception>
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();

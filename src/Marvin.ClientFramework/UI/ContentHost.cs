@@ -4,11 +4,18 @@ using Caliburn.Micro;
 
 namespace Marvin.ClientFramework.UI
 {
+    /// <summary>
+    /// Content host
+    /// </summary>
     public class ContentHost : ContentControl
     {
         private readonly Grid _contentGrid;
         private UIElement _currentView;
 
+        /// <inheritdoc />
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public ContentHost()
         {
             _contentGrid = new Grid();
@@ -16,12 +23,18 @@ namespace Marvin.ClientFramework.UI
             Focusable = false;
         }
 
+        /// <summary>
+        /// Gets or sets the current item
+        /// </summary>
         public object CurrentItem
         {
             get { return GetValue(CurrentItemProperty); }
             set { SetValue(CurrentItemProperty, value); }
         }
 
+        /// <summary>
+        /// Current item
+        /// </summary>
         public static readonly DependencyProperty CurrentItemProperty =
                 DependencyProperty.Register("CurrentItem", typeof(object), typeof(ContentHost),
                 new PropertyMetadata(null, (s, e) => ((ContentHost)s).OnCurrentItemChanged()));
@@ -76,7 +89,10 @@ namespace Marvin.ClientFramework.UI
             if (e.WasClosed)
             {
                 var sourceScreen = sender as IScreen;
-                sourceScreen.Deactivated -= SourceScreen_Deactivated;
+                if (sourceScreen != null)
+                {
+                    sourceScreen.Deactivated -= SourceScreen_Deactivated;
+                }
 
                 var view = GetView(sourceScreen);
                 _contentGrid.Children.Remove(view);
@@ -85,14 +101,14 @@ namespace Marvin.ClientFramework.UI
 
         private void BringToFront(UIElement control)
         {
-            control.Visibility = System.Windows.Visibility.Visible;
+            control.Visibility = Visibility.Visible;
         }
 
         private void SendToBack(UIElement control)
         {
             if (control != null)
             {
-                control.Visibility = System.Windows.Visibility.Collapsed;
+                control.Visibility = Visibility.Collapsed;
             }
         }
     }

@@ -13,6 +13,7 @@ namespace Marvin.ClientFramework.Configurator
     [ClientModule("Configurator"), ComponentForRunMode(KernelConstants.CONFIG_RUNMODE)]
     public class ModuleController : WorkspaceModuleBase<ModuleConfig>
     {
+        /// <inheritdoc />
         public override Geometry Icon => Geometry.Empty;
 
         #region Dependency Injection

@@ -28,11 +28,13 @@ namespace C4I
             set { SetValue(ItemHeightProperty, value); }
         }
 
+        /// <inheritdoc />
         protected override DependencyObject GetContainerForItemOverride()
         {
             return new EddieTreeViewItem();
         }
 
+        /// <inheritdoc />
         protected override bool IsItemItsOwnContainerOverride(object item)
         {
             return item is EddieTreeViewItem;

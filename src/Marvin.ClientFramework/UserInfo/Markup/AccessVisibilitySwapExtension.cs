@@ -3,6 +3,10 @@ using System.Windows;
 
 namespace Marvin.ClientFramework
 {
+    /// <inheritdoc />
+    /// <summary>
+    /// Operation access extension for <see cref="T:System.Windows.Visibility" />
+    /// </summary>
     public class AccessVisibilitySwapExtension : OperationAccessExtensionBase
     {
         /// <summary>

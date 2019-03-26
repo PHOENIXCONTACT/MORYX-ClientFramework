@@ -1,5 +1,8 @@
 ﻿namespace Marvin.ClientFramework.Kernel
 {
+    /// <summary>
+    /// Load handler interface
+    /// </summary>
     public interface ILoaderHandler
     {
         /// <summary>

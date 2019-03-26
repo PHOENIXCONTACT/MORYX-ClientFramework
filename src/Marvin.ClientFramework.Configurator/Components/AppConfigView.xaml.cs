@@ -8,7 +8,7 @@ namespace Marvin.ClientFramework.Configurator
     /// <summary>
     /// Interaction logic for AppConfigView.xaml
     /// </summary>
-    public partial class AppConfigView : UserControl
+    public partial class AppConfigView
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AppConfigView"/> class.

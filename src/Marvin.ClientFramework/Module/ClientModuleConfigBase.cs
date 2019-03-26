@@ -4,13 +4,24 @@ using Marvin.Users;
 
 namespace Marvin.ClientFramework
 {
+    /// <summary>
+    /// Configuration base class for client modules
+    /// </summary>
     public class ClientModuleConfigBase : ConfigBase, IClientModuleConfig
     {
+        /// <inheritdoc />
+        /// <summary>
+        /// Display name of this module
+        /// </summary>
         public string DisplayName
         {
             get; set;
         }
 
+        /// <inheritdoc />
+        /// <summary>
+        /// Indicates whether the client module is enabled
+        /// </summary>
         public bool IsEnabled
         {
             get;set;
@@ -21,6 +32,9 @@ namespace Marvin.ClientFramework
             get; set; 
         }
 
+        /// <summary>
+        /// Access rights for this client module
+        /// </summary>
         public Dictionary<string, OperationAccess> OperationAccesses
         {
             get; set;

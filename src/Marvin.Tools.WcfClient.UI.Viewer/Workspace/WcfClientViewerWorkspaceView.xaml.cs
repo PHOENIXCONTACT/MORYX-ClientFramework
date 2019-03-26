@@ -7,6 +7,9 @@ namespace Marvin.Tools.WcfClient.UI.Viewer
     /// </summary>
     public partial class WcfClientViewerWorkspaceView : UserControl
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WcfClientViewerWorkspaceView"/> class.
+        /// </summary>
         public WcfClientViewerWorkspaceView()
         {
             InitializeComponent();
