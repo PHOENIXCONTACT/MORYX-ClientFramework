@@ -13,7 +13,7 @@
         <StringToBooleanConverter x:Key="StringToBooleanConverter" />
         <converter:EntryTypeToDelButtonVisibilityConverter x:Key="DelButtonVisibilityConverter" />
         <converter:SubEntriesToVisibilityConverter x:Key="SubEntriesToVisibilityConverter" />
-        <converter:EntryValueToButtonText x:Key="ButtonTextConverter" />
+        <converter:EntryValueToButtonTextConverter x:Key="ButtonTextConverter" />
         <converter:EntryValueToVisibilityConverter x:Key="ValueToVisibilityConverter" />
         <converter:Base64StringLengthToByteLength x:Key="Base64StringLengthToByteLength" />
         <converter:TextToDelimiteredTextConverter x:Key="DelimiteredTextConverter" />

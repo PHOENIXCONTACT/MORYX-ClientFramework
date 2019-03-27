@@ -20,8 +20,6 @@ namespace C4I
         /// <summary>
         /// Sets the text format attached property
         /// </summary>
-        /// <param name="element"></param>
-        /// <param name="value"></param>
         public static void SetTextFormat(DependencyObject element, EddieTextFormat value)
         {
             element.SetValue(TextFormatProperty, value);
@@ -30,8 +28,6 @@ namespace C4I
         /// <summary>
         /// Gets the text format attached property
         /// </summary>
-        /// <param name="element"></param>
-        /// <returns></returns>
         public static EddieTextFormat GetTextFormat(DependencyObject element)
         {
             return (EddieTextFormat)element.GetValue(TextFormatProperty);
@@ -50,8 +46,6 @@ namespace C4I
         /// <summary>
         /// Sets the icon attached property
         /// </summary>
-        /// <param name="element"></param>
-        /// <param name="value"></param>
         public static void SetIcon(DependencyObject element, CommonShapeType value)
         {
             element.SetValue(IconProperty, value);
@@ -60,8 +54,6 @@ namespace C4I
         /// <summary>
         /// Gets the icon attached property
         /// </summary>
-        /// <param name="element"></param>
-        /// <returns></returns>
         public static CommonShapeType GetIcon(DependencyObject element)
         {
             return (CommonShapeType)element.GetValue(IconProperty);
@@ -72,11 +64,11 @@ namespace C4I
             var shape = ShapeFactory.GetShapeGeometry((CommonShapeType)args.NewValue);
 
             var path = d as Path;
-            if (path != null)
-            {
-                path.Data = shape;
-                path.Stretch = Stretch.Uniform;
-            }
+            if (path == null)
+                return;
+
+            path.Data = shape;
+            path.Stretch = Stretch.Uniform;
         }
 
         #endregion

@@ -9,7 +9,7 @@ namespace Marvin.Controls.Converter
     /// <summary>
     /// Converts entry type to text
     /// </summary>
-    public class EntryValueToButtonText : IValueConverter
+    public class EntryValueToButtonTextConverter : IValueConverter
     {
         /// <inheritdoc />
         /// <summary>
@@ -39,10 +39,6 @@ namespace Marvin.Controls.Converter
         /// <summary>
         /// Not supported
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="targetType"></param>
-        /// <param name="parameter"></param>
-        /// <param name="culture"></param>
         /// <returns>null</returns>
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {

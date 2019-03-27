@@ -97,7 +97,7 @@ namespace C4I
         }
 
         /// <summary>
-        /// Constructor
+        /// Initializes a new instance of the <see cref="MultiProgressBar"/> class.
         /// </summary> 
         public MultiProgressBar()
         {

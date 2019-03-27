@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using Marvin.ClientFramework.Shell;
-using Marvin.Logging;
 using Marvin.Threading;
 
 namespace Marvin.ClientFramework.Configurator
@@ -13,15 +12,15 @@ namespace Marvin.ClientFramework.Configurator
     public class ConfigShellViewModel : ShellViewModelBase
     {
         private int _watchWorker;
-        /// <summary>
-        /// Injected <see cref="IModuleLogger"/>
-        /// </summary>
-        public IModuleLogger Logger { get; set; }
+
+        #region Dependencies
 
         /// <summary>
-        /// Injected <see cref="IParallelOperations"/>
+        /// Parallel opertations to shedule an update of the shell watch
         /// </summary>
         public IParallelOperations ParallelOperations { get; set; }
+
+        #endregion
 
         /// <inheritdoc />
         protected override void OnInitialize()
@@ -53,11 +52,8 @@ namespace Marvin.ClientFramework.Configurator
         /// <summary>
         /// Gets the current date.
         /// </summary>
-        public DateTime Now
-        {
-            get { return DateTime.Now; }
-        }
-        
+        public DateTime Now => DateTime.Now;
+
         /// <summary>
         /// Creates the controller.
         /// </summary>

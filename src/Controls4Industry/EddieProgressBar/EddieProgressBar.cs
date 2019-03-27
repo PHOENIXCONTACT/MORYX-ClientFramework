@@ -6,7 +6,7 @@ namespace C4I
 {
     /// <inheritdoc />
     /// <summary>
-    /// Specialized <see cref="T:System.Windows.Controls.ProgressBar" />
+    /// Implementation of <see cref="ProgressBar"/> with additional features like text with percentage / min and max value
     /// </summary>
     public class EddieProgressBar : ProgressBar
     {

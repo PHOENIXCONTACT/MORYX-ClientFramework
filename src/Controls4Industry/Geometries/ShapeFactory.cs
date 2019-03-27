@@ -74,8 +74,6 @@ namespace C4I
         /// <summary>
         /// Creates the icon by given <see cref="CommonShapeType"/>
         /// </summary>
-        /// <param name="shapeType"></param>
-        /// <returns></returns>
         public static Geometry GetShapeGeometry(CommonShapeType shapeType)
         {
             return !CommonGeometries.ContainsKey(shapeType) ? null : Geometry.Parse(CommonGeometries[shapeType]);

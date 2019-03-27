@@ -7,7 +7,7 @@ namespace C4I
 {
     /// <inheritdoc />
     /// <summary>
-    /// Mulitline label
+    /// Represents a label and content combination. This label supports two labels and a content.
     /// </summary>
     [TemplatePart(Name = "LabelHost", Type = typeof(Panel))]
     public class LabeledControlHost : ContentControl

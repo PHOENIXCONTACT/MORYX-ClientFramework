@@ -11,9 +11,8 @@ namespace C4I
     /// </summary>
     public class DialogPanel : ContentControl
     {
-        /// <inheritdoc />
         /// <summary>
-        /// Constructor
+        /// Initializes a new instance of the <see cref="DialogPanel"/> class.
         /// </summary>
         public DialogPanel()
         {

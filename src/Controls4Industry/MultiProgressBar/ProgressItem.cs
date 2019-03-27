@@ -13,17 +13,17 @@ namespace C4I
     public class ProgressItem : Control, INotifyPropertyChanged
     {
         #region ValueChanged-Event
+
         /// <summary>
         /// Notify interested Parties about a value-change
         /// </summary>
         public event EventHandler ValueChanged;
+
         private void RaiseValueChanged()
         {
-            if (ValueChanged != null)
-            {
-                ValueChanged(this, EventArgs.Empty);
-            }
+            ValueChanged?.Invoke(this, EventArgs.Empty);
         }
+
         #endregion
 
         #region Properties with DependencyProperties
@@ -47,7 +47,7 @@ namespace C4I
         public static readonly DependencyProperty TextProperty =
             DependencyProperty.Register("Text", typeof(string), typeof(ProgressItem), new PropertyMetadata(string.Empty));
 
-        DependencyPropertyDescriptor TextDescriptor = DependencyPropertyDescriptor.FromProperty(ProgressItem.TextProperty, typeof(ProgressItem));
+        private readonly DependencyPropertyDescriptor _textDescriptor = DependencyPropertyDescriptor.FromProperty(TextProperty, typeof(ProgressItem));
 
 
         /// <summary>
@@ -98,10 +98,7 @@ namespace C4I
         /// </summary>
         public bool KeepGlowEffect
         {
-            get
-            {
-                return (bool)GetValue(KeepGlowEffectProperty);
-            }
+            get { return (bool)GetValue(KeepGlowEffectProperty); }
             set
             {
                 SetValue(KeepGlowEffectProperty, value);
@@ -114,8 +111,6 @@ namespace C4I
         /// </summary>
         public static readonly DependencyProperty KeepGlowEffectProperty =
             DependencyProperty.Register("KeepGlowEffect", typeof(bool), typeof(ProgressItem), new PropertyMetadata(false));
-
-
 
         /// <summary>
         /// The color of the progress item, shown in the MultiProgressBar
@@ -156,7 +151,7 @@ namespace C4I
 
         private static object OnCoerceValue(DependencyObject d, object basevalue)
         {
-            int value = (int) basevalue;
+            var value = (int) basevalue;
 
             return (value < 0) ? 0 : value;
         }
@@ -164,12 +159,12 @@ namespace C4I
         private static void OnValuePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var progressItem = d as ProgressItem;
-            if (progressItem != null)
-            {
-                progressItem.TextVisibility = (!string.IsNullOrWhiteSpace(progressItem.Text) && progressItem.Value > 0);
-                progressItem.RaisePropertyChanged("Value");
-                progressItem.RaiseValueChanged();
-            }
+            if (progressItem == null)
+                return;
+
+            progressItem.TextVisibility = (!string.IsNullOrWhiteSpace(progressItem.Text) && progressItem.Value > 0);
+            progressItem.RaisePropertyChanged("Value");
+            progressItem.RaiseValueChanged();
         }
 
         /// <summary>
@@ -211,7 +206,6 @@ namespace C4I
             DependencyProperty.Register("LastVisible", typeof(bool), typeof(ProgressItem), new PropertyMetadata(false));
         #endregion
 
-
         /// <summary>
         /// Static constructor
         /// </summary>
@@ -220,22 +214,19 @@ namespace C4I
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ProgressItem), new FrameworkPropertyMetadata(typeof(ProgressItem)));
         }
 
-        /// <inheritdoc />
         /// <summary>
-        /// Default constructor
+        /// Initializes a new instance of the <see cref="ProgressItem"/> class.
         /// </summary>
         public ProgressItem()
         {
-            if (TextDescriptor != null)
+            _textDescriptor?.AddValueChanged(this, delegate
             {
-                TextDescriptor.AddValueChanged(this, delegate
-                {
-                    TextVisibility = (!string.IsNullOrWhiteSpace(Text) && Value > 0);
-                });
-            }
+                TextVisibility = (!string.IsNullOrWhiteSpace(Text) && Value > 0);
+            });
         }
 
         #region INotifyPropertyChanged
+
         /// <summary>
         /// PropertyChanged event to
         /// </summary>
@@ -247,8 +238,9 @@ namespace C4I
         /// <param name="propertyName"></param>
         protected virtual void RaisePropertyChanged(string propertyName)
         {
-            if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
         #endregion
     }
 }

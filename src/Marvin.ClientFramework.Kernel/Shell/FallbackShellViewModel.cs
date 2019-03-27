@@ -30,6 +30,8 @@ namespace Marvin.ClientFramework.Kernel
             return new ArrayList();
         }
 
+#pragma warning disable 67
         public event EventHandler<ActivationProcessedEventArgs> ActivationProcessed;
+#pragma warning restore 67
     }
 }

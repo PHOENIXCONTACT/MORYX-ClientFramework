@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Windows.Data;
 
 namespace C4I
@@ -14,12 +15,11 @@ namespace C4I
         /// <see cref="IValueConverter"/> that is used for the first conversion step
         /// </summary>
         public IValueConverter Converter1 { get; set; }
+
         /// <summary>
         /// <see cref="IValueConverter"/> that is used for the second conversion step
         /// </summary>
         public IValueConverter Converter2 { get; set; }
-
-        #region IValueConverter Members
 
         /// <summary>
         /// Conversion method
@@ -29,9 +29,9 @@ namespace C4I
         /// <param name="parameter">Value is passed to both converters</param>
         /// <param name="culture">Value is passed to both converters</param>
         /// <returns></returns>
-        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            object convertedValue = Converter1.Convert(value, targetType, parameter, culture);
+            var convertedValue = Converter1.Convert(value, targetType, parameter, culture);
             return Converter2.Convert(convertedValue, targetType, parameter, culture);
         }
 
@@ -39,17 +39,10 @@ namespace C4I
         /// <summary>
         /// Not supported
         /// </summary>
-        /// <param name="value"></param>
-        /// <param name="targetType"></param>
-        /// <param name="parameter"></param>
-        /// <param name="culture"></param>
-        /// <returns></returns>
         /// <exception cref="T:System.NotImplementedException"></exception>
-        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();
         }
-
-        #endregion
     }
 }

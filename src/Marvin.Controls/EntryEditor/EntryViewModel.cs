@@ -23,9 +23,8 @@ namespace Marvin.Controls
         public EntryViewModel Parent { get; set; }
 
         /// <summary>
-        /// Constructor
+        /// Initializes a new instance of the <see cref="EntryViewModel"/> class.
         /// </summary>
-        /// <param name="entries"></param>
         public EntryViewModel(IList<Entry> entries)
         {
             Key = "Root";
@@ -36,9 +35,8 @@ namespace Marvin.Controls
         }
 
         /// <summary>
-        /// Constructor
+        /// Initializes a new instance of the <see cref="EntryViewModel"/> class.
         /// </summary>
-        /// <param name="entry"></param>
         public EntryViewModel(Entry entry)
         {
             Entry = entry;

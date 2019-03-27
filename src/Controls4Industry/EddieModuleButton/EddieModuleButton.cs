@@ -97,10 +97,10 @@ namespace C4I
         /// Click event that is raised when the button gets clicked
         /// </summary>
         public event RoutedEventHandler Click;
+
         /// <summary>
         /// Raises the <see cref="Click"/> event
         /// </summary>
-        /// <param name="e"></param>
         protected virtual void RaiseClick(RoutedEventArgs e)
         {
             var handler = Click;

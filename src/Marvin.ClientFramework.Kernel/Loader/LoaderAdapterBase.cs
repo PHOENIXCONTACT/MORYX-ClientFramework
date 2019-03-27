@@ -11,10 +11,10 @@ namespace Marvin.ClientFramework.Kernel
         /// Is risen when message shall change
         /// </summary>
         public event EventHandler<string> ChangeMessage;
+
         /// <summary>
         /// Raises <see cref="ChangeMessage"/> event
         /// </summary>
-        /// <param name="e"></param>
         protected virtual void RaiseChangeMessage(string e)
         {
             ChangeMessage?.Invoke(this, e);
@@ -24,10 +24,10 @@ namespace Marvin.ClientFramework.Kernel
         /// Add to max
         /// </summary>
         public event EventHandler<int> AddToMax;
+
         /// <summary>
         /// Raises <see cref="AddToMax"/> event
         /// </summary>
-        /// <param name="e"></param>
         protected virtual void RaiseAddToMax(int e)
         {
             AddToMax?.Invoke(this, e);
@@ -37,10 +37,10 @@ namespace Marvin.ClientFramework.Kernel
         /// Change value with message
         /// </summary>
         public event EventHandler<string> ChangeValueWithMessage;
+
         /// <summary>
         /// Raises <see cref="RaiseChangeValueWithMessage"/> event
         /// </summary>
-        /// <param name="e"></param>
         protected virtual void RaiseChangeValueWithMessage(string e)
         {
             ChangeValueWithMessage?.Invoke(this, e);
@@ -50,10 +50,10 @@ namespace Marvin.ClientFramework.Kernel
         /// Is risen to indicate an error
         /// </summary>
         public event EventHandler<ClientException> IndicateError;
+
         /// <summary>
         /// Raises <see cref="IndicateError"/> event
         /// </summary>
-        /// <param name="e"></param>
         protected virtual void RaiseIndicateError(ClientException e)
         {
             IndicateError?.Invoke(this, e);

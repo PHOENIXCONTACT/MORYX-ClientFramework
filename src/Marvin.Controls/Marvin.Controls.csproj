@@ -73,7 +73,7 @@
       <DependentUpon>EntryEditor.xaml</DependentUpon>
     </Compile>
     <Compile Include="EntryEditor\Converter\EntryTypeToDelButtonVisibilityConverter.cs" />
-    <Compile Include="EntryEditor\Converter\EntryValueToButtonText.cs" />
+    <Compile Include="EntryEditor\Converter\EntryValueToButtonTextConverter.cs" />
     <Compile Include="EntryEditor\Converter\EntryValueToVisibilityConverter.cs" />
     <Compile Include="EntryEditor\Converter\SubEntriesToVisibilityConverter.cs" />
     <Compile Include="EntryEditor\Converter\ValueTypeTemplateSelector.cs" />

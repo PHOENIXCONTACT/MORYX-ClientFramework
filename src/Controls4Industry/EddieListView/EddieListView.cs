@@ -15,7 +15,7 @@ namespace C4I
 {
     /// <inheritdoc />
     /// <summary>
-    /// Specialized ListView
+    /// ListView implementation with additional features like sorting
     /// </summary>
     public class EddieListView : ListView
     {
@@ -30,19 +30,19 @@ namespace C4I
             AddHandler(ButtonBase.ClickEvent, new RoutedEventHandler(GridViewColumnHeaderClickedHandler));
         }
 
-        ///
+        /// <inheritdoc />
         protected override bool IsItemItsOwnContainerOverride(object item)
         {
             return item is EddieListViewItem;
         }
 
-        ///
+        /// <inheritdoc />
         protected override DependencyObject GetContainerForItemOverride()
         {
             return new EddieListViewItem();
         }
 
-        /// 
+        /// <inheritdoc />
         protected override void OnManipulationBoundaryFeedback(ManipulationBoundaryFeedbackEventArgs e)
         {
             e.Handled = true;
@@ -58,36 +58,37 @@ namespace C4I
             var columnHeader = e.OriginalSource as GridViewColumnHeader;
             if (columnHeader == null)
                 return;
+
             Sort(columnHeader);
         }
 
         private void Sort(GridViewColumnHeader columnHeader)
         {
             var binding = columnHeader.Column.DisplayMemberBinding as Binding;
-            if (binding != null && ItemsSource != null)
+            if (binding == null || ItemsSource == null)
+                return;
+
+            var dataView = CollectionViewSource.GetDefaultView(ItemsSource);
+            var view = (ListCollectionView)dataView;
+            _customSorter.SortPropertyName = binding.Path.Path;
+            view.CustomSort = _customSorter;
+
+            var direction = ListSortDirection.Ascending;
+            if (Items.SortDescriptions.Count > 0)
             {
-                var dataView = CollectionViewSource.GetDefaultView(ItemsSource);
-                var view = (ListCollectionView)dataView;
-                _customSorter.SortPropertyName = binding.Path.Path;
-                view.CustomSort = _customSorter;
-
-                var direction = ListSortDirection.Ascending;
-                if (Items.SortDescriptions.Count > 0)
+                var currentSort = Items.SortDescriptions[0];
+                if (currentSort.PropertyName == _customSorter.SortPropertyName)
                 {
-                    var currentSort = Items.SortDescriptions[0];
-                    if (currentSort.PropertyName == _customSorter.SortPropertyName)
-                    {
-                        direction = currentSort.Direction == ListSortDirection.Ascending ? ListSortDirection.Descending : ListSortDirection.Ascending;
-                    }
-                    Items.SortDescriptions.Clear();
-
-                    RemoveSortGlyph(columnHeader);
+                    direction = currentSort.Direction == ListSortDirection.Ascending ? ListSortDirection.Descending : ListSortDirection.Ascending;
                 }
+                Items.SortDescriptions.Clear();
 
-                Items.SortDescriptions.Add(new SortDescription(_customSorter.SortPropertyName, direction));
-
-                AddSortGlyph(columnHeader, direction, null);
+                RemoveSortGlyph(columnHeader);
             }
+
+            Items.SortDescriptions.Add(new SortDescription(_customSorter.SortPropertyName, direction));
+
+            AddSortGlyph(columnHeader, direction, null);
         }
 
         private static void AddSortGlyph(GridViewColumnHeader columnHeader, ListSortDirection direction, ImageSource sortGlyph)
@@ -135,23 +136,21 @@ namespace C4I
             public int Compare(object x, object y)
             {
                 var pi = x?.GetType().GetProperty(_sortPropertyName);
-                if (pi != null)
-                {
-                    object value1 = pi.GetValue(x);
-                    object value2 = pi.GetValue(y);
+                if (pi == null)
+                    return 0;
 
-                    bool valuesAreNotSortable = (!(value1 is IComparable) || !(value2 is IComparable));
-                    if (valuesAreNotSortable)
-                        return 0;
+                var value1 = pi.GetValue(x);
+                var value2 = pi.GetValue(y);
 
-                    ListSortDirection dir = _dictOfSortDirections[_sortPropertyName];
+                var valuesAreNotSortable = (!(value1 is IComparable) || !(value2 is IComparable));
+                if (valuesAreNotSortable)
+                    return 0;
 
-                    if (dir == ListSortDirection.Ascending)
-                        return ((IComparable)value1).CompareTo(value2);
-                    
-                    return ((IComparable)value2).CompareTo(value1);
-                }
-                return 0;
+                var dir = _dictOfSortDirections[_sortPropertyName];
+
+                return dir == ListSortDirection.Ascending
+                    ? ((IComparable) value1).CompareTo(value2)
+                    : ((IComparable) value2).CompareTo(value1);
             }
         }
 

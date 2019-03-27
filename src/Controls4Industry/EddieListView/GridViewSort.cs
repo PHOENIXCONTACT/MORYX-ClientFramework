@@ -25,8 +25,6 @@ namespace C4I
         /// <summary>
         /// Gets command
         /// </summary>
-        /// <param name="obj"></param>
-        /// <returns></returns>
         public static ICommand GetCommand(DependencyObject obj)
         {
             return (ICommand)obj.GetValue(CommandProperty);
@@ -35,8 +33,6 @@ namespace C4I
         /// <summary>
         /// Sets command
         /// </summary>
-        /// <param name="obj"></param>
-        /// <param name="value"></param>
         public static void SetCommand(DependencyObject obj, ICommand value)
         {
             obj.SetValue(CommandProperty, value);
@@ -67,8 +63,6 @@ namespace C4I
         /// <summary>
         /// Gets auto sort
         /// </summary>
-        /// <param name="obj"></param>
-        /// <returns></returns>
         public static bool GetAutoSort(DependencyObject obj)
         {
             return (bool) obj.GetValue(AutoSortProperty);
@@ -77,8 +71,6 @@ namespace C4I
         /// <summary>
         /// Sets auto sort
         /// </summary>
-        /// <param name="obj"></param>
-        /// <param name="value"></param>
         public static void SetAutoSort(DependencyObject obj, bool value)
         {
             obj.SetValue(AutoSortProperty, value);
@@ -178,8 +170,6 @@ namespace C4I
         /// <summary>
         /// Gets show sort glyph
         /// </summary>
-        /// <param name="obj"></param>
-        /// <returns></returns>
         public static bool GetShowSortGlyph(DependencyObject obj)
         {
             return (bool)obj.GetValue(ShowSortGlyphProperty);
@@ -188,8 +178,6 @@ namespace C4I
         /// <summary>
         /// Sets show sort glyph
         /// </summary>
-        /// <param name="obj"></param>
-        /// <param name="value"></param>
         public static void SetShowSortGlyph(DependencyObject obj, bool value)
         {
             obj.SetValue(ShowSortGlyphProperty, value);

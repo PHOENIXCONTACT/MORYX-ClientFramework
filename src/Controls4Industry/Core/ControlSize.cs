@@ -9,6 +9,7 @@
         /// Large control
         /// </summary>
         Large,
+
         /// <summary>
         /// Default
         /// </summary>

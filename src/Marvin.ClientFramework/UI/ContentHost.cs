@@ -12,9 +12,8 @@ namespace Marvin.ClientFramework.UI
         private readonly Grid _contentGrid;
         private UIElement _currentView;
 
-        /// <inheritdoc />
         /// <summary>
-        /// Constructor
+        /// Initializes a new instance of the <see cref="ContentHost"/> class.
         /// </summary>
         public ContentHost()
         {

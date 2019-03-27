@@ -6,58 +6,34 @@ namespace Marvin.Tools.WcfClient.UI.Viewer
 {
     internal class WcfClientInfoViewModel : PropertyChangedBase
     {
-        private readonly WcfClientInfo _source;
-
         public WcfClientInfoViewModel(WcfClientInfo source)
         {
-            _source = source;
+            Source = source;
         }
 
-        public WcfClientInfo Source
-        {
-            get { return _source; }
-        }
+        public WcfClientInfo Source { get; }
 
-        public string Service
-        {
-            get { return _source.Service; }
-        }
+        public string Service => Source.Service;
 
-        public string Uri
-        {
-            get { return _source.Uri; }
-        }
+        public string Uri => Source.Uri;
 
-        public string ServerVersion
-        {
-            get { return _source.ServerVersion; }
-        }
+        public string ServerVersion => Source.ServerVersion;
 
-        public string ClientVersion
-        {
-            get { return _source.ClientVersion; }
-        }
+        public string ClientVersion => Source.ClientVersion;
 
-        public string MinServerVersion
-        {
-            get { return _source.MinServerVersion; }
-        }
+        public string MinServerVersion => Source.MinServerVersion;
 
-        public string MinClientVersion
-        {
-            get { return _source.MinClientVersion; }
-        }
+        public string MinClientVersion => Source.MinClientVersion;
 
-        public ConnectionState State
-        {
-            get { return _source.State; }
-        }
+        public ConnectionState State => Source.State;
+
+        public int Tries => Source.Tries;
 
         public SolidColorBrush StateBrush
         {
             get
             {
-                switch (_source.State)
+                switch (Source.State)
                 {
                     case ConnectionState.Success:
                         return Brushes.LightGreen;
@@ -75,11 +51,6 @@ namespace Marvin.Tools.WcfClient.UI.Viewer
                         return Brushes.White;
                 }
             }
-        }
-
-        public int Tries
-        {
-            get { return _source.Tries; }
         }
     }
 }

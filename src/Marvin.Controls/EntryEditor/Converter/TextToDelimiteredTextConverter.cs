@@ -18,7 +18,6 @@ namespace Marvin.Controls.Converter
                 throw new InvalidOperationException("Value is null or not a string");
 
             return text.Split('\n').FirstOrDefault();
-
         }
 
         /// <inheritdoc />

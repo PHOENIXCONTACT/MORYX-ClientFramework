@@ -4,7 +4,7 @@ using Marvin.Modules;
 namespace Marvin.ClientFramework
 {
     /// <summary>
-    /// PendingWorkspaceNotification
+    /// Notification for a workspace which is waiting to be pushed to front
     /// </summary>
     public class PendingWorkspaceNotification : IModuleNotification
     {
@@ -23,10 +23,7 @@ namespace Marvin.ClientFramework
         /// <returns>
         /// True of message could be confirmed
         /// </returns>
-        public bool Confirm()
-        {
-            return false;
-        }
+        public bool Confirm() => false;
 
         /// <inheritdoc />
         /// <summary>

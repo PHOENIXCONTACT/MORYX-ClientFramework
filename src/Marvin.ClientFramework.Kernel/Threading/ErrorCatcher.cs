@@ -13,11 +13,11 @@ namespace Marvin.ClientFramework.Kernel
     public class ErrorCatcher : IErrorCatcher, ILoggingComponent
     {
         /// <summary>
-        /// Injected <see cref="IModuleLogger"/>
+        /// Logger to log exceptions from the framework
         /// </summary>
         public IModuleLogger Logger { get; set; }
 
-        ///
+        /// <inheritdoc />
         public void HandleDispatcherException(object sender, DispatcherUnhandledExceptionEventArgs args)
         {
             Logger.LogException(LogLevel.Error, args.Exception, "There is an error on the UI thread! Check it!");

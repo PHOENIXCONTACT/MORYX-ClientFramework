@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Windows;
 using System.Windows.Documents;
 using System.Windows.Media;
@@ -23,8 +22,6 @@ namespace C4I
         private readonly double _offsetY;
 
         // Position of the child (when not set to NaN).
-        private double _positionX = double.NaN;
-        private double _positionY = double.NaN;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="FrameworkElementAdorner"/> class.
@@ -68,20 +65,12 @@ namespace C4I
         /// <summary>
         /// Position of the child (when not set to NaN).
         /// </summary>
-        public double PositionX
-        {
-            get { return _positionX; }
-            set { _positionX = value; }
-        }
+        public double PositionX { get; set; } = double.NaN;
 
         /// <summary>
         /// Position of the child (when not set to NaN).
         /// </summary>
-        public double PositionY
-        {
-            get { return _positionY; }
-            set { _positionY = value; }
-        }
+        public double PositionY { get; set; } = double.NaN;
 
         /// <inheritdoc />
         protected override Size MeasureOverride(Size constraint)
@@ -187,7 +176,7 @@ namespace C4I
         /// </summary>
         private double DetermineWidth()
         {
-            if (!Double.IsNaN(PositionX))
+            if (!double.IsNaN(PositionX))
             {
                 return _child.DesiredSize.Width;
             }
@@ -212,7 +201,7 @@ namespace C4I
         /// </summary>
         private double DetermineHeight()
         {
-            if (!Double.IsNaN(PositionY))
+            if (!double.IsNaN(PositionY))
             {
                 return _child.DesiredSize.Height;
             }
@@ -255,7 +244,7 @@ namespace C4I
         protected override int VisualChildrenCount => 1;
 
         /// <inheritdoc />
-        protected override Visual GetVisualChild(Int32 index)
+        protected override Visual GetVisualChild(int index)
         {
             return _child;
         }
@@ -285,6 +274,7 @@ namespace C4I
         /// <summary>
         /// Override AdornedElement from base class for less type-checking.
         /// </summary>
-        public new FrameworkElement AdornedElement => (FrameworkElement) base.AdornedElement;
+        public new FrameworkElement AdornedElement => 
+            (FrameworkElement) base.AdornedElement;
     }
 }

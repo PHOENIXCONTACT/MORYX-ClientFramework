@@ -7,16 +7,25 @@ using Marvin.Tools.Wcf;
 
 namespace Marvin.Tools.WcfClient.UI.Viewer
 {
-    [Plugin(LifeCycle.Singleton, typeof(IModuleWorkspace), Name = ScreenName)]
+    [Plugin(LifeCycle.Singleton, typeof(IModuleWorkspace), Name = nameof(WcfClientViewerWorkspaceViewModel))]
     internal class WcfClientViewerWorkspaceViewModel : ModuleWorkspace
     {
-        internal const string ScreenName = "WcfClientViewerScreen";
-
         #region Dependency Injection
 
         public IWcfClientFactory ClientFactory { get; set; }
 
         #endregion
+
+        private ObservableCollection<WcfClientInfoViewModel> _clients;
+        public ObservableCollection<WcfClientInfoViewModel> Clients
+        {
+            get { return _clients; }
+            set
+            {
+                _clients = value;
+                NotifyOfPropertyChange(() => Clients);
+            }
+        }
 
         /// <summary>
         /// Called when initializing this screen.
@@ -27,9 +36,7 @@ namespace Marvin.Tools.WcfClient.UI.Viewer
             Clients = new ObservableCollection<WcfClientInfoViewModel>();
 
             foreach (var client in ClientFactory.ClientInfos)
-            {
                 Clients.Add(new WcfClientInfoViewModel(client));
-            }
 
             base.OnInitialize();
         }
@@ -69,20 +76,5 @@ namespace Marvin.Tools.WcfClient.UI.Viewer
                 Clients.Add(new WcfClientInfoViewModel(clientInfo));
             }
         }
-
-        #region View Properties
-
-        private ObservableCollection<WcfClientInfoViewModel> _clients;
-        public ObservableCollection<WcfClientInfoViewModel> Clients
-        {
-            get { return _clients; }
-            set
-            {
-                _clients = value;
-                NotifyOfPropertyChange(() => Clients);
-            }
-        }
-
-        #endregion
     }
 }

@@ -61,7 +61,7 @@ namespace C4I
 
             if (parameter.GetType() == Enum.GetUnderlyingType(value.GetType()))
             {
-                object lhs = System.Convert.ChangeType(value, Enum.GetUnderlyingType(value.GetType()), null);
+                var lhs = System.Convert.ChangeType(value, Enum.GetUnderlyingType(value.GetType()), null);
                 result = lhs.Equals(parameter);
             }
 
@@ -77,12 +77,7 @@ namespace C4I
 
             if (targetType == typeof(Visibility))
             {
-                if (result)
-                {
-                    return Visibility.Visible;
-                }
-
-                return Visibility.Collapsed;
+                return result ? Visibility.Visible : Visibility.Collapsed;
             }
 
             throw new ArgumentException("Expected target type bool or visibiltiy", nameof(targetType));

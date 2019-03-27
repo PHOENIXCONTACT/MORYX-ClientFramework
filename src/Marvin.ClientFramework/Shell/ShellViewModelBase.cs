@@ -16,47 +16,47 @@ namespace Marvin.ClientFramework.Shell
         #region Dependency Injection
 
         /// <summary>
-        /// Injected <see cref="IModuleManager"/>
+        /// Dependency provided for the shells local container
         /// </summary>
         public IModuleManager ModuleManager { get; set; }
-        
+
         /// <summary>
-        /// Injected <see cref="IHistory"/>
+        /// Dependency provided for the shells local container
         /// </summary>
         public IHistory History { get; set; }
-        
+
         /// <summary>
-        /// Injected <see cref="IDialogManager"/>
+        /// Dependency provided for the shells local container
         /// </summary>
         public IDialogManager DialogManager { get; set; }
-        
+
         /// <summary>
-        /// Injected <see cref="IWindowManager"/>
+        /// Dependency provided for the shells local container
         /// </summary>
         public IWindowManager WindowManager { get; set; }
-        
+
         /// <summary>
-        /// Injected <see cref="IConfigProvider"/>
+        /// Dependency provided for the shells local container
         /// </summary>
         public IConfigProvider ConfigProvider { get; set; }
-        
+
         /// <summary>
-        /// Injected <see cref="IKernelConfigManager"/>
+        /// Dependency provided for the shells local container
         /// </summary>
         public IKernelConfigManager KernelConfigManager { get; set; }
-        
+
         /// <summary>
-        /// Injected <see cref="IWcfClientFactory"/>
+        /// Dependency provided for the shells local container
         /// </summary>
         public IWcfClientFactory WcfClientFactory { get; set; }
-        
+
         /// <summary>
-        /// Injected <see cref="IAppDataConfigManager"/>
+        /// Dependency provided for the shells local container
         /// </summary>
         public IAppDataConfigManager AppDataConfigManager { get; set; }
 
         /// <summary>
-        /// Injected <see cref="IModuleContainerFactory"/>
+        /// Dependency provided for the shells local container
         /// </summary>
         public IModuleContainerFactory ContainerFactory { get; set; }
 
@@ -136,8 +136,6 @@ namespace Marvin.ClientFramework.Shell
         /// <summary>
         /// Returns a region by name
         /// </summary>
-        /// <param name="regionName"></param>
-        /// <returns></returns>
         protected Region FetchRegion(string regionName)
         {
             var region = RegionController.FetchRegion(regionName);

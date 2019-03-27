@@ -21,7 +21,7 @@ namespace Marvin.ClientFramework
         #region Dependency Injection
 
         /// <summary>
-        /// Injected <see cref="IModuleContainerFactory"/>
+        /// Factory to create the local client module container
         /// </summary>
         public IModuleContainerFactory ContainerFactory { get; set; }
 

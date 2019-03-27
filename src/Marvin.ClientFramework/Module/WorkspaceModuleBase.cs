@@ -15,17 +15,17 @@ namespace Marvin.ClientFramework
         #region Dependency Injection
 
         /// <summary>
-        /// Injected <see cref="IWindowManager"/>
+        /// Window manager to register in local container
         /// </summary>
         public IWindowManager WindowManager { get; set; }
 
         /// <summary>
-        /// Injected <see cref="IDialogManager"/>
+        /// DialogManager to register in local container
         /// </summary>
         public IDialogManager DialogManager { get; set; }
 
         /// <summary>
-        /// Injected <see cref="IHistory"/>
+        /// History to register in local container
         /// </summary>
         public IHistory History { get; set; }
 
@@ -46,7 +46,6 @@ namespace Marvin.ClientFramework
         /// <summary>
         /// Gets called when module shall be destroyed
         /// </summary>
-        /// <param name="workspace"></param>
         protected abstract void OnDestroyWorkspace(IModuleWorkspace workspace);
 
         internal sealed override void AdditionalInitialize()

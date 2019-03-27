@@ -15,9 +15,8 @@ namespace Marvin.ClientFramework.Extensions
         private readonly DependencyObject _item;
 
         /// <summary>
-        /// Constructor
+        /// Initializes a new instance of the <see cref="VisualTreeAdapter"/> class.
         /// </summary>
-        /// <param name="item"></param>
         public VisualTreeAdapter(DependencyObject item)
         {
             _item = item;
