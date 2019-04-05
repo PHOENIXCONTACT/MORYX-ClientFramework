@@ -21,6 +21,7 @@ namespace Marvin.Tools.WcfClient.UI.Viewer
         /// <inheritdoc />
         protected override void OnInitialize()
         {
+            Config.DisplayName = "WCF Viewer";
         }
 
         /// <inheritdoc />

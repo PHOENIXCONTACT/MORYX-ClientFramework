@@ -88,7 +88,7 @@
     </Style>
 
     <!-- GridView.GridViewScrollViewerStyleKey -->
-    <Style x:Key="{x:Static GridView.GridViewScrollViewerStyleKey}" TargetType="ScrollViewer">
+    <Style x:Key="EddieListViewScrollViewerStyle" TargetType="ScrollViewer">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ScrollViewer">
@@ -241,7 +241,7 @@
                         BorderBrush="{StaticResource BorderGreyColorBrush}"
                         Background="{StaticResource BackgroundColorBrush}">
 
-                        <ScrollViewer Style="{DynamicResource {x:Static GridView.GridViewScrollViewerStyleKey}}">
+                        <ScrollViewer Style="{StaticResource EddieListViewScrollViewerStyle}">
                             <ItemsPresenter />
                         </ScrollViewer>
 

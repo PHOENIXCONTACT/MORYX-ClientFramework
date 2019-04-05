@@ -13,7 +13,7 @@
     <DockPanel Margin="5,5,5,5">
         <TextBlock DockPanel.Dock="Top" Eddie.TextFormat="Header2">WCF Clients</TextBlock>
 
-        <ListView DockPanel.Dock="Top" ItemsSource="{Binding Clients}">
+        <EddieListView DockPanel.Dock="Top" ItemsSource="{Binding Clients}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Service" DisplayMemberBinding="{Binding Service}" />
@@ -34,7 +34,7 @@
                     <GridViewColumn Header="Tries" DisplayMemberBinding="{Binding Tries}" />
                 </GridView>
             </ListView.View>
-        </ListView>
+        </EddieListView>
 
     </DockPanel>
 </UserControl>
