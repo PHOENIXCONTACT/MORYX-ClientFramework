@@ -132,6 +132,13 @@ namespace Marvin.ClientFramework
             Container.SetInstance(Logger);
 
             OnInitialize();
+
+            // Execute SubInitializer
+            var subInits = Container.ResolveAll<ISubInitializer>() ?? new ISubInitializer[0];
+            foreach (var subInitializer in subInits)
+            {
+                subInitializer.Initialize(Container);
+            }
         }
 
         internal abstract void AdditionalInitialize();
