@@ -1,0 +1,133 @@
+﻿<UserControl x:Class="Marvin.Controls.Demo.Views.ButtonsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:viewModels="clr-namespace:Marvin.Controls.Demo.ViewModels"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance viewModels:ButtonsViewModel}">
+
+    <StackPanel>
+        <Grid HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="400" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="400" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Grid.Column="0" Margin="0,10,0,0">
+
+                <LabeledControlHost Style="{StaticResource LabelControlHostButtonsOne}" LabelA="Icon">
+                    <Grid>
+                        <EddiePopup PlacementTarget="{Binding ElementName=PopupTestButton}" 
+                                    PopupTemplate="{StaticResource PopupTemplate}" />
+                        <EddieButton x:Name="PopupTestButton" Content="Hello Green" Icon="ArrowLeft" />
+                    </Grid>
+                </LabeledControlHost>
+
+
+                <LabeledControlHost Style="{StaticResource LabelControlHostButtonsOne}" LabelA="Icon">
+                    <EddieButton Content="Hello Green" Icon="ArrowLeft" />
+                </LabeledControlHost>
+
+                <LabeledControlHost Style="{StaticResource LabelControlHostButtonsOne}" LabelA="Normal">
+                    <EddieButton x:Name="SpeedTestButton" Content="Speed Test" Command="{Binding SpeedTestWindowCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}}" />
+                </LabeledControlHost>
+
+                <LabeledControlHost Style="{StaticResource LabelControlHostButtonsOne}" LabelA="Disabled">
+                    <EddieButton Content="Hello Green" Icon="ArrowLeft" IsEnabled="False" />
+                </LabeledControlHost>
+
+                <LabeledControlHost Style="{StaticResource LabelControlHostButtonsOne}" LabelA="Normal">
+                    <EddieButton Content="Hello Gray" EddieStyle="Gray" Icon="ArrowLeft" />
+                </LabeledControlHost>
+
+                <LabeledControlHost Style="{StaticResource LabelControlHostButtonsOne}" LabelA="Icon">
+                    <EddieButton Content="Hello Gray" EddieStyle="Gray" Icon="ArrowDown" />
+                </LabeledControlHost>
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="0" Grid.Column="1"
+                        Orientation="Horizontal">
+                <EddieModuleButton Text="Hello World" Notifications="5" IconGeometry="{CommonShape ShapeType=Cross}"
+                                   PopupTemplate="{StaticResource PopupTemplate}" />
+
+                <EddieModuleButton Text="Short" Notifications="0" IconGeometry="{CommonShape ShapeType=Lock}" />
+
+                <EddieModuleButton Text="Hello World" Notifications="5" EddieStyle="Gray" IconGeometry="{CommonShape ShapeType=PxCLogo}"
+                                   PopupTemplate="{StaticResource PopupTemplate}" />
+
+                <EddieModuleButton Text="Short" Notifications="0" EddieStyle="Gray" IconGeometry="{CommonShape ShapeType=FullScreen}" />
+
+                <EddieModuleButton Text="Hello World" Notifications="5" IconGeometry="{CommonShape ShapeType=Cross}" />
+
+                <EddieModuleButton Text="Short" Notifications="0" IconGeometry="{CommonShape ShapeType=Lock}" />
+                <EddieModuleButton Text="Hello World" Notifications="5" EddieStyle="Gray" IconGeometry="{CommonShape ShapeType=PxCLogo}" />
+                <EddieModuleButton Text="Short" Notifications="0" EddieStyle="Gray" IconGeometry="{CommonShape ShapeType=FullScreen}" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Grid.Column="0" Margin="0,10,0,0">
+
+                <LabeledControlHost Style="{StaticResource LabelControlHostButtonsTwo}" LabelA="Normal">
+                    <EddieActionButton IconPath="F1M0.112,0.678C0.112,0.678 0.112,32.929 0.112,32.929 0.112,32.929 26.719,16.803 26.719,16.803 26.719,16.803 0.112,0.678 0.112,0.678z" />
+                </LabeledControlHost>
+
+                <LabeledControlHost LabelA="Disabled">
+                    <EddieActionButton Icon="Magnifier" IsEnabled="False" />
+                </LabeledControlHost>
+
+                <LabeledControlHost Style="{StaticResource LabelControlHostButtonsTwo}" LabelA="Normal">
+                    <EddieActionButton EddieStyle="Gray" IconPath="F1M 4.6870068,-0.00214795 7.9988407,-0.00214795 7.9988407,2.9070629 4.6870068,2.9070629 z M 2.2031315,3.3226643 8.4128199,3.3226643 8.4128199,5.8162732 7.5848615,5.8162732 7.5848615,9.1410858 8.4128199,9.1410858 8.4128199,11.634695 0.54721447,11.634695 z M 11.724653,3.3226643 17.934341,3.3226643 19.590258,11.634695 11.724653,11.634695 11.724653,9.1410858 12.552611,9.1410858 12.552611,5.8162732 11.724653,5.8162732 z M 1.375173,12.050297 6.3429238,12.050297 7.1708822,18.284319 7.1708822,19.946725 0.54721447,19.946725 0.54721447,18.284319 z M 12.138632,-0.00214795 15.450467,-0.00214795 15.450467,2.9070629 12.138632,2.9070629 z M 13.79455,12.050297 18.7623,12.050297 19.590258,18.284319 19.590258,19.946725 12.966591,19.946725 12.966591,18.284319 z M 7.9988407,6.2318747 12.138632,6.2318747 11.724653,8.7254841 8.4128199,8.7254841 z M 9.2407783,3.7382657 10.896695,3.7382657 10.896695,5.4006719 9.2407783,5.4006719 z M 9.2407783,9.5566871 10.896695,9.5566871 10.896695,11.219093 9.2407783,11.219093 z" />
+                </LabeledControlHost>
+
+                <LabeledControlHost Style="{StaticResource LabelControlHostButtonsTwo}" LabelA="Disabled">
+                    <EddieActionButton EddieStyle="Gray" IsEnabled="False" IconPath="F1M 4.6870068,-0.00214795 7.9988407,-0.00214795 7.9988407,2.9070629 4.6870068,2.9070629 z M 2.2031315,3.3226643 8.4128199,3.3226643 8.4128199,5.8162732 7.5848615,5.8162732 7.5848615,9.1410858 8.4128199,9.1410858 8.4128199,11.634695 0.54721447,11.634695 z M 11.724653,3.3226643 17.934341,3.3226643 19.590258,11.634695 11.724653,11.634695 11.724653,9.1410858 12.552611,9.1410858 12.552611,5.8162732 11.724653,5.8162732 z M 1.375173,12.050297 6.3429238,12.050297 7.1708822,18.284319 7.1708822,19.946725 0.54721447,19.946725 0.54721447,18.284319 z M 12.138632,-0.00214795 15.450467,-0.00214795 15.450467,2.9070629 12.138632,2.9070629 z M 13.79455,12.050297 18.7623,12.050297 19.590258,18.284319 19.590258,19.946725 12.966591,19.946725 12.966591,18.284319 z M 7.9988407,6.2318747 12.138632,6.2318747 11.724653,8.7254841 8.4128199,8.7254841 z M 9.2407783,3.7382657 10.896695,3.7382657 10.896695,5.4006719 9.2407783,5.4006719 z M 9.2407783,9.5566871 10.896695,9.5566871 10.896695,11.219093 9.2407783,11.219093 z" />
+                </LabeledControlHost>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Grid.Column="1" Margin="0,10,10,0">
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                    <EddieHistoryButtonBar Text="Hello History" />
+                </StackPanel>
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="0" Grid.Column="2" Margin="0,10,10,0">
+
+                <LabeledControlHost Style="{StaticResource LabelControlHostButtonsThree}" LabelA="Header" LabelB="Shared" SharedSizeGroupName="Shared">
+                    <EddieButton Content="A Button" />
+                </LabeledControlHost>
+
+                <LabeledControlHost Style="{StaticResource LabelControlHostButtonsThree}" LabelA="Long Header" LabelB="Shared" SharedSizeGroupName="Shared">
+                    <EddieButton Content="A Button" />
+                </LabeledControlHost>
+
+                <LabeledControlHost Style="{StaticResource LabelControlHostButtonsThree}" LabelA="Very Very Long Header" LabelB="Shared" SharedSizeGroupName="Shared">
+                    <EddieButton Content="A Button" />
+                </LabeledControlHost>
+
+                <LabeledControlHost Style="{StaticResource LabelControlHostButtonsThree}" LabelA="Very Very Very Long Header" LabelB="Not shared">
+                    <EddieButton Content="A Button" />
+                </LabeledControlHost>
+
+                <LabeledControlHost Style="{StaticResource LabelControlHostButtonsThree}" LabelA="Another Header" LabelB="Shared" SharedSizeGroupName="Shared">
+                    <EddieButton Content="A Button" />
+                </LabeledControlHost>
+
+                <LabeledControlHost Style="{StaticResource LabelControlHostButtonsThree}" Margin="0,20,0,0" LabelMaxWidth="{Binding Text, ElementName=LabeledContentHostMaxWidth}" LabelA="Another Very Very Very Long Header" LabelB="Shared">
+                    <EddieTextBox x:Name="LabeledContentHostMaxWidth" Text="100" Width="100" />
+                </LabeledControlHost>
+
+            </StackPanel>
+        </Grid>
+
+    </StackPanel>
+
+</UserControl>

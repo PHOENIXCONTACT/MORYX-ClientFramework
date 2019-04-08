@@ -1,0 +1,11 @@
+﻿<UserControl x:Class="Marvin.Controls.Demo.Views.EntryEditorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:viewModels="clr-namespace:Marvin.Controls.Demo.ViewModels"
+             xmlns:controls="clr-namespace:Marvin.Controls;assembly=Marvin.Controls"
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance viewModels:EntryEditorViewModel}">
+    <controls:EntryEditor Margin="20"  RootEntry="{Binding EntryViewModels}" IsEditMode="True" ShowExceptionCommand="{Binding ShowExceptionCommand}" />
+</UserControl>

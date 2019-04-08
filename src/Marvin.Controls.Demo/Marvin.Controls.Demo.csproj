@@ -59,6 +59,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\EntryClass.cs" />
+    <Compile Include="Models\TestComboBoxEntry.cs" />
+    <Compile Include="Models\TestListViewEntry.cs" />
     <Compile Include="Properties\Localizations.de.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -73,8 +76,67 @@
     <Compile Include="SpeedTestWindow.xaml.cs">
       <DependentUpon>SpeedTestWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Compile Include="ViewModels\ButtonsViewModel.cs" />
+    <Compile Include="ViewModels\ComboBoxesViewModel.cs" />
+    <Compile Include="ViewModels\EntryEditorViewModel.cs" />
+    <Compile Include="ViewModels\IconsViewModel.cs" />
+    <Compile Include="ViewModels\ItemSelectionViewModel.cs" />
+    <Compile Include="ViewModels\ListBoxViewModel.cs" />
+    <Compile Include="ViewModels\ListViewViewModel.cs" />
+    <Compile Include="ViewModels\NavigationBarViewModel.cs" />
+    <Compile Include="ViewModels\PanelsViewModel.cs" />
+    <Compile Include="ViewModels\ProgressViewModel.cs" />
+    <Compile Include="ViewModels\SliderViewModel.cs" />
+    <Compile Include="ViewModels\TabControlViewModel.cs" />
+    <Compile Include="ViewModels\TemplatesViewModel.cs" />
+    <Compile Include="ViewModels\TextBoxesViewModel.cs" />
+    <Compile Include="ViewModels\TreeViewViewModel.cs" />
+    <Compile Include="Views\ButtonsView.xaml.cs">
+      <DependentUpon>ButtonsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ComboBoxesView.xaml.cs">
+      <DependentUpon>ComboBoxesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EntryEditorView.xaml.cs">
+      <DependentUpon>EntryEditorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IconsView.xaml.cs">
+      <DependentUpon>IconsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ItemSelectionView.xaml.cs">
+      <DependentUpon>ItemSelectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ListBoxView.xaml.cs">
+      <DependentUpon>ListBoxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ListViewView.xaml.cs">
+      <DependentUpon>ListViewView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NavigationBarView.xaml.cs">
+      <DependentUpon>NavigationBarView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PanelsView.xaml.cs">
+      <DependentUpon>PanelsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProgressView.xaml.cs">
+      <DependentUpon>ProgressView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SliderView.xaml.cs">
+      <DependentUpon>SliderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TabControlView.xaml.cs">
+      <DependentUpon>TabControlView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TemplatesView.xaml.cs">
+      <DependentUpon>TemplatesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TextBoxesView.xaml.cs">
+      <DependentUpon>TextBoxesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TreeViewView.xaml.cs">
+      <DependentUpon>TreeViewView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Shell\ShellView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="App.xaml.cs">
@@ -86,6 +148,70 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="SpeedTestWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\DemoTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ButtonsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ComboBoxesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EntryEditorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\IconsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ItemSelectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ListBoxView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ListViewView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NavigationBarView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PanelsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ProgressView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SliderView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TabControlView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TemplatesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TextBoxesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TreeViewView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

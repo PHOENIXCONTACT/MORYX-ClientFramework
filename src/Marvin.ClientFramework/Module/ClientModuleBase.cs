@@ -183,7 +183,6 @@ namespace Marvin.ClientFramework
             try
             {
                 OnDeactivate(close);
-                
             }
             catch (Exception ex)
             {

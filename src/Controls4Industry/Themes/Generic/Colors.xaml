@@ -59,5 +59,8 @@
 
     <Color x:Key="DropShadowEffectColor">#FF000000</Color>
     <Color x:Key="LightDropShadowColor">#FFFFFFFF</Color>
-  
+
+    <Color x:Key="NotificationBadgeColor">#FFFF0000</Color>
+    <Color x:Key="NotificationBadgeTextColor">#FFFFFFFF</Color>
+
 </ResourceDictionary>

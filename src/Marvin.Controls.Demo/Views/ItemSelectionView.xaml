@@ -1,0 +1,97 @@
+﻿<UserControl x:Class="Marvin.Controls.Demo.Views.ItemSelectionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:viewModels="clr-namespace:Marvin.Controls.Demo.ViewModels"
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance viewModels:ItemSelectionViewModel}">
+    <StackPanel Margin="10"
+                HorizontalAlignment="Center">
+        <StackPanel Grid.IsSharedSizeScope="True"
+                    Width="600">
+            <LabeledControlHost LabelA="Normal" LabelB="ComboBox" SharedSizeGroupName="ComboBox">
+                <EddieComboBox>
+                    <ComboBoxItem Content="Item 1" />
+                    <ComboBoxItem Content="Item 2" />
+                    <ComboBoxItem Content="Item 3" />
+                    <ComboBoxItem Content="Item 4" />
+                </EddieComboBox>
+            </LabeledControlHost>
+
+            <LabeledControlHost Margin="0,10,0,0" LabelA="AllowClear" LabelB="ComboBox" SharedSizeGroupName="ComboBox">
+                <EddieComboBox AllowClearButton="True">
+                    <ComboBoxItem Content="Item 1 mit viel Text und so Item 1 mit viel Text und so" />
+                    <ComboBoxItem Content="Item 2" />
+                    <ComboBoxItem Content="Item 3" />
+                    <ComboBoxItem Content="Item 4" />
+                </EddieComboBox>
+            </LabeledControlHost>
+
+            <LabeledControlHost Margin="0,10,0,0" LabelA="Editable Normal" LabelB="ComboBox" SharedSizeGroupName="ComboBox">
+                <EddieComboBox IsEditable="True">
+                    <ComboBoxItem Content="Item 1 mit viel Text und so" />
+                    <ComboBoxItem Content="Item 2" />
+                    <ComboBoxItem Content="Item 3" />
+                    <ComboBoxItem Content="Item 4" />
+                    <ComboBoxItem Content="Item 1 mit viel Text und so" />
+                    <ComboBoxItem Content="Item 2" />
+                    <ComboBoxItem Content="Item 3" />
+                    <ComboBoxItem Content="Item 4" />
+                    <ComboBoxItem Content="Item 1 mit viel Text und so" />
+                    <ComboBoxItem Content="Item 2" />
+                    <ComboBoxItem Content="Item 3" />
+                    <ComboBoxItem Content="Item 4" />
+                    <ComboBoxItem Content="Item 1 mit viel Text und so" />
+                    <ComboBoxItem Content="Item 2" />
+                    <ComboBoxItem Content="Item 3" />
+                    <ComboBoxItem Content="Item 4" />
+                </EddieComboBox>
+            </LabeledControlHost>
+
+            <LabeledControlHost Margin="0,10,0,0" LabelA="Editable AllowClear" LabelB="ComboBox" SharedSizeGroupName="ComboBox">
+                <EddieComboBox IsEditable="True" AllowClearButton="True">
+                    <ComboBoxItem Content="Item 1 mit viel Text und so" />
+                    <ComboBoxItem Content="Item 2" />
+                    <ComboBoxItem Content="Item 3" />
+                    <ComboBoxItem Content="Item 4" />
+                    <ComboBoxItem Content="Item 1 mit viel Text und so" />
+                    <ComboBoxItem Content="Item 2" />
+                    <ComboBoxItem Content="Item 3" />
+                    <ComboBoxItem Content="Item 4" />
+                    <ComboBoxItem Content="Item 1 mit viel Text und so" />
+                    <ComboBoxItem Content="Item 2" />
+                    <ComboBoxItem Content="Item 3" />
+                    <ComboBoxItem Content="Item 4" />
+                    <ComboBoxItem Content="Item 1 mit viel Text und so" />
+                    <ComboBoxItem Content="Item 2" />
+                    <ComboBoxItem Content="Item 3" />
+                    <ComboBoxItem Content="Item 4" />
+                </EddieComboBox>
+            </LabeledControlHost>
+
+            <LabeledControlHost Margin="0,10,0,0" LabelA="Disabled Clear" LabelB="ComboBox" SharedSizeGroupName="ComboBox">
+                <EddieComboBox IsEnabled="False" AllowClearButton="True"
+                               ItemsSource="{Binding ComboBoxEntries}" 
+                               SelectedItem="{Binding SelectedComboBoxEntry, Mode=TwoWay}" />
+            </LabeledControlHost>
+
+            <LabeledControlHost Margin="0,20,0,0" LabelA="Normal" LabelB="CheckBox" SharedSizeGroupName="ComboBox">
+                <CheckBox Content="Test to Check"  />
+            </LabeledControlHost>
+
+            <LabeledControlHost Margin="0,10,0,0" LabelA="Checked" LabelB="CheckBox" SharedSizeGroupName="ComboBox">
+                <CheckBox Content="Test to Check" IsChecked="True"  />
+            </LabeledControlHost>
+
+            <LabeledControlHost Margin="0,20,0,0" LabelA="Normal" LabelB="RadioButton" SharedSizeGroupName="ComboBox">
+                <RadioButton GroupName="a" Content="Radio 1" />
+            </LabeledControlHost>
+
+            <LabeledControlHost Margin="0,10,0,0" LabelA="Selected" LabelB="RadioButton" SharedSizeGroupName="ComboBox">
+                <RadioButton GroupName="a" IsChecked="True" Content="Radio 2" />
+            </LabeledControlHost>
+
+        </StackPanel>
+    </StackPanel>
+</UserControl>

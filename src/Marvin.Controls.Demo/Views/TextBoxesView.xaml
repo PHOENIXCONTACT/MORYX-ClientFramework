@@ -1,0 +1,118 @@
+﻿<UserControl x:Class="Marvin.Controls.Demo.Views.TextBoxesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:viewModels="clr-namespace:Marvin.Controls.Demo.ViewModels"
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance viewModels:TextBoxesViewModel}">
+    <StackPanel>
+        <Border BorderThickness="1" BorderBrush="Black">
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                <EddieSelectableLabel>This is a selectable label with a long text</EddieSelectableLabel>
+                <TextBlock>This is a TextBlock with a long text</TextBlock>
+            </StackPanel>
+        </Border>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <EddieTextBox Text="In vielen der etwas lässigeren Zivilisationen am äußersten Ostrand der Galaxis hat der Reiseführer Per Anhalter durch die Galaxis die große Encyclopaedia Galactica als Standard-Nachschlagewerk für alle Kenntnisse und Weisheiten inzwischen längst abgelöst. Denn obwohl er viele Lücken hat und viele Dinge enthält, die sehr zweifelhaft oder zumindest wahnsinnig ungenau sind, ist er dem älteren, viel langatmigeren Werk in zweierlei Hinsicht überlegen. Erstens ist er ein bisschen billiger, und zweitens stehen auf seinem Umschlag in großen, freundlichen Buchstaben die Worte KEINE PANIK."
+                          TextWrapping="Wrap" Width="200" Height="100" Margin="0,10,10,0" 
+                          Watermark="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."/>
+            <EddieTextBox Text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+                          TextWrapping="WrapWithOverflow" Width="200" Height="100" Margin="0,10,10,0" VerticalContentAlignment="Top"/>
+
+            <EddieSelectableLabel Text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+                                  TextWrapping="Wrap" Width="200" Height="100" Margin="0,10,10,0" />
+            <EddieTextBox Text="A Short text in a big box with default content alignment (center)"
+                          TextWrapping="WrapWithOverflow" Width="200" Height="100" Margin="0,10,10,0" />
+            
+            <EddieTextBox Text="A Short text in a big box with content alignment top"
+                          TextWrapping="WrapWithOverflow" Width="200" Height="100" Margin="0,10,10,0" VerticalContentAlignment="Top"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <EddieTextBox Text="My nice long text" Width="180" Margin="0,10,10,0" />
+            <EddieTextBox Text="My nice disabled text" IsEnabled="False" Width="180" Margin="0,10,10,0" />
+            <EddieTextBox Text="My nice readonly text" IsReadOnly="True" Width="180" Margin="0,10,10,0" />
+            <EddieTextBox Text="Alternative lock icon" LockIcon="Delete" IsReadOnly="True" Width="180" Margin="0,10,10,0" />
+            <EddieTextBox Text="No lock icon" LockIcon="Unset" IsReadOnly="True" Width="180" Margin="0,10,10,0" />
+            <EddieTextBox Watermark="My nice Watermark" Width="180" Margin="0,10,10,0" />
+            <EddieTextBox Text="Watermark is invisible because of this Text" Watermark="My nice Watermark"
+                          Width="180" Margin="0,10,10,0" VerticalContentAlignment="Center"/>
+            <EddieTextBox Text="Growing, return enabled, max lines 6, auto scrollbar" Width="180" Margin="0,10,10,0" 
+                          TextWrapping="Wrap" AcceptsReturn="True" MaxLines="6" VerticalScrollBarVisibility="Auto"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <PasswordBox Width="180" Margin="0,10,10,0" Password="Passwortbox!"/>
+        </StackPanel>
+
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+            <EddieTextBox Width="180"
+                                          Margin="0,10,10,0"
+                                          VerticalContentAlignment="Center"
+                                          Icon="Copy"
+                                          Text="test"
+                                          Watermark="My nice Watermark" />
+            <EddieTextBox Width="180"
+                                          Margin="0,10,10,0"
+                                          VerticalContentAlignment="Center"
+                                          Icon="Copy"
+                                          IsEnabled="False"
+                                          Text="test"
+                                          Watermark="My nice Watermark" />
+            <EddieTextBox Width="180"
+                                          Margin="0,10,10,0"
+                                          VerticalContentAlignment="Center"
+                                          Icon="Copy"
+                                          IsReadOnly="true"
+                                          Text="test"
+                                          Watermark="My nice Watermark" />
+
+        </StackPanel>
+
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Orientation="Horizontal">
+            <EddieTextBox Width="180"
+                          Margin="3"
+                          VerticalContentAlignment="Center"
+                          IconPath="F1M20,14L20,28 0,28 0,14 6,14 10,18 14,14z M4,6.001C4,2.689 6.687,0 10,0 13.312,0 16,2.689 16,6.001 16,9.313 13.312,12 10.001,12 6.687,12 4,9.313 4,6.001"
+                          Text="test"
+                          Watermark="My nice Watermark" />
+            <EddieTextBox Width="180"
+                          Margin="3"
+                          VerticalContentAlignment="Center"
+                          IconPath="F1M20,14L20,28 0,28 0,14 6,14 10,18 14,14z M4,6.001C4,2.689 6.687,0 10,0 13.312,0 16,2.689 16,6.001 16,9.313 13.312,12 10.001,12 6.687,12 4,9.313 4,6.001"
+                          IsEnabled="False"
+                          Text="test"
+                          Watermark="My nice Watermark" />
+            <EddieTextBox Name="TogglingTextBox"
+                          Width="180"
+                          Height="35"
+                          Margin="3"
+                          VerticalContentAlignment="Center"
+                          Text="Initial State"
+                          Watermark="My nice Watermark" />
+            <EddieButton Name="ToggleStateButton"
+                         Margin="3"
+                         Command="{Binding ToggleStateCommand}"
+                         CommandParameter="{Binding ElementName=TogglingTextBox}"
+                         Content="Toggle State" />
+
+        </StackPanel>
+        <StackPanel Width="650">
+            <TextBlock Eddie.TextFormat="Header1">Header TextFormat 1</TextBlock>
+            <TextBlock TextWrapping="Wrap">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</TextBlock>
+
+            <TextBlock Eddie.TextFormat="Header2">Header TextFormat 2</TextBlock>
+            <TextBlock TextWrapping="Wrap">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</TextBlock>
+
+            <TextBlock Eddie.TextFormat="Header3">Header TextFormat 3</TextBlock>
+            <TextBlock TextWrapping="Wrap">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</TextBlock>
+
+            <TextBlock Eddie.TextFormat="Bold">Bold TextFormat</TextBlock>
+            <TextBlock TextWrapping="Wrap">He, das ist ja wirklich aufregend, so vieles rauszufinden, so vieles, was ich noch vor mir habe, mir wird ganz schwindlig vor lauter Vorfreude. – Was ist denn das, was da plötzlich so schnell auf mich zukommt? So sehr, sehr schnell. So riesig und so flach und so rund. Das braucht einen riesigen Namen … wie …. Grund! Ob er wohl nett zu mir ist? Und der Rest – nach einem plötzlichen und sehr feuchten Aufprall – war Schweigen. Komischerweise war der einzige Gedanke, der den Petunientopf beim Herunterfallen durchfuhr: Oh, nein, nicht schon wieder.</TextBlock>
+
+        </StackPanel>
+    </StackPanel>
+</UserControl>

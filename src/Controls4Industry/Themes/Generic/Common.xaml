@@ -58,10 +58,6 @@
         <Setter Property="OpacityMask" Value="{StaticResource ToolPaneMainButtonContentGradientBrush}" />
     </Style>
 
-
-    <Color x:Key="NotificationBadgeColor">#FFFF0000</Color>
-    <Color x:Key="NotificationBadgeTextColor">#FFFFFFFF</Color>
-
     <Style x:Key="BadgeLabel" TargetType="Label" BasedOn="{StaticResource ControlStyleBase}" >
         <Setter Property="Foreground" Value="White" />
         <Setter Property="FontWeight" Value="Bold" />

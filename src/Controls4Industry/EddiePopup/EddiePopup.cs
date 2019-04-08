@@ -27,7 +27,7 @@ namespace C4I
         }
 
         /// <inheritdoc />
-        protected override int VisualChildrenCount => 1;
+        protected override int VisualChildrenCount => _popup != null ? 1 : 0;
 
         /// <summary>
         /// Placement target for this popup
