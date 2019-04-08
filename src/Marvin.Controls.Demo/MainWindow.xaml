@@ -10,6 +10,15 @@
         Background="{StaticResource WindowBackgroundGradientBrush}"
         d:DataContext="{d:DesignInstance Type=demo:MainWindowViewModel, IsDesignTimeCreatable=True}">
     <Grid>
+        <Grid.Resources>
+            <DataTemplate x:Key="PopupTemplate"
+                          DataType="{x:Type demo:MainWindowViewModel}">
+                <StackPanel Orientation="Vertical"
+                            Margin="10">
+                    <EddieButton Content="Click me" Command="{Binding TestCommand}" />
+                </StackPanel>
+            </DataTemplate>
+        </Grid.Resources>
         <Border BorderThickness="1" Margin="15" BorderBrush="LightGray">
             <Border.Effect>
                 <DropShadowEffect ShadowDepth="3" Direction="315" />
@@ -49,7 +58,11 @@
                             </LabeledControlHost>
 
                             <LabeledControlHost LabelA="Icon">
-                                <EddieButton Content="Hello Green" Icon="ArrowLeft" />
+                                <Grid>
+                                    <EddiePopup PlacementTarget="{Binding ElementName=PopupTestButton}" 
+                                                PopupTemplate="{StaticResource PopupTemplate}" />
+                                    <EddieButton x:Name="PopupTestButton" Content="Hello Green" Icon="ArrowLeft" />
+                                </Grid>
                             </LabeledControlHost>
 
                             <LabeledControlHost LabelA="Disabled">
@@ -66,12 +79,12 @@
                         </StackPanel>
 
                         <StackPanel Grid.Row="0" Orientation="Horizontal" Grid.Column="1" Margin="0,10,0,0">
+                            <EddieModuleButton Text="Hello World" Notifications="5" IconGeometry="{CommonShape ShapeType=Cross}"
+                                               PopupTemplate="{StaticResource PopupTemplate}" />
 
-                            <EddieModuleButton Text="Hello World" Notifications="5" IconGeometry="{CommonShape ShapeType=Cross}" />
-                            
-                            
                             <EddieModuleButton Text="Short" Notifications="0" IconGeometry="{CommonShape ShapeType=Lock}" />
-                            <EddieModuleButton Text="Hello World" Notifications="5" EddieStyle="Gray" IconGeometry="{CommonShape ShapeType=PxCLogo}" />
+                            <EddieModuleButton Text="Hello World" Notifications="5" EddieStyle="Gray" IconGeometry="{CommonShape ShapeType=PxCLogo}"
+                                               PopupTemplate="{StaticResource PopupTemplate}" />
                             <EddieModuleButton Text="Short" Notifications="0" EddieStyle="Gray" IconGeometry="{CommonShape ShapeType=FullScreen}" />
 
                         </StackPanel>

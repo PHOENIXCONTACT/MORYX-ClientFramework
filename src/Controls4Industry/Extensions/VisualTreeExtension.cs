@@ -4,7 +4,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Media;
 
-namespace Marvin.ClientFramework.Extensions
+namespace C4I
 {
     /// <summary>
     /// Adapts a DependencyObject to provide methods required for generate
@@ -29,7 +29,7 @@ namespace Marvin.ClientFramework.Extensions
         public IEnumerable<DependencyObject> Children()
         {
             var childrenCount = VisualTreeHelper.GetChildrenCount(_item);
-            for (int i = 0; i < childrenCount; i++)
+            for (var i = 0; i < childrenCount; i++)
             {
                 yield return VisualTreeHelper.GetChild(_item, i);
             }
@@ -157,7 +157,7 @@ namespace Marvin.ClientFramework.Extensions
         {
             if (item.Ancestors().FirstOrDefault() == null)
                 yield break;
-            bool afterSelf = false;
+            var afterSelf = false;
             foreach (var child in item.Ancestors().First().Elements())
             {
                 if (afterSelf)
@@ -274,13 +274,7 @@ namespace Marvin.ClientFramework.Extensions
         private static IEnumerable<DependencyObject> DrillDown(this IEnumerable<DependencyObject> items,
             Func<DependencyObject, IEnumerable<DependencyObject>> function)
         {
-            foreach (var item in items)
-            {
-                foreach (var itemChild in function(item))
-                {
-                    yield return itemChild;
-                }
-            }
+            return items.SelectMany(function);
         }
 
         /// <summary>
@@ -291,17 +285,7 @@ namespace Marvin.ClientFramework.Extensions
             Func<DependencyObject, IEnumerable<DependencyObject>> function)
             where T : DependencyObject
         {
-            foreach (var item in items)
-            {
-                foreach (var itemChild in function(item))
-                {
-                    var down = itemChild as T;
-                    if (down != null)
-                    {
-                        yield return down;
-                    }
-                }
-            }
+            return items.SelectMany(function).OfType<T>();
         }
 
         /// <summary>

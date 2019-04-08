@@ -24,6 +24,7 @@
         <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieRangeSlider/Generic.xaml"/>
         <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieListBox/Generic.xaml" />
         <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieListView/Generic.xaml"/>
+        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddiePopup/Generic.xaml"/>
 
         <!-- Windows Control Styles -->
         <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="CheckBox/Generic.xaml" />

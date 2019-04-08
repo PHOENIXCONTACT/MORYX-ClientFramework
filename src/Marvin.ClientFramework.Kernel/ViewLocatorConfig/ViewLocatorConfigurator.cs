@@ -4,8 +4,8 @@ using System.Linq;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
+using C4I;
 using Caliburn.Micro;
-using Marvin.ClientFramework.Extensions;
 using Marvin.Container;
 
 namespace Marvin.ClientFramework.Kernel

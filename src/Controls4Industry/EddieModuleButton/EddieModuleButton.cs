@@ -94,6 +94,21 @@ namespace C4I
         }
 
         /// <summary>
+        /// Attached property to set the submenu content template
+        /// </summary>
+        public static readonly DependencyProperty PopupTemplateProperty = DependencyProperty.Register(
+            "PopupTemplate", typeof(DataTemplate), typeof(EddieModuleButton), new PropertyMetadata(default(DataTemplate)));
+
+        /// <summary>
+        /// Gets or sets the submenu template
+        /// </summary>
+        public DataTemplate PopupTemplate
+        {
+            get { return (DataTemplate)GetValue(PopupTemplateProperty); }
+            set { SetValue(PopupTemplateProperty, value); }
+        }
+
+        /// <summary>
         /// Click event that is raised when the button gets clicked
         /// </summary>
         public event RoutedEventHandler Click;

@@ -75,6 +75,7 @@
     <Compile Include="EddieListBox\EddieListBoxItem.cs" />
     <Compile Include="EddieListView\EddieListView.cs" />
     <Compile Include="EddieListView\EddieListViewItem.cs" />
+    <Compile Include="EddiePopup\EddiePopup.cs" />
     <Compile Include="EddieProgressBar\EddieProgressBar.cs" />
     <Compile Include="EddieRangeSlider\EddieRangeSlider.cs" />
     <Compile Include="EddieSelectableLabel\EddieSelectableLabel.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="EddieTreeView\TreeViewHierarchyToThicknessConverter.cs" />
     <Compile Include="Core\ControlSize.cs" />
     <Compile Include="Extensions\ColorExtensions.cs" />
+    <Compile Include="Extensions\VisualTreeExtension.cs" />
     <Compile Include="Geometries\CommonShapeExtension.cs" />
     <Compile Include="EddieComboBox\EddieComboBox.cs" />
     <Compile Include="EddieHistoryButtonBar\EddieHistoryButtonBar.cs" />
@@ -139,6 +141,10 @@
     <Page Include="EddieListView\Generic.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EddiePopup\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="EddieRangeSlider\Generic.xaml">
       <Generator>MSBuild:Compile</Generator>

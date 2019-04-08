@@ -21,7 +21,7 @@
     <Style TargetType="Label" x:Key="EddieModuleButtonBadgeStyle" BasedOn="{StaticResource BadgeLabel}">
         <Setter Property="HorizontalAlignment" Value="Right" />
         <Setter Property="VerticalAlignment" Value="Top" />
-        <Setter Property="Margin" Value="5,-22,-25,2" />
+        <Setter Property="Margin" Value="0,-10,5,0" />
         <Setter Property="ClipToBounds" Value="False" />
     </Style>
 
@@ -39,6 +39,56 @@
         <Setter Property="Margin" Value="0,0,0,0" />
         <Setter Property="VerticalAlignment" Value="Top" />
     </Style>
+    
+    <Style x:Key="ModuleButtonPopupButton" TargetType="{x:Type c4I:EddieButton}">
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type c4I:EddieButton}">
+                    <Border x:Name="ButtonBorder"
+                            VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                            HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                            Width="{TemplateBinding Width}"
+                            Height="{TemplateBinding Height}"
+                            Background="{TemplateBinding Background}"
+                            CornerRadius="3,3,0,0">
+                        <Path x:Name="PART_ButtonIconPath" Style="{StaticResource EddieButtonPathStyle}"
+                              Data="{TemplateBinding IconPath}" Fill="White" Width="15" Height="15" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="EddieStyle" Value="Green">
+                            <Setter TargetName="PART_ButtonIconPath" Property="Fill" Value="White" />
+                        </Trigger>
+                        <Trigger Property="EddieStyle" Value="Gray">
+                            <Setter TargetName="PART_ButtonIconPath" Property="Fill" Value="Black" />
+                        </Trigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsPressed" Value="True" />
+                                <Condition Property="EddieStyle" Value="Green" />
+                            </MultiTrigger.Conditions>
+                            <MultiTrigger.Setters>
+                                <Setter TargetName="ButtonBorder" Property="Background" 
+                                        Value="{StaticResource GreenButtonPressedBrush}" />
+                            </MultiTrigger.Setters>
+                        </MultiTrigger>
+
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsPressed" Value="True" />
+                                <Condition Property="EddieStyle" Value="Gray" />
+                            </MultiTrigger.Conditions>
+                            <MultiTrigger.Setters>
+                                <Setter TargetName="ButtonBorder" Property="Background" 
+                                        Value="{StaticResource GrayButtonPressedBrush}" />
+                            </MultiTrigger.Setters>
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
     <Style TargetType="c4I:EddieModuleButton">
         <Setter Property="Width" Value="100" />
@@ -47,25 +97,49 @@
             <Setter.Value>
                 <ControlTemplate TargetType="c4I:EddieModuleButton">
                     <DockPanel x:Name="LayoutRoot">
-                        <c4I:EddieButton x:Name="PART_MainButton" DockPanel.Dock="Top"
-                                         Style="{StaticResource ModuleButtonButtonStyle}"
-                                         AutomationProperties.AutomationId="{TemplateBinding AutomationProperties.AutomationId}">
-                            <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                                <Path x:Name="PART_Path" Data="{TemplateBinding IconGeometry}"
-                                      Style="{StaticResource EddieModuleButtonIconStyle}">
-                                </Path>
+                        <Grid DockPanel.Dock="Top">
+                            <c4I:EddiePopup PlacementTarget="{Binding ElementName=PART_SubMenuButton}" 
+                                            PopupTemplate="{TemplateBinding PopupTemplate}" 
+                                            PopupDataContext="{TemplateBinding DataContext}" />
+                            <c4I:EddieButton x:Name="PART_MainButton" DockPanel.Dock="Bottom"
+                                             Style="{StaticResource ModuleButtonButtonStyle}"
+                                             AutomationProperties.AutomationId="{TemplateBinding AutomationProperties.AutomationId}">
+                                    <Grid x:Name="PART_ButtonIcon"
+                                          VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
+                                          Margin="0,20,0,0"
+                                          DockPanel.Dock="Top">
+                                        <Path x:Name="PART_Path" Data="{TemplateBinding IconGeometry}"
+                                              Style="{StaticResource EddieModuleButtonIconStyle}">
+                                        </Path>
+                                    </Grid>
+                            </c4I:EddieButton>
+                            <c4I:EddieButton x:Name="PART_SubMenuButton"
+                                             DockPanel.Dock="Top"
+                                             EddieStyle="{TemplateBinding EddieStyle}"
+                                             Icon="ArrowUp"
+                                             Height="20"
+                                             Width="{Binding ActualWidth, ElementName=PART_MainButton}"
+                                             Background="Transparent"
+                                             HorizontalAlignment="Center"
+                                             VerticalAlignment="Top"
+                                             Style="{StaticResource ModuleButtonPopupButton}"
+                                             Margin="0,0,0,1">
+                            </c4I:EddieButton>
 
-                                <Label Grid.Column="0" Grid.Row="0" Style="{StaticResource EddieModuleButtonBadgeStyle}"
-                                       Content="{TemplateBinding Notifications}"
-                                       Visibility="{TemplateBinding Notifications, Converter={StaticResource IntToBooleanConverter}}" />
-                            </Grid>
-                        </c4I:EddieButton>
+                            <Label Style="{StaticResource EddieModuleButtonBadgeStyle}"
+                                   Content="{TemplateBinding Notifications}"
+                                   Visibility="{TemplateBinding Notifications, Converter={StaticResource IntToBooleanConverter}}" />
+                        </Grid>
 
                         <TextBlock DockPanel.Dock="Top" Style="{StaticResource EddieModuleButtonTextStyle}"
                                    Text="{TemplateBinding Text}" />
 
                     </DockPanel>
                     <ControlTemplate.Triggers>
+                        <Trigger Property="PopupTemplate" Value="{x:Null}">
+                            <Setter TargetName="PART_SubMenuButton" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="PART_ButtonIcon" Property="Margin" Value="0,0,0,0" />
+                        </Trigger>
                         <Trigger Property="EddieStyle" Value="Green">
                             <Setter TargetName="PART_MainButton" Property="EddieStyle" Value="Green" />
                         </Trigger>

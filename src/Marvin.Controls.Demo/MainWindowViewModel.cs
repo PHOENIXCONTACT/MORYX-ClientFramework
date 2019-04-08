@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Windows;
+using System.Windows.Input;
 using C4I;
 
 namespace Marvin.Controls.Demo
@@ -31,6 +33,8 @@ namespace Marvin.Controls.Demo
             }
 
             ShapeTypes = new List<string>(Enum.GetNames(typeof(CommonShapeType)));
+
+            TestCommand = new RelayCommand(obj => MessageBox.Show("Works"));
         }
 
         public bool IsNavigationBarLocked
@@ -45,5 +49,7 @@ namespace Marvin.Controls.Demo
                 }
             }
         }
+
+        public ICommand TestCommand { get; set; }
     }
 }
