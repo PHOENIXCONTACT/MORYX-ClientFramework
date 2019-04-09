@@ -38,6 +38,7 @@ namespace Marvin.Controls.Demo.ViewModels
             };
 
             var entry = EntryConvert.EncodeObject(entryModel);
+            entry.Key.Name = "Root";
             EntryViewModels = new EntryViewModel(entry);
 
             ShowExceptionCommand = new RelayCommand(ShowException);

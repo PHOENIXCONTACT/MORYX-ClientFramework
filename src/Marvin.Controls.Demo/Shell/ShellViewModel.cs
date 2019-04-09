@@ -1,56 +1,40 @@
 ﻿using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Threading;
 using C4I;
 using Caliburn.Micro;
 using Marvin.Controls.Demo.ViewModels;
 
 namespace Marvin.Controls.Demo.Shell
 {
-    public class ShellViewModel : Screen
+    public class ShellViewModel : Conductor<Screen>.Collection.OneActive
     {
-        private string _selectedCulture = "en";
-        private Screen _selectedTabItem;
+        private string _selectedCulture;
 
-        public List<Screen> TabItems { get; }
-
-        public Screen SelectedTabItem
-        {
-            get { return _selectedTabItem; }
-            set
-            {
-                if (_selectedTabItem != value)
-                {
-                    _selectedTabItem = value;
-                    NotifyOfPropertyChange();
-                }
-            }
-        }
-
-        public string[] AvailableCultures => new[]
-        {
-            CultureInfo.GetCultureInfo("en").Name, CultureInfo.GetCultureInfo("de").Name,
-            CultureInfo.GetCultureInfo("pl").Name
-        };
+        public string[] AvailableCultures { get; }
 
         public string SelectedCulture
         {
             get { return _selectedCulture; }
             set
             {
-                if (_selectedCulture != value)
-                {
-                    _selectedCulture = value;
-                    NotifyOfPropertyChange();
+                _selectedCulture = value;
+                NotifyOfPropertyChange();
 
-                    CultureInfoHandler.Instance.ChangeCulture(CultureInfo.GetCultureInfo(_selectedCulture));
-                }
+                CultureInfoHandler.Instance.ChangeCulture(CultureInfo.GetCultureInfo(_selectedCulture));
             }
         }
 
         public ShellViewModel()
         {
-            TabItems = new List<Screen>
+            AvailableCultures = CultureInfo.GetCultures(
+                CultureTypes.AllCultures & ~CultureTypes.SpecificCultures
+            ).Select(c => c.IetfLanguageTag).ToArray();
+
+            _selectedCulture = Thread.CurrentThread.CurrentUICulture.IetfLanguageTag;
+
+            Items.AddRange(new Screen[]
             {
                 new ButtonsViewModel(),
                 new ComboBoxesViewModel(),
@@ -67,9 +51,13 @@ namespace Marvin.Controls.Demo.Shell
                 new TemplatesViewModel(),
                 new NavigationBarViewModel(),
                 new EntryEditorViewModel()
-            };
+            });
+        }
 
-            SelectedTabItem = TabItems.First();
+        protected override void OnInitialize()
+        {
+            base.OnInitialize();
+            ActivateItem(Items.First());
         }
     }
 }

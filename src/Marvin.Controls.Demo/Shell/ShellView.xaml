@@ -1,14 +1,14 @@
 ﻿<Window x:Class="Marvin.Controls.Demo.Shell.ShellView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:Marvin.Controls.Demo.Shell"
         xmlns:properties="clr-namespace:Marvin.Controls.Demo.Properties"
         xmlns:micro="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro"
         xmlns:cal="http://www.caliburnproject.org"
         mc:Ignorable="d"
-        d:DataContext="{d:DesignInstance local:ShellViewModel}"
+        d:DataContext="{d:DesignInstance local:ShellViewModel, IsDesignTimeCreatable=True}"
         WindowState="Maximized"
         Title="Controls4Industry Demo"
         HorizontalAlignment="Stretch"
@@ -28,7 +28,7 @@
         <StackPanel Grid.Row="0" Orientation="Horizontal"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center">
-            <TextBlock Text="{Localize Select_Active_Culture, LocalizationSource={x:Static properties:Localizations.ResourceManager}}" Margin="0,0,5,0" VerticalAlignment="Center" />
+            <TextBlock Text="{Localize Select_Active_Culture, ResourceType={x:Type properties:strings}}" Margin="0,0,5,0" VerticalAlignment="Center" />
             <EddieComboBox ItemsSource="{Binding AvailableCultures}"
                            SelectedItem="{Binding SelectedCulture, Mode=TwoWay}">
             </EddieComboBox>
@@ -41,8 +41,8 @@
             </Border>
 
             <EddieNavigationBar Background="White" Margin="15"
-                                ItemsSource="{Binding TabItems}"
-                                SelectedItem="{Binding SelectedTabItem, Mode=TwoWay}">
+                                ItemsSource="{Binding Items}"
+                                SelectedItem="{Binding ActiveItem, Mode=TwoWay}">
                 <EddieNavigationBar.ItemTemplate>
                     <DataTemplate DataType="{x:Type micro:Screen}">
                         <TextBlock Text="{Binding DisplayName}" />

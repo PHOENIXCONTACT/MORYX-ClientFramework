@@ -11,7 +11,9 @@ namespace C4I
         private static CultureInfoHandler _cultureInfoHandler;
 
         private CultureInfoHandler()
-        { }
+        {
+
+        }
 
         /// <summary>
         /// Changes the current culture

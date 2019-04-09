@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Globalization;
-using System.Resources;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Markup;
@@ -8,7 +7,7 @@ using System.Windows.Markup;
 namespace C4I
 {
     /// <summary>
-    /// Provides a localizations functionalities on the fly
+    /// Provides a localizations functionality on the fly
     /// </summary>
     public class LocalizeExtension : MarkupExtension
     {
@@ -24,26 +23,25 @@ namespace C4I
         /// <summary>
         /// Extended constructor
         /// </summary>
-        /// <param name="localizationKey"></param>
-        public LocalizeExtension(string localizationKey)
+        public LocalizeExtension(string key)
         {
-            LocalizationKey = localizationKey;
+            Key = key;
         }
 
         /// <summary>
         /// Name of the key of the string that needs to be localized
         /// </summary>
-        [ConstructorArgument("localizationKey")]
-        public string LocalizationKey { get; set; }
+        [ConstructorArgument("key")]
+        public string Key { get; set; }
 
         /// <summary>
         /// ResourceManager to be used
         /// </summary>
-        public ResourceManager LocalizationSource { get; set; }
+        public Type ResourceType { get; set; }
 
         /// <summary>
         /// <see>
-        ///     <cref>Binding.StringFormat</cref>
+        /// <cref>Binding.StringFormat</cref>
         /// </see>
         /// </summary>
         public string StringFormat { get; set; }
@@ -65,38 +63,72 @@ namespace C4I
         /// <inheritdoc />
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
-            if (LocalizationSource != null)
-            {
-                _localizationBinding = new Binding
-                {
-                    Path = new PropertyPath(nameof(LocalizationData.Value)),
-                    Source = new LocalizationData(LocalizationSource, LocalizationKey),
-                    StringFormat = StringFormat,
-                    Converter = Converter,
-                    ConverterParameter = ConverterParameter
-                };
+            if (ResourceType == null)
+                throw new InvalidOperationException("ResourceType cannot be empty");
 
-                return _localizationBinding.ProvideValue(serviceProvider);
-            }
-                
-            throw new InvalidOperationException("Source cannot be empty");
+            _localizationBinding = new Binding
+            {
+                Path = new PropertyPath(nameof(LocalizationData.Value)),
+                Source = new LocalizationData(ResourceType, Key),
+                StringFormat = StringFormat,
+                Converter = Converter,
+                ConverterParameter = ConverterParameter
+            };
+
+            return _localizationBinding.ProvideValue(serviceProvider);
         }
     }
 
     internal class LocalizationData : PropertyChangedBase
     {
-        private readonly ResourceManager _resourceManager;
+        private readonly Type _resourceType;
         private readonly string _key;
 
-        public LocalizationData(ResourceManager resourceManager, string key)
+        public LocalizationData(Type resourceType, string key)
         {
-            _resourceManager = resourceManager;
+            _resourceType = resourceType;
             _key = key;
 
             CultureInfoHandler.Instance.CultureChanged += OnCultureChanged;
         }
 
-        public string Value => _resourceManager.GetString(_key);
+        public string Value => GetLocalizableValue();
+
+        public string GetLocalizableValue()
+        {
+            // Get the property from the resource type for this resource key
+            var property = _resourceType.GetRuntimeProperty(_key);
+
+            // We need to detect bad configurations so that we can throw exceptions accordingly
+            var badlyConfigured = false;
+
+            // Make sure we found the property and it's the correct type, and that the type itself is public
+            if (!_resourceType.IsVisible || property == null ||
+                property.PropertyType != typeof(string))
+            {
+                badlyConfigured = true;
+            }
+            else
+            {
+                // Ensure the getter for the property is available as public static
+                // TODO - check that GetMethod returns the same as old GetGetMethod()
+                // in all situations regardless of modifiers
+                var getter = property.GetMethod;
+                if (getter == null || !(getter.IsPublic && getter.IsStatic))
+                {
+                    badlyConfigured = true;
+                }
+            }
+
+            // If the property is not configured properly, then throw a missing member exception
+            if (badlyConfigured)
+            {
+                throw new InvalidOperationException($"No member {_key} found in {_resourceType.FullName}");
+            }
+
+            // We have a valid property, so return the resource
+            return (string)property.GetValue(null, null);
+        }
 
         private void OnCultureChanged(object sender, EventArgs e)
         {
