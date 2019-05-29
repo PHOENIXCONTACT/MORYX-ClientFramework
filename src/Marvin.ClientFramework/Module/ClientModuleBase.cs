@@ -113,8 +113,6 @@ namespace Marvin.ClientFramework
         public virtual void Initialize()
         {
             Container = ContainerFactory.Create(new Dictionary<Type, string>(), GetType().Assembly)
-                //register parallel operation
-                .Register<IModuleErrorReporting, LocalModuleErrorReporting>()
                 .Register<IParallelOperations, ParallelOperations>();
 
             Config = ConfigProvider.GetModuleConfiguration<TConf>(_moduleName);
@@ -128,7 +126,7 @@ namespace Marvin.ClientFramework
             AdditionalInitialize();
 
             LoggerManagement.ActivateLogging(this);
-            Logger.LogEntry(LogLevel.Info, "{0} is initializing...", _moduleName);
+            Logger.Log(LogLevel.Info, "{0} is initializing...", _moduleName);
             Container.SetInstance(Logger);
 
             OnInitialize();
@@ -148,7 +146,7 @@ namespace Marvin.ClientFramework
         /// </summary>
         public void Activate()
         {
-            Logger.LogEntry(LogLevel.Info, "{0} is activating...", _moduleName);
+            Logger.Log(LogLevel.Info, "{0} is activating...", _moduleName);
 
             try
             {
@@ -176,7 +174,7 @@ namespace Marvin.ClientFramework
         /// <param name="close"></param>
         public void Deactivate(bool close)
         {
-            Logger.LogEntry(LogLevel.Info, "{0} is deactivating...", _moduleName);
+            Logger.Log(LogLevel.Info, "{0} is deactivating...", _moduleName);
             RaiseAttemptingDeactivation(new DeactivationEventArgs());
 
             try

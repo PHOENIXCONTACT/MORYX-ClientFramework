@@ -42,7 +42,7 @@ namespace Marvin.ClientFramework.Kernel
         /// </summary>
         public void Initialize()
         {
-            Logger.LogEntry(LogLevel.Debug, "Start initializing of {0} modules", ClientModules.Count());
+            Logger.Log(LogLevel.Debug, "Start initializing of {0} modules", ClientModules.Count());
 
             RaiseStartInitilizingModules(ClientModules.Count());
 

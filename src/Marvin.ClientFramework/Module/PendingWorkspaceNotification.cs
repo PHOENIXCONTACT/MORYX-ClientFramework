@@ -1,5 +1,6 @@
 ﻿using System;
 using Marvin.Modules;
+using Marvin.Notifications;
 
 namespace Marvin.ClientFramework
 {
@@ -26,10 +27,7 @@ namespace Marvin.ClientFramework
         public bool Confirm() => false;
 
         /// <inheritdoc />
-        /// <summary>
-        /// Type of this notification
-        /// </summary>
-        public NotificationType Type => NotificationType.Info;
+        public Severity Severity => Severity.Info;
 
         /// <inheritdoc />
         /// <summary>
