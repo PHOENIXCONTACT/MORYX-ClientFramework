@@ -6,7 +6,7 @@ using System.Windows.Media;
 namespace C4I
 {
     /// <summary>
-    /// Bass class for the eddit buttons which adds some dependency properties to the 
+    /// Bass class for the eddit buttons which adds some dependency properties to the
     /// basic <see cref="Button"/>
     /// </summary>
     public abstract class EddieButtonBase : Button
@@ -34,9 +34,16 @@ namespace C4I
 
         private static void IconChanged(DependencyObject d, DependencyPropertyChangedEventArgs args)
         {
-            var control = d as EddieButtonBase;
-            // ReSharper disable once PossibleNullReferenceException
-            control.IconPath = ShapeFactory.GetShapeGeometry(control.Icon);
+            var button = (EddieButtonBase)d;
+
+            if (args.NewValue == null)
+            {
+                button.IconPath = null;
+                return;
+            }
+
+            var changedIcon = (CommonShapeType)args.NewValue;
+            button.IconPath = ShapeFactory.GetShapeGeometry(changedIcon);
         }
 
         /// <summary>
