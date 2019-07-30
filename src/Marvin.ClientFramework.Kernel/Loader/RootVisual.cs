@@ -34,6 +34,11 @@ namespace Marvin.ClientFramework.Kernel
 
         private void SetLayout()
         {
+            if (_windowConfig.Top > SystemParameters.VirtualScreenHeight ||
+                _windowConfig.Left > SystemParameters.VirtualScreenWidth ||
+                _windowConfig.Height > SystemParameters.VirtualScreenHeight)
+                _windowConfig.Reset();
+
             Top = _windowConfig.Top;
             Left = _windowConfig.Left;
             Width = _windowConfig.Width;
