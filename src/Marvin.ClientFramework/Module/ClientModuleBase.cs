@@ -188,7 +188,6 @@ namespace Marvin.ClientFramework
             }
 
             IsActive = false;
-            LoggerManagement.DeactivateLogging(this);
             RaiseDeactivated(new DeactivationEventArgs());
         }
 
