@@ -3,7 +3,7 @@ uid: GettingStarted
 ---
 # Getting Started
 
-This tutorial will show you how MaRVIN WPF clients should be created.
+This tutorial will show you how MARVIN WPF clients should be created.
 
 ## Prerequisites
 

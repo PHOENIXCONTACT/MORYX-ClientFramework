@@ -3,7 +3,7 @@ uid: Configurations
 ---
 # Configurations
 
-The configuration management is based on the *MaRVINPlatformToolkit* with the platforms configuration management. So they work like in every other platform (e.g. runtime)
+The configuration management is based on the *MARVIN Toolkit* with the platforms configuration management. So they work like in every other platform (e.g. runtime)
 To handle the frameworks configurations a configurator can be started with the config runmodes
 
 ## Config RunMode

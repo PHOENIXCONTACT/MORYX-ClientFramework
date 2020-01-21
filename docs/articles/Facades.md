@@ -5,7 +5,7 @@ uid: Facades
 
 ## General
 
-For the general concept of module facades, you should read the documentation of the *Facade guide* in the *MaRVINPlatform* documentation.
+For the general concept of module facades, you should read the documentation of the *Facade guide* in the *MarvinPlatform* documentation.
 
 ## Client Implementation
 

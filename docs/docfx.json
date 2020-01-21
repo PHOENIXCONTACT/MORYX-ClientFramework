@@ -81,13 +81,13 @@
     "keepFileLink": false,
     "cleanupCacheHistory": false,
     "globalMetadata": {
-      "_appTitle": "MarvinPlatform ClientFramework",
-      "_appFooter": "MaRVIN Team - Corporate Technology & Value Chain",
+      "_appTitle": "MARVIN ClientFramework",
+      "_appFooter": "MARVIN Team - Corporate Technology & Value Chain",
       "_appLogoPath": "resources/Phoenix_Contact_Logo.svg",
       "_enableNewTab": true,
       "_enableSearch": true,
       "_gitContribute": {
-        "repo": "http://bitbucket-dev.europe.phoenixcontact.com/projects/MS/repos/marvinclientframework",
+        "repo": "https://git-ctvc.europe.phoenixcontact.com/marvin/ClientFramework",
         "branch": "master"
       }
     }
