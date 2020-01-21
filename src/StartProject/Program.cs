@@ -1,11 +1,11 @@
 ﻿using System;
 using Marvin.ClientFramework.Kernel;
 
-namespace Marvin.ClientFramework.Start
+namespace StartProject
 {
     /// <summary>
-    /// Main kernel class to load the overall client framework. 
-    /// Will instanciate the container and will start the whole lifecycle.
+    /// Main kernel class to load the overall client framework.
+    /// Will instantiate the container and will start the whole lifecycle.
     /// </summary>
     public class Program
     {
@@ -19,7 +19,7 @@ namespace Marvin.ClientFramework.Start
             hol.Initialize();
 
             // Add style extension
-            hol.OverrideDefaultStyle(new Uri("pack://application:,,,/HeartOfLead;component/CustomTheme.xaml",
+            hol.OverrideDefaultStyle(new Uri("pack://application:,,,/StartProject;component/CustomTheme.xaml",
                 UriKind.RelativeOrAbsolute));
 
             // Start Application

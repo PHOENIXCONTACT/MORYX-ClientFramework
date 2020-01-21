@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.29905.134
+VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marvin.ClientFramework.Kernel", "src\Marvin.ClientFramework.Kernel\Marvin.ClientFramework.Kernel.csproj", "{9A690B37-AB29-4C5D-B185-3DD20DD8FB18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeartOfLead", "src\HeartOfLead\HeartOfLead.csproj", "{3684930F-421E-4B27-AD5D-C136863C1C46}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartProject", "src\StartProject\StartProject.csproj", "{3684930F-421E-4B27-AD5D-C136863C1C46}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{F0EF2C31-F2D9-434A-B539-A491C90F192A}"
 EndProject
@@ -65,12 +65,12 @@ Global
 		{9A690B37-AB29-4C5D-B185-3DD20DD8FB18}.Release|x86.Build.0 = Release|Any CPU
 		{3684930F-421E-4B27-AD5D-C136863C1C46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3684930F-421E-4B27-AD5D-C136863C1C46}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3684930F-421E-4B27-AD5D-C136863C1C46}.Debug|x86.ActiveCfg = Debug|x86
-		{3684930F-421E-4B27-AD5D-C136863C1C46}.Debug|x86.Build.0 = Debug|x86
+		{3684930F-421E-4B27-AD5D-C136863C1C46}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3684930F-421E-4B27-AD5D-C136863C1C46}.Debug|x86.Build.0 = Debug|Any CPU
 		{3684930F-421E-4B27-AD5D-C136863C1C46}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3684930F-421E-4B27-AD5D-C136863C1C46}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3684930F-421E-4B27-AD5D-C136863C1C46}.Release|x86.ActiveCfg = Release|x86
-		{3684930F-421E-4B27-AD5D-C136863C1C46}.Release|x86.Build.0 = Release|x86
+		{3684930F-421E-4B27-AD5D-C136863C1C46}.Release|x86.ActiveCfg = Release|Any CPU
+		{3684930F-421E-4B27-AD5D-C136863C1C46}.Release|x86.Build.0 = Release|Any CPU
 		{7B47F295-1567-4473-B4B5-44DDF88DFA2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7B47F295-1567-4473-B4B5-44DDF88DFA2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B47F295-1567-4473-B4B5-44DDF88DFA2E}.Debug|x86.ActiveCfg = Debug|Any CPU
@@ -204,6 +204,6 @@ Global
 		{225C74D9-F209-4D18-AFB4-84A593BC8D58} = {1B55A562-90EC-4D17-AEE1-8A4E00CECD03}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {87A2BF4A-903B-44C7-911B-314A3261966F}
+		SolutionGuid = {A321E391-EDE0-48C6-B596-DBF71CB2029C}
 	EndGlobalSection
 EndGlobal
