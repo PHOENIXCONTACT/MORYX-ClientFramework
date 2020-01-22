@@ -149,10 +149,6 @@
       <Project>{83a2b8ab-6af1-4666-bbfd-b2fd085c0df2}</Project>
       <Name>Marvin.ClientFramework.Tests.Playground</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Marvin.ClientFramework.UserMgnt\Marvin.ClientFramework.UserManagement.csproj">
-      <Project>{f2a5992c-102c-4f7d-b642-531c169ab513}</Project>
-      <Name>Marvin.ClientFramework.UserManagement</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Marvin.ClientFramework\Marvin.ClientFramework.csproj">
       <Project>{7b47f295-1567-4473-b4b5-44ddf88dfa2e}</Project>
       <Name>Marvin.ClientFramework</Name>
