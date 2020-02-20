@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Loader_Credits" xml:space="preserve">
-    <value>Diese Anwendung basiert auf der MaRVIN Platform! - Corporate Technology &amp; Value Chain</value>
+    <value>Diese Anwendung basiert auf der MARVIN! - Corporate Technology &amp; Value Chain</value>
   </data>
   <data name="Loader_AssemblyConfigurationLoaded" xml:space="preserve">
     <value>Bibliothekseinstellung geladen ({0}) ...</value>

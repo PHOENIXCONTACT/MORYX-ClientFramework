@@ -1,12 +1,12 @@
 ﻿<UserControl x:Class="Marvin.ClientFramework.Tests.HistoryWriter.HistoryWriterWorkspaceView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:historyWriter="clr-namespace:Marvin.ClientFramework.Tests.HistoryWriter"
-             mc:Ignorable="d" 
+             mc:Ignorable="d"
              d:DesignHeight="379" d:DesignWidth="515" d:DataContext="{d:DesignInstance historyWriter:HistoryWriterWorkspaceViewModel}">
-    
+
     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
 
         <StackPanel Orientation="Horizontal" Margin="5">
@@ -21,6 +21,6 @@
         <CheckBox Content="Show Messages on Lifecycle-Events" IsChecked="{Binding ShowLifecycleMessages}"/>
         <CheckBox Content="Show Messages on View-Events" IsChecked="{Binding ShowViewMessages}"/>
         <EddieButton x:Name="Push">Push</EddieButton>
-        
+
     </StackPanel>
 </UserControl>
