@@ -10,7 +10,7 @@ using System.Windows;
 using System.Windows.Markup;
 
 [assembly: AssemblyTitle("Marvin.Controls.Demo")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Demo project that includes all controls")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("PHOENIX CONTACT GmbH & Co. KG")]
 [assembly: AssemblyProduct("Marvin.Controls.Demo")]

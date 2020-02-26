@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Marvin.ClientFramework.Kernel")]
-[assembly: AssemblyDescription("ClientFramework Kernel")]
+[assembly: AssemblyDescription("Kernel for the client framework with infrastructure and shared components")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
