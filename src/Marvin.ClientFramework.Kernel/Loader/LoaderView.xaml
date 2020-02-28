@@ -28,8 +28,8 @@
               Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" VerticalAlignment="Top" HorizontalAlignment="Left" />
 
         <Grid Grid.Row="0" Grid.RowSpan="2" HorizontalAlignment="Stretch" Margin="100,0,100,0"
-                    VerticalAlignment="Center">
-
+              VerticalAlignment="Center">
+            
             <Border BorderThickness="1" BorderBrush="LightGray">
                 <Border.Effect>
                     <DropShadowEffect ShadowDepth="3"  Direction="315"/>
@@ -43,20 +43,14 @@
                            Text="{Binding StatusMessage}" HorizontalAlignment="Left" />
 
                 <EddieProgressBar Height="20" Margin="10,0,10,10"
-                         x:Name="ProgressBar"
-                         Minimum="0" 
-                         Maximum="{Binding Maximum, Mode=OneWay, ElementName=UserControl}" 
-                         Value="{Binding Value, Mode=OneWay, ElementName=UserControl}" />
+                                  x:Name="ProgressBar"
+                                  Minimum="0" 
+                                  Maximum="{Binding Maximum, Mode=OneWay, ElementName=UserControl}" 
+                                  Value="{Binding Value, Mode=OneWay, ElementName=UserControl}" />
             </StackPanel>
 
         </Grid>
 
         <TextBlock Grid.Row="1" FontSize="10" HorizontalAlignment="Center" Margin="0,0,0,5" Text="{x:Static properties:strings.Loader_Credits}" />
-
-        <TextBlock Grid.Row="1" FontSize="10" HorizontalAlignment="Center" Margin="0,0,0,5">
-            Application is based on the MARVIN Platform! - Corporate Technology &amp; Value Chain
-        </TextBlock>
-
-
     </Grid>
 </UserControl>
