@@ -31,13 +31,13 @@ namespace Marvin.ClientFramework.Kernel
         private void OnInitializingComponent(object sender, IInitializable initializable)
         {
             
-            RaiseChangeValueWithMessage(string.Format(strings.Loader_InitializingComponent, initializable.GetType().Name));
+            RaiseChangeValueWithMessage(string.Format(Strings.Loader_InitializingComponent, initializable.GetType().Name));
         }
 
         private void OnStarting(object sender, int numberOfComponents)
         {
             
-            RaiseChangeMessage(string.Format(strings.Loader_ComponentInitializingStarting, numberOfComponents));
+            RaiseChangeMessage(string.Format(Strings.Loader_ComponentInitializingStarting, numberOfComponents));
             RaiseAddToMax(numberOfComponents);
         }
     }

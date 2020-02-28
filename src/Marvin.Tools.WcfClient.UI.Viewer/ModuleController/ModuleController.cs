@@ -23,7 +23,7 @@ namespace Marvin.Tools.WcfClient.UI.Viewer
         /// <inheritdoc />
         protected override void OnInitialize()
         {
-            DisplayName = strings.Title;
+            DisplayName = Strings.Title;
         }
 
         /// <inheritdoc />

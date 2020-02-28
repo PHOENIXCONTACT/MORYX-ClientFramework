@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Marvin.Tools.WcfClient.UI.Viewer.Properties {
+namespace Marvin.ClientFramework.Tests.Playground.Properties {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace Marvin.Tools.WcfClient.UI.Viewer.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class strings {
+    public class Strings {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal strings() {
+        internal Strings() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Marvin.Tools.WcfClient.UI.Viewer.Properties {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Marvin.Tools.WcfClient.UI.Viewer.Properties.strings", typeof(strings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Marvin.ClientFramework.Tests.Playground.Properties.Strings", typeof(Strings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,79 +61,16 @@ namespace Marvin.Tools.WcfClient.UI.Viewer.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Client Version.
+        ///   Looks up a localized string similar to Hello World.
         /// </summary>
-        public static string List_ClientVersion {
+        public static string HelloWorld {
             get {
-                return ResourceManager.GetString("List_ClientVersion", resourceCulture);
+                return ResourceManager.GetString("HelloWorld", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Min Client Version.
-        /// </summary>
-        public static string List_MinClientVersion {
-            get {
-                return ResourceManager.GetString("List_MinClientVersion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Min Server Version.
-        /// </summary>
-        public static string List_MinServerVersion {
-            get {
-                return ResourceManager.GetString("List_MinServerVersion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Server Version.
-        /// </summary>
-        public static string List_ServerVersion {
-            get {
-                return ResourceManager.GetString("List_ServerVersion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Service.
-        /// </summary>
-        public static string List_Service {
-            get {
-                return ResourceManager.GetString("List_Service", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to State.
-        /// </summary>
-        public static string List_State {
-            get {
-                return ResourceManager.GetString("List_State", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Ties.
-        /// </summary>
-        public static string List_Tries {
-            get {
-                return ResourceManager.GetString("List_Tries", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Uri.
-        /// </summary>
-        public static string List_Uri {
-            get {
-                return ResourceManager.GetString("List_Uri", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to WCF Connections.
+        ///   Looks up a localized string similar to Playground.
         /// </summary>
         public static string Title {
             get {

@@ -19,88 +19,88 @@
     <Grid Background="White">
         <StackPanel>
             <TextBlock Style="{StaticResource TitleText}"
-                       Text="{x:Static properties:strings.AppConfig_App_Title}" />
+                       Text="{x:Static properties:Strings.AppConfig_App_Title}" />
 
             <StackPanel Orientation="Horizontal">
-                <LabeledControlHost LabelA="{x:Static properties:strings.AppConfig_Name_Label}">
+                <LabeledControlHost LabelA="{x:Static properties:Strings.AppConfig_Name_Label}">
                     <EddieTextBox Text="{Binding Config.Name, Mode=TwoWay}"/>
                 </LabeledControlHost>
 
                 <TextBlock Style="{StaticResource DescriptionStyle}"
-                           Text="{x:Static properties:strings.AppConfig_Name_Description}" />
+                           Text="{x:Static properties:Strings.AppConfig_Name_Description}" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal">
-                <LabeledControlHost LabelA="{x:Static properties:strings.AppConfig_Application_Label}">
+                <LabeledControlHost LabelA="{x:Static properties:Strings.AppConfig_Application_Label}">
                     <EddieTextBox Text="{Binding Config.Application, Mode=TwoWay}"/>
                 </LabeledControlHost>
 
                 <TextBlock Style="{StaticResource DescriptionStyle}"
-                           Text="{x:Static properties:strings.AppConfig_Application_Description}" />
+                           Text="{x:Static properties:Strings.AppConfig_Application_Description}" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal">
-                <LabeledControlHost LabelA="{x:Static properties:strings.AppConfig_ViewType_Label}">
+                <LabeledControlHost LabelA="{x:Static properties:Strings.AppConfig_ViewType_Label}">
                     <EddieComboBox ItemsSource="{Binding AvailableViewPresets}"
                                    SelectedItem="{Binding Config.ViewPreset, Mode=TwoWay}"/>
                 </LabeledControlHost>
 
                 <TextBlock Style="{StaticResource DescriptionStyle}"
-                           Text="{x:Static properties:strings.AppConfig_ViewType_Description}" />
+                           Text="{x:Static properties:Strings.AppConfig_ViewType_Description}" />
             </StackPanel>
 
             <TextBlock Style="{StaticResource TitleText}"
-                       Text="{x:Static properties:strings.AppConfig_Startup_Title}" />
+                       Text="{x:Static properties:Strings.AppConfig_Startup_Title}" />
 
             <StackPanel Orientation="Horizontal">
-                <LabeledControlHost LabelA="{x:Static properties:strings.AppConfig_RunMode_Label}">
+                <LabeledControlHost LabelA="{x:Static properties:Strings.AppConfig_RunMode_Label}">
                     <EddieComboBox ItemsSource="{Binding PossibleRunModes}"
                                        SelectedItem="{Binding SelectedRunMode, Mode=TwoWay}" />
                 </LabeledControlHost>
 
                 <TextBlock Style="{StaticResource DescriptionStyle}"
-                           Text="{x:Static properties:strings.AppConfig_RunMode_Description}" />
+                           Text="{x:Static properties:Strings.AppConfig_RunMode_Description}" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal">
-                <LabeledControlHost LabelA="{x:Static properties:strings.AppConfig_Ctrl_Label}">
+                <LabeledControlHost LabelA="{x:Static properties:Strings.AppConfig_Ctrl_Label}">
                     <CheckBox IsChecked="{Binding Config.OpenConfigWithControl, Mode=TwoWay}" />
                 </LabeledControlHost>
 
                 <TextBlock Style="{StaticResource DescriptionStyle}"
-                           Text="{x:Static properties:strings.AppConfig_Ctrl_Description}" />
+                           Text="{x:Static properties:Strings.AppConfig_Ctrl_Description}" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal">
-                <LabeledControlHost LabelA="{x:Static properties:strings.AppConfig_LimitInstances_Label}">
+                <LabeledControlHost LabelA="{x:Static properties:Strings.AppConfig_LimitInstances_Label}">
                     <CheckBox IsChecked="{Binding Config.LimitInstances, Mode=TwoWay}" />
                 </LabeledControlHost>
 
                 <TextBlock Style="{StaticResource DescriptionStyle}"
-                           Text="{x:Static properties:strings.AppConfig_LimitInstances_Description}" />
+                           Text="{x:Static properties:Strings.AppConfig_LimitInstances_Description}" />
             </StackPanel>
 
             <TextBlock Style="{StaticResource TitleText}"
-                       Text="{x:Static properties:strings.AppConfig_System_Title}" />
+                       Text="{x:Static properties:Strings.AppConfig_System_Title}" />
 
-            <LabeledControlHost LabelA="{x:Static properties:strings.AppConfig_UserName_Label}">
+            <LabeledControlHost LabelA="{x:Static properties:Strings.AppConfig_UserName_Label}">
                 <TextBlock Text="{Binding SystemProperties.UserName, FallbackValue='-'}" />
             </LabeledControlHost>
 
-            <LabeledControlHost LabelA="{x:Static properties:strings.AppConfig_Fullname_Label}">
+            <LabeledControlHost LabelA="{x:Static properties:Strings.AppConfig_Fullname_Label}">
                 <TextBlock Text="{Binding SystemProperties.Fullname, FallbackValue='-'}" />
             </LabeledControlHost>
 
-            <LabeledControlHost LabelA="{x:Static properties:strings.AppConfig_ConfigFolder_Label}">
+            <LabeledControlHost LabelA="{x:Static properties:Strings.AppConfig_ConfigFolder_Label}">
                 <TextBlock Text="{Binding SystemProperties.ConfigPath, FallbackValue='-'}" MouseDown="OpenPath" />
             </LabeledControlHost>
 
-            <LabeledControlHost LabelA="{x:Static properties:strings.AppConfig_AppData_Label}">
+            <LabeledControlHost LabelA="{x:Static properties:Strings.AppConfig_AppData_Label}">
                 <TextBlock Text="{Binding SystemProperties.AppDataPath, FallbackValue='-'}" MouseDown="OpenPath" />
             </LabeledControlHost>
 
             <TextBlock Style="{StaticResource DescriptionStyle}" Margin="5,20,00,0"
-                       Text="{x:Static properties:strings.AppConfig_RunMode_Hint}" />
+                       Text="{x:Static properties:Strings.AppConfig_RunMode_Hint}" />
 
         </StackPanel>
     </Grid>

@@ -41,7 +41,7 @@
 
                 <StackPanel Grid.Column="0" Orientation="Horizontal">
                     <Path Data="{CommonShape ShapeType=PxCLogo}" Fill="Black" VerticalAlignment="Center" />
-                    <TextBlock Margin="10,0,0,0" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Text="{x:Static properties:strings.Shell_Title}" /> 
+                    <TextBlock Margin="10,0,0,0" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Text="{x:Static properties:Strings.Shell_Title}" /> 
                 </StackPanel>
 
                 <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0">

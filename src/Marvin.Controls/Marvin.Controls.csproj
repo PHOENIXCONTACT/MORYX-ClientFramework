@@ -81,15 +81,15 @@
     <Compile Include="EntryEditor\Converter\ValueTypeTemplateSelector.cs" />
     <Compile Include="EntryEditor\EntryViewModel.cs" />
     <Compile Include="InfoBox\InfoBox.cs" />
-    <Compile Include="Properties\Localizations.de.Designer.cs">
+    <Compile Include="Properties\Strings.de.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Localizations.de.resx</DependentUpon>
+      <DependentUpon>Strings.de.resx</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Localizations.Designer.cs">
+    <Compile Include="Properties\Strings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Localizations.resx</DependentUpon>
+      <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -122,13 +122,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Properties\Localizations.de.resx">
+    <EmbeddedResource Include="Properties\Strings.de.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Localizations.de.Designer.cs</LastGenOutput>
+      <LastGenOutput>Strings.de.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Localizations.resx">
+    <EmbeddedResource Include="Properties\Strings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Localizations.Designer.cs</LastGenOutput>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

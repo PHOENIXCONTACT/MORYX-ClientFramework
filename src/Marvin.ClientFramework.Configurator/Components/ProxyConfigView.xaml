@@ -18,43 +18,43 @@
 
     <Grid Background="White">
         <StackPanel>
-            <TextBlock Style="{StaticResource TitleText}" Text="{x:Static properties:strings.ProxyConfig_Proxy_Title}" />
+            <TextBlock Style="{StaticResource TitleText}" Text="{x:Static properties:Strings.ProxyConfig_Proxy_Title}" />
 
             <StackPanel Orientation="Horizontal">
-                <LabeledControlHost LabelA="{x:Static properties:strings.ProxyConfig_Enabled_Label}">
+                <LabeledControlHost LabelA="{x:Static properties:Strings.ProxyConfig_Enabled_Label}">
                     <CheckBox IsChecked="{Binding Config.EnableProxy, Mode=TwoWay}"/>
                 </LabeledControlHost>
 
                 <TextBlock Style="{StaticResource DescriptionStyle}"
-                           Text="{x:Static properties:strings.ProxyConfig_Enabled_Description}" />
+                           Text="{x:Static properties:Strings.ProxyConfig_Enabled_Description}" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal">
-                <LabeledControlHost LabelA="{x:Static properties:strings.ProxyConfig_UseDefault_Label}">
+                <LabeledControlHost LabelA="{x:Static properties:Strings.ProxyConfig_UseDefault_Label}">
                     <CheckBox x:Name="DefaultCheckBox" Unchecked="DefaultCheckBox_OnChecked"
                               Checked="DefaultCheckBox_OnChecked" IsChecked="{Binding Config.UseDefaultWebProxy, Mode=TwoWay}" />
                 </LabeledControlHost>
 
                 <TextBlock Style="{StaticResource DescriptionStyle}"
-                           Text="{x:Static properties:strings.ProxyConfig_UseDefault_Description}" />
+                           Text="{x:Static properties:Strings.ProxyConfig_UseDefault_Description}" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" x:Name="Adress">
-                <LabeledControlHost LabelA="{x:Static properties:strings.ProxyConfig_Address_Label}">
+                <LabeledControlHost LabelA="{x:Static properties:Strings.ProxyConfig_Address_Label}">
                     <EddieTextBox Text="{Binding Config.Address, Mode=TwoWay}"/>
                 </LabeledControlHost>
 
                 <TextBlock Style="{StaticResource DescriptionStyle}"
-                           Text="{x:Static properties:strings.ProxyConfig_Address_Description}" />
+                           Text="{x:Static properties:Strings.ProxyConfig_Address_Description}" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" x:Name="Port">
-                <LabeledControlHost LabelA="{x:Static properties:strings.ProxyConfig_Port_Label}">
+                <LabeledControlHost LabelA="{x:Static properties:Strings.ProxyConfig_Port_Label}">
                     <EddieTextBox Text="{Binding Config.Port, Mode=TwoWay}"/>
                 </LabeledControlHost>
 
                 <TextBlock Style="{StaticResource DescriptionStyle}"
-                           Text="{x:Static properties:strings.ProxyConfig_Port_Description}" />
+                           Text="{x:Static properties:Strings.ProxyConfig_Port_Description}" />
             </StackPanel>
 
         </StackPanel>

@@ -51,6 +51,6 @@
 
         </Grid>
 
-        <TextBlock Grid.Row="1" FontSize="10" HorizontalAlignment="Center" Margin="0,0,0,5" Text="{x:Static properties:strings.Loader_Credits}" />
+        <TextBlock Grid.Row="1" FontSize="10" HorizontalAlignment="Center" Margin="0,0,0,5" Text="{x:Static properties:Strings.Loader_Credits}" />
     </Grid>
 </UserControl>

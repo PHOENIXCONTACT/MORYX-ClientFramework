@@ -28,11 +28,11 @@
                                    FontWeight="Bold" VerticalAlignment="Center"
                                    Visibility="{Binding SubEntries, Converter={StaticResource ReBooleanToVisibilityConverter}}" />
 
-                        <EddieButton Width="120" Content="{x:Static properties:Localizations.Open}" EddieStyle="Green" Icon="Open"
+                        <EddieButton Width="120" Content="{x:Static properties:Strings.Open}" EddieStyle="Green" Icon="Open"
                                      VerticalAlignment="Center" Click="DelveIntoSubEntry"
                                      Visibility="{Binding Converter={StaticResource SubEntriesToVisibilityConverter}}" />
 
-                        <EddieButton Width="120" Content="{x:Static properties:Localizations.Remove}" EddieStyle="Green" Margin="10,0,0,0" Icon="Delete"
+                        <EddieButton Width="120" Content="{x:Static properties:Strings.Remove}" EddieStyle="Green" Margin="10,0,0,0" Icon="Delete"
                                      Visibility="{Binding CurrentEntry, ElementName=UserControl, Converter={StaticResource DelButtonVisibilityConverter}, FallbackValue=Collapsed}"
                                      IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
                                      Click="RemoveCollectionEntry"  />
@@ -71,7 +71,7 @@
                                       IsReadOnly="{Binding IsReadOnly}"
                                       Visibility="Collapsed" />
 
-                        <CheckBox x:Name="ShowPassword" Margin="5,0,0,0" Content="{x:Static properties:Localizations.Show}" IsChecked="False" />
+                        <CheckBox x:Name="ShowPassword" Margin="5,0,0,0" Content="{x:Static properties:Strings.Show}" IsChecked="False" />
                     </StackPanel>
 
                     <DataTemplate.Triggers>
@@ -116,7 +116,7 @@
                                       IsReadOnly="{Binding IsReadOnly}"
                                       Visibility="{Binding SubEntries, Converter={StaticResource ReBooleanToVisibilityConverter}}" />
                         <EddieButton Margin="5,0,0,0" EddieStyle="Green" HorizontalAlignment="Left" Icon="Open"
-                                     Content="{x:Static properties:Localizations.SelectFile}" Click="SelectFile" />
+                                     Content="{x:Static properties:Strings.SelectFile}" Click="SelectFile" />
                     </StackPanel>
                 </DataTemplate>
             </converter:ValueTypeTemplateSelector.FilePickerTemplate>
@@ -131,7 +131,7 @@
                                       IsReadOnly="{Binding IsReadOnly}"
                                       Visibility="{Binding SubEntries, Converter={StaticResource ReBooleanToVisibilityConverter}}" />
                         <EddieButton Margin="5,0,0,0" EddieStyle="Green" HorizontalAlignment="Left" Icon="Open"
-                                     Content="{x:Static properties:Localizations.SelectDirectory}" Click="SelectDirectory" />
+                                     Content="{x:Static properties:Strings.SelectDirectory}" Click="SelectDirectory" />
                     </StackPanel>
                 </DataTemplate>
             </converter:ValueTypeTemplateSelector.DirectoryPickerTemplate>
@@ -140,9 +140,9 @@
                 <DataTemplate DataType="controls:EntryViewModel">
                     <StackPanel Orientation="Horizontal">
                         <EddieButton Width="120" EddieStyle="Green" HorizontalAlignment="Left" Icon="Open"
-                                 Content="{x:Static properties:Localizations.Open}" Click="DelveIntoSubEntry" />
+                                 Content="{x:Static properties:Strings.Open}" Click="DelveIntoSubEntry" />
 
-                        <EddieButton Width="120" Content="{x:Static properties:Localizations.Remove}" EddieStyle="Green" Margin="10,0,0,0" Icon="Delete"
+                        <EddieButton Width="120" Content="{x:Static properties:Strings.Remove}" EddieStyle="Green" Margin="10,0,0,0" Icon="Delete"
                                      Visibility="{Binding CurrentEntry, ElementName=UserControl, Converter={StaticResource DelButtonVisibilityConverter}, FallbackValue=Collapsed}"
                                      IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
                                      Click="RemoveCollectionEntry" />
@@ -156,10 +156,10 @@
                         <TextBlock Width="200"
                                    Text="{Binding Value, Converter={StaticResource Base64StringLengthToByteLength}, FallbackValue=Unknown}"
                                    VerticalAlignment="Center" />
-                        <EddieButton Width="120" Content="{x:Static properties:Localizations.Select}" EddieStyle="Green" Margin="5,0,0,0" Icon="Open"
+                        <EddieButton Width="120" Content="{x:Static properties:Strings.Select}" EddieStyle="Green" Margin="5,0,0,0" Icon="Open"
                                      IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
                                      Click="SelectStreamContent" />
-                        <EddieButton Width="120" Content="{x:Static properties:Localizations.Save}" EddieStyle="Green" Margin="5,0,0,0" Icon="Save"
+                        <EddieButton Width="120" Content="{x:Static properties:Strings.Save}" EddieStyle="Green" Margin="5,0,0,0" Icon="Save"
                                      IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
                                      Click="SaveStreamContent" />
                     </StackPanel>
@@ -207,11 +207,11 @@
             <StackPanel Orientation="Horizontal">
                 <c4I:EddieActionButton Click="Back" Icon="ArrowLeft" Margin="0,0,5,0"
                                        IsEnabled="{Binding CanBackward, ElementName=UserControl}"
-                                       Content="{x:Static properties:Localizations.Back}">
+                                       Content="{x:Static properties:Strings.Back}">
                 </c4I:EddieActionButton>
                 <c4I:EddieActionButton Click="Forward" Icon="ArrowRight" Margin="0,0,5,0"
                                        IsEnabled="{Binding CanForward, ElementName=UserControl}"
-                                       Content="{x:Static properties:Localizations.Forward}">
+                                       Content="{x:Static properties:Strings.Forward}">
                 </c4I:EddieActionButton>
             </StackPanel>
 

@@ -98,13 +98,13 @@
     <Compile Include="Module\RegionModuleBase.cs" />
     <Compile Include="Module\WorkspaceInteraction.cs" />
     <Compile Include="Module\WorkspaceModuleBase.cs" />
-    <Compile Include="Properties\strings.de.Designer.cs">
+    <Compile Include="Properties\Strings.de.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>strings.de.resx</DependentUpon>
+      <DependentUpon>Strings.de.resx</DependentUpon>
     </Compile>
-    <Compile Include="Properties\strings.Designer.cs">
-      <DependentUpon>strings.resx</DependentUpon>
+    <Compile Include="Properties\Strings.Designer.cs">
+      <DependentUpon>Strings.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -187,13 +187,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Properties\strings.de.resx">
+    <EmbeddedResource Include="Properties\Strings.de.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>strings.de.Designer.cs</LastGenOutput>
+      <LastGenOutput>Strings.de.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\strings.resx">
+    <EmbeddedResource Include="Properties\Strings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>strings.Designer.cs</LastGenOutput>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>

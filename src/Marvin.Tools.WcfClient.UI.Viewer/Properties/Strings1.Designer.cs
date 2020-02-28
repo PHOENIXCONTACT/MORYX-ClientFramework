@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Marvin.ClientFramework.Kernel.Properties {
+namespace Marvin.Tools.WcfClient.UI.Viewer.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Marvin.ClientFramework.Kernel.Properties {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Marvin.ClientFramework.Kernel.Properties.Strings", typeof(Strings).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Marvin.Tools.WcfClient.UI.Viewer.Properties.Strings", typeof(Strings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,65 +61,83 @@ namespace Marvin.ClientFramework.Kernel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Assembly configuration loaded ({0}) ....
+        ///   Looks up a localized string similar to Client Version.
         /// </summary>
-        public static string Loader_AssemblyConfigurationLoaded {
+        public static string List_ClientVersion {
             get {
-                return ResourceManager.GetString("Loader_AssemblyConfigurationLoaded", resourceCulture);
+                return ResourceManager.GetString("List_ClientVersion", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} was loaded ....
+        ///   Looks up a localized string similar to Min Client Version.
         /// </summary>
-        public static string Loader_AssemblyLoaded {
+        public static string List_MinClientVersion {
             get {
-                return ResourceManager.GetString("Loader_AssemblyLoaded", resourceCulture);
+                return ResourceManager.GetString("List_MinClientVersion", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Component initializer found {0} types. Starting to initialize..
+        ///   Looks up a localized string similar to Min Server Version.
         /// </summary>
-        public static string Loader_ComponentInitializingStarting {
+        public static string List_MinServerVersion {
             get {
-                return ResourceManager.GetString("Loader_ComponentInitializingStarting", resourceCulture);
+                return ResourceManager.GetString("List_MinServerVersion", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Application is based on the MARVIN!.
+        ///   Looks up a localized string similar to Server Version.
         /// </summary>
-        public static string Loader_Credits {
+        public static string List_ServerVersion {
             get {
-                return ResourceManager.GetString("Loader_Credits", resourceCulture);
+                return ResourceManager.GetString("List_ServerVersion", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Initializing {0} ....
+        ///   Looks up a localized string similar to Service.
         /// </summary>
-        public static string Loader_InitializingComponent {
+        public static string List_Service {
             get {
-                return ResourceManager.GetString("Loader_InitializingComponent", resourceCulture);
+                return ResourceManager.GetString("List_Service", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Initializing {0}.
+        ///   Looks up a localized string similar to State.
         /// </summary>
-        public static string Loader_InitializingModule {
+        public static string List_State {
             get {
-                return ResourceManager.GetString("Loader_InitializingModule", resourceCulture);
+                return ResourceManager.GetString("List_State", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Initializing {0} done ....
+        ///   Looks up a localized string similar to Ties.
         /// </summary>
-        public static string Loader_InitializingModuleDone {
+        public static string List_Tries {
             get {
-                return ResourceManager.GetString("Loader_InitializingModuleDone", resourceCulture);
+                return ResourceManager.GetString("List_Tries", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uri.
+        /// </summary>
+        public static string List_Uri {
+            get {
+                return ResourceManager.GetString("List_Uri", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WCF Connections.
+        /// </summary>
+        public static string Title {
+            get {
+                return ResourceManager.GetString("Title", resourceCulture);
             }
         }
     }

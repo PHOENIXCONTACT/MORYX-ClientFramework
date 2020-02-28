@@ -27,7 +27,7 @@ namespace Marvin.ClientFramework.Configurator
 
         #region Fields and Properties
 
-        public override string DisplayName => strings.AppConfig_ShortTitle;
+        public override string DisplayName => Strings.AppConfig_ShortTitle;
 
         public override string ImageSource => "/Controls4Industry;component/Images/wrench.png";
 

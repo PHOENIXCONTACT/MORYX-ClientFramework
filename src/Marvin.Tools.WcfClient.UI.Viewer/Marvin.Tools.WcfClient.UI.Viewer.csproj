@@ -115,10 +115,10 @@
     </Compile>
     <Compile Include="ModuleController\ModuleConfig.cs" />
     <Compile Include="ModuleController\ModuleController.cs" />
-    <Compile Include="Properties\strings.Designer.cs">
+    <Compile Include="Properties\Strings1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>strings.resx</DependentUpon>
+      <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
     <Compile Include="Workspace\WcfClientInfoViewModel.cs" />
     <Compile Include="Workspace\WcfClientViewerWorkspaceViewModel.cs" />
@@ -151,13 +151,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Properties\strings.pl.resx" />
-    <EmbeddedResource Include="Properties\strings.resx">
+    <EmbeddedResource Include="Properties\Strings.pl.resx" />
+    <EmbeddedResource Include="Properties\Strings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>strings.Designer.cs</LastGenOutput>
+      <LastGenOutput>Strings1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\strings.de.resx" />
+    <EmbeddedResource Include="Properties\Strings.de.resx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

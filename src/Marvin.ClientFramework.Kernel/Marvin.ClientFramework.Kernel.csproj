@@ -128,10 +128,10 @@
     <Compile Include="Loader\LoaderAdapterBase.cs" />
     <Compile Include="Loader\Adapter\ModuleManagerLoaderAdapter.cs" />
     <Compile Include="Loader\Adapter\RunModeLoaderAdapter.cs" />
-    <Compile Include="Properties\strings.Designer.cs">
-      <AutoGen>True</AutoGen>
+    <Compile Include="Properties\Strings.Designer.cs">
+      <DependentUpon>Strings.resx</DependentUpon>
       <DesignTime>True</DesignTime>
-      <DependentUpon>strings.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="RunMode\RunModeController.cs" />
     <Compile Include="RunMode\ConfigRunMode.cs">
@@ -201,12 +201,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Properties\strings.de.resx" />
-    <EmbeddedResource Include="Properties\strings.pl.resx" />
-    <EmbeddedResource Include="Properties\strings.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>strings.Designer.cs</LastGenOutput>
+    <EmbeddedResource Include="Properties\Strings.de.resx" />
+    <EmbeddedResource Include="Properties\Strings.pl.resx" />
+    <EmbeddedResource Include="Properties\Strings.resx">
       <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

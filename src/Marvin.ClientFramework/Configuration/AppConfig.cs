@@ -21,7 +21,7 @@ namespace Marvin.ClientFramework
             var random = new Random();
             var result = new string(Enumerable.Repeat(chars, 4).Select(s => s[random.Next(s.Length)]).ToArray());
 
-            Name = Properties.strings.AppConfig_DefaultName;
+            Name = Properties.Strings.AppConfig_DefaultName;
             Application = "HeartOfLead_" + result;
             ViewPreset = "Default";
 
