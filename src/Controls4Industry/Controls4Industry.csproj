@@ -98,9 +98,6 @@
     <Compile Include="EddieListBox\EddieListBox.cs" />
     <Compile Include="EddieListView\GridViewSort.cs" />
     <Compile Include="EddieListView\SortGlyphAdorner.cs" />
-    <Compile Include="Localization\CultureInfoHandler.cs" />
-    <Compile Include="Localization\LocalizeBinding.cs" />
-    <Compile Include="Localization\LocalizeExtension.cs" />
     <Compile Include="MultiProgressBar\MultiProgressBar.cs" />
     <Compile Include="MultiProgressBar\ProgressItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -88,7 +88,7 @@ namespace Marvin.ClientFramework.Kernel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Application is based on the MARVIN! - Corporate Technology &amp; Value Chain.
+        ///   Looks up a localized string similar to Application is based on the MARVIN!.
         /// </summary>
         public static string Loader_Credits {
             get {

@@ -74,8 +74,6 @@
     <Compile Include="Models\EntryClass.cs" />
     <Compile Include="Models\TestComboBoxEntry.cs" />
     <Compile Include="Models\TestListViewEntry.cs" />
-    <Compile Include="Properties\strings.de.Designer.cs" />
-    <Compile Include="Properties\strings.Designer.cs" />
     <Compile Include="Shell\ShellViewModel.cs" />
     <Compile Include="SpeedTestWindow.xaml.cs">
       <DependentUpon>SpeedTestWindow.xaml</DependentUpon>
@@ -238,10 +236,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Properties\strings.de.resx" />
-    <EmbeddedResource Include="Properties\strings.resx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

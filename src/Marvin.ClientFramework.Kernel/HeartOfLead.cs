@@ -11,6 +11,7 @@ using System.Windows.Markup;
 using System.Windows.Threading;
 using Caliburn.Micro;
 using CommandLine;
+using Marvin.ClientFramework.Localization;
 using Marvin.Container;
 using Marvin.Logging;
 using Marvin.Threading;
@@ -33,7 +34,7 @@ namespace Marvin.ClientFramework.Kernel
     /// <summary>
     /// Main class to create ClientFramwork UI's
     /// </summary>
-    public class HeartOfLead<TCommandLineArguments> : ILoggingHost 
+    public class HeartOfLead<TCommandLineArguments> : ILoggingHost
         where TCommandLineArguments : DefaultCommandLineArguments
     {
         #region Fields and Properties
@@ -92,19 +93,7 @@ namespace Marvin.ClientFramework.Kernel
         /// </summary>
         public void Initialize()
         {
-            var culture = new CultureInfo("de-DE");
-            CultureInfo.DefaultThreadCurrentCulture = culture;
-            CultureInfo.DefaultThreadCurrentUICulture = culture;
-
-            Thread.CurrentThread.CurrentCulture = culture;
-            Thread.CurrentThread.CurrentUICulture = culture;
-
-            // Ensure the current culture passed into bindings is the OS culture.
-            // By default, WPF uses en-US as the culture, regardless of the system settings.
-            FrameworkElement.LanguageProperty.OverrideMetadata(typeof(FrameworkElement),
-                new FrameworkPropertyMetadata(XmlLanguage.GetLanguage(culture.IetfLanguageTag)));
-            
-            // Check Initialization
+           // Check Initialization
             if (IsInitialied)
                 throw new InvalidOperationException("HeartOfLead is already initialized!");
 
@@ -126,6 +115,9 @@ namespace Marvin.ClientFramework.Kernel
             // Register app config
             LoadConfiguration();
 
+            // ConfigureLocalization
+            ConfigureLocalization();
+
             // Limit instances
             LimitInstances();
 
@@ -140,6 +132,42 @@ namespace Marvin.ClientFramework.Kernel
 
             // Lock initialization
             IsInitialied = true;
+        }
+
+        /// <summary>
+        /// Configures the localization for the client
+        /// </summary>
+        private void ConfigureLocalization()
+        {
+            var appDataConfigManager = _container.Resolve<IAppDataConfigManager>();
+            var languageConfig = appDataConfigManager.GetConfiguration<UserLanguageConfig>();
+
+            CultureInfo culture;
+
+            // If not set, select os language
+            if (string.IsNullOrEmpty(languageConfig.Culture))
+            {
+                var baseCulture = Thread.CurrentThread.CurrentUICulture;
+                while (!baseCulture.IsNeutralCulture)
+                    baseCulture = baseCulture.Parent;
+
+                languageConfig.Culture = baseCulture.IetfLanguageTag;
+                appDataConfigManager.SaveConfiguration(languageConfig);
+                culture = baseCulture;
+            }
+            else
+                culture = new CultureInfo(languageConfig.Culture);
+
+            CultureInfo.DefaultThreadCurrentCulture = culture;
+            CultureInfo.DefaultThreadCurrentUICulture = culture;
+
+            Thread.CurrentThread.CurrentCulture = culture;
+            Thread.CurrentThread.CurrentUICulture = culture;
+
+            // Ensure the current culture passed into bindings is the OS culture.
+            // By default, WPF uses en-US as the culture, regardless of the system settings.
+            FrameworkElement.LanguageProperty.OverrideMetadata(typeof(FrameworkElement),
+                new FrameworkPropertyMetadata(XmlLanguage.GetLanguage(culture.IetfLanguageTag)));
         }
 
         /// <summary>

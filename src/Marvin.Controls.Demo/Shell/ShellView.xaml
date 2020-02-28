@@ -4,7 +4,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:Marvin.Controls.Demo.Shell"
-        xmlns:properties="clr-namespace:Marvin.Controls.Demo.Properties"
         xmlns:micro="clr-namespace:Caliburn.Micro;assembly=Caliburn.Micro"
         xmlns:cal="http://www.caliburnproject.org"
         mc:Ignorable="d"
@@ -14,26 +13,13 @@
         HorizontalAlignment="Stretch"
         VerticalAlignment="Stretch">
     <Grid Background="{StaticResource WindowBackgroundGradientBrush}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="30" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-
         <Border BorderThickness="1" Margin="15" BorderBrush="LightGray">
             <Border.Effect>
                 <DropShadowEffect ShadowDepth="3" Direction="315" />
             </Border.Effect>
         </Border>
 
-        <StackPanel Grid.Row="0" Orientation="Horizontal"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center">
-            <TextBlock Text="{Localize Select_Active_Culture, ResourceType={x:Type properties:strings}}" Margin="0,0,5,0" VerticalAlignment="Center" />
-            <EddieComboBox ItemsSource="{Binding AvailableCultures}"
-                           SelectedItem="{Binding SelectedCulture, Mode=TwoWay}">
-            </EddieComboBox>
-        </StackPanel>
-        <Grid Grid.Row="1">
+        <Grid>
             <Border BorderThickness="1" Margin="15" BorderBrush="LightGray">
                 <Border.Effect>
                     <DropShadowEffect ShadowDepth="3" Direction="315" />

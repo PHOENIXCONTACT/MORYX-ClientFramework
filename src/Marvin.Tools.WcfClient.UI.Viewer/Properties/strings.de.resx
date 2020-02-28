@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -131,5 +131,17 @@
   </data>
   <data name="List_Uri" xml:space="preserve">
     <value>Uri</value>
+  </data>
+  <data name="List_ServerVersion" xml:space="preserve">
+    <value>Server Version</value>
+  </data>
+  <data name="List_ClientVersion" xml:space="preserve">
+    <value>Client Version</value>
+  </data>
+  <data name="List_MinServerVersion" xml:space="preserve">
+    <value>Min Server Version</value>
+  </data>
+  <data name="List_MinClientVersion" xml:space="preserve">
+    <value>Min Client Version</value>
   </data>
 </root>

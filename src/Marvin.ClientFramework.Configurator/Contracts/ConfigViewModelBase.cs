@@ -43,10 +43,10 @@ namespace Marvin.ClientFramework.Configurator
 
         #endregion
 
-        /// 
+        ///
         public abstract override string DisplayName { get; }
 
-        /// 
+        ///
         public abstract string ImageSource { get; }
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace Marvin.ClientFramework.Configurator
             Config = KernelConfigManager.GetConfiguration<T>();
         }
 
-        /// 
+        ///
         public virtual void SaveConfig()
         {
             if (!IsInitialized)
@@ -68,7 +68,7 @@ namespace Marvin.ClientFramework.Configurator
             KernelConfigManager.SaveConfiguration(Config);
         }
 
-        /// 
+        ///
         public T Config
         {
             get { return _config; }

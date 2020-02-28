@@ -74,6 +74,10 @@
     <Compile Include="Components\ProxyConfigView.xaml.cs">
       <DependentUpon>ProxyConfigView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Components\LocalizationViewModel.cs" />
+    <Compile Include="Components\LocalizationView.xaml.cs">
+      <DependentUpon>LocalizationView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Shell\ConfigShellView.xaml.cs">
       <DependentUpon>ConfigShellView.xaml</DependentUpon>
     </Compile>
@@ -128,6 +132,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Components\LocalizationView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Components\RuntimeConfigView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -156,6 +164,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\strings.de.resx" />
+    <EmbeddedResource Include="Properties\strings.pl.resx" />
     <EmbeddedResource Include="Properties\strings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>strings.Designer.cs</LastGenOutput>

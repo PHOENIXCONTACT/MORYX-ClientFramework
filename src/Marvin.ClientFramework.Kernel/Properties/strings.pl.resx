@@ -118,6 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Loader_Credits" xml:space="preserve">
-    <value>Aplikacja oparta jest na MARVIN!  - Corporate Technology &amp; Value Chain</value>
+    <value>Aplikacja oparta jest na MARVIN!</value>
+  </data>
+  <data name="Loader_InitializingModule" xml:space="preserve">
+    <value>Inicjowanie |0.</value>
+  </data>
+  <data name="Loader_InitializingModuleDone" xml:space="preserve">
+    <value>Inicjowanie {0} zrobione ...!</value>
   </data>
 </root>

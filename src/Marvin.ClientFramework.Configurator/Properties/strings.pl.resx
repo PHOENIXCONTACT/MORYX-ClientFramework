@@ -117,142 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Conductor_Title" xml:space="preserve">
-    <value>Framework Konfiguration</value>
-  </data>
-  <data name="Conductor_Save" xml:space="preserve">
-    <value>Speichern</value>
-  </data>
-  <data name="Conductor_SaveAndRestart" xml:space="preserve">
-    <value>Speichern und Neustart</value>
-  </data>
-  <data name="Shell_Title" xml:space="preserve">
-    <value>Client Konfigurator</value>
-  </data>
-  <data name="AppConfig_App_Title" xml:space="preserve">
-    <value>Anwendung</value>
-  </data>
   <data name="AppConfig_Name_Label" xml:space="preserve">
-    <value>Name:</value>
-  </data>
-  <data name="AppConfig_Name_Description" xml:space="preserve">
-    <value>(Name der Anwendung, z.B. Leitsystem)</value>
+    <value>Nazwa:</value>
   </data>
   <data name="AppConfig_Application_Label" xml:space="preserve">
-    <value>Anwendung:</value>
-  </data>
-  <data name="AppConfig_Application_Description" xml:space="preserve">
-    <value>(Name der im UserManagement verwendet wird)</value>
-  </data>
-  <data name="AppConfig_ViewType_Label" xml:space="preserve">
-    <value>View Typ:</value>
-  </data>
-  <data name="AppConfig_ViewType_Description" xml:space="preserve">
-    <value>(Typ der Views der Anwendung)</value>
-  </data>
-  <data name="AppConfig_Startup_Title" xml:space="preserve">
-    <value>Startverhalten</value>
-  </data>
-  <data name="AppConfig_RunMode_Label" xml:space="preserve">
-    <value>Modus:</value>
-  </data>
-  <data name="AppConfig_RunMode_Description" xml:space="preserve">
-    <value>(Setzt den Modus wie der Rahmen geladen werden soll)</value>
-  </data>
-  <data name="AppConfig_Ctrl_Label" xml:space="preserve">
-    <value>STRG:</value>
-  </data>
-  <data name="AppConfig_Ctrl_Description" xml:space="preserve">
-    <value>(Aktiviert das der Konfigurator mit STRG beim starten geladen wird)</value>
-  </data>
-  <data name="AppConfig_LimitInstances_Label" xml:space="preserve">
-    <value>Limitiere Instanzen:</value>
-  </data>
-  <data name="AppConfig_LimitInstances_Description" xml:space="preserve">
-    <value>(Wenn aktiviert, wird die Anzahl der Instanzen auf 1 limitiert)</value>
-  </data>
-  <data name="AppConfig_System_Title" xml:space="preserve">
-    <value>Systeminformationen</value>
-  </data>
-  <data name="AppConfig_UserName_Label" xml:space="preserve">
-    <value>Benutzer:</value>
-  </data>
-  <data name="AppConfig_Fullname_Label" xml:space="preserve">
-    <value>Name:</value>
-  </data>
-  <data name="AppConfig_ConfigFolder_Label" xml:space="preserve">
-    <value>Config Ordner:</value>
-  </data>
-  <data name="AppConfig_AppData_Label" xml:space="preserve">
-    <value>AppData:</value>
-  </data>
-  <data name="AppConfig_RunMode_Hint" xml:space="preserve">
-    <value>Wenn ein RunMode ausgewählt wurde, kann der Konfigurator erneut mit dem Command-Line Argument "--configurator" oder des drückens der STRG-Taste gestartet werden.</value>
-  </data>
-  <data name="AppConfig_ShortTitle" xml:space="preserve">
-    <value>Anwendung</value>
+    <value>Aplikacja:</value>
   </data>
   <data name="ProxyConfig_ShortTitle" xml:space="preserve">
-    <value>Proxy</value>
+    <value>Serwer proxy</value>
   </data>
   <data name="ProxyConfig_Proxy_Title" xml:space="preserve">
-    <value>Proxyeinstellungen</value>
+    <value>Konfiguracja serwera proxy</value>
   </data>
-  <data name="ProxyConfig_Enabled_Label" xml:space="preserve">
-    <value>Aktiviert:</value>
-  </data>
-  <data name="ProxyConfig_Address_Label" xml:space="preserve">
-    <value>Adresse:</value>
+  <data name="AppConfig_ShortTitle" xml:space="preserve">
+    <value>Aplikacja</value>
   </data>
   <data name="ProxyConfig_Port_Label" xml:space="preserve">
     <value>Port:</value>
   </data>
-  <data name="ProxyConfig_Port_Description" xml:space="preserve">
-    <value>(Port des Proxyservers)</value>
-  </data>
-  <data name="ProxyConfig_Address_Description" xml:space="preserve">
-    <value>(Adresse des Proxyservers)</value>
-  </data>
-  <data name="ProxyConfig_UseDefault_Label" xml:space="preserve">
-    <value>Standart</value>
-  </data>
-  <data name="ProxyConfig_UseDefault_Description" xml:space="preserve">
-    <value>(Wenn aktiviert, wird der Systemproxy verwendet)</value>
-  </data>
-  <data name="ProxyConfig_Enabled_Description" xml:space="preserve">
-    <value>(Aktiviert die Proxyeinstellungen für den Client)</value>
-  </data>
-  <data name="RuntimeConfig_ShortTitle" xml:space="preserve">
-    <value>Runtime</value>
-  </data>
-  <data name="RuntimeConfig_Runtime_Title" xml:space="preserve">
-    <value>Runtime Konfiguration</value>
-  </data>
-  <data name="Localization_Title" xml:space="preserve">
-    <value>Lokalisierung</value>
-  </data>
-  <data name="Localization_Culture" xml:space="preserve">
-    <value>Sprache</value>
-  </data>
-  <data name="Localization_Culture_Description" xml:space="preserve">
-    <value>(Ausgewählte Sprache für diese Applikation)</value>
-  </data>
-  <data name="RuntimeConfig_Hostname_Label" xml:space="preserve">
-    <value>Hostname:</value>
-  </data>
-  <data name="RuntimeConfig_Hostname_Description" xml:space="preserve">
-    <value>(Wo kann die Runtime gefunden werden (e.g. "localhost")?)</value>
+  <data name="ProxyConfig_Address_Label" xml:space="preserve">
+    <value>Adres:</value>
   </data>
   <data name="RuntimeConfig_Port_Label" xml:space="preserve">
-    <value>Port: </value>
-  </data>
-  <data name="RuntimeConfig_Port_Description" xml:space="preserve">
-    <value>(Auf welchem Port?)</value>
-  </data>
-  <data name="RuntimeConfig_ClientId_Label" xml:space="preserve">
-    <value>Client Id:</value>
-  </data>
-  <data name="RuntimeConfig_ClientId_Description" xml:space="preserve">
-    <value>(Eindeutige id um den Client auf dem Server zu regitrieren)</value>
+    <value>Port:</value>
   </data>
 </root>

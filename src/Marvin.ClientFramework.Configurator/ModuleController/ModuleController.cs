@@ -1,12 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Marvin.ClientFramework.Kernel;
-using Marvin.ClientFramework.Localization;
 
 namespace Marvin.ClientFramework.Configurator
 {
     /// <summary>
-    /// Module controller for the framework configuration. 
+    /// Module controller for the framework configuration.
     /// The main workspace hosts the several configuration view models
     /// </summary>
     [ClientModule("Configurator"), ComponentForRunMode(KernelConstants.CONFIG_RUNMODE)]
@@ -30,11 +29,6 @@ namespace Marvin.ClientFramework.Configurator
         public IKernelConfigManager KernelConfigManager { get; set; }
 
         /// <summary>
-        /// Gets or sets the localization provider.
-        /// </summary>
-        public ILocalizationProvider LocalizationProvider { get; set; }
-
-        /// <summary>
         /// Config manager for apply configurations in the app data dir of the user
         /// </summary>
         public IAppDataConfigManager AppDataConfigManager { get; set; }
@@ -49,8 +43,7 @@ namespace Marvin.ClientFramework.Configurator
             Container.LoadComponents<IConfigViewModel>();
 
             Container.SetInstance(KernelConfigManager)
-                .SetInstance(AppDataConfigManager)
-                .SetInstance(LocalizationProvider);
+                .SetInstance(AppDataConfigManager);
 
             foreach (var runMode in RunModes.ToList())
                 Container.SetInstance(runMode);
@@ -64,7 +57,6 @@ namespace Marvin.ClientFramework.Configurator
         /// </summary>
         protected override void OnActivate()
         {
-            
         }
 
         /// <summary>
@@ -72,7 +64,6 @@ namespace Marvin.ClientFramework.Configurator
         /// </summary>
         protected override void OnDeactivate(bool close)
         {
-            
         }
 
         /// <summary>
@@ -89,7 +80,6 @@ namespace Marvin.ClientFramework.Configurator
         /// </summary>
         protected override void OnDestroyWorkspace(IModuleWorkspace workspace)
         {
-
         }
     }
 }

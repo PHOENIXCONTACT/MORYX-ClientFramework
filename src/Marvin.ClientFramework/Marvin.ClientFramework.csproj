@@ -82,6 +82,7 @@
     <Compile Include="Commands\IAsyncCommand.cs" />
     <Compile Include="Dialog\DialogScreen.cs" />
     <Compile Include="Dialog\IDialogScreen.cs" />
+    <Compile Include="Localization\UserLanguageConfig.cs" />
     <Compile Include="Module\ClientModuleBase.cs" />
     <Compile Include="Module\ClientModuleConfigBase.cs" />
     <Compile Include="Module\ClientNotificationCollection.cs" />
@@ -153,8 +154,6 @@
     <Compile Include="History\WorkspacePair.cs" />
     <Compile Include="Configuration\IConfigProvider.cs" />
     <Compile Include="History\IHistory.cs" />
-    <Compile Include="Localization\ILocalizationProvider.cs" />
-    <Compile Include="Localization\ILocalizedContent.cs" />
     <Compile Include="Shell\IShellRegionConfig.cs" />
     <Compile Include="Shell\RegionConfig.cs" />
     <Compile Include="UserInfo\IUserInfoProvider.cs" />
@@ -198,6 +197,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

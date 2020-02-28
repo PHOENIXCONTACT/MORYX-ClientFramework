@@ -212,7 +212,7 @@
     <value>Hostname:</value>
   </data>
   <data name="RuntimeConfig_Hostname_Description" xml:space="preserve">
-    <value>(Where do we can find the runtime (e.g. "localhost")? )</value>
+    <value>(Where do we can find the runtime (e.g. "localhost")?)</value>
   </data>
   <data name="RuntimeConfig_Port_Label" xml:space="preserve">
     <value>Port:</value>
@@ -225,5 +225,14 @@
   </data>
   <data name="RuntimeConfig_ClientId_Description" xml:space="preserve">
     <value>(Unique id to register at the server wcf services)</value>
+  </data>
+  <data name="Localization_Title" xml:space="preserve">
+    <value>Localization</value>
+  </data>
+  <data name="Localization_Culture" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="Localization_Culture_Description" xml:space="preserve">
+    <value>(Selected culture for this application)</value>
   </data>
 </root>

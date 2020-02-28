@@ -19,7 +19,7 @@ namespace Marvin.ClientFramework.Configurator.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class strings {
@@ -277,6 +277,33 @@ namespace Marvin.ClientFramework.Configurator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Language.
+        /// </summary>
+        public static string Localization_Culture {
+            get {
+                return ResourceManager.GetString("Localization_Culture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (Selected culture for this application).
+        /// </summary>
+        public static string Localization_Culture_Description {
+            get {
+                return ResourceManager.GetString("Localization_Culture_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Localization.
+        /// </summary>
+        public static string Localization_Title {
+            get {
+                return ResourceManager.GetString("Localization_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to (Address to the proxy server).
         /// </summary>
         public static string ProxyConfig_Address_Description {
@@ -385,7 +412,7 @@ namespace Marvin.ClientFramework.Configurator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to (Where do we can find the runtime (e.g. &quot;localhost&quot;)? ).
+        ///   Looks up a localized string similar to (Where do we can find the runtime (e.g. &quot;localhost&quot;)?).
         /// </summary>
         public static string RuntimeConfig_Hostname_Description {
             get {
