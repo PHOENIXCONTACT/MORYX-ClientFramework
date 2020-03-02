@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.Windows.Data;
+using Marvin.Controls.Properties;
 using Marvin.Serialization;
 
 namespace Marvin.Controls.Converter
@@ -27,10 +28,10 @@ namespace Marvin.Controls.Converter
                 return "";
 
             if (entry.ValueType == EntryValueType.Collection)
-                return "Add entry";
+                return Strings.EntryValueToButtonTextConverter_AddEntry;
 
             if (entry.ValueType == EntryValueType.Class)
-                return "Replace with";
+                return Strings.EntryValueToButtonTextConverter_ReplaceWith;
 
             return "";
         }

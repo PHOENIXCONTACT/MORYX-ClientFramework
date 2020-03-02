@@ -4,7 +4,7 @@ using Marvin.Configuration;
 namespace Marvin.ClientFramework.Kernel
 {
     /// <summary>
-    /// ConfigManager specialized to save configuration in the 
+    /// ConfigManager specialized to save configuration in the
     /// AppData folder of a user
     /// </summary>
     public class AppDataConfigManager : KernelConfigManager, IAppDataConfigManager

@@ -97,37 +97,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Open" xml:space="preserve">
+  <data name="EntryEditor_Open" xml:space="preserve">
     <value>Öffnen</value>
   </data>
-  <data name="Remove" xml:space="preserve">
+  <data name="EntryEditor_Remove" xml:space="preserve">
     <value>Entfernen</value>
   </data>
-  <data name="Show" xml:space="preserve">
+  <data name="EntryEditor_Show" xml:space="preserve">
     <value>Anzeigen</value>
   </data>
-  <data name="SelectFile" xml:space="preserve">
+  <data name="EntryEditor_SelectFile" xml:space="preserve">
     <value>Datei auswählen...</value>
   </data>
-  <data name="SelectDirectory" xml:space="preserve">
+  <data name="EntryEditor_SelectDirectory" xml:space="preserve">
     <value>Verzeichnis auswählen...</value>
   </data>
-  <data name="Select" xml:space="preserve">
+  <data name="EntryEditor_Select" xml:space="preserve">
     <value>Auswählen</value>
   </data>
-  <data name="Save" xml:space="preserve">
+  <data name="EntryEditor_Save" xml:space="preserve">
     <value>Speichern</value>
   </data>
-  <data name="Back" xml:space="preserve">
+  <data name="EntryEditor_Back" xml:space="preserve">
     <value>Zurück</value>
   </data>
-  <data name="Forward" xml:space="preserve">
+  <data name="EntryEditor_Forward" xml:space="preserve">
     <value>Vorwärts</value>
   </data>
-  <data name="AddEntry" xml:space="preserve">
+  <data name="EntryValueToButtonTextConverter_AddEntry" xml:space="preserve">
     <value>Eintrag hinzufügen</value>
   </data>
-  <data name="ReplaceWith" xml:space="preserve">
+  <data name="EntryValueToButtonTextConverter_ReplaceWith" xml:space="preserve">
     <value>Ersetzen mit</value>
+  </data>
+  <data name="TextToDelimiteredTextConverter_Error_Message" xml:space="preserve">
+    <value>Der Wert ist leer oder kein Text</value>
   </data>
 </root>

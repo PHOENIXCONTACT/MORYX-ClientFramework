@@ -117,34 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="WcfClientViewerWorkspaceView_ServerVersion" xml:space="preserve">
-    <value>Wersja serwera</value>
-  </data>
-  <data name="WcfClientViewerWorkspaceView_ClientVersion" xml:space="preserve">
-    <value>Wersja klienta</value>
-  </data>
-  <data name="WcfClientViewerWorkspaceView_MinServerVersion" xml:space="preserve">
-    <value>Min wersja serwera</value>
-  </data>
-  <data name="WcfClientViewerWorkspaceView_MinClientVersion" xml:space="preserve">
-    <value>Min wersja klienta</value>
-  </data>
-  <data name="WcfClientViewerWorkspaceView_Service" xml:space="preserve">
-    <value>Usługa</value>
-  </data>
-  <data name="WcfClientViewerWorkspaceView_State" xml:space="preserve">
-    <value>Stan</value>
-  </data>
-  <data name="WcfClientViewerWorkspaceView_Uri" xml:space="preserve">
-    <value>Uri</value>
-  </data>
-  <data name="WcfClientViewerWorkspaceView_Tries" xml:space="preserve">
-    <value>Próby</value>
-  </data>
-  <data name="WcfClientViewerWorkspaceView_Title" xml:space="preserve">
-    <value>Połączenia WCF</value>
-  </data>
-  <data name="ModuleController_Title" xml:space="preserve">
-    <value>Połączenia WCF</value>
+  <data name="AppConfig_DefaultName" xml:space="preserve">
+    <value>Brakująca nazwa</value>
   </data>
 </root>

@@ -97,37 +97,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="List_Uri" xml:space="preserve">
+  <data name="WcfClientViewerWorkspaceView_Uri" xml:space="preserve">
     <value>Uri</value>
     
   </data>
-  <data name="List_ServerVersion" xml:space="preserve">
+  <data name="WcfClientViewerWorkspaceView_ServerVersion" xml:space="preserve">
     <value>Server Version</value>
     
   </data>
-  <data name="List_ClientVersion" xml:space="preserve">
+  <data name="WcfClientViewerWorkspaceView_ClientVersion" xml:space="preserve">
     <value>Client Version</value>
     
   </data>
-  <data name="List_MinServerVersion" xml:space="preserve">
+  <data name="WcfClientViewerWorkspaceView_MinServerVersion" xml:space="preserve">
     <value>Min Server Version</value>
     
   </data>
-  <data name="List_MinClientVersion" xml:space="preserve">
+  <data name="WcfClientViewerWorkspaceView_MinClientVersion" xml:space="preserve">
     <value>Min Client Version</value>
     
   </data>
-  <data name="List_Tries" xml:space="preserve">
+  <data name="WcfClientViewerWorkspaceView_Tries" xml:space="preserve">
     <value>Ties</value>
     
   </data>
-  <data name="Title" xml:space="preserve">
+  <data name="WcfClientViewerWorkspaceView_Title" xml:space="preserve">
     <value>WCF Connections</value>
   </data>
-  <data name="List_Service" xml:space="preserve">
+  <data name="WcfClientViewerWorkspaceView_Service" xml:space="preserve">
     <value>Service</value>
   </data>
-  <data name="List_State" xml:space="preserve">
+  <data name="WcfClientViewerWorkspaceView_State" xml:space="preserve">
     <value>State</value>
+  </data>
+  <data name="ModuleController_Title" xml:space="preserve">
+    <value>WCF Connections</value>
   </data>
 </root>

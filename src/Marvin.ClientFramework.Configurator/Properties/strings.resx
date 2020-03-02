@@ -97,142 +97,145 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.3500.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Conductor_Title" xml:space="preserve">
+  <data name="ConfigConductorView_Title" xml:space="preserve">
     <value>Framework Configuration</value>
   </data>
-  <data name="Conductor_Save" xml:space="preserve">
+  <data name="ConfigConductorView_Save" xml:space="preserve">
     <value>Save</value>
   </data>
-  <data name="Conductor_SaveAndRestart" xml:space="preserve">
+  <data name="ConfigConductorView_SaveAndRestart" xml:space="preserve">
     <value>Save and restart</value>
   </data>
-  <data name="Shell_Title" xml:space="preserve">
+  <data name="ConfigShellView_Title" xml:space="preserve">
     <value>Client Configurator</value>
   </data>
-  <data name="AppConfig_App_Title" xml:space="preserve">
+  <data name="AppConfigView_App_Title" xml:space="preserve">
     <value>Application</value>
   </data>
-  <data name="AppConfig_Name_Label" xml:space="preserve">
+  <data name="AppConfigView_Name_Label" xml:space="preserve">
     <value>Name:</value>
   </data>
-  <data name="AppConfig_Name_Description" xml:space="preserve">
+  <data name="AppConfigView_Name_Description" xml:space="preserve">
     <value>(Personal name of this application, e.g. ControlSystem)</value>
   </data>
-  <data name="AppConfig_Application_Label" xml:space="preserve">
+  <data name="AppConfigView_Application_Label" xml:space="preserve">
     <value>Application:</value>
   </data>
-  <data name="AppConfig_Application_Description" xml:space="preserve">
+  <data name="AppConfigView_Application_Description" xml:space="preserve">
     <value>(Name in UserManagement for this application)</value>
   </data>
-  <data name="AppConfig_ViewType_Label" xml:space="preserve">
+  <data name="AppConfigView_ViewType_Label" xml:space="preserve">
     <value>View type:</value>
   </data>
-  <data name="AppConfig_ViewType_Description" xml:space="preserve">
+  <data name="AppConfigView_ViewType_Description" xml:space="preserve">
     <value>(View type for this application)</value>
   </data>
-  <data name="AppConfig_Startup_Title" xml:space="preserve">
+  <data name="AppConfigView_Startup_Title" xml:space="preserve">
     <value>Startup</value>
   </data>
-  <data name="AppConfig_RunMode_Label" xml:space="preserve">
+  <data name="AppConfigView_RunMode_Label" xml:space="preserve">
     <value>Mode:</value>
   </data>
-  <data name="AppConfig_RunMode_Description" xml:space="preserve">
+  <data name="AppConfigView_RunMode_Description" xml:space="preserve">
     <value>(Selects the mode how the frame should be loaded)</value>
   </data>
-  <data name="AppConfig_Ctrl_Label" xml:space="preserve">
+  <data name="AppConfigView_Ctrl_Label" xml:space="preserve">
     <value>Config CTRL:</value>
   </data>
-  <data name="AppConfig_Ctrl_Description" xml:space="preserve">
+  <data name="AppConfigView_Ctrl_Description" xml:space="preserve">
     <value>(Will enable that the configurator opens if you press CTRL at startup)</value>
   </data>
-  <data name="AppConfig_LimitInstances_Label" xml:space="preserve">
+  <data name="AppConfigView_LimitInstances_Label" xml:space="preserve">
     <value>Limit Instances:</value>
   </data>
-  <data name="AppConfig_LimitInstances_Description" xml:space="preserve">
+  <data name="AppConfigView_LimitInstances_Description" xml:space="preserve">
     <value>(If enabled, instances of this application will be limited to one)</value>
   </data>
-  <data name="AppConfig_System_Title" xml:space="preserve">
+  <data name="AppConfigView_System_Title" xml:space="preserve">
     <value>System Info</value>
   </data>
-  <data name="AppConfig_UserName_Label" xml:space="preserve">
+  <data name="AppConfigView_UserName_Label" xml:space="preserve">
     <value>UserName:</value>
   </data>
-  <data name="AppConfig_Fullname_Label" xml:space="preserve">
+  <data name="AppConfigView_Fullname_Label" xml:space="preserve">
     <value>Fullname:</value>
   </data>
-  <data name="AppConfig_ConfigFolder_Label" xml:space="preserve">
+  <data name="AppConfigView_ConfigFolder_Label" xml:space="preserve">
     <value>Config Folder:</value>
   </data>
-  <data name="AppConfig_AppData_Label" xml:space="preserve">
+  <data name="AppConfigView_AppData_Label" xml:space="preserve">
     <value>AppData:</value>
   </data>
-  <data name="AppConfig_RunMode_Hint" xml:space="preserve">
+  <data name="AppConfigView_RunMode_Hint" xml:space="preserve">
     <value>If you have selected an RunMode you can open the configurator again with the command line argument "--configurator" or press CTRL at startup.</value>
   </data>
-  <data name="AppConfig_ShortTitle" xml:space="preserve">
+  <data name="AppConfigViewModel_Title" xml:space="preserve">
     <value>Application</value>
   </data>
-  <data name="ProxyConfig_ShortTitle" xml:space="preserve">
+  <data name="ProxyConfigViewModel_Title" xml:space="preserve">
     <value>Proxy</value>
   </data>
-  <data name="ProxyConfig_Proxy_Title" xml:space="preserve">
+  <data name="ProxyConfigView_Proxy_Title" xml:space="preserve">
     <value>Proxy Configuration</value>
   </data>
-  <data name="ProxyConfig_Enabled_Label" xml:space="preserve">
+  <data name="ProxyConfigView_Enabled_Label" xml:space="preserve">
     <value>Enabled:</value>
   </data>
-  <data name="ProxyConfig_Enabled_Description" xml:space="preserve">
+  <data name="ProxyConfigView_Enabled_Description" xml:space="preserve">
     <value>(Enables the proxy for this client)</value>
   </data>
-  <data name="ProxyConfig_UseDefault_Label" xml:space="preserve">
+  <data name="ProxyConfigView_UseDefault_Label" xml:space="preserve">
     <value>Use Default:</value>
   </data>
-  <data name="ProxyConfig_UseDefault_Description" xml:space="preserve">
+  <data name="ProxyConfigView_UseDefault_Description" xml:space="preserve">
     <value>(Selects the global configured proxy settings)</value>
   </data>
-  <data name="ProxyConfig_Address_Label" xml:space="preserve">
+  <data name="ProxyConfigView_Address_Label" xml:space="preserve">
     <value>Address:</value>
   </data>
-  <data name="ProxyConfig_Address_Description" xml:space="preserve">
+  <data name="ProxyConfigView_Address_Description" xml:space="preserve">
     <value>(Address to the proxy server)</value>
   </data>
-  <data name="ProxyConfig_Port_Label" xml:space="preserve">
+  <data name="ProxyConfigView_Port_Label" xml:space="preserve">
     <value>Port:</value>
   </data>
-  <data name="ProxyConfig_Port_Description" xml:space="preserve">
+  <data name="ProxyConfigView_Port_Description" xml:space="preserve">
     <value>(Port of the proxy server)</value>
   </data>
-  <data name="RuntimeConfig_ShortTitle" xml:space="preserve">
+  <data name="RuntimeConfigViewModel_Title" xml:space="preserve">
     <value>Runtime</value>
   </data>
-  <data name="RuntimeConfig_Runtime_Title" xml:space="preserve">
+  <data name="RuntimeConfigView_Runtime_Title" xml:space="preserve">
     <value>Runtime Configuration</value>
   </data>
-  <data name="RuntimeConfig_Hostname_Label" xml:space="preserve">
+  <data name="RuntimeConfigView_Hostname_Label" xml:space="preserve">
     <value>Hostname:</value>
   </data>
-  <data name="RuntimeConfig_Hostname_Description" xml:space="preserve">
+  <data name="RuntimeConfigView_Hostname_Description" xml:space="preserve">
     <value>(Where do we can find the runtime (e.g. "localhost")?)</value>
   </data>
-  <data name="RuntimeConfig_Port_Label" xml:space="preserve">
+  <data name="RuntimeConfigView_Port_Label" xml:space="preserve">
     <value>Port:</value>
   </data>
-  <data name="RuntimeConfig_Port_Description" xml:space="preserve">
+  <data name="RuntimeConfigView_Port_Description" xml:space="preserve">
     <value>(On which port?)</value>
   </data>
-  <data name="RuntimeConfig_ClientId_Label" xml:space="preserve">
+  <data name="RuntimeConfigView_ClientId_Label" xml:space="preserve">
     <value>Client Id:</value>
   </data>
-  <data name="RuntimeConfig_ClientId_Description" xml:space="preserve">
+  <data name="RuntimeConfigView_ClientId_Description" xml:space="preserve">
     <value>(Unique id to register at the server wcf services)</value>
   </data>
-  <data name="Localization_Title" xml:space="preserve">
+  <data name="LocalizationView_Title" xml:space="preserve">
     <value>Localization</value>
   </data>
-  <data name="Localization_Culture" xml:space="preserve">
+  <data name="LocalizationView_Culture" xml:space="preserve">
     <value>Language</value>
   </data>
-  <data name="Localization_Culture_Description" xml:space="preserve">
+  <data name="LocalizationView_Culture_Description" xml:space="preserve">
     <value>(Selected culture for this application)</value>
+  </data>
+  <data name="LocalizationViewModel_Title" xml:space="preserve">
+    <value>Localization</value>
   </data>
 </root>

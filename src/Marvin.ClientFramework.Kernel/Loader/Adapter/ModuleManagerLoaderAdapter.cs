@@ -32,12 +32,12 @@ namespace Marvin.ClientFramework.Kernel
 
         private void OnStartInitializeModule(object sender, IClientModule clientModule)
         {
-            RaiseChangeMessage(string.Format(Strings.Loader_InitializingModule, clientModule.Name));
+            RaiseChangeMessage(string.Format(Strings.ModuleManagerLoaderAdapter_InitializingModule, clientModule.Name));
         }
 
         private void OnInitializingModuleDone(object sender, IClientModule clientModule)
         {
-            RaiseChangeValueWithMessage(string.Format(Strings.Loader_InitializingModuleDone, clientModule.Name));
+            RaiseChangeValueWithMessage(string.Format(Strings.ModuleManagerLoaderAdapter_InitializingModuleDone, clientModule.Name));
         }
     }
 }

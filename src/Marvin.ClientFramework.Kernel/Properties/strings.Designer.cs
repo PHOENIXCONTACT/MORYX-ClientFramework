@@ -61,65 +61,65 @@ namespace Marvin.ClientFramework.Kernel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Assembly configuration loaded ({0}) ....
-        /// </summary>
-        public static string Loader_AssemblyConfigurationLoaded {
-            get {
-                return ResourceManager.GetString("Loader_AssemblyConfigurationLoaded", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {0} was loaded ....
-        /// </summary>
-        public static string Loader_AssemblyLoaded {
-            get {
-                return ResourceManager.GetString("Loader_AssemblyLoaded", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Component initializer found {0} types. Starting to initialize..
         /// </summary>
-        public static string Loader_ComponentInitializingStarting {
+        public static string ComponentInitializerLoaderAdapter_ComponentInitializingStarting {
             get {
-                return ResourceManager.GetString("Loader_ComponentInitializingStarting", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Application is based on the MARVIN!.
-        /// </summary>
-        public static string Loader_Credits {
-            get {
-                return ResourceManager.GetString("Loader_Credits", resourceCulture);
+                return ResourceManager.GetString("ComponentInitializerLoaderAdapter_ComponentInitializingStarting", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Initializing {0} ....
         /// </summary>
-        public static string Loader_InitializingComponent {
+        public static string ComponentInitializerLoaderAdapter_InitializingComponent {
             get {
-                return ResourceManager.GetString("Loader_InitializingComponent", resourceCulture);
+                return ResourceManager.GetString("ComponentInitializerLoaderAdapter_InitializingComponent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Application is based on the MARVIN!.
+        /// </summary>
+        public static string LoaderView_Credits {
+            get {
+                return ResourceManager.GetString("LoaderView_Credits", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Initializing {0}.
         /// </summary>
-        public static string Loader_InitializingModule {
+        public static string ModuleManagerLoaderAdapter_InitializingModule {
             get {
-                return ResourceManager.GetString("Loader_InitializingModule", resourceCulture);
+                return ResourceManager.GetString("ModuleManagerLoaderAdapter_InitializingModule", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Initializing {0} done ....
         /// </summary>
-        public static string Loader_InitializingModuleDone {
+        public static string ModuleManagerLoaderAdapter_InitializingModuleDone {
             get {
-                return ResourceManager.GetString("Loader_InitializingModuleDone", resourceCulture);
+                return ResourceManager.GetString("ModuleManagerLoaderAdapter_InitializingModuleDone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Assembly configuration loaded ({0}) ....
+        /// </summary>
+        public static string RunModeLoaderAdapter_AssemblyConfigurationLoaded {
+            get {
+                return ResourceManager.GetString("RunModeLoaderAdapter_AssemblyConfigurationLoaded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} was loaded ....
+        /// </summary>
+        public static string RunModeLoaderAdapter_AssemblyLoaded {
+            get {
+                return ResourceManager.GetString("RunModeLoaderAdapter_AssemblyLoaded", resourceCulture);
             }
         }
     }

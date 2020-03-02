@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Linq;
 using System.Windows.Data;
+using Marvin.Controls.Properties;
 
 namespace Marvin.Controls.Converter
 {
@@ -15,7 +16,7 @@ namespace Marvin.Controls.Converter
         {
             var text = value as string;
             if (text == null)
-                throw new InvalidOperationException("Value is null or not a string");
+                throw new InvalidOperationException(Strings.TextToDelimiteredTextConverter_Error_Message);
 
             return text.Split('\n').FirstOrDefault();
         }

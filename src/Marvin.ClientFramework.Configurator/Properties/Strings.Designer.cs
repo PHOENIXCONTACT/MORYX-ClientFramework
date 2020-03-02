@@ -63,414 +63,423 @@ namespace Marvin.ClientFramework.Configurator.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Application.
         /// </summary>
-        public static string AppConfig_App_Title {
+        public static string AppConfigView_App_Title {
             get {
-                return ResourceManager.GetString("AppConfig_App_Title", resourceCulture);
+                return ResourceManager.GetString("AppConfigView_App_Title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to AppData:.
         /// </summary>
-        public static string AppConfig_AppData_Label {
+        public static string AppConfigView_AppData_Label {
             get {
-                return ResourceManager.GetString("AppConfig_AppData_Label", resourceCulture);
+                return ResourceManager.GetString("AppConfigView_AppData_Label", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to (Name in UserManagement for this application).
         /// </summary>
-        public static string AppConfig_Application_Description {
+        public static string AppConfigView_Application_Description {
             get {
-                return ResourceManager.GetString("AppConfig_Application_Description", resourceCulture);
+                return ResourceManager.GetString("AppConfigView_Application_Description", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Application:.
         /// </summary>
-        public static string AppConfig_Application_Label {
+        public static string AppConfigView_Application_Label {
             get {
-                return ResourceManager.GetString("AppConfig_Application_Label", resourceCulture);
+                return ResourceManager.GetString("AppConfigView_Application_Label", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Config Folder:.
         /// </summary>
-        public static string AppConfig_ConfigFolder_Label {
+        public static string AppConfigView_ConfigFolder_Label {
             get {
-                return ResourceManager.GetString("AppConfig_ConfigFolder_Label", resourceCulture);
+                return ResourceManager.GetString("AppConfigView_ConfigFolder_Label", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to (Will enable that the configurator opens if you press CTRL at startup).
         /// </summary>
-        public static string AppConfig_Ctrl_Description {
+        public static string AppConfigView_Ctrl_Description {
             get {
-                return ResourceManager.GetString("AppConfig_Ctrl_Description", resourceCulture);
+                return ResourceManager.GetString("AppConfigView_Ctrl_Description", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Config CTRL:.
         /// </summary>
-        public static string AppConfig_Ctrl_Label {
+        public static string AppConfigView_Ctrl_Label {
             get {
-                return ResourceManager.GetString("AppConfig_Ctrl_Label", resourceCulture);
+                return ResourceManager.GetString("AppConfigView_Ctrl_Label", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Fullname:.
         /// </summary>
-        public static string AppConfig_Fullname_Label {
+        public static string AppConfigView_Fullname_Label {
             get {
-                return ResourceManager.GetString("AppConfig_Fullname_Label", resourceCulture);
+                return ResourceManager.GetString("AppConfigView_Fullname_Label", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to (If enabled, instances of this application will be limited to one).
         /// </summary>
-        public static string AppConfig_LimitInstances_Description {
+        public static string AppConfigView_LimitInstances_Description {
             get {
-                return ResourceManager.GetString("AppConfig_LimitInstances_Description", resourceCulture);
+                return ResourceManager.GetString("AppConfigView_LimitInstances_Description", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Limit Instances:.
         /// </summary>
-        public static string AppConfig_LimitInstances_Label {
+        public static string AppConfigView_LimitInstances_Label {
             get {
-                return ResourceManager.GetString("AppConfig_LimitInstances_Label", resourceCulture);
+                return ResourceManager.GetString("AppConfigView_LimitInstances_Label", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to (Personal name of this application, e.g. ControlSystem).
         /// </summary>
-        public static string AppConfig_Name_Description {
+        public static string AppConfigView_Name_Description {
             get {
-                return ResourceManager.GetString("AppConfig_Name_Description", resourceCulture);
+                return ResourceManager.GetString("AppConfigView_Name_Description", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Name:.
         /// </summary>
-        public static string AppConfig_Name_Label {
+        public static string AppConfigView_Name_Label {
             get {
-                return ResourceManager.GetString("AppConfig_Name_Label", resourceCulture);
+                return ResourceManager.GetString("AppConfigView_Name_Label", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to (Selects the mode how the frame should be loaded).
         /// </summary>
-        public static string AppConfig_RunMode_Description {
+        public static string AppConfigView_RunMode_Description {
             get {
-                return ResourceManager.GetString("AppConfig_RunMode_Description", resourceCulture);
+                return ResourceManager.GetString("AppConfigView_RunMode_Description", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to If you have selected an RunMode you can open the configurator again with the command line argument &quot;--configurator&quot; or press CTRL at startup..
         /// </summary>
-        public static string AppConfig_RunMode_Hint {
+        public static string AppConfigView_RunMode_Hint {
             get {
-                return ResourceManager.GetString("AppConfig_RunMode_Hint", resourceCulture);
+                return ResourceManager.GetString("AppConfigView_RunMode_Hint", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Mode:.
         /// </summary>
-        public static string AppConfig_RunMode_Label {
+        public static string AppConfigView_RunMode_Label {
             get {
-                return ResourceManager.GetString("AppConfig_RunMode_Label", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Application.
-        /// </summary>
-        public static string AppConfig_ShortTitle {
-            get {
-                return ResourceManager.GetString("AppConfig_ShortTitle", resourceCulture);
+                return ResourceManager.GetString("AppConfigView_RunMode_Label", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Startup.
         /// </summary>
-        public static string AppConfig_Startup_Title {
+        public static string AppConfigView_Startup_Title {
             get {
-                return ResourceManager.GetString("AppConfig_Startup_Title", resourceCulture);
+                return ResourceManager.GetString("AppConfigView_Startup_Title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to System Info.
         /// </summary>
-        public static string AppConfig_System_Title {
+        public static string AppConfigView_System_Title {
             get {
-                return ResourceManager.GetString("AppConfig_System_Title", resourceCulture);
+                return ResourceManager.GetString("AppConfigView_System_Title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to UserName:.
         /// </summary>
-        public static string AppConfig_UserName_Label {
+        public static string AppConfigView_UserName_Label {
             get {
-                return ResourceManager.GetString("AppConfig_UserName_Label", resourceCulture);
+                return ResourceManager.GetString("AppConfigView_UserName_Label", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to (View type for this application).
         /// </summary>
-        public static string AppConfig_ViewType_Description {
+        public static string AppConfigView_ViewType_Description {
             get {
-                return ResourceManager.GetString("AppConfig_ViewType_Description", resourceCulture);
+                return ResourceManager.GetString("AppConfigView_ViewType_Description", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to View type:.
         /// </summary>
-        public static string AppConfig_ViewType_Label {
+        public static string AppConfigView_ViewType_Label {
             get {
-                return ResourceManager.GetString("AppConfig_ViewType_Label", resourceCulture);
+                return ResourceManager.GetString("AppConfigView_ViewType_Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Application.
+        /// </summary>
+        public static string AppConfigViewModel_Title {
+            get {
+                return ResourceManager.GetString("AppConfigViewModel_Title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Save.
         /// </summary>
-        public static string Conductor_Save {
+        public static string ConfigConductorView_Save {
             get {
-                return ResourceManager.GetString("Conductor_Save", resourceCulture);
+                return ResourceManager.GetString("ConfigConductorView_Save", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Save and restart.
         /// </summary>
-        public static string Conductor_SaveAndRestart {
+        public static string ConfigConductorView_SaveAndRestart {
             get {
-                return ResourceManager.GetString("Conductor_SaveAndRestart", resourceCulture);
+                return ResourceManager.GetString("ConfigConductorView_SaveAndRestart", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Framework Configuration.
         /// </summary>
-        public static string Conductor_Title {
+        public static string ConfigConductorView_Title {
             get {
-                return ResourceManager.GetString("Conductor_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Language.
-        /// </summary>
-        public static string Localization_Culture {
-            get {
-                return ResourceManager.GetString("Localization_Culture", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to (Selected culture for this application).
-        /// </summary>
-        public static string Localization_Culture_Description {
-            get {
-                return ResourceManager.GetString("Localization_Culture_Description", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Localization.
-        /// </summary>
-        public static string Localization_Title {
-            get {
-                return ResourceManager.GetString("Localization_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to (Address to the proxy server).
-        /// </summary>
-        public static string ProxyConfig_Address_Description {
-            get {
-                return ResourceManager.GetString("ProxyConfig_Address_Description", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Address:.
-        /// </summary>
-        public static string ProxyConfig_Address_Label {
-            get {
-                return ResourceManager.GetString("ProxyConfig_Address_Label", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to (Enables the proxy for this client).
-        /// </summary>
-        public static string ProxyConfig_Enabled_Description {
-            get {
-                return ResourceManager.GetString("ProxyConfig_Enabled_Description", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Enabled:.
-        /// </summary>
-        public static string ProxyConfig_Enabled_Label {
-            get {
-                return ResourceManager.GetString("ProxyConfig_Enabled_Label", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to (Port of the proxy server).
-        /// </summary>
-        public static string ProxyConfig_Port_Description {
-            get {
-                return ResourceManager.GetString("ProxyConfig_Port_Description", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Port:.
-        /// </summary>
-        public static string ProxyConfig_Port_Label {
-            get {
-                return ResourceManager.GetString("ProxyConfig_Port_Label", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Proxy Configuration.
-        /// </summary>
-        public static string ProxyConfig_Proxy_Title {
-            get {
-                return ResourceManager.GetString("ProxyConfig_Proxy_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Proxy.
-        /// </summary>
-        public static string ProxyConfig_ShortTitle {
-            get {
-                return ResourceManager.GetString("ProxyConfig_ShortTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to (Selects the global configured proxy settings).
-        /// </summary>
-        public static string ProxyConfig_UseDefault_Description {
-            get {
-                return ResourceManager.GetString("ProxyConfig_UseDefault_Description", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Use Default:.
-        /// </summary>
-        public static string ProxyConfig_UseDefault_Label {
-            get {
-                return ResourceManager.GetString("ProxyConfig_UseDefault_Label", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to (Unique id to register at the server wcf services).
-        /// </summary>
-        public static string RuntimeConfig_ClientId_Description {
-            get {
-                return ResourceManager.GetString("RuntimeConfig_ClientId_Description", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Client Id:.
-        /// </summary>
-        public static string RuntimeConfig_ClientId_Label {
-            get {
-                return ResourceManager.GetString("RuntimeConfig_ClientId_Label", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to (Where do we can find the runtime (e.g. &quot;localhost&quot;)?).
-        /// </summary>
-        public static string RuntimeConfig_Hostname_Description {
-            get {
-                return ResourceManager.GetString("RuntimeConfig_Hostname_Description", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Hostname:.
-        /// </summary>
-        public static string RuntimeConfig_Hostname_Label {
-            get {
-                return ResourceManager.GetString("RuntimeConfig_Hostname_Label", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to (On which port?).
-        /// </summary>
-        public static string RuntimeConfig_Port_Description {
-            get {
-                return ResourceManager.GetString("RuntimeConfig_Port_Description", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Port:.
-        /// </summary>
-        public static string RuntimeConfig_Port_Label {
-            get {
-                return ResourceManager.GetString("RuntimeConfig_Port_Label", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Runtime Configuration.
-        /// </summary>
-        public static string RuntimeConfig_Runtime_Title {
-            get {
-                return ResourceManager.GetString("RuntimeConfig_Runtime_Title", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Runtime.
-        /// </summary>
-        public static string RuntimeConfig_ShortTitle {
-            get {
-                return ResourceManager.GetString("RuntimeConfig_ShortTitle", resourceCulture);
+                return ResourceManager.GetString("ConfigConductorView_Title", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Client Configurator.
         /// </summary>
-        public static string Shell_Title {
+        public static string ConfigShellView_Title {
             get {
-                return ResourceManager.GetString("Shell_Title", resourceCulture);
+                return ResourceManager.GetString("ConfigShellView_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Language.
+        /// </summary>
+        public static string LocalizationView_Culture {
+            get {
+                return ResourceManager.GetString("LocalizationView_Culture", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (Selected culture for this application).
+        /// </summary>
+        public static string LocalizationView_Culture_Description {
+            get {
+                return ResourceManager.GetString("LocalizationView_Culture_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Localization.
+        /// </summary>
+        public static string LocalizationView_Title {
+            get {
+                return ResourceManager.GetString("LocalizationView_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Localization.
+        /// </summary>
+        public static string LocalizationViewModel_Title {
+            get {
+                return ResourceManager.GetString("LocalizationViewModel_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (Address to the proxy server).
+        /// </summary>
+        public static string ProxyConfigView_Address_Description {
+            get {
+                return ResourceManager.GetString("ProxyConfigView_Address_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Address:.
+        /// </summary>
+        public static string ProxyConfigView_Address_Label {
+            get {
+                return ResourceManager.GetString("ProxyConfigView_Address_Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (Enables the proxy for this client).
+        /// </summary>
+        public static string ProxyConfigView_Enabled_Description {
+            get {
+                return ResourceManager.GetString("ProxyConfigView_Enabled_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enabled:.
+        /// </summary>
+        public static string ProxyConfigView_Enabled_Label {
+            get {
+                return ResourceManager.GetString("ProxyConfigView_Enabled_Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (Port of the proxy server).
+        /// </summary>
+        public static string ProxyConfigView_Port_Description {
+            get {
+                return ResourceManager.GetString("ProxyConfigView_Port_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Port:.
+        /// </summary>
+        public static string ProxyConfigView_Port_Label {
+            get {
+                return ResourceManager.GetString("ProxyConfigView_Port_Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Proxy Configuration.
+        /// </summary>
+        public static string ProxyConfigView_Proxy_Title {
+            get {
+                return ResourceManager.GetString("ProxyConfigView_Proxy_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (Selects the global configured proxy settings).
+        /// </summary>
+        public static string ProxyConfigView_UseDefault_Description {
+            get {
+                return ResourceManager.GetString("ProxyConfigView_UseDefault_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use Default:.
+        /// </summary>
+        public static string ProxyConfigView_UseDefault_Label {
+            get {
+                return ResourceManager.GetString("ProxyConfigView_UseDefault_Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Proxy.
+        /// </summary>
+        public static string ProxyConfigViewModel_Title {
+            get {
+                return ResourceManager.GetString("ProxyConfigViewModel_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (Unique id to register at the server wcf services).
+        /// </summary>
+        public static string RuntimeConfigView_ClientId_Description {
+            get {
+                return ResourceManager.GetString("RuntimeConfigView_ClientId_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Client Id:.
+        /// </summary>
+        public static string RuntimeConfigView_ClientId_Label {
+            get {
+                return ResourceManager.GetString("RuntimeConfigView_ClientId_Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (Where do we can find the runtime (e.g. &quot;localhost&quot;)?).
+        /// </summary>
+        public static string RuntimeConfigView_Hostname_Description {
+            get {
+                return ResourceManager.GetString("RuntimeConfigView_Hostname_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hostname:.
+        /// </summary>
+        public static string RuntimeConfigView_Hostname_Label {
+            get {
+                return ResourceManager.GetString("RuntimeConfigView_Hostname_Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to (On which port?).
+        /// </summary>
+        public static string RuntimeConfigView_Port_Description {
+            get {
+                return ResourceManager.GetString("RuntimeConfigView_Port_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Port:.
+        /// </summary>
+        public static string RuntimeConfigView_Port_Label {
+            get {
+                return ResourceManager.GetString("RuntimeConfigView_Port_Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Runtime Configuration.
+        /// </summary>
+        public static string RuntimeConfigView_Runtime_Title {
+            get {
+                return ResourceManager.GetString("RuntimeConfigView_Runtime_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Runtime.
+        /// </summary>
+        public static string RuntimeConfigViewModel_Title {
+            get {
+                return ResourceManager.GetString("RuntimeConfigViewModel_Title", resourceCulture);
             }
         }
     }

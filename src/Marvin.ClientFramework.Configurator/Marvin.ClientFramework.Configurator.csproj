@@ -78,11 +78,6 @@
     <Compile Include="Components\LocalizationView.xaml.cs">
       <DependentUpon>LocalizationView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Strings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Strings.resx</DependentUpon>
-    </Compile>
     <Compile Include="Shell\ConfigShellView.xaml.cs">
       <DependentUpon>ConfigShellView.xaml</DependentUpon>
     </Compile>
@@ -96,6 +91,11 @@
     <Compile Include="Components\AppConfigViewModel.cs" />
     <Compile Include="ModuleController\ModuleConfig.cs" />
     <Compile Include="ModuleController\ModuleController.cs" />
+    <Compile Include="Properties\Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
     <Compile Include="Workspace\ConfigConductorView.xaml.cs">
       <DependentUpon>ConfigConductorView.xaml</DependentUpon>
     </Compile>
@@ -168,8 +168,10 @@
     <EmbeddedResource Include="Properties\Strings.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

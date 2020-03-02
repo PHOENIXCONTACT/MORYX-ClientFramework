@@ -61,101 +61,110 @@ namespace Marvin.Controls.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add entry.
-        /// </summary>
-        public static string AddEntry {
-            get {
-                return ResourceManager.GetString("AddEntry", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
-        public static string Back {
+        public static string EntryEditor_Back {
             get {
-                return ResourceManager.GetString("Back", resourceCulture);
+                return ResourceManager.GetString("EntryEditor_Back", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Forward.
         /// </summary>
-        public static string Forward {
+        public static string EntryEditor_Forward {
             get {
-                return ResourceManager.GetString("Forward", resourceCulture);
+                return ResourceManager.GetString("EntryEditor_Forward", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Open.
         /// </summary>
-        public static string Open {
+        public static string EntryEditor_Open {
             get {
-                return ResourceManager.GetString("Open", resourceCulture);
+                return ResourceManager.GetString("EntryEditor_Open", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Remove.
         /// </summary>
-        public static string Remove {
+        public static string EntryEditor_Remove {
             get {
-                return ResourceManager.GetString("Remove", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Replace with.
-        /// </summary>
-        public static string ReplaceWith {
-            get {
-                return ResourceManager.GetString("ReplaceWith", resourceCulture);
+                return ResourceManager.GetString("EntryEditor_Remove", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Save.
         /// </summary>
-        public static string Save {
+        public static string EntryEditor_Save {
             get {
-                return ResourceManager.GetString("Save", resourceCulture);
+                return ResourceManager.GetString("EntryEditor_Save", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Select.
         /// </summary>
-        public static string Select {
+        public static string EntryEditor_Select {
             get {
-                return ResourceManager.GetString("Select", resourceCulture);
+                return ResourceManager.GetString("EntryEditor_Select", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Select directory....
         /// </summary>
-        public static string SelectDirectory {
+        public static string EntryEditor_SelectDirectory {
             get {
-                return ResourceManager.GetString("SelectDirectory", resourceCulture);
+                return ResourceManager.GetString("EntryEditor_SelectDirectory", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Select file....
         /// </summary>
-        public static string SelectFile {
+        public static string EntryEditor_SelectFile {
             get {
-                return ResourceManager.GetString("SelectFile", resourceCulture);
+                return ResourceManager.GetString("EntryEditor_SelectFile", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Show.
         /// </summary>
-        public static string Show {
+        public static string EntryEditor_Show {
             get {
-                return ResourceManager.GetString("Show", resourceCulture);
+                return ResourceManager.GetString("EntryEditor_Show", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add entry.
+        /// </summary>
+        public static string EntryValueToButtonTextConverter_AddEntry {
+            get {
+                return ResourceManager.GetString("EntryValueToButtonTextConverter_AddEntry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Replace with.
+        /// </summary>
+        public static string EntryValueToButtonTextConverter_ReplaceWith {
+            get {
+                return ResourceManager.GetString("EntryValueToButtonTextConverter_ReplaceWith", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value is null or not a string.
+        /// </summary>
+        public static string TextToDelimiteredTextConverter_Error_Message {
+            get {
+                return ResourceManager.GetString("TextToDelimiteredTextConverter_Error_Message", resourceCulture);
             }
         }
     }

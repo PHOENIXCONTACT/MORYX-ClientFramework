@@ -61,20 +61,20 @@ namespace Marvin.ClientFramework.Tests.Playground.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hello World.
+        ///   Looks up a localized string similar to Playground.
         /// </summary>
-        public static string HelloWorld {
+        public static string ModuleController_Playground {
             get {
-                return ResourceManager.GetString("HelloWorld", resourceCulture);
+                return ResourceManager.GetString("ModuleController_Playground", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Playground.
+        ///   Looks up a localized string similar to Hello World.
         /// </summary>
-        public static string Title {
+        public static string PlaygroundWorkspaceView_HelloWorld {
             get {
-                return ResourceManager.GetString("Title", resourceCulture);
+                return ResourceManager.GetString("PlaygroundWorkspaceView_HelloWorld", resourceCulture);
             }
         }
     }

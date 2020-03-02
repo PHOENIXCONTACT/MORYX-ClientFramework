@@ -35,7 +35,7 @@ namespace Marvin.ClientFramework.Kernel
         private void OnAssemblyConfigurationLoaded(object sender, AssemblyConfiguration e)
         {
             RaiseAddToMax(e.Assemblies.Count);
-            RaiseChangeMessage(string.Format(Strings.Loader_AssemblyConfigurationLoaded, e.Assemblies.Count));
+            RaiseChangeMessage(string.Format(Strings.RunModeLoaderAdapter_AssemblyConfigurationLoaded, e.Assemblies.Count));
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace Marvin.ClientFramework.Kernel
         /// </summary>
         private void OnAssemblyLoaded(object sender, AssemblyConfig e)
         {
-            RaiseChangeValueWithMessage(string.Format(Strings.Loader_AssemblyLoaded, e.Assembly));
+            RaiseChangeValueWithMessage(string.Format(Strings.RunModeLoaderAdapter_AssemblyLoaded, e.Assembly));
         }
     }
 }

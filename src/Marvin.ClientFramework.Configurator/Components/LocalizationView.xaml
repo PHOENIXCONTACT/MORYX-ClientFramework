@@ -18,10 +18,10 @@
 
     <Grid Background="White">
         <StackPanel>
-            <TextBlock Style="{StaticResource TitleText}" Text="{x:Static properties:Strings.Localization_Title}" />
+            <TextBlock Style="{StaticResource TitleText}" Text="{x:Static properties:Strings.LocalizationView_Title}" />
 
             <StackPanel Orientation="Horizontal">
-                <LabeledControlHost LabelA="{x:Static properties:Strings.Localization_Culture}">
+                <LabeledControlHost LabelA="{x:Static properties:Strings.LocalizationView_Culture}">
                     <EddieComboBox ItemsSource="{Binding Cultures}" SelectedItem="{Binding SelectedCulture}">
                         <EddieComboBox.ItemTemplate>
                             <DataTemplate DataType="globalization:CultureInfo">
@@ -36,7 +36,7 @@
                 </LabeledControlHost>
 
                 <TextBlock Style="{StaticResource DescriptionStyle}"
-                           Text="{x:Static properties:Strings.Localization_Culture_Description}" />
+                           Text="{x:Static properties:Strings.LocalizationView_Culture_Description}" />
             </StackPanel>
         </StackPanel>
     </Grid>

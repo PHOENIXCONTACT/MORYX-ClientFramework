@@ -61,83 +61,92 @@ namespace Marvin.Tools.WcfClient.UI.Viewer.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to WCF Connections.
+        /// </summary>
+        public static string ModuleController_Title {
+            get {
+                return ResourceManager.GetString("ModuleController_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Client Version.
         /// </summary>
-        public static string List_ClientVersion {
+        public static string WcfClientViewerWorkspaceView_ClientVersion {
             get {
-                return ResourceManager.GetString("List_ClientVersion", resourceCulture);
+                return ResourceManager.GetString("WcfClientViewerWorkspaceView_ClientVersion", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Min Client Version.
         /// </summary>
-        public static string List_MinClientVersion {
+        public static string WcfClientViewerWorkspaceView_MinClientVersion {
             get {
-                return ResourceManager.GetString("List_MinClientVersion", resourceCulture);
+                return ResourceManager.GetString("WcfClientViewerWorkspaceView_MinClientVersion", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Min Server Version.
         /// </summary>
-        public static string List_MinServerVersion {
+        public static string WcfClientViewerWorkspaceView_MinServerVersion {
             get {
-                return ResourceManager.GetString("List_MinServerVersion", resourceCulture);
+                return ResourceManager.GetString("WcfClientViewerWorkspaceView_MinServerVersion", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Server Version.
         /// </summary>
-        public static string List_ServerVersion {
+        public static string WcfClientViewerWorkspaceView_ServerVersion {
             get {
-                return ResourceManager.GetString("List_ServerVersion", resourceCulture);
+                return ResourceManager.GetString("WcfClientViewerWorkspaceView_ServerVersion", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Service.
         /// </summary>
-        public static string List_Service {
+        public static string WcfClientViewerWorkspaceView_Service {
             get {
-                return ResourceManager.GetString("List_Service", resourceCulture);
+                return ResourceManager.GetString("WcfClientViewerWorkspaceView_Service", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to State.
         /// </summary>
-        public static string List_State {
+        public static string WcfClientViewerWorkspaceView_State {
             get {
-                return ResourceManager.GetString("List_State", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Ties.
-        /// </summary>
-        public static string List_Tries {
-            get {
-                return ResourceManager.GetString("List_Tries", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Uri.
-        /// </summary>
-        public static string List_Uri {
-            get {
-                return ResourceManager.GetString("List_Uri", resourceCulture);
+                return ResourceManager.GetString("WcfClientViewerWorkspaceView_State", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to WCF Connections.
         /// </summary>
-        public static string Title {
+        public static string WcfClientViewerWorkspaceView_Title {
             get {
-                return ResourceManager.GetString("Title", resourceCulture);
+                return ResourceManager.GetString("WcfClientViewerWorkspaceView_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ties.
+        /// </summary>
+        public static string WcfClientViewerWorkspaceView_Tries {
+            get {
+                return ResourceManager.GetString("WcfClientViewerWorkspaceView_Tries", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uri.
+        /// </summary>
+        public static string WcfClientViewerWorkspaceView_Uri {
+            get {
+                return ResourceManager.GetString("WcfClientViewerWorkspaceView_Uri", resourceCulture);
             }
         }
     }

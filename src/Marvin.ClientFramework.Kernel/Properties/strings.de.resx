@@ -117,25 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Loader_Credits" xml:space="preserve">
+  <data name="LoaderView_Credits" xml:space="preserve">
     <value>Diese Anwendung basiert auf der MARVIN!</value>
   </data>
-  <data name="Loader_AssemblyConfigurationLoaded" xml:space="preserve">
+  <data name="RunModeLoaderAdapter_AssemblyConfigurationLoaded" xml:space="preserve">
     <value>Bibliothekseinstellung geladen ({0}) ...</value>
   </data>
-  <data name="Loader_AssemblyLoaded" xml:space="preserve">
+  <data name="RunModeLoaderAdapter_AssemblyLoaded" xml:space="preserve">
     <value>{0} wurde geladen ...</value>
   </data>
-  <data name="Loader_InitializingModule" xml:space="preserve">
+  <data name="ModuleManagerLoaderAdapter_InitializingModule" xml:space="preserve">
     <value>Initialisiere {0}</value>
   </data>
-  <data name="Loader_InitializingModuleDone" xml:space="preserve">
+  <data name="ModuleManagerLoaderAdapter_InitializingModuleDone" xml:space="preserve">
     <value>{0} wurde initialisiert ...</value>
   </data>
-  <data name="Loader_InitializingComponent" xml:space="preserve">
+  <data name="ComponentInitializerLoaderAdapter_InitializingComponent" xml:space="preserve">
     <value>Initialisiere {0} ...</value>
   </data>
-  <data name="Loader_ComponentInitializingStarting" xml:space="preserve">
+  <data name="ComponentInitializerLoaderAdapter_ComponentInitializingStarting" xml:space="preserve">
     <value>Komponenteninitialisierer fand {0} typen. Starte die initialisierung.</value>
   </data>
 </root>
