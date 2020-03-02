@@ -25,11 +25,11 @@
                     <EddieComboBox ItemsSource="{Binding Cultures}" SelectedItem="{Binding SelectedCulture}">
                         <EddieComboBox.ItemTemplate>
                             <DataTemplate DataType="globalization:CultureInfo">
-                                <TextBlock>
-                                    <Run Text="{Binding IetfLanguageTag, Mode=OneWay}" />
-                                    <Run Text=" " />
-                                    <Run Text="{Binding DisplayName, Mode=OneWay}" />
-                                </TextBlock>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding IetfLanguageTag, Mode=OneWay}" FontWeight="Bold" MinWidth="50"/>
+                                    <TextBlock Text=" "/>
+                                    <TextBlock Text="{Binding DisplayName, Mode=OneWay}"/>
+                                </StackPanel>
                             </DataTemplate>
                         </EddieComboBox.ItemTemplate>
                     </EddieComboBox>
