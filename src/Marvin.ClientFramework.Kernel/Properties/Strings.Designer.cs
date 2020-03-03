@@ -79,7 +79,7 @@ namespace Marvin.ClientFramework.Kernel.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Application is based on the MARVIN!.
+        ///   Looks up a localized string similar to Application is based on the MARVIN Framework!.
         /// </summary>
         public static string LoaderView_Credits {
             get {

@@ -238,4 +238,10 @@
   <data name="LocalizationViewModel_Title" xml:space="preserve">
     <value>Localization</value>
   </data>
+  <data name="ConfigConductorViewModel_ConfigsSaved_Title" xml:space="preserve">
+    <value>All configs saved!</value>
+  </data>
+  <data name="ConfigConductorViewModel_ConfigsSaved_Message" xml:space="preserve">
+    <value>All configurations are successfully saved!</value>
+  </data>
 </root>

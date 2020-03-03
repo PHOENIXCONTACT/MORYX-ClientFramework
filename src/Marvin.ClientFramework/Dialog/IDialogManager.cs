@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Caliburn.Micro;
 
-namespace Marvin.ClientFramework.Dialog 
+namespace Marvin.ClientFramework.Dialog
 {
     /// <summary>
     /// Interface for a dialog providing component
@@ -29,7 +29,7 @@ namespace Marvin.ClientFramework.Dialog
         void ShowDialog<T>(T dialogViewModel, Action<T> callback) where T : IScreen;
 
         /// <summary>
-        /// Shows a messagebox with multiple options
+        /// Shows a MessageBox with multiple options
         /// This is an async implementation and returns if the dialog was closed
         /// </summary>
         /// <param name="message">The message string</param>
@@ -39,17 +39,17 @@ namespace Marvin.ClientFramework.Dialog
         Task<MessageBoxOptions> ShowMessageBoxAsync(string message, string title, MessageBoxOptions options, MessageBoxImage image);
 
         /// <summary>
-        /// Shows a messagebox with multiple options
+        /// Shows a MessageBox with multiple options
         /// </summary>
         /// <param name="message">The message string</param>
         /// <param name="title">The title of the opened box</param>
         /// <param name="options">The options for the opened box.</param>
         /// <param name="image">The visible image of the box</param>
-        /// <param name="callback">The callback if the messagebox returns</param>
+        /// <param name="callback">The callback if the MessageBox returns</param>
         void ShowMessageBox(string message, string title, MessageBoxOptions options, MessageBoxImage image, Action<IMessageBox> callback);
 
         /// <summary>
-        /// Shows a messagebox with multiple options
+        /// Shows a MessageBox with multiple options
         /// </summary>
         /// <param name="message">The message string</param>
         /// <param name="title">The title of the opened box</param>
@@ -58,7 +58,7 @@ namespace Marvin.ClientFramework.Dialog
         void ShowMessageBox(string message, string title, MessageBoxOptions options, MessageBoxImage image);
 
         /// <summary>
-        /// Shows a messagebox with multiple options
+        /// Shows a MessageBox with multiple options
         /// This is an async implementation and returns if the dialog was closed
         /// </summary>
         /// <param name="message">The message string</param>
@@ -66,15 +66,15 @@ namespace Marvin.ClientFramework.Dialog
         Task ShowMessageBoxAsync(string message, string title);
 
         /// <summary>
-        /// Shows a messagebox with multiple options
+        /// Shows a MessageBox with multiple options
         /// </summary>
         /// <param name="message">The message string</param>
         /// <param name="title">The title of the opened box</param>
-        /// <param name="callback">The callback if the messagebox returns</param>
+        /// <param name="callback">The callback if the MessageBox returns</param>
         void ShowMessageBox(string message, string title, Action<IMessageBox> callback);
 
         /// <summary>
-        /// Shows a messagebox with multiple options
+        /// Shows a MessageBox with multiple options
         /// </summary>
         /// <param name="message">The message string</param>
         /// <param name="title">The title of the opened box</param>

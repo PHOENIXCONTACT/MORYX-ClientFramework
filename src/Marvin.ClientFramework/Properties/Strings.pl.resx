@@ -120,4 +120,16 @@
   <data name="AppConfig_DefaultName" xml:space="preserve">
     <value>Brakująca nazwa</value>
   </data>
+  <data name="MessageBoxView_Yes" xml:space="preserve">
+    <value>Tak</value>
+  </data>
+  <data name="MessageBoxView_No" xml:space="preserve">
+    <value>Nie</value>
+  </data>
+  <data name="MessageBoxView_Cancel" xml:space="preserve">
+    <value>Anuluj</value>
+  </data>
+  <data name="MessageBoxView_Ok" xml:space="preserve">
+    <value>Ok</value>
+  </data>
 </root>

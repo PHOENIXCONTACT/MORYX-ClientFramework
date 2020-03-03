@@ -120,4 +120,16 @@
   <data name="AppConfig_DefaultName" xml:space="preserve">
     <value>Fehlender Name</value>
   </data>
+  <data name="MessageBoxView_Ok" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="MessageBoxView_Yes" xml:space="preserve">
+    <value>Ja</value>
+  </data>
+  <data name="MessageBoxView_No" xml:space="preserve">
+    <value>Nein</value>
+  </data>
+  <data name="MessageBoxView_Cancel" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
 </root>

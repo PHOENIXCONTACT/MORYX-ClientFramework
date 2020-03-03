@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using Caliburn.Micro;
 using Marvin.ClientFramework.Commands;
+using Marvin.ClientFramework.Configurator.Properties;
 using Marvin.ClientFramework.Dialog;
 using Marvin.Container;
 using MessageBoxImage = Marvin.ClientFramework.Dialog.MessageBoxImage;
@@ -74,13 +75,13 @@ namespace Marvin.ClientFramework.Configurator
         /// <summary>
         /// Button interaction to save all configurations
         /// </summary>
-        public async Task SaveAll(object parameters)
+        public Task SaveAll(object parameters)
         {
             foreach (var configViewModel in ConfigScreens)
                 configViewModel.SaveConfig();
 
-            await DialogManager.ShowMessageBoxAsync("All configurations are successfully saved!", "All configs saved!",
-                MessageBoxOptions.Ok, MessageBoxImage.Ok).ConfigureAwait(false);
+            return DialogManager.ShowMessageBoxAsync(Strings.ConfigConductorViewModel_ConfigsSaved_Message,
+                Strings.ConfigConductorViewModel_ConfigsSaved_Title, MessageBoxOptions.Ok, MessageBoxImage.Ok);
         }
     }
 }

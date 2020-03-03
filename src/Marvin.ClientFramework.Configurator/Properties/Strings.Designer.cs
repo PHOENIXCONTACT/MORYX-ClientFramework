@@ -277,6 +277,24 @@ namespace Marvin.ClientFramework.Configurator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All configurations are successfully saved!.
+        /// </summary>
+        public static string ConfigConductorViewModel_ConfigsSaved_Message {
+            get {
+                return ResourceManager.GetString("ConfigConductorViewModel_ConfigsSaved_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All configs saved!.
+        /// </summary>
+        public static string ConfigConductorViewModel_ConfigsSaved_Title {
+            get {
+                return ResourceManager.GetString("ConfigConductorViewModel_ConfigsSaved_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Client Configurator.
         /// </summary>
         public static string ConfigShellView_Title {

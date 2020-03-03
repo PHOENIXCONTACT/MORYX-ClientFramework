@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using Caliburn.Micro;
 
-namespace Marvin.ClientFramework.Dialog 
+namespace Marvin.ClientFramework.Dialog
 {
     /// <summary>
     /// Base ViewModel for MessageBoxes
@@ -48,19 +48,19 @@ namespace Marvin.ClientFramework.Dialog
         }
 
         /// <inheritdoc />
-        public void Yes() 
+        public void Yes()
         {
             Select(MessageBoxOptions.Yes);
         }
 
         /// <inheritdoc />
-        public void No() 
+        public void No()
         {
             Select(MessageBoxOptions.No);
         }
 
         /// <inheritdoc />
-        private bool IsVisible(MessageBoxOptions option) 
+        private bool IsVisible(MessageBoxOptions option)
         {
             return (Options & option) == option;
         }
@@ -81,13 +81,13 @@ namespace Marvin.ClientFramework.Dialog
         /// <inheritdoc />
         public MessageBoxImage Image
         {
-            get { return _image; }
+            get => _image;
             private set
             {
                 _image = value;
 
                 HandleIconVisibility(_image);
-                
+
                 NotifyOfPropertyChange(() => Image);
             }
         }

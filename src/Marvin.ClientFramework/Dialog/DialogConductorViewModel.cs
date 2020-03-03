@@ -20,7 +20,7 @@ namespace Marvin.ClientFramework.Dialog
         /// Currently active dialog
         /// </summary>
         public IScreen ActiveItem { get; private set; }
-        
+
         /// <inheritdoc />
         public void ShowDialog<T>(T dialogModel) where T : IScreen
         {
@@ -79,30 +79,29 @@ namespace Marvin.ClientFramework.Dialog
         /// </summary>
         private static void AttachCallback<T>(T dialogViewModel, Action callback) where T : IScreen
         {
-            EventHandler<DeactivationEventArgs> callbackHandler = null;
-            callbackHandler = delegate
+            void CallbackHandler(object sender, DeactivationEventArgs e)
             {
-                dialogViewModel.Deactivated -= callbackHandler;
+                dialogViewModel.Deactivated -= CallbackHandler;
                 callback();
-            };
-            dialogViewModel.Deactivated += callbackHandler;
+            }
+
+            dialogViewModel.Deactivated += CallbackHandler;
         }
 
         /// <summary>
-        /// Will set the focus to the given view. 
+        /// Will set the focus to the given view.
         /// Will be attached to the <see cref="FrameworkElement"/> MoveFocus method
         /// </summary>
         private static void AttachFocusContext<T>(T dialogViewModel) where T : IScreen
         {
             var viewAware = dialogViewModel as IViewAware;
-            if (viewAware == null) 
+            if (viewAware == null)
                 return;
 
-            EventHandler<ViewAttachedEventArgs> callbackHandler = null;
-            callbackHandler = delegate(object sender, ViewAttachedEventArgs args)
+            void CallbackHandler(object sender, ViewAttachedEventArgs args)
             {
-                viewAware.ViewAttached -= callbackHandler;
-                var view = (FrameworkElement)args.View;
+                viewAware.ViewAttached -= CallbackHandler;
+                var view = (FrameworkElement) args.View;
 
                 RoutedEventHandler loadedCallback = null;
                 loadedCallback = delegate
@@ -114,19 +113,18 @@ namespace Marvin.ClientFramework.Dialog
                 };
 
                 view.Loaded += loadedCallback;
-            };
+            }
 
-            viewAware.ViewAttached += callbackHandler;
+            viewAware.ViewAttached += CallbackHandler;
         }
 
         /// <inheritdoc />
-        public void ActivateItem(object item) 
+        public void ActivateItem(object item)
         {
             ActiveItem = item as IScreen;
 
             // ReSharper disable once SuspiciousTypeConversion.Global
-            var child = ActiveItem as IChild;
-            if (child != null)
+            if (ActiveItem is IChild child)
             {
                 child.Parent = this;
             }
@@ -143,21 +141,20 @@ namespace Marvin.ClientFramework.Dialog
         /// <inheritdoc />
         public void CloseItem(object item)
         {
-            var guard = item as IGuardClose;
-            if(guard != null) 
+            if(item is IGuardClose guard)
             {
-                guard.CanClose(result => 
+                guard.CanClose(result =>
                 {
                     if(result)
                         CloseActiveItemCore();
                 });
             }
-            else 
+            else
                 CloseActiveItemCore();
         }
 
         /// <inheritdoc />
-        public void CloseActiveItemCore() 
+        public void CloseActiveItemCore()
         {
             var oldItem = ActiveItem;
 
