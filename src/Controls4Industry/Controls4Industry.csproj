@@ -87,13 +87,19 @@
     <Compile Include="Extensions\ColorExtensions.cs" />
     <Compile Include="Extensions\VisualTreeExtension.cs" />
     <Compile Include="Geometries\CommonShapeExtension.cs" />
+    <Compile Include="Geometries\CommonShapeType.cs" />
+    <Compile Include="Geometries\FaShapeExtension.cs" />
     <Compile Include="EddieComboBox\EddieComboBox.cs" />
     <Compile Include="EddieHistoryButtonBar\EddieHistoryButtonBar.cs" />
     <Compile Include="EddieModuleButton\EddieModuleButton.cs" />
     <Compile Include="EddieNavigationBar\EddieNavigationBar.cs" />
     <Compile Include="EddieTextBox\EddieTextBox.cs" />
-    <Compile Include="Geometries\CommonShapeType.cs" />
-    <Compile Include="Geometries\ShapeFactory.cs" />
+    <Compile Include="Geometries\FaShapeFactory.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FaShapeFactory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Geometries\CommonShapeFactory.cs" />
     <Compile Include="LabeledControlHost\LabeledControlHost.cs" />
     <Compile Include="EddieListBox\EddieListBox.cs" />
     <Compile Include="EddieListView\GridViewSort.cs" />
@@ -261,11 +267,20 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Documentation.md</LastGenOutput>
     </None>
+    <None Include="Geometries\fontawesome-5.12.1.json" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="IconTests\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Geometries\FaShapeFactory.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>FaShapeFactory.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>

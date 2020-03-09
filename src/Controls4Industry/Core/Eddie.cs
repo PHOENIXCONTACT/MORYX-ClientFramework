@@ -67,7 +67,7 @@ namespace C4I
 
         private static void IconChanged(DependencyObject d, DependencyPropertyChangedEventArgs args)
         {
-            var shape = ShapeFactory.GetShapeGeometry((CommonShapeType)args.NewValue);
+            var shape = CommonShapeFactory.GetShapeGeometry((CommonShapeType)args.NewValue);
 
             var path = d as Path;
             if (path == null)

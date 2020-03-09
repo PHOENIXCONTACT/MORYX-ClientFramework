@@ -43,7 +43,7 @@ namespace C4I
             }
 
             var changedIcon = (CommonShapeType)args.NewValue;
-            button.IconPath = ShapeFactory.GetShapeGeometry(changedIcon);
+            button.IconPath = CommonShapeFactory.GetShapeGeometry(changedIcon);
         }
 
         /// <summary>

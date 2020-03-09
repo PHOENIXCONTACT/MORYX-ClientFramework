@@ -17,7 +17,7 @@ namespace C4I
         /// <inheritdoc />
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
-            return ShapeFactory.GetShapeGeometry(ShapeType);
+            return CommonShapeFactory.GetShapeGeometry(ShapeType);
         }
     }
 }

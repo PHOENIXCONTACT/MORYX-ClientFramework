@@ -128,7 +128,7 @@ namespace C4I
         {
             if (box.LockIconPath == null)
             {
-                box.LockIconPath = ShapeFactory.GetShapeGeometry(box.LockIcon);
+                box.LockIconPath = CommonShapeFactory.GetShapeGeometry(box.LockIcon);
             }
         }
     }

@@ -6,11 +6,11 @@ namespace C4I
     /// <summary>
     /// Factory that creates all <see cref="CommonShapeType"/> icons
     /// </summary>
-    public static class ShapeFactory
+    public static class CommonShapeFactory
     {
         private static readonly Dictionary<CommonShapeType, string> CommonGeometries = new Dictionary<CommonShapeType, string>();
 
-        static ShapeFactory()
+        static CommonShapeFactory()
         {
             CommonGeometries.Add(CommonShapeType.ArrowRight, "F1M0.112,0.678C0.112,0.678 0.112,32.929 0.112,32.929 0.112,32.929 26.719,16.803 26.719,16.803 26.719,16.803 0.112,0.678 0.112,0.678z");
             CommonGeometries.Add(CommonShapeType.ArrowLeft, "F1M27.01,0.678C27.01,0.678 0.403,16.803 0.403,16.803 0.403,16.803 27.01,32.929 27.01,32.929 27.01,32.929 27.01,0.678 27.01,0.678z");

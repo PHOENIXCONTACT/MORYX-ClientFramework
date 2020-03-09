@@ -122,7 +122,7 @@ namespace C4I
         {
             if (box.IconPath == null)
             {
-                box.IconPath = ShapeFactory.GetShapeGeometry(box.Icon);
+                box.IconPath = CommonShapeFactory.GetShapeGeometry(box.Icon);
             }
         }
 
@@ -130,7 +130,7 @@ namespace C4I
         {
             if (box.LockIconPath == null)
             {
-                box.LockIconPath = ShapeFactory.GetShapeGeometry(box.LockIcon);
+                box.LockIconPath = CommonShapeFactory.GetShapeGeometry(box.LockIcon);
             }
         }
     }

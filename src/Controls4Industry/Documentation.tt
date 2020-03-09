@@ -39,7 +39,7 @@ Description missing...
 Description missing...
 
 # Shapes {#shapes}
-Shapes generally can be loaded with the [<#= typeof(ShapeFactory).Name #>](@ref <#= typeof(ShapeFactory).FullName #>). The ShapeFactory will return the PathGeometry static directly.
+Shapes generally can be loaded with the [<#= typeof(CommonShapeFactory).Name #>](@ref <#= typeof(CommonShapeFactory).FullName #>). The ShapeFactory will return the PathGeometry static directly.
 In the enum [<#= typeof(CommonShapeType).Name #>](@ref <#= typeof(CommonShapeType).FullName #>), all icons are defined.
 
 ~~~~{.cs}
