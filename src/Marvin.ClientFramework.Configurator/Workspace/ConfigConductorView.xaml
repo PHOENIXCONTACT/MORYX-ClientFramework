@@ -53,8 +53,8 @@
         </Border>
 
         <DockPanel Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" Margin="5,5,5,5">
-            <EddieButton DockPanel.Dock="Right" Width="Auto" Command="{Binding SaveAndRestartCmd}"
-                         Icon="{CommonShape Refresh}" Content="{x:Static properties:Strings.ConfigConductorView_SaveAndRestart}" Margin="10,0,0,0" />
+            <EddieButton DockPanel.Dock="Right" Width="Auto" Command="{Binding SaveAndRestartCmd}" 
+                         Icon="{MdiShape Sync_Circle}" Content="{x:Static properties:Strings.ConfigConductorView_SaveAndRestart}" Margin="10,0,0,0" />
 
             <EddieButton DockPanel.Dock="Right" Command="{Binding SaveAllCmd}"
                          Icon="{CommonShape CheckMark}" Content="{x:Static properties:Strings.ConfigConductorView_Save}" />

@@ -28,7 +28,7 @@
                                    FontWeight="Bold" VerticalAlignment="Center"
                                    Visibility="{Binding SubEntries, Converter={StaticResource ReBooleanToVisibilityConverter}}" />
 
-                        <EddieButton Width="120" Content="{x:Static properties:Strings.EntryEditor_Open}" EddieStyle="Green" Icon="{CommonShape Open}"
+                        <EddieButton Width="120" Content="{x:Static properties:Strings.EntryEditor_Open}" EddieStyle="Green" Icon="{MdiShape Folder_Open}"
                                      VerticalAlignment="Center" Click="DelveIntoSubEntry"
                                      Visibility="{Binding Converter={StaticResource SubEntriesToVisibilityConverter}}" />
 
@@ -115,7 +115,7 @@
                                       IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
                                       IsReadOnly="{Binding IsReadOnly}"
                                       Visibility="{Binding SubEntries, Converter={StaticResource ReBooleanToVisibilityConverter}}" />
-                        <EddieButton Margin="5,0,0,0" EddieStyle="Green" HorizontalAlignment="Left" Icon="{CommonShape Open}"
+                        <EddieButton Margin="5,0,0,0" EddieStyle="Green" HorizontalAlignment="Left" Icon="{MdiShape Folder_Open}"
                                      Content="{x:Static properties:Strings.EntryEditor_SelectFile}" Click="SelectFile" />
                     </StackPanel>
                 </DataTemplate>
@@ -130,7 +130,7 @@
                                       IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
                                       IsReadOnly="{Binding IsReadOnly}"
                                       Visibility="{Binding SubEntries, Converter={StaticResource ReBooleanToVisibilityConverter}}" />
-                        <EddieButton Margin="5,0,0,0" EddieStyle="Green" HorizontalAlignment="Left" Icon="{CommonShape Open}"
+                        <EddieButton Margin="5,0,0,0" EddieStyle="Green" HorizontalAlignment="Left" Icon="{MdiShape Folder_Open}"
                                      Content="{x:Static properties:Strings.EntryEditor_SelectDirectory}" Click="SelectDirectory" />
                     </StackPanel>
                 </DataTemplate>
@@ -139,7 +139,7 @@
             <converter:ValueTypeTemplateSelector.ClassTemplate>
                 <DataTemplate DataType="controls:EntryViewModel">
                     <StackPanel Orientation="Horizontal">
-                        <EddieButton Width="120" EddieStyle="Green" HorizontalAlignment="Left" Icon="{CommonShape Open}"
+                        <EddieButton Width="120" EddieStyle="Green" HorizontalAlignment="Left" Icon="{MdiShape Folder_Open}"
                                  Content="{x:Static properties:Strings.EntryEditor_Open}" Click="DelveIntoSubEntry" />
 
                         <EddieButton Width="120" Content="{x:Static properties:Strings.EntryEditor_Remove}" EddieStyle="Green" Margin="10,0,0,0" Icon="{CommonShape Delete}"
@@ -156,10 +156,10 @@
                         <TextBlock Width="200"
                                    Text="{Binding Value, Converter={StaticResource Base64StringLengthToByteLength}, FallbackValue=Unknown}"
                                    VerticalAlignment="Center" />
-                        <EddieButton Width="120" Content="{x:Static properties:Strings.EntryEditor_Select}" EddieStyle="Green" Margin="5,0,0,0" Icon="{CommonShape Open}"
+                        <EddieButton Width="120" Content="{x:Static properties:Strings.EntryEditor_Select}" EddieStyle="Green" Margin="5,0,0,0" Icon="{MdiShape Folder_Open}"
                                      IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
                                      Click="SelectStreamContent" />
-                        <EddieButton Width="120" Content="{x:Static properties:Strings.EntryEditor_Save}" EddieStyle="Green" Margin="5,0,0,0" Icon="{CommonShape Save}"
+                        <EddieButton Width="120" Content="{x:Static properties:Strings.EntryEditor_Save}" EddieStyle="Green" Margin="5,0,0,0" Icon="{MdiShape Content_Save}"
                                      IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
                                      Click="SaveStreamContent" />
                     </StackPanel>
@@ -176,7 +176,7 @@
                                    TextWrapping="WrapWithOverflow"
                                    Text="{Binding Value, Converter={StaticResource DelimiteredTextConverter}}">
                         </TextBlock>
-                        <EddieButton Margin="5,0,0,0" EddieStyle="Green" HorizontalAlignment="Left" Icon="{CommonShape Open}"
+                        <EddieButton Margin="5,0,0,0" EddieStyle="Green" HorizontalAlignment="Left" Icon="{MdiShape Folder_Open}"
                                      Content="View details"
                                      Command="{Binding ShowExceptionCommand, ElementName=UserControl}"
                                      CommandParameter="{Binding}">

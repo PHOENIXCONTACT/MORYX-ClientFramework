@@ -130,6 +130,11 @@
 
     <Style x:Key="MainButton_Symbol"
            TargetType="Path">
+        <Setter Property="Width" Value="40"/>
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Stretch" Value="Uniform"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="Effect">
             <Setter.Value>
                 <DropShadowEffect BlurRadius="0"
@@ -247,11 +252,9 @@
                                 Opacity="{StaticResource ButtonPressedOpacityForButtonPressedSolidColorBrush}"
                                 Visibility="Collapsed" />
                         <Path x:Name="symbol_history"
-                              Style="{StaticResource ButtonIconStyle}"
-                              Data="F1M19.237,9.018C20.011,9.018 20.638,9.644 20.638,10.418 20.638,10.418 20.638,19.981 20.638,19.981 20.638,19.981 25.385,17.274 25.385,17.274 26.057,16.891 26.912,17.126 27.296,17.798 27.679,18.47 27.444,19.325 26.772,19.708 26.772,19.708 19.93,23.608 19.93,23.608 19.893,23.629 19.854,23.646 19.815,23.664 19.8,23.67 19.787,23.678 19.772,23.685 19.697,23.715 19.621,23.738 19.545,23.755 19.526,23.759 19.507,23.763 19.488,23.766 19.405,23.781 19.321,23.792 19.238,23.792 19.154,23.792 19.07,23.781 18.988,23.766 18.968,23.763 18.947,23.759 18.927,23.754 18.849,23.737 18.773,23.714 18.699,23.684 18.689,23.679 18.68,23.674 18.671,23.67 18.605,23.641 18.541,23.606 18.48,23.566 18.466,23.557 18.451,23.547 18.436,23.537 18.306,23.446 18.19,23.332 18.094,23.196 18.082,23.179 18.071,23.162 18.06,23.145 18.047,23.125 18.032,23.106 18.02,23.085 18.007,23.061 18,23.036 17.988,23.011 17.966,22.968 17.946,22.925 17.929,22.88 17.913,22.835 17.899,22.79 17.888,22.745 17.877,22.704 17.867,22.662 17.86,22.619 17.851,22.567 17.847,22.515 17.844,22.463 17.843,22.439 17.837,22.416 17.837,22.391 17.837,22.391 17.837,10.418 17.837,10.418 17.837,9.644 18.464,9.018 19.237,9.018z M32.645,0.674C32.645,0.674 29.984,4.768 29.984,4.768 34.966,8.192 38.235,13.927 38.236,20.431 38.234,30.924 29.73,39.428 19.237,39.429 8.744,39.428 0.24,30.924 0.238,20.431 0.239,12.188 5.487,5.176 12.823,2.545 12.823,2.545 12.823,6.169 12.823,6.169 11.085,6.952 9.513,8.04 8.18,9.373 5.347,12.208 3.601,16.107 3.599,20.431 3.601,24.754 5.347,28.652 8.18,31.488 11.015,34.32 14.914,36.067 19.237,36.068 23.56,36.067 27.459,34.32 30.294,31.488 33.127,28.652 34.874,24.754 34.874,20.431 34.874,16.107 33.127,12.208 30.294,9.373 29.636,8.715 28.919,8.117 28.153,7.586 28.153,7.586 25.609,11.499 25.609,11.499 25.609,11.499 21.118,0.88 21.118,0.88 21.118,0.88 32.645,0.674 32.645,0.674z"
-                              VerticalAlignment="Center"
+                              Style="{StaticResource MainButton_Symbol}"
+                              Data="{c4I:CommonShape History}"
                               Fill="Black"
-                              HorizontalAlignment="Center"
                               SnapsToDevicePixels="True" />
 
                         <ContentPresenter VerticalAlignment="Stretch"
@@ -324,9 +327,7 @@
                         <Path x:Name="symbol_history_forward"
                               Style="{StaticResource MainButton_Symbol}"
                               Data="{c4I:CommonShape ShapeType=ArrowRight}"
-                              VerticalAlignment="Center"
                               Fill="Black"
-                              HorizontalAlignment="Center"
                               SnapsToDevicePixels="True" />
 
                         <ContentPresenter VerticalAlignment="Stretch"
@@ -401,8 +402,6 @@
                         <Path x:Name="symbol_history_back"
                               Style="{StaticResource MainButton_Symbol}"
                               Data="{c4I:CommonShape ShapeType=ArrowLeft}"
-                              VerticalAlignment="Center"
-                              HorizontalAlignment="Center"
                               Fill="Black"
                               SnapsToDevicePixels="True" />
 

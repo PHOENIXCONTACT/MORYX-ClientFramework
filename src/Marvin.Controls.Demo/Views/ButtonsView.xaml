@@ -63,19 +63,19 @@
                 <EddieModuleButton Text="Hello World" Notifications="5" EddieStyle="Gray" Icon="{CommonShape PxCLogo}"
                                    PopupTemplate="{StaticResource PopupTemplate}" />
 
-                <EddieModuleButton Text="Short" Notifications="0" EddieStyle="Gray" Icon="{CommonShape FullScreen}" />
+                <EddieModuleButton Text="Short" Notifications="0" EddieStyle="Gray" Icon="{MdiShape Fullscreen}" />
 
-                <EddieModuleButton Text="Hello World" Notifications="5" Icon="{CommonShape ShapeType=Cross}" />
+                <EddieModuleButton Text="Hello World" Notifications="5" Icon="{CommonShape Cross}" />
 
-                <EddieModuleButton Text="Short" Notifications="0" Icon="{CommonShape ShapeType=Lock}" />
+                <EddieModuleButton Text="Short" Notifications="0" Icon="{CommonShape Lock}" />
                 <EddieModuleButton Text="Hello World" Notifications="5" EddieStyle="Gray" Icon="{CommonShape PxCLogo}" />
-                <EddieModuleButton Text="Short" Notifications="0" EddieStyle="Gray" Icon="{CommonShape FullScreen}" />
+                <EddieModuleButton Text="Short" Notifications="0" EddieStyle="Gray" Icon="{MdiShape Fullscreen}" />
             </StackPanel>
 
             <StackPanel Grid.Row="1" Grid.Column="0" Margin="0,10,0,0">
 
                 <LabeledControlHost Style="{StaticResource LabelControlHostButtonsTwo}" LabelA="Normal">
-                    <EddieActionButton Icon="F1M0.112,0.678C0.112,0.678 0.112,32.929 0.112,32.929 0.112,32.929 26.719,16.803 26.719,16.803 26.719,16.803 0.112,0.678 0.112,0.678z" />
+                    <EddieActionButton Icon="{CommonShape ArrowRight}" />
                 </LabeledControlHost>
 
                 <LabeledControlHost LabelA="Disabled">
@@ -83,11 +83,11 @@
                 </LabeledControlHost>
 
                 <LabeledControlHost Style="{StaticResource LabelControlHostButtonsTwo}" LabelA="Normal">
-                    <EddieActionButton EddieStyle="Gray" Icon="F1M 4.6870068,-0.00214795 7.9988407,-0.00214795 7.9988407,2.9070629 4.6870068,2.9070629 z M 2.2031315,3.3226643 8.4128199,3.3226643 8.4128199,5.8162732 7.5848615,5.8162732 7.5848615,9.1410858 8.4128199,9.1410858 8.4128199,11.634695 0.54721447,11.634695 z M 11.724653,3.3226643 17.934341,3.3226643 19.590258,11.634695 11.724653,11.634695 11.724653,9.1410858 12.552611,9.1410858 12.552611,5.8162732 11.724653,5.8162732 z M 1.375173,12.050297 6.3429238,12.050297 7.1708822,18.284319 7.1708822,19.946725 0.54721447,19.946725 0.54721447,18.284319 z M 12.138632,-0.00214795 15.450467,-0.00214795 15.450467,2.9070629 12.138632,2.9070629 z M 13.79455,12.050297 18.7623,12.050297 19.590258,18.284319 19.590258,19.946725 12.966591,19.946725 12.966591,18.284319 z M 7.9988407,6.2318747 12.138632,6.2318747 11.724653,8.7254841 8.4128199,8.7254841 z M 9.2407783,3.7382657 10.896695,3.7382657 10.896695,5.4006719 9.2407783,5.4006719 z M 9.2407783,9.5566871 10.896695,9.5566871 10.896695,11.219093 9.2407783,11.219093 z" />
+                    <EddieActionButton EddieStyle="Gray" Icon="{CommonShape Binocular}" />
                 </LabeledControlHost>
 
                 <LabeledControlHost Style="{StaticResource LabelControlHostButtonsTwo}" LabelA="Disabled">
-                    <EddieActionButton EddieStyle="Gray" IsEnabled="False" Icon="F1M 4.6870068,-0.00214795 7.9988407,-0.00214795 7.9988407,2.9070629 4.6870068,2.9070629 z M 2.2031315,3.3226643 8.4128199,3.3226643 8.4128199,5.8162732 7.5848615,5.8162732 7.5848615,9.1410858 8.4128199,9.1410858 8.4128199,11.634695 0.54721447,11.634695 z M 11.724653,3.3226643 17.934341,3.3226643 19.590258,11.634695 11.724653,11.634695 11.724653,9.1410858 12.552611,9.1410858 12.552611,5.8162732 11.724653,5.8162732 z M 1.375173,12.050297 6.3429238,12.050297 7.1708822,18.284319 7.1708822,19.946725 0.54721447,19.946725 0.54721447,18.284319 z M 12.138632,-0.00214795 15.450467,-0.00214795 15.450467,2.9070629 12.138632,2.9070629 z M 13.79455,12.050297 18.7623,12.050297 19.590258,18.284319 19.590258,19.946725 12.966591,19.946725 12.966591,18.284319 z M 7.9988407,6.2318747 12.138632,6.2318747 11.724653,8.7254841 8.4128199,8.7254841 z M 9.2407783,3.7382657 10.896695,3.7382657 10.896695,5.4006719 9.2407783,5.4006719 z M 9.2407783,9.5566871 10.896695,9.5566871 10.896695,11.219093 9.2407783,11.219093 z" />
+                    <EddieActionButton EddieStyle="Gray" IsEnabled="False" Icon="{CommonShape Binocular}" />
                 </LabeledControlHost>
             </StackPanel>
 

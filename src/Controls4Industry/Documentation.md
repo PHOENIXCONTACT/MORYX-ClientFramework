@@ -23,7 +23,7 @@ Description missing...
 Description missing...
 
 # Shapes {#shapes}
-Shapes generally can be loaded with the [ShapeFactory](@ref C4I.ShapeFactory). The ShapeFactory will return the PathGeometry static directly.
+Shapes generally can be loaded with the [CommonShapeFactory](@ref C4I.CommonShapeFactory). The ShapeFactory will return the PathGeometry static directly.
 In the enum [CommonShapeType](@ref C4I.CommonShapeType), all icons are defined.
 
 ~~~~{.cs}
@@ -51,7 +51,7 @@ The extension can be used on the following controls:
 ## Available Shapes {#availableShapes}
 Available shapes are documented in the [CommonShapeType](@ref C4I.CommonShapeType) enum.
 
-**Short list:** Unset, ArrowUp, ArrowUpInCycle, ArrowDown, ArrowDownInCycle, ArrowRight, ArrowLeft, Lock, Ok, Cross, CheckMark, Info, AttentionTriangle, ExclamationMark, FullScreen, Magnifier, Pencil, PxCLogo, QuestionMark, SpeakBubble, Plus, Minus, Printer, Undo, Redo, Cloud, Symbol, Copy, Refresh, User, Key, Service, Cells, Gear, Process, Open, Save, Paste, Cut, Properties, New, Camera, ArrowRight2, Delete, Home, BarChart, Heartrate, Binocular, BinocularCrossed, ClockWithCheckmark, Document, SignedDocument, Pause,  
+**Short list:** Unset, ArrowUp, ArrowUpInCycle, ArrowDown, ArrowDownInCycle, ArrowRight, ArrowLeft, Lock, Cross, CheckMark, AttentionTriangle, ExclamationMark, Magnifier, Pencil, PxCLogo, QuestionMark, SpeakBubble, Plus, Minus, Service, Cells, Gear, Process, ArrowRight2, History, Delete, Home, BarChart, Binocular, BinocularCrossed, ClockWithCheckmark,  
 
 # ListBox / ListView {#lists}
 The framework provides a posibility to sort listviews with a simple attached property class called 'GridViewSort'.
@@ -117,6 +117,6 @@ Click on the converter to get detailed explanation and code documentation.
 * [FileSizeToTextConverter](@ref C4I.FileSizeToTextConverter)
 * [GenericEnumConverter](@ref C4I.GenericEnumConverter)
 * [InverseBooleanConverter](@ref C4I.InverseBooleanConverter)
-* [IntToBooleanConverter](@ref C4I.IntToBooleanConverter)
+* [IntToVisibilityConverter](@ref C4I.IntToVisibilityConverter)
 * [NullToCollapsedConverter](@ref C4I.NullToCollapsedConverter)
 * [StringToBooleanConverter](@ref C4I.StringToBooleanConverter)

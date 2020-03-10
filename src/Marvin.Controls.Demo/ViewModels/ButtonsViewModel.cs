@@ -22,7 +22,7 @@ namespace Marvin.Controls.Demo.ViewModels
                 if (!(o is EddieButton speedTestButton))
                     return;
 
-                speedTestButton.Icon = CommonShapeFactory.GetShapeGeometry(CommonShapeType.Refresh);
+                speedTestButton.Icon = MdiShapeFactory.GetShapeGeometry(MdiShapeType.Reload);
 
                 var speedTest = new SpeedTestWindow();
                 speedTest.ShowDialog();

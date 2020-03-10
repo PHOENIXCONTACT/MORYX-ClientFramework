@@ -8,7 +8,7 @@ namespace Marvin.ClientFramework.Tests.Playground
     [ClassDisplay(Name = nameof(Strings.ModuleController_Playground), Description = "", ResourceType = typeof(Strings))]
     public class ModuleController : WorkspaceModuleBase<ModuleConfig>
     {
-        public override Geometry Icon => CommonShapeFactory.GetShapeGeometry(CommonShapeType.Cloud);
+        public override Geometry Icon => MdiShapeFactory.GetShapeGeometry(MdiShapeType.Weather_Cloudy);
 
         protected override void OnInitialize()
         {

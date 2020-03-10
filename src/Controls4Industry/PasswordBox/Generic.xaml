@@ -104,7 +104,7 @@
                       Height="14"
                       Margin="0,5,0,5"
                       VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                      Data="{c4I:CommonShape ShapeType=Key}"
+                      Data="{c4I:MdiShape ShapeType=Key_Variant}"
                       Fill="{StaticResource DarkGreenColorBrush}"
                       Stretch="Uniform"
                       Visibility="Visible" />
