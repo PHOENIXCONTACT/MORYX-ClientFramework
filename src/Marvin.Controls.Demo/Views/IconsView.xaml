@@ -4,7 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:viewModels="clr-namespace:Marvin.Controls.Demo.ViewModels"
-             mc:Ignorable="d"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" x:Name="UserControl"
              d:DataContext="{d:DesignInstance viewModels:IconsViewModel}">
     <UserControl.Resources>
         <DataTemplate x:Key="ShapeTemplate" DataType="viewModels:IconWrapper">
@@ -22,30 +23,51 @@
                            VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding Name}" />
             </DockPanel>
         </DataTemplate>
+
+        <CollectionViewSource x:Key="CommonItems" Source="{Binding ElementName=UserControl, Path=DataContext.CommonShapes}"
+                              IsLiveFilteringRequested="True">
+            <CollectionViewSource.LiveFilteringProperties>
+                <system:String>Name</system:String>
+            </CollectionViewSource.LiveFilteringProperties>
+        </CollectionViewSource>
+
+        <CollectionViewSource x:Key="MdiItems" Source="{Binding ElementName=UserControl, Path=DataContext.MdiShapes}"
+                              IsLiveFilteringRequested="True">
+            <CollectionViewSource.LiveFilteringProperties>
+                <system:String>Name</system:String>
+            </CollectionViewSource.LiveFilteringProperties>
+        </CollectionViewSource>
     </UserControl.Resources>
     <TabControl>
         <TabItem Header="Common">
-            <ScrollViewer>
-                <ItemsControl ItemsSource="{Binding CommonShapes}" ItemTemplate="{StaticResource ShapeTemplate}">
-                    <ItemsControl.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <UniformGrid Columns="10" />
-                        </ItemsPanelTemplate>
-                    </ItemsControl.ItemsPanel>
-                </ItemsControl>
-            </ScrollViewer>
+            <DockPanel LastChildFill="True">
+                <EddieTextBox x:Name="CommonShapeSearch" DockPanel.Dock="Top" />
+
+                <ScrollViewer DockPanel.Dock="Bottom" VerticalAlignment="Stretch">
+                    <ItemsControl ItemsSource="{Binding Source={StaticResource CommonItems}}" ItemTemplate="{StaticResource ShapeTemplate}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <UniformGrid Columns="10" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </ScrollViewer>
+            </DockPanel>
         </TabItem>
         <TabItem Header="Material Design">
-            <ScrollViewer>
-                <ItemsControl ItemsSource="{Binding MdiShapes}" ItemTemplate="{StaticResource ShapeTemplate}">
-                    <ItemsControl.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <UniformGrid Columns="10" />
-                        </ItemsPanelTemplate>
-                    </ItemsControl.ItemsPanel>
-                </ItemsControl>
-            </ScrollViewer>
+            <DockPanel LastChildFill="True" VerticalAlignment="Stretch">
+                <EddieTextBox x:Name="MdiShapeSearch" DockPanel.Dock="Top" />
+
+                <ScrollViewer>
+                    <ItemsControl ItemsSource="{Binding Source={StaticResource MdiItems}}" ItemTemplate="{StaticResource ShapeTemplate}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <UniformGrid Columns="10" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                    </ItemsControl>
+                </ScrollViewer>
+            </DockPanel>
         </TabItem>
     </TabControl>
-
 </UserControl>
