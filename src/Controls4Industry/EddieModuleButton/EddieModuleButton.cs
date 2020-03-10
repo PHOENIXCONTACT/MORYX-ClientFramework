@@ -27,8 +27,8 @@ namespace C4I
         /// </summary>
         public string Text
         {
-            get { return (string)GetValue(TextProperty); }
-            set { SetValue(TextProperty, value); }
+            get => (string)GetValue(TextProperty);
+            set => SetValue(TextProperty, value);
         }
 
         /// <summary>
@@ -43,39 +43,33 @@ namespace C4I
         /// </summary>
         public EddieButtonStyle EddieStyle
         {
-            get { return (EddieButtonStyle)GetValue(EddieStyleProperty); }
-            set { SetValue(EddieStyleProperty, value); }
+            get => (EddieButtonStyle)GetValue(EddieStyleProperty);
+            set => SetValue(EddieStyleProperty, value);
         }
 
         /// <summary>
         /// Notification counter of this button
         /// </summary>
         public static readonly DependencyProperty NotificationsProperty = DependencyProperty.Register(
-            "Notifications", typeof (int), typeof (EddieModuleButton), new PropertyMetadata(0));
+            nameof(Notifications), typeof (int), typeof (EddieModuleButton), new PropertyMetadata(0));
 
         /// <summary>
         /// Gets or sets the notification counter
         /// </summary>
         public int Notifications
         {
-            get { return (int) GetValue(NotificationsProperty); }
-            set { SetValue(NotificationsProperty, value); }
+            get => (int) GetValue(NotificationsProperty);
+            set => SetValue(NotificationsProperty, value);
         }
 
-        /// <summary>
-        /// Icon on this button
-        /// </summary>
-        public static readonly DependencyProperty IconGeometryProperty = DependencyProperty.Register(
-            "IconGeometry", typeof(Geometry), typeof(EddieModuleButton),
-            new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsRender), null);
+        public static readonly DependencyProperty IconProperty = DependencyProperty.Register(nameof(Icon),
+            typeof(Geometry), typeof(EddieModuleButton),
+            new FrameworkPropertyMetadata(null,  FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsRender), null);
 
-        /// <summary>
-        /// Gets or sets the icon on this button
-        /// </summary>
-        public Geometry IconGeometry
+        public Geometry Icon
         {
-            get { return (Geometry)GetValue(IconGeometryProperty); }
-            set { SetValue(IconGeometryProperty, value); }
+            get => (Geometry) GetValue(IconProperty);
+            set => SetValue(IconProperty, value);
         }
 
         /// <summary>
@@ -89,8 +83,8 @@ namespace C4I
         /// </summary>
         public ICommand Command
         {
-            get { return (ICommand) GetValue(CommandProperty); }
-            set { SetValue(CommandProperty, value); }
+            get => (ICommand) GetValue(CommandProperty);
+            set => SetValue(CommandProperty, value);
         }
 
         /// <summary>
@@ -104,8 +98,8 @@ namespace C4I
         /// </summary>
         public DataTemplate PopupTemplate
         {
-            get { return (DataTemplate)GetValue(PopupTemplateProperty); }
-            set { SetValue(PopupTemplateProperty, value); }
+            get => (DataTemplate)GetValue(PopupTemplateProperty);
+            set => SetValue(PopupTemplateProperty, value);
         }
 
         /// <summary>
@@ -125,12 +119,11 @@ namespace C4I
         /// <inheritdoc />
         public override void OnApplyTemplate()
         {
-            var button = GetTemplateChild("PART_MainButton") as EddieButton;
-            if (button != null)
+            if (GetTemplateChild("PART_MainButton") is EddieButton button)
             {
                 button.Click += OnMainButtonClick;
                 button.Command = Command;
-            } 
+            }
 
             base.OnApplyTemplate();
         }

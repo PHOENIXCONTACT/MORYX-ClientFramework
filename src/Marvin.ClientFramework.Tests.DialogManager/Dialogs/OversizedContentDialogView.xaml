@@ -36,7 +36,7 @@
         </DialogPanel.Content>
         <DialogPanel.Buttons>
             <EddieButton Command="{Binding CancelCmd}" 
-                         Content="Cancel" Icon="Cross" />
+                         Content="Cancel" Icon="{CommonShape Open}" />
         </DialogPanel.Buttons>
     </DialogPanel>
 </UserControl>

@@ -13,19 +13,19 @@
                     Style="{StaticResource EddieButtonBorderBaseStyle}" />
 
             <Border x:Name="PART_Content">
-                <Path x:Name="PART_ButtonIconPath" Style="{StaticResource EddieButtonPathStyle}"
-                      Data="{TemplateBinding IconPath}" Fill="White" Width="20" Height="20" />
+                <Path x:Name="PART_ButtonIcon" Style="{StaticResource EddieButtonPathStyle}"
+                      Data="{TemplateBinding Icon}" Fill="White" Width="20" Height="20" />
             </Border>
-            
+
         </Grid>
         <ControlTemplate.Triggers>
             <Trigger Property="EddieStyle" Value="Green">
                 <Setter Property="Background" Value="{StaticResource GreenBackgroundBrush}" />
-                <Setter TargetName="PART_ButtonIconPath" Property="Fill" Value="White" />
+                <Setter TargetName="PART_ButtonIcon" Property="Fill" Value="White" />
             </Trigger>
             <Trigger Property="EddieStyle" Value="Gray">
                 <Setter Property="Background" Value="{StaticResource GrayBackgroundBrush}" />
-                <Setter TargetName="PART_ButtonIconPath" Property="Fill" Value="Black" />
+                <Setter TargetName="PART_ButtonIcon" Property="Fill" Value="Black" />
             </Trigger>
 
             <MultiTrigger>
@@ -34,7 +34,7 @@
                     <Condition Property="EddieStyle" Value="Green" />
                 </MultiTrigger.Conditions>
                 <MultiTrigger.Setters>
-                    <Setter TargetName="ButtonBorder" Property="Background" 
+                    <Setter TargetName="ButtonBorder" Property="Background"
                             Value="{StaticResource GreenButtonPressedBrush}" />
                 </MultiTrigger.Setters>
             </MultiTrigger>
@@ -45,15 +45,15 @@
                     <Condition Property="EddieStyle" Value="Gray" />
                 </MultiTrigger.Conditions>
                 <MultiTrigger.Setters>
-                    <Setter TargetName="ButtonBorder" Property="Background" 
+                    <Setter TargetName="ButtonBorder" Property="Background"
                             Value="{StaticResource GrayButtonPressedBrush}" />
                 </MultiTrigger.Setters>
             </MultiTrigger>
 
-            <Trigger Property="IconPath" Value="{x:Null}">
-                <Setter TargetName="PART_ButtonIconPath" Property="Visibility" Value="Collapsed" />
+            <Trigger Property="Icon" Value="{x:Null}">
+                <Setter TargetName="PART_ButtonIcon" Property="Visibility" Value="Collapsed" />
             </Trigger>
-            
+
             <Trigger Property="IsEnabled" Value="false">
                 <Setter TargetName="PART_Content" Property="Opacity"
                         Value="{StaticResource DisabledContentOpacity}" />

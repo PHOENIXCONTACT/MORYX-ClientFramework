@@ -12,7 +12,18 @@ namespace C4I
         /// <summary>
         /// Selected <see cref="CommonShapeType"/>
         /// </summary>
+        [ConstructorArgument("shapeType")]
         public CommonShapeType ShapeType { get; set; }
+
+        public CommonShapeExtension()
+        {
+
+        }
+
+        public CommonShapeExtension(CommonShapeType shapeType)
+        {
+            ShapeType = shapeType;
+        }
 
         /// <inheritdoc />
         public override object ProvideValue(IServiceProvider serviceProvider)

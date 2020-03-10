@@ -10,9 +10,19 @@ namespace C4I
     public class FaShapeExtension : MarkupExtension
     {
         /// <summary>
-        /// Selected <see cref="FaType"/>
+        /// Selected <see cref="FaShapeType"/>
         /// </summary>
         public FaShapeType ShapeType { get; set; }
+
+        public FaShapeExtension()
+        {
+
+        }
+
+        public FaShapeExtension(FaShapeType shapeType)
+        {
+            ShapeType = shapeType;
+        }
 
         /// <inheritdoc />
         public override object ProvideValue(IServiceProvider serviceProvider)

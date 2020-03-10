@@ -6,9 +6,9 @@
              xmlns:playground="clr-namespace:Marvin.ClientFramework.Tests.Playground"
              xmlns:controls="clr-namespace:Marvin.Controls;assembly=Marvin.Controls"
              xmlns:properties="clr-namespace:Marvin.ClientFramework.Tests.Playground.Properties"
-             mc:Ignorable="d" d:DesignHeight="379" d:DesignWidth="515" 
+             mc:Ignorable="d" d:DesignHeight="379" d:DesignWidth="515"
              d:DataContext="{d:DesignInstance playground:PlaygroundWorkspaceViewModel}">
-    
+
     <StackPanel>
         <controls:InfoBox x:Name="InfoBox" Text="{x:Static properties:Strings.PlaygroundWorkspaceView_HelloWorld}" BaseBrush="Black" Height="100" Width="300" />
         <UniformGrid Rows="2" Margin="30" HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -38,6 +38,6 @@
             <TextBlock Text="{Binding CurrentCommand.Execution.InnerException, StringFormat='{}InnerException: {0}'}" />
             <TextBlock Text="{Binding CurrentCommand.Execution.ErrorMessage, StringFormat='{}ErrorMessage: {0}'}" />
         </StackPanel>
-        
+
     </StackPanel>
 </UserControl>

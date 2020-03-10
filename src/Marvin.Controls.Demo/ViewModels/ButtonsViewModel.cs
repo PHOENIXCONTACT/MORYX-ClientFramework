@@ -19,17 +19,15 @@ namespace Marvin.Controls.Demo.ViewModels
 
             SpeedTestWindowCommand = new RelayCommand(o =>
             {
-                var speedTestButton = o as EddieButton;
+                if (!(o is EddieButton speedTestButton))
+                    return;
 
-                if (speedTestButton != null)
-                {
-                    speedTestButton.Icon = CommonShapeType.Refresh;
+                speedTestButton.Icon = CommonShapeFactory.GetShapeGeometry(CommonShapeType.Refresh);
 
-                    var speedTest = new SpeedTestWindow();
-                    speedTest.ShowDialog();
+                var speedTest = new SpeedTestWindow();
+                speedTest.ShowDialog();
 
-                    speedTestButton.Icon = CommonShapeType.Unset;
-                }
+                speedTestButton.Icon = CommonShapeFactory.GetShapeGeometry(CommonShapeType.Unset);
             });
         }
     }
