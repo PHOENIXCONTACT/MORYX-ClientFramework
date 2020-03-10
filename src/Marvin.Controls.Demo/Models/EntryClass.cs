@@ -33,9 +33,6 @@ namespace Marvin.Controls.Demo.Models
 
         public MemoryStream Stream { get; set; }
 
-        public string ExceptionEntry
-        {
-            get { throw new InvalidOperationException("This is ver long Exception text to test if the exception editor is readable. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim."); }
-        }
+        public string ExceptionEntry => throw new InvalidOperationException("This is ver long Exception text to test if the exception editor is readable. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.");
     }
 }

@@ -88,16 +88,16 @@
     <Compile Include="Extensions\VisualTreeExtension.cs" />
     <Compile Include="Geometries\CommonShapeExtension.cs" />
     <Compile Include="Geometries\CommonShapeType.cs" />
-    <Compile Include="Geometries\FaShapeExtension.cs" />
+    <Compile Include="Geometries\MdiShapeExtension.cs" />
     <Compile Include="EddieComboBox\EddieComboBox.cs" />
     <Compile Include="EddieHistoryButtonBar\EddieHistoryButtonBar.cs" />
     <Compile Include="EddieModuleButton\EddieModuleButton.cs" />
     <Compile Include="EddieNavigationBar\EddieNavigationBar.cs" />
     <Compile Include="EddieTextBox\EddieTextBox.cs" />
-    <Compile Include="Geometries\FaShapeFactory.cs">
+    <Compile Include="Geometries\MdiShapeFactory.cs">
+      <DependentUpon>MdiShapeFactory.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FaShapeFactory.tt</DependentUpon>
     </Compile>
     <Compile Include="Geometries\CommonShapeFactory.cs" />
     <Compile Include="LabeledControlHost\LabeledControlHost.cs" />
@@ -267,7 +267,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Documentation.md</LastGenOutput>
     </None>
-    <None Include="Geometries\fontawesome-5.12.1.json" />
+    <None Include="Geometries\mdi-5.0.45.json" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -276,9 +276,9 @@
     <Folder Include="IconTests\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Geometries\FaShapeFactory.tt">
+    <Content Include="Geometries\MdiShapeFactory.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>FaShapeFactory.cs</LastGenOutput>
+      <LastGenOutput>MdiShapeFactory.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

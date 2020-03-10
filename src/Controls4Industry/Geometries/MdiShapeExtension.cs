@@ -5,27 +5,26 @@ namespace C4I
 {
     /// <inheritdoc />
     /// <summary>
-    /// MarkupExtension to support <see cref="T:C4I.CommonShapeType" /> within XAML
+    /// MarkupExtension to support <see cref="T:C4I.MdiShapeType" /> within XAML
     /// </summary>
-    public class CommonShapeExtension : MarkupExtension
+    public class MdiShapeExtension : MarkupExtension
     {
         /// <summary>
-        /// Selected <see cref="CommonShapeType"/>
+        /// Selected <see cref="MdiShapeType"/>
         /// </summary>
-        [ConstructorArgument("shapeType")]
-        public CommonShapeType ShapeType { get; set; }
+        public MdiShapeType ShapeType { get; set; }
 
         /// <summary>
         /// Default constructor to create the shape extension
         /// </summary>
-        public CommonShapeExtension()
+        public MdiShapeExtension()
         {
         }
 
         /// <summary>
         /// Constructor to create the shape extension with an initial shape type
         /// </summary>
-        public CommonShapeExtension(CommonShapeType shapeType)
+        public MdiShapeExtension(MdiShapeType shapeType)
         {
             ShapeType = shapeType;
         }
@@ -33,7 +32,7 @@ namespace C4I
         /// <inheritdoc />
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
-            return CommonShapeFactory.GetShapeGeometry(ShapeType);
+            return MdiShapeFactory.GetShapeGeometry(ShapeType);
         }
     }
 }
