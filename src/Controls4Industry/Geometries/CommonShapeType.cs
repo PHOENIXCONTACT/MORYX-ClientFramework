@@ -4,7 +4,6 @@ namespace C4I
 
     public enum CommonShapeType
     {
-        Unset,
         ArrowUp,
         ArrowUpInCycle,
         ArrowDown,

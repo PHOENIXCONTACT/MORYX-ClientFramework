@@ -34,7 +34,7 @@
             <EddieTextBox Text="My nice disabled text" IsEnabled="False" Width="180" Margin="0,10,10,0" />
             <EddieTextBox Text="My nice readonly text" IsReadOnly="True" Width="180" Margin="0,10,10,0" />
             <EddieTextBox Text="Alternative lock icon" LockIcon="{CommonShape Delete}" IsReadOnly="True" Width="180" Margin="0,10,10,0" />
-            <EddieTextBox Text="No lock icon" LockIcon="{CommonShape Unset}" IsReadOnly="True" Width="180" Margin="0,10,10,0" />
+            <EddieTextBox Text="No lock icon" LockIcon="" IsReadOnly="True" Width="180" Margin="0,10,10,0" />
             <EddieTextBox Watermark="My nice Watermark" Width="180" Margin="0,10,10,0" />
             <EddieTextBox Text="Watermark is invisible because of this Text" Watermark="My nice Watermark"
                           Width="180" Margin="0,10,10,0" VerticalContentAlignment="Center"/>

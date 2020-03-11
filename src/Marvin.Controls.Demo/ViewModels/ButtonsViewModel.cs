@@ -26,8 +26,6 @@ namespace Marvin.Controls.Demo.ViewModels
 
                 var speedTest = new SpeedTestWindow();
                 speedTest.ShowDialog();
-
-                speedTestButton.Icon = CommonShapeFactory.GetShapeGeometry(CommonShapeType.Unset);
             });
         }
     }
