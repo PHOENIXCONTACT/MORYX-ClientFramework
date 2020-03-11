@@ -15,7 +15,7 @@
 
         <StackPanel HorizontalAlignment="Center" Margin="0,10,0,0" Orientation="Horizontal">
             <EddieTextBox Text="My nice disabled text" IsEnabled="False" Width="180" Margin="0,0,0,0" />
-            <EddieTextBox Text="Custom Lock Icon" LockIcon="Minus" IsEnabled="False" Width="180" Margin="10,0,0,0" />
+            <EddieTextBox Text="Custom Lock Icon" LockIcon="{CommonShape Minus}" IsEnabled="False" Width="180" Margin="10,0,0,0" />
         </StackPanel>
 
     </StackPanel>

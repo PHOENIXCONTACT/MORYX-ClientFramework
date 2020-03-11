@@ -33,8 +33,8 @@
             <EddieTextBox Text="My nice long text" Width="180" Margin="0,10,10,0" />
             <EddieTextBox Text="My nice disabled text" IsEnabled="False" Width="180" Margin="0,10,10,0" />
             <EddieTextBox Text="My nice readonly text" IsReadOnly="True" Width="180" Margin="0,10,10,0" />
-            <EddieTextBox Text="Alternative lock icon" LockIcon="Delete" IsReadOnly="True" Width="180" Margin="0,10,10,0" />
-            <EddieTextBox Text="No lock icon" LockIcon="Unset" IsReadOnly="True" Width="180" Margin="0,10,10,0" />
+            <EddieTextBox Text="Alternative lock icon" LockIcon="{CommonShape Delete}" IsReadOnly="True" Width="180" Margin="0,10,10,0" />
+            <EddieTextBox Text="No lock icon" LockIcon="{CommonShape Unset}" IsReadOnly="True" Width="180" Margin="0,10,10,0" />
             <EddieTextBox Watermark="My nice Watermark" Width="180" Margin="0,10,10,0" />
             <EddieTextBox Text="Watermark is invisible because of this Text" Watermark="My nice Watermark"
                           Width="180" Margin="0,10,10,0" VerticalContentAlignment="Center"/>
@@ -50,20 +50,20 @@
             <EddieTextBox Width="180"
                                           Margin="0,10,10,0"
                                           VerticalContentAlignment="Center"
-                                          IconPath="{MdiShape Text_Box_Multiple}"
+                                          Icon="{MdiShape Text_Box_Multiple}"
                                           Text="test"
                                           Watermark="My nice Watermark" />
             <EddieTextBox Width="180"
                                           Margin="0,10,10,0"
                                           VerticalContentAlignment="Center"
-                                          IconPath="{MdiShape Text_Box_Multiple}"
+                                          Icon="{MdiShape Text_Box_Multiple}"
                                           IsEnabled="False"
                                           Text="test"
                                           Watermark="My nice Watermark" />
             <EddieTextBox Width="180"
                                           Margin="0,10,10,0"
                                           VerticalContentAlignment="Center"
-                                          IconPath="{MdiShape Text_Box_Multiple}"
+                                          Icon="{MdiShape Text_Box_Multiple}"
                                           IsReadOnly="true"
                                           Text="test"
                                           Watermark="My nice Watermark" />
@@ -76,13 +76,13 @@
             <EddieTextBox Width="180"
                           Margin="3"
                           VerticalContentAlignment="Center"
-                          IconPath="{MdiShape Account}"
+                          Icon="{MdiShape Account}"
                           Text="test"
                           Watermark="My nice Watermark" />
             <EddieTextBox Width="180"
                           Margin="3"
                           VerticalContentAlignment="Center"
-                          IconPath="{MdiShape Account}"
+                          Icon="{MdiShape Account}"
                           IsEnabled="False"
                           Text="test"
                           Watermark="My nice Watermark" />

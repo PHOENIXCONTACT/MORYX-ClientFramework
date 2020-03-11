@@ -66,7 +66,7 @@
                       Height="14"
                       Margin="0,5,0,5"
                       VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                      Data="{TemplateBinding IconPath}"
+                      Data="{TemplateBinding Icon}"
                       Fill="{StaticResource DarkGreenColorBrush}"
                       Stretch="Uniform" />
                 
@@ -78,7 +78,7 @@
                       Margin="0,5,0,5"
                       Visibility="Hidden"
                       VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                      Data="{TemplateBinding LockIconPath}"
+                      Data="{TemplateBinding LockIcon}"
                       Fill="{StaticResource DarkGreenColorBrush}"
                       Stretch="Uniform" />
             </Grid>
