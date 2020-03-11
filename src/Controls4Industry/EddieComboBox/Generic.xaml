@@ -10,7 +10,7 @@
     <ControlTemplate x:Key="EddieComboBoxToggleButton" TargetType="ToggleButton">
         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent">
             <Path HorizontalAlignment="Right" Margin="0,0,15,0"
-                  Data="{Binding LockIconPath, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type c4I:EddieComboBox}}}"
+                  Data="{Binding LockIcon, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type c4I:EddieComboBox}}}"
                   VerticalAlignment="Center" x:Name="lock"
                   Width="14" Height="14"
                   Stretch="Uniform"
