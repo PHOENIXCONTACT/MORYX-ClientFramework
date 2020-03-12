@@ -15,7 +15,7 @@
 
             <DockPanel x:Name="PART_Content">
                 <Path x:Name="PART_ButtonIcon" Style="{StaticResource EddieButtonPathStyle}"
-                      Data="{TemplateBinding Icon}" Margin="10,5,0,5" Width="16"
+                      Data="{TemplateBinding Icon}" Margin="10,5,0,5" Width="{Binding ElementName=ContentPresenter, Path=ActualHeight}"
                       VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Fill="White" />
 
                 <ContentPresenter x:Name="ContentPresenter" DockPanel.Dock="Left"
