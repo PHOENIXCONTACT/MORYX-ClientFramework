@@ -1,4 +1,7 @@
-﻿namespace Marvin.ClientFramework.Kernel
+// Copyright (c) 2020, Phoenix Contact GmbH & Co. KG
+// Licensed under the Apache License, Version 2.0
+
+namespace Marvin.ClientFramework.Kernel
 {
     /// <summary>
     /// Config for a single assembly loaded by the <see cref="IRunMode"/>

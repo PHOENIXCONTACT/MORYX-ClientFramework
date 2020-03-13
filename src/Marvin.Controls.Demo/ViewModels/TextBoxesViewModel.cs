@@ -1,4 +1,7 @@
-﻿using System.Windows.Input;
+// Copyright (c) 2020, Phoenix Contact GmbH & Co. KG
+// Licensed under the Apache License, Version 2.0
+
+using System.Windows.Input;
 using C4I;
 using Caliburn.Micro;
 

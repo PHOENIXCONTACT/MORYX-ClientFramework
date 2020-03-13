@@ -1,4 +1,7 @@
-﻿namespace Marvin.ClientFramework.Dialog
+// Copyright (c) 2020, Phoenix Contact GmbH & Co. KG
+// Licensed under the Apache License, Version 2.0
+
+namespace Marvin.ClientFramework.Dialog
 {
     /// <summary>
     /// Enum for possible message box image types which can be 

@@ -1,4 +1,7 @@
-﻿namespace Marvin.ClientFramework
+// Copyright (c) 2020, Phoenix Contact GmbH & Co. KG
+// Licensed under the Apache License, Version 2.0
+
+namespace Marvin.ClientFramework
 {
     /// <summary>
     /// Classification of the current user interaction with the screen - determines wether the screen may be hidden or

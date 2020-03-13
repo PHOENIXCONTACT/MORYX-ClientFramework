@@ -1,4 +1,7 @@
-﻿using System.Windows.Media;
+// Copyright (c) 2020, Phoenix Contact GmbH & Co. KG
+// Licensed under the Apache License, Version 2.0
+
+using System.Windows.Media;
 using Marvin.ClientFramework;
 using Marvin.Tools.WcfClient.UI.Viewer.Properties;
 

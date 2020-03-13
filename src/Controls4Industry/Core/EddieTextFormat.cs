@@ -1,4 +1,7 @@
-﻿namespace C4I
+// Copyright (c) 2020, Phoenix Contact GmbH & Co. KG
+// Licensed under the Apache License, Version 2.0
+
+namespace C4I
 {
     /// <summary>
     /// Text format enum
