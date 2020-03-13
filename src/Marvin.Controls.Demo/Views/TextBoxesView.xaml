@@ -1,10 +1,10 @@
 ﻿<UserControl x:Class="Marvin.Controls.Demo.Views.TextBoxesView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:viewModels="clr-namespace:Marvin.Controls.Demo.ViewModels"
-             mc:Ignorable="d" 
+             mc:Ignorable="d"
              d:DataContext="{d:DesignInstance viewModels:TextBoxesViewModel}">
     <StackPanel>
         <Border BorderThickness="1" BorderBrush="Black">
@@ -15,7 +15,7 @@
         </Border>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
             <EddieTextBox Text="In vielen der etwas lässigeren Zivilisationen am äußersten Ostrand der Galaxis hat der Reiseführer Per Anhalter durch die Galaxis die große Encyclopaedia Galactica als Standard-Nachschlagewerk für alle Kenntnisse und Weisheiten inzwischen längst abgelöst. Denn obwohl er viele Lücken hat und viele Dinge enthält, die sehr zweifelhaft oder zumindest wahnsinnig ungenau sind, ist er dem älteren, viel langatmigeren Werk in zweierlei Hinsicht überlegen. Erstens ist er ein bisschen billiger, und zweitens stehen auf seinem Umschlag in großen, freundlichen Buchstaben die Worte KEINE PANIK."
-                          TextWrapping="Wrap" Width="200" Height="100" Margin="0,10,10,0" 
+                          TextWrapping="Wrap" Width="200" Height="100" Margin="0,10,10,0"
                           Watermark="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."/>
             <EddieTextBox Text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
                           TextWrapping="WrapWithOverflow" Width="200" Height="100" Margin="0,10,10,0" VerticalContentAlignment="Top"/>
@@ -24,7 +24,7 @@
                                   TextWrapping="Wrap" Width="200" Height="100" Margin="0,10,10,0" />
             <EddieTextBox Text="A Short text in a big box with default content alignment (center)"
                           TextWrapping="WrapWithOverflow" Width="200" Height="100" Margin="0,10,10,0" />
-            
+
             <EddieTextBox Text="A Short text in a big box with content alignment top"
                           TextWrapping="WrapWithOverflow" Width="200" Height="100" Margin="0,10,10,0" VerticalContentAlignment="Top"/>
         </StackPanel>
@@ -38,7 +38,7 @@
             <EddieTextBox Watermark="My nice Watermark" Width="180" Margin="0,10,10,0" />
             <EddieTextBox Text="Watermark is invisible because of this Text" Watermark="My nice Watermark"
                           Width="180" Margin="0,10,10,0" VerticalContentAlignment="Center"/>
-            <EddieTextBox Text="Growing, return enabled, max lines 6, auto scrollbar" Width="180" Margin="0,10,10,0" 
+            <EddieTextBox Text="Growing, return enabled, max lines 6, auto scrollbar" Width="180" Margin="0,10,10,0"
                           TextWrapping="Wrap" AcceptsReturn="True" MaxLines="6" VerticalScrollBarVisibility="Auto"/>
         </StackPanel>
 

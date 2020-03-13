@@ -3,7 +3,7 @@
 namespace C4I
 {
     /// <summary>
-    /// Default button with addtional features of the <see cref="EddieButtonBase"/>
+    /// Default button with additional features of the <see cref="EddieButtonBase"/>
     /// </summary>
     public class EddieButton : EddieButtonBase
     {

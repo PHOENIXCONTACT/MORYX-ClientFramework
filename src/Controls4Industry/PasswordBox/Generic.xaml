@@ -1,5 +1,5 @@
 ﻿<ResourceDictionary
-	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	xmlns:c4I="clr-namespace:C4I">
 
@@ -71,31 +71,6 @@
                               Grid.Column="0"
                               Margin="7,5,0,5"
                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
-
-                <TextBlock Grid.Row="0"
-                           Grid.Column="0"
-                           Margin="10,5,0,5"
-                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                           FontStyle="Italic"
-                           Foreground="DarkGray"
-                           IsHitTestVisible="False"
-                           Text="{Binding Path=Watermark,
-                                          RelativeSource={RelativeSource AncestorType={x:Type c4I:EddieTextBox}}}">
-                    <TextBlock.Style>
-                        <Style TargetType="{x:Type TextBlock}">
-                            <Setter Property="Visibility" Value="Collapsed" />
-                            <Setter Property="TextWrapping" Value="Wrap" />
-                            <Style.Triggers>
-                                <DataTrigger Binding="{Binding Path=Text, RelativeSource={RelativeSource AncestorType={x:Type TextBox}}}" Value="">
-                                    <Setter Property="Visibility" Value="Visible" />
-                                </DataTrigger>
-                                <DataTrigger Binding="{Binding Path=Text, RelativeSource={RelativeSource AncestorType={x:Type TextBox}}}" Value="{x:Null}">
-                                    <Setter Property="Visibility" Value="Visible" />
-                                </DataTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </TextBlock.Style>
-                </TextBlock>
 
                 <Path x:Name="editable_indicator"
                       Grid.Row="0"

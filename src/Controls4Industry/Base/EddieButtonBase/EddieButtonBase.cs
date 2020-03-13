@@ -34,7 +34,7 @@ namespace C4I
             new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsRender), null);
 
         /// <summary>
-        /// Icon type of <see cref="CommonShapeType"/> which sets the icon on the button
+        /// Geometry which sets the icon on the button
         /// </summary>
         public Geometry Icon
         {
