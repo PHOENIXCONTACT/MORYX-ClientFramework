@@ -84,11 +84,5 @@ namespace Marvin.ClientFramework.Shell
         }
 
         #endregion
-
-        /// <inheritdoc />
-        public override string ToString()
-        {
-            return $"{Module.Name} - {_workspace.GetType().Name}";
-        }
     }
 }

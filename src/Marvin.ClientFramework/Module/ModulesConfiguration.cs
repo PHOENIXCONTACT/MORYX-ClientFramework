@@ -6,7 +6,7 @@ using Marvin.Users;
 namespace Marvin.ClientFramework
 {
     /// <summary>
-    /// Base configuration for the client modules 
+    /// Base configuration for the client modules
     /// </summary>
     [DataContract]
     public class ModulesConfiguration : IConfig

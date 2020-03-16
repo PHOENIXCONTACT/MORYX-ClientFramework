@@ -115,6 +115,10 @@
       <Name>Marvin.ClientFramework.Kernel</Name>
       <Private>True</Private>
     </ProjectReference>
+    <ProjectReference Include="..\Marvin.ClientFramework.SimpleShell\Marvin.ClientFramework.SimpleShell.csproj">
+      <Project>{145bf3ee-6f5d-46a5-9711-143e2a4fff81}</Project>
+      <Name>Marvin.ClientFramework.SimpleShell</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Marvin.ClientFramework.Tests.AboutBoxCustomization\Marvin.ClientFramework.Tests.AboutBoxCustomization.csproj">
       <Project>{bb6991f1-87e2-4ca1-9a68-0abbd3b1f1ec}</Project>
       <Name>Marvin.ClientFramework.Tests.AboutBoxCustomization</Name>
