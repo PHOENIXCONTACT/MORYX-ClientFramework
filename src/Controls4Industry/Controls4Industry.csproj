@@ -274,10 +274,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Geometries\MdiShapeFactory.tt">
+    <None Include="Geometries\MdiShapeFactory.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>MdiShapeFactory.cs</LastGenOutput>
-    </Content>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
