@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
+using System.Windows;
 using Marvin.Configuration;
 
 namespace Marvin.Controls.Demo.Models
@@ -19,6 +20,12 @@ namespace Marvin.Controls.Demo.Models
         public EntrySubClass SubClass { get; set; }
 
         public List<EntrySubClass> ListSubClass { get; set; }
+
+        public List<Visibility> ListEnum { get; set; }
+
+        public List<string> ListString { get; set; }
+
+        public List<bool> ListBool { get; set; }
 
         public byte[] ArrayOfByte { get; set; }
 

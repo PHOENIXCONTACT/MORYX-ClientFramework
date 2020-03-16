@@ -23,7 +23,6 @@
             <converter:ValueTypeTemplateSelector.CollectionTemplate>
                 <DataTemplate DataType="controls:EntryViewModel">
                     <StackPanel Orientation="Horizontal" Height="35">
-
                         <TextBlock Text="{Binding Value}"
                                    FontWeight="Bold" VerticalAlignment="Center"
                                    Visibility="{Binding SubEntries, Converter={StaticResource ReBooleanToVisibilityConverter}}" />
@@ -31,30 +30,22 @@
                         <EddieButton Width="120" Content="{x:Static properties:Strings.EntryEditor_Open}" EddieStyle="Green" Icon="{MdiShape Folder_Open}"
                                      VerticalAlignment="Center" Click="DelveIntoSubEntry"
                                      Visibility="{Binding Converter={StaticResource SubEntriesToVisibilityConverter}}" />
-
-                        <EddieButton Width="120" Content="{x:Static properties:Strings.EntryEditor_Remove}" EddieStyle="Green" Margin="10,0,0,0" Icon="{CommonShape Delete}"
-                                     Visibility="{Binding CurrentEntry, ElementName=UserControl, Converter={StaticResource DelButtonVisibilityConverter}, FallbackValue=Collapsed}"
-                                     IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
-                                     Click="RemoveCollectionEntry"  />
                     </StackPanel>
                 </DataTemplate>
             </converter:ValueTypeTemplateSelector.CollectionTemplate>
 
             <converter:ValueTypeTemplateSelector.StringTemplate>
                 <DataTemplate DataType="controls:EntryViewModel">
-
                     <EddieTextBox Width="200" HorizontalAlignment="Left"
                                   Text="{Binding Value, Mode=TwoWay}" Watermark="{Binding DefaultValue}"
                                   IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
                                   IsReadOnly="{Binding IsReadOnly}"
                                   Visibility="{Binding SubEntries, Converter={StaticResource ReBooleanToVisibilityConverter}}" />
-
                 </DataTemplate>
             </converter:ValueTypeTemplateSelector.StringTemplate>
 
             <converter:ValueTypeTemplateSelector.PasswordTemplate>
                 <DataTemplate DataType="controls:EntryViewModel">
-
                     <StackPanel Orientation="Horizontal"
                                 Visibility="{Binding SubEntries, Converter={StaticResource ReBooleanToVisibilityConverter}}">
 
@@ -73,7 +64,6 @@
 
                         <CheckBox x:Name="ShowPassword" Margin="5,0,0,0" Content="{x:Static properties:Strings.EntryEditor_Show}" IsChecked="False" />
                     </StackPanel>
-
                     <DataTemplate.Triggers>
                         <Trigger SourceName="ShowPassword" Property="IsChecked" Value="True">
                             <Setter TargetName="HiddenPassword" Property="Visibility" Value="Collapsed" />
@@ -95,14 +85,10 @@
 
             <converter:ValueTypeTemplateSelector.DropDownTemplate>
                 <DataTemplate DataType="controls:EntryViewModel">
-                    <StackPanel Orientation="Horizontal">
-
-                        <EddieComboBox ItemsSource="{Binding PossibleValues}" Width="300"
-                                       IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
-                                       IsReadOnly="{Binding IsReadOnly}"
-                                       SelectedItem="{Binding Value, Mode=TwoWay}" />
-
-                    </StackPanel>
+                    <EddieComboBox ItemsSource="{Binding PossibleValues}" Width="300"
+                                   IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
+                                   IsReadOnly="{Binding IsReadOnly}"
+                                   SelectedItem="{Binding Value, Mode=TwoWay}" />
                 </DataTemplate>
             </converter:ValueTypeTemplateSelector.DropDownTemplate>
 
@@ -115,6 +101,7 @@
                                       IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
                                       IsReadOnly="{Binding IsReadOnly}"
                                       Visibility="{Binding SubEntries, Converter={StaticResource ReBooleanToVisibilityConverter}}" />
+
                         <EddieButton Margin="5,0,0,0" EddieStyle="Green" HorizontalAlignment="Left" Icon="{MdiShape Folder_Open}"
                                      Content="{x:Static properties:Strings.EntryEditor_SelectFile}" Click="SelectFile" />
                     </StackPanel>
@@ -130,6 +117,7 @@
                                       IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
                                       IsReadOnly="{Binding IsReadOnly}"
                                       Visibility="{Binding SubEntries, Converter={StaticResource ReBooleanToVisibilityConverter}}" />
+
                         <EddieButton Margin="5,0,0,0" EddieStyle="Green" HorizontalAlignment="Left" Icon="{MdiShape Folder_Open}"
                                      Content="{x:Static properties:Strings.EntryEditor_SelectDirectory}" Click="SelectDirectory" />
                     </StackPanel>
@@ -138,15 +126,8 @@
 
             <converter:ValueTypeTemplateSelector.ClassTemplate>
                 <DataTemplate DataType="controls:EntryViewModel">
-                    <StackPanel Orientation="Horizontal">
-                        <EddieButton Width="120" EddieStyle="Green" HorizontalAlignment="Left" Icon="{MdiShape Folder_Open}"
+                    <EddieButton Width="120" EddieStyle="Green" HorizontalAlignment="Left" Icon="{MdiShape Folder_Open}"
                                  Content="{x:Static properties:Strings.EntryEditor_Open}" Click="DelveIntoSubEntry" />
-
-                        <EddieButton Width="120" Content="{x:Static properties:Strings.EntryEditor_Remove}" EddieStyle="Green" Margin="10,0,0,0" Icon="{CommonShape Delete}"
-                                     Visibility="{Binding CurrentEntry, ElementName=UserControl, Converter={StaticResource DelButtonVisibilityConverter}, FallbackValue=Collapsed}"
-                                     IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
-                                     Click="RemoveCollectionEntry" />
-                    </StackPanel>
                 </DataTemplate>
             </converter:ValueTypeTemplateSelector.ClassTemplate>
 
@@ -156,9 +137,11 @@
                         <TextBlock Width="200"
                                    Text="{Binding Value, Converter={StaticResource Base64StringLengthToByteLength}, FallbackValue=Unknown}"
                                    VerticalAlignment="Center" />
+
                         <EddieButton Width="120" Content="{x:Static properties:Strings.EntryEditor_Select}" EddieStyle="Green" Margin="5,0,0,0" Icon="{MdiShape Folder_Open}"
                                      IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
                                      Click="SelectStreamContent" />
+
                         <EddieButton Width="120" Content="{x:Static properties:Strings.EntryEditor_Save}" EddieStyle="Green" Margin="5,0,0,0" Icon="{MdiShape Content_Save}"
                                      IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
                                      Click="SaveStreamContent" />
@@ -250,9 +233,14 @@
                                                    Foreground="DarkGray" />
                                     </StackPanel>
 
-                                    <ContentPresenter Grid.Column="1"
-                                                      ContentTemplateSelector="{StaticResource ValueTypeTemplateSelector}" />
+                                    <StackPanel Grid.Column="1" Orientation="Horizontal">
+                                        <ContentPresenter ContentTemplateSelector="{StaticResource ValueTypeTemplateSelector}" />
 
+                                        <EddieButton Width="120" Content="{x:Static properties:Strings.EntryEditor_Remove}" EddieStyle="Green" Margin="10,0,0,0" Icon="{CommonShape Delete}"
+                                                     Visibility="{Binding CurrentEntry, ElementName=UserControl, Converter={StaticResource DelButtonVisibilityConverter}, FallbackValue=Collapsed}"
+                                                     IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
+                                                     Click="RemoveCollectionEntry"  />
+                                    </StackPanel>
                                 </Grid>
                             </Border>
                         </DataTemplate>

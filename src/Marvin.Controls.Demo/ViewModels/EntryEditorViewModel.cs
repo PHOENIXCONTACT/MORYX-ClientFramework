@@ -33,6 +33,23 @@ namespace Marvin.Controls.Demo.ViewModels
                 {
                     AByte = 0xE2
                 },
+                ListEnum = new List<Visibility>
+                {
+                    Visibility.Hidden,
+                    Visibility.Visible,
+                    Visibility.Collapsed
+                },
+                ListBool = new List<bool>
+                {
+                    true,
+                    false,
+                    false
+                },
+                ListString = new List<string>
+                {
+                    "Hello",
+                    "World"
+                },
                 File = "",
                 Password = "secret"
             };
