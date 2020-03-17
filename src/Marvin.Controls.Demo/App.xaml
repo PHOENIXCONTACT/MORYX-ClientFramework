@@ -1,4 +1,8 @@
-﻿<Application x:Class="Marvin.Controls.Demo.App"
+<!--
+ Copyright (c) 2020, Phoenix Contact GmbH & Co. KG
+ Licensed under the Apache License, Version 2.0
+-->
+<Application x:Class="Marvin.Controls.Demo.App"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:demo="clr-namespace:Marvin.Controls.Demo">
