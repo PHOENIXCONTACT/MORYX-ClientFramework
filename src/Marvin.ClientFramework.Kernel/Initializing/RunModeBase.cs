@@ -85,9 +85,6 @@ namespace Marvin.ClientFramework.Kernel
             }
 
             var shellAttr = selectedShell.GetCustomAttribute<ModuleShellAttribute>();
-            var libraryName = selectedShell.Assembly.ManifestModule.ScopeName;
-
-            modulesConfig.Shell.LibraryName = libraryName;
             modulesConfig.Shell.ShellName = shellAttr.Name;
         }
 
@@ -114,7 +111,6 @@ namespace Marvin.ClientFramework.Kernel
                 configuredModule = new ModulConfig
                 {
                     ModuleName = att.Name,
-                    LibraryName = libraryName,
                     SortIndex = 9999,
                     IsEnabled = true,
                     Accesses = new Dictionary<string, OperationAccess>()
@@ -200,7 +196,7 @@ namespace Marvin.ClientFramework.Kernel
 
         #region RaiseEvents
 
-        /// 
+        ///
         public event EventHandler<AssemblyConfiguration> AssemblyConfigurationLoaded;
 
         /// <summary>
@@ -211,7 +207,7 @@ namespace Marvin.ClientFramework.Kernel
             AssemblyConfigurationLoaded?.Invoke(this, assemblyConfiguration);
         }
 
-        /// 
+        ///
         public event EventHandler<AssemblyConfig> AssemblyLoaded;
 
         /// <summary>
@@ -222,7 +218,7 @@ namespace Marvin.ClientFramework.Kernel
             AssemblyLoaded?.Invoke(this, assemblyConfig);
         }
 
-        /// 
+        ///
         public event EventHandler<IEnumerable<Assembly>> AssembliesLoaded;
 
         /// <summary>
@@ -233,7 +229,7 @@ namespace Marvin.ClientFramework.Kernel
             AssembliesLoaded?.Invoke(this, assemblies);
         }
 
-        /// 
+        ///
         public event EventHandler<ModulesConfiguration> LoadModulesConfigurationCompleted;
 
         /// <summary>

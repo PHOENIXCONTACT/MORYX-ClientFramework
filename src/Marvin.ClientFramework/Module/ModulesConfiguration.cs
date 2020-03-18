@@ -64,12 +64,6 @@ namespace Marvin.ClientFramework
         /// </summary>
         [DataMember]
         public string ShellName { get; set; }
-
-        /// <summary>
-        /// Gets or sets the name of the library.
-        /// </summary>
-        [DataMember]
-        public string LibraryName { get; set; }
     }
 
     /// <summary>
@@ -95,12 +89,6 @@ namespace Marvin.ClientFramework
         /// </summary>
         [DataMember]
         public int SortIndex { get; set; }
-
-        /// <summary>
-        /// Gets or sets the name of the library.
-        /// </summary>
-        [DataMember]
-        public string LibraryName { get; set; }
 
         /// <summary>
         /// Gets or sets the accesses for the current user of the module.
