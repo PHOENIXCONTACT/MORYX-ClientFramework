@@ -89,7 +89,7 @@ namespace Marvin.ClientFramework.Tests.HistoryWriter
             get { return _level; }
             set
             {
-                if (value == _level) 
+                if (value == _level)
                     return;
 
                 _level = value;

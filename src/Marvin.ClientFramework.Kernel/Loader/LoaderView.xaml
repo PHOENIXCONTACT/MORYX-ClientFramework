@@ -4,8 +4,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:c4I="clr-namespace:C4I;assembly=Controls4Industry"
              xmlns:properties="clr-namespace:Marvin.ClientFramework.Kernel.Properties"
-             mc:Ignorable="d" 
-             HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+             mc:Ignorable="d"
+             HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
              x:Name="UserControl" d:DesignWidth="805" d:DesignHeight="388">
 
     <UserControl.Resources>
@@ -21,15 +21,25 @@
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        
-        <Path x:Name="PxLogo" Margin="10,10,0,0"
-              Data="{CommonShape ShapeType=PxCLogo}"
-              Height="30" Width="117" Fill="Black"
-              Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" VerticalAlignment="Top" HorizontalAlignment="Left" />
+
+        <Grid Margin="5 5 0 0" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <Border BorderThickness="1" BorderBrush="LightGray">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="3" Direction="315" />
+                </Border.Effect>
+            </Border>
+
+            <Border Background="White">
+                <Path DockPanel.Dock="Left" Margin="5,5,5,5" Stretch="Uniform"
+                      Data="{CommonShape PxCLogo}" x:Name="PxLogo"
+                      Height="30"  Fill="Black"
+                      VerticalAlignment="Center" HorizontalAlignment="Left" />
+            </Border>
+        </Grid>
 
         <Grid Grid.Row="0" Grid.RowSpan="2" HorizontalAlignment="Stretch" Margin="100,0,100,0"
               VerticalAlignment="Center">
-            
+
             <Border BorderThickness="1" BorderBrush="LightGray">
                 <Border.Effect>
                     <DropShadowEffect ShadowDepth="3"  Direction="315"/>
@@ -38,14 +48,14 @@
 
             <StackPanel DataContext="{Binding ElementName=UserControl}" Background="White">
                 <TextBlock Margin="10,10,0,10" c4I:Eddie.TextFormat="Header1" Text="{Binding AppName}" />
-                
+
                 <TextBlock Margin="10,10,0,10" c4I:Eddie.TextFormat="Bold"
                            Text="{Binding StatusMessage}" HorizontalAlignment="Left" />
 
                 <EddieProgressBar Height="20" Margin="10,0,10,10"
                                   x:Name="ProgressBar"
-                                  Minimum="0" 
-                                  Maximum="{Binding Maximum, Mode=OneWay, ElementName=UserControl}" 
+                                  Minimum="0"
+                                  Maximum="{Binding Maximum, Mode=OneWay, ElementName=UserControl}"
                                   Value="{Binding Value, Mode=OneWay, ElementName=UserControl}" />
             </StackPanel>
 
