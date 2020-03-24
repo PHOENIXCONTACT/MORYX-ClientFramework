@@ -1,4 +1,7 @@
-﻿namespace Marvin.Tools.WcfClient.UI.Viewer
+// Copyright (c) 2020, Phoenix Contact GmbH & Co. KG
+// Licensed under the Apache License, Version 2.0
+
+namespace Marvin.Tools.WcfClient.UI.Viewer
 {
     /// <summary>
     /// Interaction logic for WcfClientViewerWorkspaceView.xaml

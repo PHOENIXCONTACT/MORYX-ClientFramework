@@ -1,4 +1,7 @@
-﻿using System.Windows.Markup;
+// Copyright (c) 2020, Phoenix Contact GmbH & Co. KG
+// Licensed under the Apache License, Version 2.0
+
+using System.Windows.Markup;
 using Marvin.Users;
 
 namespace Marvin.ClientFramework
