@@ -88,6 +88,15 @@ namespace Marvin.ClientFramework.Kernel.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to One moment ....
+        /// </summary>
+        public static string LoaderView_DefaultStatusMessage {
+            get {
+                return ResourceManager.GetString("LoaderView_DefaultStatusMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Initializing {0}.
         /// </summary>
         public static string ModuleManagerLoaderAdapter_InitializingModule {

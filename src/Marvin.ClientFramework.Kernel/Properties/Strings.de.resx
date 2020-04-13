@@ -138,4 +138,7 @@
   <data name="ComponentInitializerLoaderAdapter_ComponentInitializingStarting" xml:space="preserve">
     <value>Komponenteninitialisierer fand {0} typen. Starte die initialisierung.</value>
   </data>
+  <data name="LoaderView_DefaultStatusMessage" xml:space="preserve">
+    <value>Einen Moment ....</value>
+  </data>
 </root>

@@ -3,6 +3,7 @@
 
 using System.Windows;
 using System.Windows.Media;
+using Marvin.ClientFramework.Kernel.Properties;
 
 namespace Marvin.ClientFramework.Kernel
 {
@@ -17,8 +18,7 @@ namespace Marvin.ClientFramework.Kernel
         public LoaderView()
         {
             InitializeComponent();
-
-            StatusMessage = "One moment please ...";
+            StatusMessage = Strings.LoaderView_DefaultStatusMessage;
         }
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace Marvin.ClientFramework.Kernel
             get { return (int) GetValue(ValueProperty); }
             set { SetValue(ValueProperty, value); }
         }
-        
+
         /// <summary>
         /// Status message
         /// </summary>
