@@ -212,7 +212,7 @@
                 <ItemsControl.ItemTemplate>
                     <DataTemplate DataType="controls:EntryViewModel">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding Key}" />
+                            <TextBlock Text="{Binding DisplayName}" />
                         </StackPanel>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
@@ -232,7 +232,7 @@
                                     </Grid.ColumnDefinitions>
 
                                     <StackPanel Margin="0,0,25,0">
-                                        <TextBlock Text="{Binding Key}" />
+                                        <TextBlock Text="{Binding DisplayName}" />
                                         <TextBlock Text="{Binding Description}" TextWrapping="Wrap"
                                                    Foreground="DarkGray" />
                                     </StackPanel>

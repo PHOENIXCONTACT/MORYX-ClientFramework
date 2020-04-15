@@ -220,7 +220,7 @@ namespace Marvin.Controls
         private void DelveIntoSubEntry(object sender, RoutedEventArgs e)
         {
             var entry = GetEntry(sender);
-            // If allready in there just move on
+            // If already in there just move on
             if (Path.Contains(entry))
             {
                 CurrentEntry = entry;

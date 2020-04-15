@@ -30,7 +30,7 @@ namespace Marvin.Controls
         /// </summary>
         public EntryViewModel(IList<Entry> entries)
         {
-            Key = "Root";
+            DisplayName = "Root";
             ValueType = EntryValueType.Class;
             SubEntries = new ObservableWrapperCollection(entries);
 
@@ -43,7 +43,7 @@ namespace Marvin.Controls
         public EntryViewModel(Entry entry)
         {
             Entry = entry;
-            Key = Entry.Key.Name;
+            DisplayName = Entry.DisplayName;
             ValueType = Entry.Value.Type;
             UnitType = Entry.Value.UnitType;
             SubEntries = new ObservableWrapperCollection(entry.SubEntries);
@@ -65,9 +65,9 @@ namespace Marvin.Controls
         }
 
         ///
-        public string Key { get; }
+        public string DisplayName { get; }
 
-        /// 
+        ///
         public string Value
         {
             get { return Entry.Value.Current; }
@@ -87,7 +87,7 @@ namespace Marvin.Controls
         ///
         public string DefaultValue => Entry.Value.Default;
 
-        /// 
+        ///
         public string Description => Entry.Description;
 
         /// <summary>
@@ -169,14 +169,14 @@ namespace Marvin.Controls
             }
         }
 
-        /// 
+        ///
         protected override void InsertItem(int index, EntryViewModel item)
         {
             _entries.Add(item.Entry);
             base.InsertItem(index, item);
         }
 
-        /// 
+        ///
         protected override void RemoveItem(int index)
         {
             _entries.Remove(this.ElementAt(index).Entry);
