@@ -3,5 +3,5 @@ uid: UI
 ---
 # UI
 
-- [Default shell](xref:PhoenixShell)
+- [Simple Shell](xref:SimpleShell)
 - [Modal dialogs](xref:ModalDialogs)

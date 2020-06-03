@@ -106,10 +106,6 @@
       <Project>{62e0152c-b585-4cce-9e93-d8c780c35a02}</Project>
       <Name>Marvin.ClientFramework.Configurator</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Marvin.ClientFramework.PhoenixShell\Marvin.ClientFramework.PhoenixShell.csproj">
-      <Project>{8eeb4d5d-bf47-4bbd-9f88-aa277e0e1fc4}</Project>
-      <Name>Marvin.ClientFramework.PhoenixShell</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Marvin.ClientFramework.Kernel\Marvin.ClientFramework.Kernel.csproj">
       <Project>{9a690b37-ab29-4c5d-b185-3dd20dd8fb18}</Project>
       <Name>Marvin.ClientFramework.Kernel</Name>
@@ -118,10 +114,6 @@
     <ProjectReference Include="..\Marvin.ClientFramework.SimpleShell\Marvin.ClientFramework.SimpleShell.csproj">
       <Project>{145bf3ee-6f5d-46a5-9711-143e2a4fff81}</Project>
       <Name>Marvin.ClientFramework.SimpleShell</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Marvin.ClientFramework.Tests.AboutBoxCustomization\Marvin.ClientFramework.Tests.AboutBoxCustomization.csproj">
-      <Project>{bb6991f1-87e2-4ca1-9a68-0abbd3b1f1ec}</Project>
-      <Name>Marvin.ClientFramework.Tests.AboutBoxCustomization</Name>
     </ProjectReference>
     <ProjectReference Include="..\Marvin.ClientFramework.Tests.DialogManager\Marvin.ClientFramework.Tests.DialogManager.csproj">
       <Project>{f03df750-aff5-4cf2-8c8e-745535b95533}</Project>
@@ -181,7 +173,7 @@
       <Version>5.0.1</Version>
     </PackageReference>
     <PackageReference Include="Marvin.Container">
-      <Version>3.0.0-dev009803</Version>
+      <Version>3.0.0-dev010266</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>12.0.3</Version>

@@ -1,8 +1,8 @@
 - name: Introduction
   href: ui.md
   items:
-    - name: Default Shell
-      href: PhoenixShell.md
+    - name: Simple Shell
+      href: SimpleShell.md
     - name: Commands
       href: Commands/toc.yml
     - name: Modal Dialogs
