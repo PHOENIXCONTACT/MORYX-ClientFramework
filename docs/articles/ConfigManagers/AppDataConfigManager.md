@@ -3,7 +3,7 @@ uid: AppDataConfigManager
 ---
 # AppDataConfigManager & loading custom user specific configurations
 
-The ClientFramework supports user specific configurations which are stored in `%APPDATA%\Phoenix Contact\__AppName__` folder. The [AppDataConfigManager](xref:Marvin.ClientFramework.Kernel) is responsible to take care about loading and saving of this configurations. Note that you don't need to do any initialization steps because this is done automatically.
+The ClientFramework supports user specific configurations which are stored in `%APPDATA%\Phoenix Contact\__AppName__` folder. The [AppDataConfigManager](xref:Moryx.ClientFramework.Kernel) is responsible to take care about loading and saving of this configurations. Note that you don't need to do any initialization steps because this is done automatically.
 
 ## How can I make a configuration user specific
 

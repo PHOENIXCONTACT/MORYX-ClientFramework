@@ -15,7 +15,7 @@ The ClientFramework will be developed for synergy effects at Phoenix Contact esp
 
 The **ClientFramework** is an application framework for the client part of a client-server application. It is based on the concept of modular software development and the service pattern. The frameworks main features are listed below:
 
-The most of the provided features are inherited by the *MarvinPlatform*
+The most of the provided features are inherited by the *MoryxPlatform*
 
 * Logging
 * Configuration Management

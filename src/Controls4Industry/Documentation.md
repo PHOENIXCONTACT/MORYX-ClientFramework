@@ -2,7 +2,7 @@
 
 # Control Library {#controls4Industry}
 
-The control library will be build with the client framework an provides several controls implementing the default marvin style.
+The control library will be build with the client framework an provides several controls implementing the default moryx style.
 You dont need to add a namespace to the controls because all custom controls are added to the systems default style namespace.
 Controls need no addition namespace. All controls will be added to the system namespace, so they are easier to use.
 

@@ -44,7 +44,7 @@ As you can see, the command is not binded to any other property. You do not need
 You also can add keybindings to the user control to execute the command by key or any other gestures:
 
 ````xml
-<UserControl x:Class="Marvin.Jobs.UI.Viewer.TestJobCreatorWorkspaceView"
+<UserControl x:Class="Moryx.Jobs.UI.Viewer.TestJobCreatorWorkspaceView"
              ...>
     <UserControl.InputBindings>
         <KeyBinding Command="{Binding CancelCmd}" Key="Escape" />

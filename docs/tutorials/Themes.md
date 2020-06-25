@@ -16,7 +16,7 @@ Imagine that you have to develop a client for a customer that follows his own ru
 
 ````cs
 using System;
-using Marvin.ClientFramework.Kernel;
+using Moryx.ClientFramework.Kernel;
 
 namespace TestClient
 {

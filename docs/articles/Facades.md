@@ -5,13 +5,13 @@ uid: Facades
 
 ## General
 
-For the general concept of module facades, you should read the documentation of the *Facade guide* in the *MarvinPlatform* documentation.
+For the general concept of module facades, you should read the documentation of the *Facade guide* in the *MoryxPlatform* documentation.
 
 ## Client Implementation
 
 On the client side, the modules have no lifecycle as on the server (Started, Stopped, Running, Warning, ...). So the facade implementation is more easy and simpler.
 On client modules, the module controller will handle the facade management. The client module can export several facades (interfaces between the modules).
-The interfaces are defined in the [ClientModuleAttribute](xref:Marvin.ClientFramework.ClientModuleAttribute).
+The interfaces are defined in the [ClientModuleAttribute](xref:Moryx.ClientFramework.ClientModuleAttribute).
 
 ````cs
 [ClientModule("Playground", typeof(IPlayGroundFacade))]

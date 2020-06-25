@@ -3,7 +3,7 @@ uid: Configurations
 ---
 # Configurations
 
-The configuration management is based on the *MARVIN Toolkit* with the platforms configuration management. So they work like in every other platform (e.g. runtime)
+The configuration management is based on the *MORYX Toolkit* with the platforms configuration management. So they work like in every other platform (e.g. runtime)
 To handle the frameworks configurations a configurator can be started with the config runmodes
 
 ## Config RunMode
@@ -40,7 +40,7 @@ The *ProxyConfig* provides several options to configure proxy usage in several n
 
 ### RuntimeConfig
 
-The *RuntimeConfig* provides several options to configure the connection to the marvin runtime.
+The *RuntimeConfig* provides several options to configure the connection to the moryx runtime.
 
 * **Hostname:** Where the server will host several web services
 * **Port:** Port of the hosted services

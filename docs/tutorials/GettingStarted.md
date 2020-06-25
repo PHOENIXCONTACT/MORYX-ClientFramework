@@ -3,7 +3,7 @@ uid: GettingStarted
 ---
 # Getting Started
 
-This tutorial will show you how MARVIN WPF clients should be created.
+This tutorial will show you how MORYX WPF clients should be created.
 
 ## Prerequisites
 
@@ -12,9 +12,9 @@ Open now the project properties and set the `Target Framework` at least to versi
 
 Manage Nuget packages on `TestClient` project. There install the following three packages:
 
-- `Marvin.ClientFramework.Kernel`
-- `Marvin.ClientFramework.Configurator`
-- `Marvin.ClientFramework.PhoenixShell`
+- `Moryx.ClientFramework.Kernel`
+- `Moryx.ClientFramework.Configurator`
+- `Moryx.ClientFramework.PhoenixShell`
 
 You need only these three packages. All neccessary dependancies are installed automatically.
 
@@ -22,7 +22,7 @@ You are very close now. Add a new file named `Program.cs` and copy the following
 
 ````cs
 using System;
-using Marvin.ClientFramework.Kernel;
+using Moryx.ClientFramework.Kernel;
 
 namespace TestClient
 {
@@ -60,7 +60,7 @@ Create a new C# Library named `TestModule` and add the following framework assem
 
 Don't forget to set the Target .NET Framework version to 4.6.1.
 
-Then open the `NuGet Package Manager` and add `Marvin.ClientFramework` package to your project. This will add all dependencies to your library you need.
+Then open the `NuGet Package Manager` and add `Moryx.ClientFramework` package to your project. This will add all dependencies to your library you need.
 
 Now create the following two folders to the `TestModule`:
 
@@ -73,7 +73,7 @@ The modules configuration. Which is in our case is an empty hull. But in the rea
 
 ````cs
 using System.Runtime.Serialization;
-using Marvin.ClientFramework;
+using Moryx.ClientFramework;
 
 namespace TestModule.ModuleController
 {
@@ -92,7 +92,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Media;
 using Caliburn.Micro;
-using Marvin.ClientFramework;
+using Moryx.ClientFramework;
 using TestLibrary.Workspace;
 
 namespace TestModule.ModuleController
@@ -171,8 +171,8 @@ XAML of __workspace view__
 The __workspace view model__
 
 ````cs
-using Marvin.ClientFramework;
-using Marvin.Container;
+using Moryx.ClientFramework;
+using Moryx.Container;
 
 namespace TestModule.Workspace
 {
@@ -205,8 +205,8 @@ The __RegionController__
 
 ````cs
 using System.Collections.Generic;
-using Marvin.ClientFramework.Shell;
-using Marvin.Container;
+using Moryx.ClientFramework.Shell;
+using Moryx.Container;
 
 namespace TestModule
 {
@@ -227,8 +227,8 @@ namespace TestModule
 The __shell view model__
 
 ````cs
-using Marvin.ClientFramework;
-using Marvin.ClientFramework.Shell;
+using Moryx.ClientFramework;
+using Moryx.ClientFramework.Shell;
 
 namespace TestModule
 {

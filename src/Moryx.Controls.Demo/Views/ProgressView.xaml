@@ -1,0 +1,123 @@
+<!--
+ Copyright (c) 2020, Phoenix Contact GmbH & Co. KG
+ Licensed under the Apache License, Version 2.0
+-->
+<UserControl x:Class="Moryx.Controls.Demo.Views.ProgressView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:viewModels="clr-namespace:Moryx.Controls.Demo.ViewModels"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance viewModels:ProgressViewModel}">
+    <StackPanel>
+        <LabeledControlHost Style="{StaticResource LabelControlHostProgressBar}" LabelA="Normal" LabelB="EddieProgressBar">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <EddieProgressBar Value="{Binding DefaultCurrentValue, UpdateSourceTrigger=PropertyChanged}"  Width="300" TextFormat="%percentage % (%value of %max produced)"
+                                  Minimum="0" Maximum="300" Height="25" IsIndeterminate="False" />
+                <EddieActionButton Icon="{CommonShape Plus}" Command="{Binding IncreaseValueCommand}" Margin="10,0,0,0" />
+            </StackPanel>
+        </LabeledControlHost>
+
+        <LabeledControlHost Style="{StaticResource LabelControlHostProgressBar}" LabelA="Normal" LabelB="MultiProgressBar">
+
+            <Border BorderThickness="0,0,0,1"
+                    Margin="10">
+                <Grid HorizontalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <MultiProgressBar Grid.Column="0"
+                                      x:Name="MultiProgressBarTest"
+                                      Max="{Binding MaxProgress}"
+                                      Height="25">
+                        <MultiProgressBar.StepItems>
+                            <ProgressItem Value="{Binding FirstValue}"
+                                          Brush="{StaticResource PhoenixContactGreenBrush}"
+                                          TextColor="DarkGreen"
+                                          KeepGlowEffect="False"
+                                          Text="S0"/>
+                            <ProgressItem Value="{Binding SecondValue}"
+                                          Brush="Red"
+                                          TextColor="White"
+                                          KeepGlowEffect="False"
+                                          Text="S1"/>
+                            <ProgressItem Value="{Binding ThirdValue}"
+                                          Brush="Yellow"
+                                          TextColor="GreenYellow"
+                                          Text="S2"
+                                          KeepGlowEffect="True" />
+                        </MultiProgressBar.StepItems>
+                    </MultiProgressBar>
+                    <EddieButton Grid.Column="1"
+                                 x:Name="ThreadControlButton"
+                                 Content="{Binding StartButtonContent}"
+                                 Command="{Binding StartProgressCommand}"
+                                 Margin="10,0,0,0"
+                                 Width="40"
+                                 Tag="0"/>
+                    <EddieButton Grid.Column="2"
+                                 Command="{Binding IncreaseFirstCommand}"
+                                 Content="+ s0"
+                                 Margin="10,0,0,0"
+                                 Width="40"
+                                 Tag="1" />
+                    <EddieButton Grid.Column="3"
+                                 Command="{Binding IncreaseSecondCommand}"
+                                 Content="+ s1"
+                                 Margin="10,0,0,0"
+                                 Width="40"
+                                 Tag="2" />
+                    <EddieButton Grid.Column="4"
+                                 Command="{Binding IncreaseThirdCommand}"
+                                 Content="+ s2"
+                                 Margin="10,0,0,0"
+                                 Width="40"
+                                 Tag="3" />
+                    <EddieButton Grid.Column="5"
+                                 Command="{Binding DecreaseThirdCommand}"
+                                 Content="- s2"
+                                 Margin="10,0,0,0"
+                                 Width="40"
+                                 Tag="4" />
+                </Grid>
+            </Border>
+        </LabeledControlHost>
+
+        <LabeledControlHost Style="{StaticResource LabelControlHostProgressBar}" LabelA="Normal" LabelB="EddieBusyIndicator">
+            <EddieBusyIndicator Margin="0,15,0,15" IsIndicatorEnabled="True" />
+        </LabeledControlHost>
+
+        <LabeledControlHost Style="{StaticResource LabelControlHostProgressBar}" LabelA="Normal" LabelB="Small EddieBusyIndicator">
+            <EddieBusyIndicator Margin="0,15,0,15" IsIndicatorEnabled="True" IndicatorWidth="50" IndicatorHeight="50"/>
+        </LabeledControlHost>
+        <LabeledControlHost Style="{StaticResource LabelControlHostProgressBar}" LabelA="Normal" LabelB="Smaller EddieBusyIndicator">
+            <EddieBusyIndicator Margin="0,15,0,15" IsIndicatorEnabled="True" IndicatorWidth="20" IndicatorHeight="20"/>
+        </LabeledControlHost>
+
+        <LabeledControlHost Style="{StaticResource LabelControlHostProgressBar}" LabelA="Normal" LabelB="EddieBusyIndicator with text">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <EddieBusyIndicator Grid.Row="0" Margin="0,15,0,15" IndicatorWidth="20" IndicatorHeight="20" IsIndicatorEnabled="{Binding IsChecked, ElementName=IndicatorCheckBox}">
+                    <EddieButton Content="Hello" />
+                </EddieBusyIndicator>
+
+                <CheckBox x:Name="IndicatorCheckBox"
+                                  Grid.Row="1"
+                                  Margin="0,10,0,0"
+                                  HorizontalAlignment="Center"
+                                  Content="Enable indicator"
+                                  IsChecked="True" />
+            </Grid>
+        </LabeledControlHost>
+    </StackPanel>
+</UserControl>

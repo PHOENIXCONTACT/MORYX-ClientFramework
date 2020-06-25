@@ -4,7 +4,7 @@ uid: ViewLocatorConfigurator
 # ViewLocator Configurator
 
 Imagine a requirement that you need to build an application that supports normal and touch views. Usually you need to build a view model per view or more bad two applications which consist of many double code lines.
-The client framework comes with a so called [ViewLocatorConfigurator](xref:Marvin.ClientFramework.Kernel.ViewLocatorConfigurator) (VLC) which allows you to implement the One-ViewModel-Many-Views concept. This article will explain to you what things you have to consider.
+The client framework comes with a so called [ViewLocatorConfigurator](xref:Moryx.ClientFramework.Kernel.ViewLocatorConfigurator) (VLC) which allows you to implement the One-ViewModel-Many-Views concept. This article will explain to you what things you have to consider.
 
 ## Basics
 
@@ -19,7 +19,7 @@ But how can you influence these suffixes?
 
 ## How the Client Framework uses the VLC
 
-The VLC always comes to play when the framework starts. It uses the persisted `ViewPreset` property of the [AppConfig][xref:Marvin.ClientFramework.AppConfig]. The VLC tries to resolve the preset and reconfigures the `Caliburn.Micro.ViewLocator`. If that fails the application will exit with a message. Then you need to check why the framework cannot load the saved preset.
+The VLC always comes to play when the framework starts. It uses the persisted `ViewPreset` property of the [AppConfig][xref:Moryx.ClientFramework.AppConfig]. The VLC tries to resolve the preset and reconfigures the `Caliburn.Micro.ViewLocator`. If that fails the application will exit with a message. Then you need to check why the framework cannot load the saved preset.
 There is one exception where the VLC doesn't come to play: When the ClientFramework starts in `CONFIG_MODE`. In this mode the VLC is disabled. So you have always the chance to reconfigure the `ViewPreset`.
 
 ## Create your own preset

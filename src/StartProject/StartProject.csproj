@@ -102,38 +102,38 @@
       <Project>{8713d17c-63c8-4cef-9ff9-376c921ef92b}</Project>
       <Name>Controls4Industry</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Marvin.ClientFramework.Configurator\Marvin.ClientFramework.Configurator.csproj">
+    <ProjectReference Include="..\Moryx.ClientFramework.Configurator\Moryx.ClientFramework.Configurator.csproj">
       <Project>{62e0152c-b585-4cce-9e93-d8c780c35a02}</Project>
-      <Name>Marvin.ClientFramework.Configurator</Name>
+      <Name>Moryx.ClientFramework.Configurator</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Marvin.ClientFramework.Kernel\Marvin.ClientFramework.Kernel.csproj">
+    <ProjectReference Include="..\Moryx.ClientFramework.Kernel\Moryx.ClientFramework.Kernel.csproj">
       <Project>{9a690b37-ab29-4c5d-b185-3dd20dd8fb18}</Project>
-      <Name>Marvin.ClientFramework.Kernel</Name>
+      <Name>Moryx.ClientFramework.Kernel</Name>
       <Private>True</Private>
     </ProjectReference>
-    <ProjectReference Include="..\Marvin.ClientFramework.SimpleShell\Marvin.ClientFramework.SimpleShell.csproj">
+    <ProjectReference Include="..\Moryx.ClientFramework.SimpleShell\Moryx.ClientFramework.SimpleShell.csproj">
       <Project>{145bf3ee-6f5d-46a5-9711-143e2a4fff81}</Project>
-      <Name>Marvin.ClientFramework.SimpleShell</Name>
+      <Name>Moryx.ClientFramework.SimpleShell</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Marvin.ClientFramework.Tests.DialogManager\Marvin.ClientFramework.Tests.DialogManager.csproj">
+    <ProjectReference Include="..\Moryx.ClientFramework.Tests.DialogManager\Moryx.ClientFramework.Tests.DialogManager.csproj">
       <Project>{f03df750-aff5-4cf2-8c8e-745535b95533}</Project>
-      <Name>Marvin.ClientFramework.Tests.DialogManager</Name>
+      <Name>Moryx.ClientFramework.Tests.DialogManager</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Marvin.ClientFramework.Tests.HistoryWriter\Marvin.ClientFramework.Tests.HistoryWriter.csproj">
+    <ProjectReference Include="..\Moryx.ClientFramework.Tests.HistoryWriter\Moryx.ClientFramework.Tests.HistoryWriter.csproj">
       <Project>{732d0545-3fc9-4686-8960-d189a4b32204}</Project>
-      <Name>Marvin.ClientFramework.Tests.HistoryWriter</Name>
+      <Name>Moryx.ClientFramework.Tests.HistoryWriter</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Marvin.ClientFramework.Tests.NotifyAndEditor\Marvin.ClientFramework.Tests.NotifyAndEditor.csproj">
+    <ProjectReference Include="..\Moryx.ClientFramework.Tests.NotifyAndEditor\Moryx.ClientFramework.Tests.NotifyAndEditor.csproj">
       <Project>{154e0ad7-f409-4919-8fc0-420f625af93a}</Project>
-      <Name>Marvin.ClientFramework.Tests.NotifyAndEditor</Name>
+      <Name>Moryx.ClientFramework.Tests.NotifyAndEditor</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Marvin.ClientFramework.Tests.Playground\Marvin.ClientFramework.Tests.Playground.csproj">
+    <ProjectReference Include="..\Moryx.ClientFramework.Tests.Playground\Moryx.ClientFramework.Tests.Playground.csproj">
       <Project>{83a2b8ab-6af1-4666-bbfd-b2fd085c0df2}</Project>
-      <Name>Marvin.ClientFramework.Tests.Playground</Name>
+      <Name>Moryx.ClientFramework.Tests.Playground</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Marvin.Tools.WcfClient.UI.Viewer\Marvin.Tools.WcfClient.UI.Viewer.csproj">
+    <ProjectReference Include="..\Moryx.Tools.WcfClient.UI.Viewer\Moryx.Tools.WcfClient.UI.Viewer.csproj">
       <Project>{60b96c78-203d-4866-a23e-53095c63cccd}</Project>
-      <Name>Marvin.Tools.WcfClient.UI.Viewer</Name>
+      <Name>Moryx.Tools.WcfClient.UI.Viewer</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -172,8 +172,8 @@
     <PackageReference Include="Castle.Windsor">
       <Version>5.0.1</Version>
     </PackageReference>
-    <PackageReference Include="Marvin.Container">
-      <Version>3.0.0-dev010266</Version>
+    <PackageReference Include="Moryx.Container">
+      <Version>3.0.0-dev.26</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>12.0.3</Version>
