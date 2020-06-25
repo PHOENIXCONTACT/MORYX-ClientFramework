@@ -56,12 +56,8 @@
       <HintPath>..\..\packages\Castle.Windsor.4.1.0\lib\net45\Castle.Windsor.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Common.Logging, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Common.Logging.3.4.1\lib\net40\Common.Logging.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Common.Logging.Core, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Common.Logging.Core.3.4.1\lib\net40\Common.Logging.Core.dll</HintPath>
+    <Reference Include="CommandLine, Version=2.0.275.0, Culture=neutral, PublicKeyToken=de6f01bd326f8c32, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CommandLineParser.2.1.1-beta\lib\net45\CommandLine.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Marvin, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -103,7 +99,9 @@
       <DependentUpon>BaseApplication.xaml</DependentUpon>
     </Compile>
     <Compile Include="CaliburnBootstrapper.cs" />
+    <Compile Include="CommandLineArgumentOptionsBase.cs" />
     <Compile Include="Container\LocalContainerFactory.cs" />
+    <Compile Include="HeartOfLead.cs" />
     <Compile Include="Initializing\AssemblyConfig.cs" />
     <Compile Include="Initializing\AssemblyConfiguration.cs" />
     <Compile Include="Loader\ILoaderView.cs" />
@@ -173,7 +171,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

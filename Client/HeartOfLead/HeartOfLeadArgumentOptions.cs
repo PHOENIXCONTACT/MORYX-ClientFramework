@@ -1,4 +1,5 @@
 ﻿using CommandLine;
+using Marvin.ClientFramework.Kernel;
 
 namespace Marvin.ClientFramework.HeartOfLead
 {
@@ -6,7 +7,7 @@ namespace Marvin.ClientFramework.HeartOfLead
     /// Class for the command line parameters.
     /// In this class all custom command line parameters are defined.
     /// </summary>
-    public class ArgumentOptions
+    public class HeartOfLeadArgumentOptions : CommandLineArgumentOptionsBase
     {
         /// <summary>
         /// Gets or sets a value indicating whether [start configurator].
@@ -16,11 +17,5 @@ namespace Marvin.ClientFramework.HeartOfLead
         /// </value>
         [Option('v', "configurator", HelpText = "Starts the configuration run mode.")]
         public bool StartConfigurator { get; set; }
-
-        /// <summary>
-        /// Gets or sets the configuration folder.
-        /// </summary>
-        [Option('c', "configFolder", HelpText = "Sets the config target folder.", Default = KernelConstants.CONFIGS_DIR)]
-        public string ConfigFolder { get; set; }
     }
 }

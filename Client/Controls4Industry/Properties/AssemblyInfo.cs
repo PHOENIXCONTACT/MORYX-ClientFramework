@@ -8,7 +8,7 @@ using System.Windows;
 using System.Windows.Markup;
 
 [assembly: AssemblyTitle("Controls4Industry")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Controls libray for industry 4.0 projects")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 

@@ -3,15 +3,12 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows;
-using System.Windows.Input;
 using System.Windows.Threading;
 using Caliburn.Micro;
 using CommandLine;
 using Marvin.ClientFramework.Dialog;
-using Marvin.ClientFramework.Kernel;
 using Marvin.ClientFramework.UI;
 using Marvin.Container;
 using Marvin.Logging;
@@ -19,13 +16,9 @@ using Marvin.Threading;
 using Marvin.Tools;
 using MessageBoxImage = System.Windows.MessageBoxImage;
 
-namespace Marvin.ClientFramework.HeartOfLead
+namespace Marvin.ClientFramework.Kernel
 {
-    /// <summary>
-    /// Main kernel class to load the overall client framework. 
-    /// Will instanciate the container and will start the whole lifecycle.
-    /// </summary>
-    public class ClientKernel : ILoggingHost
+    public class HeartOfLead<TCommandLineArguments> : ILoggingHost where TCommandLineArguments : CommandLineArgumentOptionsBase
     {
         #region Fields
 
@@ -34,40 +27,32 @@ namespace Marvin.ClientFramework.HeartOfLead
         private IAppDataConfigManager _appDataConfigManager;
         private BaseApplication _application;
         private IRunModeController _runModeController;
-        private AppConfig _appConfig;
         private ILoaderHandler _loaderHandler;
         private IModuleManager _moduleManager;
+        private readonly string _loggingHostName = "ClientFramework";
 
-        private readonly string[] _args;
-        private ArgumentOptions _commandLineOptions;
-
-        #endregion
-
-        #region Imports
-
-        /// <summary>
-        /// Dll import to attach this application to the console stream
-        /// </summary>
-        [DllImport("Kernel32.dll")]
-        public static extern bool AttachConsole(int processId);
+        private string[] _args;
 
         #endregion
 
         #region Main and ctor
 
         /// <summary>
-        /// Main start point of this application
+        /// Initializes a new instance of the <see cref="HeartOfLead"/> class.
         /// </summary>
-        [STAThread]
-        public static void Main(string[] args)
+        public HeartOfLead(string[] args)
         {
-            new ClientKernel(args).Start();
+            Initialize(args);
         }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ClientKernel"/> class.
-        /// </summary>
-        public ClientKernel(string[] args)
+        public HeartOfLead(string loggingHostName, string[] args)
+        {
+            _loggingHostName = loggingHostName;
+
+            Initialize(args);
+        }
+
+        private void Initialize(string[] args)
         {
             _args = args;
 
@@ -85,7 +70,7 @@ namespace Marvin.ClientFramework.HeartOfLead
         public void Start()
         {
             // Attach this Application to the console.
-            AttachConsole(-1);
+            Kernel32.AttachConsole(-1);
 
             // Will parse the exe arguments
             ParseCommandLineArguments();
@@ -98,12 +83,14 @@ namespace Marvin.ClientFramework.HeartOfLead
 
             //Configures the thread context
             ConfigureThreadContext();
-            
+
             // Register app config
             LoadConfiguration();
 
             // Limit instances
             LimitInstances();
+
+            OnApplicationConfigured();
 
             // Manages the loader
             ConfigureLoaderHandler();
@@ -118,9 +105,9 @@ namespace Marvin.ClientFramework.HeartOfLead
         private void ParseCommandLineArguments()
         {
             var parser = new CommandLine.Parser(with => with.HelpWriter = Console.Out);
-            var result = parser.ParseArguments<ArgumentOptions>(_args);
+            var result = parser.ParseArguments<TCommandLineArguments>(_args);
             if (result.Tag == ParserResultType.Parsed)
-                _commandLineOptions = ((Parsed<ArgumentOptions>) result).Value;
+                CommandLineOptions = ((Parsed<TCommandLineArguments>)result).Value;
             else
                 Environment.Exit(1);
         }
@@ -136,7 +123,7 @@ namespace Marvin.ClientFramework.HeartOfLead
             ThreadContext.Dispatcher = Dispatcher.CurrentDispatcher;
             ThreadContext.Dispatcher.UnhandledException += catcher.HandleDispatcherException;
         }
-        
+
         /// <summary>
         /// configures the loader handler (loader view)
         /// </summary>
@@ -146,7 +133,7 @@ namespace Marvin.ClientFramework.HeartOfLead
             _container.ComponentCreated += _loaderHandler.CheckForAdapter;
             _loaderHandler.Initialize();
         }
-        
+
         /// <summary>
         /// Activates the logging.
         /// </summary>
@@ -261,23 +248,19 @@ namespace Marvin.ClientFramework.HeartOfLead
         /// </summary>
         private void LoadConfiguration()
         {
-            if (!Directory.Exists(_commandLineOptions.ConfigFolder))
-                Directory.CreateDirectory(_commandLineOptions.ConfigFolder);
+            if (!Directory.Exists(CommandLineOptions.ConfigFolder))
+                Directory.CreateDirectory(CommandLineOptions.ConfigFolder);
 
             //configure config manager
-            _configManager = new KernelConfigManager { ConfigDirectory = _commandLineOptions.ConfigFolder };
+            _configManager = new KernelConfigManager { ConfigDirectory = CommandLineOptions.ConfigFolder };
             _container.SetInstance(_configManager);
 
             //load global app config
-            _appConfig = _configManager.GetConfiguration<AppConfig>();
+            AppConfig = _configManager.GetConfiguration<AppConfig>();
 
             _appDataConfigManager = new AppDataConfigManager();
-            _appDataConfigManager.Initialize(_appConfig.Application);
+            _appDataConfigManager.Initialize(AppConfig.Application);
             _container.SetInstance(_appDataConfigManager);
-                       
-            //Start configurator, if wanted
-            if (_commandLineOptions.StartConfigurator || _appConfig.OpenConfigWithControl && (Keyboard.Modifiers & ModifierKeys.Control) > 0)
-                _appConfig.RunMode = KernelConstants.CONFIG_RUNMODE;
         }
 
         /// <summary>
@@ -285,7 +268,7 @@ namespace Marvin.ClientFramework.HeartOfLead
         /// </summary>
         private void LimitInstances()
         {
-            if (!_appConfig.LimitInstances)
+            if (!AppConfig.LimitInstances)
                 return;
 
             var instances = Process.GetProcessesByName(Path.GetFileNameWithoutExtension(Assembly.GetEntryAssembly().Location));
@@ -319,11 +302,19 @@ namespace Marvin.ClientFramework.HeartOfLead
             Directory.SetCurrentDirectory(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
         }
 
-        string ILoggingHost.Name
+        /// <summary>
+        /// Is called when the application has finished all configuration and initializations things but before the window is shown
+        /// </summary>
+        protected virtual void OnApplicationConfigured()
         {
-            get { return "ClientFramework"; }
         }
 
+        string ILoggingHost.Name => _loggingHostName;
+
         IModuleLogger ILoggingHost.Logger { get; set; }
+
+        protected AppConfig AppConfig { get; private set; }
+
+        protected TCommandLineArguments CommandLineOptions { get; private set; }
     }
 }

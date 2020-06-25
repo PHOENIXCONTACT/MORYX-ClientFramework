@@ -87,14 +87,13 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Controls4Industry\Controls4Industry.csproj">
       <Project>{8713d17c-63c8-4cef-9ff9-376c921ef92b}</Project>
       <Name>Controls4Industry</Name>
-      <Private>True</Private>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

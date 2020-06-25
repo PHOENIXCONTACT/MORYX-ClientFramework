@@ -6,7 +6,7 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Marvin.Controls")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Marvin specific controls library")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
