@@ -14,7 +14,7 @@ Manage Nuget packages on `TestClient` project. There install the following three
 
 - `Marvin.ClientFramework.Kernel`
 - `Marvin.ClientFramework.Configurator`
-- `Marvin.ClientFramework.UI.DefaultShell`
+- `Marvin.ClientFramework.PhoenixShell`
 
 You need only these three packages. All neccessary dependancies are installed automatically.
 
@@ -41,13 +41,13 @@ namespace TestClient
 }
 ````
 
-That's it. Build the solution and start it. You should now see the `Configurator`. You'll see that `Mode` is currently not configured. This causes that the `TestClient` always starts the configurator. Set `Mode` to _`Local_RunMode`_ and save the configuration. Now the `TestClient` starts always the `DefaultShell`. If you want to start the configurator again just hold the CTRL key when the application is starting.
+That's it. Build the solution and start it. You should now see the `Configurator`. You'll see that `Mode` is currently not configured. This causes that the `TestClient` always starts the configurator. Set `Mode` to _`Local_RunMode`_ and save the configuration. Now the `TestClient` starts always the `PhoenixShell`. If you want to start the configurator again just hold the CTRL key when the application is starting.
 
 The next chapter describes how to create a sample module.
 
 ## Sample module
 
-As you might recognized your `DefaultShell` is empty. That's due to missing modules in the sample application. So let's build up a sample module that is shown within the `DefaultShell`.
+As you might recognized your `PhoenixShell` is empty. That's due to missing modules in the sample application. So let's build up a sample module that is shown within the `PhoenixShell`.
 
 Create a new C# Library named `TestModule` and add the following framework assemblies:
 
@@ -189,7 +189,7 @@ Start your application and be amazed.
 
 ## Custom shell
 
-For our first example we went the easy way and used the available `DefaultShell`. But in some days you'll need to implement your own shell. This chapter will give you a short introduction on how a shell is implemented.
+For our first example we went the easy way and used the available `PhoenixShell`. But in some days you'll need to implement your own shell. This chapter will give you a short introduction on how a shell is implemented.
 
 Create a new solution named `MyOwnShell` as described in the _Prerequisites chapter_.
 

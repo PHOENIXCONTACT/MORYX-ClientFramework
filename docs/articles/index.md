@@ -30,7 +30,7 @@ The client framework will also provide their own WPF based features:
 * Frame (Shell)
 * Converter, Extensions, Markup-Extensions
 * [Modal dialogs](xref:ModalDialogs)
-* [Default shell](xref:DefaultShell)
+* [Default shell](xref:PhoenixShell)
 * [Screens and Conductors](xref:ScreensAndConductors)
 * [Commands](xref:Commands)
 * [Facades](xref:Facades)

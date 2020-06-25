@@ -106,9 +106,9 @@
       <Project>{62e0152c-b585-4cce-9e93-d8c780c35a02}</Project>
       <Name>Marvin.ClientFramework.Configurator</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Marvin.ClientFramework.DefaultShell\Marvin.ClientFramework.UI.DefaultShell.csproj">
+    <ProjectReference Include="..\Marvin.ClientFramework.PhoenixShell\Marvin.ClientFramework.PhoenixShell.csproj">
       <Project>{8eeb4d5d-bf47-4bbd-9f88-aa277e0e1fc4}</Project>
-      <Name>Marvin.ClientFramework.UI.DefaultShell</Name>
+      <Name>Marvin.ClientFramework.PhoenixShell</Name>
     </ProjectReference>
     <ProjectReference Include="..\Marvin.ClientFramework.Kernel\Marvin.ClientFramework.Kernel.csproj">
       <Project>{9a690b37-ab29-4c5d-b185-3dd20dd8fb18}</Project>

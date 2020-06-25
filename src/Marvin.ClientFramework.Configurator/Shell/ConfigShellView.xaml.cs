@@ -1,7 +1,7 @@
 ﻿namespace Marvin.ClientFramework.Configurator
 {
     /// <summary>
-    /// Interaction logic for DefaultShellView.xaml
+    /// Interaction logic for ConfigShellView.xaml
     /// </summary>
     public partial class ConfigShellView
     {

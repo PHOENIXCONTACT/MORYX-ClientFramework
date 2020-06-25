@@ -3,7 +3,7 @@ uid: Themes
 ---
 # Themes
 
-The ClientFramework's [DefaultShell](xref:DefaultShell) has its own theme defined that is automatically used when your UI is starting. Sometimes it is neccessary to override a style of a standard Eddie control or the complete style set.
+The ClientFramework's [PhoenixShell](xref:PhoenixShell) has its own theme defined that is automatically used when your UI is starting. Sometimes it is neccessary to override a style of a standard Eddie control or the complete style set.
 The ClientFramework does not follow own rules how styles are overridden the WPF way is used. See how you can override those styles in your ClientFramework application.
 
 ## File organization of styles
