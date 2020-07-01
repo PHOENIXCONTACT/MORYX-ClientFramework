@@ -42,7 +42,7 @@ As you can see a call to `AddStyleExtension` is added which marks the commited `
 
 There might are requirements that styling of a single module should be different to the rest of the application. This is also possible. Create a folder structure described above and add a reference to the concered workspace view.
 
-````cs
+````xml
 <UserControl x:Class="TestModule.Workspace.WorkspaceView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"

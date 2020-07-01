@@ -1,12 +1,6 @@
 - name: Introduction
   href: index.md
 
-- name: Changelog
-  href: Changelog.md
-  items:
-    - name: Upgrade
-      href: ClientFramework27to30.md
-
 - name: Caliburn
   href: Caliburn/toc.yml
 
@@ -27,9 +21,3 @@
 
 - name: Run Modes
   href: RunModes.md
-
-- name: Terms and folder structure
-  href: TermsAndFolderStructure.md
-
-- name: Tipps and Tricks
-  href: TippsTricks.md

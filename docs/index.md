@@ -16,7 +16,7 @@ footer{
     </div>
     <div class="buttons-unit-small">
       <a class="version-link" href="articles/Changelog.md">Changelog</a><span>|</span><a class="bitbucket-link" href="https://github.com/PHOENIXCONTACT/MORYX-ClientFramework
-      ">View in GitLab</a>
+      ">View at GitHub</a>
     </div>
     <div class="minitext">
     
