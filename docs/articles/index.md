@@ -30,7 +30,7 @@ The client framework will also provide their own WPF based features:
 * Frame (Shell)
 * Converter, Extensions, Markup-Extensions
 * [Modal dialogs](xref:ModalDialogs)
-* [Default shell](xref:PhoenixShell)
+* [Simple Shell](xref:SimpleShell)
 * [Screens and Conductors](xref:ScreensAndConductors)
 * [Commands](xref:Commands)
 * [Facades](xref:Facades)
@@ -42,9 +42,6 @@ The client framework will also provide their own WPF based features:
 
 ## Tutorials and Conventions
 
-The most decisions are made by the GUI Taskforce
-
 * [Getting Started](xref:Tutorials.Index)
 * [Caliburn conventions](xref:CaliburnConventions)
 * Model View ViewModel
-* TypesOfClients

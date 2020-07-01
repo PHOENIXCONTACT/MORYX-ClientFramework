@@ -7,8 +7,8 @@ The run modes in the client framework will handle several start behaviors of the
 
 ## ConfigRunMode
 
-The ConfigRunMode will load the configurator provided by the framework. The mode will only load *Modules* and *Shells*  which are located in the *Settings*-Folder.
+The ConfigRunMode will load the configurator provided by the framework. The mode will only load *Modules* and *Shells*  which are related to configuration.
 
 ## LocalRunMode
 
-The *LocalRunMode* loads the *Modules*, *Shells* and other which are located in the *Modules*-Folder.
+The *LocalRunMode* loads the *Modules*, *Shells* and other which are located in the current AppDomain.

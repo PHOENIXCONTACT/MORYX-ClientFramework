@@ -21,9 +21,6 @@ You need only these three packages. All neccessary dependancies are installed au
 You are very close now. Add a new file named `Program.cs` and copy the following code to it:
 
 ````cs
-using System;
-using Moryx.ClientFramework.Kernel;
-
 namespace TestClient
 {
     public class Program
@@ -73,9 +70,6 @@ The `ModuleController folder` contains two classes:
 The modules configuration. Which is in our case is an empty hull. But in the real world all needed settings will find their place here.
 
 ````cs
-using System.Runtime.Serialization;
-using Moryx.ClientFramework;
-
 namespace TestModule.ModuleController
 {
     [DataContract]
@@ -88,14 +82,6 @@ namespace TestModule.ModuleController
 And it contains the `ModuleController` itself. It's the entry point for a module. There you set the `DisplayName` and the initial workspace view model.
 
 ````cs
-using System;
-using System.Linq;
-using System.Windows;
-using System.Windows.Media;
-using Caliburn.Micro;
-using Moryx.ClientFramework;
-using TestLibrary.Workspace;
-
 namespace TestModule.ModuleController
 {
     [ClientModule("TestModule")]
@@ -172,9 +158,6 @@ XAML of __workspace view__
 The __workspace view model__
 
 ````cs
-using Moryx.ClientFramework;
-using Moryx.Container;
-
 namespace TestModule.Workspace
 {
     [Plugin(LifeCycle.Singleton, typeof(IModuleWorkspace), Name = nameof(TestWorkspaceViewModel))]
@@ -205,10 +188,6 @@ You need three files to build the simplest __Shell__ ever:
 The __RegionController__
 
 ````cs
-using System.Collections.Generic;
-using Moryx.ClientFramework.Shell;
-using Moryx.Container;
-
 namespace TestModule
 {
     public class MyOwnRegionController : ShellRegionController
@@ -228,9 +207,6 @@ namespace TestModule
 The __shell view model__
 
 ````cs
-using Moryx.ClientFramework;
-using Moryx.ClientFramework.Shell;
-
 namespace TestModule
 {
     [ModuleShell("MyOwnShell")]
