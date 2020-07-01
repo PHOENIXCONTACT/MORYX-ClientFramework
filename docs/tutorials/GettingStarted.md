@@ -7,7 +7,7 @@ This tutorial will show you how MORYX WPF clients should be created.
 
 ## Prerequisites
 
-First of all you need to create a new `WPF Application` solution and name it `TestClient`. After the solution and the project `TestClient` has been created, delete `App.xaml` and `MainWindow.xaml` files and its code behinds.
+First of all you need to create a new `WPF Application` solution and name it `TestClient`. After the solution and the project `TestClient` has been created, delete `App.xaml` and `MainWindow.xaml` files and its code behinds. Alternatively you can use the [MORYX Template](https://github.com/PHOENIXCONTACT/MORYX-Template).
 Open now the project properties and set the `Target Framework` at least to version `.NET Framework 4.6.1`. That's rather important because the `ClientFramework` assemblies do not support older .NET Framework versions.
 
 Manage Nuget packages on `TestClient` project. There install the following three packages:
@@ -35,13 +35,14 @@ namespace TestClient
         public static void Main(string[] args)
         {
             var hol = new HeartOfLead(args);
+            hol.Initialize();
             hol.Start();
         }
     }
 }
 ````
 
-That's it. Build the solution and start it. You should now see the `Configurator`. You'll see that `Mode` is currently not configured. This causes that the `TestClient` always starts the configurator. Set `Mode` to _`Local_RunMode`_ and save the configuration. Now the `TestClient` starts always the `PhoenixShell`. If you want to start the configurator again just hold the CTRL key when the application is starting.
+That's it. Build the solution and start it. You should now see the `Configurator`. You'll see that `Mode` is currently not configured. This causes that the `TestClient` always starts the configurator. Set `Mode` to _`Local_RunMode`_ and save the configuration. Now the `TestClient` starts always the `SimpleShell`. If you want to start the configurator again just hold the CTRL key when the application is starting.
 
 The next chapter describes how to create a sample module.
 
