@@ -35,12 +35,12 @@
     <DocumentationFile>bin\Release\Moryx.Controls.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Moryx, Version=3.0.0.26, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Moryx.3.0.0-dev.26\lib\netstandard2.0\Moryx.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="Moryx, Version=3.0.0.42, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Moryx.3.0.0-dev.42\lib\netstandard2.0\Moryx.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
