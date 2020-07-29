@@ -12,6 +12,9 @@
     <a href="https://github.com/PHOENIXCONTACT/MORYX-ClientFramework/blob/dev/LICENSE">
         <img src="https://img.shields.io/github/license/PHOENIXCONTACT/MORYX-ClientFramework" alt="License">
     </a>
+    <a href="https://gitter.im/MORYX-Industry/Framework?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge">
+        <img src="https://badges.gitter.im/MORYX-Industry/Framework.svg" alt="Gitter">
+    </a>
     <a href="https://github.com/PHOENIXCONTACT/MORYX-ClientFramework/pulls">
         <img src="https://img.shields.io/github/issues-pr/PHOENIXCONTACT/MORYX-ClientFramework" alt="GitHub pull requests">
     </a>
