@@ -129,7 +129,7 @@ namespace C4I
             if (_labelHost == null || parentPanel == null || string.IsNullOrWhiteSpace(SharedSizeGroupName))
                 return;
 
-            var labeledControlHosts = parentPanel.Children.OfType<LabeledControlHost>().Where(l => l.SharedSizeGroupName == SharedSizeGroupName).ToList();
+            var labeledControlHosts = parentPanel.Children.OfType<LabeledControlHost>().Where(l => l.SharedSizeGroupName == SharedSizeGroupName && l._labelHost != null).ToList();
 
             if (labeledControlHosts.Count > 1)
             {
