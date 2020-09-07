@@ -40,9 +40,6 @@ namespace Moryx.ClientFramework.Kernel
             var windowConfig = _container.Resolve<IAppDataConfigManager>().GetConfiguration<WindowConfig>();
             var appConfig = _container.Resolve<IKernelConfigManager>().GetConfiguration<AppConfig>();
 
-            // Initialize platfrom
-            WpfPlatform.SetProduct(appConfig.Application);
-
             //initialize base root visual
             var defaultRootVisual = new RootVisual(windowConfig)
             {

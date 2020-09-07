@@ -61,15 +61,6 @@ namespace Moryx.ClientFramework.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Missing name.
-        /// </summary>
-        public static string AppConfig_DefaultName {
-            get {
-                return ResourceManager.GetString("AppConfig_DefaultName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
         public static string MessageBoxView_Cancel {

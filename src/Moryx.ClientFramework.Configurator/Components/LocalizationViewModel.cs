@@ -43,7 +43,12 @@ namespace Moryx.ClientFramework.Configurator
 
             _languageConfig = AppDataConfigManager.GetConfiguration<UserLanguageConfig>();
 
-            Cultures = GetSupportedCulture().ToArray();
+            var cultures = GetSupportedCulture().ToList();
+            var enCulture = new CultureInfo("en");
+            if (!cultures.Contains(enCulture))
+                cultures.Add(enCulture);
+
+            Cultures = cultures.ToArray();
             SelectedCulture = Cultures.FirstOrDefault(c => c.IetfLanguageTag == _languageConfig.Culture);
         }
 
@@ -65,7 +70,7 @@ namespace Moryx.ClientFramework.Configurator
             var exeLocation = Path.GetDirectoryName(Uri.UnescapeDataString(new UriBuilder(Assembly.GetExecutingAssembly().CodeBase).Path));
 
             //Return all culture for which satellite folder found with culture code.
-            return culture.Where(cultureInfo => Directory.Exists(Path.Combine(exeLocation, cultureInfo.Name)));
+            return culture.Where(cultureInfo => !string.IsNullOrEmpty(cultureInfo.IetfLanguageTag) && Directory.Exists(Path.Combine(exeLocation, cultureInfo.IetfLanguageTag)));
         }
     }
 }

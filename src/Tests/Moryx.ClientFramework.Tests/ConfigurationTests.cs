@@ -16,16 +16,6 @@ namespace Moryx.ClientFramework.Tests
     public class ConfigurationTests
     {
         [Test]
-        public void AppConfigTest()
-        {
-            var appConfig = new AppConfig();
-
-            Assert.NotNull(appConfig.Name);
-            Assert.NotNull(appConfig.Application);
-            Assert.IsTrue(appConfig.OpenConfigWithControl, "Default parameter is not true");
-        }
-
-        [Test]
         public void ProxyConfigTest()
         {
             var proxyConfig = new ProxyConfig();

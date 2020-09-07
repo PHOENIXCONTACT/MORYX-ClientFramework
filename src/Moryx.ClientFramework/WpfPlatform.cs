@@ -14,14 +14,13 @@ namespace Moryx.ClientFramework
         /// <summary>
         /// Set product
         /// </summary>
-        public static void SetProduct(string name)
+        public static void SetProduct()
         {
             var startAssembly = Assembly.GetEntryAssembly();
             Current = new WpfPlatform
             {
                 PlatformName = "ClientFramework",
                 PlatformVersion = typeof(WpfPlatform).Assembly.GetName().Version,
-                // TODO: Is this the right place to get this information
                 ProductName = startAssembly.GetCustomAttribute<AssemblyProductAttribute>()?.Product ?? "MORYX Application",
                 ProductVersion = new Version(startAssembly.GetCustomAttribute<AssemblyVersionAttribute>()?.Version ?? "1.0.0"),
                 ProductDescription = startAssembly.GetCustomAttribute<AssemblyDescriptionAttribute>()?.Description ?? "No Description provided!",
