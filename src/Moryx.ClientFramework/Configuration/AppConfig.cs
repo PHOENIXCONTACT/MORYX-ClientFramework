@@ -24,7 +24,7 @@ namespace Moryx.ClientFramework
             var random = new Random();
             var result = new string(Enumerable.Repeat(chars, 4).Select(s => s[random.Next(s.Length)]).ToArray());
 
-            Name = Properties.Strings.AppConfig_DefaultName;
+            Name = Platform.Current.ProductName;
             Application = "HeartOfLead_" + result;
             ViewPreset = "Default";
 

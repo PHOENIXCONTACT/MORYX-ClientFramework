@@ -96,9 +96,12 @@ namespace Moryx.ClientFramework.Kernel
         /// </summary>
         public void Initialize()
         {
-           // Check Initialization
+            // Check Initialization
             if (IsInitialied)
                 throw new InvalidOperationException("HeartOfLead is already initialized!");
+
+            // Initialize platfrom
+            WpfPlatform.SetProduct();
 
             // Attach this Application to the console.
             Kernel32.AttachConsole(-1);
@@ -145,21 +148,10 @@ namespace Moryx.ClientFramework.Kernel
             var appDataConfigManager = _container.Resolve<IAppDataConfigManager>();
             var languageConfig = appDataConfigManager.GetConfiguration<UserLanguageConfig>();
 
-            CultureInfo culture;
-
             // If not set, select os language
-            if (string.IsNullOrEmpty(languageConfig.Culture))
-            {
-                var baseCulture = Thread.CurrentThread.CurrentUICulture;
-                while (!baseCulture.IsNeutralCulture)
-                    baseCulture = baseCulture.Parent;
-
-                languageConfig.Culture = baseCulture.IetfLanguageTag;
-                appDataConfigManager.SaveConfiguration(languageConfig);
-                culture = baseCulture;
-            }
-            else
-                culture = new CultureInfo(languageConfig.Culture);
+            var culture = string.IsNullOrEmpty(languageConfig.Culture)
+                ? CultureInfo.InvariantCulture
+                : new CultureInfo(languageConfig.Culture);
 
             CultureInfo.DefaultThreadCurrentCulture = culture;
             CultureInfo.DefaultThreadCurrentUICulture = culture;
