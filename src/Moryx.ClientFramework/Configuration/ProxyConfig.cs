@@ -2,6 +2,7 @@
 // Licensed under the Apache License, Version 2.0
 
 using System.Runtime.Serialization;
+using Moryx.Communication;
 using Moryx.Configuration;
 
 namespace Moryx.ClientFramework
