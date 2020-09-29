@@ -7,16 +7,19 @@ This tutorial will show you how MORYX WPF clients should be created.
 
 ## Prerequisites
 
-First of all you need to create a new `WPF Application` solution and name it `TestClient`. After the solution and the project `TestClient` has been created, delete `App.xaml` and `MainWindow.xaml` files and its code behinds. Alternatively you can use the [MORYX Template](https://github.com/PHOENIXCONTACT/MORYX-Template).
-Open now the project properties and set the `Target Framework` at least to version `.NET Framework 4.6.1`. That's rather important because the `ClientFramework` assemblies do not support older .NET Framework versions.
+If you are using the [MORYX Template](https://github.com/PHOENIXCONTACT/MORYX-Template) you can skip to the [Sample module](##Sample-module) part. In this case, all mentiones of the `TestClient` refer to the `Application.UI` solution.
 
-Manage Nuget packages on `TestClient` project. There install the following three packages:
+First of all you need to create a new `WPF Application` solution and name it `TestClient`. After the solution and the project `TestClient` have been created, delete `App.xaml` and `MainWindow.xaml` files and its code behinds.
+Now open the project properties and set the `Target Framework` at least to version `.NET Framework 4.6.1`. 
+That's rather important because the `ClientFramework` assemblies do not support older .NET Framework versions.
+
+Manage Nuget packages on the `TestClient` project and install the following three packages:
 
 - `Moryx.ClientFramework.Kernel`
 - `Moryx.ClientFramework.Configurator`
 - `Moryx.ClientFramework.PhoenixShell`
 
-You need only these three packages. All neccessary dependancies are installed automatically.
+You only need these three packages. All neccessary dependancies are installed automatically.
 
 You are very close now. Add a new file named `Program.cs` and copy the following code to it:
 
@@ -39,7 +42,10 @@ namespace TestClient
 }
 ````
 
-That's it. Build the solution and start it. You should now see the `Configurator`. You'll see that `Mode` is currently not configured. This causes that the `TestClient` always starts the configurator. Set `Mode` to _`Local_RunMode`_ and save the configuration. Now the `TestClient` starts always the `SimpleShell`. If you want to start the configurator again just hold the CTRL key when the application is starting.
+That's it. Build the solution and start it. You should now see the `Configurator`. 
+You'll see that `Mode` is currently not configured. This causes that the `TestClient` always starts the configurator. 
+Set `Mode` to _`Local_RunMode`_ and save the configuration. Now the `TestClient` will start the `SimpleShell` by default. 
+If you want to start the configurator again, just hold the CTRL key when the application is starting.
 
 The next chapter describes how to create a sample module.
 
@@ -67,9 +73,13 @@ Now create the following two folders to the `TestModule`:
 
 The `ModuleController folder` contains two classes:
 
-The modules configuration. Which is in our case is an empty hull. But in the real world all needed settings will find their place here.
+The modules configuration. 
+Which in our case is an empty hull.
+But in the real world all needed settings will find their place here.
 
 ````cs
+using System.Runtime.Serialization
+
 namespace TestModule.ModuleController
 {
     [DataContract]
@@ -89,8 +99,6 @@ namespace TestModule.ModuleController
     {
         protected override void OnInitialize()
         {
-            // Display name of this module
-            Config.DisplayName = "Test";
         }
 
         protected override void OnActivate()
@@ -116,7 +124,7 @@ namespace TestModule.ModuleController
 }
 ````
 
-As you might have noticed there is no workspace implemented yet. We'll make it up now. Add a UserControl named `TestWorkspaceView` and a simple class `TestWorkspaceViewModel` to the `Workspace folder`.
+As you might have noticed, there is no workspace implemented yet. We'll make it up now. Add a UserControl (WPF) named `TestWorkspaceView` and a simple class `TestWorkspaceViewModel` to the `Workspace folder`.
 
 Code behind of __workspace view__
 
@@ -167,7 +175,7 @@ namespace TestModule.Workspace
 }
 ````
 
-Reference now the `TestModule project` to the `TestClient project`. This is needed so that the TestModule assembly is copied to TestClient output folder.
+Now reference the `TestModule project` to the `TestClient project`. This is needed so that the TestModule assembly is copied to TestClient output folder.
 
 Start your application and be amazed.
 
@@ -255,4 +263,5 @@ XAML of __shell view__
 </UserControl>
 ````
 
-Finished. Start thze application and you see your own implemented shell.
+Finished. 
+Start the application and you will see your own implemented shell.
