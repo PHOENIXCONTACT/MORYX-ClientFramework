@@ -25,7 +25,7 @@ if ($UnitTests) {
 }
 
 if ($CoverReport) {
-    Invoke-CodecovUpload
+    Invoke-CoverReport
 }
 
 if ($GenerateDocs) {
