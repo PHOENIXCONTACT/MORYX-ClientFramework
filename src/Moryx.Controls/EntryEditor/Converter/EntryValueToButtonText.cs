@@ -18,10 +18,10 @@ namespace Moryx.Controls.Converter
                 return "";
 
             if (entry.ValueType == EntryValueType.Collection)
-                return Localizations.AddEntry;
+                return Strings.EntryValueToButtonTextConverter_AddEntry;
 
             if (entry.ValueType == EntryValueType.Class)
-                return Localizations.ReplaceWith;
+                return Strings.EntryValueToButtonTextConverter_ReplaceWith;
 
             return "";
         }

@@ -1,298 +1,49 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <Import Project="..\..\.build\Common.props"></Import>
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8713D17C-63C8-4CEF-9FF9-376C921EF92B}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>C4I</RootNamespace>
-    <AssemblyName>Controls4Industry</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
+    <TargetFramework>net45</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Description>WPF control libray for industry 4.0 projects</Description>
+    <CreatePackage>true</CreatePackage>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\Controls4Industry.XML</DocumentationFile>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\Controls4Industry.XML</DocumentationFile>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
+
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Xaml" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="..\..\GlobalAssemblyInfo.cs">
-      <Link>Properties\GlobalAssemblyInfo.cs</Link>
-    </Compile>
-    <Compile Include="AdornedControl\AdornedControl.cs" />
-    <Compile Include="AdornedControl\FrameworkElementAdorner.cs" />
-    <Compile Include="Behaviour\TreeViewSelectedItemBehaviour.cs" />
-    <Compile Include="Commands\RelayCommand.cs" />
-    <Compile Include="Converter\EqualityConverter.cs" />
-    <Compile Include="Core\DesignTimeResourceDictionary.cs" />
-    <Compile Include="Core\EddieTextFormat.cs" />
-    <Compile Include="EddieActionButton\EddieActionButton.cs" />
-    <Compile Include="EddieBusyIndicator\EddieBusyIndicator.cs" />
-    <Compile Include="Converter\BooleanToGridRowHeightConverter.cs" />
-    <Compile Include="Converter\BooleanToObjectConverter.cs" />
-    <Compile Include="Converter\BooleanToVisibilityConverter.cs" />
-    <Compile Include="Converter\CombiningConverter.cs" />
-    <Compile Include="Converter\ConverterExtension.cs" />
-    <Compile Include="Converter\DoubleToRowDefinitionConverter.cs" />
-    <Compile Include="Converter\FileSizeToTextConverter.cs" />
-    <Compile Include="Converter\GenericEnumConverter.cs" />
-    <Compile Include="Converter\InverseBooleanConverter.cs" />
-    <Compile Include="Converter\IntToVisibilityConverter.cs" />
-    <Compile Include="Converter\NullToCollapsedConverter.cs" />
-    <Compile Include="Converter\StringToBooleanConverter.cs" />
-    <Compile Include="Core\VersionResourceDictionary.cs" />
-    <Compile Include="Base\EddieButtonBase\EddieButtonStyle.cs" />
-    <Compile Include="EddieButton\EddieButton.cs" />
-    <Compile Include="Base\EddieButtonBase\EddieButtonBase.cs" />
-    <Compile Include="EddieListBox\EddieListBoxItem.cs" />
-    <Compile Include="EddieListView\EddieListView.cs" />
-    <Compile Include="EddieListView\EddieListViewItem.cs" />
-    <Compile Include="EddiePopup\EddiePopup.cs" />
-    <Compile Include="EddieProgressBar\EddieProgressBar.cs" />
-    <Compile Include="EddieRangeSlider\EddieRangeSlider.cs" />
-    <Compile Include="EddieSelectableLabel\EddieSelectableLabel.cs" />
-    <Compile Include="EddieSlider\EddieSlider.cs" />
-    <Compile Include="EddieTreeView\EddieTreeView.cs" />
-    <Compile Include="EddieTreeView\EddieTreeViewItem.cs" />
-    <Compile Include="EddieTreeView\TreeViewHierarchyToThicknessConverter.cs" />
-    <Compile Include="Core\ControlSize.cs" />
-    <Compile Include="Extensions\ColorExtensions.cs" />
-    <Compile Include="Extensions\VisualTreeExtension.cs" />
-    <Compile Include="Geometries\CommonShapeExtension.cs" />
-    <Compile Include="Geometries\CommonShapeType.cs" />
-    <Compile Include="Geometries\MdiShapeExtension.cs" />
-    <Compile Include="EddieComboBox\EddieComboBox.cs" />
-    <Compile Include="EddieHistoryButtonBar\EddieHistoryButtonBar.cs" />
-    <Compile Include="EddieModuleButton\EddieModuleButton.cs" />
-    <Compile Include="EddieNavigationBar\EddieNavigationBar.cs" />
-    <Compile Include="EddieTextBox\EddieTextBox.cs" />
-    <Compile Include="Geometries\MdiShapeFactory.cs">
-      <DependentUpon>MdiShapeFactory.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
+    <None Update="Documentation.md">
       <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Geometries\CommonShapeFactory.cs" />
-    <Compile Include="LabeledControlHost\LabeledControlHost.cs" />
-    <Compile Include="EddieListBox\EddieListBox.cs" />
-    <Compile Include="EddieListView\GridViewSort.cs" />
-    <Compile Include="EddieListView\SortGlyphAdorner.cs" />
-    <Compile Include="MultiProgressBar\MultiProgressBar.cs" />
-    <Compile Include="MultiProgressBar\ProgressItem.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Core\Eddie.cs" />
-    <Compile Include="Base\PropertyChangedBase.cs" />
-    <Compile Include="ViewTemplates\DialogPanel\DialogPanel.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="DataGrid\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="EddieActionButton\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="EddieBusyIndicator\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Base\EddieButtonBase\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="EddieButton\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="CheckBox\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="EddieComboBox\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="EddieHistoryButtonBar\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="EddieListView\Generic.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="EddiePopup\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="EddieRangeSlider\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="EddieSelectableLabel\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="EddieSlider\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="EddieTreeView\Generic.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="GroupBox\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="LabeledControlHost\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="EddieListBox\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="EddieModuleButton\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="EddieNavigationBar\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="EddieProgressBar\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="MultiProgressBar\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="PasswordBox\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="RadioButton\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="EddieTextBox\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ScollViewer\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="TabControl\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="TextBlock\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Themes\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Themes\Generic\Brushes.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Themes\Generic\Colors.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Themes\Generic\Common.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ScrollBar\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="ViewTemplates\DialogPanel\Generic.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\assembly.png" />
-    <Resource Include="Images\gear.png" />
-    <Resource Include="Images\globe.png" />
-    <Resource Include="Images\stairs.png" />
-    <Resource Include="Images\window.png" />
-    <Resource Include="Images\wrench.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\window2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Controls4Industry.nuspec" />
-    <None Include="Documentation.md">
       <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>Documentation.tt</DependentUpon>
     </None>
-    <None Include="Documentation.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Documentation.md</LastGenOutput>
-    </None>
-    <None Include="Geometries\mdi-5.0.45.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <None Include="Geometries\MdiShapeFactory.tt">
+    <None Update="Geometries\MdiShapeFactory.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>MdiShapeFactory.cs</LastGenOutput>
     </None>
+    <Compile Update="Geometries\MdiShapeFactory.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MdiShapeFactory.tt</DependentUpon>
+    </Compile>
+    <None Update="Documentation.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Documentation.md</LastGenOutput>
+    </None>
+    <Compile Update="Documentation.md">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Documentation.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PreBuildEvent>
-    </PreBuildEvent>
-  </PropertyGroup>
-  <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
-  </PropertyGroup>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
 </Project>

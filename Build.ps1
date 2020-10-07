@@ -1,5 +1,4 @@
 ﻿param (
-    [switch]$SetAssemblyVersion,
     [switch]$Build,
     [switch]$UnitTests,
     [switch]$CoverReport,
@@ -17,10 +16,6 @@ $MsBuildVersion = "latest"
 # Initialize Toolkit
 Invoke-Initialize -Version (Get-Content "VERSION");
 
-if ($SetAssemblyVersion) {
-    Set-AssemblyVersions;
-}
-
 if ($Build) {
     Invoke-Build ".\ClientFramework.sln"
 }
@@ -30,7 +25,7 @@ if ($UnitTests) {
 }
 
 if ($CoverReport) {
-    Invoke-CodecovUpload
+    Invoke-CoverReport
 }
 
 if ($GenerateDocs) {
