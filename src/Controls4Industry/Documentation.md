@@ -122,7 +122,7 @@ Click on the converter to get detailed explanation and code documentation.
 * [DoubleToRowDefinitionConverter](@ref C4I.DoubleToRowDefinitionConverter)
 * [FileSizeToTextConverter](@ref C4I.FileSizeToTextConverter)
 * [GenericEnumConverter](@ref C4I.GenericEnumConverter)
-* [InverseBooleanConverter](@ref C4I.InverseBooleanConverter)
 * [IntToVisibilityConverter](@ref C4I.IntToVisibilityConverter)
+* [InverseBooleanConverter](@ref C4I.InverseBooleanConverter)
 * [NullToCollapsedConverter](@ref C4I.NullToCollapsedConverter)
 * [StringToBooleanConverter](@ref C4I.StringToBooleanConverter)
