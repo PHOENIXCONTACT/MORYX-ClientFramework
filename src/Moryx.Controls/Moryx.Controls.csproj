@@ -11,6 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup Condition="'$(TargetFramework)'=='net45'">
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System.Xaml" />
@@ -18,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Moryx" Version="3.0.0-dev.138" />
+    <PackageReference Include="Moryx" Version="3.0.0-dev.153" />
     <PackageReference Include="System.Windows.Interactivity.WPF" Version="2.0.20525" />
   </ItemGroup>
 
