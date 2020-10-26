@@ -34,8 +34,16 @@ jobs:
 
     - name: Build
       shell: pwsh
-      run: ./Build.ps1 -Build
-  Test:
+      run: ./Build.ps1 -Build-Pack
+
+    - name: Upload package artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: packages
+        path: artifacts/Packages/
+        retention-days: 1
+
+  UnitTests:
     needs: [Build]
     runs-on: windows-latest
     steps:
@@ -51,27 +59,61 @@ jobs:
           shell: pwsh
           run: ./Build.ps1 -UnitTests
 
-        - name: Codecov
-          uses: codecov/codecov-action@v1
+        - name: Upload test results
+          uses: actions/upload-artifact@v2
           with:
-            files: '*.OpenCover.xml'
+            name: test-results
+            path: artifacts/Tests/
+            retention-days: 1
+
+  Codecov:
+    needs: [UnitTests]
+    runs-on: windows-latest
+    steps:
+      - name: Download test results
+        uses: actions/download-artifact@v2
+        with:
+          name: test-results
+          path: artifacts/Tests/
+
+      - name: Codecov
+        uses: codecov/codecov-action@v1
+        with:
+          files: '*.OpenCover.xml'
+
+  Documentation:
+    needs: [Build]
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Generate docFx
+        shell: pwsh
+        run: ./Build.ps1 -GenerateDocs
+
+      - name: Upload documentation results
+        uses: actions/upload-artifact@v2
+        with:
+          name: documentation
+          path: artifacts/Documentation/
+          retention-days: 1
+
   Publish:
-    needs: [Test]
+    needs: [Build, UnitTests]
     if: (github.event_name == 'push')
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
       
-      - name: Setup MSBuild
-        uses: microsoft/setup-msbuild@v1
-      
       - name: Setup NuGet.exe
         uses: NuGet/setup-nuget@v1.0.2
   
-      - name: Build
-        shell: pwsh
-        run: ./Build.ps1 -Build
+      - name: Download package artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: packages
+          path: artifacts/Packages/
 
-      - name: Pack & Publish
+      - name: Publish packages
         shell: pwsh
-        run: ./Build.ps1 -Pack -Publish
+        run: ./Build.ps1 -Publish

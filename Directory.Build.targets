@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+
+  <PropertyGroup>
+    <MoryxPlatformVersion>3.0.0-dev.173</MoryxPlatformVersion>
+  </PropertyGroup>
+
+  <!-- Package versions for package references across all projects -->
+  <ItemGroup>
+    <!--3rd party dependencies-->
+    <PackageReference Update="Caliburn.Micro" Version="3.2.0" />
+    <PackageReference Update="Castle.Windsor" Version="5.0.1" />
+    <PackageReference Update="CommandLineParser" Version="2.8.0" />
+    <PackageReference Update="Microsoft.NET.Test.Sdk" Version="16.7.1" />
+    <PackageReference Update="Moq" Version="4.14.6" />
+    <PackageReference Update="NUnit" Version="3.12.0" />
+    <PackageReference Update="NUnit3TestAdapter" Version="3.17.0" />
+
+    <!--Platform dependencies-->
+    <PackageReference Update="Moryx" Version="$(MoryxPlatformVersion)" />
+    <PackageReference Update="Moryx.Tools.Wcf" Version="$(MoryxPlatformVersion)" />
+    <PackageReference Update="Moryx.Container" Version="$(MoryxPlatformVersion)" />
+  </ItemGroup>
+
+</Project>
