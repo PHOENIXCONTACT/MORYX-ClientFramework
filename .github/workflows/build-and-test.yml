@@ -34,7 +34,7 @@ jobs:
 
     - name: Build
       shell: pwsh
-      run: ./Build.ps1 -Build-Pack
+      run: ./Build.ps1 -Build -Pack
 
     - name: Upload package artifacts
       uses: actions/upload-artifact@v2
