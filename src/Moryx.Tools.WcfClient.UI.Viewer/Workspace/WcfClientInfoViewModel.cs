@@ -1,6 +1,7 @@
 // Copyright (c) 2020, Phoenix Contact GmbH & Co. KG
 // Licensed under the Apache License, Version 2.0
 
+using System;
 using System.Windows.Media;
 using Caliburn.Micro;
 using Moryx.Tools.Wcf;
@@ -12,6 +13,9 @@ namespace Moryx.Tools.WcfClient.UI.Viewer
         public WcfClientInfoViewModel(WcfClientInfo source)
         {
             Source = source;
+
+            if (Version.TryParse(Source.ServerVersion, out var serverVersion))
+                MinClientVersion = $"{serverVersion.Major}.0.0";
         }
 
         public WcfClientInfo Source { get; }
@@ -26,7 +30,7 @@ namespace Moryx.Tools.WcfClient.UI.Viewer
 
         public string MinServerVersion => Source.MinServerVersion;
 
-        public string MinClientVersion => Source.MinClientVersion;
+        public string MinClientVersion { get; }
 
         public ConnectionState State => Source.State;
 
