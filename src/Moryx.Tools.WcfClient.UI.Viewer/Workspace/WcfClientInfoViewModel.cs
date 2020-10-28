@@ -10,37 +10,53 @@ namespace Moryx.Tools.WcfClient.UI.Viewer
 {
     internal class WcfClientInfoViewModel : PropertyChangedBase
     {
+        public WcfClientInfo Model { get; private set; }
+
         public WcfClientInfoViewModel(WcfClientInfo source)
         {
-            Source = source;
-
-            if (Version.TryParse(Source.ServerVersion, out var serverVersion))
-                MinClientVersion = $"{serverVersion.Major}.0.0";
+            UpdateModel(source);
         }
 
-        public WcfClientInfo Source { get; }
+        public void UpdateModel(WcfClientInfo clientInfo)
+        {
+            Model = clientInfo;
 
-        public string Service => Source.Service;
+            if (Version.TryParse(Model.ServerVersion, out var serverVersion))
+                MinClientVersion = $"{serverVersion.Major}.0.0";
 
-        public string Uri => Source.Uri;
 
-        public string ServerVersion => Source.ServerVersion;
+            NotifyOfPropertyChange(nameof(Service));
+            NotifyOfPropertyChange(nameof(Uri));
+            NotifyOfPropertyChange(nameof(ServerVersion));
+            NotifyOfPropertyChange(nameof(ClientVersion));
+            NotifyOfPropertyChange(nameof(MinServerVersion));
+            NotifyOfPropertyChange(nameof(MinClientVersion));
+            NotifyOfPropertyChange(nameof(State));
+            NotifyOfPropertyChange(nameof(Tries));
+            NotifyOfPropertyChange(nameof(StateBrush));
+        }
 
-        public string ClientVersion => Source.ClientVersion;
+        public string Service => Model.Service;
 
-        public string MinServerVersion => Source.MinServerVersion;
+        public string Uri => Model.Uri;
 
-        public string MinClientVersion { get; }
+        public string ServerVersion => Model.ServerVersion;
 
-        public ConnectionState State => Source.State;
+        public string ClientVersion => Model.ClientVersion;
 
-        public int Tries => Source.Tries;
+        public string MinServerVersion => Model.MinServerVersion;
+
+        public string MinClientVersion { get; private set; }
+
+        public ConnectionState State => Model.State;
+
+        public int Tries => Model.Tries;
 
         public SolidColorBrush StateBrush
         {
             get
             {
-                switch (Source.State)
+                switch (Model.State)
                 {
                     case ConnectionState.Success:
                         return Brushes.LightGreen;
@@ -59,5 +75,7 @@ namespace Moryx.Tools.WcfClient.UI.Viewer
                 }
             }
         }
+
+
     }
 }
