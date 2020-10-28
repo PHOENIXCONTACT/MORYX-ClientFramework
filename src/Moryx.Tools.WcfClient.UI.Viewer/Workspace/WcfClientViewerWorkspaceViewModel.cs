@@ -22,7 +22,7 @@ namespace Moryx.Tools.WcfClient.UI.Viewer
         private ObservableCollection<WcfClientInfoViewModel> _clients;
         public ObservableCollection<WcfClientInfoViewModel> Clients
         {
-            get { return _clients; }
+            get => _clients;
             set
             {
                 _clients = value;
@@ -57,27 +57,11 @@ namespace Moryx.Tools.WcfClient.UI.Viewer
         /// </summary>
         private void UpdateClientInfo(WcfClientInfo clientInfo)
         {
-            var clientVm = Clients.FirstOrDefault(c => c.Source == clientInfo);
-            var index = 0;
-
+            var clientVm = Clients.FirstOrDefault(c => c.Model == clientInfo);
             if (clientVm != null)
-            {
-                index = Clients.IndexOf(clientVm);
-            }
-
-            if (index >= 0)
-            {
-                Clients.RemoveAt(index);
-
-                if (clientInfo.State != ConnectionState.Closed)
-                {
-                    Clients.Insert(index, new WcfClientInfoViewModel(clientInfo));
-                }
-            }
+                clientVm.UpdateModel(clientInfo);
             else
-            {
                 Clients.Add(new WcfClientInfoViewModel(clientInfo));
-            }
         }
     }
 }
