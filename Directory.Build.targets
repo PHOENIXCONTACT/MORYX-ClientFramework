@@ -2,7 +2,7 @@
 <Project>
 
   <PropertyGroup>
-    <MoryxPlatformVersion>3.0.0-dev.185</MoryxPlatformVersion>
+    <MoryxPlatformVersion>3.0.0-dev.201</MoryxPlatformVersion>
   </PropertyGroup>
 
   <!-- Package versions for package references across all projects -->
