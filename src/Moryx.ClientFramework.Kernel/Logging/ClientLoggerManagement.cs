@@ -1,60 +1,60 @@
 // Copyright (c) 2020, Phoenix Contact GmbH & Co. KG
 // Licensed under the Apache License, Version 2.0
 
-using System;
 using System.Collections.Generic;
-using System.Diagnostics;
+using System.Linq;
 using Moryx.Container;
 using Moryx.Logging;
+using LogLevel = Moryx.Logging.LogLevel;
 
 namespace Moryx.ClientFramework.Kernel
 {
-    internal class DummyLogTarget : ILogTarget
-    {
-        public void Log(LogLevel loglevel, string message)
-        {
-            
-        }
-
-        public void Log(LogLevel loglevel, string message, Exception exception)
-        {
-            
-        }
-    }
-
     /// <summary>
     /// Logger management
     /// </summary>
     [KernelComponent(typeof(ILoggerManagement))]
     public class ClientLoggerManagement : LoggerManagement
     {
+        private LoggingConfig _config;
+
+        /// <summary>
+        /// Configuration manager instance. Injected by castel.
+        /// </summary>
+        public IKernelConfigManager ConfigManager { get; set; }
+
         /// <inheritdoc />
         protected override ILogTarget CreateLogTarget(string name)
         {
-            return new DummyLogTarget();
+            return new CommonLoggingLogTarget(name);
         }
 
         /// <inheritdoc />
         protected override ModuleLoggerConfig GetLoggerConfig(string name)
         {
-            return new ModuleLoggerConfig
+            var config = (_config = _config ?? ConfigManager.GetConfiguration<LoggingConfig>());
+            var loggerConf = config.LoggerConfigs.FirstOrDefault(conf => conf.LoggerName == name);
+            if (loggerConf == null)
             {
-                LoggerName = name,
-                ActiveLevel = LogLevel.Debug,
-                ChildConfigs = new List<ModuleLoggerConfig>()
-            };
+                loggerConf = new ModuleLoggerConfig { LoggerName = name, ActiveLevel = _config.DefaultLevel, ChildConfigs = new List<ModuleLoggerConfig>() };
+                config.LoggerConfigs.Add(loggerConf);
+            }
+            return loggerConf;
+        }
+
+        /// <summary>
+        /// Set the level of the given logger to the given log level.
+        /// </summary>
+        /// <param name="logger">The module logger for which the new log level should be set.</param>
+        /// <param name="level">The new log level to which the given logger should be set.</param>
+        public override void SetLevel(IModuleLogger logger, LogLevel level)
+        {
+            base.SetLevel(logger, level);
+            ConfigManager.SaveConfiguration(_config);
         }
 
         /// <inheritdoc />
         protected override void ForwardToListeners(ILogMessage logMessage)
         {
-            Debug.WriteLine("Level: {0}, Name: {1}, Class: {2} -> {3}", logMessage.Level, logMessage.Logger.Name,
-                logMessage.ClassName, logMessage.Message);
-
-            if (logMessage.Level > LogLevel.Warning)
-            {
-                Debug.WriteLine("Logger manager shoud forward to server log... Error level > Warning!!!!!");
-            }
         }
     }
 }

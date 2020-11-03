@@ -17,6 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Common.Logging.Log4Net208" Version="3.4.1" />
+    <PackageReference Include="log4net" Version="2.0.8" />
+
     <ProjectReference Include="..\Moryx.ClientFramework.Configurator\Moryx.ClientFramework.Configurator.csproj" />
     <ProjectReference Include="..\Moryx.ClientFramework.Kernel\Moryx.ClientFramework.Kernel.csproj" />
     <ProjectReference Include="..\Moryx.ClientFramework.SimpleShell\Moryx.ClientFramework.SimpleShell.csproj" />
@@ -24,6 +27,12 @@
     <ProjectReference Include="..\Moryx.ClientFramework.Tests.HistoryWriter\Moryx.ClientFramework.Tests.HistoryWriter.csproj" />
     <ProjectReference Include="..\Moryx.ClientFramework.Tests.NotifyAndEditor\Moryx.ClientFramework.Tests.NotifyAndEditor.csproj" />
     <ProjectReference Include="..\Moryx.Tools.WcfClient.UI.Viewer\Moryx.Tools.WcfClient.UI.Viewer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Config\log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

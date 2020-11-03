@@ -112,14 +112,14 @@ namespace Moryx.ClientFramework.Kernel
             // Create global container and configure config manager
             CreateContainer();
 
-            // Activates the logging
-            ActivateKernelLogging();
-
             //Configures the thread context
             ConfigureThreadContext();
 
             // Register app config
             LoadConfiguration();
+
+            // Activates the logging
+            ActivateKernelLogging();
 
             // ConfigureLocalization
             ConfigureLocalization();
@@ -261,6 +261,7 @@ namespace Moryx.ClientFramework.Kernel
             _application.DisposeShell();
 
             _moduleManager?.Dispose();
+            _configManager?.SaveAll();
             _appDataConfigManager?.SaveAll();
         }
 
@@ -271,7 +272,7 @@ namespace Moryx.ClientFramework.Kernel
         {
             _runModeController = _container.Resolve<IRunModeController>();
 
-            //configure runmode and initialize
+            //configure runMode and initialize
             _runModeController.RunModeReady += OnRunModeReady;
             _runModeController.Initialize();
 
@@ -310,7 +311,7 @@ namespace Moryx.ClientFramework.Kernel
             // Parallel operations
             container.Register<IParallelOperations, ParallelOperations>();
 
-            // Register runtimes
+            // Register window manager
             container.Register<IWindowManager, WindowManager>();
 
             // Load kernel and core modules

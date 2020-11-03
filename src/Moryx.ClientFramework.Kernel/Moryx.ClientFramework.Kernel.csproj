@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Common.Logging" Version="3.4.1" />
     <PackageReference Include="Caliburn.Micro" />
     <PackageReference Include="Castle.Windsor" />
     <PackageReference Include="CommandLineParser" />

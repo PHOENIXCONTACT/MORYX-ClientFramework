@@ -6,10 +6,10 @@ using Moryx.Configuration;
 namespace Moryx.ClientFramework.Kernel
 {
     /// <summary>
-    /// Derivative of the CachedConfigManager from platform to handle 
+    /// Derivative of the CachedConfigManager from platform to handle
     /// all kernel configuration stored in the application folder
     /// </summary>
-    public class KernelConfigManager : CachedConfigManager, IKernelConfigManager
+    internal class KernelConfigManager : CachedConfigManager, IKernelConfigManager
     {
 
     }
