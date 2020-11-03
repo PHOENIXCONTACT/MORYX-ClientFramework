@@ -10,7 +10,7 @@ namespace Moryx.ClientFramework.Kernel
     /// ConfigManager specialized to save configuration in the
     /// AppData folder of a user
     /// </summary>
-    public class AppDataConfigManager : KernelConfigManager, IAppDataConfigManager
+    internal class AppDataConfigManager : KernelConfigManager, IAppDataConfigManager
     {
         /// <summary>
         /// Name of default's sub folder

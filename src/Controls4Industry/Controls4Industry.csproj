@@ -1,11 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
-  <Import Project="..\..\.build\Common.props"></Import>
-
   <PropertyGroup>
     <TargetFrameworks>net45;netcoreapp3.0</TargetFrameworks>
     <UseWPF>true</UseWPF>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Description>WPF control libray for industry 4.0 projects</Description>
     <CreatePackage>true</CreatePackage>
   </PropertyGroup>
@@ -15,6 +12,26 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System.Xaml" />
     <Reference Include="WindowsBase" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Images\assembly.png" />
+    <None Remove="Images\gear.png" />
+    <None Remove="Images\globe.png" />
+    <None Remove="Images\stairs.png" />
+    <None Remove="Images\window.png" />
+    <None Remove="Images\window2.png" />
+    <None Remove="Images\wrench.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\assembly.png" />
+    <Resource Include="Images\gear.png" />
+    <Resource Include="Images\globe.png" />
+    <Resource Include="Images\stairs.png" />
+    <Resource Include="Images\window.png" />
+    <Resource Include="Images\window2.png" />
+    <Resource Include="Images\wrench.png" />
   </ItemGroup>
 
   <ItemGroup>

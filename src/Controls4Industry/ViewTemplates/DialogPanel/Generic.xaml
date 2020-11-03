@@ -6,7 +6,6 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:c4I="clr-namespace:C4I">
 
-    
     <ControlTemplate x:Key="DialogPanelStyle" TargetType="c4I:DialogPanel">
         <Grid Background="{TemplateBinding Background}">
             <Grid.RowDefinitions>
@@ -15,10 +14,10 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
-            <ContentPresenter Grid.Row="0" Margin="0,0,0,5" 
+            <ContentPresenter Grid.Row="0" Margin="0,0,0,5"
                               x:Name="PART_Header"
                               Content="{TemplateBinding Header}" />
-            <ContentPresenter Grid.Row="1" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+            <ContentPresenter Grid.Row="1" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                   VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                   Content="{TemplateBinding Content}"  />
 
@@ -39,10 +38,8 @@
                 </ItemsControl>
             </StackPanel>
 
-            <Grid Grid.Row="0" Grid.RowSpan="2" Background="Transparent" 
-                  Visibility="{TemplateBinding BusyVisibility}">
-                <c4I:EddieBusyIndicator HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
-                                        Visibility="{TemplateBinding BusyVisibility}" />
+            <Grid Grid.Row="0" Grid.RowSpan="2" Background="Transparent" Visibility="{TemplateBinding BusyVisibility}">
+                <c4I:EddieBusyIndicator HorizontalAlignment="Stretch" VerticalAlignment="Stretch" IsIndicatorEnabled="True" Visibility="{TemplateBinding BusyVisibility}" />
             </Grid>
         </Grid>
         <ControlTemplate.Triggers>
@@ -51,7 +48,7 @@
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>
-    
+
     <Style TargetType="c4I:DialogPanel">
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled"/>
@@ -59,5 +56,5 @@
         <Setter Property="VerticalContentAlignment" Value="Stretch"/>
         <Setter Property="Template" Value="{StaticResource DialogPanelStyle}" />
     </Style>
-    
+
 </ResourceDictionary>

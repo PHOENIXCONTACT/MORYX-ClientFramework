@@ -5,6 +5,7 @@
     <UseWPF>true</UseWPF>
     <Description>Demo project that includes all controls</Description>
     <OutputType>WinExe</OutputType>
+    <StartupObject>Moryx.Controls.Demo.App</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
