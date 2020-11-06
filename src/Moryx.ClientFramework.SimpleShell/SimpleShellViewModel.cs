@@ -15,7 +15,8 @@ namespace Moryx.ClientFramework.SimpleShell
         /// <inheritdoc />
         protected override void OnInitialize()
         {
-            SelectModule(Items.First());
+            if (Items.Any())
+                SelectModule(Items.First());
         }
 
         /// <summary>
