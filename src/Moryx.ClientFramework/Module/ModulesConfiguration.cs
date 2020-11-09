@@ -25,7 +25,7 @@ namespace Moryx.ClientFramework
         }
 
         /// <summary>
-        /// The name of the application. Shold be shared over multiple clients
+        /// The name of the application. Should be shared over multiple clients
         /// Can be grouped
         /// </summary>
         [DataMember]

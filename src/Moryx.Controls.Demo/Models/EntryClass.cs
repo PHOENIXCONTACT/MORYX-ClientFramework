@@ -30,6 +30,12 @@ namespace Moryx.Controls.Demo.Models
 
         public List<bool> ListBool { get; set; }
 
+        public List<int> ListInt { get; set; }
+
+        public List<long> ListLong { get; set; }
+
+        public List<short> ListShort { get; set; }
+
         public byte[] ArrayOfByte { get; set; }
 
         [FileSystemPath(FileSystemPathType.File)]
