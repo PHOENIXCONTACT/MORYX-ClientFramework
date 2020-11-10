@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Controls4Industry\Controls4Industry.csproj" />
+    <ProjectReference Include="..\Moryx.WpfToolkit\Moryx.WpfToolkit.csproj" />
     <ProjectReference Include="..\Moryx.ClientFramework\Moryx.ClientFramework.csproj" />
   </ItemGroup>
 

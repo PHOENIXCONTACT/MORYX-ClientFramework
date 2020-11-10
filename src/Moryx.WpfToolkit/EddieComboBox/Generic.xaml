@@ -1,0 +1,194 @@
+<!--
+ Copyright (c) 2020, Phoenix Contact GmbH & Co. KG
+ Licensed under the Apache License, Version 2.0
+-->
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:wpfToolkit="clr-namespace:Moryx.WpfToolkit">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Themes/Generic/Common.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <ControlTemplate x:Key="EddieComboBoxToggleButton" TargetType="ToggleButton">
+        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent">
+            <Path HorizontalAlignment="Right" Margin="0,0,15,0"
+                  Data="{Binding LockIcon, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type wpfToolkit:EddieComboBox}}}"
+                  VerticalAlignment="Center" x:Name="lock"
+                  Width="14" Height="14"
+                  Stretch="Uniform"
+                  Fill="{StaticResource DarkGreenColorBrush}" />
+
+            <Path HorizontalAlignment="Right" Margin="0,0,15,0"
+                  VerticalAlignment="Center"
+                  x:Name="arrow_down4"
+                  Data="F1M0.812,0.956C0.812,0.956 6.438,7.144 6.438,7.144 6.438,7.144 12.062,0.956 12.062,0.956 12.062,0.956 0.812,0.956 0.812,0.956z"
+                  Fill="{StaticResource DarkGreenColorBrush}" />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsEnabled" Value="True">
+                <Setter TargetName="arrow_down4" Property="Visibility" Value="Visible" />
+                <Setter TargetName="lock" Property="Visibility" Value="Collapsed" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter TargetName="arrow_down4" Property="Visibility" Value="Collapsed" />
+                <Setter TargetName="lock" Property="Visibility" Value="Visible" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style x:Key="EddieComboBoxCheckMark" TargetType="Path">
+        <Setter Property="Fill" Value="{StaticResource LightGreenColorBrush}" />
+        <Setter Property="Data" Value="{wpfToolkit:CommonShape ShapeType=CheckMark}" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="Stretch" Value="Uniform" />
+    </Style>
+
+    <Style x:Key="EddieComboBoxItem" TargetType="ComboBoxItem">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ComboBoxItem">
+                    <DockPanel x:Name="Content" LastChildFill="True" Background="Transparent">
+
+                        <Path x:Name="CheckMark" Width="12" Height="11" Margin="5,0,5,0"
+                              Style="{StaticResource EddieComboBoxCheckMark}" Visibility="Hidden" />
+
+                        <ContentPresenter DockPanel.Dock="Left" Margin="0,3,8,3"
+                                          VerticalAlignment="Center" />
+
+                    </DockPanel>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="CheckMark" Property="Visibility" Value="Visible" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="Content" Property="Background"
+                                    Value="{StaticResource ComboBoxItemMouseOverBackgroundColorBrush}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ClearButtonStyle" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Path x:Name="CrossPath" Fill="{StaticResource LightGreenColorBrush}"
+                          Width="10" Height="10" Stretch="Uniform" Data="{wpfToolkit:CommonShape ShapeType=Cross}" />
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="CrossPath" Property="Fill" Value="{StaticResource DarkGreenColorBrush}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <ControlTemplate x:Key="EddieComboBoxStyleTemplate" TargetType="wpfToolkit:EddieComboBox">
+        <ControlTemplate.Resources>
+            <Style BasedOn="{StaticResource EddieComboBoxItem}" TargetType="ComboBoxItem" />
+        </ControlTemplate.Resources>
+        <Grid>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="EditStates">
+                    <VisualState x:Name="Editable">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
+                                                           Storyboard.TargetName="PART_EditableTextBox">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}" />
+                            </ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
+                                                           Storyboard.TargetName="ContentSite">
+                                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}" />
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Uneditable" />
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+
+            <Border x:Name="ComboBoxBorder"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    CornerRadius="{StaticResource StandardCornerRadius}"
+                    BorderThickness="1"
+                    BorderBrush="{StaticResource BorderGreyColorBrush}"
+                    Background="{StaticResource GradientBackgroundBrush}" />
+
+            <ToggleButton x:Name="ToggleButton" DockPanel.Dock="Right"
+                          Template="{StaticResource EddieComboBoxToggleButton}"
+                          Focusable="false" ClickMode="Press"
+                          IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
+
+            <DockPanel LastChildFill="True" Margin="0,0,25,0">
+
+                <Button DockPanel.Dock="Right" x:Name="PART_ClearSelectedItemButton"
+                        Style="{StaticResource ClearButtonStyle}"
+                        Visibility="{TemplateBinding ClearButtonVisibility}"
+                        Margin="0,0,5,0" />
+
+                <Grid DockPanel.Dock="Left" Margin="9,0,7,0">
+                    <ContentPresenter x:Name="ContentSite" IsHitTestVisible="False"
+                                      Content="{TemplateBinding SelectionBoxItem}"
+                                      ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                      ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+                                      VerticalAlignment="Center" HorizontalAlignment="Left" SnapsToDevicePixels="True" />
+
+                    <TextBox x:Name="PART_EditableTextBox" Style="{x:Null}"
+                             HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                             Focusable="True" Background="Transparent" BorderThickness="0"
+                             Visibility="Hidden" IsReadOnly="{TemplateBinding IsReadOnly}" />
+                </Grid>
+
+            </DockPanel>
+
+            <Popup x:Name="Popup" Placement="Bottom" IsOpen="{TemplateBinding IsDropDownOpen}"
+                   Focusable="False" PopupAnimation="Slide">
+
+                <Border x:Name="DropDownBorder"
+                        Background="{StaticResource ComboBoxPopUpBackgroundColorBrush}"
+                        BorderBrush="{StaticResource LightGreenColorBrush}"
+                        BorderThickness="0.5" MinWidth="{TemplateBinding ActualWidth}"
+                        MaxHeight="{TemplateBinding MaxDropDownHeight}">
+
+                    <ScrollViewer>
+                        <StackPanel IsItemsHost="True" />
+                    </ScrollViewer>
+                </Border>
+            </Popup>
+
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="HasItems" Value="false">
+                <Setter TargetName="DropDownBorder" Property="MinHeight" Value="25" />
+            </Trigger>
+            <Trigger Property="IsGrouping" Value="true">
+                <Setter Property="ScrollViewer.CanContentScroll" Value="false" />
+            </Trigger>
+            <Trigger SourceName="Popup" Property="AllowsTransparency" Value="true">
+                <Setter TargetName="DropDownBorder" Property="CornerRadius"
+                        Value="{StaticResource StandardCornerRadius}" />
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter TargetName="ComboBoxBorder" Property="BorderBrush"
+                        Value="{StaticResource LightGreenColorBrush}" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style TargetType="wpfToolkit:EddieComboBox" BasedOn="{StaticResource ControlStyleBase}">
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+        <Setter Property="ScrollViewer.CanContentScroll" Value="true" />
+        <Setter Property="Template" Value="{StaticResource EddieComboBoxStyleTemplate}" />
+        <Setter Property="MinWidth" Value="100" />
+        <Setter Property="MinHeight" Value="20" />
+        <Setter Property="Height" Value="{StaticResource StandardHeight}" />
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,91 @@
+<!--
+ Copyright (c) 2020, Phoenix Contact GmbH & Co. KG
+ Licensed under the Apache License, Version 2.0
+-->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Themes/Generic/Common.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="EddieTabItemStyle" TargetType="TabItem">
+        <Setter Property="Height" Value="28" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TabItem">
+                    <Border Name="Border"
+                            Margin="0,0,3,0"
+                            BorderBrush="{StaticResource BorderGreyColorBrush}"
+                            BorderThickness="1,1,1,0"
+                            CornerRadius="4,4,0,0">
+
+                        <ContentPresenter x:Name="ContentSite"
+                                          Margin="10, 2"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          ContentSource="Header" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="ContentSite" Property="TextElement.Foreground" Value="{StaticResource EddieGreenButtonForegroundColorBrush}" />
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource GreenBackgroundBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="False">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource GrayBackgroundBrush}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
+    <Style x:Key="EddieTabItemLeftStyle" TargetType="TabItem">
+        <Setter Property="Height" Value="40" />
+        <Setter Property="Margin" Value="0,0,0,0" />
+        <Setter Property="MinWidth" Value="100" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TabItem">
+                    <Border Name="Border"
+                            Margin="0,0,0,3"
+                            BorderBrush="{StaticResource BorderGreyColorBrush}"
+                            BorderThickness="1,1,0,1"
+                            CornerRadius="4,0,0,4">
+
+                        <ContentPresenter x:Name="ContentSite"
+                                          Margin="0,5"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          ContentSource="Header" />
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="ContentSite" Property="TextElement.Foreground" Value="{StaticResource EddieGreenButtonForegroundColorBrush}" />
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource GreenBackgroundBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="False">
+                            <Setter TargetName="Border" Property="Background" Value="{StaticResource GrayBackgroundBrush}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
+    <Style TargetType="TabControl">
+        <Setter Property="BorderBrush" Value="{StaticResource BorderGreyColorBrush}" />
+        <Setter Property="Background" Value="{StaticResource BackgroundColorBrush}"/>
+        <Style.Triggers>
+            <Trigger Property="TabStripPlacement" Value="Top">
+                <Setter Property="ItemContainerStyle" Value="{StaticResource EddieTabItemStyle}" />
+            </Trigger>
+            <Trigger Property="TabStripPlacement" Value="Left">
+                <Setter Property="ItemContainerStyle" Value="{StaticResource EddieTabItemLeftStyle}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

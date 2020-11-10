@@ -3,8 +3,8 @@
 
 using System.Windows;
 using System.Windows.Input;
-using C4I;
 using Caliburn.Micro;
+using Moryx.WpfToolkit;
 
 namespace Moryx.Controls.Demo.ViewModels
 {

@@ -26,6 +26,7 @@
     <ProjectReference Include="..\Moryx.ClientFramework.Tests.DialogManager\Moryx.ClientFramework.Tests.DialogManager.csproj" />
     <ProjectReference Include="..\Moryx.ClientFramework.Tests.HistoryWriter\Moryx.ClientFramework.Tests.HistoryWriter.csproj" />
     <ProjectReference Include="..\Moryx.ClientFramework.Tests.NotifyAndEditor\Moryx.ClientFramework.Tests.NotifyAndEditor.csproj" />
+    <ProjectReference Include="..\Moryx.ClientFramework.Tests.Playground\Moryx.ClientFramework.Tests.Playground.csproj" />
     <ProjectReference Include="..\Moryx.Tools.WcfClient.UI.Viewer\Moryx.Tools.WcfClient.UI.Viewer.csproj" />
   </ItemGroup>
 

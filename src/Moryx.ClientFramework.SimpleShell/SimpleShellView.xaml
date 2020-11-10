@@ -20,7 +20,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <DesignTimeResourceDictionary>
                     <ResourceDictionary.MergedDictionaries>
-                        <ResourceDictionary Source="pack://application:,,,/Controls4Industry;component/Themes/Generic/Brushes.xaml" />
+                        <ResourceDictionary Source="pack://application:,,,/Moryx.WpfToolkit;component/Themes/Generic/Brushes.xaml" />
                         <ResourceDictionary>
                             <NullToCollapsedConverter x:Key="NullToCollapsed.Converter" />
                         </ResourceDictionary>

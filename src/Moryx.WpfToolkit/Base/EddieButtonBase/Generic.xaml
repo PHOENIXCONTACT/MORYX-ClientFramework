@@ -1,0 +1,36 @@
+<!--
+ Copyright (c) 2020, Phoenix Contact GmbH & Co. KG
+ Licensed under the Apache License, Version 2.0
+-->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:wpfToolkit="clr-namespace:Moryx.WpfToolkit">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../../Themes/Generic/Common.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="EddieButtonPathStyle" TargetType="Path" BasedOn="{StaticResource ButtonIconStyle}">
+        <Setter Property="Stretch" Value="Uniform" />
+        <Setter Property="Margin" Value="0,5,0,5" />
+        <Setter Property="DockPanel.Dock" Value="Left" />
+    </Style>
+
+    <DropShadowEffect x:Key="EddieButtonShadowEffect"
+                      BlurRadius="5" Color="{StaticResource DropShadowEffectColor}"
+                      Direction="-90" Opacity="0.3" ShadowDepth="3" />
+
+    <Style x:Key="EddieButtonBorderBaseStyle" TargetType="Border">
+        <Setter Property="CornerRadius" Value="{StaticResource StandardCornerRadius}" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="Effect" Value="{StaticResource EddieButtonShadowEffect}" />
+    </Style>
+
+    <Style x:Key="EddieButtonBaseStyle" TargetType="wpfToolkit:EddieButtonBase" BasedOn="{StaticResource ControlStyleBase}">
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Height" Value="28" />
+        <Setter Property="Width" Value="140" />
+    </Style>
+
+</ResourceDictionary>

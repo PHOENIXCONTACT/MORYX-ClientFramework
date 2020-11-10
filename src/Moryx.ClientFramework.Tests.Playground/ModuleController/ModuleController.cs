@@ -2,8 +2,8 @@
 // Licensed under the Apache License, Version 2.0
 
 using System.Windows.Media;
-using C4I;
 using Moryx.ClientFramework.Tests.Playground.Properties;
+using Moryx.WpfToolkit;
 
 namespace Moryx.ClientFramework.Tests.Playground
 {

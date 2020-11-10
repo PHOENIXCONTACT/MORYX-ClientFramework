@@ -1,0 +1,50 @@
+<!--
+ Copyright (c) 2020, Phoenix Contact GmbH & Co. KG
+ Licensed under the Apache License, Version 2.0
+-->
+<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:wpfToolkit="clr-namespace:Moryx.WpfToolkit">
+
+    <ResourceDictionary.MergedDictionaries>
+        <!--<core:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="Icons/OkIcon/Generic.xaml" />-->
+
+        <!-- Eddie Specific Styles -->
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="EddieButton/Generic.xaml" />
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="EddieActionButton/Generic.xaml" />
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="EddieBusyIndicator/Generic.xaml" />
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="EddieComboBox/Generic.xaml" />
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="EddieModuleButton/Generic.xaml" />
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="EddieTextBox/Generic.xaml" />
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="EddieHistoryButtonBar/Generic.xaml" />
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="EddieNavigationBar/Generic.xaml" />
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="EddieSelectableLabel/Generic.xaml" />
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="EddieProgressBar/Generic.xaml" />
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="MultiProgressBar/Generic.xaml" />
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="LabeledControlHost/Generic.xaml" />
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="EddieTreeView/Generic.xaml"/>
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="EddieSlider/Generic.xaml"/>
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="EddieRangeSlider/Generic.xaml"/>
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="EddieListBox/Generic.xaml" />
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="EddieListView/Generic.xaml"/>
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="EddiePopup/Generic.xaml"/>
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="InfoBox/Generic.xaml"/>
+
+        <!-- Windows Control Styles -->
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="CheckBox/Generic.xaml" />
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="RadioButton/Generic.xaml" />
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="ScrollViewer/Generic.xaml" />
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="ScrollBar/Generic.xaml" />
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="TabControl/Generic.xaml" />
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="GroupBox/Generic.xaml" />
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="PasswordBox/Generic.xaml" />
+
+        <!-- Templates -->
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="ViewTemplates/DialogPanel/Generic.xaml"/>
+
+        <!-- TODO: This must be the last Entry in list, otherwise the Eddie.Textformat Trigger do not work. Fix it! -->
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="TextBlock/Generic.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

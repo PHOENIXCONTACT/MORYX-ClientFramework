@@ -1,0 +1,69 @@
+<!--
+ Copyright (c) 2020, Phoenix Contact GmbH & Co. KG
+ Licensed under the Apache License, Version 2.0
+-->
+<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Color x:Key="StandardFontColor">#FF000000</Color>
+    <SolidColorBrush x:Key="StandardFontColorBrush" Color="{StaticResource StandardFontColor}" />
+
+    <Color x:Key="EddieGreenButtonForegroundColor">#FFFFFFFF</Color>
+    <SolidColorBrush x:Key="EddieGreenButtonForegroundColorBrush" Color="{StaticResource EddieGreenButtonForegroundColor}" />
+
+    <Color x:Key="BackgroundGradientDarkColor">#FFDDE3E9</Color>
+    <Color x:Key="BackgroundGradientLightColor">#FFFFFFFF</Color>
+
+
+    <Color x:Key="MainWindowBackgroundGradientColor1">#FFFCFCFC</Color>
+    <Color x:Key="MainWindowBackgroundGradientColor2">#FF93C2CC</Color>
+
+    <Color x:Key="EddieScrollBarBorderBackgroundFillColor">#FFFFFFFF</Color>
+    <Color x:Key="EddieScrollBarPageButtonPressedColor">#FFC8C8C8</Color>
+    <Color x:Key="EddieScrollBarLineButtonGradientStop1Color">#FFDDE3E9</Color>
+    <Color x:Key="EddieScrollBarLineButtonGradientStop2Color">#FFFFFFFF</Color>
+    <Color x:Key="EddieScrollBarThumbGradientStop1Color">#FFDDE3E9</Color>
+    <Color x:Key="EddieScrollBarThumbGradientStop2Color">#FFFFFFFF</Color>
+    <Color x:Key="EddieScrollBarThumbDropShadowColor">#FF000000</Color>
+    <Color x:Key="EddieScrollBarLineButtonGradientStop1PressedColor">#FF9DAEBF</Color>
+    <Color x:Key="EddieScrollBarLineButtonGradientStop2PressedColor">#FFC8C8C8</Color>
+    <Color x:Key="EddieScrollBarLineButtonArrowFillPressedColor">#FF3E6F75</Color>
+
+    <Color x:Key="CheckBoxBoxForegroundColor">#FF000000</Color>
+    <Color x:Key="CheckBoxPressedBackgroundColor">#FF000000</Color>
+
+    <Color x:Key="ComboBoxItemMouseOverBackgroundColor">#FFF1F3F5</Color>
+    <Color x:Key="ComboBoxForegroundColor">#FF000000</Color>
+    <Color x:Key="ComboBoxPopUpBackgroundColor">#FFFFFFFF</Color>
+
+    <Color x:Key="TextBoxForegroundColor">#FF000000</Color>
+    <Color x:Key="TextBoxBackgroundGradientColor1">#FFF6F8F9</Color>
+    <Color x:Key="TextBoxBackgroundGradientColor2">#FFFFFFFF</Color>
+
+    <Color x:Key="ToolPaneMainButtonContentFillColor">#FFCEE7E1</Color>
+    <Color x:Key="ToolPaneMainButtonContentGradientDarkColor">#BF000000</Color>
+    <Color x:Key="ToolPaneMainButtonContentGradientLightColor">#F2000000</Color>
+
+
+    <Color x:Key="ToolPaneMainButtonSubmenuBackgroundColor1">#FFFFFFFF</Color>
+    <Color x:Key="ToolPaneMainButtonSubmenuBackgroundColor2">#FFEBEFF1</Color>
+
+    <Color x:Key="ToolPaneMainButtonSubmenu_DreieckColor1">LightGray</Color>
+    <Color x:Key="ToolPaneMainButtonSubmenu_DreieckColor2">#FFF6F8F9</Color>
+
+
+    <Color x:Key="TripleButtonSeparatorNotchColor">#FFFFFFFF</Color>
+    <Color x:Key="TripleButtonSeparatorLineColor">#FF000000</Color>
+
+
+    <Color x:Key="ButtonForegroundColor">#FF000000</Color>
+    <Color x:Key="ButtonPressedSolidColor">#FF000000</Color>
+
+    <Color x:Key="DropShadowEffectColor">#FF000000</Color>
+    <Color x:Key="LightDropShadowColor">#FFFFFFFF</Color>
+
+    <Color x:Key="NotificationBadgeColor">#FFFF0000</Color>
+    <Color x:Key="NotificationBadgeTextColor">#FFFFFFFF</Color>
+
+</ResourceDictionary>

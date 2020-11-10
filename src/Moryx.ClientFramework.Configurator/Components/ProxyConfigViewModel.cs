@@ -10,6 +10,6 @@ namespace Moryx.ClientFramework.Configurator
     {
         public override string DisplayName => Strings.ProxyConfigViewModel_Title;
 
-        public override string ImageSource => "/Controls4Industry;component/Images/gear.png";
+        public override string ImageSource => "/Moryx.WpfToolkit;component/Images/gear.png";
     }
 }

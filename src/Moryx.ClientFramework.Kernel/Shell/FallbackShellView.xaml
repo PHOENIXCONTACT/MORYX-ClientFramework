@@ -13,7 +13,7 @@
     <UserControl.Resources>
         <DesignTimeResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/Controls4Industry;component/Themes/Generic/Brushes.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Moryx.WpfToolkit;component/Themes/Generic/Brushes.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <BooleanToObjectConverter x:Key="BooleanToObjectConverter" TrueObject="{x:Static Visibility.Visible}" FalseObject="{x:Static Visibility.Collapsed}" />
             <BooleanToObjectConverter x:Key="BooleanToObjectConverterInverse" TrueObject="{x:Static Visibility.Collapsed}" FalseObject="{x:Static Visibility.Visible}" />

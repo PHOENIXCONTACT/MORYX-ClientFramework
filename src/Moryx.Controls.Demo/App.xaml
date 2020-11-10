@@ -12,9 +12,9 @@
                 <ResourceDictionary>
                     <demo:DemoBootstrapper x:Key="Bootstrapper" />
                     <ResourceDictionary.MergedDictionaries>
-                        <ResourceDictionary Source="pack://application:,,,/Controls4Industry;component/Themes/Generic.xaml" />
-                        <ResourceDictionary Source="pack://application:,,,/Controls4Industry;component/Themes/Generic/Brushes.xaml" />
-                        <ResourceDictionary Source="pack://application:,,,/Controls4Industry;component/Themes/Generic/Colors.xaml" />
+                        <ResourceDictionary Source="pack://application:,,,/Moryx.WpfToolkit;component/Themes/Generic.xaml" />
+                        <ResourceDictionary Source="pack://application:,,,/Moryx.WpfToolkit;component/Themes/Generic/Brushes.xaml" />
+                        <ResourceDictionary Source="pack://application:,,,/Moryx.WpfToolkit;component/Themes/Generic/Colors.xaml" />
                         <ResourceDictionary Source="Theme/DemoTheme.xaml" />
                     </ResourceDictionary.MergedDictionaries>
                 </ResourceDictionary>
