@@ -5,35 +5,35 @@
 <UserControl x:Class="Moryx.Controls.Demo.Views.NavigationBarView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:viewModels="clr-namespace:Moryx.Controls.Demo.ViewModels"
-             mc:Ignorable="d" 
+             mc:Ignorable="d"
              d:DataContext="{d:DesignInstance viewModels:NavigationBarViewModel}">
     <EddieNavigationBar Margin="10" IsLocked="{Binding IsNavigationBarLocked}">
         <TabItem Header="Entry 1">
-            <CheckBox Content="Lock NavigationBar" 
+            <CheckBox Content="Lock NavigationBar"
                       Margin="10,10,0,0"
                       VerticalAlignment="Top"
                       HorizontalAlignment="Left"
                       IsChecked="{Binding IsNavigationBarLocked, Mode=TwoWay}" />
         </TabItem>
         <TabItem Header="Entry 2">
-            <CheckBox Content="Lock NavigationBar" 
+            <CheckBox Content="Lock NavigationBar"
                       Margin="10,10,0,0"
                       VerticalAlignment="Top"
                       HorizontalAlignment="Left"
                       IsChecked="{Binding IsNavigationBarLocked, Mode=TwoWay}" />
         </TabItem>
         <TabItem Header="Entry 3">
-            <CheckBox Content="Lock NavigationBar" 
+            <CheckBox Content="Lock NavigationBar"
                       Margin="10,10,0,0"
                       VerticalAlignment="Top"
                       HorizontalAlignment="Left"
                       IsChecked="{Binding IsNavigationBarLocked, Mode=TwoWay}" />
         </TabItem>
         <TabItem Header="Entry 4">
-            <CheckBox Content="Lock NavigationBar" 
+            <CheckBox Content="Lock NavigationBar"
                       Margin="10,10,0,0"
                       VerticalAlignment="Top"
                       HorizontalAlignment="Left"

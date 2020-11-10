@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Controls4Industry\Moryx.WpfToolkit.csproj" />
+    <ProjectReference Include="..\Moryx.WpfToolkit\Moryx.WpfToolkit.csproj" />
     <ProjectReference Include="..\Moryx.ClientFramework\Moryx.ClientFramework.csproj" />
   </ItemGroup>
 

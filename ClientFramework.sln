@@ -21,7 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{1B55A562
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Controls", "Controls", "{BC565F5A-559D-4E51-843A-6BF827029378}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moryx.WpfToolkit", "src\Controls4Industry\Moryx.WpfToolkit.csproj", "{8713D17C-63C8-4CEF-9FF9-376C921EF92B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moryx.WpfToolkit", "src\Moryx.WpfToolkit\Moryx.WpfToolkit.csproj", "{8713D17C-63C8-4CEF-9FF9-376C921EF92B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moryx.Controls", "src\Moryx.Controls\Moryx.Controls.csproj", "{002992E7-F035-4714-9E0E-46DE3F6F4D1A}"
 EndProject

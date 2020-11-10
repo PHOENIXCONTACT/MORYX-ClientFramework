@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Controls4Industry\Moryx.WpfToolkit.csproj" />
+    <ProjectReference Include="..\Moryx.WpfToolkit\Moryx.WpfToolkit.csproj" />
   </ItemGroup>
 
   <ItemGroup>
