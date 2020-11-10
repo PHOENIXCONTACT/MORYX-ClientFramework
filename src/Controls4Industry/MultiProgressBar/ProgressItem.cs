@@ -8,7 +8,7 @@ using System.Windows.Controls;
 using Brush = System.Windows.Media.Brush;
 using Brushes = System.Windows.Media.Brushes;
 
-namespace C4I
+namespace Moryx.WpfToolkit
 {
     /// <summary>
     /// Represents one of the processes in a <see cref="MultiProgressBar"/>

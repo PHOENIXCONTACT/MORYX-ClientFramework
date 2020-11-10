@@ -4,11 +4,11 @@
 using System;
 using System.Windows.Markup;
 
-namespace C4I
+namespace Moryx.WpfToolkit
 {
     /// <inheritdoc />
     /// <summary>
-    /// MarkupExtension to support <see cref="T:C4I.MdiShapeType" /> within XAML
+    /// MarkupExtension to support <see cref="T:Moryx.WpfToolkit.MdiShapeType" /> within XAML
     /// </summary>
     public class MdiShapeExtension : MarkupExtension
     {

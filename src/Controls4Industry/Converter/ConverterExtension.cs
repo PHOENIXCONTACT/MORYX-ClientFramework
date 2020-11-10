@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Windows.Data;
 
-namespace C4I
+namespace Moryx.WpfToolkit
 {
     /// <summary>
     /// Helper extensions for <see cref="IValueConverter"/>

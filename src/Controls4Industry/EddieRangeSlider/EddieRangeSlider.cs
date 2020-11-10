@@ -5,7 +5,7 @@ using System;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace C4I
+namespace Moryx.WpfToolkit
 {
     /// <summary> 
     /// EddieRangeSlider control lets the user select a range of values by moving a minimum and a maximum slider. 

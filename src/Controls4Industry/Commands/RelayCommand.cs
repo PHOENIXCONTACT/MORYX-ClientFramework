@@ -5,7 +5,7 @@ using System;
 using System.Diagnostics;
 using System.Windows.Input;
 
-namespace C4I
+namespace Moryx.WpfToolkit
 {
     /// <summary>
     /// A command whose sole purpose is to relay its functionality 

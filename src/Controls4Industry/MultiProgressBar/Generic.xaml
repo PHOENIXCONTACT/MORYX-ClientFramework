@@ -4,15 +4,15 @@
 -->
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:c4I="clr-namespace:C4I">
+                    xmlns:wpfToolkit="clr-namespace:Moryx.WpfToolkit">
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="../Themes/Generic/Common.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <c4I:BooleanToVisibilityConverter x:Key="BooleanToHiddenConverter"
+    <wpfToolkit:BooleanToVisibilityConverter x:Key="BooleanToHiddenConverter"
                                       IsHidden="True" />
-    <c4I:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"
+    <wpfToolkit:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"
                                       IsHidden="False" />
 
     <LinearGradientBrush x:Key="ProgressBarIndicatorAnimatedFill"
@@ -70,7 +70,7 @@
 
 
     <ControlTemplate x:Key="ProgressItemTemplate"
-                     TargetType="c4I:ProgressItem">
+                     TargetType="wpfToolkit:ProgressItem">
 
         <Border Effect="{StaticResource ShadowEffect}"
                 Width="{TemplateBinding Width}"
@@ -133,13 +133,13 @@
         </Border>
     </ControlTemplate>
 
-    <Style TargetType="c4I:ProgressItem">
+    <Style TargetType="wpfToolkit:ProgressItem">
         <Setter Property="Template"
                 Value="{StaticResource ProgressItemTemplate}" />
     </Style>
 
     <ControlTemplate x:Key="MultiProgressBarControlTemplate"
-                     TargetType="c4I:MultiProgressBar">
+                     TargetType="wpfToolkit:MultiProgressBar">
         <Border ClipToBounds="True"
                 BorderThickness="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=BorderThickness}"
                 BorderBrush="{StaticResource BorderGreyColorBrush}"
@@ -164,7 +164,7 @@
                         </ItemsPanelTemplate>
                     </ItemsControl.ItemsPanel>
                     <ItemsControl.ItemTemplate>
-                        <DataTemplate DataType="c4I:ProgressItem">
+                        <DataTemplate DataType="wpfToolkit:ProgressItem">
                             <Border Effect="{StaticResource ShadowEffect}"
                                     Width="{Binding Width}"
                                     Background="{Binding Brush}"
@@ -255,7 +255,7 @@
         </Border>
     </ControlTemplate>
 
-    <Style TargetType="c4I:MultiProgressBar">
+    <Style TargetType="wpfToolkit:MultiProgressBar">
         <Setter Property="Template"
                 Value="{StaticResource MultiProgressBarControlTemplate}" />
         <Setter Property="Foreground"

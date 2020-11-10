@@ -4,13 +4,13 @@
 -->
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:c4I="clr-namespace:C4I">
+                    xmlns:wpfToolkit="clr-namespace:Moryx.WpfToolkit">
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="../Themes/Generic/Common.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <Style TargetType="c4I:EddieSelectableLabel" BasedOn="{StaticResource ControlStyleBase}">
+    <Style TargetType="wpfToolkit:EddieSelectableLabel" BasedOn="{StaticResource ControlStyleBase}">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
         <Setter Property="IsReadOnly" Value="true"/>

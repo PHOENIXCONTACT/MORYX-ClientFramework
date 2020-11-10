@@ -5,8 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows.Media;
-using C4I;
 using Caliburn.Micro;
+using Moryx.WpfToolkit;
 
 namespace Moryx.Controls.Demo.ViewModels
 {

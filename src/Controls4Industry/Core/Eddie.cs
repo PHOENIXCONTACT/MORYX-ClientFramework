@@ -5,7 +5,7 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Shapes;
 
-namespace C4I
+namespace Moryx.WpfToolkit
 {
     /// <summary>
     /// Collection of attached properties and behaviors

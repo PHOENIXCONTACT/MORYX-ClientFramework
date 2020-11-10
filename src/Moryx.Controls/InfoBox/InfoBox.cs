@@ -4,7 +4,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using C4I;
+using Moryx.WpfToolkit;
 using Color = System.Drawing.Color;
 
 namespace Moryx.Controls

@@ -4,7 +4,7 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace C4I
+namespace Moryx.WpfToolkit
 {
     /// <summary>
     /// Basic implementation of <see cref="INotifyPropertyChanged" /> interface

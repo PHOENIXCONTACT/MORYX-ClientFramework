@@ -6,7 +6,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Windows;
 
-namespace C4I
+namespace Moryx.WpfToolkit
 {
     /// <summary>
     /// Implementation of <see cref="ResourceDictionary"/> which will handle the assembly and sourcepath

@@ -7,11 +7,10 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
-
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="../Themes/Generic/Common.xaml" />
     </ResourceDictionary.MergedDictionaries>
-    
+
     <Style x:Key="ScrollBarBorder" TargetType="Border" />
 
     <Style x:Key="ScrollBarThumbGripPath" TargetType="Path">
@@ -67,8 +66,8 @@
                                     </Path.Fill>
                                 </Path>
                                 <Path x:Name="arrow_up1"
-                                      Data="F1M0.14,15.02C0.14,15.02 0.14,6.676 0.14,6.676 0.14,6.676 10.153,0 10.153,0 10.153,0 
-                                          20.167,6.676 20.167,6.676 20.167,6.676 20.167,15.02 20.167,15.02 20.167,15.02 10.153,8.344 10.153,8.344 
+                                      Data="F1M0.14,15.02C0.14,15.02 0.14,6.676 0.14,6.676 0.14,6.676 10.153,0 10.153,0 10.153,0
+                                          20.167,6.676 20.167,6.676 20.167,6.676 20.167,15.02 20.167,15.02 20.167,15.02 10.153,8.344 10.153,8.344
                                           10.153,8.344 0.14,15.02 0.14,15.02z"
                                       Fill="{StaticResource LightGreenColorBrush}" Height="15" Canvas.Left="6"
                                       Canvas.Top="11" Width="20" />
@@ -233,7 +232,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="RepeatButton">
-                    <Viewbox Stretch="Fill" StretchDirection="Both" Width="{TemplateBinding ActualWidth}" Height="{TemplateBinding ActualHeight}" 
+                    <Viewbox Stretch="Fill" StretchDirection="Both" Width="{TemplateBinding ActualWidth}" Height="{TemplateBinding ActualHeight}"
                              VerticalAlignment="Center" HorizontalAlignment="Center">
                         <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                             <Path x:Name="scrollbutton_gradient1"

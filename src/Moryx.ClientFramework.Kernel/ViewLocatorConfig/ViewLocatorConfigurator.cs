@@ -7,9 +7,9 @@ using System.Linq;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
-using C4I;
 using Caliburn.Micro;
 using Moryx.Container;
+using Moryx.WpfToolkit;
 
 namespace Moryx.ClientFramework.Kernel
 {

@@ -2,8 +2,8 @@
 // Licensed under the Apache License, Version 2.0
 
 using System.Windows.Input;
-using C4I;
 using Caliburn.Micro;
+using Moryx.WpfToolkit;
 
 namespace Moryx.Controls.Demo.ViewModels
 {

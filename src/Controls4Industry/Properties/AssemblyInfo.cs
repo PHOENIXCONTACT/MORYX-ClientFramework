@@ -10,4 +10,4 @@ using System.Windows.Markup;
     // app, or any theme specific resource dictionaries)
 )]
 
-[assembly: XmlnsDefinition("http://schemas.microsoft.com/winfx/2006/xaml/presentation", "C4I")]
+[assembly: XmlnsDefinition("http://schemas.microsoft.com/winfx/2006/xaml/presentation", "Moryx.WpfToolkit")]

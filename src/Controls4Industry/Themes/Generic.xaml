@@ -3,47 +3,47 @@
  Licensed under the Apache License, Version 2.0
 -->
 <ResourceDictionary
-	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-	xmlns:c4I="clr-namespace:C4I">
+	xmlns:wpfToolkit="clr-namespace:Moryx.WpfToolkit">
 
     <ResourceDictionary.MergedDictionaries>
-        <!--<core:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="Icons/OkIcon/Generic.xaml" />-->
+        <!--<core:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="Icons/OkIcon/Generic.xaml" />-->
 
         <!-- Eddie Specific Styles -->
-        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieButton/Generic.xaml" />
-        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieActionButton/Generic.xaml" />
-        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieBusyIndicator/Generic.xaml" />
-        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieComboBox/Generic.xaml" />
-        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieModuleButton/Generic.xaml" />
-        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieTextBox/Generic.xaml" />
-        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieHistoryButtonBar/Generic.xaml" />
-        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieNavigationBar/Generic.xaml" />
-        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieSelectableLabel/Generic.xaml" />
-        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieProgressBar/Generic.xaml" />
-        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="MultiProgressBar/Generic.xaml" />
-        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="LabeledControlHost/Generic.xaml" />
-        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieTreeView/Generic.xaml"/>
-        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieSlider/Generic.xaml"/>
-        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieRangeSlider/Generic.xaml"/>
-        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieListBox/Generic.xaml" />
-        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddieListView/Generic.xaml"/>
-        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="EddiePopup/Generic.xaml"/>
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="EddieButton/Generic.xaml" />
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="EddieActionButton/Generic.xaml" />
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="EddieBusyIndicator/Generic.xaml" />
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="EddieComboBox/Generic.xaml" />
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="EddieModuleButton/Generic.xaml" />
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="EddieTextBox/Generic.xaml" />
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="EddieHistoryButtonBar/Generic.xaml" />
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="EddieNavigationBar/Generic.xaml" />
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="EddieSelectableLabel/Generic.xaml" />
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="EddieProgressBar/Generic.xaml" />
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="MultiProgressBar/Generic.xaml" />
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="LabeledControlHost/Generic.xaml" />
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="EddieTreeView/Generic.xaml"/>
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="EddieSlider/Generic.xaml"/>
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="EddieRangeSlider/Generic.xaml"/>
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="EddieListBox/Generic.xaml" />
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="EddieListView/Generic.xaml"/>
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="EddiePopup/Generic.xaml"/>
 
         <!-- Windows Control Styles -->
-        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="CheckBox/Generic.xaml" />
-        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="RadioButton/Generic.xaml" />
-        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="ScollViewer/Generic.xaml" />
-        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="ScrollBar/Generic.xaml" />
-        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="TabControl/Generic.xaml" />
-        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="GroupBox/Generic.xaml" />
-        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="PasswordBox/Generic.xaml" />
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="CheckBox/Generic.xaml" />
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="RadioButton/Generic.xaml" />
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="ScollViewer/Generic.xaml" />
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="ScrollBar/Generic.xaml" />
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="TabControl/Generic.xaml" />
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="GroupBox/Generic.xaml" />
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="PasswordBox/Generic.xaml" />
 
         <!-- Templates -->
-        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="ViewTemplates/DialogPanel/Generic.xaml"/>
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="ViewTemplates/DialogPanel/Generic.xaml"/>
 
-        <!-- ToDo: This must be the last Entry in list, otherwise the Eddie.Textformat Trigger do not work. Fix it! -->
-        <c4I:VersionResourceDictionary AssemblyName="Controls4Industry" SourcePath="TextBlock/Generic.xaml" />
+        <!-- TODO: This must be the last Entry in list, otherwise the Eddie.Textformat Trigger do not work. Fix it! -->
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="TextBlock/Generic.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-</ResourceDictionary> 
+</ResourceDictionary>

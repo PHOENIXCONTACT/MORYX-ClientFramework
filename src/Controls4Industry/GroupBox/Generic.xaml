@@ -33,19 +33,19 @@
                                               ContentSource="Header"
                                               RecognizesAccessKey="True" />
                         </Border>
-                        
+
                         <Border Grid.Row="1"
                                 BorderBrush="{StaticResource SolidBorderBrush}"
                                 BorderThickness="1,0,1,1"
                                 CornerRadius="0,0,2,2">
-                            
+
                             <ContentPresenter Margin="4" />
-                            
+
                         </Border>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
-    
+
 </ResourceDictionary>

@@ -8,8 +8,6 @@
         <ResourceDictionary Source="../Themes/Generic/Common.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    
-    
     <Style x:Key="EddieTabItemStyle" TargetType="TabItem">
         <Setter Property="Height" Value="28" />
         <Setter Property="Template">

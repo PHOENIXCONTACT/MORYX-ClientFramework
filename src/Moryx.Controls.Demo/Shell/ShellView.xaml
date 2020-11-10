@@ -13,7 +13,7 @@
         mc:Ignorable="d"
         d:DataContext="{d:DesignInstance local:ShellViewModel, IsDesignTimeCreatable=True}"
         WindowState="Maximized"
-        Title="Controls4Industry Demo"
+        Title="Moryx.WpfToolkit Demo"
         HorizontalAlignment="Stretch"
         VerticalAlignment="Stretch">
     <Grid Background="{StaticResource WindowBackgroundGradientBrush}">

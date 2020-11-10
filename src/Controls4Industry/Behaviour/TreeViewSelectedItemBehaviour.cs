@@ -4,7 +4,7 @@
 using System.Windows;
 using System.Windows.Controls;
 
-namespace C4I
+namespace Moryx.WpfToolkit
 {
     /// <summary>
     /// Behavior attached propertis for the <see cref="TreeView"/> or <see cref="EddieTreeView"/>

@@ -6,7 +6,7 @@ using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Input;
 
-namespace C4I
+namespace Moryx.WpfToolkit
 {
     /// <summary>
     /// Specifies the placement of the adorner in related to the adorned control.

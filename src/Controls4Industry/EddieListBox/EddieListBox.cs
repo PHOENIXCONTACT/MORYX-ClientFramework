@@ -4,7 +4,7 @@
 using System.Windows;
 using System.Windows.Controls;
 
-namespace C4I
+namespace Moryx.WpfToolkit
 {
     /// <summary> 
     /// Control that implements a list of selectable items.

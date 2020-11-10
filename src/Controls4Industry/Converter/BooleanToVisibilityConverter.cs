@@ -6,7 +6,7 @@ using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
 
-namespace C4I
+namespace Moryx.WpfToolkit
 {
     /// <inheritdoc />
     /// <summary>
@@ -27,7 +27,7 @@ namespace C4I
 
         /// <inheritdoc />
         /// <summary>
-        /// Converts boolean value <see cref="P:C4I.BooleanToVisibilityConverter.TriggerValue" /> and <see cref="P:C4I.BooleanToVisibilityConverter.IsHidden" />
+        /// Converts boolean value <see cref="P:Moryx.WpfToolkit.BooleanToVisibilityConverter.TriggerValue" /> and <see cref="P:Moryx.WpfToolkit.BooleanToVisibilityConverter.IsHidden" />
         /// </summary>
         /// <param name="value">Boolean</param>
         /// <param name="targetType">Not used</param>

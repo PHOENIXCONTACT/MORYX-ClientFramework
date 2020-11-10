@@ -12,7 +12,7 @@
     </ResourceDictionary.MergedDictionaries>
 
     <FontFamily x:Key="GlobalFontFamily">Verdana</FontFamily>
-    
+
     <!-- Sizes and Margins -->
     <system:Double x:Key="StandardBitmapRenderScale">1.25</system:Double>
     <system:Double x:Key="StandardHeight">26</system:Double>
@@ -22,14 +22,14 @@
     <system:Double x:Key="StandardFontSize2">14</system:Double>
     <system:Double x:Key="StandardFontSize3">16</system:Double>
     <system:Double x:Key="StandardFontSize4">18</system:Double>
-    
+
     <CornerRadius x:Key="StandardCornerRadius">3</CornerRadius>
     <Thickness x:Key="StandardMargin">3</Thickness>
     <Thickness x:Key="StandardMarginBottomZero">3,3,3,0</Thickness>
     <Thickness x:Key="StandardMarginTopZero">3,0,3,3</Thickness>
     <Thickness x:Key="StandardMarginRightZero">3,3,0,3</Thickness>
     <Thickness x:Key="StandardMarginLeftZero">0,3,3,3</Thickness>
-    
+
     <system:Double x:Key="DisabledContentOpacity">0.35</system:Double>
 
     <Style x:Key="ControlStyleBase" TargetType="Control">
@@ -74,7 +74,7 @@
                     <ControlTemplate.Resources>
                         <SolidColorBrush x:Key="NotificationBadgeBrush" Color="{StaticResource NotificationBadgeColor}" />
                     </ControlTemplate.Resources>
-                    
+
                     <Border Name="badgeOuterBorder" CornerRadius="10" BorderThickness="0" Background="{StaticResource NotificationBadgeBrush}">
                         <Border.Effect>
                             <DropShadowEffect Color="Black" Direction="270" ShadowDepth="2" />

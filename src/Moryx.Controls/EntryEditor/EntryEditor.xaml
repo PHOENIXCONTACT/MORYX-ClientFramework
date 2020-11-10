@@ -7,14 +7,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:c4I="clr-namespace:C4I;assembly=Controls4Industry"
              xmlns:converter="clr-namespace:Moryx.Controls.Converter"
              xmlns:controls="clr-namespace:Moryx.Controls"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:properties="clr-namespace:Moryx.Controls.Properties"
+             xmlns:wpfToolkit="clr-namespace:Moryx.WpfToolkit;assembly=Moryx.WpfToolkit"
              mc:Ignorable="d" x:Name="UserControl" d:DesignHeight="300" d:DesignWidth="810">
     <UserControl.Resources>
-        <c4I:BooleanToVisibilityConverter x:Key="ReBooleanToVisibilityConverter" TriggerValue="False" />
+        <wpfToolkit:BooleanToVisibilityConverter x:Key="ReBooleanToVisibilityConverter" TriggerValue="False" />
         <StringToBooleanConverter x:Key="StringToBooleanConverter" />
         <converter:EntryTypeToDelButtonVisibilityConverter x:Key="DelButtonVisibilityConverter" />
         <converter:SubEntriesToVisibilityConverter x:Key="SubEntriesToVisibilityConverter" />
@@ -192,14 +192,14 @@
 
         <DockPanel LastChildFill="True" Visibility="{Binding BreadcrumbVisibility, ElementName=UserControl}">
             <StackPanel Orientation="Horizontal">
-                <c4I:EddieActionButton Click="Back" Icon="{CommonShape ArrowLeft}" Margin="0,0,5,0"
-                                       IsEnabled="{Binding CanBackward, ElementName=UserControl}"
-                                       Content="{x:Static properties:Strings.EntryEditor_Back}">
-                </c4I:EddieActionButton>
-                <c4I:EddieActionButton Click="Forward" Icon="{CommonShape ArrowRight}" Margin="0,0,5,0"
-                                       IsEnabled="{Binding CanForward, ElementName=UserControl}"
-                                       Content="{x:Static properties:Strings.EntryEditor_Forward}">
-                </c4I:EddieActionButton>
+                <EddieActionButton Click="Back" Icon="{CommonShape ArrowLeft}" Margin="0,0,5,0"
+                                   IsEnabled="{Binding CanBackward, ElementName=UserControl}"
+                                   Content="{x:Static properties:Strings.EntryEditor_Back}">
+                </EddieActionButton>
+                <EddieActionButton Click="Forward" Icon="{CommonShape ArrowRight}" Margin="0,0,5,0"
+                                   IsEnabled="{Binding CanForward, ElementName=UserControl}"
+                                   Content="{x:Static properties:Strings.EntryEditor_Forward}">
+                </EddieActionButton>
             </StackPanel>
 
             <ListBox ItemsSource="{Binding Path, ElementName=UserControl}"

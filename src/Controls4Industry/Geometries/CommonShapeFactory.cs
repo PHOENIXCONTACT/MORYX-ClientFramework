@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Media;
 
-namespace C4I
+namespace Moryx.WpfToolkit
 {
     /// <summary>
     /// Factory that creates all <see cref="CommonShapeType"/> icons

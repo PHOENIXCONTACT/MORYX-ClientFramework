@@ -4,11 +4,11 @@
 using System;
 using System.Windows.Markup;
 
-namespace C4I
+namespace Moryx.WpfToolkit
 {
     /// <inheritdoc />
     /// <summary>
-    /// MarkupExtension to support <see cref="T:C4I.CommonShapeType" /> within XAML
+    /// MarkupExtension to support <see cref="T:Moryx.WpfToolkit.CommonShapeType" /> within XAML
     /// </summary>
     public class CommonShapeExtension : MarkupExtension
     {

@@ -32,7 +32,7 @@ namespace Moryx.ClientFramework.Configurator
 
         public override string DisplayName => Strings.AppConfigViewModel_Title;
 
-        public override string ImageSource => "/Controls4Industry;component/Images/wrench.png";
+        public override string ImageSource => "/Moryx.WpfToolkit;component/Images/wrench.png";
 
         #endregion
 

@@ -8,7 +8,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
 
-namespace C4I
+namespace Moryx.WpfToolkit
 {
     /// <summary>
     /// Coverter so set the margin to tree view elements regarding to their hierary

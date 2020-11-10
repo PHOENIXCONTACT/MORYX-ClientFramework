@@ -10,7 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 
-namespace C4I
+namespace Moryx.WpfToolkit
 {
     /// <summary>
     /// Implements a grid view sort option in the listview

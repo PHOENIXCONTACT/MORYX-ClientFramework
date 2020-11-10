@@ -6,7 +6,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Windows;
 
-namespace C4I
+namespace Moryx.WpfToolkit
 {
     /// <summary>
     /// Represents a resource dictionary which is used only in design time

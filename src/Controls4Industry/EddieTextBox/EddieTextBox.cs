@@ -5,7 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace C4I
+namespace Moryx.WpfToolkit
 {
     /// <summary>
     /// EddieTextBox with watermark, icon and lock icon feature

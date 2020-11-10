@@ -3,7 +3,7 @@
 
 using System.Windows;
 
-namespace C4I
+namespace Moryx.WpfToolkit
 {
     /// <summary>
     /// Icon only styled button

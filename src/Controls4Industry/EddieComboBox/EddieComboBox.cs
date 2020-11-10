@@ -5,7 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace C4I
+namespace Moryx.WpfToolkit
 {
     /// <summary>
     /// Compo box implementation with addtional features like clear button or text selection

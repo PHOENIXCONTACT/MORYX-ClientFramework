@@ -5,7 +5,7 @@ using System;
 using System.Globalization;
 using System.Windows.Data;
 
-namespace C4I
+namespace Moryx.WpfToolkit
 {
     /// <inheritdoc />
     /// <summary>

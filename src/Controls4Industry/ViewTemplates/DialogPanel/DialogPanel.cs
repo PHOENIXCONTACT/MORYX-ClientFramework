@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace C4I
+namespace Moryx.WpfToolkit
 {
     /// <inheritdoc />
     /// <summary>

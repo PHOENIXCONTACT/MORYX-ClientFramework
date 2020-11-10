@@ -5,7 +5,7 @@
 <#@ assembly name="System.Xaml" #>
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Windows.Data" #>
-<#@ import namespace="C4I" #>
+<#@ import namespace="Moryx.WpfToolkit" #>
 <#@ output extension=".md" #>
 
 <#
@@ -16,18 +16,18 @@ var valueConverterTypes = typeof(CommonShapeType).Assembly.GetTypes()
 
 #>
 
-# Control Library {#controls4Industry}
+# MORYX WPF Toolkit
 
-The control library will be build with the client framework an provides several controls implementing the default moryx style.
-You dont need to add a namespace to the controls because all custom controls are added to the systems default style namespace.
+The WPF Toolkit will be build with the client framework an provides several controls implementing the default MORYX style.
+You don't need to add a namespace to the controls because all custom controls are added to the systems default style namespace.
 Controls need no addition namespace. All controls will be added to the system namespace, so they are easier to use.
 
 ````cs
-[assembly: XmlnsDefinition("http://schemas.microsoft.com/winfx/2006/xaml/presentation", "C4I")]
+[assembly: XmlnsDefinition("http://schemas.microsoft.com/winfx/2006/xaml/presentation", "Moryx.WpfToolkit")]
 ````
 
-Reference Controls4Industry out of *Libraries* folder from the ClientFramework
-The resources will be automatically loaded by the framework. So all used controls in the views will get the default eddie style.
+Reference Moryx.WpfToolkit as nuget package. The resources will be automatically loaded by the framework.
+So all used controls in the views will get the default eddie style.
 
 ## Buttons {#buttons}
 Description missing...
@@ -74,7 +74,7 @@ The extension is named [<#= typeof(MdiShapeExtension).Name #>](@ref <#= typeof(M
 ## ListBox / ListView {#lists}
 
 The framework provides a posibility to sort listviews with a simple attached property class called 'GridViewSort'.
-The GridViewSort is part of the C4I.
+The GridViewSort is part of the Moryx.WpfToolkit.
 
 __How to use the GridViewSort (ListView sort)__
 
@@ -133,5 +133,5 @@ The following converters are awailable in the control library and they are provi
 Click on the converter to get detailed explanation and code documentation.
 
 <# foreach (var converterType in valueConverterTypes) { #>
-* [<#=converterType.Name#>](@ref <#=converterType.FullName#>)
+* [<#=converterType.Name#>](xref:<#=converterType.FullName#>)
 <# } #>

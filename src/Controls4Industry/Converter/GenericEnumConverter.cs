@@ -5,7 +5,7 @@ using System;
 using System.Windows;
 using System.Windows.Data;
 
-namespace C4I
+namespace Moryx.WpfToolkit
 {
     /// <summary>
     /// Enum to Boolean or <see cref="Visibility"/> converter

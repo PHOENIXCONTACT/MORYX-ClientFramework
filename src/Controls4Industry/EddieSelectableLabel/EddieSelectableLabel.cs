@@ -3,7 +3,7 @@
 
 using System.Windows.Controls;
 
-namespace C4I
+namespace Moryx.WpfToolkit
 {
     /// <summary>
     /// Label which content can be selected

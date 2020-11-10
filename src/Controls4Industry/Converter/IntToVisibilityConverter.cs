@@ -6,7 +6,7 @@ using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
 
-namespace C4I
+namespace Moryx.WpfToolkit
 {
     /// <summary>
     /// Converts an integer value to <see cref="Visibility"/> value

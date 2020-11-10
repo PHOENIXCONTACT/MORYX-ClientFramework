@@ -6,7 +6,7 @@ using System.Windows;
 using System.Windows.Documents;
 using System.Windows.Media;
 
-namespace C4I
+namespace Moryx.WpfToolkit
 {
     /// <summary>
     /// This class is an adorner that allows a FrameworkElement derived class to adorn another FrameworkElement.

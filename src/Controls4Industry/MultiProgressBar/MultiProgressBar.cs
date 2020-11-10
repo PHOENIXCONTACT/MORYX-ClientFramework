@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 
-namespace C4I
+namespace Moryx.WpfToolkit
 {
     /// <summary>
     /// Used to visualize muliple progresses in different colors in one bar.

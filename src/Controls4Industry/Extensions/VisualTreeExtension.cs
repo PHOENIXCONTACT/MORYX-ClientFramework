@@ -7,7 +7,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Media;
 
-namespace C4I
+namespace Moryx.WpfToolkit
 {
     /// <summary>
     /// Adapts a DependencyObject to provide methods required for generate

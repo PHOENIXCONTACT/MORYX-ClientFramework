@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace C4I
+namespace Moryx.WpfToolkit
 {
     /// <summary>
     /// Extensions for the <see cref="Color"/>

@@ -4,7 +4,7 @@
 using System.Windows;
 using System.Windows.Controls;
 
-namespace C4I
+namespace Moryx.WpfToolkit
 {
     /// <summary> 
     /// EddieSlider control lets the user select from a range of values by moving a slider. 

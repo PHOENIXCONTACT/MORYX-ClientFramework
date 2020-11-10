@@ -3,13 +3,13 @@
  Licensed under the Apache License, Version 2.0
 -->
 <ResourceDictionary
-	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="Colors.xaml" />
     </ResourceDictionary.MergedDictionaries>
-    
+
     <Color x:Key="PhoenixContactGreen">#FF8CC63F</Color>
     <SolidColorBrush x:Key="PhoenixContactGreenBrush" Color="{StaticResource PhoenixContactGreen}"/>
 
@@ -21,7 +21,7 @@
 
     <Color x:Key="BackgroundAlternateColor">#FFEFF3F6</Color>
     <SolidColorBrush x:Key="BackgroundAlternateColorBrush" Color="{StaticResource BackgroundAlternateColor}" />
-    
+
     <Color x:Key="LightGreenColor">#FF00a0ab</Color>
     <SolidColorBrush x:Key="LightGreenColorBrush" Color="{StaticResource LightGreenColor}"/>
 
@@ -33,13 +33,13 @@
     <SolidColorBrush x:Key="BorderGreyColorBrush" Color="{StaticResource BorderGreyColor}" />
 
     <Color x:Key="BorderGreyDisabledColor">#99C5CACE</Color>
-    
+
     <Color x:Key="HoverBackgroundColor">#ffd4eeef</Color>
     <SolidColorBrush x:Key="HoverBackgroundColorBrush" Color="{StaticResource HoverBackgroundColor}"/>
-    
+
     <Color x:Key="ActiveBackgroundColor">#ff7fccd0</Color>
     <SolidColorBrush x:Key="ActiveBackgroundColorBrush" Color="{StaticResource ActiveBackgroundColor}"/>
-    
+
     <Color x:Key="DisabledBackgroundColor">#ffccd0d2</Color>
     <SolidColorBrush x:Key="DisabledBackgroundColorBrush" Color="{StaticResource DisabledBackgroundColor}"/>
 
@@ -52,9 +52,9 @@
         <GradientStop Color="#FF9C9FA3" Offset="0"/>
         <GradientStop Color="#FFB2B2B2" Offset="1"/>
     </LinearGradientBrush>
-    
+
     <SolidColorBrush x:Key="NotificationBadgeTextBrush" Color="{StaticResource NotificationBadgeTextColor}" />
-    
+
     <SolidColorBrush x:Key="DisabledForegroundBrush" Color="{StaticResource BorderGreyDisabledColor}" />
 
     <SolidColorBrush x:Key="EddieScrollBarBorderBackgroundFillBrush" Color="{StaticResource EddieScrollBarBorderBackgroundFillColor}"/>
@@ -63,11 +63,11 @@
     <SolidColorBrush x:Key="EddieScrollBarThumbFillBrush" Color="{StaticResource BorderGreyColor}"/>
 
     <SolidColorBrush x:Key="CheckBoxPressedBackgroundColorBrush" Color="{StaticResource CheckBoxPressedBackgroundColor}"/>
-    
+
     <SolidColorBrush x:Key="ComboBoxItemMouseOverBackgroundColorBrush" Color="{StaticResource ComboBoxItemMouseOverBackgroundColor}"/>
     <SolidColorBrush x:Key="ComboBoxForegroundColorBrush" Color="{StaticResource ComboBoxForegroundColor}"/>
     <SolidColorBrush x:Key="ComboBoxPopUpBackgroundColorBrush" Color="{StaticResource ComboBoxPopUpBackgroundColor}"/>
-    
+
     <SolidColorBrush x:Key="ToolPaneMainButtonContentFillColorBrush" Color="{StaticResource ToolPaneMainButtonContentFillColor}"/>
     <SolidColorBrush x:Key="ToolPaneMainButtonContentGradientDarkColorBrush" Color="{StaticResource ToolPaneMainButtonContentGradientDarkColor}"/>
     <SolidColorBrush x:Key="ToolPaneMainButtonContentGradientLightColorBrush" Color="{StaticResource ToolPaneMainButtonContentGradientLightColor}"/>

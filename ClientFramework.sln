@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartProject", "src\StartProject\StartProject.csproj", "{3684930F-421E-4B27-AD5D-C136863C1C46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StartProject", "src\StartProject\StartProject.csproj", "{3684930F-421E-4B27-AD5D-C136863C1C46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moryx.ClientFramework.Kernel", "src\Moryx.ClientFramework.Kernel\Moryx.ClientFramework.Kernel.csproj", "{9A690B37-AB29-4C5D-B185-3DD20DD8FB18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moryx.ClientFramework.Kernel", "src\Moryx.ClientFramework.Kernel\Moryx.ClientFramework.Kernel.csproj", "{9A690B37-AB29-4C5D-B185-3DD20DD8FB18}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{F0EF2C31-F2D9-434A-B539-A491C90F192A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moryx.ClientFramework", "src\Moryx.ClientFramework\Moryx.ClientFramework.csproj", "{7B47F295-1567-4473-B4B5-44DDF88DFA2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moryx.ClientFramework", "src\Moryx.ClientFramework\Moryx.ClientFramework.csproj", "{7B47F295-1567-4473-B4B5-44DDF88DFA2E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RunModes", "RunModes", "{CE7D9EFF-CA66-40D4-867F-448F7CFB844C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moryx.Tools.WcfClient.UI.Viewer", "src\Moryx.Tools.WcfClient.UI.Viewer\Moryx.Tools.WcfClient.UI.Viewer.csproj", "{60B96C78-203D-4866-A23E-53095C63CCCD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moryx.Tools.WcfClient.UI.Viewer", "src\Moryx.Tools.WcfClient.UI.Viewer\Moryx.Tools.WcfClient.UI.Viewer.csproj", "{60B96C78-203D-4866-A23E-53095C63CCCD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{A461E5F5-BED2-43D8-AA90-F388FB1570C9}"
 EndProject
@@ -21,29 +21,29 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{1B55A562
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Controls", "Controls", "{BC565F5A-559D-4E51-843A-6BF827029378}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controls4Industry", "src\Controls4Industry\Controls4Industry.csproj", "{8713D17C-63C8-4CEF-9FF9-376C921EF92B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moryx.WpfToolkit", "src\Controls4Industry\Moryx.WpfToolkit.csproj", "{8713D17C-63C8-4CEF-9FF9-376C921EF92B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moryx.Controls", "src\Moryx.Controls\Moryx.Controls.csproj", "{002992E7-F035-4714-9E0E-46DE3F6F4D1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moryx.Controls", "src\Moryx.Controls\Moryx.Controls.csproj", "{002992E7-F035-4714-9E0E-46DE3F6F4D1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moryx.ClientFramework.Configurator", "src\Moryx.ClientFramework.Configurator\Moryx.ClientFramework.Configurator.csproj", "{62E0152C-B585-4CCE-9E93-D8C780C35A02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moryx.ClientFramework.Configurator", "src\Moryx.ClientFramework.Configurator\Moryx.ClientFramework.Configurator.csproj", "{62E0152C-B585-4CCE-9E93-D8C780C35A02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moryx.Controls.Demo", "src\Moryx.Controls.Demo\Moryx.Controls.Demo.csproj", "{4AE8D624-0B23-4BD3-8527-B8E80FE638AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moryx.Controls.Demo", "src\Moryx.Controls.Demo\Moryx.Controls.Demo.csproj", "{4AE8D624-0B23-4BD3-8527-B8E80FE638AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moryx.ClientFramework.Tests.DialogManager", "src\Moryx.ClientFramework.Tests.DialogManager\Moryx.ClientFramework.Tests.DialogManager.csproj", "{F03DF750-AFF5-4CF2-8C8E-745535B95533}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moryx.ClientFramework.Tests.DialogManager", "src\Moryx.ClientFramework.Tests.DialogManager\Moryx.ClientFramework.Tests.DialogManager.csproj", "{F03DF750-AFF5-4CF2-8C8E-745535B95533}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moryx.ClientFramework.Tests.HistoryWriter", "src\Moryx.ClientFramework.Tests.HistoryWriter\Moryx.ClientFramework.Tests.HistoryWriter.csproj", "{732D0545-3FC9-4686-8960-D189A4B32204}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moryx.ClientFramework.Tests.HistoryWriter", "src\Moryx.ClientFramework.Tests.HistoryWriter\Moryx.ClientFramework.Tests.HistoryWriter.csproj", "{732D0545-3FC9-4686-8960-D189A4B32204}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moryx.ClientFramework.Tests.NotifyAndEditor", "src\Moryx.ClientFramework.Tests.NotifyAndEditor\Moryx.ClientFramework.Tests.NotifyAndEditor.csproj", "{154E0AD7-F409-4919-8FC0-420F625AF93A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moryx.ClientFramework.Tests.NotifyAndEditor", "src\Moryx.ClientFramework.Tests.NotifyAndEditor\Moryx.ClientFramework.Tests.NotifyAndEditor.csproj", "{154E0AD7-F409-4919-8FC0-420F625AF93A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moryx.ClientFramework.Tests.Playground", "src\Moryx.ClientFramework.Tests.Playground\Moryx.ClientFramework.Tests.Playground.csproj", "{83A2B8AB-6AF1-4666-BBFD-B2FD085C0DF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moryx.ClientFramework.Tests.Playground", "src\Moryx.ClientFramework.Tests.Playground\Moryx.ClientFramework.Tests.Playground.csproj", "{83A2B8AB-6AF1-4666-BBFD-B2FD085C0DF2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{225C74D9-F209-4D18-AFB4-84A593BC8D58}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moryx.ClientFramework.SimpleShell", "src\Moryx.ClientFramework.SimpleShell\Moryx.ClientFramework.SimpleShell.csproj", "{145BF3EE-6F5D-46A5-9711-143E2A4FFF81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moryx.ClientFramework.SimpleShell", "src\Moryx.ClientFramework.SimpleShell\Moryx.ClientFramework.SimpleShell.csproj", "{145BF3EE-6F5D-46A5-9711-143E2A4FFF81}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moryx.ClientFramework.Tests", "src\Tests\Moryx.ClientFramework.Tests\Moryx.ClientFramework.Tests.csproj", "{3F18714F-4C51-4735-8082-D35D9F614CE1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moryx.ClientFramework.Tests", "src\Tests\Moryx.ClientFramework.Tests\Moryx.ClientFramework.Tests.csproj", "{3F18714F-4C51-4735-8082-D35D9F614CE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Moryx.ClientFramework.Kernel.Tests", "src\Tests\Moryx.ClientFramework.Kernel.Tests\Moryx.ClientFramework.Kernel.Tests.csproj", "{84114E5F-980F-4CE4-9C8E-A6D82B582B8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Moryx.ClientFramework.Kernel.Tests", "src\Tests\Moryx.ClientFramework.Kernel.Tests\Moryx.ClientFramework.Kernel.Tests.csproj", "{84114E5F-980F-4CE4-9C8E-A6D82B582B8C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +55,18 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3684930F-421E-4B27-AD5D-C136863C1C46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3684930F-421E-4B27-AD5D-C136863C1C46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3684930F-421E-4B27-AD5D-C136863C1C46}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3684930F-421E-4B27-AD5D-C136863C1C46}.Debug|x86.Build.0 = Debug|Any CPU
+		{3684930F-421E-4B27-AD5D-C136863C1C46}.Release(x86)|Any CPU.ActiveCfg = Release|Any CPU
+		{3684930F-421E-4B27-AD5D-C136863C1C46}.Release(x86)|Any CPU.Build.0 = Release|Any CPU
+		{3684930F-421E-4B27-AD5D-C136863C1C46}.Release(x86)|x86.ActiveCfg = Release|Any CPU
+		{3684930F-421E-4B27-AD5D-C136863C1C46}.Release(x86)|x86.Build.0 = Release|Any CPU
+		{3684930F-421E-4B27-AD5D-C136863C1C46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3684930F-421E-4B27-AD5D-C136863C1C46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3684930F-421E-4B27-AD5D-C136863C1C46}.Release|x86.ActiveCfg = Release|Any CPU
+		{3684930F-421E-4B27-AD5D-C136863C1C46}.Release|x86.Build.0 = Release|Any CPU
 		{9A690B37-AB29-4C5D-B185-3DD20DD8FB18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9A690B37-AB29-4C5D-B185-3DD20DD8FB18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A690B37-AB29-4C5D-B185-3DD20DD8FB18}.Debug|x86.ActiveCfg = Debug|Any CPU
@@ -185,18 +197,6 @@ Global
 		{83A2B8AB-6AF1-4666-BBFD-B2FD085C0DF2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{83A2B8AB-6AF1-4666-BBFD-B2FD085C0DF2}.Release|x86.ActiveCfg = Release|Any CPU
 		{83A2B8AB-6AF1-4666-BBFD-B2FD085C0DF2}.Release|x86.Build.0 = Release|Any CPU
-		{3684930F-421E-4B27-AD5D-C136863C1C46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3684930F-421E-4B27-AD5D-C136863C1C46}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3684930F-421E-4B27-AD5D-C136863C1C46}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{3684930F-421E-4B27-AD5D-C136863C1C46}.Debug|x86.Build.0 = Debug|Any CPU
-		{3684930F-421E-4B27-AD5D-C136863C1C46}.Release(x86)|Any CPU.ActiveCfg = Release|Any CPU
-		{3684930F-421E-4B27-AD5D-C136863C1C46}.Release(x86)|Any CPU.Build.0 = Release|Any CPU
-		{3684930F-421E-4B27-AD5D-C136863C1C46}.Release(x86)|x86.ActiveCfg = Release|Any CPU
-		{3684930F-421E-4B27-AD5D-C136863C1C46}.Release(x86)|x86.Build.0 = Release|Any CPU
-		{3684930F-421E-4B27-AD5D-C136863C1C46}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3684930F-421E-4B27-AD5D-C136863C1C46}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3684930F-421E-4B27-AD5D-C136863C1C46}.Release|x86.ActiveCfg = Release|Any CPU
-		{3684930F-421E-4B27-AD5D-C136863C1C46}.Release|x86.Build.0 = Release|Any CPU
 		{145BF3EE-6F5D-46A5-9711-143E2A4FFF81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{145BF3EE-6F5D-46A5-9711-143E2A4FFF81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{145BF3EE-6F5D-46A5-9711-143E2A4FFF81}.Debug|x86.ActiveCfg = Debug|Any CPU

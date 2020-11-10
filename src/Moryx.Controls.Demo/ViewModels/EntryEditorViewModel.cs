@@ -4,10 +4,10 @@
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Input;
-using C4I;
 using Caliburn.Micro;
 using Moryx.Controls.Demo.Models;
 using Moryx.Serialization;
+using Moryx.WpfToolkit;
 
 namespace Moryx.Controls.Demo.ViewModels
 {

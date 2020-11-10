@@ -1,17 +1,17 @@
 ﻿
 
-# Control Library {#controls4Industry}
+# MORYX WPF Toolkit
 
-The control library will be build with the client framework an provides several controls implementing the default moryx style.
-You dont need to add a namespace to the controls because all custom controls are added to the systems default style namespace.
+The WPF Toolkit will be build with the client framework an provides several controls implementing the default MORYX style.
+You don't need to add a namespace to the controls because all custom controls are added to the systems default style namespace.
 Controls need no addition namespace. All controls will be added to the system namespace, so they are easier to use.
 
 ````cs
-[assembly: XmlnsDefinition("http://schemas.microsoft.com/winfx/2006/xaml/presentation", "C4I")]
+[assembly: XmlnsDefinition("http://schemas.microsoft.com/winfx/2006/xaml/presentation", "Moryx.WpfToolkit")]
 ````
 
-Reference Controls4Industry out of *Libraries* folder from the ClientFramework
-The resources will be automatically loaded by the framework. So all used controls in the views will get the default eddie style.
+Reference Moryx.WpfToolkit as nuget package. The resources will be automatically loaded by the framework.
+So all used controls in the views will get the default eddie style.
 
 ## Buttons {#buttons}
 Description missing...
@@ -20,15 +20,15 @@ Description missing...
 Description missing...
 
 ## Shapes {#shapes}
-Shapes generally can be loaded with the [CommonShapeFactory](@ref C4I.CommonShapeFactory). The CommonShapeFactory will return the Geometry directly.
-In the enum [CommonShapeType](@ref C4I.CommonShapeType), all icons are defined.
+Shapes generally can be loaded with the [CommonShapeFactory](@ref Moryx.WpfToolkit.CommonShapeFactory). The CommonShapeFactory will return the Geometry directly.
+In the enum [CommonShapeType](@ref Moryx.WpfToolkit.CommonShapeType), all icons are defined.
 
 ````cs
 var myGeometry = CommonShapeFactory.GetShapeGeometry(CommonShapeType.Pencil)
 ````
 
 ### XAML Extensions {#shapeXamlExtension}
-For the ShapeFactory XAML extension [CommonShapeExtension](@ref C4I.CommonShapeExtension) will load the resource statically to the XAML part.
+For the ShapeFactory XAML extension [CommonShapeExtension](@ref Moryx.WpfToolkit.CommonShapeExtension) will load the resource statically to the XAML part.
 
 ````xml
 <Path Data="{CommonShape Cross}" />
@@ -46,18 +46,18 @@ The extension can be used on the following controls:
 * Path
 
 ### Available Shapes {#availableShapes}
-Available shapes are documented in the [CommonShapeType](@ref C4I.CommonShapeType) enum.
+Available shapes are documented in the [CommonShapeType](@ref Moryx.WpfToolkit.CommonShapeType) enum.
 
 **Short list:** ArrowUp, ArrowUpInCycle, ArrowDown, ArrowDownInCycle, ArrowRight, ArrowLeft, Lock, Cross, CheckMark, AttentionTriangle, ExclamationMark, Magnifier, Pencil, PxCLogo, QuestionMark, SpeakBubble, Plus, Minus, Service, Cells, Gear, Process, ArrowRight2, History, Delete, Home, BarChart, Binocular, BinocularCrossed, ClockWithCheckmark, 
 ### Material Design Icons
 
 The same classes are existing for the complete [MaterialDesignIcons](https://materialdesignicons.com/).
-The extension is named [MdiShapeExtension](@ref C4I.MdiShapeExtension) and the Factory [MdiShapeFactory](@ref C4I.MdiShapeFactory).
+The extension is named [MdiShapeExtension](@ref Moryx.WpfToolkit.MdiShapeExtension) and the Factory [MdiShapeFactory](@ref Moryx.WpfToolkit.MdiShapeFactory).
 
 ## ListBox / ListView {#lists}
 
 The framework provides a posibility to sort listviews with a simple attached property class called 'GridViewSort'.
-The GridViewSort is part of the C4I.
+The GridViewSort is part of the Moryx.WpfToolkit.
 
 __How to use the GridViewSort (ListView sort)__
 
@@ -115,14 +115,14 @@ Description missing...
 The following converters are awailable in the control library and they are provide a way to apply custom logic to a binding.
 Click on the converter to get detailed explanation and code documentation.
 
-* [BooleanToGridRowHeightConverter](@ref C4I.BooleanToGridRowHeightConverter)
-* [BooleanToObjectConverter](@ref C4I.BooleanToObjectConverter)
-* [BooleanToVisibilityConverter](@ref C4I.BooleanToVisibilityConverter)
-* [CombiningConverter](@ref C4I.CombiningConverter)
-* [DoubleToRowDefinitionConverter](@ref C4I.DoubleToRowDefinitionConverter)
-* [FileSizeToTextConverter](@ref C4I.FileSizeToTextConverter)
-* [GenericEnumConverter](@ref C4I.GenericEnumConverter)
-* [IntToVisibilityConverter](@ref C4I.IntToVisibilityConverter)
-* [InverseBooleanConverter](@ref C4I.InverseBooleanConverter)
-* [NullToCollapsedConverter](@ref C4I.NullToCollapsedConverter)
-* [StringToBooleanConverter](@ref C4I.StringToBooleanConverter)
+* [BooleanToGridRowHeightConverter](xref:Moryx.WpfToolkit.BooleanToGridRowHeightConverter)
+* [BooleanToObjectConverter](xref:Moryx.WpfToolkit.BooleanToObjectConverter)
+* [BooleanToVisibilityConverter](xref:Moryx.WpfToolkit.BooleanToVisibilityConverter)
+* [CombiningConverter](xref:Moryx.WpfToolkit.CombiningConverter)
+* [DoubleToRowDefinitionConverter](xref:Moryx.WpfToolkit.DoubleToRowDefinitionConverter)
+* [FileSizeToTextConverter](xref:Moryx.WpfToolkit.FileSizeToTextConverter)
+* [GenericEnumConverter](xref:Moryx.WpfToolkit.GenericEnumConverter)
+* [IntToVisibilityConverter](xref:Moryx.WpfToolkit.IntToVisibilityConverter)
+* [InverseBooleanConverter](xref:Moryx.WpfToolkit.InverseBooleanConverter)
+* [NullToCollapsedConverter](xref:Moryx.WpfToolkit.NullToCollapsedConverter)
+* [StringToBooleanConverter](xref:Moryx.WpfToolkit.StringToBooleanConverter)

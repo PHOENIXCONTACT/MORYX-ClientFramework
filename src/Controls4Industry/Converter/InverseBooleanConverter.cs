@@ -4,7 +4,7 @@
 using System;
 using System.Windows.Data;
 
-namespace C4I
+namespace Moryx.WpfToolkit
 {
     /// <summary>
     /// Inverses a boolean value

@@ -5,7 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
-namespace C4I
+namespace Moryx.WpfToolkit
 {
     /// <summary>
     /// Specialized tree view

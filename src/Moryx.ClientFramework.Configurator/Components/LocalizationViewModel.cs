@@ -21,7 +21,7 @@ namespace Moryx.ClientFramework.Configurator
 
         public override string DisplayName => Strings.LocalizationViewModel_Title;
 
-        public string ImageSource => "/Controls4Industry;component/Images/globe.png";
+        public string ImageSource => "/Moryx.WpfToolkit;component/Images/globe.png";
 
         public IAppDataConfigManager AppDataConfigManager { get; set; }
 
