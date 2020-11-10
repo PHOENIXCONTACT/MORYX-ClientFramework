@@ -4,10 +4,9 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using Moryx.WpfToolkit;
 using Color = System.Drawing.Color;
 
-namespace Moryx.Controls
+namespace Moryx.WpfToolkit
 {
     /// <summary>
     /// Info box control

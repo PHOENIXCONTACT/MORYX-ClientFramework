@@ -29,11 +29,12 @@
         <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="EddieListBox/Generic.xaml" />
         <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="EddieListView/Generic.xaml"/>
         <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="EddiePopup/Generic.xaml"/>
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="InfoBox/Generic.xaml"/>
 
         <!-- Windows Control Styles -->
         <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="CheckBox/Generic.xaml" />
         <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="RadioButton/Generic.xaml" />
-        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="ScollViewer/Generic.xaml" />
+        <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="ScrollViewer/Generic.xaml" />
         <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="ScrollBar/Generic.xaml" />
         <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="TabControl/Generic.xaml" />
         <wpfToolkit:VersionResourceDictionary AssemblyName="Moryx.WpfToolkit" SourcePath="GroupBox/Generic.xaml" />
