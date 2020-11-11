@@ -19,7 +19,7 @@ Will execute the given method with an await. The returned task will be capsulate
 
 ### RaiseCanExecuteChanged
 
-The asnyc command is not bounded by default to the .NET CommandManager because the command manager will raise the CanExecuteChanged event really often (every mouse key, keyboard key or ui change).
+The async command is not bounded by default to the .NET CommandManager because the command manager will raise the CanExecuteChanged event really often (every mouse key, keyboard key or ui change).
 So in case of complex CanExecute methods we decided to execute the method manually. The event will also be raised if the task will start and if it will finish.
 
 If you still want to use the .NET CommandManager you can just set it as a parameter when you instantiate the Command.
@@ -33,13 +33,13 @@ The command should be declared in the view model (initialize or constructor):
 LongCmd = new AsyncCommand(LongMethod, CanExecuteLongMethod);
 ````
 
-The property can be binded to an command property in xaml. The following example is the button:
+The property can be bound to an command property in xaml. The following example is the button:
 
 ````xml
 <EddieButton Command="{Binding LongCmd}">Long Async Task</EddieButton>
 ````
 
-As you can see, the command is not binded to any other property. You do not need to bind it to `IsEnabled` or something else. The button implementation will whatch the events automatically.
+As you can see, the command is not bound to any other property. You do not need to bind it to `IsEnabled` or something else. The button implementation will watch the events automatically.
 
 You also can add keybindings to the user control to execute the command by key or any other gestures:
 

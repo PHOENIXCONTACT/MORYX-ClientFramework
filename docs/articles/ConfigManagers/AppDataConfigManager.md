@@ -46,4 +46,4 @@ That's it. The config is saved automaticallay when the application is closed. If
 
 ## How can I apply default configuration
 
-That's rather easy as well. Just add a folder named `AppDataDefaults` to your Config-Directory and copy your default user specific configurations to it. These files will be copied to the `%APPDATA%` folder when the application starts. Existant files won't be touched. Promise.
+That's rather easy as well. Just add a folder named `AppDataDefaults` to your Config-Directory and copy your default user specific configurations to it. These files will be copied to the `%APPDATA%` folder when the application starts. Existing files won't be touched. Promise.

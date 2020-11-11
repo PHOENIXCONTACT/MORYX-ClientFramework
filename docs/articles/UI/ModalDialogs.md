@@ -22,7 +22,7 @@ public interface IDialogManager
 }
 ````
 
-Every ClientModule container have a default implementation of the manager. Just inject it.
+Every ClientModule container has a default implementation of the manager. Just inject it.
 
 ## MessageBoxes
 
