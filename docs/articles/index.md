@@ -27,10 +27,9 @@ The client framework will also provide their own WPF based features:
 * [Configurations](xref:Configurations)
 * [RunModes](xref:RunModes)
 * Modules
-* Frame (Shell)
+* [Simple Shell](xref:SimpleShell)
 * Converter, Extensions, Markup-Extensions
 * [Modal dialogs](xref:ModalDialogs)
-* [Simple Shell](xref:SimpleShell)
 * [Screens and Conductors](xref:ScreensAndConductors)
 * [Commands](xref:Commands)
 * [Facades](xref:Facades)
