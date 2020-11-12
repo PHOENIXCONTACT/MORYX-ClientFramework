@@ -11,8 +11,7 @@ Guidelines for usage of Caliburn.Micro
 - Do not use button name as event. Use the following notation to see the real event which will be wired by caliburn:
 
 ````xml
-<Button Content="Remove"
-        cal:Message.Attach="[Event Click] = [Action Remove($dataContext)]" />
+<TextBox cal:Message.Attach="[Event KeyDown] = [Action OnKeyPressed($dataContext)]" />
 ````
 
 - for properties use the good old binding

@@ -17,7 +17,7 @@ Manage Nuget packages on the `TestClient` project and install the following thre
 
 - `Moryx.ClientFramework.Kernel`
 - `Moryx.ClientFramework.Configurator`
-- `Moryx.ClientFramework.PhoenixShell`
+- `Moryx.ClientFramework.SimpleShell`
 
 You only need these three packages. All neccessary dependancies are installed automatically.
 
@@ -42,16 +42,13 @@ namespace TestClient
 }
 ````
 
-That's it. Build the solution and start it. You should now see the `Configurator`. 
-You'll see that `Mode` is currently not configured. This causes that the `TestClient` always starts the configurator. 
-Set `Mode` to _`Local_RunMode`_ and save the configuration. Now the `TestClient` will start the `SimpleShell` by default. 
-If you want to start the configurator again, just hold the CTRL key when the application is starting.
+That's it. Build the solution and start it. You should now see the `Configurator`. You'll see that `Mode` is currently not configured. This causes that the `TestClient` always starts the configurator. Set `Mode` to _`Local_RunMode`_ and save the configuration. Now the `TestClient` will start the `SimpleShell` by default. If you want to start the configurator again, just hold the CTRL key when the application is starting.
 
 The next chapter describes how to create a sample module.
 
 ## Sample module
 
-As you might recognized your `PhoenixShell` is empty. That's due to missing modules in the sample application. So let's build up a sample module that is shown within the `PhoenixShell`.
+As you might recognized your `SimpleShell` is empty. That's due to missing modules in the sample application. So let's build up a sample module that is shown within the `SimpleShell`.
 
 Create a new C# Library named `TestModule` and add the following framework assemblies:
 
@@ -73,14 +70,12 @@ Now create the following two folders to the `TestModule`:
 
 The `ModuleController folder` contains two classes:
 
-The modules configuration. 
-Which in our case is an empty hull.
-But in the real world all needed settings will find their place here.
+The modules configuration. Which in our case is an empty hull. But in the real world all needed settings will find their place here.
 
 ````cs
-using System.Runtime.Serialization
+using System.Runtime.Serialization;
 
-namespace TestModule.ModuleController
+namespace TestModule
 {
     [DataContract]
     public class ModuleConfig : ClientModuleConfigBase
@@ -92,7 +87,7 @@ namespace TestModule.ModuleController
 And it contains the `ModuleController` itself. It's the entry point for a module. There you set the `DisplayName` and the initial workspace view model.
 
 ````cs
-namespace TestModule.ModuleController
+namespace TestModule
 {
     [ClientModule("TestModule")]
     public class ModuleController : WorkspaceModuleBase<ModuleConfig>
@@ -129,7 +124,7 @@ As you might have noticed, there is no workspace implemented yet. We'll make it 
 Code behind of __workspace view__
 
 ````cs
-namespace TestModule.Workspace
+namespace TestModule
 {
     /// <summary>
     /// Interaction logic for TestWorkspaceView.xaml
@@ -181,7 +176,7 @@ Start your application and be amazed.
 
 ## Custom shell
 
-For our first example we went the easy way and used the available `PhoenixShell`. But in some days you'll need to implement your own shell. This chapter will give you a short introduction on how a shell is implemented.
+For our first example we went the easy way and used the available `SimpleShell`. But in some days you'll need to implement your own shell. This chapter will give you a short introduction on how a shell is implemented.
 
 Create a new solution named `MyOwnShell` as described in the _Prerequisites chapter_.
 
@@ -263,5 +258,4 @@ XAML of __shell view__
 </UserControl>
 ````
 
-Finished. 
-Start the application and you will see your own implemented shell.
+Finished! Start the application and you will see your own implemented shell.

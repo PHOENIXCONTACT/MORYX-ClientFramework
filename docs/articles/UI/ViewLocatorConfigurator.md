@@ -3,7 +3,7 @@ uid: ViewLocatorConfigurator
 ---
 # ViewLocator Configurator
 
-Imagine a requirement that you need to build an application that supports normal and touch views. Usually you need to build a view model per view or more bad two applications which consist of many double code lines.
+Imagine a requirement that you need to build an application that supports normal and touch views. Usually you need to build a view model per view or more bad two applications which consist of many duplicate lines of code.
 The client framework comes with a so called [ViewLocatorConfigurator](xref:Moryx.ClientFramework.Kernel.ViewLocatorConfigurator) (VLC) which allows you to implement the One-ViewModel-Many-Views concept. This article will explain to you what things you have to consider.
 
 ## Basics

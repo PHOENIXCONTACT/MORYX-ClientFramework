@@ -8,7 +8,7 @@ To handle the frameworks configurations a configurator can be started with the c
 
 ## Config RunMode
 
-This *RunMode* loads the configurator out of the *Settings* folder from the framework. If you don't want to have this configurator, you can delete the content of this folder. Otherwise you only can deactivate the configuratior in the AppConfig.
+This *RunMode* loads the configurator from the installed packages. If you don't want to have this configurator, you can remove the package. Otherwise you only can deactivate the configuratior in the AppConfig.
 
 The configurator can be opened with keyboard key *CTRL*. You should press the key while the framework is loading. You can also add the ´--configurator´ command line argument. Don't forget to set the RunMode back to your favorite.
 
@@ -16,7 +16,7 @@ The configurator can be opened with keyboard key *CTRL*. You should press the ke
 
 ### Starting the configurator
 
-You can start the configurator of the framework with the command line argument ´--configurator´. Optionally use the *CTRL* key at startup. (Press *CTRL* and then click on the heart of lead). Don't forget to set the *RunMode* back to your favorite.
+You can start the configurator of the framework with the command line argument ´--configurator´. Optionally use the *CTRL* key at startup. (Press *CTRL* and then click on the heart of lead). Don't forget to set the *RunMode* back to your previous setting.
 
 ## Framework Config Files
 
