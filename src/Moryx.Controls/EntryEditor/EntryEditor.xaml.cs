@@ -14,7 +14,7 @@ using Button = System.Windows.Controls.Button;
 namespace Moryx.Controls
 {
     /// <summary>
-    /// Interaction logic for EntryEditorGridxaml.xaml
+    /// Interaction logic for EntryEditor.xaml
     /// </summary>
     public partial class EntryEditor
     {
@@ -41,8 +41,8 @@ namespace Moryx.Controls
         /// </summary>
         public EntryViewModel RootEntry
         {
-            get { return (EntryViewModel)GetValue(RootEntryProperty); }
-            set { SetValue(RootEntryProperty, value); }
+            get => (EntryViewModel)GetValue(RootEntryProperty);
+            set => SetValue(RootEntryProperty, value);
         }
 
         private static void RootEntryChanged(DependencyObject sender, DependencyPropertyChangedEventArgs args)
@@ -67,8 +67,8 @@ namespace Moryx.Controls
         /// </summary>
         public Visibility BreadcrumbVisibility
         {
-            get { return (Visibility) GetValue(BreadcrumbVisibilityProperty); }
-            set { SetValue(BreadcrumbVisibilityProperty, value); }
+            get => (Visibility) GetValue(BreadcrumbVisibilityProperty);
+            set => SetValue(BreadcrumbVisibilityProperty, value);
         }
 
         /// <summary>
@@ -82,8 +82,8 @@ namespace Moryx.Controls
         /// </summary>
         public bool IsEditMode
         {
-            get { return (bool) GetValue(IsEditModeProperty); }
-            set { SetValue(IsEditModeProperty, value); }
+            get => (bool) GetValue(IsEditModeProperty);
+            set => SetValue(IsEditModeProperty, value);
         }
 
         /// <summary>
@@ -102,12 +102,8 @@ namespace Moryx.Controls
         {
             if (CurrentEntry?.PossibleValues != null)
             {
-                var desiredType = CurrentEntry.PossibleValues.FirstOrDefault(p => p == CurrentEntry.Value);
-                if (desiredType == null)
-                {
-                    desiredType = CurrentEntry.PossibleValues.First();
-                }
-
+                var desiredType = CurrentEntry.PossibleValues.FirstOrDefault(p => p == CurrentEntry.Value) ??
+                                  CurrentEntry.PossibleValues.FirstOrDefault();
                 DesiredType = desiredType;
             }
 
@@ -120,8 +116,8 @@ namespace Moryx.Controls
         /// </summary>
         public EntryViewModel CurrentEntry
         {
-            get { return (EntryViewModel)GetValue(CurrentEntryProperty); }
-            set { SetValue(CurrentEntryProperty, value); }
+            get => (EntryViewModel)GetValue(CurrentEntryProperty);
+            set => SetValue(CurrentEntryProperty, value);
         }
 
         /// <summary>
@@ -131,12 +127,12 @@ namespace Moryx.Controls
             "ShowExceptionCommand", typeof(ICommand), typeof(EntryEditor), new PropertyMetadata(null));
 
         /// <summary>
-        /// Command that is called when user cllicks on details button on an exception entry
+        /// Command that is called when user clicks on details button on an exception entry
         /// </summary>
         public ICommand ShowExceptionCommand
         {
-            get { return (ICommand)GetValue(ShowExceptionCommandProperty); }
-            set { SetValue(ShowExceptionCommandProperty, value); }
+            get => (ICommand)GetValue(ShowExceptionCommandProperty);
+            set => SetValue(ShowExceptionCommandProperty, value);
         }
 
         /// <summary>
@@ -150,8 +146,8 @@ namespace Moryx.Controls
         /// </summary>
         public string DesiredType
         {
-            get { return (string)GetValue(DesiredTypeProperty); }
-            set { SetValue(DesiredTypeProperty, value); }
+            get => (string)GetValue(DesiredTypeProperty);
+            set => SetValue(DesiredTypeProperty, value);
         }
 
         private static readonly DependencyPropertyKey PathPropertyKey = DependencyProperty.RegisterReadOnly("Path", typeof(ObservableCollection<EntryViewModel>), typeof(EntryEditor),
@@ -167,8 +163,8 @@ namespace Moryx.Controls
         /// </summary>
         public ObservableCollection<EntryViewModel> Path
         {
-            get { return (ObservableCollection<EntryViewModel>)GetValue(PathProperty); }
-            protected set { SetValue(PathPropertyKey, value); }
+            get => (ObservableCollection<EntryViewModel>)GetValue(PathProperty);
+            protected set => SetValue(PathPropertyKey, value);
         }
 
         private static readonly DependencyPropertyKey CanForwardPropertyKey = DependencyProperty.RegisterReadOnly("CanForward", typeof(bool), typeof(EntryEditor),
@@ -180,12 +176,12 @@ namespace Moryx.Controls
         public static readonly DependencyProperty CanForwardProperty = CanForwardPropertyKey.DependencyProperty;
 
         /// <summary>
-        /// Indicates wheter the user can go forward
+        /// Indicates whether the user can go forward
         /// </summary>
         public bool CanForward
         {
-            get { return (bool)GetValue(CanForwardProperty); }
-            protected set { SetValue(CanForwardPropertyKey, value); }
+            get => (bool)GetValue(CanForwardProperty);
+            protected set => SetValue(CanForwardPropertyKey, value);
         }
 
         private static readonly DependencyPropertyKey CanBackwardPropertyKey = DependencyProperty.RegisterReadOnly("CanBackward", typeof(bool), typeof(EntryEditor),
@@ -197,12 +193,12 @@ namespace Moryx.Controls
         public static readonly DependencyProperty CanBackwardProperty = CanBackwardPropertyKey.DependencyProperty;
 
         /// <summary>
-        /// Indicates wheter the user can go backward
+        /// Indicates whether the user can go backward
         /// </summary>
         public bool CanBackward
         {
-            get { return (bool)GetValue(CanBackwardProperty); }
-            protected set { SetValue(CanBackwardPropertyKey, value); }
+            get => (bool)GetValue(CanBackwardProperty);
+            protected set => SetValue(CanBackwardPropertyKey, value);
         }
 
         #endregion
