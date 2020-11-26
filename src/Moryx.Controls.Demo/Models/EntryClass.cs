@@ -24,6 +24,14 @@ namespace Moryx.Controls.Demo.Models
 
         public List<EntrySubClass> ListSubClass { get; set; }
 
+        public List<EntrySubClass> ListReadOnly { get; } = new List<EntrySubClass>
+        {
+            new EntrySubClass
+            {
+                AByte = 1
+            }
+        };
+
         public List<Visibility> ListEnum { get; set; }
 
         public List<string> ListString { get; set; }

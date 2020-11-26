@@ -21,17 +21,17 @@ namespace Moryx.Controls.Converter
         /// <param name="targetType">Not used</param>
         /// <param name="parameter">Not used</param>
         /// <param name="culture">Not used</param>
-        /// <returns>Returns <see cref="Visibility.Visible"/> if value type is a class or a collection and at least one possible value is existant. Otherwise <see cref="Visibility.Hidden"/> is returned.</returns>
+        /// <returns>Returns <see cref="Visibility.Visible"/> if value type is a class or a collection and at least one possible value is existent. Otherwise <see cref="Visibility.Hidden"/> is returned.</returns>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             var entry = value as EntryViewModel;
             if (entry == null)
                 return Visibility.Hidden;
 
-            var isEntrySettable = entry.ValueType == EntryValueType.Collection ||
+            var isEntrySettable = (entry.ValueType == EntryValueType.Collection ||
                                   entry.ValueType == EntryValueType.Class &&
                                   entry.PossibleValues != null &&
-                                  entry.PossibleValues.Count > 1;
+                                  entry.PossibleValues.Count > 1) && !entry.IsReadOnly;
 
             if (isEntrySettable)
             {
@@ -41,7 +41,7 @@ namespace Moryx.Controls.Converter
                 }
             }
 
-            return isEntrySettable ? Visibility.Visible : Visibility.Hidden;
+            return isEntrySettable ? Visibility.Visible : Visibility.Collapsed;
         }
 
         /// <inheritdoc />
