@@ -4,7 +4,7 @@
     <TargetFramework>net45</TargetFramework>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <UseWPF>true</UseWPF>
-    <Description>Simple client shell implementation to handle modules.</Description>
+    <Description>Simple client shell implementation to host MORYX WPF modules.</Description>
     <CreatePackage>true</CreatePackage>
   </PropertyGroup>
 

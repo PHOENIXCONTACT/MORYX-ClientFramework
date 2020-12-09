@@ -4,7 +4,7 @@
     <TargetFramework>net45</TargetFramework>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <UseWPF>true</UseWPF>
-    <Description>Framework for MORYX WPF desktop clients</Description>
+    <Description>Framework core package for MORYX WPF desktop clients</Description>
     <CreatePackage>true</CreatePackage>
   </PropertyGroup>
 
