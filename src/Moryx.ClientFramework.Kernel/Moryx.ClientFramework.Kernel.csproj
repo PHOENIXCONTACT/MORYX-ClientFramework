@@ -6,6 +6,7 @@
     <UseWPF>true</UseWPF>
     <Description>Kernel for the MORYX client framework with infrastructure and shared components.</Description>
     <CreatePackage>true</CreatePackage>
+    <PackageTags>MORYX;WPF;UI;Client;Kernel;Components</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

@@ -6,6 +6,7 @@
     <UseWPF>true</UseWPF>
     <Description>Graphical MORYX client configuration for proxy settings, client id and language selection</Description>
     <CreatePackage>true</CreatePackage>
+    <PackageTags>MORYX;WPF;UI;Client;Config;Configuration;Proxy;Language</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
