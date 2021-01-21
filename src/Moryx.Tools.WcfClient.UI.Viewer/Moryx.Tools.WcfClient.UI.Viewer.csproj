@@ -6,6 +6,7 @@
     <UseWPF>true</UseWPF>
     <Description>Client module to view connected WCF clients.</Description>
     <CreatePackage>true</CreatePackage>
+    <PackageTags>MORYX;WPF;UI;Client;WCF;Viewer;Module</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

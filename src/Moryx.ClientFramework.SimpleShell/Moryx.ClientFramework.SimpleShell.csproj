@@ -6,6 +6,7 @@
     <UseWPF>true</UseWPF>
     <Description>Simple client shell implementation to host MORYX WPF modules.</Description>
     <CreatePackage>true</CreatePackage>
+    <PackageTags>MORYX;WPF;UI;Client;Shell;Modules;Theme</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

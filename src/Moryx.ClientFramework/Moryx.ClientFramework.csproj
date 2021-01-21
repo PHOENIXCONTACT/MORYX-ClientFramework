@@ -6,6 +6,7 @@
     <UseWPF>true</UseWPF>
     <Description>Framework core package for MORYX WPF desktop clients</Description>
     <CreatePackage>true</CreatePackage>
+    <PackageTags>MORYX;WPF;UI;Client;Desktop;Core</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
