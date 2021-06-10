@@ -163,7 +163,7 @@
     <value>STRG:</value>
   </data>
   <data name="AppConfigView_Ctrl_Description" xml:space="preserve">
-    <value>(Aktiviert das der Konfigurator mit STRG beim starten geladen wird)</value>
+    <value>(Aktiviert, dass der Konfigurator mit STRG beim Starten geladen wird)</value>
   </data>
   <data name="AppConfigView_LimitInstances_Label" xml:space="preserve">
     <value>Limitiere Instanzen:</value>
@@ -187,7 +187,7 @@
     <value>AppData:</value>
   </data>
   <data name="AppConfigView_RunMode_Hint" xml:space="preserve">
-    <value>Wenn ein RunMode ausgewählt wurde, kann der Konfigurator erneut mit dem Command-Line Argument "--configurator" oder des drückens der STRG-Taste gestartet werden.</value>
+    <value>Wenn ein RunMode ausgewählt wurde, kann der Konfigurator erneut mit dem Command-Line Argument "--configurator" oder des Drückens der STRG-Taste gestartet werden.</value>
   </data>
   <data name="AppConfigViewModel_Title" xml:space="preserve">
     <value>Anwendung</value>
@@ -241,7 +241,7 @@
     <value>Hostname:</value>
   </data>
   <data name="RuntimeConfigView_Hostname_Description" xml:space="preserve">
-    <value>(Wo kann die Runtime gefunden werden (e.g. "localhost")?)</value>
+    <value>(Wo kann die Runtime gefunden werden (z.B. "localhost")?)</value>
   </data>
   <data name="RuntimeConfigView_Port_Label" xml:space="preserve">
     <value>Port: </value>
@@ -253,7 +253,7 @@
     <value>Client Id:</value>
   </data>
   <data name="RuntimeConfigView_ClientId_Description" xml:space="preserve">
-    <value>(Eindeutige id um den Client auf dem Server zu regitrieren)</value>
+    <value>(Eindeutige Id um den Client auf dem Server zu registrieren)</value>
   </data>
   <data name="LocalizationViewModel_Title" xml:space="preserve">
     <value>Lokalisierung</value>
