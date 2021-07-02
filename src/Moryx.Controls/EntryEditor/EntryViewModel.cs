@@ -70,7 +70,7 @@ namespace Moryx.Controls
         ///
         public string Value
         {
-            get { return Entry.Value.Current; }
+            get => Entry.Value.Current;
             set
             {
                 Entry.Value.Current = value;
@@ -96,7 +96,7 @@ namespace Moryx.Controls
         public bool IsReadOnly => Entry.Value.IsReadOnly;
 
         /// <summary>
-        /// Add prototype of this name to the subentries
+        /// Add prototype of this name to the subEntries
         /// </summary>
         public void AddPrototype(string prototypeName)
         {
@@ -138,7 +138,7 @@ namespace Moryx.Controls
         ///
         public ObservableCollection<EntryViewModel> SubEntries
         {
-            get { return _subEntries; }
+            get => _subEntries;
             set
             {
                 _subEntries = value;
@@ -169,14 +169,12 @@ namespace Moryx.Controls
             }
         }
 
-        ///
         protected override void InsertItem(int index, EntryViewModel item)
         {
             _entries.Add(item.Entry);
             base.InsertItem(index, item);
         }
 
-        ///
         protected override void RemoveItem(int index)
         {
             _entries.Remove(this.ElementAt(index).Entry);

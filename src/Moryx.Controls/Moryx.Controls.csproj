@@ -6,6 +6,7 @@
     <UseWPF>true</UseWPF>
     <Description>MORYX specific controls library</Description>
     <CreatePackage>true</CreatePackage>
+    <PackageTags>MORYX;WPF;UI;Client;Controls</PackageTags>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(TargetFramework)'=='net45'">

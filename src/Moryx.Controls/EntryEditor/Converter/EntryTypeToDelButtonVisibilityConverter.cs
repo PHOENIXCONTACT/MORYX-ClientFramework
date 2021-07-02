@@ -29,7 +29,9 @@ namespace Moryx.Controls.Converter
             if (entry == null)
                 return Visibility.Collapsed;
 
-            return entry.ValueType == EntryValueType.Collection ? Visibility.Visible : Visibility.Collapsed;
+            return entry.ValueType == EntryValueType.Collection && !entry.IsReadOnly
+                ? Visibility.Visible
+                : Visibility.Collapsed;
         }
 
         /// <inheritdoc />
