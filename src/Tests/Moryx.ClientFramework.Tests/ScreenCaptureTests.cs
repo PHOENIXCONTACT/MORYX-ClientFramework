@@ -5,7 +5,6 @@ using System;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
-using Moryx.ClientFramework.UI;
 using NUnit.Framework;
 
 namespace Moryx.ClientFramework.Tests
@@ -45,7 +44,7 @@ namespace Moryx.ClientFramework.Tests
         private static FileInfo CaptureToFile(Action<string> captureMethod)
         {
             var file = Path.Combine(TestContext.CurrentContext.TestDirectory, "Image.jpg");
-            
+
             Assert.DoesNotThrow(() => captureMethod(file));
 
             var fileInfo = new FileInfo(file);

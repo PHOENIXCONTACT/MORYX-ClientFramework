@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Moryx.Modules;
 
 namespace Moryx.ClientFramework
@@ -10,8 +11,14 @@ namespace Moryx.ClientFramework
     /// <summary>
     /// Will initialize enabled modules and provides events for the initialization phase
     /// </summary>
-    public interface IModuleManager : IDisposable, IInitializable
+    public interface IModuleManager : IDisposable
     {
+        /// <summary>
+        /// Initialize this component and prepare it for incoming task. This must only involve preparation and must not start
+        /// any active functionality and/or periodic execution of logic.
+        /// </summary>
+        Task InitializeAsync();
+
         /// <summary>
         /// When the module manager is done with the intiailization phase, the initialized and enabled modules
         /// should be provided here
@@ -22,11 +29,11 @@ namespace Moryx.ClientFramework
         /// Occurs when starting to initialize a module.
         /// </summary>
         event EventHandler<IClientModule> StartInitializeModule;
-        
+
         /// <summary>
         /// Occurs when starting to initilize all modules].
         /// </summary>
-        event EventHandler<int> StartInitilizingModules;
+        event EventHandler<int> StartInitializingModules;
 
         /// <summary>
         /// Occurs when initializing of a module is done].

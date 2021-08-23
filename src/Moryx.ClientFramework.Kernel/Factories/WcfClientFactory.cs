@@ -31,7 +31,7 @@ namespace Moryx.ClientFramework.Kernel
 
         #endregion
 
-        /// 
+        /// <inheritdoc />
         public void Initialize()
         {
             var runtimeConfig = ConfigManager.GetConfiguration<RuntimeConfig>();

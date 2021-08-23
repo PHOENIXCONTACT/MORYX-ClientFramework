@@ -3,6 +3,8 @@
 
 using System;
 using System.Collections;
+using System.Threading;
+using System.Threading.Tasks;
 using Caliburn.Micro;
 using Moryx.ClientFramework.Shell;
 
@@ -16,16 +18,19 @@ namespace Moryx.ClientFramework.Kernel
 
         public string ConfiguredShell { get; set; }
 
-        public void Initialize()
+        public Task InitializeAsync()
         {
+            return Task.CompletedTask;
         }
 
-        public void ActivateItem(object item)
+        public Task ActivateItemAsync(object item, CancellationToken cancellationToken = new CancellationToken())
         {
+            return Task.CompletedTask;
         }
 
-        public void DeactivateItem(object item, bool close)
+        public Task DeactivateItemAsync(object item, bool close, CancellationToken cancellationToken = new CancellationToken())
         {
+            return Task.CompletedTask;
         }
 
         public IEnumerable GetChildren()
@@ -34,6 +39,8 @@ namespace Moryx.ClientFramework.Kernel
         }
 
 #pragma warning disable 67
+
+
         public event EventHandler<ActivationProcessedEventArgs> ActivationProcessed;
 #pragma warning restore 67
     }

@@ -11,7 +11,7 @@ namespace Moryx.ClientFramework.Kernel
     /// </summary>
     internal class WpfThreadContext : IThreadContext
     {
-        /// 
+        /// <inheritdoc />
         public void Invoke(Action action)
         {
             ThreadContext.BeginInvoke(action);

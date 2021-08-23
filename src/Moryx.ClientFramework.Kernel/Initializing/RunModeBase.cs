@@ -47,16 +47,15 @@ namespace Moryx.ClientFramework.Kernel
 
         #endregion
 
-        ///
+        /// <inheritdoc />
         public virtual void Initialize()
         {
             // Register FallbackShell
             GlobalContainer.SetInstance(new FallbackShellViewModel() as IModuleShell, FallbackShellViewModel.ShellName);
         }
 
-        ///
+        /// <inheritdoc />
         public abstract void LoadModulesConfiguration();
-
 
         /// <summary>
         /// Will select the shell with the name in the configuration
@@ -199,7 +198,7 @@ namespace Moryx.ClientFramework.Kernel
 
         #region RaiseEvents
 
-        ///
+        /// <inheritdoc />
         public event EventHandler<AssemblyConfiguration> AssemblyConfigurationLoaded;
 
         /// <summary>
@@ -210,7 +209,7 @@ namespace Moryx.ClientFramework.Kernel
             AssemblyConfigurationLoaded?.Invoke(this, assemblyConfiguration);
         }
 
-        ///
+        /// <inheritdoc />
         public event EventHandler<AssemblyConfig> AssemblyLoaded;
 
         /// <summary>
@@ -221,7 +220,7 @@ namespace Moryx.ClientFramework.Kernel
             AssemblyLoaded?.Invoke(this, assemblyConfig);
         }
 
-        ///
+        /// <inheritdoc />
         public event EventHandler<IEnumerable<Assembly>> AssembliesLoaded;
 
         /// <summary>
@@ -232,7 +231,7 @@ namespace Moryx.ClientFramework.Kernel
             AssembliesLoaded?.Invoke(this, assemblies);
         }
 
-        ///
+        /// <inheritdoc />
         public event EventHandler<ModulesConfiguration> LoadModulesConfigurationCompleted;
 
         /// <summary>
@@ -243,15 +242,15 @@ namespace Moryx.ClientFramework.Kernel
             LoadModulesConfigurationCompleted?.Invoke(this, e);
         }
 
-        ///
-        public event EventHandler<ClientException> ExeptionOccured;
+        /// <inheritdoc />
+        public event EventHandler<ClientException> ExceptionOccurred;
 
         /// <summary>
-        /// Raises the <see cref="ExeptionOccured"/> event if someone is registered.
+        /// Raises the <see cref="ExceptionOccurred"/> event if someone is registered.
         /// </summary>
         protected virtual void RaiseException(ClientException e)
         {
-            ExeptionOccured?.Invoke(this, e);
+            ExceptionOccurred?.Invoke(this, e);
         }
 
         #endregion

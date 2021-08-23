@@ -18,7 +18,7 @@ namespace Moryx.ClientFramework.Kernel
         private LoggingConfig _config;
 
         /// <summary>
-        /// Configuration manager instance. Injected by castel.
+        /// Configuration manager instance.
         /// </summary>
         public IKernelConfigManager ConfigManager { get; set; }
 

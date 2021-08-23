@@ -7,6 +7,8 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Threading;
+using System.Threading.Tasks;
 using Caliburn.Micro;
 using Moryx.ClientFramework.Configurator.Properties;
 using Moryx.ClientFramework.Localization;
@@ -37,9 +39,9 @@ namespace Moryx.ClientFramework.Configurator
 
         public CultureInfo[] Cultures { get; private set; }
 
-        protected override void OnInitialize()
+        protected override async Task OnInitializeAsync(CancellationToken cancellationToken)
         {
-            base.OnInitialize();
+            await base.OnInitializeAsync(cancellationToken);
 
             _languageConfig = AppDataConfigManager.GetConfiguration<UserLanguageConfig>();
 

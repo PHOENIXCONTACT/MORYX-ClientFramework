@@ -25,7 +25,7 @@ namespace Moryx.ClientFramework.Kernel
         /// changes the message on the loader
         /// </summary>
         event EventHandler<string> ChangeMessage;
-        
+
         /// <summary>
         /// used to add an integer value to the progress maximum
         /// </summary>
@@ -39,6 +39,6 @@ namespace Moryx.ClientFramework.Kernel
         /// <summary>
         /// will indicate an error on the ui and presents the error message
         /// </summary>
-        event EventHandler<ClientException> IndicateError;        
+        event EventHandler<ClientException> IndicateError;
     }
 }

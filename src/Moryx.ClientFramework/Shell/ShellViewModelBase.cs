@@ -3,6 +3,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Caliburn.Micro;
 using Moryx.ClientFramework.Dialog;
 using Moryx.ClientFramework.History;
@@ -12,7 +13,7 @@ using Moryx.Tools.Wcf;
 namespace Moryx.ClientFramework.Shell
 {
     /// <summary>
-    /// Base view model for the application shells. 
+    /// Base view model for the application shells.
     /// </summary>
     public abstract class ShellViewModelBase : Conductor<ModuleWrapper>.Collection.OneActive, IModuleShell
     {
@@ -76,7 +77,7 @@ namespace Moryx.ClientFramework.Shell
 
         #region IModuleShell
 
-        void IModuleShell.Initialize()
+        Task IModuleShell.InitializeAsync()
         {
             RegionController = CreateController();
             RegionController.Initialize(ContainerFactory, ModuleManager, ConfigProvider);
@@ -91,6 +92,8 @@ namespace Moryx.ClientFramework.Shell
 
             Items.AddRange(WrapModules(enabledModules));
             History.WorkspaceChanged += HistoryOnWorkspaceChanged;
+
+            return Task.CompletedTask;
         }
 
         /// <summary>

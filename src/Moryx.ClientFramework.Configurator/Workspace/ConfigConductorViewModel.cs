@@ -4,6 +4,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using Caliburn.Micro;
@@ -47,9 +48,9 @@ namespace Moryx.ClientFramework.Configurator
         /// <summary>
         /// Called when initializing.
         /// </summary>
-        protected override void OnInitialize()
+        protected override async Task OnInitializeAsync(CancellationToken cancellationToken)
         {
-            base.OnInitialize();
+            await base.OnInitializeAsync(cancellationToken);
 
             SaveAndRestartCmd = new AsyncCommand(SaveAndRestart);
             SaveAllCmd = new AsyncCommand(SaveAll);
@@ -61,7 +62,7 @@ namespace Moryx.ClientFramework.Configurator
                 Items.Add(screen);
             }
 
-            ActivateItem(Items.First());
+            await ActivateItemAsync(Items.First(), cancellationToken);
         }
 
         /// <summary>

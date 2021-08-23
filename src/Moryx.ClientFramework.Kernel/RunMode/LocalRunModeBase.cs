@@ -11,7 +11,7 @@ using Moryx.ClientFramework.Shell;
 namespace Moryx.ClientFramework.Kernel
 {
     /// <summary>
-    /// Base class for local run modes. 
+    /// Base class for local run modes.
     /// Will load <see cref="IClientModule"/> and <see cref="IModuleShell"/> from the app domain
     /// </summary>
     public abstract class LocalRunModeBase : RunModeBase
@@ -39,7 +39,7 @@ namespace Moryx.ClientFramework.Kernel
 
         #endregion
 
-        ///
+        /// <inheritdoc />
         public override void Initialize()
         {
             base.Initialize();
@@ -63,7 +63,7 @@ namespace Moryx.ClientFramework.Kernel
                 Assemblies = Assemblies.Select(m => new AssemblyConfig(Path.GetFileName(m.Location))).ToList()
             });
 
-            // Raise AssemblyLoaded event for earch assembly
+            // Raise AssemblyLoaded event for each assembly
             foreach (var module in Assemblies)
             {
                 RaiseAssemblyLoaded(new AssemblyConfig(Path.GetFileName(module.Location)));
@@ -75,7 +75,7 @@ namespace Moryx.ClientFramework.Kernel
         ///
         public override void LoadModulesConfiguration()
         {
-            
+
         }
     }
 }

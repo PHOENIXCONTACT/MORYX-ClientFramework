@@ -3,6 +3,8 @@
 
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using Caliburn.Micro;
 using Moryx.ClientFramework;
 using Moryx.Container;
@@ -30,10 +32,8 @@ namespace Moryx.Tools.WcfClient.UI.Viewer
             }
         }
 
-        /// <summary>
-        /// Called when initializing this screen.
-        /// </summary>
-        protected override void OnInitialize()
+        /// <inheritdoc />
+        protected override Task OnInitializeAsync(CancellationToken cancellationToken)
         {
             ClientFactory.ClientInfoChanged += OnClientInfoChanged;
             Clients = new ObservableCollection<WcfClientInfoViewModel>();
@@ -41,7 +41,7 @@ namespace Moryx.Tools.WcfClient.UI.Viewer
             foreach (var client in ClientFactory.ClientInfos)
                 Clients.Add(new WcfClientInfoViewModel(client));
 
-            base.OnInitialize();
+            return Task.CompletedTask;
         }
 
         /// <summary>

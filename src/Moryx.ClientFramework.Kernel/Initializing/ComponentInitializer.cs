@@ -20,12 +20,12 @@ namespace Moryx.ClientFramework.Kernel
     {
         #region Dependency Injection
 
-        /// 
+        /// <inheritdoc />
         public IEnumerable<IInitializable> Initializables { get; set; }
 
         #endregion
 
-        /// 
+        /// <inheritdoc />
         public void Initialize()
         {
             Starting?.Invoke(this, Initializables.Count());
@@ -69,13 +69,13 @@ namespace Moryx.ClientFramework.Kernel
             }
         }
 
-        ///
+        /// <inheritdoc />
         public event EventHandler<IInitializable> InitializingComponent;
 
-        ///
+        /// <inheritdoc />
         public event EventHandler<int> Starting;
 
-        ///
+        /// <inheritdoc />
         public event EventHandler Completed;
 
         /// <summary>

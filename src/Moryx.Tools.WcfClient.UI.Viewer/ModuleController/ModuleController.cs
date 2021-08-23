@@ -1,6 +1,7 @@
 // Copyright (c) 2020, Phoenix Contact GmbH & Co. KG
 // Licensed under the Apache License, Version 2.0
 
+using System.Threading.Tasks;
 using System.Windows.Media;
 using Moryx.ClientFramework;
 using Moryx.Tools.WcfClient.UI.Viewer.Properties;
@@ -24,20 +25,22 @@ namespace Moryx.Tools.WcfClient.UI.Viewer
             "S75.15,84.1,69.05,84.1z");
 
         /// <inheritdoc />
-        protected override void OnInitialize()
+        protected override Task OnInitializeAsync()
         {
             DisplayName = Strings.ModuleController_Title;
+            return Task.CompletedTask;
         }
 
         /// <inheritdoc />
-        protected override void OnActivate()
+        protected override Task OnActivateAsync()
         {
-
+            return Task.CompletedTask;
         }
 
         /// <inheritdoc />
-        protected override void OnDeactivate(bool close)
+        protected override Task OnDeactivateAsync(bool close)
         {
+            return Task.CompletedTask;
         }
 
         /// <inheritdoc />

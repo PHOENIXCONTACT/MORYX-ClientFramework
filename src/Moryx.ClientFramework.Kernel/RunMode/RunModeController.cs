@@ -21,7 +21,7 @@ namespace Moryx.ClientFramework.Kernel
 
         public IRunMode Current { get; private set; }
         public IContainer Container { get; set; }
-        
+
         public IEnumerable<IRunMode> PossibleRunModes { get; set; }
         public IKernelConfigManager ConfigManager { get; set; }
 
@@ -34,7 +34,7 @@ namespace Moryx.ClientFramework.Kernel
 
         #endregion
 
-        ///
+        /// <inheritdoc />
         public void Initialize()
         {
             _appConfig = ConfigManager.GetConfiguration<AppConfig>();
@@ -44,10 +44,10 @@ namespace Moryx.ClientFramework.Kernel
 
             Current.AssembliesLoaded += OnAssembliesLoaded;
             Current.LoadModulesConfigurationCompleted += OnModulesConfigurationLoaded;
-            Current.ExeptionOccured += OnExceptionOccured;
+            Current.ExceptionOccurred += OnExceptionOccurred;
         }
 
-        /// 
+        /// <inheritdoc />
         public void Start()
         {
             Current.Initialize();
@@ -106,7 +106,7 @@ namespace Moryx.ClientFramework.Kernel
         /// <summary>
         /// Called when [exeption occured].
         /// </summary>
-        private static void OnExceptionOccured(object sender, ClientException e)
+        private static void OnExceptionOccurred(object sender, ClientException e)
         {
             MessageBox.Show(e.DisplayText + "\r\n\r\n" + ExceptionPrinter.Print(e), e.Message, MessageBoxButton.OK,
                 MessageBoxImage.Error);

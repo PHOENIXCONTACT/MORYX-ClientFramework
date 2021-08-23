@@ -1,6 +1,8 @@
 // Copyright (c) 2020, Phoenix Contact GmbH & Co. KG
 // Licensed under the Apache License, Version 2.0
 
+using System.Threading;
+using System.Threading.Tasks;
 using Caliburn.Micro;
 using Moryx.Configuration;
 
@@ -52,14 +54,11 @@ namespace Moryx.ClientFramework.Configurator
         ///
         public abstract string ImageSource { get; }
 
-        /// <summary>
-        /// Called when initializing.
-        /// </summary>
-        protected override void OnInitialize()
+        /// <inheritdoc />
+        protected override Task OnInitializeAsync(CancellationToken cancellationToken)
         {
-            base.OnInitialize();
-
             Config = KernelConfigManager.GetConfiguration<T>();
+            return Task.CompletedTask;
         }
 
         ///

@@ -1,6 +1,8 @@
 // Copyright (c) 2020, Phoenix Contact GmbH & Co. KG
 // Licensed under the Apache License, Version 2.0
 
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Media;
 using Caliburn.Micro;
 
@@ -62,28 +64,26 @@ namespace Moryx.ClientFramework.Shell
         {
             var oldScreen = CurrentWorkspace;
             if (oldScreen != null)
-                ScreenExtensions.TryDeactivate(oldScreen, false);
+                ScreenExtensions.TryDeactivateAsync(oldScreen, false);
 
             CurrentWorkspace = workspace;
-            ScreenExtensions.TryActivate(CurrentWorkspace);
+            ScreenExtensions.TryActivateAsync(CurrentWorkspace);
         }
 
         /// <inheritdoc />
-        protected override void OnActivate()
+        protected override async Task OnActivateAsync(CancellationToken cancellationToken)
         {
-            Module.Activate();
-
-            base.OnActivate();
+            await Module.ActivateAsync();
+            await base.OnActivateAsync(cancellationToken);
         }
 
         /// <inheritdoc />
-        protected override void OnDeactivate(bool close)
+        protected override async Task OnDeactivateAsync(bool close, CancellationToken cancellationToken)
         {
-            Module.Deactivate(close);
+            await Module.DeactivateAsync(close);
+            await ScreenExtensions.TryDeactivateAsync(CurrentWorkspace, close, cancellationToken);
 
-            ScreenExtensions.TryDeactivate(CurrentWorkspace, close);
-
-            base.OnDeactivate(close);
+            await base.OnDeactivateAsync(close, cancellationToken);
         }
 
         #endregion

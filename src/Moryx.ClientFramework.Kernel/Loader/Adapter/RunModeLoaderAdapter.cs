@@ -29,7 +29,7 @@ namespace Moryx.ClientFramework.Kernel
             runMode.AssemblyLoaded += OnAssemblyLoaded;
             runMode.AssembliesLoaded += OnAssembliesLoaded;
             runMode.LoadModulesConfigurationCompleted += OnModulesConfigurationLoaded;
-            runMode.ExeptionOccured += OnExceptionOccured;
+            runMode.ExceptionOccurred += OnExceptionOccurred;
         }
 
         /// <summary>
@@ -42,9 +42,9 @@ namespace Moryx.ClientFramework.Kernel
         }
 
         /// <summary>
-        /// Called when a exception occured
+        /// Called when a exception occurred
         /// </summary>
-        private void OnExceptionOccured(object sender, ClientException e)
+        private void OnExceptionOccurred(object sender, ClientException e)
         {
             RaiseIndicateError(e);
         }
@@ -54,7 +54,7 @@ namespace Moryx.ClientFramework.Kernel
         /// </summary>
         private void OnModulesConfigurationLoaded(object sender, ModulesConfiguration e)
         {
-            
+
         }
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace Moryx.ClientFramework.Kernel
         /// </summary>
         private void OnAssembliesLoaded(object sender, IEnumerable<Assembly> e)
         {
-            
+
         }
 
         /// <summary>
