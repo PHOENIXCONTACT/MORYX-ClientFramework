@@ -2,6 +2,7 @@
 // Licensed under the Apache License, Version 2.0
 
 using System.Collections.Generic;
+using Moryx.ClientFramework.Initializing;
 using Moryx.Modules;
 using NUnit.Framework;
 

@@ -10,7 +10,6 @@ using Moryx.Container;
 using Moryx.Logging;
 using Moryx.Modules;
 using Moryx.Threading;
-using Moryx.Tools.Wcf;
 
 namespace Moryx.ClientFramework
 {
@@ -43,11 +42,6 @@ namespace Moryx.ClientFramework
         /// Logger management to create module based logger
         /// </summary>
         public ILoggerManagement LoggerManagement { get; set; }
-
-        /// <summary>
-        /// ClientFactoy for consuming wcf services
-        /// </summary>
-        public IWcfClientFactory ClientFactoy { get; set; }
 
         /// <summary>
         /// Gets or sets the user information provider to recieve user based information
@@ -127,7 +121,6 @@ namespace Moryx.ClientFramework
 
             //add several components to internal container
             Container.SetInstance(ConfigProvider)
-                .SetInstance(ClientFactoy)
                 .SetInstance(Config)
                 .SetInstance(UserInfoProvider);
 

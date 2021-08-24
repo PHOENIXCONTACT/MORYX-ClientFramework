@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
-    <TargetFramework>net461</TargetFramework>
+    <TargetFrameworks>net461;netcoreapp3.1;net5.0-windows</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <UseWPF>true</UseWPF>
     <Description>Kernel for the MORYX client framework with infrastructure and shared components.</Description>
@@ -9,7 +9,7 @@
     <PackageTags>MORYX;WPF;UI;Client;Kernel;Components</PackageTags>
   </PropertyGroup>
 
-  <ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)'=='net461'">
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System.Xaml" />
@@ -21,6 +21,7 @@
     <PackageReference Include="Caliburn.Micro" />
     <PackageReference Include="Castle.Windsor" />
     <PackageReference Include="CommandLineParser" />
+
     <PackageReference Include="Moryx.Container" />
   </ItemGroup>
 

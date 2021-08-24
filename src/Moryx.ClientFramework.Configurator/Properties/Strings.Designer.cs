@@ -178,7 +178,7 @@ namespace Moryx.ClientFramework.Configurator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If you have selected an RunMode you can open the configurator again with the command line argument &quot;--configurator&quot; or press CTRL at startup..
+        ///   Looks up a localized string similar to If you have selected a RunMode you can open the configurator again with the command line argument &quot;--configurator&quot; or press CTRL at startup..
         /// </summary>
         public static string AppConfigView_RunMode_Hint {
             get {

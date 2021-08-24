@@ -3,7 +3,7 @@
 
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Interactivity;
+using Microsoft.Xaml.Behaviors;
 
 namespace Moryx.Controls
 {
@@ -11,7 +11,7 @@ namespace Moryx.Controls
     /// Makes <see cref="PasswordBox.Password"/> bindable
     /// </summary>
     public class PasswordBoxBehaviour : Behavior<PasswordBox>
-    { 
+    {
         /// <summary>
         /// Dependency property for the <see cref="PasswordBox.Password"/>
         /// </summary>

@@ -8,7 +8,6 @@ using Caliburn.Micro;
 using Moryx.ClientFramework.Dialog;
 using Moryx.ClientFramework.History;
 using Moryx.Container;
-using Moryx.Tools.Wcf;
 
 namespace Moryx.ClientFramework.Shell
 {
@@ -52,11 +51,6 @@ namespace Moryx.ClientFramework.Shell
         /// <summary>
         /// Dependency provided for the shells local container
         /// </summary>
-        public IWcfClientFactory WcfClientFactory { get; set; }
-
-        /// <summary>
-        /// Dependency provided for the shells local container
-        /// </summary>
         public IAppDataConfigManager AppDataConfigManager { get; set; }
 
         /// <summary>
@@ -85,7 +79,6 @@ namespace Moryx.ClientFramework.Shell
             //register components needed in the shell container
             RegionController.Register(KernelConfigManager);
             RegionController.Register(WindowManager);
-            RegionController.Register(WcfClientFactory);
             RegionController.Register(AppDataConfigManager);
 
             var enabledModules = ModuleManager.EnabledModules.OfType<IWorkspaceModule>();

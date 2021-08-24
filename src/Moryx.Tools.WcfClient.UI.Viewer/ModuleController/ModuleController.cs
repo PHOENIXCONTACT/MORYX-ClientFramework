@@ -4,6 +4,7 @@
 using System.Threading.Tasks;
 using System.Windows.Media;
 using Moryx.ClientFramework;
+using Moryx.Tools.Wcf;
 using Moryx.Tools.WcfClient.UI.Viewer.Properties;
 
 namespace Moryx.Tools.WcfClient.UI.Viewer
@@ -24,9 +25,17 @@ namespace Moryx.Tools.WcfClient.UI.Viewer
             "s4.9-11,11-11s11,4.9,11,11S25.15,55.1,19.05,55.1z M69.05,84.1c-6.1,0-11-4.9-11-11s4.9-11,11-11c6.1,0,11,4.9,11,11" +
             "S75.15,84.1,69.05,84.1z");
 
+
+        /// <summary>
+        /// ClientFactoy for consuming wcf services
+        /// </summary>
+        public IWcfClientFactory ClientFactory { get; set; }
+
         /// <inheritdoc />
         protected override Task OnInitializeAsync()
         {
+            Container.SetInstance(ClientFactory);
+
             DisplayName = Strings.ModuleController_Title;
             return Task.CompletedTask;
         }

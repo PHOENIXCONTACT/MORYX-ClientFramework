@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Threading;
 
-namespace Moryx.ClientFramework.Kernel
+namespace Moryx.ClientFramework.Threading
 {
     /// <summary>
     /// Static class which holds the current dispatcher thread

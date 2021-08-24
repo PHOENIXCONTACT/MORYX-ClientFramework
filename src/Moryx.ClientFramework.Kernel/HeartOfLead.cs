@@ -16,6 +16,7 @@ using System.Windows.Threading;
 using Caliburn.Micro;
 using CommandLine;
 using Moryx.ClientFramework.Localization;
+using Moryx.ClientFramework.Threading;
 using Moryx.Container;
 using Moryx.Logging;
 using Moryx.Threading;
