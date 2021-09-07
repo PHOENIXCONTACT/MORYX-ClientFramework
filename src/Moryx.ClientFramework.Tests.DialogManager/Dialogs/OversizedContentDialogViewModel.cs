@@ -2,6 +2,8 @@
 // Licensed under the Apache License, Version 2.0
 
 using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using Moryx.ClientFramework.Commands;
@@ -34,20 +36,20 @@ namespace Moryx.ClientFramework.Tests.DialogManager
             }
         }
 
-        protected override void OnInitialize()
+        protected override Task OnInitializeAsync(CancellationToken cancellationToken)
         {
             DisplayName = "Oversized Content™";
 
             CreateTree(TreeItemModels, 1);
 
-            CancelCmd = new DelegateCommand(CloseCommand);
+            CancelCmd = new AsyncCommand(CloseCommand);
 
-            base.OnInitialize();
+            return Task.CompletedTask;
         }
 
-        public void CloseCommand(object obj)
+        public Task CloseCommand(object obj)
         {
-            TryClose(true);
+            return TryCloseAsync(true);
         }
 
         private void CreateTree(List<TreeItemModel> treeModels, int counter)

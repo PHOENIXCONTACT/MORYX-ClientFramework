@@ -9,7 +9,7 @@ namespace Moryx.ClientFramework
     //TODO: remove copy and paste!!!
 
     /// <summary>
-    /// The ModuleWorkspace is the main visible part. 
+    /// The ModuleWorkspace is the main visible part.
     /// In the default shell the workspace will be loaded into the white big box
     /// </summary>
     public partial class ModuleWorkspace<T> where T : class
@@ -95,9 +95,9 @@ namespace Moryx.ClientFramework
             public event EventHandler<WorkspaceInteraction> InteractionChanged;
         }
     }
-    
+
     /// <summary>
-    /// The ModuleWorkspace is the main visible part. 
+    /// The ModuleWorkspace is the main visible part.
     /// In the default shell the workspace will be loaded into the white big box
     /// </summary>
     public class ModuleWorkspace : Screen, IModuleWorkspace

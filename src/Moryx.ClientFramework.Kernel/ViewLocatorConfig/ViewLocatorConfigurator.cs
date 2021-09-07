@@ -37,7 +37,7 @@ namespace Moryx.ClientFramework.Kernel
         public void ActivateSet(string setName)
         {
             var presetToActivate = Presets.FirstOrDefault(p => p.Name == setName);
-            
+
             if (presetToActivate != null)
             {
                 ActivateSet(presetToActivate);

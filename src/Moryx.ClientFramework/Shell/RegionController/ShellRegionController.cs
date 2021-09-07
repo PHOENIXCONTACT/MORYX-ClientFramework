@@ -9,7 +9,7 @@ using Moryx.Container;
 namespace Moryx.ClientFramework.Shell
 {
     /// <summary>
-    /// Shell region controller base which handles the container structure for the 
+    /// Shell region controller base which handles the container structure for the
     /// Shell regions and configuration.
     /// Will host a container with multiple regions in it
     /// </summary>
@@ -29,7 +29,7 @@ namespace Moryx.ClientFramework.Shell
 
         #endregion
 
-        ///
+        /// <inheritdoc />
         public virtual void Initialize(IModuleContainerFactory containerFactory, IModuleManager moduleManager, IConfigProvider configProvider)
         {
             RegionConfig = configProvider.GetConfiguration<ShellRegionConfig>();
@@ -54,13 +54,13 @@ namespace Moryx.ClientFramework.Shell
             LoadPlugins(ShellContainer);
         }
 
-        ///
+        /// <inheritdoc />
         public void Register<T>(T component)  where T : class
         {
             ShellContainer.SetInstance(component);
         }
 
-        ///
+        /// <inheritdoc />
         public Region FetchRegion(string regionName = null)
         {
             var config = RegionConfig.Regions.First(r => r.RegionName == regionName);

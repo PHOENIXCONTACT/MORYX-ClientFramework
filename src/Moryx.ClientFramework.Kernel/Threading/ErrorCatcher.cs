@@ -10,7 +10,7 @@ using Moryx.Tools;
 namespace Moryx.ClientFramework.Kernel
 {
     /// <summary>
-    /// The error catcher of the client framework. will write the crash to the crashlog
+    /// The error catcher of the client framework. will write the crash to the crash log
     /// </summary>
     [KernelComponent(typeof(IErrorCatcher))]
     public class ErrorCatcher : IErrorCatcher, ILoggingComponent

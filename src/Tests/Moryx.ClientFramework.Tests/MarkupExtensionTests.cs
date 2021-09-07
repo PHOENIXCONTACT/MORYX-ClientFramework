@@ -4,8 +4,6 @@
 using System;
 using System.Collections.Generic;
 using System.Windows;
-using Moryx.ClientFramework.Tests.Mocks;
-using Moryx.ClientFramework.UI;
 using Moryx.Users;
 using Moq;
 using NUnit.Framework;
@@ -76,10 +74,10 @@ namespace Moryx.ClientFramework.Tests
             Assert.AreEqual(result, GetProvidedValue<Visibility>(typeof(AccessVisibilitySwapExtension), access));
         }
 
-        private static T GetProvidedValue<T>(Type extension, string operation) 
+        private static T GetProvidedValue<T>(Type extension, string operation)
         {
             var ext = (OperationAccessExtensionBase) Activator.CreateInstance(extension);
-            
+
             ext.Operation = operation;
 
             var serviceProviderMock = new Mock<IServiceProvider>();

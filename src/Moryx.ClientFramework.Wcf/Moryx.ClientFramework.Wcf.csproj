@@ -1,15 +1,14 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net461;netcoreapp3.1;net5.0-windows</TargetFrameworks>
+    <TargetFramework>net461</TargetFramework>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <UseWPF>true</UseWPF>
-    <Description>Simple client shell implementation to host MORYX WPF modules.</Description>
+    <Description>Wcf integration in ClientFramework</Description>
     <CreatePackage>true</CreatePackage>
     <PackageTags>MORYX;WPF;UI;Client;Shell;Modules;Theme</PackageTags>
   </PropertyGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)'=='net461'">
+  <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System.Xaml" />
@@ -17,11 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Caliburn.Micro" />
+    <PackageReference Include="Moryx.Tools.Wcf" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Moryx.WpfToolkit\Moryx.WpfToolkit.csproj" />
     <ProjectReference Include="..\Moryx.ClientFramework\Moryx.ClientFramework.csproj" />
   </ItemGroup>
 

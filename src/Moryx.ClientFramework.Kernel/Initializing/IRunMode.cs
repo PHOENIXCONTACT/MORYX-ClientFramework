@@ -41,7 +41,7 @@ namespace Moryx.ClientFramework.Kernel
         /// <summary>
         /// Occurs when an exeption occured.
         /// </summary>
-        event EventHandler<ClientException> ExeptionOccured;
+        event EventHandler<ClientException> ExceptionOccurred;
 
         /// <summary>
         /// Gets the modules configuration.

@@ -23,12 +23,12 @@ namespace Moryx.ClientFramework.Kernel
         {
             var moduleManager = (IModuleManager) component;
 
-            moduleManager.StartInitilizingModules += OnStartInitilizingModules;
+            moduleManager.StartInitializingModules += OnStartInitializingModules;
             moduleManager.StartInitializeModule += OnStartInitializeModule;
             moduleManager.InitializingModuleDone += OnInitializingModuleDone;
         }
 
-        private void OnStartInitilizingModules(object sender, int i)
+        private void OnStartInitializingModules(object sender, int i)
         {
             RaiseAddToMax(i);
         }

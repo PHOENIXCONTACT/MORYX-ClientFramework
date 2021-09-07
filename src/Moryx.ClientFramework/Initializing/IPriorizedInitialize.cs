@@ -3,7 +3,7 @@
 
 using Moryx.Modules;
 
-namespace Moryx.ClientFramework.Kernel
+namespace Moryx.ClientFramework.Initializing
 {
     /// <summary>
     /// Runlevel for the <see cref="IPriorizedInitialize"/> to set the priority

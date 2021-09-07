@@ -1,11 +1,12 @@
 // Copyright (c) 2020, Phoenix Contact GmbH & Co. KG
 // Licensed under the Apache License, Version 2.0
 
+using Moryx.ClientFramework.Initializing;
 using Moryx.Container;
 using Moryx.Modules;
 using Moryx.Tools.Wcf;
 
-namespace Moryx.ClientFramework.Kernel
+namespace Moryx.ClientFramework.Wcf
 {
     /// <summary>
     /// Wcf client factory to crate wcf clients
@@ -31,7 +32,7 @@ namespace Moryx.ClientFramework.Kernel
 
         #endregion
 
-        /// 
+        /// <inheritdoc />
         public void Initialize()
         {
             var runtimeConfig = ConfigManager.GetConfiguration<RuntimeConfig>();

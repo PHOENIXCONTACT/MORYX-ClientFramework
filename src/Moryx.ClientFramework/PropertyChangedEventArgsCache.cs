@@ -32,10 +32,10 @@ namespace Moryx.ClientFramework
         /// <summary>
         /// The global instance of the cache.
         /// </summary>
-        public static PropertyChangedEventArgsCache Instance => _instance ?? (_instance = new PropertyChangedEventArgsCache());
+        public static PropertyChangedEventArgsCache Instance => _instance ??= new PropertyChangedEventArgsCache();
 
         /// <summary>
-        /// Retrieves a <see cref="PropertyChangedEventArgs"/> instance for the specified property, 
+        /// Retrieves a <see cref="PropertyChangedEventArgs"/> instance for the specified property,
         /// creating it and adding it to the cache if necessary.
         /// </summary>
         /// <param name="propertyName">The name of the property that changed.</param>

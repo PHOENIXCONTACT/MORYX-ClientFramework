@@ -23,19 +23,14 @@ namespace Moryx.ClientFramework.Dialog
             Image = image;
         }
 
-        /// <inheritdoc />
         public MessageBoxOptions Result => _selection;
 
-        /// <inheritdoc />
         public bool OkVisible => IsVisible(MessageBoxOptions.Ok);
 
-        /// <inheritdoc />
         public bool CancelVisible => IsVisible(MessageBoxOptions.Cancel);
 
-        /// <inheritdoc />
         public bool YesVisible => IsVisible(MessageBoxOptions.Yes);
 
-        /// <inheritdoc />
         public bool NoVisible => IsVisible(MessageBoxOptions.No);
 
         /// <inheritdoc />
@@ -62,17 +57,15 @@ namespace Moryx.ClientFramework.Dialog
             Select(MessageBoxOptions.No);
         }
 
-        /// <inheritdoc />
-        private bool IsVisible(MessageBoxOptions option)
-        {
-            return (Options & option) == option;
-        }
-
-        /// <inheritdoc />
         private void Select(MessageBoxOptions option)
         {
             _selection = option;
-            TryClose();
+            TryCloseAsync();
+        }
+
+        private bool IsVisible(MessageBoxOptions option)
+        {
+            return (Options & option) == option;
         }
 
         /// <inheritdoc />
@@ -90,7 +83,6 @@ namespace Moryx.ClientFramework.Dialog
                 _image = value;
 
                 HandleIconVisibility(_image);
-
                 NotifyOfPropertyChange(() => Image);
             }
         }

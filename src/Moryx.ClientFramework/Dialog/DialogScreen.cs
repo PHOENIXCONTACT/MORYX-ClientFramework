@@ -1,6 +1,7 @@
 // Copyright (c) 2020, Phoenix Contact GmbH & Co. KG
 // Licensed under the Apache License, Version 2.0
 
+using System.Threading.Tasks;
 using Caliburn.Micro;
 
 namespace Moryx.ClientFramework.Dialog
@@ -12,11 +13,11 @@ namespace Moryx.ClientFramework.Dialog
     {
         /// <inheritdoc />
         // ReSharper disable once OptionalParameterHierarchyMismatch
-        public override void TryClose(bool? dialogResult = null)
+        public override Task TryCloseAsync(bool? dialogResult = null)
         {
             Result = dialogResult.HasValue && dialogResult.Value;
 
-            base.TryClose(dialogResult);
+            return base.TryCloseAsync(dialogResult);
         }
 
         /// <inheritdoc />

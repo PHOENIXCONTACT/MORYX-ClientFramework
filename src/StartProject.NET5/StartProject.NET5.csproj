@@ -1,25 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
-    <TargetFramework>net461</TargetFramework>
+    <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
     <OutputType>WinExe</OutputType>
     <StartupObject>StartProject.Program</StartupObject>
     <ApplicationIcon>favicon.ico</ApplicationIcon>
+    <RootNamespace>StartProject</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xaml" />
-    <Reference Include="WindowsBase" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Common.Logging.Log4Net208" Version="3.4.1" />
-    <PackageReference Include="log4net" Version="2.0.8" />
-
     <ProjectReference Include="..\Moryx.ClientFramework.Configurator\Moryx.ClientFramework.Configurator.csproj" />
     <ProjectReference Include="..\Moryx.ClientFramework.Kernel\Moryx.ClientFramework.Kernel.csproj" />
     <ProjectReference Include="..\Moryx.ClientFramework.SimpleShell\Moryx.ClientFramework.SimpleShell.csproj" />
@@ -27,13 +17,6 @@
     <ProjectReference Include="..\Moryx.ClientFramework.Tests.HistoryWriter\Moryx.ClientFramework.Tests.HistoryWriter.csproj" />
     <ProjectReference Include="..\Moryx.ClientFramework.Tests.NotifyAndEditor\Moryx.ClientFramework.Tests.NotifyAndEditor.csproj" />
     <ProjectReference Include="..\Moryx.ClientFramework.Tests.Playground\Moryx.ClientFramework.Tests.Playground.csproj" />
-    <ProjectReference Include="..\Moryx.Tools.WcfClient.UI.Viewer\Moryx.Tools.WcfClient.UI.Viewer.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Config\log4net.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
 </Project>

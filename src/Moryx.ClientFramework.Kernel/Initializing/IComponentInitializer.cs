@@ -29,7 +29,7 @@ namespace Moryx.ClientFramework.Kernel
         event EventHandler<IInitializable> InitializingComponent;
 
         /// <summary>
-        /// Occurs when starting to initilaize the whole components
+        /// Occurs when starting to initialize the whole components
         /// </summary>
         event EventHandler<int> Starting;
 

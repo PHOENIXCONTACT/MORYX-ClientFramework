@@ -3,13 +3,15 @@
 
 using System;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using Moryx.ClientFramework.Shell;
 using Moryx.Threading;
 
 namespace Moryx.ClientFramework.Configurator
 {
     /// <summary>
-    /// Spezialized shell for the configurator
+    /// Specialized shell for the configurator
     /// </summary>
     [ModuleShell("ConfigShell"), ComponentForRunMode(KernelConstants.CONFIG_RUNMODE)]
     public class ConfigShellViewModel : ShellViewModelBase
@@ -26,23 +28,25 @@ namespace Moryx.ClientFramework.Configurator
         #endregion
 
         /// <inheritdoc />
-        protected override void OnInitialize()
+        protected override async Task OnInitializeAsync(CancellationToken cancellationToken)
         {
+            await base.OnInitializeAsync(cancellationToken);
+
             SelectModule(Items.First());
         }
 
         /// <inheritdoc />
-        protected override void OnActivate()
+        protected override async Task OnActivateAsync(CancellationToken cancellationToken)
         {
-            base.OnActivate();
+            await base.OnActivateAsync(cancellationToken);
 
             _watchWorker = ParallelOperations.ScheduleExecution(Worker, 2000, 2000);
         }
 
         /// <inheritdoc />
-        protected override void OnDeactivate(bool close)
+        protected override async Task OnDeactivateAsync(bool close, CancellationToken cancellationToken)
         {
-            base.OnDeactivate(close);
+            await base.OnDeactivateAsync(close, cancellationToken);
 
             ParallelOperations.StopExecution(_watchWorker);
         }

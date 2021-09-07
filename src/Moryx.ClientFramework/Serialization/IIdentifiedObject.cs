@@ -4,7 +4,7 @@
 namespace Moryx.ClientFramework.Serialization
 {
     /// <summary>
-    /// Represents a identifierd object with the property <see cref="IIdentifiedObject.Id"/>
+    /// Represents a identified object with the property <see cref="IIdentifiedObject.Id"/>
     /// </summary>
     public interface IIdentifiedObject
     {

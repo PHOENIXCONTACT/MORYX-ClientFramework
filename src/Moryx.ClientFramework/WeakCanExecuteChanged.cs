@@ -30,17 +30,17 @@ namespace Moryx.ClientFramework
         }
 
         /// <summary>
-        /// This is a weak event. Provides notification that the 
+        /// This is a weak event. Provides notification that the
         /// result of <c>ICommand.CanExecute</c> may be different.
         /// </summary>
         public event EventHandler CanExecuteChanged
         {
-            add { _canExecuteChanged.Add(value); }
-            remove { _canExecuteChanged.Remove(value); }
+            add => _canExecuteChanged.Add(value);
+            remove => _canExecuteChanged.Remove(value);
         }
 
         /// <summary>
-        /// Raises the <see cref="CanExecuteChanged"/> event for any listeners still alive, 
+        /// Raises the <see cref="CanExecuteChanged"/> event for any listeners still alive,
         /// and removes any references to garbage collected listeners.
         /// </summary>
         public void RaiseCanExecuteChanged()

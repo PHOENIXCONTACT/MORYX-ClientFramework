@@ -1,6 +1,7 @@
 // Copyright (c) 2020, Phoenix Contact GmbH & Co. KG
 // Licensed under the Apache License, Version 2.0
 
+using System.Threading.Tasks;
 using System.Windows.Media;
 
 namespace Moryx.ClientFramework.Tests.DialogManager
@@ -15,18 +16,20 @@ namespace Moryx.ClientFramework.Tests.DialogManager
                                                         "C401.035,270.282,389.13,224.898,353.985,203.905z M203.907,272.65c-37.966,0-68.744-30.777-68.744-68.744" +
                                                         "s30.778-68.744,68.744-68.744c37.965,0,68.744,30.777,68.744,68.744S241.873,272.65,203.907,272.65z");
 
-        protected override void OnInitialize()
+        protected override Task OnInitializeAsync()
         {
             //Config.DisplayName = "DialogManager";
-
+            return Task.CompletedTask;
         }
 
-        protected override void OnActivate()
+        protected override Task OnActivateAsync()
         {
+            return Task.CompletedTask;
         }
 
-        protected override void OnDeactivate(bool close)
+        protected override Task OnDeactivateAsync(bool close)
         {
+            return Task.CompletedTask;
         }
 
         protected override IModuleWorkspace OnCreateWorkspace()

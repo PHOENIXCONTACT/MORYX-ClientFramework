@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Moryx.Container;
 using Moryx.Logging;
 
@@ -34,35 +35,29 @@ namespace Moryx.ClientFramework.Kernel
 
         private readonly List<IClientModule> _initializedAndEnabled = new List<IClientModule>();
 
-        ///
+        /// <inheritdoc />
         public IEnumerable<IClientModule> EnabledModules => _initializedAndEnabled;
 
         #endregion
 
-        /// <summary>
-        /// Initialize this component and prepare it for incoming taks. This must only involve preparation and must not start
-        /// any active functionality and/or periodic execution of logic.
-        /// </summary>
-        public void Initialize()
+        /// <inheritdoc />
+        public async Task InitializeAsync()
         {
             Logger.Log(LogLevel.Debug, "Start initializing of {0} modules", ClientModules.Count());
 
-            RaiseStartInitilizingModules(ClientModules.Count());
+            RaiseStartInitializingModules(ClientModules.Count());
 
             foreach (var clientModule in ClientModules)
             {
                 RaiseStartInitializeModule(clientModule);
 
-                InitializeModule(clientModule);
+                await InitializeModule(clientModule);
 
                 RaiseInitializingModule(clientModule);
             }
         }
 
-        /// <summary>
-        /// Performs application-defined tasks associated with freeing, 
-        /// releasing, or resetting unmanaged resources.
-        /// </summary>
+        /// <inheritdoc />
         public void Dispose()
         {
             foreach (var clientModule in ClientModules.Where(m => m.Config.IsEnabled))
@@ -74,32 +69,31 @@ namespace Moryx.ClientFramework.Kernel
         /// <summary>
         /// Initializes a single module and raises events.
         /// </summary>
-        private void InitializeModule(IClientModule module)
+        private async Task InitializeModule(IClientModule module)
         {
             try
             {
-                module.Initialize();
+                await module.InitializeAsync();
 
                 if(module.Config.IsEnabled)
                   _initializedAndEnabled.Add(module);
             }
             catch (Exception ex)
             {
-                Logger.LogException(LogLevel.Error, ex, "Error while intializing module '{0}'", module.Name);
+                Logger.LogException(LogLevel.Error, ex, "Error while initializing module '{0}'", module.Name);
             }
         }
 
         #region Raise Events
 
-        /// 
+        /// <inheritdoc />
         public event EventHandler<IClientModule> StartInitializeModule;
 
-        /// 
-        public event EventHandler<int> StartInitilizingModules;
+        /// <inheritdoc />
+        public event EventHandler<int> StartInitializingModules;
 
-        /// 
+        /// <inheritdoc />
         public event EventHandler<IClientModule> InitializingModuleDone;
-
 
         /// <summary>
         /// Raises the StartInitializeModule event.
@@ -110,11 +104,11 @@ namespace Moryx.ClientFramework.Kernel
         }
 
         /// <summary>
-        /// Raises the StartInitilizingModules event.
+        /// Raises the StartInitializingModules event.
         /// </summary>
-        protected virtual void RaiseStartInitilizingModules(int e)
+        protected virtual void RaiseStartInitializingModules(int e)
         {
-            StartInitilizingModules?.Invoke(this, e);
+            StartInitializingModules?.Invoke(this, e);
         }
 
         /// <summary>

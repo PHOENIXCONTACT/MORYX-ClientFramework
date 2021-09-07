@@ -57,10 +57,10 @@ namespace Moryx.ClientFramework.Tests.Playground
         internal const string WorkspaceName = "PlaygroundWorkspaceViewModel";
 
         private bool _longActivated;
-        
+
         public ITaskRunner TaskRunner { get; set; }
         public IDialogManager DialogManager { get; set; }
-        
+
         public AsyncCommand LongCmd { get; private set; }
 
         public AsyncCommand LongReturnCmd { get; private set; }
@@ -68,17 +68,16 @@ namespace Moryx.ClientFramework.Tests.Playground
         public AsyncCommand ExceptionCmd { get; private set; }
 
 
-        protected override void OnInitialize()
+        protected override Task OnInitializeAsync(CancellationToken cancellationToken)
         {
-            base.OnInitialize();
-
             LongCmd = new AsyncCommand(LongMethod, CanExecuteLongMethod);
 
             LongReturnCmd = new AsyncCommand(LongReturnMethod);
 
             ExceptionCmd = new AsyncCommand(ExceptionMethod);
-        }
 
+            return Task.CompletedTask;
+        }
 
         #region ExceptionMethod
 

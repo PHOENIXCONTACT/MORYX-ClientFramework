@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
@@ -37,7 +38,7 @@ namespace Moryx.ClientFramework.Dialog
                 AttachCallback(dialogViewModel, () => callback(dialogViewModel));
 
             AttachFocusContext(dialogViewModel);
-            ActivateItem(dialogViewModel);
+            Task.Run(() => ActivateItemAsync(dialogViewModel));
         }
 
         /// <inheritdoc />
@@ -65,27 +66,29 @@ namespace Moryx.ClientFramework.Dialog
         /// <summary>
         /// Shows an async dialog with a typed result
         /// </summary>
-        private Task<TResult> ShowDialogAsync<TResult, TDialog>(TDialog dialogViewModel, Action<TaskCompletionSource<TResult>> callback)
+        private async Task<TResult> ShowDialogAsync<TResult, TDialog>(TDialog dialogViewModel, Action<TaskCompletionSource<TResult>> callback)
             where TDialog : IScreen
         {
             var tcs = new TaskCompletionSource<TResult>();
             AttachCallback(dialogViewModel, () => callback(tcs));
 
             AttachFocusContext(dialogViewModel);
-            ActivateItem(dialogViewModel);
+            await ActivateItemAsync(dialogViewModel);
 
-            return tcs.Task;
+            var callbackResult = await tcs.Task;
+            return callbackResult;
         }
 
         /// <summary>
-        /// Attaches the dialog callback to the deactivated event of the given sceen
+        /// Attaches the dialog callback to the deactivated event of the given screen
         /// </summary>
         private static void AttachCallback<T>(T dialogViewModel, Action callback) where T : IScreen
         {
-            void CallbackHandler(object sender, DeactivationEventArgs e)
+            Task CallbackHandler(object sender, DeactivationEventArgs e)
             {
                 dialogViewModel.Deactivated -= CallbackHandler;
                 callback();
+                return Task.CompletedTask;
             }
 
             dialogViewModel.Deactivated += CallbackHandler;
@@ -106,23 +109,22 @@ namespace Moryx.ClientFramework.Dialog
                 viewAware.ViewAttached -= CallbackHandler;
                 var view = (FrameworkElement) args.View;
 
-                RoutedEventHandler loadedCallback = null;
-                loadedCallback = delegate
+                void LoadedCallback(object sender, RoutedEventArgs e)
                 {
-                    view.Loaded -= loadedCallback;
+                    view.Loaded -= LoadedCallback;
 
                     // set the keyboard focus to the first focusable item of this UI
                     view.MoveFocus(new TraversalRequest(FocusNavigationDirection.First));
-                };
+                }
 
-                view.Loaded += loadedCallback;
+                view.Loaded += LoadedCallback;
             }
 
             viewAware.ViewAttached += CallbackHandler;
         }
 
         /// <inheritdoc />
-        public void ActivateItem(object item)
+        public async Task ActivateItemAsync(object item, CancellationToken cancellationToken = new CancellationToken())
         {
             ActiveItem = item as IScreen;
 
@@ -132,38 +134,40 @@ namespace Moryx.ClientFramework.Dialog
                 child.Parent = this;
             }
 
-            ActiveItem?.Activate();
+            if (ActiveItem != null)
+            {
+                await ActiveItem.ActivateAsync(cancellationToken);
+            }
 
             NotifyOfPropertyChange(() => ActiveItem);
             ActivationProcessed(this, new ActivationProcessedEventArgs
             {
-                Item = ActiveItem, Success = true
+                Item = ActiveItem,
+                Success = true
             });
         }
 
         /// <inheritdoc />
-        public void CloseItem(object item)
+        public async Task CloseItemAsync(object item)
         {
             if(item is IGuardClose guard)
             {
-                guard.CanClose(result =>
-                {
-                    if(result)
-                        CloseActiveItemCore();
-                });
+                var result = await guard.CanCloseAsync();
+                if (result)
+                    await CloseActiveItemCore();
             }
             else
-                CloseActiveItemCore();
+                await CloseActiveItemCore();
         }
 
-        /// <inheritdoc />
-        public void CloseActiveItemCore()
+        private async Task CloseActiveItemCore()
         {
             var oldItem = ActiveItem;
 
-            ActivateItem(null);
+            await ActivateItemAsync(null);
 
-            oldItem?.Deactivate(true);
+            if (oldItem != null)
+                await oldItem.DeactivateAsync(true);
         }
 
         /// <inheritdoc />
@@ -176,9 +180,9 @@ namespace Moryx.ClientFramework.Dialog
         }
 
         /// <inheritdoc />
-        public void DeactivateItem(object item, bool close)
+        public Task DeactivateItemAsync(object item, bool close, CancellationToken cancellationToken = new CancellationToken())
         {
-            CloseItem(item);
+            return CloseItemAsync(item);
         }
 
         #region Overloads

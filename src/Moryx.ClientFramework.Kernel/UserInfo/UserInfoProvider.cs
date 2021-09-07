@@ -8,7 +8,7 @@ using Moryx.Container;
 namespace Moryx.ClientFramework.Kernel
 {
     /// <summary>
-    /// Base implementation of the user info provider. 
+    /// Base implementation of the user info provider.
     /// The provider stores general user based information
     /// </summary>
     [KernelComponent(typeof(IUserInfoProvider))]
@@ -35,7 +35,7 @@ namespace Moryx.ClientFramework.Kernel
 
         #endregion
 
-        ///
+        /// <inheritdoc />
         public void InitializeOnce(string userName, List<string> groups, string firstName, string lastName)
         {
             if (_isInitialized)
@@ -47,7 +47,7 @@ namespace Moryx.ClientFramework.Kernel
             Groups = groups;
             FirstName = firstName;
             LastName = lastName;
-           
+
             _isInitialized = true;
         }
     }

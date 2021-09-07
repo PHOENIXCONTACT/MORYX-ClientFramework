@@ -1,6 +1,7 @@
 // Copyright (c) 2020, Phoenix Contact GmbH & Co. KG
 // Licensed under the Apache License, Version 2.0
 
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using Caliburn.Micro;
@@ -79,14 +80,13 @@ namespace Moryx.ClientFramework.UI
 
         private void SubscribeDeactivation(object source)
         {
-            var sourceScreen = source as IScreen;
-            if (sourceScreen != null)
+            if (source is IScreen sourceScreen)
             {
                 sourceScreen.Deactivated += SourceScreen_Deactivated;
             }
         }
 
-        private void SourceScreen_Deactivated(object sender, DeactivationEventArgs e)
+        private Task SourceScreen_Deactivated(object sender, DeactivationEventArgs e)
         {
             if (e.WasClosed)
             {
@@ -99,6 +99,8 @@ namespace Moryx.ClientFramework.UI
                 var view = GetView(sourceScreen);
                 _contentGrid.Children.Remove(view);
             }
+
+            return Task.CompletedTask;
         }
 
         private void BringToFront(UIElement control)

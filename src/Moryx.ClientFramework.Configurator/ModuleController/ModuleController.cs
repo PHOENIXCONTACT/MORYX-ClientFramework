@@ -3,6 +3,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Moryx.ClientFramework.Kernel;
 
 namespace Moryx.ClientFramework.Configurator
@@ -41,7 +42,7 @@ namespace Moryx.ClientFramework.Configurator
         /// <summary>
         /// Called when [initialize].
         /// </summary>
-        protected override void OnInitialize()
+        protected override Task OnInitializeAsync()
         {
             Container.LoadComponents<IConfigViewModel>();
 
@@ -53,20 +54,24 @@ namespace Moryx.ClientFramework.Configurator
 
             foreach (var preset in Presets.ToList())
                 Container.SetInstance(preset);
+
+            return Task.CompletedTask;
         }
 
         /// <summary>
         /// Called when [activate].
         /// </summary>
-        protected override void OnActivate()
+        protected override Task OnActivateAsync()
         {
+            return Task.CompletedTask;
         }
 
         /// <summary>
         /// Called when [deactivate].
         /// </summary>
-        protected override void OnDeactivate(bool close)
+        protected override Task OnDeactivateAsync(bool close)
         {
+            return Task.CompletedTask;
         }
 
         /// <summary>

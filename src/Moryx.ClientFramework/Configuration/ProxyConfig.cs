@@ -27,22 +27,21 @@ namespace Moryx.ClientFramework
 
         /// <summary>
         /// <c>True</c>, if the default proxy configuration of the machine shall be used.
-        /// The <see cref="P:Moryx.Tools.WcfClient.IProxyConfig.Address" /> and 
-        /// <see cref="P:Moryx.Tools.WcfClient.IProxyConfig.Port" /> properties are ignored then.
+
         /// </summary>
         [DataMember]
         public bool UseDefaultWebProxy { get; set; }
 
         /// <summary>
         /// The IP address or hostname of the proxy to be used.
-        /// This property is ignored if <see cref="P:Moryx.Tools.WcfClient.IProxyConfig.UseDefaultWebProxy" /> is <c>true</c>.
+        /// This property is ignored if <see cref="UseDefaultWebProxy" /> is <c>true</c>.
         /// </summary>
         [DataMember]
         public string Address { get; set; }
 
         /// <summary>
         /// The TCP port  of the proxy to be used.
-        /// This property is ignored if <see cref="P:Moryx.Tools.WcfClient.IProxyConfig.UseDefaultWebProxy" /> is <c>true</c>.
+        /// This property is ignored if <see cref="UseDefaultWebProxy" /> is <c>true</c>.
         /// </summary>
         [DataMember]
         public int Port { get; set; }

@@ -3,16 +3,16 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Caliburn.Micro;
 using Moryx.ClientFramework.Dialog;
 using Moryx.ClientFramework.History;
 using Moryx.Container;
-using Moryx.Tools.Wcf;
 
 namespace Moryx.ClientFramework.Shell
 {
     /// <summary>
-    /// Base view model for the application shells. 
+    /// Base view model for the application shells.
     /// </summary>
     public abstract class ShellViewModelBase : Conductor<ModuleWrapper>.Collection.OneActive, IModuleShell
     {
@@ -51,11 +51,6 @@ namespace Moryx.ClientFramework.Shell
         /// <summary>
         /// Dependency provided for the shells local container
         /// </summary>
-        public IWcfClientFactory WcfClientFactory { get; set; }
-
-        /// <summary>
-        /// Dependency provided for the shells local container
-        /// </summary>
         public IAppDataConfigManager AppDataConfigManager { get; set; }
 
         /// <summary>
@@ -76,7 +71,7 @@ namespace Moryx.ClientFramework.Shell
 
         #region IModuleShell
 
-        void IModuleShell.Initialize()
+        Task IModuleShell.InitializeAsync()
         {
             RegionController = CreateController();
             RegionController.Initialize(ContainerFactory, ModuleManager, ConfigProvider);
@@ -84,13 +79,14 @@ namespace Moryx.ClientFramework.Shell
             //register components needed in the shell container
             RegionController.Register(KernelConfigManager);
             RegionController.Register(WindowManager);
-            RegionController.Register(WcfClientFactory);
             RegionController.Register(AppDataConfigManager);
 
             var enabledModules = ModuleManager.EnabledModules.OfType<IWorkspaceModule>();
 
             Items.AddRange(WrapModules(enabledModules));
             History.WorkspaceChanged += HistoryOnWorkspaceChanged;
+
+            return Task.CompletedTask;
         }
 
         /// <summary>

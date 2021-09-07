@@ -2,6 +2,8 @@
 // Licensed under the Apache License, Version 2.0
 
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using Caliburn.Micro;
 using Moryx.Controls.Demo.ViewModels;
 
@@ -31,10 +33,10 @@ namespace Moryx.Controls.Demo.Shell
             });
         }
 
-        protected override void OnInitialize()
+        protected override async Task OnInitializeAsync(CancellationToken cancellationToken)
         {
-            base.OnInitialize();
-            ActivateItem(Items.First());
+            await base.OnInitializeAsync(cancellationToken);
+            await ActivateItemAsync(Items.First(), cancellationToken);
         }
     }
 }

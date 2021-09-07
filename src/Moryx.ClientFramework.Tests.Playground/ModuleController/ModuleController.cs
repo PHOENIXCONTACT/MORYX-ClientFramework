@@ -1,6 +1,7 @@
 // Copyright (c) 2020, Phoenix Contact GmbH & Co. KG
 // Licensed under the Apache License, Version 2.0
 
+using System.Threading.Tasks;
 using System.Windows.Media;
 using Moryx.ClientFramework.Tests.Playground.Properties;
 using Moryx.WpfToolkit;
@@ -13,16 +14,19 @@ namespace Moryx.ClientFramework.Tests.Playground
     {
         public override Geometry Icon => MdiShapeFactory.GetShapeGeometry(MdiShapeType.Weather_Cloudy);
 
-        protected override void OnInitialize()
+        protected override Task OnInitializeAsync()
         {
+            return Task.CompletedTask;
         }
 
-        protected override void OnActivate()
+        protected override Task OnActivateAsync()
         {
+            return Task.CompletedTask;
         }
 
-        protected override void OnDeactivate(bool close)
+        protected override Task OnDeactivateAsync(bool close)
         {
+            return Task.CompletedTask;
         }
 
         protected override IModuleWorkspace OnCreateWorkspace()

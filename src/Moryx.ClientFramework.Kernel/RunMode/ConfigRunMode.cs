@@ -25,7 +25,7 @@ namespace Moryx.ClientFramework.Kernel
                 return delegate(Type type)
                 {
                     var runModeAttr = type.GetCustomAttribute<ComponentForRunModeAttribute>();
-                    return runModeAttr != null && runModeAttr.RunMode.Equals(KernelConstants.CONFIG_RUNMODE);
+                    return runModeAttr is {RunMode: KernelConstants.CONFIG_RUNMODE};
                 };
             }
         }

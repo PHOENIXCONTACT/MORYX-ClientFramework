@@ -72,6 +72,6 @@ namespace Moryx.ClientFramework
         public void DestroyWorkspace(IModuleWorkspace workspace)
         {
             OnDestroyWorkspace(workspace);
-        } 
+        }
     }
 }
