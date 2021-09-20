@@ -8,7 +8,7 @@ namespace Moryx.ClientFramework.Principals
     /// <summary>
     /// Helper to inform the UI about an update of the ClaimsPrincipal
     /// </summary>
-    public class ClaimsPrincipalExtension
+    public static class ClaimsPrincipalExtension
     {
         /// <summary>
         /// Event to get informed about an update of the ClaimsPrincipal
