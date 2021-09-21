@@ -11,7 +11,7 @@ namespace Moryx.ClientFramework.Kernel
         /// <summary>
         /// Method to register a custom ClaimsAuthorizationManager
         /// </summary>
-        public static void EnableAuthorization(ClaimsAuthorizationManager authorizationManager)
+        public static void EnableAuthorization(this HeartOfLead hol, ClaimsAuthorizationManager authorizationManager)
         {
             var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
             var sectionName = "system.identityModel";
