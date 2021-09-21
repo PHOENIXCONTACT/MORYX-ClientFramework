@@ -23,8 +23,8 @@ namespace Moryx.ClientFramework.Kernel
                     config.Save();
                     ConfigurationManager.RefreshSection(sectionName);
                 }
-
-                FederatedAuthentication.FederationConfiguration.IdentityConfiguration.ClaimsAuthorizationManager = authorizationManager;
+                if (authorizationManager != null)
+                    FederatedAuthentication.FederationConfiguration.IdentityConfiguration.ClaimsAuthorizationManager = authorizationManager;
             }
             catch (Exception e)
             {
@@ -36,7 +36,7 @@ namespace Moryx.ClientFramework.Kernel
         /// <summary>
         /// Method to authorize the current principal to perform every action on any resource
         /// </summary>
-        public static void AuhtorizeEverything(this HeartOfLead hol)
+        public static void AuthorizeEverything(this HeartOfLead hol)
         {
             EnableAuthorization(null);
         }
