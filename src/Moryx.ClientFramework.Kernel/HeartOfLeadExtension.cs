@@ -38,7 +38,7 @@ namespace Moryx.ClientFramework.Kernel
         /// </summary>
         public static void AuthorizeEverything(this HeartOfLead hol)
         {
-            EnableAuthorization(null);
+            hol.EnableAuthorization(null);
         }
     }
 }

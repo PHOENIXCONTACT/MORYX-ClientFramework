@@ -4,8 +4,11 @@
 using System;
 using System.IdentityModel.Services;
 using System.Reflection;
+using System.Text.RegularExpressions;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Markup;
+using System.Xaml;
 
 namespace Moryx.ClientFramework.Principals
 {
@@ -21,6 +24,11 @@ namespace Moryx.ClientFramework.Principals
         private object _targetProperty;
 
         /// <summary>
+        /// Resource within the action requires permissions
+        /// </summary>
+        public string Resource { get; set; }
+
+        /// <summary>
         /// The requested action which will be validated by the current permissions
         /// </summary>
         [ConstructorArgument("action")]
@@ -33,10 +41,10 @@ namespace Moryx.ClientFramework.Principals
         /// </summary>
         protected PermissionExtension()
         {
-            ClaimsPrincipalExtension.ClaimsPrincipalChanged += OnClaimsPrincipalChanged;      
+            ClaimsPrincipalSync.PrincipalChanged += OnPrincipalChanged;      
         }
 
-        private void OnClaimsPrincipalChanged(object sender, EventArgs args)
+        private void OnPrincipalChanged(object sender, EventArgs args)
         {
             if (!(_targetObject is DependencyObject targetObject))
                 return;
@@ -61,13 +69,29 @@ namespace Moryx.ClientFramework.Principals
         /// <inheritdoc />
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
+            // If resource was not specified, tried to determine from host control
+            if (Resource == null && serviceProvider.GetService(typeof(IRootObjectProvider)) is IRootObjectProvider root)
+            {
+                // Try to read from user control permissions
+                if (root.RootObject is UserControl control && control.Resources[UserControlPermissions.Key] is UserControlPermissions controlPermissions)
+                {
+                    Resource = controlPermissions.Resource;
+                }
+                else
+                {
+                    var regex = new Regex(@"^\w+\.\w+");
+                    Resource = regex.Match(root.RootObject?.GetType().Namespace ?? "Moryx").Value;
+                }
+            }
+
             if (serviceProvider.GetService(typeof(IProvideValueTarget)) is IProvideValueTarget target)
             {
                 _targetObject = target.TargetObject;
                 _targetProperty = target.TargetProperty;
             }
 
-            return ProvidePermissionBasedValue(HasPermission());
+            var hasPermission = HasPermission();
+            return ProvidePermissionBasedValue(hasPermission);
         }
 
        private bool HasPermission()
@@ -75,7 +99,7 @@ namespace Moryx.ClientFramework.Principals
             try
             {
                 // Has permission if no exception will be thrown
-                ClaimsPrincipalPermission.CheckAccess("permission", Action);
+                ClaimsPrincipalPermission.CheckAccess(Resource, Action);
                 return true;
             }
             catch (Exception)
