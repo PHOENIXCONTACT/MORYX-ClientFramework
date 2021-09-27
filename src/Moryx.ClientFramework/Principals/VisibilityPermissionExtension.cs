@@ -9,7 +9,7 @@ namespace Moryx.ClientFramework.Principals
     /// <summary>
     /// Extension to determine the visibility depends to the permission
     /// </summary>
-    public class VisibilityPermissionExtension : PermissionExtension
+    public class VisibilityPermissionExtension : PermissionExtensionBase
     {
         /// <summary>
         /// Flag to inverse the visibility result
