@@ -1,11 +1,11 @@
-﻿using System;
-using System.Configuration;
-using System.IdentityModel.Configuration;
-using System.IdentityModel.Services;
+﻿using System.IdentityModel.Services;
 using System.Security.Claims;
 
 namespace Moryx.ClientFramework.Kernel
 {
+    /// <summary>
+    /// Extensions for the <see cref="HeartOfLead"/>
+    /// </summary>
     public static class HeartOfLeadExtension
     {
         /// <summary>
@@ -13,32 +13,7 @@ namespace Moryx.ClientFramework.Kernel
         /// </summary>
         public static void EnableAuthorization(this HeartOfLead hol, ClaimsAuthorizationManager authorizationManager)
         {
-            var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            var sectionName = "system.identityModel";
-            try
-            {
-                if (config.Sections.Get(sectionName) == null)
-                {
-                    config.Sections.Add(sectionName, new SystemIdentityModelSection());
-                    config.Save();
-                    ConfigurationManager.RefreshSection(sectionName);
-                }
-                if (authorizationManager != null)
-                    FederatedAuthentication.FederationConfiguration.IdentityConfiguration.ClaimsAuthorizationManager = authorizationManager;
-            }
-            catch (Exception e)
-            {
-                //Error during authorization preparation
-                throw;
-            }
-        }
-
-        /// <summary>
-        /// Method to authorize the current principal to perform every action on any resource
-        /// </summary>
-        public static void AuthorizeEverything(this HeartOfLead hol)
-        {
-            hol.EnableAuthorization(null);
+            FederatedAuthentication.FederationConfiguration.IdentityConfiguration.ClaimsAuthorizationManager = authorizationManager;
         }
     }
 }
