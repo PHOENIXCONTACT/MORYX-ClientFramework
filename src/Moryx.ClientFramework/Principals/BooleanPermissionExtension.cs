@@ -8,7 +8,7 @@ namespace Moryx.ClientFramework.Principals
     /// <summary>
     /// Extension to determine the boolean result depends to the permission
     /// </summary>
-    public class BooleanPermissionExtension : PermissionExtension
+    public class BooleanPermissionExtension : PermissionExtensionBase
     {
         /// <summary>
         /// Flag to inverse the boolean result

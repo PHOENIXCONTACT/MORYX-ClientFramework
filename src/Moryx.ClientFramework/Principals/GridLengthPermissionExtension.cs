@@ -8,7 +8,7 @@ namespace Moryx.ClientFramework.Principals
     /// <summary>
     /// Extension to determine the length of a grid depends to the permission
     /// </summary>
-    public class GridLengthPermissionExtension : PermissionExtension
+    public class GridLengthPermissionExtension : PermissionExtensionBase
     {
         /// <inheritdoc />
         protected override object ProvidePermissionBasedValue(bool hasPermission)

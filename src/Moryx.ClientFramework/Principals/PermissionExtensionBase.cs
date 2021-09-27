@@ -6,7 +6,6 @@ using System.IdentityModel.Services;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Markup;
 using System.Xaml;
 
@@ -15,7 +14,7 @@ namespace Moryx.ClientFramework.Principals
     /// <summary>
     /// Base class for permission based value determination
     /// </summary>
-    public abstract class PermissionExtension : MarkupExtension
+    public abstract class PermissionExtensionBase : MarkupExtension
     {
         #region Fields and Properties
 
@@ -39,9 +38,9 @@ namespace Moryx.ClientFramework.Principals
         /// <summary>
         /// Constructor to prepare the extension to get information about changed principals
         /// </summary>
-        protected PermissionExtension()
+        protected PermissionExtensionBase()
         {
-            ClaimsPrincipalSync.PrincipalChanged += OnPrincipalChanged;      
+            ClaimsPrincipalSync.PrincipalChanged += OnPrincipalChanged;
         }
 
         private void OnPrincipalChanged(object sender, EventArgs args)
@@ -70,14 +69,17 @@ namespace Moryx.ClientFramework.Principals
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
             // If resource was not specified, tried to determine from host control
-            if (Resource == null && serviceProvider.GetService(typeof(IRootObjectProvider)) is IRootObjectProvider root)
+            if (string.IsNullOrEmpty(Resource) && serviceProvider.GetService(typeof(IRootObjectProvider)) is IRootObjectProvider root)
             {
-                // Try to read from user control permissions
-                if (root.RootObject is UserControl control && control.Resources[UserControlPermissions.Key] is UserControlPermissions controlPermissions)
+                // Try to read from root attached property
+                var rootElement = root.RootObject as DependencyObject;
+                var defaultResource = rootElement?.GetValue(PermissionProvider.DefaultResourceProperty);
+                if (defaultResource != null)
                 {
-                    Resource = controlPermissions.Resource;
+                    Resource = (string) defaultResource;
                 }
-                else
+
+                if (string.IsNullOrEmpty(Resource))
                 {
                     var regex = new Regex(@"^\w+\.\w+");
                     Resource = regex.Match(root.RootObject?.GetType().Namespace ?? "Moryx").Value;
