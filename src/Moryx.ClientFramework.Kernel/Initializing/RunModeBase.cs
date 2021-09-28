@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Security.Principal;
+using Moryx.ClientFramework.Principals;
 using Moryx.ClientFramework.Shell;
 using Moryx.Container;
 using Moryx.Users;
@@ -108,14 +109,11 @@ namespace Moryx.ClientFramework.Kernel
                 if (configuredModule != null)
                     continue;
 
-                var libraryName = module.Assembly.ManifestModule.ScopeName;
-
                 configuredModule = new ModulConfig
                 {
                     ModuleName = att.Name,
                     SortIndex = 9999,
-                    IsEnabled = true,
-                    Accesses = new Dictionary<string, OperationAccess>()
+                    IsEnabled = true
                 };
 
                 moduleConfigs.Add(configuredModule);
@@ -124,7 +122,7 @@ namespace Moryx.ClientFramework.Kernel
             return moduleConfigs;
         }
 
-        private static IEnumerable<string> GetAllLocalUsergroups()
+        private static IEnumerable<string> GetAllLocalUserGroups()
         {
             var currentIdentity = WindowsIdentity.GetCurrent();
             var groups = new List<string>();
@@ -182,7 +180,7 @@ namespace Moryx.ClientFramework.Kernel
             {
                 try
                 {
-                    userGroups = GetAllLocalUsergroups();
+                    userGroups = GetAllLocalUserGroups();
                 }
                 catch (Exception)
                 {

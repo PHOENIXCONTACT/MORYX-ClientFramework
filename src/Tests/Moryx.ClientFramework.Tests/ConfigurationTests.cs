@@ -64,19 +64,12 @@ namespace Moryx.ClientFramework.Tests
         {
             var modConf = new ModulConfig
             {
-                Accesses = new Dictionary<string, OperationAccess>
-                {
-                    {"Test", OperationAccess.LimitedRead}
-                },
                 SortIndex = 2,
                 IsEnabled = true
             };
 
             var clientModuleConfig = new ClientModuleConfigMock();
             modConf.CopyTo(clientModuleConfig);
-            
-            Assert.AreEqual(modConf.Accesses, clientModuleConfig.OperationAccesses);
-            Assert.AreEqual(modConf.Accesses.Count, clientModuleConfig.OperationAccesses.Count);
 
             Assert.AreEqual(modConf.SortIndex, ((IClientModuleConfig)clientModuleConfig).SortIndex);
             Assert.AreEqual(modConf.IsEnabled, clientModuleConfig.IsEnabled);

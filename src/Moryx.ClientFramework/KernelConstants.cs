@@ -4,7 +4,7 @@ using System.IO;
 namespace Moryx.ClientFramework
 {
     /// <summary>
-    /// Constants for the framework kernal
+    /// Constants for the framework kernel
     /// </summary>
     public static class KernelConstants
     {
@@ -31,7 +31,7 @@ namespace Moryx.ClientFramework
         public const string COMPANY_NAME = "Phoenix Contact";
 
         /// <summary>
-        /// The folder to the specialiced application data 
+        /// The folder to the specialized application data
         /// </summary>
         public static string AppData_Dir(string appName)
         {

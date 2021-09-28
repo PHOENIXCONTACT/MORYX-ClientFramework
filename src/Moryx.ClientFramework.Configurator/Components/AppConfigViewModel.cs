@@ -10,6 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Moryx.ClientFramework.Configurator.Properties;
 using Moryx.ClientFramework.Kernel;
+using Moryx.ClientFramework.Principals;
 using Moryx.Configuration;
 using Moryx.Container;
 
