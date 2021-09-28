@@ -1,6 +1,8 @@
 // Copyright (c) 2020, Phoenix Contact GmbH & Co. KG
 // Licensed under the Apache License, Version 2.0
 
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using Moryx.ClientFramework.History;
 using Moryx.Container;
@@ -32,29 +34,33 @@ namespace Moryx.ClientFramework.Tests.HistoryWriter
             }
         }
 
-        protected override void OnInitialize()
+        protected override Task OnInitializeAsync(CancellationToken cancellationToken)
         {
-            base.OnInitialize();
             if (ShowLifecycleMessages)
-                MessageBox.Show(string.Format("Workspace {0}: Initialized!", _level));
+                MessageBox.Show($"Workspace {_level}: Initialized!");
+
+            return Task.CompletedTask;
         }
 
-        protected override void OnActivate()
-        {
-            base.OnActivate();
 
+
+        protected override Task OnActivateAsync(CancellationToken cancellationToken)
+        {
             NotifyOfPropertyChange(() => ShowViewMessages);
             NotifyOfPropertyChange(() => ShowLifecycleMessages);
 
             if (ShowLifecycleMessages)
-                MessageBox.Show(string.Format("Workspace {0}: Activated!", _level));
+                MessageBox.Show($"Workspace {_level}: Activated!");
+
+            return Task.CompletedTask;
         }
 
-        protected override void OnDeactivate(bool close)
+        protected override Task OnDeactivateAsync(bool close, CancellationToken cancellationToken)
         {
-            base.OnDeactivate(close);
             if (ShowLifecycleMessages)
-                MessageBox.Show(string.Format("Workspace {0}: Deactivated!", _level));
+                MessageBox.Show($"Workspace {_level}: Deactivated!");
+
+            return Task.CompletedTask;
         }
 
 
@@ -62,21 +68,21 @@ namespace Moryx.ClientFramework.Tests.HistoryWriter
         {
             base.OnViewLoaded(view);
             if (ShowViewMessages)
-                MessageBox.Show(string.Format("Workspace {0}: View Loaded!", _level));
+                MessageBox.Show($"Workspace {_level}: View Loaded!");
         }
 
         protected override void OnViewAttached(object view, object context)
         {
             base.OnViewAttached(view, context);
             if (ShowViewMessages)
-                MessageBox.Show(string.Format("Workspace {0}: View Attached!", _level));
+                MessageBox.Show($"Workspace {_level}: View Attached!");
         }
 
         protected override void OnViewReady(object view)
         {
             base.OnViewReady(view);
             if (ShowViewMessages)
-                MessageBox.Show(string.Format("Workspace {0}: View Ready!", _level));
+                MessageBox.Show($"Workspace {_level}: View Ready!");
         }
 
         // Injected

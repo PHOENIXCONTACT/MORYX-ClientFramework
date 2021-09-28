@@ -22,11 +22,11 @@ namespace Moryx.ClientFramework.Kernel.Tests
             _userInfoProvider = new UserInfoProvider();
             _groups = new List<string>
             {
-                @"europe\pbbd82"
+                @"someGroup"
             };
-            _userName = "pbbd28";
-            _firstName = "Dennis";
-            _lastName = "Beuchler";
+            _userName = "someUser";
+            _firstName = "Max";
+            _lastName = "Mustermann";
         }
 
         [Test]
@@ -39,11 +39,11 @@ namespace Moryx.ClientFramework.Kernel.Tests
             Assert.AreEqual(_lastName, _userInfoProvider.LastName);
             Assert.AreEqual(_groups.Count, _userInfoProvider.Groups.Count);
 
-            Assert.AreEqual(string.Format("{0}, {1}", _lastName, _firstName), _userInfoProvider.FullName);
+            Assert.AreEqual($"{_lastName}, {_firstName}", _userInfoProvider.FullName);
         }
 
         [Test]
-        public void DoubleInitiliazetest()
+        public void DoubleInitializeTest()
         {
             _userInfoProvider.InitializeOnce(_userName, _groups, _firstName, _lastName);
             Assert.Throws(typeof (TypeInitializationException), () => _userInfoProvider.InitializeOnce(_userName, _groups, _firstName, _lastName));

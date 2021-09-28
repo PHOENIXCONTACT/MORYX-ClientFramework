@@ -59,7 +59,7 @@ namespace Moryx.ClientFramework.Kernel
         /// Override to configure the framework and setup your IoC container.
         /// </summary>
         protected override void Configure()
-        {           
+        {
             // configure the view locator
             var defaultLocator = ViewLocator.LocateTypeForModelType;
 

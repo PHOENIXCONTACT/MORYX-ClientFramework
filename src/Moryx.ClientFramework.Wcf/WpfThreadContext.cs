@@ -2,16 +2,17 @@
 // Licensed under the Apache License, Version 2.0
 
 using System;
+using Moryx.ClientFramework.Threading;
 using Moryx.Tools.Wcf;
 
-namespace Moryx.ClientFramework.Kernel
+namespace Moryx.ClientFramework.Wcf
 {
     /// <summary>
     /// The thread context to be used by WPF applications for the <see cref="BaseWcfClientFactory"/>
     /// </summary>
     internal class WpfThreadContext : IThreadContext
     {
-        /// 
+        /// <inheritdoc />
         public void Invoke(Action action)
         {
             ThreadContext.BeginInvoke(action);

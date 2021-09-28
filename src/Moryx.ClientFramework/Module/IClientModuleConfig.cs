@@ -25,6 +25,6 @@ namespace Moryx.ClientFramework
         /// <summary>
         /// UserManagement operations that are locally configured
         /// </summary>
-        Dictionary<string, OperationAccess> OperationAccesses { get; set; } 
+        Dictionary<string, OperationAccess> OperationAccesses { get; set; }
     }
 }

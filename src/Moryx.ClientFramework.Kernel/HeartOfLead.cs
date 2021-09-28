@@ -10,6 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Markup;
@@ -17,6 +18,7 @@ using System.Windows.Threading;
 using Caliburn.Micro;
 using CommandLine;
 using Moryx.ClientFramework.Localization;
+using Moryx.ClientFramework.Threading;
 using Moryx.Container;
 using Moryx.Logging;
 using Moryx.Threading;
@@ -284,9 +286,9 @@ namespace Moryx.ClientFramework.Kernel
         /// <summary>
         /// Exits the application.
         /// </summary>
-        private void OnApplicationExit(object sender, ExitEventArgs exitEventArgs)
+        private async void OnApplicationExit(object sender, ExitEventArgs exitEventArgs)
         {
-            _application.DisposeShell();
+            await _application.DisposeShell();
 
             _moduleManager?.Dispose();
             _configManager?.SaveAll();
@@ -312,14 +314,13 @@ namespace Moryx.ClientFramework.Kernel
         /// </summary>
         private void OnRunModeReady(object sender, ModulesConfiguration modulesConfiguration)
         {
-            ThreadPool.QueueUserWorkItem(delegate
+            Task.Run(async delegate
             {
                 try
                 {
                     _moduleManager = _container.Resolve<IModuleManager>();
-                    _moduleManager.Initialize();
-
-                    ThreadContext.BeginInvoke(() => _application.InitializeShell());
+                    await _moduleManager.InitializeAsync();
+                    await ThreadContext.Dispatcher.InvokeAsync(_application.InitializeShell);
                 }
                 catch (Exception exception)
                 {

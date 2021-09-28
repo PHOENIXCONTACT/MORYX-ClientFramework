@@ -5,6 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using Moryx.ClientFramework.Initializing;
+using Moryx.ClientFramework.Threading;
 using Moryx.Container;
 using Moryx.Modules;
 
@@ -20,12 +22,12 @@ namespace Moryx.ClientFramework.Kernel
     {
         #region Dependency Injection
 
-        /// 
+        /// <inheritdoc />
         public IEnumerable<IInitializable> Initializables { get; set; }
 
         #endregion
 
-        /// 
+        /// <inheritdoc />
         public void Initialize()
         {
             Starting?.Invoke(this, Initializables.Count());
@@ -69,13 +71,13 @@ namespace Moryx.ClientFramework.Kernel
             }
         }
 
-        ///
+        /// <inheritdoc />
         public event EventHandler<IInitializable> InitializingComponent;
 
-        ///
+        /// <inheritdoc />
         public event EventHandler<int> Starting;
 
-        ///
+        /// <inheritdoc />
         public event EventHandler Completed;
 
         /// <summary>

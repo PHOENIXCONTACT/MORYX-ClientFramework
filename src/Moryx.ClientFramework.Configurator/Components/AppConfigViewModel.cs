@@ -6,6 +6,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Threading;
+using System.Threading.Tasks;
 using Moryx.ClientFramework.Configurator.Properties;
 using Moryx.ClientFramework.Kernel;
 using Moryx.Configuration;
@@ -36,9 +38,9 @@ namespace Moryx.ClientFramework.Configurator
 
         #endregion
 
-        protected override void OnInitialize()
+        protected override async Task OnInitializeAsync(CancellationToken cancellationToken)
         {
-            base.OnInitialize();
+            await base.OnInitializeAsync(cancellationToken);
 
             SystemProperties = new SystemProperties
             {

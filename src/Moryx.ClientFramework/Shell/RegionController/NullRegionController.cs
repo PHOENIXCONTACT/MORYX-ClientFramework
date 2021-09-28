@@ -11,19 +11,19 @@ namespace Moryx.ClientFramework.Shell
     /// </summary>
     public class NullRegionController : IShellRegionController
     {
-        ///
+        /// <inheritdoc />
         public void Initialize(IModuleContainerFactory containerFactory, IModuleManager manager, IConfigProvider provider)
         {
 
         }
 
-        ///
+        /// <inheritdoc />
         public void Register<T>(T component) where T : class
         {
-            
+
         }
 
-        /// 
+        /// <inheritdoc />
         public Region FetchRegion(string name)
         {
             return new Region(Visibility.Collapsed, null);

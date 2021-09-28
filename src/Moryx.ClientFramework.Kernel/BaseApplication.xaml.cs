@@ -1,10 +1,9 @@
 // Copyright (c) 2020, Phoenix Contact GmbH & Co. KG
 // Licensed under the Apache License, Version 2.0
 
-using System.Globalization;
-using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Markup;
 using Caliburn.Micro;
 using Moryx.ClientFramework.Shell;
 using Moryx.Container;
@@ -18,7 +17,7 @@ namespace Moryx.ClientFramework.Kernel
     {
         private readonly IContainer _container;
         private IModuleShell _moduleShell;
-        
+
         /// <summary>
         /// Initializes a new instance of the <see cref="BaseApplication"/> class.
         /// </summary>
@@ -43,7 +42,7 @@ namespace Moryx.ClientFramework.Kernel
             //initialize base root visual
             var defaultRootVisual = new RootVisual(windowConfig)
             {
-                Title = appConfig.Name, 
+                Title = appConfig.Name,
                 Content = loaderHandler.View
             };
 
@@ -57,13 +56,13 @@ namespace Moryx.ClientFramework.Kernel
         /// <summary>
         /// Initializes the shell.
         /// </summary>
-        public void InitializeShell()
+        public async Task InitializeShell()
         {
             var configuration = _container.Resolve<ModulesConfiguration>();
 
             _moduleShell = _container.Resolve<IModuleShell>(configuration.Shell.ShellName);
-            _moduleShell.Initialize();
-            _moduleShell.Activate();
+            await _moduleShell.InitializeAsync();
+            await _moduleShell.ActivateAsync();
 
             View.SetModel(Current.MainWindow, _moduleShell);
         }
@@ -71,9 +70,10 @@ namespace Moryx.ClientFramework.Kernel
         /// <summary>
         /// will dispose the shell
         /// </summary>
-        public void DisposeShell()
+        public async Task DisposeShell()
         {
-            _moduleShell?.Deactivate(true);
+            if (_moduleShell != null)
+                await _moduleShell.DeactivateAsync(true);
         }
     }
 }

@@ -4,12 +4,12 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Threading.Tasks;
 using Caliburn.Micro;
 using Moryx.Container;
 using Moryx.Logging;
 using Moryx.Modules;
 using Moryx.Threading;
-using Moryx.Tools.Wcf;
 
 namespace Moryx.ClientFramework
 {
@@ -18,7 +18,7 @@ namespace Moryx.ClientFramework
     /// The base is also providing several functionality as logging and lifecycle management
     /// </summary>
     /// <typeparam name="TConf">The type of the conf.</typeparam>
-    public abstract class ClientModuleBase<TConf> : IClientModule, ILoggingHost 
+    public abstract class ClientModuleBase<TConf> : IClientModule, ILoggingHost
         where TConf : class, IClientModuleConfig, new()
     {
         #region Dependency Injection
@@ -44,11 +44,6 @@ namespace Moryx.ClientFramework
         public ILoggerManagement LoggerManagement { get; set; }
 
         /// <summary>
-        /// ClientFactoy for consuming wcf services
-        /// </summary>
-        public IWcfClientFactory ClientFactoy { get; set; }
-
-        /// <summary>
         /// Gets or sets the user information provider to recieve user based information
         /// E.g.: Groups, name, full name
         /// </summary>
@@ -63,7 +58,7 @@ namespace Moryx.ClientFramework
 
         #endregion
 
-        #region Fields 
+        #region Fields
 
         /// <summary>
         /// Get the name of this module
@@ -85,7 +80,8 @@ namespace Moryx.ClientFramework
         /// </summary>
         public INotificationCollection Notifications => _notifications;
 
-        string IModule.Name => ModuleName;
+        /// <inheritdoc />
+        public string Name => ModuleName;
 
         string ILoggingHost.Name => ModuleName;
 
@@ -103,20 +99,20 @@ namespace Moryx.ClientFramework
         /// <summary>
         /// Called when initializing the module.
         /// </summary>
-        protected abstract void OnInitialize();
+        protected abstract Task OnInitializeAsync();
 
         /// <summary>
         /// Called when activating the module.
         /// </summary>
-        protected abstract void OnActivate();
+        protected abstract Task OnActivateAsync();
 
         /// <summary>
         /// Called when deactivating the module.
         /// </summary>
-        protected abstract void OnDeactivate(bool close);
+        protected abstract Task OnDeactivateAsync(bool close);
 
         /// <inheritdoc />
-        public virtual void Initialize()
+        public virtual async Task InitializeAsync()
         {
             Container = ContainerFactory.Create(new Dictionary<Type, string>(), GetType().Assembly)
                 .Register<IParallelOperations, ParallelOperations>();
@@ -125,7 +121,6 @@ namespace Moryx.ClientFramework
 
             //add several components to internal container
             Container.SetInstance(ConfigProvider)
-                .SetInstance(ClientFactoy)
                 .SetInstance(Config)
                 .SetInstance(UserInfoProvider);
 
@@ -135,7 +130,7 @@ namespace Moryx.ClientFramework
             Logger.Log(LogLevel.Info, "{0} is initializing...", ModuleName);
             Container.SetInstance(Logger);
 
-            OnInitialize();
+            await OnInitializeAsync();
 
             // Execute SubInitializer
             var subInits = Container.ResolveAll<ISubInitializer>() ?? new ISubInitializer[0];
@@ -150,13 +145,13 @@ namespace Moryx.ClientFramework
         /// <summary>
         /// Activates the client module
         /// </summary>
-        public void Activate()
+        public async Task ActivateAsync()
         {
             Logger.Log(LogLevel.Info, "{0} is activating...", ModuleName);
 
             try
             {
-                OnActivate();
+                await OnActivateAsync();
             }
             catch (Exception ex)
             {
@@ -178,14 +173,14 @@ namespace Moryx.ClientFramework
         /// Deactivates the client module
         /// </summary>
         /// <param name="close"></param>
-        public void Deactivate(bool close)
+        public async Task DeactivateAsync(bool close)
         {
             Logger.Log(LogLevel.Info, "{0} is deactivating...", ModuleName);
             RaiseAttemptingDeactivation(new DeactivationEventArgs());
 
             try
             {
-                OnDeactivate(close);
+                await OnDeactivateAsync(close);
             }
             catch (Exception ex)
             {
@@ -220,7 +215,7 @@ namespace Moryx.ClientFramework
         {
             ConfigProvider.SaveConfiguration(Config);
 
-            if (Container == null) 
+            if (Container == null)
                 return;
 
             Container.Destroy();

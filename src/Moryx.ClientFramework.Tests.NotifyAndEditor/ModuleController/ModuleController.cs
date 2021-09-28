@@ -3,6 +3,7 @@
 
 using System;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Media;
 using Caliburn.Micro;
 
@@ -32,22 +33,21 @@ namespace Moryx.ClientFramework.Tests.NotifyAndEditor
                                                         "48.971,27.742 48.611,27.742z");
 
 
-        protected override void OnInitialize()
+        protected override Task OnInitializeAsync()
         {
-            //Config.DisplayName = "Module Notify";
+            return Task.CompletedTask;
         }
 
-        protected override void OnActivate()
+        protected override Task OnActivateAsync()
         {
-
+            return Task.CompletedTask;
         }
 
-        protected override void OnDeactivate(bool close)
+        protected override Task OnDeactivateAsync(bool close)
         {
-
+            return Task.CompletedTask;
         }
 
-        
         protected override IModuleWorkspace OnCreateWorkspace()
         {
             if (_timerRunning)
@@ -105,7 +105,7 @@ namespace Moryx.ClientFramework.Tests.NotifyAndEditor
             var t = _timerRunning;
 
             StopTimer();
-            
+
             Notifications.Clear();
 
             if(t)

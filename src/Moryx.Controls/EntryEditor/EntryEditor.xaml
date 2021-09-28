@@ -9,9 +9,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:converter="clr-namespace:Moryx.Controls.Converter"
              xmlns:controls="clr-namespace:Moryx.Controls"
-             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:properties="clr-namespace:Moryx.Controls.Properties"
              xmlns:wpfToolkit="clr-namespace:Moryx.WpfToolkit;assembly=Moryx.WpfToolkit"
+             xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
              mc:Ignorable="d" x:Name="UserControl" d:DesignHeight="300" d:DesignWidth="810">
     <UserControl.Resources>
         <wpfToolkit:BooleanToVisibilityConverter x:Key="ReBooleanToVisibilityConverter" TriggerValue="False" />
@@ -55,9 +55,9 @@
 
                         <PasswordBox x:Name="HiddenPassword" Width="200" HorizontalAlignment="Left"
                                      IsEnabled="{Binding IsEditMode, ElementName=UserControl}">
-                            <i:Interaction.Behaviors>
+                            <b:Interaction.Behaviors>
                                 <controls:PasswordBoxBehaviour Password="{Binding Value, Mode=TwoWay}" />
-                            </i:Interaction.Behaviors>
+                            </b:Interaction.Behaviors>
                         </PasswordBox>
 
                         <EddieTextBox x:Name="VisiblePassword" Width="200" HorizontalAlignment="Left"

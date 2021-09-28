@@ -3,7 +3,7 @@
 
 using Caliburn.Micro;
 
-namespace Moryx.ClientFramework.Dialog 
+namespace Moryx.ClientFramework.Dialog
 {
     /// <summary>
     /// Interface for MVVM MessageBoxes
@@ -52,7 +52,7 @@ namespace Moryx.ClientFramework.Dialog
         void No();
 
         /// <summary>
-        /// Result for the message box 
+        /// Result for the message box
         /// </summary>
         MessageBoxOptions Result { get; }
     }

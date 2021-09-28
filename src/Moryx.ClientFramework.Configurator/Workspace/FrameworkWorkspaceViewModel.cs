@@ -1,13 +1,15 @@
 // Copyright (c) 2020, Phoenix Contact GmbH & Co. KG
 // Licensed under the Apache License, Version 2.0
 
+using System.Threading;
+using System.Threading.Tasks;
 using Caliburn.Micro;
 using Moryx.Container;
 
 namespace Moryx.ClientFramework.Configurator
 {
     /// <summary>
-    /// Main workspace for this module. The view model will host an conductor 
+    /// Main workspace for this module. The view model will host an conductor
     /// for the specified and loaded <see cref="IConfigViewModel"/>.
     /// </summary>
     [Plugin(LifeCycle.Singleton, typeof(IModuleWorkspace), Name = ScreenName)]
@@ -27,21 +29,17 @@ namespace Moryx.ClientFramework.Configurator
         /// <summary>
         /// Called when activating.
         /// </summary>
-        protected override void OnActivate()
+        protected override Task OnActivateAsync(CancellationToken cancellationToken)
         {
-            base.OnActivate();
-
-            ScreenExtensions.TryActivate(Conductor);
+            return ScreenExtensions.TryActivateAsync(Conductor, cancellationToken);
         }
 
         /// <summary>
         /// Called when deactivating.
         /// </summary>
-        protected override void OnDeactivate(bool close)
+        protected override Task OnDeactivateAsync(bool close, CancellationToken cancellationToken)
         {
-            base.OnDeactivate(close);
-
-            ScreenExtensions.TryDeactivate(Conductor, true);
+            return ScreenExtensions.TryDeactivateAsync(Conductor, true, cancellationToken);
         }
     }
 }
