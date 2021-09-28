@@ -17,6 +17,7 @@ using System.Windows.Threading;
 using Caliburn.Micro;
 using CommandLine;
 using Moryx.ClientFramework.Localization;
+using Moryx.Configuration;
 using Moryx.Container;
 using Moryx.Logging;
 using Moryx.Threading;
@@ -359,7 +360,8 @@ namespace Moryx.ClientFramework.Kernel
 
             // Configure config manager
             _configManager = new KernelConfigManager { ConfigDirectory = CommandLineOptions.ConfigFolder };
-            _container.SetInstance(_configManager);
+            _container.SetInstance<IKernelConfigManager>(_configManager, "KernelConfigManager");
+            _container.SetInstance<IConfigManager>(_configManager, "ConfigManager");
 
             // Load global app config
             AppConfig = _configManager.GetConfiguration<AppConfig>();

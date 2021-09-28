@@ -11,7 +11,7 @@ using Moryx.ClientFramework.Shell;
 namespace Moryx.ClientFramework.Kernel
 {
     /// <summary>
-    /// Base class for local run modes. 
+    /// Base class for local run modes.
     /// Will load <see cref="IClientModule"/> and <see cref="IModuleShell"/> from the app domain
     /// </summary>
     public abstract class LocalRunModeBase : RunModeBase
@@ -21,7 +21,7 @@ namespace Moryx.ClientFramework.Kernel
         /// <summary>
         /// Config manager to load kernel configurations
         /// </summary>
-        public IKernelConfigManager ConfigManager { get; set; }
+        public IKernelConfigManager ConfigManager { get; set; } // TODO: Change type to IConfigManager in future
 
         #endregion
 
@@ -75,7 +75,7 @@ namespace Moryx.ClientFramework.Kernel
         ///
         public override void LoadModulesConfiguration()
         {
-            
+
         }
     }
 }

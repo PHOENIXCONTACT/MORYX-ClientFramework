@@ -24,7 +24,7 @@ namespace Moryx.ClientFramework.Kernel
             _configManager = configManager;
         }
 
-        /// 
+        /// <inheritdoc />
         public T GetModuleConfiguration<T>(string name) where T : class, IClientModuleConfig, new()
         {
             var config = GetConfiguration<T>();
