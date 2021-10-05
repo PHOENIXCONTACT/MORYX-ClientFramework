@@ -2,10 +2,8 @@
 // Licensed under the Apache License, Version 2.0
 
 using System;
-using System.Configuration;
 using System.Diagnostics;
 using System.Globalization;
-using System.IdentityModel.Configuration;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -19,6 +17,7 @@ using Caliburn.Micro;
 using CommandLine;
 using Moryx.ClientFramework.Localization;
 using Moryx.ClientFramework.Threading;
+using Moryx.Configuration;
 using Moryx.Container;
 using Moryx.Logging;
 using Moryx.Threading;
@@ -113,9 +112,6 @@ namespace Moryx.ClientFramework.Kernel
             // Will parse the exe arguments
             ParseCommandLineArguments();
 
-            // Will prepare config for authorization
-            PrepareAuthorization();
-
             // Create global container and configure config manager
             CreateContainer();
 
@@ -195,29 +191,6 @@ namespace Moryx.ClientFramework.Kernel
                 CommandLineOptions = ((Parsed<TCommandLineArguments>)result).Value;
             else
                 Environment.Exit(1);
-        }
-
-        /// <summary>
-        /// Initializes configuration for authorization
-        /// </summary>
-        private static void PrepareAuthorization()
-        {
-            var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            const string sectionName = "system.identityModel";
-            try
-            {
-                if (config.Sections.Get(sectionName) == null)
-                {
-                    config.Sections.Add(sectionName, new SystemIdentityModelSection());
-                    config.Save();
-                    ConfigurationManager.RefreshSection(sectionName);
-                }
-            }
-            catch
-            {
-                //Error during authorization preparation
-                throw;
-            }
         }
 
         /// <summary>
@@ -360,7 +333,8 @@ namespace Moryx.ClientFramework.Kernel
 
             // Configure config manager
             _configManager = new KernelConfigManager { ConfigDirectory = CommandLineOptions.ConfigFolder };
-            _container.SetInstance(_configManager);
+            _container.SetInstance<IKernelConfigManager>(_configManager, "KernelConfigManager");
+            _container.SetInstance<IConfigManager>(_configManager, "ConfigManager");
 
             // Load global app config
             AppConfig = _configManager.GetConfiguration<AppConfig>();

@@ -1,5 +1,4 @@
-﻿using System.IdentityModel.Services;
-using System.Security.Claims;
+﻿using Moryx.Identity;
 
 namespace Moryx.ClientFramework.Kernel
 {
@@ -11,9 +10,9 @@ namespace Moryx.ClientFramework.Kernel
         /// <summary>
         /// Method to register a custom ClaimsAuthorizationManager
         /// </summary>
-        public static void EnableAuthorization(this HeartOfLead hol, ClaimsAuthorizationManager authorizationManager)
+        public static void EnableAuthorization(this HeartOfLead hol, IAuthorizationContext authorizationContext)
         {
-            FederatedAuthentication.FederationConfiguration.IdentityConfiguration.ClaimsAuthorizationManager = authorizationManager;
+            IdentityConfiguration.CurrentContext = authorizationContext;
         }
     }
 }

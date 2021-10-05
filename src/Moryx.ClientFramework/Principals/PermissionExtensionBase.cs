@@ -2,12 +2,12 @@
 // Licensed under the Apache License, Version 2.0
 
 using System;
-using System.IdentityModel.Services;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Markup;
 using System.Xaml;
+using Moryx.Identity;
 
 namespace Moryx.ClientFramework.Principals
 {
@@ -98,16 +98,10 @@ namespace Moryx.ClientFramework.Principals
 
        private bool HasPermission()
         {
-            try
-            {
-                // Has permission if no exception will be thrown
-                ClaimsPrincipalPermission.CheckAccess(Resource, Action);
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
+            if (IdentityConfiguration.CurrentContext != null)
+                return IdentityConfiguration.CurrentContext.CheckAccess(Resource, Action);
+
+            return true;
         }
 
         /// <summary>
