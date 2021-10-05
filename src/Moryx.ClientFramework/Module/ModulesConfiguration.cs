@@ -4,7 +4,6 @@
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using Moryx.Configuration;
-using Moryx.Users;
 
 namespace Moryx.ClientFramework
 {
@@ -94,17 +93,10 @@ namespace Moryx.ClientFramework
         public int SortIndex { get; set; }
 
         /// <summary>
-        /// Gets or sets the accesses for the current user of the module.
-        /// </summary>
-        [DataMember]
-        public Dictionary<string, OperationAccess> Accesses { get; set; }
-
-        /// <summary>
         /// Copies local framwork configuration to the module
         /// </summary>
         public void CopyTo(IClientModuleConfig moduleConfig)
         {
-            moduleConfig.OperationAccesses = Accesses;
             moduleConfig.SortIndex = SortIndex;
             moduleConfig.IsEnabled = IsEnabled;
         }

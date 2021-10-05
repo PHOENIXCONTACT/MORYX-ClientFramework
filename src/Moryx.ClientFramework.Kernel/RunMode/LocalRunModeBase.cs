@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using Moryx.ClientFramework.Shell;
+using Moryx.Configuration;
 
 namespace Moryx.ClientFramework.Kernel
 {
@@ -21,7 +22,7 @@ namespace Moryx.ClientFramework.Kernel
         /// <summary>
         /// Config manager to load kernel configurations
         /// </summary>
-        public IKernelConfigManager ConfigManager { get; set; }
+        public IConfigManager ConfigManager { get; set; }
 
         #endregion
 

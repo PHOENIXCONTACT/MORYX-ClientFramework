@@ -3,7 +3,7 @@
 
 using System.Collections.Generic;
 
-namespace Moryx.ClientFramework
+namespace Moryx.ClientFramework.Principals
 {
     /// <summary>
     /// Provider for the modules to get the most general user information

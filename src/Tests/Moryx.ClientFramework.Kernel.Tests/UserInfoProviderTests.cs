@@ -20,6 +20,9 @@ namespace Moryx.ClientFramework.Kernel.Tests
         public void SetUp()
         {
             _userInfoProvider = new UserInfoProvider();
+            _userName = "summ01";
+            _firstName = "Max";
+            _lastName = "Mustermann";
             _groups = new List<string>
             {
                 @"someGroup"

@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using Moryx.ClientFramework.Principals;
 using Moryx.Container;
 
 namespace Moryx.ClientFramework.Kernel

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Threading.Tasks;
 using Caliburn.Micro;
+using Moryx.ClientFramework.Principals;
 using Moryx.Container;
 using Moryx.Logging;
 using Moryx.Modules;
@@ -44,7 +45,7 @@ namespace Moryx.ClientFramework
         public ILoggerManagement LoggerManagement { get; set; }
 
         /// <summary>
-        /// Gets or sets the user information provider to recieve user based information
+        /// Gets or sets the user information provider to receive user based information
         /// E.g.: Groups, name, full name
         /// </summary>
         public IUserInfoProvider UserInfoProvider { get; set; }
@@ -192,7 +193,7 @@ namespace Moryx.ClientFramework
         }
 
         /// <summary>
-        /// Occurs when the module is attemping to deactivate
+        /// Occurs when the module is attempting to deactivate
         /// </summary>
         public event EventHandler<DeactivationEventArgs> AttemptingDeactivation;
 
