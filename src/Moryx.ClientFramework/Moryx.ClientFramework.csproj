@@ -14,7 +14,6 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System.Xaml" />
     <Reference Include="WindowsBase" />
-    <Reference Include="System.IdentityModel.Services" />
   </ItemGroup>
 
   <ItemGroup>

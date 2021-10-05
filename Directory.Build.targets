@@ -2,7 +2,7 @@
 <Project>
 
   <PropertyGroup>
-    <MoryxPlatformVersion>3.0.0</MoryxPlatformVersion>
+    <MoryxCoreVersion>3.2.0-dev.347</MoryxCoreVersion>
   </PropertyGroup>
 
   <Import Project=".build\Common.props" Condition="'$(CreatePackage)' == 'true'" />
@@ -24,9 +24,9 @@
     <PackageReference Update="NUnit3TestAdapter" Version="3.17.0" />
 
     <!--Platform dependencies-->
-    <PackageReference Update="Moryx" Version="$(MoryxPlatformVersion)" />
-    <PackageReference Update="Moryx.Tools.Wcf" Version="$(MoryxPlatformVersion)" />
-    <PackageReference Update="Moryx.Container" Version="$(MoryxPlatformVersion)" />
+    <PackageReference Update="Moryx" Version="$(MoryxCoreVersion)" />
+    <PackageReference Update="Moryx.Tools.Wcf" Version="$(MoryxCoreVersion)" />
+    <PackageReference Update="Moryx.Container" Version="$(MoryxCoreVersion)" />
   </ItemGroup>
 
 </Project>
