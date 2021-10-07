@@ -15,6 +15,7 @@ using System.Windows.Threading;
 using Caliburn.Micro;
 using CommandLine;
 using Moryx.ClientFramework.Localization;
+using Moryx.Configuration;
 using Moryx.Container;
 using Moryx.Logging;
 using Moryx.Threading;
@@ -24,7 +25,7 @@ using MessageBoxImage = System.Windows.MessageBoxImage;
 namespace Moryx.ClientFramework.Kernel
 {
     /// <summary>
-    /// Main class to create ClientFramwork UI's
+    /// Main class to create ClientFramework UIs
     /// </summary>
     public class HeartOfLead : HeartOfLead<DefaultCommandLineArguments>
     {
@@ -35,15 +36,20 @@ namespace Moryx.ClientFramework.Kernel
     }
 
     /// <summary>
-    /// Main class to create ClientFramwork UI's
+    /// Main class to create ClientFramework UIs
     /// </summary>
-    public class HeartOfLead<TCommandLineArguments> : ILoggingHost
+    public class HeartOfLead<TCommandLineArguments> : IApplicationRuntime, ILoggingHost
         where TCommandLineArguments : DefaultCommandLineArguments
     {
         #region Fields and Properties
 
         string ILoggingHost.Name => "ClientKernel";
+
+        /// <inheritdoc />
         IModuleLogger ILoggingHost.Logger { get; set; }
+
+        /// <inheritdoc />
+        IContainer IApplicationRuntime.GlobalContainer => _container;
 
         /// <summary>
         /// Returns the current <see cref="AppConfig"/>
@@ -58,7 +64,7 @@ namespace Moryx.ClientFramework.Kernel
         /// <summary>
         /// Flag if the HeartOfLead is initialized
         /// </summary>
-        public bool IsInitialied { get; private set; }
+        public bool IsInitialied { get; private set; } // TODO: Rename to IsInitialized in the next major
 
         private GlobalContainer _container;
         private IKernelConfigManager _configManager;
@@ -100,7 +106,7 @@ namespace Moryx.ClientFramework.Kernel
             if (IsInitialied)
                 throw new InvalidOperationException("HeartOfLead is already initialized!");
 
-            // Initialize platfrom
+            // Initialize platform
             WpfPlatform.SetProduct();
 
             // Attach this Application to the console.
@@ -331,7 +337,8 @@ namespace Moryx.ClientFramework.Kernel
 
             // Configure config manager
             _configManager = new KernelConfigManager { ConfigDirectory = CommandLineOptions.ConfigFolder };
-            _container.SetInstance(_configManager);
+            _container.SetInstance<IKernelConfigManager>(_configManager, "KernelConfigManager");
+            _container.SetInstance<IConfigManager>(_configManager, "ConfigManager");
 
             // Load global app config
             AppConfig = _configManager.GetConfiguration<AppConfig>();

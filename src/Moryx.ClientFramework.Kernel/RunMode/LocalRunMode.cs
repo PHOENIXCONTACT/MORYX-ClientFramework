@@ -25,7 +25,7 @@ namespace Moryx.ClientFramework.Kernel
             get { return type => type.GetCustomAttribute<ComponentForRunModeAttribute>() == null; }
         }
 
-        /// <inheritdoc /> 
+        /// <inheritdoc />
         public override void LoadModulesConfiguration()
         {
             var modulesConfig = ConfigManager.GetConfiguration<ModulesConfiguration>();
