@@ -2,12 +2,10 @@
 // Licensed under the Apache License, Version 2.0
 
 using System;
-using System.Collections.Generic;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using Moryx.Container;
 using NUnit.Framework;
+using LifeCycle = Moryx.Container.LifeCycle;
 
 namespace Moryx.ClientFramework.Tests
 {
@@ -24,7 +22,7 @@ namespace Moryx.ClientFramework.Tests
             var att = (RegistrationAttribute)Activator.CreateInstance(attribute, name);
 
             Assert.AreEqual(att.Name, name, "Name was not equal");
-            Assert.AreEqual(att.LifeStyle, lifeCycle, "Component will not be registerd as " + lifeCycle);
+            Assert.AreEqual(att.LifeStyle, lifeCycle, "Component will not be registered as " + lifeCycle);
 
             var decorator = typeof(ClientModuleAttribute).GetCustomAttribute<AttributeUsageAttribute>();
 
