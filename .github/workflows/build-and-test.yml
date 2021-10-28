@@ -65,7 +65,7 @@ jobs:
           retention-days: 1
 
   Codecov:
-    needs: [UnitTests, IntegrationTests]
+    needs: [UnitTests]
     runs-on: windows-latest
     steps:
       - name: Download test results
