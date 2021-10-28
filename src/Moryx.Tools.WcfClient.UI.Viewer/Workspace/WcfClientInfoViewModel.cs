@@ -4,6 +4,7 @@
 using System;
 using System.Windows.Media;
 using Caliburn.Micro;
+using Moryx.Communication.Endpoints;
 using Moryx.Tools.Wcf;
 
 namespace Moryx.Tools.WcfClient.UI.Viewer
@@ -62,7 +63,7 @@ namespace Moryx.Tools.WcfClient.UI.Viewer
                         return Brushes.LightGreen;
 
                     case ConnectionState.FailedTry:
-                    case ConnectionState.VersionMissmatch:
+                    case ConnectionState.VersionMismatch:
                     case ConnectionState.ConnectionLost:
                         return Brushes.LightCoral;
 

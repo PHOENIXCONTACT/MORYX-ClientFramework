@@ -9,7 +9,6 @@ using System.Security.Principal;
 using Moryx.ClientFramework.Principals;
 using Moryx.ClientFramework.Shell;
 using Moryx.Container;
-using Moryx.Users;
 
 namespace Moryx.ClientFramework.Kernel
 {

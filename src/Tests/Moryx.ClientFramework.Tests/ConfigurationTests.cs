@@ -1,13 +1,8 @@
 // Copyright (c) 2020, Phoenix Contact GmbH & Co. KG
 // Licensed under the Apache License, Version 2.0
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using Moryx.ClientFramework.Tests.Mocks;
-using Moryx.Users;
 using NUnit.Framework;
 
 namespace Moryx.ClientFramework.Tests
@@ -70,7 +65,7 @@ namespace Moryx.ClientFramework.Tests
 
             var clientModuleConfig = new ClientModuleConfigMock();
             modConf.CopyTo(clientModuleConfig);
-
+            
             Assert.AreEqual(modConf.SortIndex, ((IClientModuleConfig)clientModuleConfig).SortIndex);
             Assert.AreEqual(modConf.IsEnabled, clientModuleConfig.IsEnabled);
         }
