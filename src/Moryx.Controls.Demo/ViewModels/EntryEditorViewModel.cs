@@ -1,6 +1,7 @@
 // Copyright (c) 2020, Phoenix Contact GmbH & Co. KG
 // Licensed under the Apache License, Version 2.0
 
+using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Input;
@@ -13,11 +14,29 @@ namespace Moryx.Controls.Demo.ViewModels
 {
     public class EntryEditorViewModel : Screen
     {
+        private bool _isEditMode;
+
         public override string DisplayName => "EntryEditor";
 
         public EntryViewModel EntryViewModels { get; }
 
         public ICommand ShowExceptionCommand { get; }
+
+        public ICommand BeginEditCmd { get; }
+
+        public ICommand EndEditCmd { get; }
+
+        public ICommand CancelEditCmd { get; }
+
+        public bool IsEditMode
+        {
+            get { return _isEditMode; }
+            private set
+            {
+                _isEditMode = value;
+                NotifyOfPropertyChange();
+            }
+        }
 
         public EntryEditorViewModel()
         {
@@ -62,6 +81,26 @@ namespace Moryx.Controls.Demo.ViewModels
             EntryViewModels = new EntryViewModel(entry);
 
             ShowExceptionCommand = new RelayCommand(ShowException);
+            BeginEditCmd = new RelayCommand(BeginEdit);
+            EndEditCmd = new RelayCommand(EndEdit);
+            CancelEditCmd = new RelayCommand(CancelEdit);
+        }
+
+        private void EndEdit(object obj)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void CancelEdit(object obj)
+        {
+            IsEditMode = false;
+            EntryViewModels.CancelEdit();
+        }
+
+        private void BeginEdit(object obj)
+        {
+            IsEditMode = true;
+            EntryViewModels.BeginEdit();
         }
 
         public void ShowException(object parameter)
