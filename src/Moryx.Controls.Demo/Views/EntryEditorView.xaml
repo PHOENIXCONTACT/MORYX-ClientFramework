@@ -11,5 +11,22 @@
              xmlns:controls="clr-namespace:Moryx.Controls;assembly=Moryx.Controls"
              mc:Ignorable="d" 
              d:DataContext="{d:DesignInstance viewModels:EntryEditorViewModel}">
-    <controls:EntryEditor Margin="20"  RootEntry="{Binding EntryViewModels}" IsEditMode="True" ShowExceptionCommand="{Binding ShowExceptionCommand}" />
+    <DockPanel LastChildFill="True">
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Margin="0,5,5,5" HorizontalAlignment="Right">
+            <EddieButton Icon="{CommonShape Pencil}"
+                            Command="{Binding BeginEditCmd}"
+                            Content="Begin Edit"/>
+            <EddieButton Icon="{CommonShape Cross}"
+                            Margin="5,0,0,0"
+                            Command="{Binding CancelEditCmd}"
+                            Content="Cancel Edit"/>
+            <EddieButton Icon="{CommonShape CheckMark}"
+                            Margin="5,0,0,0"
+                            Command="{Binding EndEditCmd}"
+                            Content="End Edit"/>
+        </StackPanel>
+
+        <controls:EntryEditor Margin="20" DockPanel.Dock="Top" RootEntry="{Binding EntryViewModels}" IsEditMode="{Binding IsEditMode}" 
+                              ShowExceptionCommand="{Binding ShowExceptionCommand}" />
+    </DockPanel>
 </UserControl>
