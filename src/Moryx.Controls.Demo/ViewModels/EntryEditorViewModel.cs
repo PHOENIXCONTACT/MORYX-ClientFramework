@@ -88,7 +88,8 @@ namespace Moryx.Controls.Demo.ViewModels
 
         private void EndEdit(object obj)
         {
-            throw new NotImplementedException();
+            IsEditMode = false;
+            EntryViewModels.EndEdit();
         }
 
         private void CancelEdit(object obj)

@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -21,6 +22,7 @@ namespace Moryx.Controls
         #region Fields and Properties
         private ObservableCollection<EntryViewModel> _subEntries;
         private string _preEditValue;
+        private ObservableCollection<EntryViewModel> _preEditSubEntries;
 
         /// <summary>
         /// The entry of this view model
@@ -62,7 +64,7 @@ namespace Moryx.Controls
         /// </summary>
         public bool IsReadOnly => Entry.Value.IsReadOnly;
 
-        // TODO: AL6 Remove direct access to Model and the helper variable _preEditValue from BeginEdit, CancelEdit and EndEdit methods
+        // TODO: AL6 Remove direct access to Model (insert in CopyFrom/ToModel) and the helper variable _preEditValue from BeginEdit, CancelEdit and EndEdit methods
         /// <summary>
         /// Current value of <see cref="Entry"/>
         /// </summary>
@@ -90,6 +92,7 @@ namespace Moryx.Controls
             }
         }
 
+        // TODO: AL6 Remove direct sync to Model (insert in CopyFrom/ToModel) and the helper variable _preEditSubEntries from BeginEdit, CancelEdit and EndEdit methods
         /// <summary>
         /// Child instances of this <see cref="EntryViewModel"/>
         /// </summary>
@@ -98,9 +101,19 @@ namespace Moryx.Controls
             get => _subEntries;
             set
             {
+                if (_subEntries is not null)
+                    _subEntries.CollectionChanged -= SyncSubEntries;
                 _subEntries = value;
+                _subEntries.CollectionChanged += SyncSubEntries;
                 OnPropertyChanged();
             }
+        }
+
+        private void SyncSubEntries(object sender, NotifyCollectionChangedEventArgs args)
+        {
+            if (args.Action is NotifyCollectionChangedAction.Move)
+                return;
+            Entry.SubEntries = SubEntries.Select(vm => vm.Entry).ToList();
         }
         #endregion
 
@@ -185,6 +198,7 @@ namespace Moryx.Controls
         {
             SubEntries.BeginEdit();
             _preEditValue = Entry.Value.Current;
+            _preEditSubEntries = new ObservableCollection<EntryViewModel>(SubEntries);
         }
 
         /// <inheritdoc />
@@ -192,6 +206,7 @@ namespace Moryx.Controls
         {
             SubEntries.EndEdit();
             _preEditValue = Entry.Value.Current;
+            _preEditSubEntries = new ObservableCollection<EntryViewModel>(SubEntries);
             CopyToModel();
         }
 
@@ -201,7 +216,6 @@ namespace Moryx.Controls
             Entry.Value.Current = Value;
             Entry.Value.Type = ValueType;
             Entry.Value.UnitType = UnitType;
-            Entry.SubEntries = SubEntries.Select(vm => vm.Entry).ToList(); 
 
             UpdateParent();
         }
@@ -211,6 +225,7 @@ namespace Moryx.Controls
         {
             SubEntries.CancelEdit();
             Value = _preEditValue;
+            Entry.SubEntries = _preEditSubEntries.Select(vm => vm.Entry).ToList();
             CopyFromModel();
         }
 
