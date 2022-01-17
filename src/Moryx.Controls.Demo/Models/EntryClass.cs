@@ -20,6 +20,7 @@ namespace Moryx.Controls.Demo.Models
         [Description("Represents a string"), DefaultValue("Some default")]
         public string ChainOfChars { get; set; }
 
+        [Description("This is a very description to reach the max value for the description part to test the ui behavior")]
         public EntrySubClass SubClass { get; set; }
 
         public List<EntrySubClass> ListSubClass { get; set; }
