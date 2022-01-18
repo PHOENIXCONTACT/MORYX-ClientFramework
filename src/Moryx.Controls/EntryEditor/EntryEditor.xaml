@@ -12,6 +12,7 @@
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:properties="clr-namespace:Moryx.Controls.Properties"
              xmlns:wpfToolkit="clr-namespace:Moryx.WpfToolkit;assembly=Moryx.WpfToolkit"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d" x:Name="UserControl" d:DesignHeight="300" d:DesignWidth="810">
     <UserControl.Resources>
         <wpfToolkit:BooleanToVisibilityConverter x:Key="ReBooleanToVisibilityConverter" TriggerValue="False" />
@@ -22,16 +23,18 @@
         <converter:EntryValueToVisibilityConverter x:Key="ValueToVisibilityConverter" />
         <converter:Base64StringLengthToByteLength x:Key="Base64StringLengthToByteLength" />
         <converter:TextToDelimiteredTextConverter x:Key="DelimiteredTextConverter" />
+        <system:Double x:Key="MinWidth">200</system:Double>
+        <system:Double x:Key="MaxWidth">600</system:Double>
 
         <converter:ValueTypeTemplateSelector x:Key="ValueTypeTemplateSelector">
             <converter:ValueTypeTemplateSelector.CollectionTemplate>
                 <DataTemplate DataType="controls:EntryViewModel">
-                    <StackPanel Orientation="Horizontal" Height="35">
+                    <StackPanel Orientation="Horizontal">
                         <TextBlock Text="{Binding Value}"
                                    FontWeight="Bold" VerticalAlignment="Center"
                                    Visibility="{Binding SubEntries, Converter={StaticResource ReBooleanToVisibilityConverter}}" />
 
-                        <EddieButton Width="120" Content="{x:Static properties:Strings.EntryEditor_Open}" EddieStyle="Green" Icon="{MdiShape Folder_Open}"
+                        <EddieButton Content="{x:Static properties:Strings.EntryEditor_Open}" EddieStyle="Green" Icon="{MdiShape Folder_Open}"
                                      VerticalAlignment="Center" Click="DelveIntoSubEntry"
                                      Visibility="{Binding Converter={StaticResource SubEntriesToVisibilityConverter}}" />
                     </StackPanel>
@@ -40,7 +43,8 @@
 
             <converter:ValueTypeTemplateSelector.StringTemplate>
                 <DataTemplate DataType="controls:EntryViewModel">
-                    <EddieTextBox Width="200" HorizontalAlignment="Left"
+                    <EddieTextBox MinWidth="{StaticResource MinWidth}" MaxWidth="{StaticResource MaxWidth}" HorizontalAlignment="Left"
+                                  TextWrapping="Wrap"
                                   Text="{Binding Value, Mode=TwoWay}" Watermark="{Binding DefaultValue}"
                                   IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
                                   IsReadOnly="{Binding IsReadOnly}"
@@ -53,14 +57,14 @@
                     <StackPanel Orientation="Horizontal"
                                 Visibility="{Binding SubEntries, Converter={StaticResource ReBooleanToVisibilityConverter}}">
 
-                        <PasswordBox x:Name="HiddenPassword" Width="200" HorizontalAlignment="Left"
+                        <PasswordBox x:Name="HiddenPassword" Width="{StaticResource MinWidth}" HorizontalAlignment="Left"
                                      IsEnabled="{Binding IsEditMode, ElementName=UserControl}">
                             <i:Interaction.Behaviors>
                                 <controls:PasswordBoxBehaviour Password="{Binding Value, Mode=TwoWay}" />
                             </i:Interaction.Behaviors>
                         </PasswordBox>
 
-                        <EddieTextBox x:Name="VisiblePassword" Width="200" HorizontalAlignment="Left"
+                        <EddieTextBox x:Name="VisiblePassword" Width="{StaticResource MinWidth}" HorizontalAlignment="Left"
                                       Text="{Binding Value, Mode=TwoWay}" Watermark="{Binding DefaultValue}"
                                       IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
                                       IsReadOnly="{Binding IsReadOnly}"
@@ -89,7 +93,8 @@
 
             <converter:ValueTypeTemplateSelector.DropDownTemplate>
                 <DataTemplate DataType="controls:EntryViewModel">
-                    <EddieComboBox ItemsSource="{Binding PossibleValues}" Width="300"
+                    <EddieComboBox ItemsSource="{Binding PossibleValues}" 
+                                   MinWidth="{StaticResource MinWidth}" MaxWidth="{StaticResource MaxWidth}"
                                    IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
                                    IsReadOnly="{Binding IsReadOnly}"
                                    SelectedItem="{Binding Value, Mode=TwoWay}" />
@@ -99,7 +104,8 @@
             <converter:ValueTypeTemplateSelector.FilePickerTemplate>
                 <DataTemplate DataType="controls:EntryViewModel">
                     <StackPanel Orientation="Horizontal">
-                        <EddieTextBox Width="200" HorizontalAlignment="Left"
+                        <EddieTextBox MinWidth="{StaticResource MinWidth}" MaxWidth="{StaticResource MaxWidth}" 
+                                      TextWrapping="Wrap" HorizontalAlignment="Left"
                                       Text="{Binding Value, Mode=TwoWay}" Watermark="{Binding DefaultValue}"
                                       ToolTip="{Binding Value}"
                                       IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
@@ -107,6 +113,7 @@
                                       Visibility="{Binding SubEntries, Converter={StaticResource ReBooleanToVisibilityConverter}}" />
 
                         <EddieButton Margin="5,0,0,0" EddieStyle="Green" HorizontalAlignment="Left" Icon="{MdiShape Folder_Open}"
+                                     MinWidth="140" Width="Auto"
                                      Content="{x:Static properties:Strings.EntryEditor_SelectFile}" Click="SelectFile" />
                     </StackPanel>
                 </DataTemplate>
@@ -115,14 +122,15 @@
             <converter:ValueTypeTemplateSelector.DirectoryPickerTemplate>
                 <DataTemplate DataType="controls:EntryViewModel">
                     <StackPanel Orientation="Horizontal">
-                        <EddieTextBox Width="200" HorizontalAlignment="Left"
-                                      Text="{Binding Value, Mode=TwoWay}" Watermark="{Binding DefaultValue}"
+                        <EddieTextBox MinWidth="{StaticResource MinWidth}" MaxWidth="{StaticResource MaxWidth}" HorizontalAlignment="Left"
+                                      TextWrapping="Wrap" Text="{Binding Value, Mode=TwoWay}" Watermark="{Binding DefaultValue}"
                                       ToolTip="{Binding Value}"
                                       IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
                                       IsReadOnly="{Binding IsReadOnly}"
                                       Visibility="{Binding SubEntries, Converter={StaticResource ReBooleanToVisibilityConverter}}" />
 
                         <EddieButton Margin="5,0,0,0" EddieStyle="Green" HorizontalAlignment="Left" Icon="{MdiShape Folder_Open}"
+                                     MinWidth="140" Width="Auto"
                                      Content="{x:Static properties:Strings.EntryEditor_SelectDirectory}" Click="SelectDirectory" />
                     </StackPanel>
                 </DataTemplate>
@@ -130,7 +138,7 @@
 
             <converter:ValueTypeTemplateSelector.ClassTemplate>
                 <DataTemplate DataType="controls:EntryViewModel">
-                    <EddieButton Width="120" EddieStyle="Green" HorizontalAlignment="Left" Icon="{MdiShape Folder_Open}"
+                    <EddieButton EddieStyle="Green" HorizontalAlignment="Left" Icon="{MdiShape Folder_Open}"
                                  Content="{x:Static properties:Strings.EntryEditor_Open}" Click="DelveIntoSubEntry" />
                 </DataTemplate>
             </converter:ValueTypeTemplateSelector.ClassTemplate>
@@ -138,15 +146,15 @@
             <converter:ValueTypeTemplateSelector.StreamTemplate>
                 <DataTemplate DataType="controls:EntryViewModel">
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Width="200"
+                        <TextBlock Width="{StaticResource MinWidth}"
                                    Text="{Binding Value, Converter={StaticResource Base64StringLengthToByteLength}, FallbackValue=Unknown}"
                                    VerticalAlignment="Center" />
 
-                        <EddieButton Width="120" Content="{x:Static properties:Strings.EntryEditor_Select}" EddieStyle="Green" Margin="5,0,0,0" Icon="{MdiShape Folder_Open}"
+                        <EddieButton Content="{x:Static properties:Strings.EntryEditor_Select}" EddieStyle="Green" Margin="5,0,0,0" Icon="{MdiShape Folder_Open}"
                                      IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
                                      Click="SelectStreamContent" />
 
-                        <EddieButton Width="120" Content="{x:Static properties:Strings.EntryEditor_Save}" EddieStyle="Green" Margin="5,0,0,0" Icon="{MdiShape Content_Save}"
+                        <EddieButton Content="{x:Static properties:Strings.EntryEditor_Save}" EddieStyle="Green" Margin="5,0,0,0" Icon="{MdiShape Content_Save}"
                                      IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
                                      Click="SaveStreamContent" />
                     </StackPanel>
@@ -156,7 +164,7 @@
             <converter:ValueTypeTemplateSelector.ExceptionTemplate>
                 <DataTemplate DataType="controls:EntryViewModel">
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Width="300"
+                        <TextBlock MinWidth="{StaticResource MinWidth}" MaxWidth="{StaticResource MaxWidth}"
                                    FontStyle="Italic"
                                    VerticalAlignment="Center"
                                    TextTrimming="CharacterEllipsis"
@@ -219,7 +227,7 @@
             </ListBox>
         </DockPanel>
 
-        <Border BorderBrush="LightGray" BorderThickness="1,1,1,1" Grid.Row="1" Margin="0,10,0,0">
+        <Border BorderBrush="LightGray" BorderThickness="1,1,1,1" Grid.Row="1" Margin="0,10,0,0" Grid.IsSharedSizeScope="True">
             <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
                 <ItemsControl ItemsSource="{Binding CurrentEntry.SubEntries, ElementName=UserControl}">
                     <ItemsControl.ItemTemplate>
@@ -227,20 +235,20 @@
                             <Border BorderThickness="0,0,0,1" BorderBrush="DarkGray">
                                 <Grid Margin="5">
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" SharedSizeGroup="Name"/>
+                                        <ColumnDefinition Width="4*"/>
                                     </Grid.ColumnDefinitions>
 
-                                    <StackPanel Margin="0,0,25,0">
+                                    <StackPanel Grid.Column="0" Margin="0,0,25,0">
                                         <TextBlock Text="{Binding DisplayName}" />
                                         <TextBlock Text="{Binding Description}" TextWrapping="Wrap"
-                                                   Foreground="DarkGray" />
+                                                   Foreground="DarkGray" MaxWidth="300"/>
                                     </StackPanel>
 
                                     <StackPanel Grid.Column="1" Orientation="Horizontal">
                                         <ContentPresenter ContentTemplateSelector="{StaticResource ValueTypeTemplateSelector}" />
 
-                                        <EddieButton Width="120" Content="{x:Static properties:Strings.EntryEditor_Remove}" EddieStyle="Green" Margin="10,0,0,0" Icon="{CommonShape Delete}"
+                                        <EddieButton Content="{x:Static properties:Strings.EntryEditor_Remove}" EddieStyle="Green" Margin="10,0,0,0" Icon="{CommonShape Delete}"
                                                      Visibility="{Binding CurrentEntry, ElementName=UserControl, Converter={StaticResource DelButtonVisibilityConverter}, FallbackValue=Collapsed}"
                                                      IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
                                                      Click="RemoveCollectionEntry"  />
@@ -260,11 +268,11 @@
             <EddieComboBox ItemsSource="{Binding CurrentEntry.PossibleValues, ElementName=UserControl}"
                            SelectedItem="{Binding DesiredType, ElementName=UserControl, Mode=TwoWay}"
                            IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
-                           MinWidth="200" />
+                           MinWidth="{StaticResource MinWidth}" />
 
             <EddieButton Margin="5,0,0,0" Icon="{CommonShape Plus}" Content="{Binding CurrentEntry, ElementName=UserControl, Converter={StaticResource ButtonTextConverter}}"
                          IsEnabled="{Binding IsEditMode, ElementName=UserControl}"
-                         Click="ItemRequested" />
+                         Click="ItemRequested" MinWidth="140" Width="Auto"/>
         </StackPanel>
 
     </Grid>
