@@ -146,6 +146,9 @@ namespace Moryx.Controls
             ValueType = Entry.Value.Type;
             UnitType = Entry.Value.UnitType;
             SubEntries = new ObservableCollection<EntryViewModel>(Entry.SubEntries.Select(e => new EntryViewModel(e)));
+            
+            _preEditSubEntries = new ObservableCollection<EntryViewModel>(SubEntries);
+            _preEditValue = Entry.Value.Current;
 
             UpdateParent();
         }
@@ -205,8 +208,6 @@ namespace Moryx.Controls
         public void EndEdit()
         {
             SubEntries.EndEdit();
-            _preEditValue = Entry.Value.Current;
-            _preEditSubEntries = new ObservableCollection<EntryViewModel>(SubEntries);
             CopyToModel();
         }
 
@@ -223,10 +224,10 @@ namespace Moryx.Controls
         /// <inheritdoc />
         public void CancelEdit()
         {
-            SubEntries.CancelEdit();
-            Value = _preEditValue;
             Entry.SubEntries = _preEditSubEntries.Select(vm => vm.Entry).ToList();
+            Value = _preEditValue;
             CopyFromModel();
+            SubEntries.CancelEdit();
         }
 
         private void CopyFromModel()
@@ -242,13 +243,13 @@ namespace Moryx.Controls
         private void MergeIntoViewModelCollection(ObservableCollection<EntryViewModel> entryViewModels, IList<Entry> updated)
         {
             // Remove those without identifiert or not existing in the updated collection
-            var removed = entryViewModels.Where(vm => vm.Entry.Identifier == "" || updated.All(e => e.Identifier != vm.Entry.Identifier)).ToList();
+            var removed = entryViewModels.Where(vm => vm.Entry.Identifier == "" || updated.All(e => e != vm.Entry)).ToList();
             foreach (var obj in removed)
                 entryViewModels.Remove(obj);
 
             foreach (var updatedEntry in updated)
             {
-                var match = entryViewModels.FirstOrDefault(vm => vm.Entry.Identifier == updatedEntry.Identifier);
+                var match = entryViewModels.FirstOrDefault(vm => vm.Entry == updatedEntry);
                 if (match is null) // Add new Entry 
                     entryViewModels.Add(new EntryViewModel(updatedEntry));
                 else // Update Entry
