@@ -117,43 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AppConfigView_Name_Label" xml:space="preserve">
-    <value>Nazwa:</value>
+  <data name="AppConfigView_App_Title" xml:space="preserve">
+    <value>Applicazione</value>
   </data>
   <data name="AppConfigView_Application_Label" xml:space="preserve">
-    <value>Aplikacja:</value>
-  </data>
-  <data name="ProxyConfigViewModel_Title" xml:space="preserve">
-    <value>Serwer proxy</value>
-  </data>
-  <data name="ProxyConfigView_Proxy_Title" xml:space="preserve">
-    <value>Konfiguracja serwera proxy</value>
+    <value>Applicazione:</value>
   </data>
   <data name="AppConfigViewModel_Title" xml:space="preserve">
-    <value>Aplikacja</value>
+    <value>Applicazione</value>
   </data>
-  <data name="ProxyConfigView_Port_Label" xml:space="preserve">
-    <value>Port:</value>
+  <data name="LocalizationViewModel_Title" xml:space="preserve">
+    <value>Localizzazione</value>
   </data>
-  <data name="ProxyConfigView_Address_Label" xml:space="preserve">
-    <value>Adres:</value>
-  </data>
-  <data name="RuntimeConfigView_Port_Label" xml:space="preserve">
-    <value>Port:</value>
-  </data>
-  <data name="ConfigShellView_Title" xml:space="preserve">
-    <value>Konfigurator klienta</value>
-  </data>
-  <data name="ConfigConductorView_SaveAndRestart" xml:space="preserve">
-    <value>Zapisz i uruchom ponownie</value>
+  <data name="AppConfigView_System_Title" xml:space="preserve">
+    <value>Informazioni di sistema</value>
   </data>
   <data name="ConfigConductorView_Save" xml:space="preserve">
-    <value>Zapisz</value>
+    <value>Salva</value>
   </data>
-  <data name="ConfigConductorView_Title" xml:space="preserve">
-    <value>Konfiguracja frameworka</value>
+  <data name="LocalizationView_Culture" xml:space="preserve">
+    <value>Lingua</value>
   </data>
-  <data name="AppConfigView_App_Title" xml:space="preserve">
-    <value>Aplikacja</value>
+  <data name="LocalizationView_Title" xml:space="preserve">
+    <value>Localizzazione</value>
+  </data>
+  <data name="AppConfigView_Name_Label" xml:space="preserve">
+    <value>Nome:</value>
   </data>
 </root>

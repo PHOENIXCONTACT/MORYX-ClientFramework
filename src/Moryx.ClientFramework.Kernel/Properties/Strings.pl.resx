@@ -121,9 +121,9 @@
     <value>Aplikacja oparta jest na MORYX Framework!</value>
   </data>
   <data name="ModuleManagerLoaderAdapter_InitializingModule" xml:space="preserve">
-    <value>Inicjowanie |0.</value>
+    <value>Inicjowanie {0}</value>
   </data>
   <data name="ModuleManagerLoaderAdapter_InitializingModuleDone" xml:space="preserve">
-    <value>Inicjowanie {0} zrobione ...!</value>
+    <value>Inicjowanie {0} zrobione ...</value>
   </data>
 </root>
