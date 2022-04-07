@@ -117,43 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AppConfigView_Name_Label" xml:space="preserve">
-    <value>Nazwa:</value>
+  <data name="EntryEditor_Forward" xml:space="preserve">
+    <value>Inoltrare</value>
   </data>
-  <data name="AppConfigView_Application_Label" xml:space="preserve">
-    <value>Aplikacja:</value>
+  <data name="EntryEditor_Open" xml:space="preserve">
+    <value>Aprire</value>
   </data>
-  <data name="ProxyConfigViewModel_Title" xml:space="preserve">
-    <value>Serwer proxy</value>
+  <data name="EntryEditor_Remove" xml:space="preserve">
+    <value>Rimuovere</value>
   </data>
-  <data name="ProxyConfigView_Proxy_Title" xml:space="preserve">
-    <value>Konfiguracja serwera proxy</value>
+  <data name="EntryEditor_Save" xml:space="preserve">
+    <value>Salvare</value>
   </data>
-  <data name="AppConfigViewModel_Title" xml:space="preserve">
-    <value>Aplikacja</value>
+  <data name="EntryEditor_Select" xml:space="preserve">
+    <value>Selezionare</value>
   </data>
-  <data name="ProxyConfigView_Port_Label" xml:space="preserve">
-    <value>Port:</value>
+  <data name="EntryEditor_SelectDirectory" xml:space="preserve">
+    <value>Selezionare la directory...</value>
   </data>
-  <data name="ProxyConfigView_Address_Label" xml:space="preserve">
-    <value>Adres:</value>
+  <data name="EntryEditor_SelectFile" xml:space="preserve">
+    <value>Selezionare il file...</value>
   </data>
-  <data name="RuntimeConfigView_Port_Label" xml:space="preserve">
-    <value>Port:</value>
+  <data name="EntryEditor_Show" xml:space="preserve">
+    <value>Mostrare</value>
   </data>
-  <data name="ConfigShellView_Title" xml:space="preserve">
-    <value>Konfigurator klienta</value>
+  <data name="EntryValueToButtonTextConverter_AddEntry" xml:space="preserve">
+    <value>Aggiungi Voce</value>
   </data>
-  <data name="ConfigConductorView_SaveAndRestart" xml:space="preserve">
-    <value>Zapisz i uruchom ponownie</value>
+  <data name="EntryValueToButtonTextConverter_ReplaceWith" xml:space="preserve">
+    <value>Sostituirlo Co</value>
   </data>
-  <data name="ConfigConductorView_Save" xml:space="preserve">
-    <value>Zapisz</value>
-  </data>
-  <data name="ConfigConductorView_Title" xml:space="preserve">
-    <value>Konfiguracja frameworka</value>
-  </data>
-  <data name="AppConfigView_App_Title" xml:space="preserve">
-    <value>Aplikacja</value>
+  <data name="EntryEditor_Back" xml:space="preserve">
+    <value>Indietro</value>
   </data>
 </root>

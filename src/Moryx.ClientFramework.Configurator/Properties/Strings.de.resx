@@ -214,7 +214,7 @@
     <value>(Adresse des Proxyservers)</value>
   </data>
   <data name="ProxyConfigView_UseDefault_Label" xml:space="preserve">
-    <value>Standart</value>
+    <value>Standart:</value>
   </data>
   <data name="ProxyConfigView_UseDefault_Description" xml:space="preserve">
     <value>(Wenn aktiviert, wird der Systemproxy verwendet)</value>
@@ -244,7 +244,7 @@
     <value>(Wo kann die Runtime gefunden werden (z.B. "localhost")?)</value>
   </data>
   <data name="RuntimeConfigView_Port_Label" xml:space="preserve">
-    <value>Port: </value>
+    <value>Port:</value>
   </data>
   <data name="RuntimeConfigView_Port_Description" xml:space="preserve">
     <value>(Auf welchem Port?)</value>
@@ -259,7 +259,7 @@
     <value>Lokalisierung</value>
   </data>
   <data name="ConfigConductorViewModel_ConfigsSaved_Title" xml:space="preserve">
-    <value>Alle Konfigurationen gespeichert</value>
+    <value>Alle Konfigurationen gespeichert!</value>
   </data>
   <data name="ConfigConductorViewModel_ConfigsSaved_Message" xml:space="preserve">
     <value>Alle Konfigurationen wurden erfolgreich gespeichert!</value>
