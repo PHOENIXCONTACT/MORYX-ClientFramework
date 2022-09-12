@@ -118,14 +118,14 @@ namespace Moryx.ClientFramework.Kernel
             // Create global container and configure config manager
             CreateContainer();
 
-            //Configures the thread context
-            ConfigureThreadContext();
-
             // Register app config
             LoadConfiguration();
 
             // Activates the logging
             ActivateKernelLogging();
+
+            //Configures the thread context
+            ConfigureThreadContext();
 
             // ConfigureLocalization
             ConfigureLocalization();
