@@ -8,7 +8,7 @@ using System.Windows.Media;
 namespace Moryx.WpfToolkit
 {
     /// <summary>
-    /// Bass class for the eddie buttons which adds some dependency properties to the
+    /// Base class for the eddie buttons which adds some dependency properties to the
     /// basic <see cref="Button"/>
     /// </summary>
     public abstract class EddieButtonBase : Button
